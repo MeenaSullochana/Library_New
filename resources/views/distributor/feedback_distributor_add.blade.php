@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -76,7 +76,7 @@
                             <label class="form-label">Subject:</label>
                              <textarea type="text" class="form-control" name="subject" value=""
                            placeholder="Subject" rows="3" autocomplete="off" required="">{{ old('subject') }}</textarea>
-                            </div>                      
+                            </div>
                                 <div class="form-group">
                                     <label class="form-label">Description:</label>
                                     <textarea class="form-control" name="description" value="" placeholder="Your description"  required
@@ -87,8 +87,8 @@
                             <div class="modal-footer">
                                 <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
                             </div>
-                                
-                            
+
+
                         </form>
                     </div>
 

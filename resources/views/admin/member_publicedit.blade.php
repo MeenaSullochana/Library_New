@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -98,7 +98,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <h3 class="">Membership Details</h3>
@@ -223,7 +223,7 @@
             'name': $('#name').val(),
             'newpassword': $('#newpassword').val(),
             'confirmpassword': $('#confirmpassword').val(),
-           
+
         };
         console.log(data);
         $.ajaxSetup({
@@ -243,10 +243,10 @@
          }else{
              toastr.error(response.error,{timeout:25000});
          }
-       
+
      }
    })
-       
+
 
         // Additional logic or Ajax request can be added here
     });

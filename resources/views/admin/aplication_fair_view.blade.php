@@ -12,7 +12,7 @@
 
 
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement Management System</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 
@@ -23,12 +23,12 @@
     <link href="/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css" rel="stylesheet">
     <link href="/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-  
+
     <!-- tagify-css -->
     <link href="/vendor/tagify/dist/tagify.css" rel="stylesheet">
 
     <!-- Style css -->
-    
+
     <link href= "{{ asset('admin/css/style.css') }}" rel="stylesheet">
 
 </head>
@@ -3489,7 +3489,7 @@
     <script src="/vendor/apexchart/apexchart.js"></script>
 
     <!-- Dashboard 1 -->
-  
+
     <script src="./js/dashboard/dashboard-1.js"></script>
     <script src="/vendor/draggable/draggable.js"></script>
     <script src="/vendor/swiper/js/swiper-bundle.min.js"></script>
@@ -3503,7 +3503,7 @@
     <script src="/vendor/datatables/js/buttons.html5.min.js"></script>
     <script src="/vendor/datatables/js/jszip.min.js"></script>
     <script src="{{ asset('admin/js/plugins-init/datatables.init.js') }}"></script>
-     
+
     <!-- Apex Chart -->
 
     <script src="/vendor/bootstrap-datetimepicker/js/moment.js"></script>

@@ -9,14 +9,14 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Yash Admin Sales Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xl-4 mt-3">
-                                        <button class="dt-button buttons-excel buttons-html5 bg-primary text-white btn btn-sm border-0 mt-3" tabindex="0" aria-controls="projects-tbl" type="button"><span><i class="fa-solid fa-file-excel"></i> Export Report</span></button>    
+                                        <button class="dt-button buttons-excel buttons-html5 bg-primary text-white btn btn-sm border-0 mt-3" tabindex="0" aria-controls="projects-tbl" type="button"><span><i class="fa-solid fa-file-excel"></i> Export Report</span></button>
                                         </div>
                                     </div>
                                 </div>

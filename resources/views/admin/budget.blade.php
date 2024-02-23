@@ -16,7 +16,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -30,7 +30,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -80,7 +80,7 @@
 											</div>
 										</div>
 									</div>
-									<!-- /column --> 
+									<!-- /column -->
 									<div class="col-lg-9 col-xl-10 col-xxl-9">
 										<div class="email-right-box ms-0 ">
                                         <form id="formId">
@@ -111,7 +111,7 @@
                                                         class="text-danger maditory">*</span></label>
 															<textarea  class="textarea_editor form-control bg-transparent" id="description" rows="5" placeholder="Enter description ..."></textarea>
 														</div>
-													
+
 													<h5 class="my-3"><i class="fa fa-paperclip me-2"></i> Budget Category</h5>
                                                     <div class="row">
                                                         <div class="col-md-12">
@@ -163,7 +163,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->
@@ -197,14 +197,14 @@
                    return;
               }
             var categoryData = [];
-          
-            
+
+
             $('.category-input').each(function() {
                 var name = $(this).data('name');
                 var amount = $(this).val().trim();
-                
+
                 if (amount === '') {
-                  
+
                     toastr.error("Please enter an amount for " + name, { timeOut: 2000 });
                   dd();
                 } else {
@@ -216,7 +216,7 @@
                 }
             });
 
-          
+
 
             var data = {
                 libraryType: $("#libraryType").val(),
@@ -232,20 +232,20 @@
                 }
             });
             $.ajax({
-                url: "/admin/budgetadd", 
+                url: "/admin/budgetadd",
                 type: "POST",
                 data: data,
                 success: function (response) {
                     if(response.success){
                     toastr.success(response.success,{timeout:2000});
                     $('#formId')[0].reset();
-               
+
                 }else{
                     toastr.error(response.error,{timeout:2000});
                 }
             }
             });
-           
+
         });
     });
 </script>

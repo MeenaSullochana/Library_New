@@ -16,7 +16,7 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -141,7 +141,7 @@
 
                                                         @foreach($categories as $val)
 														<div class="message">
-														
+
 															<div>
 																<div class="d-flex message-single">
 																	<div class="ps-1 align-self-center">
@@ -154,7 +154,7 @@
 																		<label class="bookmark-btn"><input type="checkbox"><span class="checkmark"></span></label>
 																	</div>
 																</div>
-													
+
 																<a href="/admin/budgetview/{{$val->id}}" class="col-mail col-mail-2">
 																	<div class="hader">{{$val->libraryType}}</div>
 																	<div class="subject">{{$val->totalAmount}}</span></div>
@@ -167,17 +167,17 @@
 																		</svg>
 																	</a>
 																</div>
-															
+
 
 															</div>
-															
+
 														</div>
 														@endforeach
 													</div>
 												</div>
 											</div>
 										<!-- /tab-content -->
-											<!-- panel -->	
+											<!-- panel -->
 											<div class="row ">
 												<!-- column -->
 												<div class="col-12 ps-3">

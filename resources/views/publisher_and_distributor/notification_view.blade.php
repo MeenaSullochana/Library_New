@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
@@ -66,25 +66,25 @@
                                         <div class="email-left-body">
                                             <div class="email-left-box dz-scroll" id="email-left">
                                                 <div class="p-0">
-                                                   
+
                                                 </div>
                                                 <div class="mail-list rounded " >
                                                 <a class="list-group-item " href="/publisher_and_distributor/notification">
 													<i class="fa-regular fa-paper-plane align-middle"></i>Notification List</a>
 
                                                     <a href="email-inbox.html" class="list-group-item active"><i
-                                                            class="fa-regular fa-envelope align-middle"></i>Notification  View 
+                                                            class="fa-regular fa-envelope align-middle"></i>Notification  View
                                                     </a>
-                                                   
+
                                                 </div>
-                                        
+
                                             </div>
                                         </div>
                                     </div>
                                     <!-- /column -->
                                     <div class="col-xl-10 col-xxl-9">
                                         <div class="email-right-box">
-                                         
+
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="right-box-padding p-0">
@@ -107,7 +107,7 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="clearfix mb-3">
-                                                                      
+
                                                                     </div>
                                                                 </div>
                                                                 <hr>
@@ -127,17 +127,17 @@
                                                                             <h5 class="my-1 text-primary">Attachment</h5>
                                                                              <div class="read-content-attachment">
                                                                                    <div class="row attachment">
-          
+
                                                                                     <div class="col-auto">
                                                                                 <a href="{{ asset('/attachment/' . $data->attachment) }}" class="text-muted"> {{ $data->attachment}}</a>
                                                                                  </div>
-           
+
                                                                                    </div>
                                                                                 </div>
                                                                         @endif
                                                                     </div>
                                                                 </div>
-                                                           
+
                                                             </div>
                                                         </div>
                                                     </div>

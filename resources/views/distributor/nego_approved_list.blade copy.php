@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
         include "publisher/plugin/plugin_css.php";
@@ -114,7 +114,7 @@
                                 <table id="empoloyees-tbl3" class="table dataTable no-footer" role="grid" aria-describedby="empoloyees-tbl3_info">
                                     <thead>
                                         <tr role="row">
-                                      
+
 
                                             <th>S.no</th>
                                             <th>Books</th>
@@ -134,10 +134,10 @@
                                ->where('negotiation_status', '=', 2)
                                ->get();
                                              @endphp
-                                            
+
                                              @foreach($categori as $val)
                                         <tr role="row" class="odd">
-                                            
+
                                             <td><span>{{$loop->index +1}}</span></td>
                                             <td>
                                                 <div class="products">
@@ -158,7 +158,7 @@
                                             <button type="button" id="successButton" class="btn btn-success">Approve Book</button>
 
                                                  </td>
-                                          
+
                                             <td data-label="controlq">
                                                 <div class="d-flex mt-p0">
                                                     <a href="book_manage_view.php" class="btn btn-success shadow btn-xs sharp me-1">

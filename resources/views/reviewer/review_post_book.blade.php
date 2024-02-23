@@ -16,7 +16,7 @@
    <meta name="format-detection" content="telephone=no">
    <meta name="csrf-token" content="{{ csrf_token() }}">
    <!-- PAGE TITLE HERE -->
-   <title>Goverment of Tamil Nadu - Book Procurement</title>
+   <title>Government of Tamil Nadu - Book Procurement</title>
 
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
@@ -60,7 +60,7 @@
                      <div class="d-sm-flex align-items-center justify-content-between">
                         <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
-                            
+
                            </ol>
                         </nav>
                         <h3 class="mb-0 bc-title">

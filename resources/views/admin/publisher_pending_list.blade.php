@@ -11,7 +11,7 @@
    <meta name="csrf-token" content="{{ csrf_token() }}">
 
    <!-- PAGE TITLE HERE -->
-   <title>Publisher Details</title>
+   <title>Government of Tamil Nadu - Book Procurement</title>
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -48,7 +48,7 @@
       <div class="content-body">
          <div class="container-fluid">
             <div class="card">
-               
+
                 <div class="card mb-4 mb-4">
                     <div class="card-body">
                         <div class="d-sm-flex align-items-center justify-content-between">
@@ -96,10 +96,10 @@
                                  </div>
                               </td>
 
-                    
+
                               @if($val->approved_status=='pending')
                           <td>
-                              <div class="col-sm-12 m-b30"> 
+                              <div class="col-sm-12 m-b30">
                                   <select  class="col-sm-12 m-b30"  name="user_approval" id="user_approval"   data-id="{{$val->id}}">
                                   <option style="color: red;" value="Pending">Pending</option>
                                  <option style="color: green;" value="Approve">Approve</option>
@@ -108,13 +108,13 @@
                                   </div>
                            </td>
                            @elseif($val->approved_status=='approve')
-                        
+
                           <td> <span class="badge bg-success text-white">Approve</span></td>
-                         
+
                             @else
                            <td> <span class="badge bg-danger text-white">Reject</span></td>
                            @endif
-                               
+
                            <td><span class="badge light badge-success">{{$val->created_at->format('Y-m-d')}}</span>
                               <td>
                                  <a href="/admin/pub_profile/{{$val->id}}"><i class="fa fa-eye p-2"></i></a>
@@ -176,7 +176,7 @@
         include "admin/plugin/plugin_js.php";
          ?>
          <script>
-           $('#example4').on( 'change', "select[name='user_approval']", function (e) { 
+           $('#example4').on( 'change', "select[name='user_approval']", function (e) {
                   var approval_ = $(this).val();
                   var publisherid = $(this).data('id');
                   if(approval_ == 'Reject'){
@@ -205,19 +205,19 @@
                               window.location.href ="/admin/publisher_pending_list"
                                  }, 3000);
                            }
-                           
+
                         }
                   });
                   }
               })
-            
+
          </script>
 </body>
 <script>
   $(function() {
     $('.toggle-class').change(function(e) {
-        e.preventDefault(); 
-        var status = $(this).prop('checked') == true ? 1 : 0; 
+        e.preventDefault();
+        var status = $(this).prop('checked') == true ? 1 : 0;
         var publisherid = $(this).data('id');
         console.log(publisherid);
         $.ajaxSetup({
@@ -242,7 +242,7 @@
                     window.location.href ="/admin/publisher_pending_list"
                      }, 3000);
                }
-                
+
             }
         });
     })
@@ -250,11 +250,11 @@
 </script>
 <script>
       $(document).on('click','#submitButton',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
         var data={
-           'id':$('#hiddenInput').val(), 
-           'rejectmessage':$('#reject_remark').val(), 
-          
+           'id':$('#hiddenInput').val(),
+           'rejectmessage':$('#reject_remark').val(),
+
         }
         $('#staticBackdrop').modal('hide');
         $.ajaxSetup({
@@ -280,12 +280,12 @@
                     window.location.href ="/admin/publisher_pending_list"
                      }, 3000);
                }
-           
+
         }
       });
   })
-        
-  
+
+
 
     </script>
 </html>

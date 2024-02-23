@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Publisher Profile</title>
+    <title>Government of Tamil Nadu - Book Procurement - Publisher Profile</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -130,7 +130,7 @@
                         <!--                        <a href="#" data-exthumbimage="{{asset("public/publisher/images/proof/Publication/".$data->publicationProof)}}"-->
                         <!--                            data-src="{{asset("publisher/images/proof/Publication/".$data->publicationProof)}}"-->
                         <!--                            class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">-->
-                                                   
+
                         <!--                                <h3  class="btn btn-primary light btn-xs mb-1">  {{$data->publicationProof}} </h3>-->
                         <!--                        </a>-->
                         <!--                    </div>-->
@@ -182,7 +182,7 @@
                                         <div class="profile-interest">
                                             <h5 class="text-primary d-inline">Nature of Your Publication Ownership</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
-                                                <p>{{$data->pubOwnership}}</p> 
+                                                <p>{{$data->pubOwnership}}</p>
                                                  @if($data->gstProof != null)
                                                 <a href="{{asset("public/publisher/images/proof/gst/".$data->gstProof)}}" data-exthumbimage="{{asset("public/publisher/images/proof/gst/".$data->gstProof)}}"
                                                     data-src="{{asset("public/publisher/images/proof/gst/".$data->gstProof)}}"
@@ -225,7 +225,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  Partnership Deed  </h3>
                                                 </a>
                                                 @endif
-                                                  @if($data->moaProof != null) 
+                                                  @if($data->moaProof != null)
                                                         <a href="{{asset("public/publisher/images/proof/moa/".$data->moaProof)}}" data-exthumbimage="{{asset("public/publisher/images/proof/moa/".$data->moaProof)}}"
                                                     data-src="{{asset("public/publisher/images/proof/moa/".$data->moaProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download>
@@ -497,7 +497,7 @@
                                                 <!--            <hr>-->
                                                 <!--            <table id="example1" class="display table"-->
                                                 <!--                style="min-width: 845px">-->
-                                                               
+
                                                 <!--                <thead>-->
                                                 <!--                    <tr>-->
                                                 <!--                        <th>Enter Member Name</th>-->
@@ -657,7 +657,7 @@
                                      <tr>
                                      <td>{{$val->award_name}} </td>
                                       <td>{{$val->book_title}}</td>
-                                     
+
                                       </tr>
                                    @endforeach
                                     </tbody>
@@ -673,9 +673,9 @@
                             <div class="card-header">
                                 <h4 class="text-primary mb-4">Name of the Subsidiary Publications
                                 </h4>
-                               
+
                             </div>
-                            
+
                             <div class="card-body">
                             <h5 class="es-5">{{$data->haveSubsidiary}}</h5>
                                 <table id="example1" class="display table" style="min-width: 845px">
@@ -701,7 +701,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  {{$subsidiary_doc}} </h3>
 
                                                 </a>
-                                                </td> 
+                                                </td>
                                         </tr>
                                         @endforeach
                                         @endif
@@ -735,7 +735,7 @@
          *************-->
          <?php
         include "publisher/plugin/plugin_js.php";
-        ?>	
+        ?>
 </body>
 <!-- <style>
      .photo-content {

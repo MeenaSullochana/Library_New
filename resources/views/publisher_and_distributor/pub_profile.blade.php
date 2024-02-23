@@ -9,13 +9,13 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Yash Admin Sales Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
@@ -168,7 +168,7 @@
                                             <a href="javascript:void(0);"
                                                 class="btn btn-primary light btn-xs mb-1"><?php echo $district;?></a>
                                             <?php
-                                       
+
                                     }
                                     ?>
                                         </div>
@@ -400,13 +400,13 @@
                                                 $bookDetails=array();
                                                 // print_r($userProfileData['publications_shope_book_title']);
                                                 // print_r($userProfileData['publications_shope_book_author']);
-                                                
+
                                                 $bookDetails['title'] = json_decode($userProfileData['subsidiary_name_publications_content']);
                                                 $bookDetails['content'] = json_decode($userProfileData['subsidiary_no_publications_content']);
                                                 // echo "<pre>";
                                                 // print_r($bookDetails);
                                                 // echo "</pre>";
-                                                
+
                                                 foreach($bookDetails['title'] as $i=>$book){
                                                 	?>
                                                             <tr>
@@ -452,7 +452,7 @@
                                                              $memberDetails=array();
                                                              // print_r($userProfileData['publications_shope_book_title']);
                                                              // print_r($userProfileData['publications_shope_book_author']);
-                                                             
+
                                                              $memberDetails['member_name'] = json_decode($userProfileData['member_in_publisher_association_name']);
                                                              $memberDetails['member_id'] = json_decode($userProfileData['member_in_publisher_association_id']);
                                                             //  echo "<pre>";
@@ -539,13 +539,13 @@
                                                 $bookDetails=array();
                                                 // print_r($userProfileData['publications_shope_book_title']);
                                                 // print_r($userProfileData['publications_shope_book_author']);
-                                                
+
                                                 $bookDetails['title'] = json_decode($userProfileData['publications_shope_book_title']);
                                                 $bookDetails['author'] = json_decode($userProfileData['publications_shope_book_author']);
                                                 // echo "<pre>";
                                                 // print_r($bookDetails);
                                                 // echo "</pre>";
-                                                
+
                                                 foreach($bookDetails['title'] as $i=>$book){
                                                 	?>
                                                         <tr>
@@ -610,7 +610,7 @@
                                     $trsbookDetails=array();
                                     // print_r($userProfileData['publications_shope_book_title']);
                                     // print_r($userProfileData['publications_shope_book_author']);
-                                    
+
                                     $trsbookDetails['title'] = json_decode($userProfileData['trs_book_title']);
                                     $trsbookDetails['author'] = json_decode($userProfileData['trs_book_author']);
                                     $trsbookDetails['lan_one'] = json_decode($userProfileData['trs_book_lan_one']);
@@ -618,7 +618,7 @@
                                     // echo "<pre>";
                                     // print_r($bookDetails);
                                     // echo "</pre>";
-                                    
+
                                     foreach($trsbookDetails['title'] as $i=>$book){
                                     	?>
                                         <tr>
@@ -648,16 +648,16 @@
             <!--**********************************
                 Footer end
             ***********************************-->
-    
+
             <!--**********************************
                Support ticket button start
             ***********************************-->
-            
+
             <!--**********************************
                Support ticket button end
             ***********************************-->
-    
-    
+
+
         </div>
         <!--**********************************
             Main wrapper end

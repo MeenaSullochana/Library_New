@@ -11,7 +11,7 @@ include "core/login.core.php";
       <meta name="robots" content="noindex, nofollow" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- PAGE TITLE HERE -->
-      <title>Goverment of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="images/favicon.png">
       <link href="./vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -59,12 +59,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                     <label for="">Conform Password</label>
                                                    <input name="dzName" required="" class="form-control" placeholder="Conform Password" type="text">
                                                 </div>
-                                                <div class="form-group clearfix text-left"> 
-                                                   
+                                                <div class="form-group clearfix text-left">
+
                                                    <button class="btn btn-primary float-end">Submit</button>
                                                 </div>
                                              </form>
-                                             
+
                                           </div>
                                           <div class="tab-pane fade" id="nav-forget" role="tabpanel" aria-labelledby="nav-forget-tab">
                                              <form class="dz-form">
@@ -76,7 +76,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                 <div class="form-group mb-4">
                                                    <input name="dzName" required="" class="form-control" placeholder="Email Address" type="text">
                                                 </div>
-                                                <div class="form-group clearfix text-left"> 
+                                                <div class="form-group clearfix text-left">
                                                    <button class=" active btn btn-primary" id="nav-personal-tab" data-bs-toggle="tab" data-bs-target="#nav-personal" type="button" role="tab" aria-controls="nav-personal" aria-selected="true">Back</button>
                                                    <button class="btn btn-primary float-end">Submit</button>
                                                 </div>
@@ -89,7 +89,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                               <div class="card-footer">
                                  <div class=" bottom-footer clearfix m-t10 m-b20 row text-center">
                                     <div class="col-lg-12 text-center">
-                                       <span> Copyright © 2023 Directorate of Public Libraries, பொது நூலக இயக்ககம் <a href="#">| Design by Gladindia </a> </span> 
+                                       <span> Copyright © 2023 Directorate of Public Libraries, பொது நூலக இயக்ககம் <a href="#">| Design by Gladindia </a> </span>
                                     </div>
                                  </div>
                               </div>
@@ -126,6 +126,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
 "></script>
 <?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
    </body>
 </html>

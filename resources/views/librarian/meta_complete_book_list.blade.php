@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
 
     <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
@@ -85,7 +85,7 @@
                                                 <h2 class="text-primary count">
 
                                                 @php
-                                                 $id=auth('librarian')->user()->id; 
+                                                 $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','!=','Null')->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -98,10 +98,10 @@
                                     <div class="col-xl-2 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
-                                                <h2 class="text-purple count">  
- 
+                                                <h2 class="text-purple count">
+
                                                 @php
-                                                $id=auth('librarian')->user()->id; 
+                                                $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','=',Null)->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -116,9 +116,9 @@
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-warning count">
-                                                    
+
                                                 @php
-                                                 $id=auth('librarian')->user()->id; 
+                                                 $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','=','1')->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -132,9 +132,9 @@
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-danger count">
-                                                    
+
                                                 @php
-                                                 $id=auth('librarian')->user()->id; 
+                                                 $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','=','0')->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -206,16 +206,16 @@
                                                 <td>
                                                     <span>{{$val->product_code}}</span>
                                                 </td>
-          
-                
+
+
                            @if($val->book_status=='1')
-                        
+
                           <td> <span class="badge bg-success text-white">Approve</span></td>
-                         
+
                             @else
                            <td> <span class="badge bg-danger text-white">Reject</span></td>
                            @endif
-                                         
+
                                                 <td>
                                                     <a href="/librarian/book_view/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
                                                 </td>
@@ -245,7 +245,7 @@
     <!--**********************************
            Support ticket button start
         ***********************************-->
-    
+
     <!--**********************************
            Support ticket button end
         ***********************************-->
@@ -257,7 +257,7 @@
     ***********************************-->
    <?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
 </body>
 
 </html>

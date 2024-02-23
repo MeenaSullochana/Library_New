@@ -14,7 +14,7 @@
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no"> <!-- PAGE TITLE HERE -->
-    <title>BooK fair</title> <!-- FAVICONS ICON -->
+    <title>Government of Tamil Nadu - Book Procurement</title> <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
         include "admin/plugin/plugin_css.php";
@@ -108,13 +108,13 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-xl-6">
-                                                                <div class="mb-3 row"> 
+                                                                <div class="mb-3 row">
                                                                     <label class="col-lg-4 col-form-label" for="validationCustom06">Purchase Date <span class="text-danger">*</span> </label>
                                                                     <div class="col-lg-6"> <input name="datepicker" class="datepicker-default form-control" id="datepicker">
                                                                         <div class="invalid-feedback"> Please enter a Purchese Date. </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="mb-3 row"> 
+                                                                <div class="mb-3 row">
                                                                     <label class="col-lg-4 col-form-label" for="validationCustom06">Purchase Date <span class="text-danger">*</span> </label>
                                                                     <div class="col-lg-6"> <input name="datepicker" class="datepicker-default form-control" id="datepicker">
                                                                         <div class="invalid-feedback"> Please enter a Purchese Date. </div>
@@ -139,7 +139,7 @@
                                                                     <div class="col-lg-6"> <input type="text" class="form-control" id="validationCustom08" required>
                                                                         <div class="invalid-feedback"> Please enter a Publisher. </div>
                                                                     </div>
-                                                                </div> 
+                                                                </div>
                                                                 <div class="mb-3 row">
                                                                     <div class="col-lg-8 ms-auto">
                                                                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -166,7 +166,7 @@
         ***********************************-->
     <!--**********************************
             Footer start
-        ***********************************--> 
+        ***********************************-->
         @include ("admin.footer")
     <!--**********************************
             Footer end
@@ -180,7 +180,7 @@
     </div>
     <!--**********************************
         Main wrapper end
-    ***********************************--> 
+    ***********************************-->
     <?php
         include "admin/plugin/plugin_js.php";
     ?>

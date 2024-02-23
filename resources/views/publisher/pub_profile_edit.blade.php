@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Publisher Profile</title>
+    <title>Government of Tamil Nadu - Book Procurement - Publisher Profile Edit</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -145,7 +145,7 @@
                                 <input type="text" class="form-control " id="pub_city" name="pub_city"
                                     placeholder="Enter your city" required>
                             </div>
-                           
+
                             <div class="col-md-3">
                                 <label for="inputZip" class="form-label">Pincode -<span class="mt-056"> அஞ்சல்
                                         குறியீடு</span><span class="text-danger maditory">*</span></label></label>
@@ -226,13 +226,13 @@
                                 <input type="text" class="form-control " id="pub_city" name="pub_city"
                                     placeholder="Enter your city" required>
                             </div>
-                           
+
                             <div class="col-md-3">
                                 <label for="inputZip" class="form-label">Pincode -<span class="mt-056"> அஞ்சல்
                                         குறியீடு</span><span class="text-danger maditory">*</span></label></label>
                                 <input type="number" class="form-control" id="pub_pin_code" name="pub_pin_code">
                             </div>
-                            
+
                             <h4>Other Details -<span class="mt-055"> பிற விவரங்கள் </span></h4>
                             <hr>
                             <div class="col-md-6">
@@ -581,7 +581,7 @@
                                       class="custom-control-input">
                                   <label class="custom-control-label" for="customCheckbox3">Tamil Padhipu thurai - <span class="mt-056">தமிழ் பதிப்பு துறை</span></label>
                               </div>
-                              
+
                               <div class="col-md-12 tamil_pathipu_thurai_en mb-2">
                                   <input type="text" class="form-control" id="tamil_pathipu_thurai"
                                       name="tamil_pathipu_value" placeholder="Tamil Padhipu thurai">
@@ -600,7 +600,7 @@
                                           <div class="table-responsive">
                                               <table class="table table-bordered"
                                                   id="tbl_pub_member_no">
-                              
+
                                                   <tr>
                                                       <th>Enter member name*</th>
                                                       <th>Enter member id*</th> -->
@@ -623,7 +623,7 @@
                                           id="member_name_new_id"
                                           class="btn btn-success">+</button></td>
                               </tr>
-                              
+
                               </table>
                               </div>
                               </div>

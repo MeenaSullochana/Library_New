@@ -11,7 +11,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="robots" content="noindex, nofollow" />
    <!-- PAGE TITLE HERE -->
-   <title>Goverment of Tamil Nadu - Book Procurement</title>
+   <title>Government of Tamil Nadu - Book Procurement</title>
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -73,17 +73,17 @@
                            </tr>
                         </thead>
                         <tbody>
-                   
+
                      @foreach($payment as $val)
                            <tr>
                               <td>{{$loop->index +1}}</td>
                               <td>{{$val->userName}}</td>
                               <td>{{$val->userType}}</td>
                               <td>{{$val->invoiceNumber}}</td>
-                            
+
                               <td>{{ \Carbon\Carbon::parse($val->created_at)->format('Y-m-d ') }}</td>
                               <td><a href="/publisher/payment_recept/{{$val->id}}"><i class="fa fa-eye p-2"></i></a>
-                            
+
                               </td>
                            </tr>
                            @endforeach

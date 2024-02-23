@@ -9,9 +9,9 @@
     <meta name="robots" content="noindex, nofollow" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	
+
 	<!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/fevi.svg">
@@ -26,7 +26,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -51,7 +51,7 @@
         ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
-				
+
                 <!-- row -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -162,7 +162,7 @@
 															Please enter a url.
 														</div>
                                                     </div>
-                                                </div>  
+                                                </div>
                                                 <div class="mb-3 row">
                                                     <label class="col-lg-4 col-form-label" for="validationCustom10">Email <span
                                                             class="text-danger">*</span>
@@ -234,7 +234,7 @@
                                             <div class="input-group transparent-append">
 												<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                                                 <input type="password" class="form-control" id="dz-password" placeholder="Choose a safe one.." required>
-												<span class="input-group-text show-pass"> 
+												<span class="input-group-text show-pass">
 													<i class="fa fa-eye-slash"></i>
 													<i class="fa fa-eye"></i>
 												</span>
@@ -277,7 +277,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->
@@ -290,6 +290,6 @@
     <?php
         include "plugin/plugin_js.php";
         include 'error/error_handle.php';
-    ?>	
+    ?>
 </body>
 </html>

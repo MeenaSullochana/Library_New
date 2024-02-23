@@ -8,7 +8,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -19,7 +21,6 @@
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no"> <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
     <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vendor/star-rating/star-rating-svg.css">

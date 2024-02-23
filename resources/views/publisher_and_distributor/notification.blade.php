@@ -16,7 +16,7 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
@@ -80,7 +80,7 @@
 											</div>
 										</div>
 									</div>
-								
+
 									<div class="col-xl-10 col-xxl-9 col-lg-9">
 										<div class="email-right-box">
 											<div role="toolbar" class="toolbar ms-1 ms-sm-0">
@@ -92,7 +92,7 @@
 																<label class="form-check-label" for="checkAll"></label>
 															</div>
 														</div>
-														
+
 													</div>
 													<div class="mail-tools">
 														<a href="javascrip:void(0);"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,10 +100,10 @@
 															</svg>
 														</a>
 														<a href="javascrip:void(0);">
-															
+
 														</a>
 														<a href="javascrip:void(0);">
-															
+
 														</a>
 													</div>
 												</div>
@@ -113,7 +113,7 @@
                                                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
                                                     <div class="email-list dz-scroll" id="emails">
                                                         @php
-                                                            $notifications = DB::table('notifications')->where('to','=',auth('publisher_distributor')->user()->id)->paginate(10); 
+                                                            $notifications = DB::table('notifications')->where('to','=',auth('publisher_distributor')->user()->id)->paginate(10);
                                                         @endphp
 
                                                         @forelse($notifications as $notification)
@@ -136,15 +136,15 @@
                                                                     <a href="/publisher_and_distributor/Notification_virw/{{$notification->id}}" class="col-mail col-mail-2">
                                                                     <div class="head">{{ substr($notification->message, 0, 19) }}</div>
 
-                                                                   
+
                                                                              <div class="subject">Admin</div>
-                                                                  
+
                                                                         <div class="date">{{ \Carbon\Carbon::parse($notification->created_at)->format('Y-m-d h:i A') }}</div>
                                                                     </a>
                                                                     <div class="icon">
                                                                         <a href="javascript:void(0);" class="ms-2">
                                                                             <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                              
+
                                                                             </svg>
                                                                         </a>
                                                                     </div>
@@ -194,7 +194,7 @@
 			</div>
 		</div>
 	</div>
- 
+
 	<!--**********************************
             Content body end
         ***********************************-->

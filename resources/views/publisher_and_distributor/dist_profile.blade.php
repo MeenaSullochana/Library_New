@@ -10,7 +10,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="noindex, nofollow" />
       <!-- PAGE TITLE HERE -->
-      <title>Distriputor Profile</title>
+      <title>Government of Tamil Nadu - Book Procurement</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
       <?php
@@ -58,7 +58,7 @@
                                  <img src="images/banner/book-fair2.png" class="img-fluid rounded-circle" alt="">
                               </div>
                               <div class="profile-details">
-                                 <?php 
+                                 <?php
                                  // echo "<pre>";
                                  // print_r($userProfileData);
                                  // echo "</pre>";
@@ -133,7 +133,7 @@
                                        ?>
                                           <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1"><?php echo $district;?></a>
                                        <?php
-                                       
+
                                     }
                                     ?>
                                  </div>
@@ -331,12 +331,12 @@
                                                 // echo "<pre>";
                                                 // print_r($userProfileData);
                                                    $bookDetails['title'] = json_decode($userProfileData['substidiary_name_account_transaction_content_dis']);
-                                                
+
                                                 $bookDetails['content'] = json_decode($userProfileData['substidiary_name_account_transaction_content_distribution']);
                                                 // echo "<pre>";
                                                 // print_r($bookDetails);
                                                 // echo "</pre>";
-                                                
+
                                                 foreach($bookDetails['title'] as $i=>$book){
                                                 	?>
                                                             <tr>
@@ -394,13 +394,13 @@
                                                 $bookDetails=array();
                                                 // print_r($userProfileData['publications_shope_book_title']);
                                                 // print_r($userProfileData['publications_shope_book_author']);
-                                                
+
                                                 $bookDetails['pup_name'] = json_decode($userProfileData['publisher_name']);
                                                 $bookDetails['pup_place'] = json_decode($userProfileData['publisher_place']);
                                                 // echo "<pre>";
                                                 // print_r($bookDetails);
                                                 // echo "</pre>";
-                                                
+
                                                 foreach($bookDetails['pup_name'] as $i=>$book){
                                                 	?>
                                              <tr>

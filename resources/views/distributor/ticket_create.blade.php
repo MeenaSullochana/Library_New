@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -124,8 +124,8 @@
                             <div class="modal-footer">
                                 <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
                             </div>
-                                
-                            
+
+
                         </form>
                     </div>
 
@@ -193,7 +193,7 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
                    $('ul[name="record"]').empty();
                        $('ul[name="record"]').html(response.value);
                }
-                  
+
                 } });
              });
         });

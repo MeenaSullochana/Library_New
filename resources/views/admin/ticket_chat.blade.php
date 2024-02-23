@@ -9,14 +9,14 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -176,12 +176,12 @@
                             </div>
                         </div> -->
                         <div class="col-md-12">
-                      
+
                             <div class="chat">
-                           
+
                             <div class="chat-header clearfix d-flex">
                                 @foreach($data as $value)
-                                    @if($value->status=='2')  
+                                    @if($value->status=='2')
                                         <div class="profile-picture">
                                             <img src="{{asset("sub_admin/SubAdminImage/".$value->subadminImage)}}" alt="" class="rounded-image">
                                         </div>
@@ -189,15 +189,15 @@
                                             <div class="chat-with">Chat with {{$value->name}}</div>
                                             <div class="chat-num-messages">online</div>
                                         </div>
-                                       
+
                                     @endif
                                 @endforeach
-                               
+
                             </div>
                                 <div class="chat-history">
                                     <ul name="record">
                                     @foreach($data as $value)
-                                     @if($value->status=='1')  
+                                     @if($value->status=='1')
                                         <li class="clearfix">
                                             <div class="message-data align-right">
                                                 <span class="message-data-time">{{$value->date}}</span> &nbsp; &nbsp;
@@ -274,12 +274,12 @@
     <?php
         include "admin/plugin/plugin_js.php";
         ?>
-  
+
 </body>
 <script>
-   
+
        $(document).on('click','.button-addon2',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
           var id = $(this).data('id');
            var  message=$('#datas').val();
            console.log(message);
@@ -302,12 +302,12 @@
                }else{
                      document.getElementById('datas').value = '';
                    toastr.error(response.error,{timeout:25000});
-                  
+
                }
-              
+
             }
           })
-          
+
        });
 
       </script>

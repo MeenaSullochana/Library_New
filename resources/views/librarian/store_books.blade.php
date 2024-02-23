@@ -14,7 +14,7 @@
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no"> <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="vendor/star-rating/star-rating-svg.css">
@@ -398,7 +398,7 @@
     ***********************************-->
     <?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
     <!-- Required vendors -->
     <script src="./vendor/global/global.min.js"></script>
 

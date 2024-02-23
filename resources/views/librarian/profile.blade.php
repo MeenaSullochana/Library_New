@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Doctor Application </title>
+    <title>Government of Tamil Nadu - Book Procurement </title>
     <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
     <?php
@@ -598,7 +598,7 @@
          ***********************************-->
          <?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
 
 </html>
 <style>

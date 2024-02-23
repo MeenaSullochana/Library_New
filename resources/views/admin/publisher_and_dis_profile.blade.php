@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow" />
     <!-- PAGE TITLE HERE -->
-    <title>Publisher and Distributor Details</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -125,7 +125,7 @@
                                                     data-exthumbimage="{{asset("publisher_and_distributor/images/proof/Pub_Dis_Proof/".$data->publicationProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/Pub_Dis_Proof/".$data->publicationProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
-      
+
                                                         <h3  class="btn btn-primary light btn-xs mb-1">  {{$data->publicationProof}} </h3>
 
                                                 </a>
@@ -141,7 +141,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="profile-interest">
-                                          
+
                                         <h5 class="text-primary d-inline">Latest Book Catalogue</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
                                                 <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/BookCatalogue/".$data->bookCatalogue)}}"
@@ -166,7 +166,7 @@
                                                 <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/Membership/".$data->membershipProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/Membership/".$data->membershipProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
-  
+
                                                         <h3  class="btn btn-primary light btn-xs mb-1">  {{$data->membershipProof}} </h3>
                                                 </a>
                                             </div>
@@ -182,7 +182,7 @@
                                         <div class="profile-interest">
                                             <h5 class="text-primary d-inline">Nature of Your Publication Ownership</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
-                                                <p>{{$data->pubOwnership}}</p> 
+                                                <p>{{$data->pubOwnership}}</p>
                                                  @if($data->gstProof != null)
                                                 <a href="{{asset("publisher_and_distributor/images/proof/gst/".$data->gstProof)}}" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/gst/".$data->gstProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/gst/".$data->gstProof)}}"
@@ -232,7 +232,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  Partnership Deed  </h3>
                                                 </a>
                                                 @endif
-                                                  @if($data->moaProof != null) 
+                                                  @if($data->moaProof != null)
                                                         <a href="{{asset("publisher_and_distributor/images/proof/moa/".$data->moaProof)}}" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/moa/".$data->moaProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/moa/".$data->moaProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
@@ -260,7 +260,7 @@
                             </div>
                         </div>
                         <div class="row">
-                           
+
                         </div>
                     </div>
                      <div class="col-xl-8">
@@ -393,7 +393,7 @@
                                                             <span>{{$data->contactName}}</span>
                                                         </div>
                                                     </div>
-                                                  
+
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
                                                             <h5 class="f-w-500">Email ID <span class="pull-end">:</span>
@@ -620,7 +620,7 @@
                             </div>
                             <div class="card-body">
                                 <div id="example3_wrapper" class="dataTables_wrapper no-footer">
-                                    
+
                                     <table id="example3" class="display table dataTable no-footer"
                                         style="min-width: 845px" role="grid" aria-describedby="example3_info">
                                         <thead>
@@ -657,11 +657,11 @@
                                    <tr>
                                     <td colspan="2">No data available in table</td>
                                          </tr>
-                                  
+
                                        @endif
                                         </tbody>
                                     </table>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -693,7 +693,7 @@
                                                 colspan="1"
                                                 aria-label="Publisher Place: activate to sort column ascending"
                                                 style="width: 457.875px;">Authorization Letter From Publisher</th>
-                                        </tr>  
+                                        </tr>
                                     </thead>
                                     <tbody>
 
@@ -709,7 +709,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">Authorization  Letter</h3>
                                                 </a>
                                         </tr>
-                                        
+
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -738,7 +738,7 @@
                                      <tr>
                                      <td>{{$val->award_name}} </td>
                                       <td>{{$val->book_title}}</td>
-                                     
+
                                       </tr>
                                    @endforeach
                                    @else
@@ -758,9 +758,9 @@
                             <div class="card-header">
                                 <h4 class="text-primary mb-4">Name of the Subsidiary Publications
                                 </h4>
-                               
+
                             </div>
-                            
+
                             <div class="card-body">
                             <h5 class="es-5">{{$data->haveSubsidiary}}</h5>
                                 <table id="example1" class="display table" style="min-width: 845px">
@@ -785,14 +785,14 @@
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  {{$val->subsidiary_doc}} </h3>
                                                 </a>
-                                                </td> 
+                                                </td>
                                         </tr>
                                         @endforeach
                                         @else
                                    <tr>
                                       <td colspan="2">No data available in table</td>
                                            </tr>
-                                
+
                                         @endif
                                     </tbody>
                                 </table>

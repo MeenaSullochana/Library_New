@@ -8,13 +8,13 @@
       <meta name="author" content="">
       <meta name="robots" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-      <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-      <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-      <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+      <meta name="description" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
       <meta name="format-detection" content="telephone=no">
       <!-- PAGE TITLE HERE -->
-      <title>Goverment of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
     <?php
@@ -27,7 +27,7 @@
          ********************-->
       <div id="preloader">
          <div class="text-center">
-            <img src="images/goverment_loader.gif" alt="" width="25%"> 
+            <img src="images/goverment_loader.gif" alt="" width="25%">
          </div>
       </div>
       <!--*******************
@@ -53,14 +53,14 @@
                <div class="row">
                   <div class="col-lg-12">
                      <div class="card mt-3">
-                        <div class="card-header"> 
+                        <div class="card-header">
                            <span class="d-flex align-items-center">
                               <i class="bi bi-arrow-left-circle fs-1" onclick="history.back();"></i>
                               <p class="ps-2">Back</p>
                            </span>
                            <strong>
                            <span class="badge bg-primary"><i class="fa fa-print"></i></span>
-                           <span class="badge bg-primary"><i class="bi bi-file-earmark-excel-fill"></i></span> 
+                           <span class="badge bg-primary"><i class="bi bi-file-earmark-excel-fill"></i></span>
                            </strong>
                         </div>
                         <div class="card-body">
@@ -71,7 +71,7 @@
 												</div>
                               </div>
                               <div class="col-6">
-                                 <img src="images/qr.png" alt="" class="img-fluid width110"> 
+                                 <img src="images/qr.png" alt="" class="img-fluid width110">
                               </div>
                            </div>
                            <hr>
@@ -201,6 +201,6 @@
          ***********************************-->
          <?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
    </body>
 </html>

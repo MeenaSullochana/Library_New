@@ -11,7 +11,7 @@ include "core/login.core.php";
       <meta name="robots" content="noindex, nofollow" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- PAGE TITLE HERE -->
-      <title>Publisher - Login </title>
+      <title>Government of Tamil Nadu - Book Procurement - Publisher - Login </title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="images/favicon.png">
       <link href="./vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -59,7 +59,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                    <input type="checkbox" class="form-check-input" id="check1" name="example1">
                                                    <label class="form-check-label" for="check1">Remember me</label>
                                                    </span>
-                                                   <button class="nav-link m-auto btn tp-btn-light btn-primary forget-tab " id="nav-forget-tab" data-bs-toggle="tab" data-bs-target="#nav-forget" type="button" role="tab" aria-controls="nav-forget" aria-selected="false">Forget Password ?</button> 	
+                                                   <button class="nav-link m-auto btn tp-btn-light btn-primary forget-tab " id="nav-forget-tab" data-bs-toggle="tab" data-bs-target="#nav-forget" type="button" role="tab" aria-controls="nav-forget" aria-selected="false">Forget Password ?</button>
                                                 </div>
                                                 <!-- <div class="dz-social ">
                                                    <h5 class="form-title fs-20">Sign In With</h5>
@@ -71,8 +71,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                    </ul>
                                                 </div> -->
                                              </form>
-                                             <div class="text-center bottom"> 
-                                              <a href="../register.php"></a>  <button class="btn btn-primary button-md btn-block" id="nav-sign-tab" data-bs-toggle="tab" data-bs-target="" type="button" role="tab" aria-controls="nav-sign" aria-selected="false">Create an account</button> 
+                                             <div class="text-center bottom">
+                                              <a href="../register.php"></a>  <button class="btn btn-primary button-md btn-block" id="nav-sign-tab" data-bs-toggle="tab" data-bs-target="" type="button" role="tab" aria-controls="nav-sign" aria-selected="false">Create an account</button>
                                              </div>
                                           </div>
                                           <div class="tab-pane fade" id="nav-forget" role="tabpanel" aria-labelledby="nav-forget-tab">
@@ -85,7 +85,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                 <div class="form-group mb-4">
                                                    <input name="dzName" required="" class="form-control" placeholder="Email Address" type="text">
                                                 </div>
-                                                <div class="form-group clearfix text-left"> 
+                                                <div class="form-group clearfix text-left">
                                                    <button class=" active btn btn-primary" id="nav-personal-tab" data-bs-toggle="tab" data-bs-target="#nav-personal" type="button" role="tab" aria-controls="nav-personal" aria-selected="true">Back</button>
                                                    <button class="btn btn-primary float-end">Submit</button>
                                                 </div>
@@ -133,7 +133,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                               <div class="card-footer">
                                  <div class=" bottom-footer clearfix m-t10 m-b20 row text-center">
                                     <div class="col-lg-12 text-center">
-                                       <span> Copyright © 2023 Directorate of Public Libraries, பொது நூலக இயக்ககம் <a href="#">| Design by Gladindia </a> </span> 
+                                       <span> Copyright © 2023 Directorate of Public Libraries, பொது நூலக இயக்ககம் <a href="#">| Design by Gladindia </a> </span>
                                     </div>
                                  </div>
                               </div>
@@ -171,6 +171,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
     <?php
          // include "plugin/plugin_js.php";
          include 'error/error_handle.php';
-         ?>	
+         ?>
    </body>
 </html>

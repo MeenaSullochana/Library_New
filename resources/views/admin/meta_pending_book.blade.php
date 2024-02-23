@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
     <?php
@@ -59,7 +59,7 @@
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/meta_book_list">
                                 <i class="fas fa-plus"></i> Meta Book List</a>
-                            
+
                             <!-- <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
                         <i class="fas fa-plus"></i> Add Book</a> -->
                             <!-- <nav aria-label="breadcrumb">

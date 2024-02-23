@@ -12,7 +12,7 @@
 
 
 	<!-- PAGE TITLE HERE -->
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
@@ -346,7 +346,7 @@
 									<table id="projects-tbl" class="table">
 										<thead>
 											<tr>
-												
+
 												<th>Book Name</th>
 												<th>Status</th>
 												<th>Due Date</th>
@@ -355,24 +355,24 @@
 										</thead>
 										<tbody>
 										@php
-										$id = auth('reviewer')->user()->id; 
+										$id = auth('reviewer')->user()->id;
 										$record = DB::table('book_review_statuses')->where('reviewer_id', $id)->where('review_type','=', null)->get();
 									@endphp
 
 												  @foreach($record  as $val)
 											<tr>
 											@php
-											$records = DB::table('books')->where('id', $val->book_id)->first();      
+											$records = DB::table('books')->where('id', $val->book_id)->first();
 											@endphp
-											
+
 												<td>
 													<div class="d-flex align-items-center">
 														<img src="{{ asset("Books/front/".$records->front_img) }}" class="avatar avatar-md rounded-circle" alt="">
 														<p class="mb-0 ms-2">{{$records->book_title}}</p>
 													</div>
 												</td>
-											
-												
+
+
 												<td class="pe-0">
 													<span class="badge badge-primary light border-0">Inprogress</span>
 												</td>
@@ -409,14 +409,14 @@
 										</thead>
 										<tbody>
 									@php
-											$id = auth('reviewer')->user()->id; 
+											$id = auth('reviewer')->user()->id;
 											$record = DB::table('book_review_statuses')->where('reviewer_id', $id)->where('review_type','!=', null)->get();
 										@endphp
 
 												  @foreach($record  as $val)
 											<tr>
 											@php
-											$records = DB::table('books')->where('id', $val->book_id)->first();      
+											$records = DB::table('books')->where('id', $val->book_id)->first();
 											@endphp
 												<td>
 												<div class="d-flex align-items-center">
@@ -441,7 +441,7 @@
 												</td> -->
 											</tr>
 											@endforeach
-								
+
 										</tbody>
 									</table>
 								</div>

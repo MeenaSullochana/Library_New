@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="noindex, nofollow" />
       <!-- PAGE TITLE HERE -->
-      <title>Publisher Details</title>
+      <title>Government of Tamil Nadu - Book Procurement</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -22,7 +22,7 @@
          ********************-->
       <div id="preloader">
          <div class="text-center">
-            <img src="images/goverment_loader.gif" alt="" width="25%"> 
+            <img src="images/goverment_loader.gif" alt="" width="25%">
          </div>
       </div>
       <!--*******************
@@ -135,7 +135,7 @@
                                        ?>
                                           <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1"><?php echo $district;?></a>
                                        <?php
-                                       
+
                                     }
                                     ?>
                                  </div>
@@ -324,13 +324,13 @@
                                                 $subsciDetails=array();
                                                 // print_r($userProfileData['publications_shope_book_title']);
                                                 // print_r($userProfileData['publications_shope_book_author']);
-                                                
+
                                                 $subsciDetails['title'] = json_decode($userProfileData['subsidiary_no_publications_content']);
                                                 $subsciDetails['content'] = json_decode($userProfileData['subsidiary_name_publications_content']);
                                                 // echo "<pre>";
                                                 // print_r($bookDetails);
                                                 // echo "</pre>";
-                                                
+
                                                 foreach($subsciDetails['title'] as $i=>$subbook){
                                                 	?>
                                              <tr>
@@ -371,13 +371,13 @@
                                                 $poblication_details=array();
                                                 // print_r($userProfileData['publications_shope_book_title']);
                                                 // print_r($userProfileData['publications_shope_book_author']);
-                                                
+
                                                 $publication_details['publication_title'] = json_decode($userProfileData['publication_title']);
                                                 $publication_details['publication_author'] = json_decode($userProfileData['publication_author']);
                                                 // echo "<pre>";
                                                 // print_r($bookDetails);
                                                 // echo "</pre>";
-                                                
+
                                                 foreach($publication_details['publication_title'] as $key=>$publicationData){
                                                 ?>
                                                 <div class="col-sm-6 col-5">
@@ -429,7 +429,7 @@
                                              	if(!empty($category_of_books_published)){
                                              	foreach($category_of_books_published as $j=>$pup_book){
                                              		?>
-                                          <a href="javascript:void(0);" class="text-muted pe-3 f-s-16"><i class="flag-icon flag-icon-us"></i><?php echo $pup_book;?></a> 
+                                          <a href="javascript:void(0);" class="text-muted pe-3 f-s-16"><i class="flag-icon flag-icon-us"></i><?php echo $pup_book;?></a>
                                           <?php
                                              }
                                              }
@@ -449,13 +449,13 @@
                                                 $bookDetails=array();
                                                 // print_r($userProfileData['publications_shope_book_title']);
                                                 // print_r($userProfileData['publications_shope_book_author']);
-                                                
+
                                                 $bookDetails['title'] = json_decode($userProfileData['publication_title']);
                                                 $bookDetails['author'] = json_decode($userProfileData['publication_author']);
                                                 // echo "<pre>";
                                                 // print_r($bookDetails);
                                                 // echo "</pre>";
-                                                
+
                                                 foreach($bookDetails['title'] as $i=>$book){
                                                 	?>
                                              <tr>
@@ -518,7 +518,7 @@
                                     $trsbookDetails=array();
                                     // print_r($userProfileData['publications_shope_book_title']);
                                     // print_r($userProfileData['publications_shope_book_author']);
-                                    
+
                                     $trsbookDetails['title'] = json_decode($userProfileData['trs_book_title']);
                                     $trsbookDetails['author'] = json_decode($userProfileData['trs_book_author']);
                                     $trsbookDetails['lan_one'] = json_decode($userProfileData['trans_from']);
@@ -526,7 +526,7 @@
                                     // echo "<pre>";
                                     // print_r($bookDetails);
                                     // echo "</pre>";
-                                    
+
                                     foreach($trsbookDetails['title'] as $i=>$book){
                                     	?>
                                  <tr>
@@ -565,13 +565,13 @@
                                     $distributionDetails=array();
                                     // print_r($userProfileData['publications_shope_book_title']);
                                     // print_r($userProfileData['publications_shope_book_author']);
-                                    
+
                                     $distributionDetails['publication_title'] = json_decode($userProfileData['publication_title']);
                                     $distributionDetails['publication_author'] = json_decode($userProfileData['publication_author']);
                                     // echo "<pre>";
                                     // print_r($bookDetails);
                                     // echo "</pre>";
-                                    
+
                                     foreach($distributionDetails['publication_title'] as $i=>$detailsDistr){
                                     	?>
                                  <tr>

@@ -11,7 +11,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="robots" content="noindex, nofollow" />
    <!-- PAGE TITLE HERE -->
-   <title>Goverment of Tamil Nadu - Book Procurement</title>
+   <title>Government of Tamil Nadu - Book Procurement</title>
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -48,7 +48,7 @@
       <div class="content-body">
          <div class="container-fluid">
             <div class="card">
-               
+
                 <div class="card mb-4 mb-4">
                     <div class="card-body">
                         <div class="d-sm-flex align-items-center justify-content-between">

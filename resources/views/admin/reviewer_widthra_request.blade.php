@@ -8,14 +8,14 @@
 	<meta name="author" content="">
 	<meta name="robots" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+	<meta name="description" content="">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -29,7 +29,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -61,7 +61,7 @@
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
 											<div class="d-flex align-items-baseline">
-												<h2 class="text-primary count">8</h2> 
+												<h2 class="text-primary count">8</h2>
 												<span>Total Amount</span>
 											</div>
 											<p>Total Payment</p>
@@ -72,7 +72,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-purple count">7</h2>
 												<span>Pending Payment</span>
-											</div>	
+											</div>
 											<p>Payment</p>
 										</div>
 									</div>
@@ -81,7 +81,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-warning count">13</h2>
 												<span>Complete Payment</span>
-											</div>	
+											</div>
 											<p>Payment</p>
 										</div>
 									</div>
@@ -90,7 +90,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">11</h2>
 												<span>Cancel Payment</span>
-											</div>	
+											</div>
 											<p>Payment</p>
 										</div>
 									</div>
@@ -99,16 +99,16 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-success count">21</h2>
 												<span>Complete</span>
-											</div>	
+											</div>
 											<p>Payment</p>
 										</div>
 									</div>
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
-											<div class="d-flex align-items-baseline">	
+											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">16</h2>
 												<span>Total Transection</span>
-											</div>	
+											</div>
 											<p>Payment</p>
 										</div>
 									</div>
@@ -154,7 +154,7 @@
 														<div>
 															<h6>Request To Payment</h6>
 															<span>10-10-2023</span>
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
@@ -168,7 +168,7 @@
 												<td>
 													<span>19 Feb 2023</span>
 												</td>
-												<td>343343</td>	
+												<td>343343</td>
 												<td>
 													<span class="badge badge-primary light border-0 me-1">Issue</span>
 													<span class="badge badge-secondary light border-0 ms-1">HTML</span>
@@ -181,7 +181,7 @@
 													</select>
 												</td>
                                                 <td><i class="fa fa-pencil p-2"></i>
-                                                <a href="review_view_data.php"><i class="fa fa-eye p-2"></i></td>	
+                                                <a href="review_view_data.php"><i class="fa fa-eye p-2"></i></td>
 											</tr>
 											<tr>
 												<td>
@@ -197,7 +197,7 @@
 														<div>
                                                             <h6>Request To Payment</h6>
 															<span>10-10-2023</span>
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
@@ -213,7 +213,7 @@
 												</td>
 												<td>
                                                 343343
-												</td>	
+												</td>
 												<td>
 													<span class="badge badge-primary light border-0 me-1">Issue</span>
 													<span class="badge badge-secondary light border-0 ms-1">HTML</span>
@@ -226,7 +226,7 @@
 													</select>
 												</td>
                                                 <td><i class="fa fa-pencil p-2"></i>
-                                                <a href="review_view_data.php"><i class="fa fa-eye p-2"></i></td>	
+                                                <a href="review_view_data.php"><i class="fa fa-eye p-2"></i></td>
 											</tr>
 											<tr>
 												<td>
@@ -242,7 +242,7 @@
 														<div>
                                                             <h6>Request To Payment</h6>
 															<span>10-10-2023</span>
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
@@ -258,7 +258,7 @@
 												</td>
 												<td>
                                                 343343
-												</td>	
+												</td>
 												<td>
 													<span class="badge badge-primary light border-0 me-1">Issue</span>
 													<span class="badge badge-secondary light border-0 ms-1">HTML</span>
@@ -271,7 +271,7 @@
 													</select>
 												</td>
                                                 <td><i class="fa fa-pencil p-2"></i>
-                                                <a href="review_view_data.php"><i class="fa fa-eye p-2"></i></td>	
+                                                <a href="review_view_data.php"><i class="fa fa-eye p-2"></i></td>
 											</tr>
         								</tbody>
 									</table>
@@ -298,7 +298,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->

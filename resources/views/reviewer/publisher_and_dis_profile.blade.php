@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="robots" content="noindex, nofollow" />
       <!-- PAGE TITLE HERE -->
-      <title>Goverment of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement</title>
 
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
@@ -23,7 +23,7 @@
          ********************-->
       <div id="preloader">
          <div class="text-center">
-            <img src="images/goverment_loader.gif" alt="" width="25%"> 
+            <img src="images/goverment_loader.gif" alt="" width="25%">
          </div>
       </div>
       <!--*******************
@@ -128,7 +128,7 @@
                               <div class="card-body">
                                  <div class="profile-interest">
                                     <h5 class="text-primary d-inline">Selected District</h5><br>
-                                   
+
                                           <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Chennai</a>
                                  </div>
                               </div>
@@ -351,17 +351,17 @@
                                        </div>
                                        <div class="profile-skills mb-5">
                                           <h4 class="text-primary mb-2">Primary Language of Publication</h4>
-                                         
+
                                           <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Tamil</a>
                                        </div>
                                        <div class="profile-skills mb-5">
                                           <h4 class="text-primary mb-2">Specialized Category Books</h4>
-                                         
+
                                           <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">Other</a>
                                        </div>
                                        <div class="profile-lang  mb-5">
                                           <h4 class="text-primary mb-2">Category of books published</h4>
-                                          <a href="javascript:void(0);" class="text-muted pe-3 f-s-16"><i class="flag-icon flag-icon-us"></i>Academic</a> 
+                                          <a href="javascript:void(0);" class="text-muted pe-3 f-s-16"><i class="flag-icon flag-icon-us"></i>Academic</a>
                                        </div>
                                        <h4 class="text-primary mb-4">Best Titles Publications</h4>
                                        <hr>
@@ -492,6 +492,6 @@
       <?php
          include "plugin/plugin_js.php";
          include 'error/error_handle.php';
-         ?>	
+         ?>
    </body>
 </html>

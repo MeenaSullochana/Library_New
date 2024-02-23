@@ -8,14 +8,14 @@
 	<meta name="author" content="">
 	<meta name="robots" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+	<meta name="description" content="">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
     <?php
@@ -29,7 +29,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -62,7 +62,7 @@
 									<i class="bi bi-book" style="font-size: 30px;"></i>
 									</div>
 									<div class="total-projects ms-3">
-										<h3 class="text-success count text-start">Book Return List</h3> 
+										<h3 class="text-success count text-start">Book Return List</h3>
 										<!-- <span class="text-start">Total Completed</span> -->
 									</div>
 								</div>
@@ -78,7 +78,7 @@
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
 											<div class="d-flex align-items-baseline">
-												<h2 class="text-primary count">8</h2> 
+												<h2 class="text-primary count">8</h2>
 												<span>Total Order</span>
 											</div>
 											<p>Order Books</p>
@@ -89,7 +89,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-purple count">7</h2>
 												<span>Total Stock</span>
-											</div>	
+											</div>
 											<p>Order Books</p>
 										</div>
 									</div>
@@ -98,7 +98,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-warning count">13</h2>
 												<span>Received Order</span>
-											</div>	
+											</div>
 											<p>Order Books</p>
 										</div>
 									</div>
@@ -107,7 +107,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">11</h2>
 												<span>Canceld Orders</span>
-											</div>	
+											</div>
 											<p>Order Books</p>
 										</div>
 									</div>
@@ -116,16 +116,16 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-success count">21</h2>
 												<span>Complete Orders</span>
-											</div>	
+											</div>
 											<p>Order Books</p>
 										</div>
 									</div>
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
-											<div class="d-flex align-items-baseline">	
+											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">16</h2>
 												<span>Upcoming Order</span>
-											</div>	
+											</div>
 											<p>Order Books</p>
 										</div>
 									</div>
@@ -166,7 +166,7 @@
 														<div>
 															<h6>Create Frontend WordPress</h6>
 															<span>INV-100023456</span>
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>Author</td>
@@ -191,7 +191,7 @@
 														<div>
 															<h6>Create Frontend WordPress</h6>
 															<span>INV-100023456</span>
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>Author</td>
@@ -227,7 +227,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->
@@ -239,6 +239,6 @@
     ***********************************-->
 	<?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
 </body>
 </html>

@@ -11,7 +11,7 @@
       <meta name="robots" content="noindex, nofollow" />
 
       <!-- PAGE TITLE HERE -->
-      <title>Distriputor Pending List</title>
+      <title>Government of Tamil Nadu - Book Procurement - Distriputor Pending List</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -55,7 +55,7 @@
                     </div>
                     <div class="card-body">
 
-                   
+
                <div class="table-responsive">
                   <table id="example4" class="display table" style="min-width: 845px">
                      <thead>
@@ -85,7 +85,7 @@
                                 <td>
                                  <form method="POST">
                                     <div class="form-check form-switch">
-                                          <input class="form-check-input" type="checkbox" id="statusId<?php echo $listdis['distribution_id']; ?>" name="featured_status"  
+                                          <input class="form-check-input" type="checkbox" id="statusId<?php echo $listdis['distribution_id']; ?>" name="featured_status"
                                           value="<?php
                                           if($listdis['status'] == 'Active'){
                                              echo "Inactive";
@@ -179,7 +179,7 @@
                              }
                              }).showToast();
 
-                           //   setTimeout(function() { 
+                           //   setTimeout(function() {
                            //       window.location.href = 'doctor_list.php';
                            //   }, 2000);
                     }else if(data == false){
@@ -190,16 +190,16 @@
                             background: 'linear-gradient(to right, green, green)',
                         }
                         }).showToast();
-                        
-                        // setTimeout(function() { 
+
+                        // setTimeout(function() {
                         //     window.location.href = 'doctor_list.php';
-                        // }, 2000);   
+                        // }, 2000);
                     }
 
                 },
-                error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-                } 
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                }
                 });
             });
         });

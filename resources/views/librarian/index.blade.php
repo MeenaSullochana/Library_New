@@ -12,7 +12,7 @@
 
 
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 
@@ -73,7 +73,7 @@
 												<i class="fa-solid fa-briefcase text-success"></i>
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-success count">200+</h3> 
+												<h3 class="text-success count">200+</h3>
 												<span>Total Orders</span>
 											</div>
 										</div>
@@ -86,12 +86,12 @@
 										<div class="d-flex align-items-center">
 											<div class="icon-box icon-box-lg bg-primary-light rounded">
 												<i class="fa-solid fa-cart-shopping text-primary"></i>
-		
+
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-primary count">1560</h3> 
+												<h3 class="text-primary count">1560</h3>
 												<span>Total Book</span>
-												
+
 											</div>
 										</div>
 									</div>
@@ -105,7 +105,7 @@
 												<i class="fa-solid fa-users text-warning"></i>
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-warning count">400</h3> 
+												<h3 class="text-warning count">400</h3>
 												<span>Total Users</span>
 											</div>
 										</div>
@@ -120,14 +120,14 @@
 												<i class="fa-solid fa-hand-holding-dollar text-danger"></i>
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-danger count">$1500</h3> 
+												<h3 class="text-danger count">$1500</h3>
 												<span>Total Stock</span>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-6">		
+							<div class="col-xl-6">
 								<div class="card">
 									<div class="card-body p-0">
 										<div class="table-responsive active-projects">
@@ -140,12 +140,12 @@
 														<th>Book NAME</th>
 														<th>Price</th>
 														<th>STATUS</th>
-														
+
 													</tr>
 												</thead>
 												<tbody>
 												@php
-                                                 $id=auth('librarian')->user()->id; 
+                                                 $id=auth('librarian')->user()->id;
                                                  $record = DB::table('books')->where('book_reviewer_id','=',$id)->get();
                                                   @endphp
 												  @foreach($record  as $val)
@@ -153,13 +153,13 @@
 														<td>
 															<div class="d-flex align-items-center">
 																<img src="{{ asset("Books/front/".$val->front_img) }}" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">{{$val->book_title}}</p>	
-																
+																<p class="mb-0 ms-2">{{$val->book_title}}</p>
+
 															</div>
 														</td>
 														<td>
 															{{$val->price}}
-														</td>	
+														</td>
 														@if($val->book_status == 1)
 															<td>
 																<span class="badge badge-success light border-0">Success</span>
@@ -171,20 +171,20 @@
 														@else
 															<td>
 															<span class="badge badge-danger light border-0">Reject</span>
-																
+
 															</td>
 														@endif
 
 													</tr>
 													@endforeach
-											
+
 												</tbody>
 											</table>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-6">		
+							<div class="col-xl-6">
 								<div class="card">
 									<div class="card-body p-0">
 										<div class="table-responsive active-projects">
@@ -204,8 +204,8 @@
 														<td>
 															<div class="d-flex align-items-center">
 																<img src="images/contacts/pic1.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>	
-																
+																<p class="mb-0 ms-2">Daniel Arran</p>
+
 															</div>
 														</td>
 														<td>
@@ -214,7 +214,7 @@
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star"></i>
-														</td>	
+														</td>
 														<td>
 															<span class="badge badge-primary light border-0">Inprogress</span>
 														</td>
@@ -223,7 +223,7 @@
 														<td>
 															<div class="d-flex align-items-center">
 																<img src="images/contacts/pic2.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>	
+																<p class="mb-0 ms-2">Daniel Arran</p>
 															</div>
 														</td>
 														<td>
@@ -232,7 +232,7 @@
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star"></i>
-														</td>		
+														</td>
 														<td>
 															<span class="badge badge-success light border-0">Success</span>
 														</td>
@@ -241,16 +241,16 @@
 														<td>
 															<div class="d-flex align-items-center">
 																<img src="images/contacts/pic3.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>	
+																<p class="mb-0 ms-2">Daniel Arran</p>
 															</div>
-														</td>	
+														</td>
 														<td>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star"></i>
-														</td>	
+														</td>
 														<td>
 															<span class="badge badge-warning light border-0">Pending</span>
 														</td>
@@ -259,16 +259,16 @@
 														<td>
 															<div class="d-flex align-items-center">
 																<img src="images/contacts/pic3.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>	
+																<p class="mb-0 ms-2">Daniel Arran</p>
 															</div>
-														</td>	
+														</td>
 														<td>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star-fill"></i>
 															<i class="bi bi-star"></i>
-														</td>	
+														</td>
 														<td>
 															<span class="badge badge-danger light border-0">Cancle</span>
 														</td>
@@ -291,7 +291,7 @@
 													<tr>
 														<th>BOOK NAME</th>
 														<th>PRICE</th>
-														
+
 													</tr>
 												</thead>
 												<tbody>
@@ -305,10 +305,10 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>	
-																</div>	
+																	<i class="bi bi-star"></i>
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$655</td>
 													</tr>
 													<tr>
@@ -321,10 +321,10 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>	
-																</div>	
+																	<i class="bi bi-star"></i>
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$655</td>
 													</tr>
 													<tr>
@@ -338,9 +338,9 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star"></i>
-																</div>	
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$699</td>
 													</tr>
 													<tr>
@@ -353,10 +353,10 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>	
-																</div>	
+																	<i class="bi bi-star"></i>
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$955</td>
 													</tr>
 													<tr>
@@ -369,10 +369,10 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>	
-																</div>	
+																	<i class="bi bi-star"></i>
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$655</td>
 													</tr>
 												</tbody>
@@ -407,10 +407,10 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>	
-																</div>	
+																	<i class="bi bi-star"></i>
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$655</td>
 														<td>55</td>
 													</tr>
@@ -424,10 +424,10 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>	
-																</div>	
+																	<i class="bi bi-star"></i>
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$585</td>
 														<td>485</td>
 													</tr>
@@ -442,9 +442,9 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star"></i>
 																	<i class="bi bi-star"></i>
-																</div>	
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$852</td>
 														<td>5525</td>
 													</tr>
@@ -459,9 +459,9 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star"></i>
 																	<i class="bi bi-star"></i>
-																</div>	
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$852</td>
 														<td>5985</td>
 													</tr>
@@ -475,10 +475,10 @@
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>	
-																</div>	
+																	<i class="bi bi-star"></i>
+																</div>
 															</div>
-														</td>	
+														</td>
 														<td>$182</td>
 														<td>525</td>
 													</tr>

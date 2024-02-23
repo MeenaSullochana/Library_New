@@ -8,14 +8,14 @@
 	<meta name="author" content="">
 	<meta name="robots" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+	<meta name="description" content="">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
@@ -30,7 +30,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -59,7 +59,7 @@
                   <div class="card-body">
                      <div class="d-sm-flex align-items-center justify-content-between">
                         <h3 class="mb-0 bc-title">
-                           <b>All Books List</b>                                    
+                           <b>All Books List</b>
                         </h3>
                         <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
                         <i class="fas fa-home"></i> Home</a>
@@ -79,7 +79,7 @@
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
 											<div class="d-flex align-items-baseline">
-												<h2 class="text-primary count">8</h2> 
+												<h2 class="text-primary count">8</h2>
 												<span>Total Review Book</span>
 											</div>
 											<p>Review Book</p>
@@ -90,7 +90,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-purple count">7</h2>
 												<span>On Going Review</span>
-											</div>	
+											</div>
 											<p>Current Review</p>
 										</div>
 									</div>
@@ -99,7 +99,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-warning count">13</h2>
 												<span>Completed Review</span>
-											</div>	
+											</div>
 											<p>Completed</p>
 										</div>
 									</div>
@@ -108,7 +108,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">11</h2>
 												<span>Canceld Review</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div>
@@ -117,16 +117,16 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-success count">21</h2>
 												<span>Complete</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div>
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
-											<div class="d-flex align-items-baseline">	
+											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">16</h2>
 												<span>pending</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div>
@@ -168,7 +168,7 @@
 														<div>
 															<h6>12 Rules for Life: An Antidote to Chaos</h6>
 															<!-- <span>INV-100023456</span> -->
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
@@ -199,7 +199,7 @@
 														<div>
 															<h6>12 Rules for Life: An Antidote to Chaos</h6>
 															<!-- <span>INV-100023456</span> -->
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
@@ -241,7 +241,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->
@@ -253,6 +253,6 @@
     ***********************************-->
 	<?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
 </body>
 </html>

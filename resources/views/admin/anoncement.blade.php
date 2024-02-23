@@ -14,8 +14,7 @@
       <meta property="og:image" content="">
       <meta name="format-detection" content="telephone=no">
 	<!-- PAGE TITLE HERE -->
-   
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -29,7 +28,7 @@
          ********************-->
       <div id="preloader">
          <div class="text-center">
-            <img src="images/goverment_loader.gif" alt="" width="25%"> 
+            <img src="images/goverment_loader.gif" alt="" width="25%">
          </div>
       </div>
       <!--*******************
@@ -74,7 +73,7 @@
                                        <a  class="list-group-item active">
                                        <i class="fa-regular fa-envelope align-middle"></i>Create Announcement </a>
                                        <a href="/admin/anouncemenlist" class="list-group-item">
-                                       <i class="fa-regular fa-paper-plane align-middle"></i>Announcement List</a> 	
+                                       <i class="fa-regular fa-paper-plane align-middle"></i>Announcement List</a>
                                     </div>
                                  </div>
                               </div>
@@ -159,7 +158,7 @@
             $("#submitbutton").click(function(){
                 var formData = new FormData($("#email-form")[0]);
                 $.ajax({
-                    url: "/admin/announcementsend", 
+                    url: "/admin/announcementsend",
                     type: "POST",
                     data: formData,
                     processData: false,
@@ -175,7 +174,7 @@
                 }
                     },
                     error: function(xhr, status, error){
-                        console.error(xhr.responseText); 
+                        console.error(xhr.responseText);
                     }
                 });
             });
