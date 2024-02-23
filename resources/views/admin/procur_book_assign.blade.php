@@ -94,7 +94,7 @@
                                         $categori = DB::table('book_subject')->where('status','=','1')->get();
                                        @endphp
                                        <select name="sortColumn" id="books-sort" class="form-control select-picker pr-2 d-tc" autocomplete="off" tabindex="-98">
-                                       <option data-order="DESC"> <i class="fa fa-filter" aria-hidden="true"></i>Select One</option>
+                                       <option data-order="DESC" value="all"> <i class="fa fa-filter" aria-hidden="true"></i>All Books</option>
                                        @foreach($categori as $val)
                                           <option value="{{ $val->name }}" data-order="DESC">{{ $val->name }}</option>
                                        @endforeach
@@ -107,8 +107,8 @@
                            <div class="col-4"></div>
                         </div>
                      </div>
-                     <div class="card-body text-center">
-                        <table class="display table table-striped memeber_table"  id="yourTableId" style="width:100%">
+                     <div class="card-body text-center" style="width: 100%;OVERFLOW: scroll;">
+                        <table class="display table table-striped memeber_table"  id="yourTableId" style="width: 100%;overflow: scroll;">
                            <thead>
                               <tr>
                                  <th>
@@ -120,11 +120,57 @@
                                  <th>Sl</th>
                                  <th>Book Name</th>
                                  <th>language</th>
+                                 <th>Subject</th>
+                                 <th>User Type</th>
                               </tr>
                            </thead>
                            <tbody>
+                           @php
+    $categori = [];
+    $books = DB::table('books')
+        ->where("book_procurement_status", '=', 1)
+        ->where("book_reviewer_id", '!=', null)
+        ->where('book_status', '=', '1')
+        ->get(); 
+    
+    foreach ($books as $key => $val) {
+        $datass = DB::table('book_review_statuses')
+            ->where('book_id', $val->id)
+            ->first();
+         
+        if ($datass == null) {
+            array_push($categori, $val);
+        }
+    }
+@endphp
 
-                              </tbody>
+    
+    @foreach($categori as $val)
+   
+    <tr>
+        <td>
+            <div class="form-check custom-checkbox checkbox-success check-lg me-3">
+                <input type="checkbox" class="form-check-input bookitem" id="checkItem_{{ $val->id }}" data-book-id="{{ $val->id }}" required="">
+                <label class="form-check-label" for="checkItem_{{ $val->id }}"></label>
+            </div>
+        </td>
+        <td>{{ $loop->index + 1 }}</td>
+        <td><b>Name</b><br><small>{{ $val->book_title }}</small></td>
+        @if($val->language == "Other_Indian") 
+                <td>{{  $val->other_indian }}</td>
+            @elseif ($val->language == "other_foreign") 
+                <td>{{ $val->other_foreign }}</td>
+            @else 
+                <td>{{ $val->language }}</td>
+            @endif
+            <td>{{ $val->subject }}</td>
+          <td>{{ $val->user_type }}</td>
+    </tr>
+@endforeach
+  
+</tbody>
+
+
                         </table>
                      </div>
                   </div>

@@ -21,7 +21,8 @@ Route::prefix('publisher_and_distributor')->group(function () {
     Route::get('/notificationstatus',[notificationController::class,'notificationstatus']);
     Route::get('/notification',function(){ return view('publisher_and_distributor.notification');});
     Route::get('/Notification_virw/{id}',[notificationController::class,'Notification_virw']);
-    
+    Route::post('/isbn',[BookController::class,'isbn']);
+
     Route::get('/notificationview',function(){
         $data = Session::get('notification1');
          if($data !==null){

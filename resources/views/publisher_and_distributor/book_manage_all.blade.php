@@ -103,11 +103,12 @@
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1"
                                         aria-label="Stock: activate to sort column ascending"
-                                        style="width: 109.984px;">Primary language </th>
+                                        style="width: 109.984px;">Author</th>
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1"
                                         aria-label="Stock: activate to sort column ascending"
-                                        style="width: 109.984px;">Author</th>
+                                        style="width: 109.984px;">Primary language </th>
+                                    
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1"
                                         aria-label="Stock: activate to sort column ascending"

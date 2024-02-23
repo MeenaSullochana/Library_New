@@ -28,8 +28,9 @@ Route::prefix('publisher')->group(function () {
          
      });
     Route::get('/procurement_paymrnt',function(){ return view('publisher.procurement_paymrnt');});
-    
+    Route::post('/isbn',[BookController::class,'isbn']);
 
+    
     Route::get('/notification',function(){ return view('publisher.notification');});
     // Route::get('/notification_view',function(){ return view('publisher.notification_view');});
     Route::get('/Notification_virw/{id}',[notificationController::class,'Notification_virw']);

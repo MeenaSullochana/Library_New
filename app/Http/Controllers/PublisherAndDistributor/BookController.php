@@ -251,6 +251,8 @@ if ($request->hasFile('back_img')) {
        $book->author_description =       $request->author_description ;
        $book->bookdescription =       json_encode($request->bookdescription) ;
        $book->productdescription =       $request->productdescription  ;   
+       $book->nameOfPublisher =       $request->nameOfPublisher  ;   
+       $book->yearOfPublication =       $request->yearOfPublication  ;  
        $book->user_type =    "publisher_distributor" ;
        $book->user_id =   auth('publisher_distributor')->user()->id; 
        $book->save();
@@ -491,5 +493,20 @@ public function sendnegotiationsamount(Request $req) {
    }
 
    
+}
+
+public function isbn(Request $req) {
+    $id=auth('publisher_distributor')->user()->id;
+
+    $data1=Book::where('user_id','=',$id)->where('isbn','=',$req->bookisbn)->first();  
+    if($data1 != null){
+        $data= [
+            'error' => 'Isbn Number Is duplecate Please Enter the Valid Isbn Number',
+                 ];
+        return response()->json($data);
+    }
+ 
+ 
+
 }
 }

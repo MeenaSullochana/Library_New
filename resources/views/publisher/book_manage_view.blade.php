@@ -237,6 +237,13 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                             @endforeach
                                                         </p>
                                                     </div>
+                                                    <div class="col-md-6">
+                                                        <p><span class="fs-6 fw-bold text-primary">Name Of Publisher :</span>
+                                                          
+                                                                <strong>{{ $data->nameOfPublisher }}</strong>
+                                                              
+                                                        </p>
+                                                    </div>
                                                 </div>
                                                 <hr>
                                                 <div class="row">
@@ -283,6 +290,8 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                         </p>
                                                     </div>
                                                     <div class="col-md-6">
+                                                    <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Year Of Publication:</span> <span class="item">{{ $data->yearOfPublication }}</span> </p>
+
                                                         <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Category:</span> <span class="item">{{ $data->category }}</span> </p>
                                                         <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Subject:</span> <span class="item">{{ $data->subject }}</span> </p>
                                                         <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Book ID:</span> <span class="item">{{ $data->product_code }}</span>
@@ -407,13 +416,13 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                     <li class="fs-5 p-1"><span class="a-list-item">
                                                         <span class="a-text-bold d-flex justify-content-between">
                                                             <div class="text-title text-danger">
-                                                                <b> {{ $data->user_type == 'publisher' ? 'Publisher' : ($data->user_type == 'distributor' ? 'Distributor' : 'Publisher Cum Distributor') }}</b>
+                                                                <b> Name Of Publisher</b>
                                                                 &rlm;
                                                                 :
                                                                 &lrm;
                                                             </div>
                                                             <div class="text-data text-right">
-                                                                <span>{{ $data->firstName . ' ' . $data->lastName }}</span>
+                                                                <span>{{ $data->nameOfPublisher }}</span>
                                                             </div>
 
                                                         </span>
