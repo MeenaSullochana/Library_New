@@ -72,6 +72,52 @@
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
+                                <h4>Publication Dedails</h4>
+                            </div>
+                            <div class="col-md-10">
+                              
+                                <div class="col-lg-12">
+                                    <div class="basic-form">
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="validationCustomUsername">
+                                                Name Of Publisher <span class="text-danger">*</span></label>
+                                                @if(auth('publisher')->user())
+                                                    <div class="input-group">
+                                                <input type="text" class="form-control" id="nameOfPublisher"
+                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
+                                                  >
+                                                    @else
+                                                    <div class="input-group">
+                                                <input type="text" class="form-control" id="nameOfPublisher"
+                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" required
+                                                  >
+                                                    @endif
+                                            
+
+                                            </div>
+                                           
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="validationCustomUsername"> Year Of Publication
+                                                 </label>
+<div class="input-group transparent-append">
+    <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
+</div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                    <section class="bg-light-new">
+                        <div class="row p-3">
+                            <div class="col-md-2">
                                 <h4>Book Title</h4>
                             </div>
                             <div class="col-md-10">
@@ -90,7 +136,6 @@
                                                     onkeyup="checkBookTitle()">
 
                                             </div>
-                                            <span id="bookTitleError" class="text-danger"></span>
                                         </div>
                                         <div class="mb-3">
                                             <label class="text-label form-label text-black"
@@ -154,7 +199,7 @@
                                                                     <td><input type="text" name="series_title[]"
                                                                             placeholder="Series Title"
                                                                             class="form-control" ></td>
-                                                                    <td><input type="number" name="isbn_number[]"
+                                                                    <td><input type="text" name="isbn_number[]"
                                                                             placeholder="ISBN"
                                                                             class="form-control" ></td>
 
@@ -211,7 +256,7 @@
                                                                     <td><input type="text" name="volume_title[]"
                                                                             placeholder="Volume Title"
                                                                             class="form-control" ></td>
-                                                                    <td><input type="number" name="isbn_number1[]"
+                                                                    <td><input type="text" name="isbn_number1[]"
                                                                             placeholder="ISBN"
                                                                             class="form-control" ></td>
 
@@ -1011,8 +1056,8 @@
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-                                                        <input type="number" class="form-control" id="isbn"
-                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.."
+                                                        <input type="text" class="form-control" id="isbn"
+                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.."   onkeyup="checkBookISBN()"
                                                             required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
@@ -1020,6 +1065,8 @@
                                                             Click here to learn more.
                                                         </div>
                                                     </div>
+                                                    <span id="bookTitleError" class="text-danger"></span>
+
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
@@ -1819,7 +1866,7 @@ $(document).ready(function () {
 
             const languageFromCell = document.createElement("td");
             languageFromCell.innerHTML =
-                '<input type="number" name="isbn_number[]" placeholder="ISBN *" class="form-control" required>';
+                '<input type="text" name="isbn_number[]" placeholder="ISBN *" class="form-control" required>';
             newRow.appendChild(languageFromCell);
 
             const actionCell = document.createElement("td");
@@ -1853,7 +1900,7 @@ $(document).ready(function () {
 
             const languageFromCell = document.createElement("td");
             languageFromCell.innerHTML =
-                '<input type="number" name="isbn_number[]" placeholder="ISBN *" class="form-control" required>';
+                '<input type="text" name="isbn_number[]" placeholder="ISBN *" class="form-control" required>';
             newRow.appendChild(languageFromCell);
 
             const actionCell = document.createElement("td");
@@ -2242,19 +2289,18 @@ $(document).ready(function () {
 
 
 
-</body>
-
-<!-- <script>
-    function checkBookTitle() {
-        var bookTitle = $('#bookTitleInput').val();
-
+</body><script>
+    // Function to check book ISBN via AJAX
+    function checkBookISBN() {
+        var bookisbn = $('#isbn').val();
+        console.log(bookisbn);
         // AJAX request to Laravel backend
         $.ajax({
             type: 'POST',
-            url: '/publisher/checkBookTitle', // The route to your Laravel controller method
+            url: '/publisher/isbn', // The route to your Laravel controller method
             data: {
                 '_token': '{{ csrf_token() }}',
-                'book_title': bookTitle
+                'bookisbn': bookisbn
             },
             success: function(response) {
                 if (response.error) {
@@ -2269,20 +2315,21 @@ $(document).ready(function () {
     }
 
     // Function to handle form submission
-    function submitForm() {
-        // Check the book title one more time before submitting the form
-        checkBookTitle();
+    function submitForm(event) {
+        // Prevent default form submission behavior
+        event.preventDefault();
+
+        // Check the book ISBN before submitting the form
+        checkBookISBN();
 
         // Check if there is any error message
         var errorSpan = $('#bookTitleError');
         if (errorSpan.text().trim() !== "") {
-            // Display the error message in an alert box
+            // Display the error message
             toastr.error(errorSpan.text());
-            // alert();
         } else {
             // Clear the error message and submit the form
             errorSpan.text('');
-
             // Submit the form (replace this with your actual form submission code)
             document.forms[0].submit(); // Assuming it's the first form on the page
         }
@@ -2290,19 +2337,15 @@ $(document).ready(function () {
 
     // Attach event listener to the submit button
     $(document).ready(function() {
-
-        $('#submitbutton').on('click', function() {
-            var errorSpan = $('#bookTitleError');
-            if (errorSpan.text().trim() !== "") {
-                submitForm();
-            }
-
-        });
-
-
+        $('#submitbutton').on('click', submitForm);
     });
-</script> -->
-
+</script>
+<script>
+function numberOnly(id) {
+   var element = document.getElementById(id);
+   element.value = element.value.replace(/[^0-9]/gi, "");
+}
+</script>
 
 @if (Session::has('success'))
     <script>

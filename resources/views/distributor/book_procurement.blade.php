@@ -225,6 +225,8 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <p>Do you want to proceed?</p>
+                    <p>Number Of Book Selected : </p>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
@@ -336,6 +338,14 @@
         line-height: 1.25;
     }
 </style>
+<script>
+    $(document).ready(function() {
+        $('#basicModal').on('shown.bs.modal', function () {
+            var checkedBooks = $('#customCheckBox100:checked').length;
+            $('#basicModal .modal-body p:last').text('Number Of Book Selected: ' + checkedBooks);
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
 

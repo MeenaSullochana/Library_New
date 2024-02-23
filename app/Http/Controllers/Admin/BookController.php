@@ -432,8 +432,13 @@ public function procur_reject_view(){
 
 public function get_books($id)
 {  
+
+  if($id == 'all'){
+    $books = Book::where('book_procurement_status', '=', '1')->where('book_status', '=', '1')->get();
+  }else{
     $books = Book::where('subject', $id)->where('book_procurement_status', '=', '1')->where('book_status', '=', '1')->get();
 
+}
     $reviewers = Reviewer::where('subject', $id)->where('reviewerType', '=', 'external')->where('status', '=', '1')->get();
 
     $html = '';
@@ -448,7 +453,13 @@ public function get_books($id)
              
             if ($datass == null) {
             
+              if ($val->user_type =="publisher_distributor") {
+                $user_type = "publisher cum distributor";
             
+            }else{
+           
+              $user_type= $val->user_type;
+            }
              
               if ($val->language =="Other_Indian") {
                 $language = $val->other_indian;
@@ -470,6 +481,8 @@ public function get_books($id)
                     <td>' . ($i) . '</td>
                     <td><b>Name</b><br><small>' . $val->book_title . '</small></td>
                     <td>' .$language . '</td>
+                    <td>' .$val->subject . '</td>
+                    <td>' .$user_type . '</td>
                 </tr>';
             }
         }

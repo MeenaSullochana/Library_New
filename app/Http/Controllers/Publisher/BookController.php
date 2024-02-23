@@ -23,7 +23,7 @@ class BookController extends Controller
 {
    
 public function create(Request $request){
-//    return $request;
+
     $validator= Validator::make($request->all(),[
         'book_title'                          =>['required'],
         'weight'                          =>['required'],
@@ -244,6 +244,8 @@ if ($request->hasFile('back_img')) {
        $book->author_description =       $request->author_description ;
        $book->bookdescription =       json_encode($request->bookdescription) ;
        $book->productdescription =       $request->productdescription  ;   
+       $book->nameOfPublisher =       $request->nameOfPublisher  ;   
+       $book->yearOfPublication =       $request->yearOfPublication  ;   
        $book->user_type =    "publisher" ;
        $book->user_id =   auth('publisher')->user()->id; 
        $book->save();
@@ -506,6 +508,21 @@ public function checkBookTitle(Request $request)
        }
   
        
+    }
+    
+    public function isbn(Request $req) {
+        $id=auth('publisher')->user()->id;
+   
+        $data1=Book::where('user_id','=',$id)->where('isbn','=',$req->bookisbn)->first();  
+        if($data1 != null){
+            $data= [
+                'error' => 'Isbn Number Is duplecate Please Enter the Valid Isbn Number',
+                     ];
+            return response()->json($data);
+        }
+     
+     
+
     }
     
 
