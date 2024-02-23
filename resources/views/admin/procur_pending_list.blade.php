@@ -179,6 +179,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1" aria-label="Action: activate to sort column ascending"
                                         style="width: 87.4688px;">  Action</th>
+                                        <th>Member List</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -216,20 +217,22 @@
                                             <td>
                                                 <button class="btn btn-warning" >Pending</button>
                                             </td>
-                                        <td data-label="controlq">
-                                        <div class="d-flex mt-p0">
-                                            <a href="/admin/book_manage_view/{{$val->book->id}}" class="btn btn-success shadow btn-xs sharp me-1">
-                                            <i class="fa fa-eye"></i>
-                                            </a>
-                                            <!-- <a href="book_manage_edit.php" class="btn btn-warning shadow btn-xs sharp me-1">
-                                            <i class="fa fa-edit"></i>
-                                            </a> -->
-                                            {{-- <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
-                                            <i class="fa fa-trash"></i>
-                                            <a href="procur_book_assign.php" class="btn btn-primary shadow btn-sm m-0 me-1">
-                                            Send
-                                            </a> --}}
-                                        </div>
+                                        <td data-label="control">
+                                            <div class="d-flex mt-p0">
+                                                <a href="/admin/book_manage_view/{{$val->book->id}}" class="btn btn-success shadow btn-xs sharp me-1">
+                                                <i class="fa fa-eye"></i>
+                                                </a>
+                                                <!-- <a href="book_manage_edit.php" class="btn btn-warning shadow btn-xs sharp me-1">
+                                                <i class="fa fa-edit"></i>
+                                                </a> -->
+                                                {{-- <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
+                                                <i class="fa fa-trash"></i>
+                                                --}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="procur_book_assign.php" class="btn btn-primary shadow btn-sm m-0 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa fa-list" aria-hidden="true"></i>
+                                                </a>
                                         </td>
                                     </tr>
                                     @endforeach
@@ -267,6 +270,24 @@
     ?>
    </body>
 </html>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Assigned member list</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <style>
    table {
    border: 1px solid #ccc;

@@ -1,5 +1,5 @@
 <?php
-include "core/login.core.php";
+include 'core/login.core.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -54,7 +54,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                             <div class="dz-separator-outer m-b5">
                                                                 <div class="dz-separator bg-primary style-liner"></div>
                                                             </div>
-                                                            <p>Enter your e-mail address and your password. </p>
+                                                            <p>Enter your e-mail address andord. </p>
                                                             <div class="form-group mb-3">
                                                                 <input type="text" class="form-control"
                                                                     placeholder="info@gmail.com" name="username">
@@ -90,11 +90,13 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                 </div> -->
                                                         </form>
                                                         <div class="text-center bottom">
-                                                           <a href="../register.php"> <button class="btn btn-primary button-md btn-block"
-                                                                id="nav-sign-tab" data-bs-toggle="tab"
-                                                                data-bs-target="#nav-sign" type="button" role="tab"
-                                                                aria-controls="nav-sign" aria-selected="false">Create an
-                                                                account</button></a>
+                                                            <a href="../register.php"> <button
+                                                                    class="btn btn-primary button-md btn-block"
+                                                                    id="nav-sign-tab" data-bs-toggle="tab"
+                                                                    data-bs-target="#nav-sign" type="button"
+                                                                    role="tab" aria-controls="nav-sign"
+                                                                    aria-selected="false">Create an
+                                                                    account</button></a>
                                                         </div>
                                                     </div>
                                                     <div class="tab-pane fade" id="nav-forget" role="tabpanel"
@@ -107,8 +109,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                             <p>Enter your e-mail address below to reset your password.
                                                             </p>
                                                             <div class="form-group mb-4">
-                                                                <input name="dzName" required="" class="form-control"
-                                                                    placeholder="Email Address" type="text">
+                                                                <input name="dzName" required=""
+                                                                    class="form-control" placeholder="Email Address"
+                                                                    type="text">
                                                             </div>
                                                             <div class="form-group clearfix text-left">
                                                                 <button class=" active btn btn-primary"
@@ -177,8 +180,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                     <div class="card-footer">
                                         <div class=" bottom-footer clearfix m-t10 m-b20 row text-center">
                                             <div class="col-lg-12 text-center">
-                                            <span> Copyright © 2023 
-                                       Directorate of Public Libraries, பொது நூலக இயக்ககம்   <a href="#">| Design by Gladindia</a></span> 
+                                                <span> Copyright © 2023
+                                                    Directorate of Public Libraries, பொது நூலக இயக்ககம் <a
+                                                        href="#">| Design by Gladindia</a></span>
                                             </div>
                                         </div>
                                     </div>
@@ -214,12 +218,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
     <script src="./js/demo.js"></script>
     <script src="./js/styleSwitcher.js"></script>
     <script src="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
-"></script>
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
+    "></script>
     <?php
-         // include "plugin/plugin_js.php";
-         include 'error/error_handle.php';
-         ?>
+    // include "plugin/plugin_js.php";
+    include 'error/error_handle.php';
+    ?>
 </body>
 
 </html>

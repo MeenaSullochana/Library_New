@@ -787,6 +787,6 @@ Route::put('/bookstatuschange',[BookController::class,'bookstatuschange']);
 Route::get('/get-activebooks/{id}',[BookController::class,'get_activebooks']);
 Route::post('/multiple-statuschangebook',[BookController::class,'multiple_statuschangebook']);
 
-
-});
+Route::get('/assign-user-list',function(){ return view('admin.assign-user-list');});
+    });
 });

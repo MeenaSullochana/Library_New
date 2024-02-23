@@ -83,7 +83,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                             <div class="form-group mb-3">
                                                                 <input type="email" id="email" value="{{ old('email') }}" required name="email"
                                                                 class="field form-control @error('email') is-invalid @enderror"
-                                                                placeholder="{{ __('email_address') }}">
+                                                                placeholder="{{ __('Enter the Email ID') }}">
                                                                    @error('email')
                                                                 <span class="invalid-feedback" role="alert">{{ __($message) }}</span>
                                                                  @enderror
@@ -110,10 +110,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                                                     aria-selected="false">Forget Password ?</button>
                                                                 </div>
                                                             </div>
-                                                               
-                                                               
-                                                                
-                                                          
+
+
+
+
                                                             </div>
                                                         </form>
                                                     </div>
@@ -231,17 +231,17 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
 @endif
 
 <script>
-     
-       
+
+
      $(document).on('click','#submit',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
         console.log("hi");
         var data={
-           'email':$('#emails').val(), 
+           'email':$('#emails').val(),
             'usertype':$("[name='usertype']:checked").val(),
-             
+
         }
-       
+
         console.log(data);
         $.ajaxSetup({
            headers:{
@@ -258,17 +258,17 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
                     toastr.success(response.success,{timeout:25000});
                     setTimeout(function() {
                         window.location.href = "/admin/login";
-                     }, 3000); 
+                     }, 3000);
                 }else{
                     toastr.error(response.error,{timeout:25000});
                 }
-           
-        
+
+
         }
       });
   })
-        
-  
+
+
 
     </script>
 </html>
