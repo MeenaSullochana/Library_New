@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Publisher Profile</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -144,14 +144,14 @@
                                 <input type="text" class="form-control" id="distn_city" name="distn_city"
                                     placeholder="Enter your city" required>
                             </div>
-                            
+
                             <div class="col-md-3">
                                 <label for="inputZip" class="form-label">Pincode - <span class="mt-056">அஞ்சல்
                                         குறியீடு</span><span class="text-danger maditory">*</span></label></label>
                                 <input type="text" class="form-control" id="distn_pincode" name="distn_pincode"
                                     required>
                             </div>
-                            
+
                             <h4>Contact Person Details - <span class="mt-055">தொடர்பு கொள்ள வேண்டிய</span></h4>
                             <hr>
                             <small>Same as above - <span class="mt-056">நபரின் விவரங்கள்
@@ -228,7 +228,7 @@
                                 <input type="text" class="form-control" id="distn_city" name="distn_city"
                                     placeholder="Enter your city" required>
                             </div>
-                            
+
                             <div class="col-md-3">
                                 <label for="inputZip" class="form-label">Pincode - <span class="mt-056">அஞ்சல்
                                         குறியீடு</span><span class="text-danger maditory">*</span></label></label>

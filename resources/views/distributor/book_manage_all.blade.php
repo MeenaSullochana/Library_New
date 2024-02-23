@@ -16,7 +16,7 @@
       <meta name="csrf-token" content="{{ csrf_token() }}">
 
       <!-- PAGE TITLE HERE -->
-      <title>Goverment of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php

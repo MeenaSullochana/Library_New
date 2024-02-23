@@ -13,9 +13,9 @@
 	<meta property="og:description" content="">
 	<meta property="og:image" content="">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('reviewer/images/fevi.svg') }}">
@@ -30,7 +30,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -58,7 +58,7 @@
                   <div class="card-body">
                      <div class="d-sm-flex align-items-center justify-content-between">
                         <h3 class="mb-0 bc-title">
-                           <b>All Review Books List</b>                                    
+                           <b>All Review Books List</b>
                         </h3>
                         {{-- <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
                         <i class="fas fa-home"></i> Home</a> --}}
@@ -78,7 +78,7 @@
 									<div class="col-xl-4 col-sm-4 col-6">
 										<div class="task-summary">
 											<div class="d-flex align-items-baseline">
-												<h2 class="text-primary count">{{$totalreview}}</h2> 
+												<h2 class="text-primary count">{{$totalreview}}</h2>
 												<span>Total Review Book</span>
 											</div>
 											<p>Review Book</p>
@@ -89,7 +89,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-purple count">{{$pendingreview}}</h2>
 												<span>On Going Review</span>
-											</div>	
+											</div>
 											<p>Current Review</p>
 										</div>
 									</div>
@@ -98,7 +98,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-warning count">{{$completedreview}}</h2>
 												<span>Completed Review</span>
-											</div>	
+											</div>
 											<p>Completed</p>
 										</div>
 									</div>
@@ -107,7 +107,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">11</h2>
 												<span>Canceld Review</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div>
@@ -116,16 +116,16 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-success count">21</h2>
 												<span>Complete</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div>
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
-											<div class="d-flex align-items-baseline">	
+											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">16</h2>
 												<span>pending</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div> --}}
@@ -143,19 +143,19 @@
 									<table id="example" class="table">
 										<thead>
 											<tr>
-												
+
 												<th>S.No</th>
 												<th>Book No</th>
 												<th>Book Title</th>
 												<th>Date</th>
-												
+
 												<th class="text-end">Control</th>
 											</tr>
 										</thead>
 										<tbody>
 											@foreach($data as $key=>$val)
 											<tr>
-										
+
 												<td>{{$loop->index+1}}</td>
 												<td><span>{{$val->book->product_code}}</span></td>
 												<td>
@@ -163,23 +163,23 @@
 														<div>
 															<h6>{{$val->book->book_title}}</h6>
 															<!-- <span>INV-100023456</span> -->
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
 													<span>{{ $val->created_at->format('d-m-Y') }}</span>
 												</td>
-											
+
 												<td>
 													<!-- <a href="/reviewer/review_post_book/{{$val->book->id}}/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a> -->
 											<a href="/reviewer/book_view/{{$val->book->id}}/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
 
-													
+
 													<!-- <a href="book_view.php"><i class="fa fa-edit p-2"></i></a>
 													<i class="fa fa-trash-o p-2" aria-hidden="true"></i> -->
 												</td>
 											</tr>
-										
+
 @endforeach
 										</tbody>
 									</table>
@@ -205,7 +205,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->

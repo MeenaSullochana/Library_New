@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow" />
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php

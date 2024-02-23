@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow" />
     <!-- PAGE TITLE HERE -->
-    <title>Distriputor Profile</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -140,7 +140,7 @@
                                         <div class="profile-interest">
                                             <div class="row mt-4 sp4" id="lightgallery">
                                                 <p>Latest Book Catalogue</p>
-                                               
+
                                                 <a href="#" data-exthumbimage="{{asset("distributor/images/proof/BookCatalogue/".$data->bookCatalogue)}}"
                                                     data-src="{{asset("distributor/images/proof/BookCatalogue/".$data->bookCatalogue)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
@@ -368,7 +368,7 @@
                                                             <span>{{$data->noOfBooksAvailable}}</span>
                                                         </div>
                                                     </div>
-                                            
+
                                                     <!-- Subsidiary -->
 
 

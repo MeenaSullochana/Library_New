@@ -12,7 +12,7 @@
 
 
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement -  Management System</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/favicon.png') }}">
 
     <link href="{{ asset('vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">

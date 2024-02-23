@@ -13,9 +13,9 @@
 	<meta property="og:description" content="">
 	<meta property="og:image" content="">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
-	<title>Goverment of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement</title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('reviewer/images/fevi.svg') }}">
@@ -30,7 +30,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -58,9 +58,9 @@
 					<div class="card-body">
 					   <div class="d-sm-flex align-items-center justify-content-between">
 						  <h3 class="mb-0 bc-title">
-							 <b>Completed Books List</b>                                    
+							 <b>Completed Books List</b>
 						  </h3>
-						  
+
 						  <!-- <nav aria-label="breadcrumb">
 							 <ol class="breadcrumb">
 								 <li class="breadcrumb-item"><a href="allocated_location_view.php">View Allocated Location</a></li>
@@ -74,12 +74,12 @@
 					<div class="col-xl-12">
 						<div class="card">
 							<div class="card-body">
-								
+
 								<div class="row task">
 									<div class="col-xl-4 col-sm-4 col-6">
 										<div class="task-summary">
 											<div class="d-flex align-items-baseline">
-												<h2 class="text-primary count">{{$totalreview}}</h2> 
+												<h2 class="text-primary count">{{$totalreview}}</h2>
 												<span>Total Review Book</span>
 											</div>
 											<p>Review Book</p>
@@ -90,7 +90,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-purple count">{{$pendingreview}}</h2>
 												<span>On Going Review</span>
-											</div>	
+											</div>
 											<p>Current Review</p>
 										</div>
 									</div>
@@ -99,7 +99,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-warning count">{{$completedreview}}</h2>
 												<span>Completed Review</span>
-											</div>	
+											</div>
 											<p>Completed</p>
 										</div>
 									</div>
@@ -108,7 +108,7 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">11</h2>
 												<span>Canceld Review</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div>
@@ -117,16 +117,16 @@
 											<div class="d-flex align-items-baseline">
 												<h2 class="text-success count">21</h2>
 												<span>Complete</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div>
 									<div class="col-xl-2 col-sm-4 col-6">
 										<div class="task-summary">
-											<div class="d-flex align-items-baseline">	
+											<div class="d-flex align-items-baseline">
 												<h2 class="text-danger count">16</h2>
 												<span>pending</span>
-											</div>	
+											</div>
 											<p>Tasks assigne</p>
 										</div>
 									</div> --}}
@@ -144,7 +144,7 @@
 									<table id="example3" class="table">
 										<thead>
 											<tr>
-												
+
 												<th>S.No</th>
 												<th>Book No</th>
 												<th>Book Title</th>
@@ -169,13 +169,13 @@
 														<div>
 															<h6>{{$val->book->book_title}}</h6>
 															<!-- <span>INV-100023456</span> -->
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
 													<span>{{ $val->created_at->format('d-m-Y') }}</span>
 												</td>
-												
+
 												<td>
 													<a href="/reviewer/review_post_book/{{$val->book->id}}/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
 													{{-- <a href="book_view.php"><i class="fa fa-edit p-2"></i></a>
@@ -195,7 +195,7 @@
 														<div>
 															<h6>12 Rules for Life: An Antidote to Chaos</h6>
 															<!-- <span>INV-100023456</span> -->
-														</div>	
+														</div>
 													</div>
 												</td>
 												<td>
@@ -239,7 +239,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->

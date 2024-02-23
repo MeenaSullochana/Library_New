@@ -15,7 +15,7 @@
 	<meta property="og:image" content="">
 	<meta name="format-detection" content="telephone=no">
 
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
     <?php
@@ -62,7 +62,7 @@
 									<div class="col-xl-2 col-xxl-3 col-lg-3">
 										<div class="email-left-box dz-scroll pt-3 ps-0" id="email-left">
 											<div class="mail-list rounded ">
-											
+
 													<a class="list-group-item active">
 													<i class="fa-regular fa-paper-plane align-middle"></i>Order Scheme View</a>
 											</div>
@@ -74,7 +74,7 @@
 											<div role="toolbar" class="toolbar ms-1 ms-sm-0">
 												<div class="saprat ps-3">
 													<div class="mail-tools ms-0">
-													
+
 													</div>
 												</div>
 											</div>
@@ -92,7 +92,7 @@
 																		</div>
 																	</div>
 																	<div class="clearfix mb-3">
-																		
+
 																	</div>
 																</div>
 																<hr>
@@ -104,7 +104,7 @@
 																	</div>
 																</div>
 																<div class="read-content-body">
-																	
+
 																	<div class="card ms-2">
 																		<h3 class="text-gray">Total Amount</h3>
 																		<p class="fw-bold">Rs {{$data->totalAmount}}</p>
@@ -120,7 +120,7 @@
 																					<p clas="fw-bold">Rs{{$val->amount}}</p>
 																				</div>
 																				@endforeach
-																				
+
 																			</div>
 																		</div>
 																	</section>
@@ -173,7 +173,7 @@
     ***********************************-->
     <?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
 </body>
 <style>
 	.email-left-box {

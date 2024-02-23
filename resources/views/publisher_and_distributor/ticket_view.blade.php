@@ -9,14 +9,14 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Yash Admin Sales Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
@@ -76,10 +76,10 @@
                                             <div class="clearfix mb-3 d-flex">
                                             @if(auth('publisher_distributor')->user()->profileImage == Null)
                                                         <img class="me-3 rounded" width="70" height="70" alt="image"
-                                                          src="{{asset("images/default.png")}}"> 
+                                                          src="{{asset("images/default.png")}}">
                                                         @else
                                                         <img class="me-3 rounded" width="70" height="70" alt="image"
-                                                          src="{{asset("publisher_and_distributor/images/profile/".auth('publisher')->user()->profileImage)}}"> 
+                                                          src="{{asset("publisher_and_distributor/images/profile/".auth('publisher')->user()->profileImage)}}">
                                                         @endif
                                                 <div class="media-body me-2">
                                                 <h5 class="text-primary mb-0 mt-1">{{auth('publisher_distributor')->user()->firstName}}  {{auth('publisher_distributor')->user()->lastName}}</h5>
@@ -92,7 +92,7 @@
                                             <div class="media-body"><span class="pull-end">{{$data->time}}</span>
                                                 <h4 class="my-1 text-primary"><b class="mt-2">Subject</b>  </h5>
                                                 <P style="text-indent:50px;"> {{$data->subject}}</P>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="read-content-body">
@@ -122,7 +122,7 @@
                                             <p class="text-end">Mr Smith</p> -->
                                             <hr>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>

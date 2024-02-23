@@ -8,14 +8,14 @@
 	<meta name="author" content="">
 	<meta name="robots" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-	<meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+	<meta name="description" content="">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
 	<!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -29,7 +29,7 @@
     ********************-->
     <div id="preloader">
 		<div class="text-center">
-			<img src="images/goverment_loader.gif" alt="" width="25%"> 
+			<img src="images/goverment_loader.gif" alt="" width="25%">
 		</div>
     </div>
     <!--*******************
@@ -52,7 +52,7 @@
         ***********************************-->
         <div class="content-body" style="min-height: 728px;">
             <div class="container-fluid mh-auto">
-				
+
                 <div class="row">
                     <div class="col-lg-12 col-xl-6 col-xxl-4">
                         <div class="card">
@@ -113,7 +113,7 @@
                                             <p>Availability: <span class="item"> In stock <i class="fa fa-check-circle text-success"></i></span></p>
                                             <p>Product code: <span class="item">0405689</span> </p>
                                             <p class="price">$1.00</p>
-                                            <p class="text-content">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>                                           
+                                            <p class="text-content">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
 		<!--**********************************
            Support ticket button start
         ***********************************-->
-		
+
         <!--**********************************
            Support ticket button end
         ***********************************-->

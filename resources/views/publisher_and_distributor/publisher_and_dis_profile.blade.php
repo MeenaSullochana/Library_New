@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow" />
     <!-- PAGE TITLE HERE -->
-    <title>Publisher and Distributor Details</title>
+    <title>Government of Tamil Nadu - Book Procurement - Publisher and Distributor Details</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
       <?php
@@ -125,7 +125,7 @@
                                                     data-exthumbimage="{{asset("publisher_and_distributor/images/proof/Pub_Dis_Proof/".$data->publicationProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/Pub_Dis_Proof/".$data->publicationProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
-      
+
                                                         <h3  class="btn btn-primary light btn-xs mb-1">  {{$data->publicationProof}} </h3>
 
                                                 </a>
@@ -141,7 +141,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="profile-interest">
-                                          
+
                                         <h5 class="text-primary d-inline">Latest Book Catalogue</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
                                                 <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/BookCatalogue/".$data->bookCatalogue)}}"
@@ -166,7 +166,7 @@
                                                 <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/Membership/".$data->membershipProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/Membership/".$data->membershipProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
-  
+
                                                         <h3  class="btn btn-primary light btn-xs mb-1">  {{$data->membershipProof}} </h3>
                                                 </a>
                                             </div>
@@ -186,7 +186,7 @@
                                                 <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/Ownership/".$data->ownershipProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/Ownership/".$data->ownershipProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
-                                                 
+
                                                         <h3  class="btn btn-primary light btn-xs mb-1">  {{$data->ownershipProof}} </h3>
 
                                                 </a>
@@ -197,7 +197,7 @@
                             </div>
                         </div>
                         <div class="row">
-                           
+
                         </div>
                     </div>
                      <div class="col-xl-8">
@@ -330,7 +330,7 @@
                                                             <span>{{$data->contactName}}</span>
                                                         </div>
                                                     </div>
-                                                  
+
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
                                                             <h5 class="f-w-500">Email ID <span class="pull-end">:</span>
@@ -557,7 +557,7 @@
                             </div>
                             <div class="card-body">
                                 <div id="example3_wrapper" class="dataTables_wrapper no-footer">
-                                    
+
                                     <table id="example3" class="display table dataTable no-footer"
                                         style="min-width: 845px" role="grid" aria-describedby="example3_info">
                                         <thead>
@@ -591,7 +591,7 @@
                                        @endforeach
                                         </tbody>
                                     </table>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -627,7 +627,7 @@
                                             <td class="sorting_1">{{$val->publisher_name}}</td>
                                             <td>{{$val->publisher_place}}</td>
                                         </tr>
-                                        
+
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -670,9 +670,9 @@
                             <div class="card-header">
                                 <h4 class="text-primary mb-4">Name of the Subsidiary Publications
                                 </h4>
-                               
+
                             </div>
-                            
+
                             <div class="card-body">
                             <h5 class="es-5">{{$data->haveSubsidiary}}</h5>
                                 <table id="example1" class="display table" style="min-width: 845px">
@@ -697,7 +697,7 @@
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  {{$val->subsidiary_doc}} </h3>
                                                 </a>
-                                                </td> 
+                                                </td>
                                         </tr>
                                         @endforeach
                                         @endif

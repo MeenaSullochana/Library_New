@@ -14,9 +14,9 @@
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
-    
+
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <?php
         include "publisher_and_distributor/plugin/plugin_css.php";
@@ -65,7 +65,7 @@
                 <div class="row mt-5">
                     <div class="col-xl-12">
                         <div class="col-xl-12 col-lg-12">
-                            
+
                         @if($data !=null)
                             <div class="card overflow-hidden">
                                 <div class="card-header border-0 pb-0">
@@ -75,17 +75,17 @@
                                     <div class="widget-media">
                                         <ul class="timeline">
                                         @foreach($data as $val)
-                                        
+
                                             <li>
                                                 <div class="timeline-panel">
                                                 <div class="pe-3">
                                                     <button type="button" class="icon-button">
                                                     @if(auth('publisher_distributor')->user()->profileImage == Null)
                                                         <img alt="image" width="50" src="{{asset("images/default.png")}}">
-                                                            
+
                                                         @else
                                                         <img alt="image" width="50" src="{{asset("publisher_and_distributor/images/profile/".auth('publisher_distributor')->user()->profileImage)}}">
-                                                        
+
                                                         @endif
                                                          @if(0<$val->messagecount)
                                                         <span class="icon-button__badge">{{$val->messagecount}}</span>
@@ -93,7 +93,7 @@
                                                     </button>
                                                 </div>
                                                     <div class="media-body mb-3">
-                                                    <h5 class="mb-1 new_com ">{{auth('publisher_distributor')->user()->firstName}}  {{auth('publisher_distributor')->user()->lastName}} 
+                                                    <h5 class="mb-1 new_com ">{{auth('publisher_distributor')->user()->firstName}}  {{auth('publisher_distributor')->user()->lastName}}
 
                                                         <small class="d-block">{{$val->date}}</small>
                                                         <br>
@@ -131,7 +131,7 @@
                                                     </div>
                                                 </div>
                                             </li>
-                                            
+
                                             @endforeach
                                             <!-- <li>
                                                 <div class="timeline-panel">
@@ -204,7 +204,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                                
+
                                 <div class="chart-wrapper">
                                     <div class="chartjs-size-monitor">
                                         <div class="chartjs-size-monitor-expand">

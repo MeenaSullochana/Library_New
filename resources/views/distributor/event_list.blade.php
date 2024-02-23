@@ -10,7 +10,7 @@
       <meta name="robots" content="noindex, nofollow" />
 
       <!-- PAGE TITLE HERE -->
-      <title>Event List</title>
+      <title>Government of Tamil Nadu - Book Procurement - Event List</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -79,12 +79,12 @@
                                     <td><a href="event_view.php?event_id=<?php echo $eventListData['event_id']?>"><i class="fa fa-eye p-2"></i></a>
                                        <a href="event_update.php?event_id=<?php echo $eventListData['event_id']?>"><i class="fa fa-edit p-2"></i></a>
                                     </td>
-                                    
+
                                  </tr>
                                  <?php
                               }
                               ?>
-                             
+
                            </tbody>
                         </table>
                      </div>

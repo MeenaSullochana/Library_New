@@ -9,15 +9,15 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
 
     <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
@@ -85,7 +85,7 @@
                                                 <h2 class="text-primary count">
 
                                                 @php
-                                                 $id=auth('librarian')->user()->id; 
+                                                 $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','!=','Null')->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -98,10 +98,10 @@
                                     <div class="col-xl-2 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
-                                                <h2 class="text-purple count">  
- 
+                                                <h2 class="text-purple count">
+
                                                 @php
-                                                $id=auth('librarian')->user()->id; 
+                                                $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','=',Null)->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -116,9 +116,9 @@
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-warning count">
-                                                    
+
                                                 @php
-                                                 $id=auth('librarian')->user()->id; 
+                                                 $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','=','1')->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -132,9 +132,9 @@
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-danger count">
-                                                    
+
                                                 @php
-                                                 $id=auth('librarian')->user()->id; 
+                                                 $id=auth('librarian')->user()->id;
                                                  $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','=','0')->count();
                                                   @endphp
                                                   {{ $recordCount }}
@@ -175,7 +175,7 @@
                                     </div>
                                     <table id="example4" class="table">
                                         <thead>
-                                           
+
                                             <tr>
                                                 <th>
                                                 </th>
@@ -210,7 +210,7 @@
 
                                                  @if($val->book_status==Null)
                           <td>
-                              <div class="col-sm-12 m-b30"> 
+                              <div class="col-sm-12 m-b30">
                                   <select  class="col-sm-12 m-b30"  name="user_approval" id="user_approval"   data-id="{{$val->id}}">
                                   <option style="color: red;" value="Pending">Pending</option>
                                  <option style="color: green;" value="Approve">Approve</option>
@@ -219,13 +219,13 @@
                                   </div>
                            </td>
                            @elseif($val->book_status=='1')
-                        
+
                           <td> <span class="badge bg-success text-white">Approve</span></td>
-                         
+
                             @else
                            <td> <span class="badge bg-danger text-white">Reject</span></td>
                            @endif
-                                         
+
                                                 <td>
                                                     <a href="/librarian/book_view/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
                                                 </td>
@@ -304,12 +304,12 @@
     ***********************************-->
    <?php
         include "librarian/plugin/plugin_js.php";
-    ?>	
+    ?>
 </body>
 <script>
-                 $('#example4').on( 'change', "select[name='user_approval']", function (e) { 
+                 $('#example4').on( 'change', "select[name='user_approval']", function (e) {
                   var approval_ = $(this).val();
-    
+
                   var id = $(this).data('id');
                   if(approval_ == 'Reject'){
                      $('#hiddenInput').val(id);
@@ -317,19 +317,19 @@
                   }else if(approval_ == 'Approve'){
                     $('#hiddenInput1').val(id);
                      $('#staticBackdrop1').modal('show');
-                   
+
                   }
                   });
-                  </script> 
-                  
-                  
+                  </script>
+
+
 <script>
       $(document).on('click','#submitButton',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
         var data={
-           'id':$('#hiddenInput').val(), 
-           'rejectmessage':$('#reject_remark').val(), 
-          
+           'id':$('#hiddenInput').val(),
+           'rejectmessage':$('#reject_remark').val(),
+
         }
         console.log(data);
         $('#staticBackdrop').modal('hide');
@@ -356,24 +356,24 @@
                     window.location.href ="/librarian/meta_pending"
                      }, 3000);
                }
-           
+
         }
       });
   })
-        
-  
+
+
 
     </script>
-                      
+
 <script>
       $(document).on('click','#submitButton1',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
         var data={
-           'id':$('#hiddenInput1').val(),    
+           'id':$('#hiddenInput1').val(),
         }
         console.log(data);
         $('#staticBackdrop1').modal('hide');
- 
+
                   $.ajaxSetup({
                         headers:{
                            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
@@ -385,7 +385,7 @@
                         url: '/librarian/librarianapprovestatus',
                         data: data,
                         success: function(response) {
-                         
+
                            if(response.success){
                            setTimeout(function() {
                               window.location.href ="/librarian/meta_pending"
@@ -397,12 +397,12 @@
                               window.location.href ="/librarian/meta_pending"
                                  }, 3000);
                            }
-                           
+
                         }
                   });
   })
-        
-  
+
+
 
     </script>
 </html>

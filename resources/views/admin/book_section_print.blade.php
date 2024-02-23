@@ -14,7 +14,7 @@
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no"> <!-- PAGE TITLE HERE -->
-    <title>Book Fair</title> <!-- FAVICONS ICON -->
+    <title>Government of Tamil Nadu - Book Procurement</title> <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
         include "admin/plugin/plugin_css.php";
@@ -37,7 +37,7 @@
     <div id="main-wrapper">
         <!--**********************************
             Nav header start
-        ***********************************--> 
+        ***********************************-->
         @include ('admin.navigation')
         <!--**********************************
             Sidebar end
@@ -237,7 +237,7 @@
         ***********************************-->
     <!--**********************************
             Footer start
-        ***********************************--> 
+        ***********************************-->
         @include ("admin.footer")
     <!--**********************************
             Footer end
@@ -251,7 +251,7 @@
     </div>
     <!--**********************************
         Main wrapper end
-    ***********************************--> 
+    ***********************************-->
     <?php
         include "admin/plugin/plugin_js.php";
     ?>

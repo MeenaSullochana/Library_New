@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Publisher Profile</title>
+    <title>Government of Tamil Nadu - Book Procurement - Publisher Profile view</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -144,7 +144,7 @@
                         <!--                        <a href="#" data-exthumbimage="{{asset("public/publisher/images/proof/Publication/".$data->publicationProof)}}"-->
                         <!--                            data-src="{{asset("publisher/images/proof/Publication/".$data->publicationProof)}}"-->
                         <!--                            class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">-->
-                                                   
+
                         <!--                                <h3  class="btn btn-primary light btn-xs mb-1">  {{$data->publicationProof}} </h3>-->
                         <!--                        </a>-->
                         <!--                    </div>-->
@@ -196,7 +196,7 @@
                                         <div class="profile-interest">
                                             <h5 class="text-primary d-inline">Nature of Your Publication Ownership</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
-                                                <p>{{$data->pubOwnership}}</p> 
+                                                <p>{{$data->pubOwnership}}</p>
                                                  @if($data->gstProof != null)
                                                 <a href="#" data-exthumbimage="{{asset("publisher/images/proof/gst/".$data->gstProof)}}"
                                                     data-src="{{asset("publisher/images/proof/gst/".$data->gstProof)}}"
@@ -218,7 +218,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1"> Society Proof  </h3>
                                                 </a>
                                                 @endif
-                                                
+
                                                  @if($data->udyamProof != null)
                                                     <a href="#" data-exthumbimage="{{asset("publisher/images/proof/udayam/".$data->udyamProof)}}"
                                                     data-src="{{asset("publisher/images/proof/udayam/".$data->udyamProof)}}"
@@ -247,7 +247,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  Partnership Deed  </h3>
                                                 </a>
                                                 @endif
-                                                  @if($data->moaProof != null) 
+                                                  @if($data->moaProof != null)
                                                         <a href="#" data-exthumbimage="{{asset("publisher/images/proof/moa/".$data->moaProof)}}"
                                                     data-src="{{asset("publisher/images/proof/moa/".$data->moaProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
@@ -519,7 +519,7 @@
                                                 <!--            <hr>-->
                                                 <!--            <table id="example1" class="display table"-->
                                                 <!--                style="min-width: 845px">-->
-                                                               
+
                                                 <!--                <thead>-->
                                                 <!--                    <tr>-->
                                                 <!--                        <th>Enter Member Name</th>-->
@@ -543,7 +543,7 @@
                                                 <div class="profile-skills mb-5">
                                                     <h4 class="text-primary mb-2">Primary Language of Publication</h4>
 
-                                                  
+
                                                        @foreach($data->language as $val)
                                                         @if($val == "otherIndia")
                                                             <a href="javascript:void(0);" class="btn btn-primary light btn-xs mb-1">{{ $data->otherIndian }}</a>
@@ -689,7 +689,7 @@
                                      <tr>
                                      <td>{{$val->award_name}} </td>
                                       <td>{{$val->book_title}}</td>
-                                     
+
                                       </tr>
                                    @endforeach
                                    @else
@@ -709,9 +709,9 @@
                             <div class="card-header">
                                 <h4 class="text-primary mb-4">Name of the Subsidiary Publications
                                 </h4>
-                               
+
                             </div>
-                            
+
                             <div class="card-body">
                             <h5 class="es-5">{{$data->haveSubsidiary}}</h5>
                                 <table id="example1" class="display table" style="min-width: 845px">
@@ -737,7 +737,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  {{$val->subsidiary_doc}} </h3>
 
                                                 </a>
-                                                </td> 
+                                                </td>
                                         </tr>
                                         @endforeach
                                         @else
@@ -745,7 +745,7 @@
                                        <td colspan="2">No data available in table</td>
                                          </tr>
                                    @endif
-                                       
+
                                     </tbody>
                                 </table>
                             </div>
@@ -869,11 +869,11 @@
 <script>
     $(document).ready(function () {
 
-      
+
 
 
         $(".banner-file-upload").on('change', function () {
-            
+
             var backgroundImage = $('#backgroundImage')[0].files;
          let fd = new FormData();
         fd.append('backgroundImage',backgroundImage[0])
@@ -892,7 +892,7 @@
              success: function(response) {
                 if(response.success){
                     toastr.success(response.success,{timeout:25000});
-                   
+
                 }else{
                     toastr.error(response.error,{timeout:25000});
                 }
@@ -906,7 +906,7 @@
 
 
         $(".file-upload").on('change', function () {
-          
+
             var profileImage = $('#profileImage')[0].files;
          let fd = new FormData();
         fd.append('profileImage',profileImage[0])
@@ -925,7 +925,7 @@
              success: function(response) {
                 if(response.success){
                     toastr.success(response.success,{timeout:25000});
-                   
+
                 }else{
                     toastr.error(response.error,{timeout:25000});
                 }

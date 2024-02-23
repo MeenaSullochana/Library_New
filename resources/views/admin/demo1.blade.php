@@ -15,7 +15,7 @@ include "core/index.core.php";
 
 
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 
@@ -748,7 +748,7 @@ include "core/index.core.php";
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>    
+                                                            </div>
                                                             <div class="sub-card draggable-handle draggable">
                                                                 <div class="d-items">
                                                                     <div class="row">
@@ -943,9 +943,9 @@ include "core/index.core.php";
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div> 
+                                                            </div>
 
-                                                            
+
                                                             <!-- <div class="sub-card draggable-handle draggable">
                                                                 <div class="d-items">
                                                                     <div
@@ -1428,7 +1428,7 @@ include "core/index.core.php";
         <!--**********************************
             Footer start
         ***********************************-->
-        <?php 
+        <?php
             include "footer.php";
         ?>
         <!--**********************************

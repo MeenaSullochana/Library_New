@@ -12,11 +12,11 @@
     <meta name="description" content="">
     <meta property="og:title" content="">
     <meta property="og:description" content="">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Goverment of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php

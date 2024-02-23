@@ -13,7 +13,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Distriputor Profile</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -125,19 +125,19 @@
                         </div>
                     </div>
                 </div>
-               
+
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="row">
                             <h5 class="text-primary d-inline">Required Documents</h5>
-                           
+
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="profile-interest">
                                             <div class="row mt-4 sp4" id="lightgallery">
                                             <p>Latest Book Catalogue</p>
-                                               
+
                                                <a href="{{asset("distributor/images/proof/BookCatalogue/".$data->bookCatalogue)}}" data-exthumbimage="{{asset("distributor/images/proof/BookCatalogue/".$data->bookCatalogue)}}"
                                                    data-src="{{asset("distributor/images/proof/BookCatalogue/".$data->bookCatalogue)}}"
                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download>
@@ -168,14 +168,14 @@
                             <!--        </div>-->
                             <!--    </div>-->
                             <!--</div>-->
-                    
+
                             <div class="col-xl-12">
                                 <div class="card">
                                 <div class="card-body">
                                         <div class="profile-interest">
                                             <h5 class="text-primary d-inline">Nature of Your Publication Ownership</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
-                                                <p>{{$data->pubOwnership}}</p> 
+                                                <p>{{$data->pubOwnership}}</p>
                                                  @if($data->gstProof != null)
                                                 <a href="#" data-exthumbimage="{{asset("distributor/images/proof/gst/".$data->gstProof)}}"
                                                     data-src="{{asset("distributor/images/proof/gst/".$data->gstProof)}}"
@@ -197,7 +197,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1"> Society Proof  </h3>
                                                 </a>
                                                 @endif
-                                                
+
                                                  @if($data->udyamProof != null)
                                                     <a href="#" data-exthumbimage="{{asset("distributor/images/proof/udayam/".$data->udyamProof)}}"
                                                     data-src="{{asset("distributor/images/proof/udayam/".$data->udyamProof)}}"
@@ -226,7 +226,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  Partnership Deed  </h3>
                                                 </a>
                                                 @endif
-                                                  @if($data->moaProof != null) 
+                                                  @if($data->moaProof != null)
                                                         <a href="#" data-exthumbimage="{{asset("distributor/images/proof/moa/".$data->moaProof)}}"
                                                     data-src="{{asset("distributor/images/proof/moa/".$data->moaProof)}}"
                                                     class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
@@ -468,7 +468,7 @@
                                                             <span>{{$data->noOfBooksAvailable}}</span>
                                                         </div>
                                                     </div>
-                                            
+
                                                     <!-- Subsidiary -->
 
 
@@ -704,11 +704,11 @@ img.profile-pic.img-circle {
 <script>
     $(document).ready(function () {
 
-      
+
 
 
         $(".banner-file-upload").on('change', function () {
-            
+
             var backgroundImage = $('#backgroundImage')[0].files;
          let fd = new FormData();
         fd.append('backgroundImage',backgroundImage[0])
@@ -727,7 +727,7 @@ img.profile-pic.img-circle {
              success: function(response) {
                 if(response.success){
                     toastr.success(response.success,{timeout:25000});
-                   
+
                 }else{
                     toastr.error(response.error,{timeout:25000});
                 }
@@ -741,7 +741,7 @@ img.profile-pic.img-circle {
 
 
         $(".file-upload").on('change', function () {
-          
+
             var profileImage = $('#profileImage')[0].files;
          let fd = new FormData();
         fd.append('profileImage',profileImage[0])
@@ -760,7 +760,7 @@ img.profile-pic.img-circle {
              success: function(response) {
                 if(response.success){
                     toastr.success(response.success,{timeout:25000});
-                   
+
                 }else{
                     toastr.error(response.error,{timeout:25000});
                 }

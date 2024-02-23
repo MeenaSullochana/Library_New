@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- PAGE TITLE HERE -->
-    <title>Book fair</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
@@ -99,7 +99,7 @@
                                         class="text-danger maditory">*</span></label></label>
                                 <select id="pub_country" class="form-select" name="pub_country" Disabled>
                                     <option value="selected">{{$data->publisherrecord->country}}</option>
-                                    
+
                                 </select>
                             </div>
                             <div class="col-md-3">
@@ -108,7 +108,7 @@
                                         class="text-danger maditory">*</span></label></label>
                                 <select id="pub_state" class=" form-select" name="pub_state" required Disabled>
                                     <option value="selected">{{$data->publisherrecord->state}}</option>
-                                 
+
                                 </select>
                             </div>
                             <div class="col-md-3">
@@ -224,7 +224,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Contact Person Name(தொடர்பு நபர் பெயர்)</h4>
                                     <p class="card-text">{{$data->authorityContactnName}}</p>
-                                    
+
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Contact Number(தொடர்பு எண்)</h4>
@@ -233,7 +233,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Designation(பதவி)</h4>
                                     <p class="card-text">{{$data->authorityDesignation}}</p>
-                                    
+
                                 </div>
                             </div>
                     </div>
@@ -305,9 +305,9 @@
 ?>
 </body>
 <script>
-   
+
        $(document).on('click','#submit',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
            var event_id = $(this).data('eventid');
            var apply_id = $(this).data('id');
            var  totalStall=$('#totalStall').val();
@@ -328,14 +328,14 @@
                     toastr.success(response.success,{timeout:25000});
                     setTimeout(function() {
                         window.location.href = "/publisher_and_distributor/fair_application_apply";
-                     }, 3000); 
+                     }, 3000);
                 }else{
                     toastr.error(response.error,{timeout:25000});
                 }
-              
+
             }
           })
-          
+
        });
 
       </script>

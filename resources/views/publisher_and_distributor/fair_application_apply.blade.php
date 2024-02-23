@@ -9,14 +9,14 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
@@ -78,7 +78,7 @@
                                     <h3 class="panel-title" style="font-weight:700;">Notifications/Advertisements
                                         Details</h3>
                                 </div>
-                                
+
                                 <div class="panel-body">
                                     <div class="table-responsive">
                                         <table id="example1" class="table table-bordered" style="width:100%">
@@ -130,15 +130,15 @@
                                                     <td valign="middle" class="text-center">{{$val->clossingDate}}</td>
                                                     <td valign="middle" class="text-center">{{$val->applyFromDate}}</td>
                                                     <td valign="middle" class="text-center">{{$val->applyToDate}}</td>
-                                                   
+
                                                     <td valign="middle" class="text-center">
                                                       {{$val->contactPersonName}}
                                                     </td>
                                                     <td valign="middle" class="text-center">
-                                                       {{$val->mobileNumber}}    
+                                                       {{$val->mobileNumber}}
                                                     </td>
                                                     <td valign="middle" class="text-center">
-                                                       {{$val->totalStall}}    
+                                                       {{$val->totalStall}}
                                                     </td>
                                                     <td valign="middle" class="text-center">
                                                         <a class="text-danger" data-id="C00085" href="/publisher_and_distributor/fair_application/{{$val->id}}">Apply Now</a>

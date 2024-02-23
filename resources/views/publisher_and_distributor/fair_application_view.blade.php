@@ -9,14 +9,14 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Yash Admin Sales Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
@@ -123,7 +123,7 @@
                                                     <h4>Application Status</h4>
                                                     <p class="badge badge-danger light border-0">{{$data->record->status}}</p>
                                                 </div>
-                                                
+
                                             </div>
                                             <div class="col-xl-6">
                                                 <h5 class="">publication And Distribution Details</h5>
@@ -207,7 +207,7 @@
                                             </div>
                         <div class="card-header">
                             <h4>Event Details</h4>
-                        </div>                                            
+                        </div>
                             <div class="row">
                                 <div class="col-6 border-1">
                                     <!-- <img class="card-img-top" src="holder.js/100x180/" alt="Card image cap"> -->
@@ -215,7 +215,7 @@
                                         <h4 class="card-title">Event Title (நிகழ்வு தலைப்பு)</h4>
                                         <p class="card-text">{{$data->eventTitle}}</p>
                                     </div>
-                                   
+
                                     <div class="card-body">
                                         <h4 class="card-title">Event Duration From(நிகழ்வின் காலம்)</h4>
                                         <p class="card-text">{{$data->startDate}}  {{$data->startTime}}</p>
@@ -294,7 +294,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Contact Person Name(தொடர்பு நபர் பெயர்)</h4>
                                     <p class="card-text">>{{$data->authorityContactnName}}</p>
-                                    
+
                                 </div>
                                 <div class="card-body">
                                     <h4 class="card-title">Contact Number(தொடர்பு எண்)</h4>
@@ -303,7 +303,7 @@
                                 <div class="card-body">
                                     <h4 class="card-title">Designation(பதவி)</h4>
                                     <p class="card-text">>{{$data->authorityDesignation}}</p>
-                                    
+
                                 </div>
                             </div>
                     </div>

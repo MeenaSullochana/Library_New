@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Book Fair - SMTP </title>
+    <title>Government of Tamil Nadu - Book Procurement </title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
     <?php

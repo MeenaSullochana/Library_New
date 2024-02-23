@@ -9,14 +9,14 @@
     <meta name="author" content="">
     <meta name="robots" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:title" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:description" content="Yeshadmin:Customer Relationship Management Admin Bootstrap 5 Template">
-    <meta property="og:image" content="https://yeshadmin.dexignzone.com/xhtml/social-image.png">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Yash Admin Sales Management System</title>
+    <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
       <?php
@@ -153,7 +153,7 @@
                                 <input type="text" class="form-control" id="publication_pincode"
                                     name="publication_pincode" required>
                             </div>
-                            
+
                             <h4>Contact Person Details - <span class="mt-055">தொடர்பு கொள்ள வேண்டிய</span></h4>
                             <small>Same as above - <span class="mt-056">நபரின் விவரங்கள் (மேற்கூறியவாறு)</span>
                                 <input class="form-check-input" type="checkbox"
@@ -735,7 +735,7 @@
                                                                 id="content_of_the_subsidiary_publication"
                                                                 name="subsidiary_name_publications_content[]"
                                                                 placeholder="Enter Document" type="file" multiple
-                                                                required>   
+                                                                required>
                                                         <td><button type="button" name="sub_pub_name_op"
                                                                 id="sub_pub_name_op" class="btn btn-success">+</button>
                                                         </td>
