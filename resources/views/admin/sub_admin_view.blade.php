@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement </title>
+    <title>Government of Tamil Nadu - Book Procurement - Sub Admin View </title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -56,7 +56,7 @@
             <div class="container-fluid">
                 <div class="card-header flex-wrap bg-white mb-5">
                     <div class="d-flex align-items-center justify-content-between py-3">
-                        <h5 class=" mb-0 text-gray-800 pl-3">Create Sub Admin</h5>
+                        <h5 class=" mb-0 text-gray-800 pl-3">View Sub Admin </h5>
 
                     </div>
                     <ul class="nav nav-tabs" id="myTab" role="tablist">

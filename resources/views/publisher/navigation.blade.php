@@ -1313,7 +1313,7 @@
                             <span class="nav-text">Procurement Receipt </span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/publisher/procurement_paymrnt"> Payment Recept Listt</a></li>
+                            <li><a href="/publisher/procurement_paymrnt"> Payment Receipt Listt</a></li>
 
                         </ul>
                     </li>
@@ -1328,7 +1328,7 @@
 						</ul>
 					</li> -->
 
-                    <!-- 
+                    <!--
                         F-menu Setting Start
                     -->
                     {{-- <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
@@ -1426,7 +1426,7 @@
                         </ul>
                     </li> --}}
 
-                    <!-- 
+                    <!--
                         F-menu Setting End
                     -->
 				</ul>

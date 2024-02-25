@@ -11,7 +11,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="robots" content="noindex, nofollow" />
    <!-- PAGE TITLE HERE -->
-   <title>Government of Tamil Nadu - Book Procurement</title>
+   <title>Government of Tamil Nadu - Book Procurement - Publisher Cancel Payment List</title>
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -53,10 +53,10 @@
                     <div class="card-body">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Create Member</b>
+                                <b>Publisher Cancel Payment List</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="member_list.php">
-                                <i class="fas fa-plus"></i> List Of Member </a>
+                            <a class="btn btn-primary  btn-sm" href="index">
+                                <i class="fas fa-plus"></i> Dashboard</a>
                         </div>
                     </div>
                 </div>
@@ -95,10 +95,10 @@
 
                               <td><span class="badge light badge-success">Active</span></td>
                               <td>10-02-2023</td>
-                              <td><a href="pub_profile.php"><i class="fa fa-eye p-2"></i></a>
+                              <td><a href="#"><i class="fa fa-eye p-2"></i></a>
                                  <i class="fa fa-pencil p-2"></i>
                                  <i class="fa fa-trash p-2"></i>
-                                 <a href="pub_payment_list.php"><i class="fa fa-list-check p-2"></i></a>
+                                 <a href="#"><i class="fa fa-list-check p-2"></i></a>
                               </td>
                            </tr>
                         </tbody>

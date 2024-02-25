@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement </title>
+    <title>Government of Tamil Nadu - Book Procurement - List of Publisher Feedback</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -58,7 +58,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>List Publisher Feedback</b>
+                                <b>List of Publisher Feedback</b>
                             </h3>
                             <!-- <a class="btn btn-primary  btn-sm" href="feedback_publisher.php">
                                 <i class="fas fa-plus"></i> View Feedback </a> -->

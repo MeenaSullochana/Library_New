@@ -14,7 +14,7 @@
       <meta property="og:image" content="">
       <meta name="format-detection" content="telephone=no">
       <!-- PAGE TITLE HERE -->
-      <title>Government of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement - Complete Book List</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
       <link href="
@@ -134,7 +134,7 @@
                             {{-- </div> --}}
                             <div id="empoloyees-tbl3_wrapper" class="dataTables_wrapper no-footer">
                                 {{-- empoloyees-tbl3 --}}
-                            <table id="examle3" class="table dataTable no-footer" role="grid"
+                            <table id="example3" class="table dataTable no-footer" role="grid"
                                 aria-describedby="empoloyees-tbl3_info">
                                 <thead>
                                     <tr role="row">

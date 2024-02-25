@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow" />
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - List of Payment Receipt</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('distributor/images/fevi.svg') }}">
     <?php
@@ -51,7 +51,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Procurement Receipt</b>
+                                <b>List of Payment Receipt</b>
                             </h3>
                             <a onclick="javascript:window.history.back();" class="btn btn-primary  btn-sm" href="/distributor/index">
                                 <i class="fa fa-angle-double-left"></i> Go Back</a>

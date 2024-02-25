@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement -Apply Book Procurement </title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
     <link href="
@@ -241,6 +241,13 @@
 
 </html>
 <style>
+        .active-projects.style-1 .dt-buttons .dt-button {
+     top: -50px;
+     right: 0 !important;
+     }
+     .active-projects tbody tr td:last-child {
+         text-align: center;
+     }
     table {
         border: 1px solid #ccc;
         border-collapse: collapse;

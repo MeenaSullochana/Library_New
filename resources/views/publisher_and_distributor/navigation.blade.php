@@ -1305,16 +1305,16 @@
                         <ul aria-expanded="false">
                             <li><a href="/publisher_and_distributor/procurement">Apply For Procurement</a></li>
                             <li><a href="/publisher_and_distributor/procurement_list">pending List </a></li>
-                            <li><a href="/publisher_and_distributor/procurement_completed">Success List </a></li>
+                            <li><a href="/publisher_and_distributor/procurement_completed">Complete List </a></li>
                             <li><a href="/publisher_and_distributor/procurement_reject">Reject List </a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                         <i class="bi bi-receipt"></i>
-                            <span class="nav-text">Procurement Recept</span>
+                            <span class="nav-text">Procurement Receipt</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/publisher_and_distributor/procurement_paymrnt"> Payment Recept Listt</a></li>
+                            <li><a href="/publisher_and_distributor/procurement_paymrnt"> Payment Receipt List</a></li>
 
                         </ul>
                     </li>

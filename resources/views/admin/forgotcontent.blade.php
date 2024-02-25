@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - User Forgot Page Content</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -63,7 +63,7 @@
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <h3 class="mb-0 bc-title"><b>Forgot Page Content</b> </h3>
+                                        <h3 class="mb-0 bc-title"><b>Add Forgot Page Content</b> </h3>
                                         <a class="btn btn-primary btn-sm" href="/index"><i
                                                 class="fas fa-chevron-left"></i> Dashboard</a>
                                     </div>
@@ -85,7 +85,7 @@
 
                                                     <div class="row">
                                                         <div class="mt-3 file mb-3">
-                                                            <label for="inp-name" id="userType">User Type </label>
+                                                            <label for="inp-name" id="userType">User Type <span class="text-danger">*</span></label>
                                                             <select name="form_builder[9][type]" class="form-select rounded-0 bg-white form-select-md">
                                                             <option value="">Select User Type </option>
                                                                 <option value="publisher"> Publisher </option>
@@ -96,18 +96,19 @@
                                                     </div>
 
                                                     <div class="mb-3">
-                                                        <label for="slug">Hidelins Title *</label>
-                                                        <input type="text" class="form-control" placeholder="Enter Hidelins Title" id="hidelins">
+                                                        <label for="slug">Headline Title <span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" placeholder="Enter Headline Title" id="hidelins">
                                                     </div>
 
                                                     <div class="table-responsive">
+                                                        <label for="description">Description Content </label>
                                                         <table class="table table-bordered" id="titles_name">
                                                             <tr>
-                                                                <th>Hideline Content</th>
+                                                                <th>Description Content</th>
                                                                 <th>Add</th>
                                                             </tr>
                                                             <tr>
-                                                                <td><input type="text" name="subject[]" placeholder="Enter Hideline Content" class="form-control name_list" /></td>
+                                                                <td><input type="text" name="subject[]" placeholder="Enter Description Content" class="form-control name_list" /></td>
                                                                 <td><button type="button" name="awarded_titles" class="btn btn-success add_row">+</button></td>
                                                             </tr>
                                                         </table>
@@ -168,7 +169,7 @@ $(document).ready(function(){
         e.preventDefault();
         if(table.find('tr').length < max_rows){
             var newRow = '<tr>' +
-                '<td><input type="text" name="subject[]" placeholder="Enter Hideline Content" class="form-control name_list" /></td>' +
+                '<td><input type="text" name="subject[]" placeholder="Enter Discription Content" class="form-control name_list" /></td>' +
                 '<td><button type="button" class="btn btn-danger remove_row">-</button></td>' +
                 '</tr>';
             table.append(newRow); // Add row

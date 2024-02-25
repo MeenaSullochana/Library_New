@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Negotiation Process Books List</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
         include "publisher/plugin/plugin_css.php";
@@ -54,12 +54,12 @@
             <div class="container-fluid">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <div class="d-sm-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Negotiation Books List</b>
+                                <b>Negotiation Process Books List</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
-                                <i class="fas fa-plus"></i> Add Book</a>
+                            {{-- <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
+                                <i class="fas fa-plus"></i> Add Book</a> --}}
                             <!-- <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
                                <li class="breadcrumb-item"><a href="allocated_location_view.php">View Allocated Location</a></li>
@@ -90,13 +90,13 @@
                                             <tr role="row">
 
 
-                                                <th>S.no</th>
+                                                <th>S.No</th>
                                                 <th>Books</th>
-                                                <th>book Price</th>
+                                                <th>Book Price</th>
                                                 <th>Admin Price</th>
-                                                <th>negotiated Price</th>
-                                                <th>negotiation </th>
-                                                <th>negotiation Message</th>
+                                                <th>Negotiated Price</th>
+                                                <th>Negotiation </th>
+                                                <th>Negotiation Message</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

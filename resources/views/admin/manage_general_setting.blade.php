@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - General Setting Page</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -143,7 +143,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                 <div class="row">
                                                                                     <div class="col-md-6 text-primary">
                                                                                         Website
-                                                                                        Logo</div>
+                                                                                        Logo<span class="text-danger">*</span></div>
                                                                                     <div class="col-md-6">
                                                                                         <div class="dropdown">
                                                                                             <button type="button"
@@ -219,7 +219,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                 <div class="row">
                                                                                     <div class="col-md-6 text-primary">
                                                                                         Admin
-                                                                                        Logo</div>
+                                                                                        Logo<span class="text-danger">*</span></div>
                                                                                     <div class="col-md-6">
                                                                                         <div class="dropdown">
                                                                                             <button type="button"
@@ -305,7 +305,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                 <div class="row">
                                                                                     <div class="col-md-6 text-primary">
                                                                                         Website
-                                                                                        Favicon</div>
+                                                                                        Favicon<span class="text-danger">*</span></div>
                                                                                     <div class="col-md-6">
                                                                                         <div class="dropdown">
                                                                                             <button type="button"
@@ -380,7 +380,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                             <div class="card-body">
                                                                                 <div class="row">
                                                                                     <div class="col-md-6 text-primary">
-                                                                                        Admin Favicon</div>
+                                                                                        Admin Favicon<span class="text-danger">*</span></div>
                                                                                     <div class="col-md-6">
                                                                                         <div class="dropdown">
                                                                                             <button type="button"

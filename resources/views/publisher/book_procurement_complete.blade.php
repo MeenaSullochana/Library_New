@@ -14,7 +14,7 @@
       <meta property="og:image" content="">
       <meta name="format-detection" content="telephone=no">
       <!-- PAGE TITLE HERE -->
-      <title>Government of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement - Complete Book List</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
       <link href="
@@ -185,7 +185,7 @@
                                     <td data-label="Status">
                                        <span><a href="#" class="badge bg-primary">Completed</a> </span>
                                     </td>
-                                    <td data-label="Control">
+                                    <td data-label="Control d-flex justify-content-content">
 
                                           <a href="/publisher/book_manage_view/{{$val->id}}" class="btn btn-success shadow btn-xs sharp me-1">
                                           <i class="fa fa-eye"></i>

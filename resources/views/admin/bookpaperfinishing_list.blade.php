@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 	<!-- PAGE TITLE HERE -->
-	<title>Government of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement List of Book Paper Finishing </title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -58,7 +58,7 @@
                                 <b> Book Paper Finishing List</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/bookpaperfinishing_add">
-                                <i class="fas fa-plus"></i> Add </a>
+                                <i class="fas fa-plus"></i> Add Book Paper Finishing</a>
                         </div>
                     </div>
                 </div>

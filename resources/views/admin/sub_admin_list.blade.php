@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement List of Sub Admin</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -71,7 +71,7 @@
                             <div class="tab-pane fade show active" id="bordered" role="tabpanel" aria-labelledby="home-tab-1">
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table class="table table-responsive-md">
+                                        <table class="table table-responsive-md" id="example3">
                                             <thead>
                                                 <tr>
                                                     <th style="width:50px;">

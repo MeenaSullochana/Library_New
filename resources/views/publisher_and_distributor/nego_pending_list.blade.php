@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Negotiation Books List</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
         include "publisher_and_distributor/plugin/plugin_css.php";
@@ -90,10 +90,10 @@
                                             <tr role="row">
 
 
-                                                <th>S.no</th>
+                                                <th>S.No</th>
                                                 <th>Title</th>
-                                                <th>book Cost</th>
-                                                <th>Admin Cost</th>
+                                                <th>Book Price</th>
+                                                <th>Admin Price</th>
                                                 <th>Negotiation </th>
                                                 <th>Action</th>
                                             </tr>

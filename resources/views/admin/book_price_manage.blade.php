@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement </title>
+    <title>Government of Tamil Nadu - Book Procurement - Book Price</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -63,7 +63,7 @@
                                     <h3 class="mb-0 bc-title">
                                         <b>Manage Book Price Config</b>
                                     </h3>
-                                    <a class="btn btn-primary  btn-sm" href="member_list.php">
+                                    <a class="btn btn-primary  btn-sm" href="#">
                                         <i class="fas fa-plus"></i> List Of Member </a>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@
                             <h3 class="text-left p-2">Set GSM Price List </h3>
                                 <hr>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" id="example3">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S/No</th>
@@ -131,7 +131,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <nav aria-label="Page navigation">
+                                {{-- <nav aria-label="Page navigation">
                                     <ul class="pagination">
                                         <li class="page-item disabled">
                                             <a class="page-link" href="#" aria-label="Previous">
@@ -151,7 +151,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </nav>
+                                </nav> --}}
 
                             </div>
                         </div>
@@ -186,7 +186,7 @@
                             <h3 class="text-left p-2">Set Color Paper List </h3>
                                 <hr>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" id="example3">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S/No</th>
@@ -217,7 +217,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <nav aria-label="Page navigation">
+                                {{-- <nav aria-label="Page navigation">
                                     <ul class="pagination">
                                         <li class="page-item disabled">
                                             <a class="page-link" href="#" aria-label="Previous">
@@ -237,7 +237,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </nav>
+                                </nav> --}}
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                             <h3 class="text-left p-2">Set Inner Paper List </h3>
                                 <hr>
                                 <div class="table-responsive">
-                                    <table class="table">
+                                    <table class="table" id="example3">
                                         <thead>
                                             <tr>
                                                 <th scope="col">S/No</th>
@@ -302,7 +302,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <nav aria-label="Page navigation">
+                                {{-- <nav aria-label="Page navigation">
                                     <ul class="pagination">
                                         <li class="page-item disabled">
                                             <a class="page-link" href="#" aria-label="Previous">
@@ -322,7 +322,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </nav>
+                                </nav> --}}
                             </div>
                         </div>
                     </div>

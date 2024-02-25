@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow" />
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Book View</title>
     <!-- FAVICONS ICON -->
 
     <link rel="stylesheet" href="{{ asset('path/to/examples.css') }}">
@@ -239,9 +239,9 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                     </div>
                                                     <div class="col-md-6">
                                                         <p><span class="fs-6 fw-bold text-primary">Name Of Publisher :</span>
-                                                          
+
                                                                 <strong>{{ $data->nameOfPublisher }}</strong>
-                                                              
+
                                                         </p>
                                                     </div>
                                                 </div>
@@ -430,7 +430,7 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                     </li>
                                                     <li class="fs-5 p-1">
                                                         <span class="a-list-item">
-                                                            <span class="a-text-bold text-danger d-flex justify-content-between">
+                                                            <span class="a-text-bold d-flex justify-content-between">
                                                                 <div class="text-title text-danger"><b>Language</b>
                                                                     &rlm;
                                                                     :
@@ -450,7 +450,7 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                     </li>
                                                     <li class="fs-5 p-1">
                                                         <span class="a-list-item">
-                                                            <span class="a-text-bold text-danger d-flex justify-content-between">
+                                                            <span class="a-text-bold d-flex justify-content-between">
                                                                 <div class="text-title text-danger"><b>Length Breadth</b>
                                                                     &rlm;
                                                                     :
