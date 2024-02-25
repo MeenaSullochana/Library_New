@@ -1390,7 +1390,7 @@
                         <ul aria-expanded="false">
                             <li><a href="/distributor/procurement">Apply For Procurement</a></li>
                             <li><a href="/distributor/procurement_list">pending List </a></li>
-                            <li><a href="/distributor/procurement_completed">Success List </a></li>
+                            <li><a href="/distributor/procurement_completed">Completed List </a></li>
                             <li><a href="/distributor/procurement_reject">Reject List </a></li>
                         </ul>
                     </li>

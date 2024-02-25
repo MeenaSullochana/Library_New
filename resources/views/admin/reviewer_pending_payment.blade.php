@@ -11,7 +11,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="robots" content="noindex, nofollow" />
    <!-- PAGE TITLE HERE -->
-   <title>Government of Tamil Nadu - Book Procurement</title>
+   <title>Government of Tamil Nadu - Book Procurement - Book Procurement - Reviewer Pending Payment List</title>
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -48,12 +48,15 @@
       <div class="content-body">
          <div class="container-fluid">
             <div class="card">
-               <div class="card-header">
-                  <div class="d-flex justify-content-between">
-                     <p>Publisher List</p>
-                     <p class="text-right">View</p>
-                  </div>
-               </div>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                       <h4>Reviewer Pending Payment List</h4>
+                       {{-- <p class="text-right">View</p> --}}
+                    </div>
+                 </div>
+            </div>
+            <div class="card">
+
                <div class="card-body">
 
 
@@ -89,10 +92,10 @@
 
                               <td><span class="badge light badge-warning">Pending</span></td>
                               <td>10-02-2023</td>
-                              <td><a href="reviwer_profile.php"><i class="fa fa-eye p-2"></i></a>
+                              <td><a href="#"><i class="fa fa-eye p-2"></i></a>
                                  <i class="fa fa-pencil p-2"></i>
                                  <i class="fa fa-trash p-2"></i>
-                                 <a href="reviewer_widthra_request.php"><i class="fa fa-list-check p-2"></i></a>
+                                 <a href="#"><i class="fa fa-list-check p-2"></i></a>
                               </td>
                            </tr>
                         </tbody>

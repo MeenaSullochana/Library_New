@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement </title>
+    <title>Government of Tamil Nadu - Book Procurement - Edit Sub Admin </title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
 
@@ -62,7 +62,7 @@
             <div class="container-fluid">
                 <div class="card-header flex-wrap bg-white mb-5">
                     <div class="d-flex align-items-center justify-content-between py-3">
-                        <h5 class=" mb-0 text-gray-800 pl-3">Create Sub Admin</h5>
+                        <h5 class=" mb-0 text-gray-800 pl-3">Edit Sub Admin</h5>
 
                     </div>
 
@@ -71,7 +71,7 @@
                             <li class="breadcrumb-item"><a href="/admin/sub_admin_list">Sub Admin List</a>
                             </li>
 
-                            <li class="breadcrumb-item"><a href="#">Create Sub Admin
+                            <li class="breadcrumb-item"><a href="#">Edit Sub Admin
                                 </a></li>
                         </ol>
                     </ul>
@@ -111,27 +111,27 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Name</label>
+                                                <label class="form-label">Name <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" placeholder="Enter Your Name" id="name"
                                                     value="{{$data->name}}" required>
                                             </div>
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">User Name</label>
+                                                <label class="form-label">User Name <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" placeholder="Enter Your User Name" id="userName"
                                                     value="{{$data->userName}}" required>
                                             </div>
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Designation</label>
+                                                <label class="form-label">Designation <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter Your Authority Person Name" value="{{$data->designation}}" id="designation">
                                             </div>
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Email</label>
+                                                <label class="form-label">Email <span class="text-danger">*</span></label>
                                                 <input type="email" class="form-control" placeholder="Enter Your Email" id="email"
                                                     value="{{$data->email}}" required>
                                             </div>
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Phone</label>
+                                                <label class="form-label">Phone <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" placeholder="Enter Your Phone" pattern="\d{10}" required title="phone must be at least 10 number" placeholder="Enter Your phone" id="mobileNumber"
                                                     value="{{$data->mobileNumber}}" required>
                                             </div>
@@ -140,7 +140,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Password</label>
+                                                <label class="form-label">Password <span class="text-danger">*</span></label>
                                                 <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter Your Password" id="password"
                                                     value="{{ old('password') }}" >
                                                     @error('password')
@@ -148,7 +148,7 @@
                                             @enderror
                                             </div>
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Confirm Password</label>
+                                                <label class="form-label">Confirm Password <span class="text-danger">*</span></label>
                                                 <input  type="password" class="form-control @error('confirmPassword') is-invalid @enderror"  placeholder="Enter Your Confirm Password" id="confirmPassword"
                                                 value="{{ old('confirmPassword') }}" >
                                                     @error('confirmPassword')
@@ -156,20 +156,20 @@
                                             @enderror
                                             </div>
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Address</label>
+                                                <label class="form-label">Address <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" placeholder="Enter Your Address" id="address"
                                                     value="{{$data->address}}" required>
                                             </div>
 
                                             <div class="col-sm-12 m-b30">
-                                              <label for="inputState" class="form-label">District </label></label>
+                                              <label for="inputState" class="form-label">District  <span class="text-danger">*</span></label></label>
                                              <select id="pub_district" class="form-select" id="district"  required  disabled="true">
                                              <option name="$data->district" value="{{$data->district}}" >{{$data->district}}</option>
 
                                              </select>
                                            </div>
                                             <div class="col-sm-12 m-b30">
-                                                <label class="form-label">Postal Code</label>
+                                                <label class="form-label">Postal Code <span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control"
                                                     placeholder="Enter Your Postal Code" id="postalCode" value="{{$data->postalCode}}" required>
                                             </div>

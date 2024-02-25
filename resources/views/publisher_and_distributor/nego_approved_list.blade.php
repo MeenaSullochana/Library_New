@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Negotiation Approved Books List</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
         include "publisher_and_distributor/plugin/plugin_css.php";
@@ -56,10 +56,10 @@
                     <div class="card-body">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Negotiation Books List</b>
+                                <b> Negotiation Approved Books List</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="javascript:history.back()">
-                                <i class="fas fa-plus"></i> Add Book</a>
+                                <i class="fas fa-plus"></i> Back</a>
                             <!-- <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
                                <li class="breadcrumb-item"><a href="allocated_location_view.php">View Allocated Location</a></li>

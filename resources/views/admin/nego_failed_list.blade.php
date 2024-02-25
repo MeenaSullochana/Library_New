@@ -14,7 +14,7 @@
       <meta property="og:image" content="">
       <meta name="format-detection" content="telephone=no">
       <!-- PAGE TITLE HERE -->
-      <title>Government of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement - Failed Nagotiation Book List</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -54,7 +54,7 @@
                   <div class="card-body">
                      <div class="d-flex align-items-center justify-content-between">
                         <h3 class="mb-0 bc-title">
-                           <b>Negotiation Books List</b>
+                           <b>Negotiation Failed Books List</b>
                         </h3>
                         <!-- <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
                         <i class="fas fa-plus"></i> Add Book</a> -->
@@ -78,7 +78,7 @@
                                 <i class="fa fa-trash"></i>
                                 </a>
                             </span>
-                            <div>
+                            {{-- <div>
                                 <div class="btn-group bootstrap-select select-picker pr-2 d-tc">
                                     <div class="dropdown-menu open" role="combobox">
                                         <ul class="dropdown-menu inner" role="listbox" aria-expanded="false">
@@ -124,7 +124,7 @@
                                         </option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> --}}
                             </div>
                             <div id="empoloyees-tbl3_wrapper" class="dataTables_wrapper no-footer">
                             <table id="empoloyees-tbl3" class="table dataTable no-footer" role="grid"
@@ -271,7 +271,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
-                <p>Do you want to proceed?</p>
+                <p>Do You Want to Proceed?</p>
                 <!-- Hidden input field to store the data-id value -->
                 <input type="hidden" id="modalDataId" value="">
             </div>
@@ -288,7 +288,7 @@
             <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-body">
-                <p>Do you want to proceed?</p>
+                <p>Do you want to Proceed?</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
@@ -307,7 +307,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">negotiation  Message</h5>
+                <h5 class="modal-title">Negotiation  Message</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body" id="modalBodyContent"></div>
@@ -526,4 +526,16 @@
     line-height: 18px;
     border-radius: 0.25rem;
 }
+.active-projects.style-1 .dt-buttons .dt-button {
+    top: -50px;
+    right: 0 !important;
+}
+   .active-projects.style-1 .dt-buttons .dt-button {
+    top: -50px;
+    right: 0 !important;
+}
+
+.active-projects tbody tr td:last-child {
+        text-align: center;
+    }
 </style>

@@ -76,7 +76,7 @@
                                                 <th class="sorting_asc" tabindex="0" aria-controls="example4"
                                                     rowspan="1" colspan="1" aria-sort="ascending"
                                                     aria-label="Roll No: activate to sort column descending"
-                                                    style="width: 85.0156px;">S.no</th>
+                                                    style="width: 85.0156px;">S.No</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example4" rowspan="1"
                                                     colspan="1"
                                                     aria-label="Name: activate to sort column ascending"

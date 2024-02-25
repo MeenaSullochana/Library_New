@@ -11,7 +11,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="robots" content="noindex, nofollow" />
    <!-- PAGE TITLE HERE -->
-   <title>Government of Tamil Nadu - Book Procurement</title>
+   <title>Government of Tamil Nadu - Book Procurement - Payment Receipt List</title>
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -49,12 +49,15 @@
       <div class="content-body">
          <div class="container-fluid">
             <div class="card">
-               <div class="card-header">
-                  <div class="d-flex justify-content-between">
-                     <p>Publisher List</p>
-                     <p class="text-right">View</p>
-                  </div>
-               </div>
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                       <h4>Payment Receipt List</h4>
+                       {{-- <p class="text-right">View</p> --}}
+                    </div>
+                 </div>
+            </div>
+            <div class="card">
+
                <div class="card-body">
                @php
                         $payment = DB::table('procurement_paymrnts')->where('userId','=',auth('publisher')->user()->id)->get();
@@ -121,3 +124,13 @@
 </body>
 
 </html>
+<style>
+    .active-projects.style-1 .dt-buttons .dt-button {
+    top: -50px;
+    right: 0 !important;
+}
+
+.active-projects tbody tr td:last-child {
+        text-align: center;
+    }
+</style>

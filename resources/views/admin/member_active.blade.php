@@ -16,7 +16,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Active Reviewer List</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -59,10 +59,10 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>All ActiveMember List</b>
+                                <b>Active Reviewer List</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/member_create">
-                                <i class="fas fa-plus"></i> Add Member</a>
+                                <i class="fas fa-plus"></i> Add Reviewer</a>
 
                         </div>
                     </div>

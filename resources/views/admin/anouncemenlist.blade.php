@@ -61,7 +61,7 @@
                         <h3>Anouncemenlist List</h3>
                      </div>
                      <div class="item">
-                       <a href="index.php"> <button type="button" class="btn btn-primary"><i class="fa fa-backward" aria-hidden="true"></i> Back</button></a>
+                       <a href="#"> <button type="button" class="btn btn-primary"><i class="fa fa-backward" aria-hidden="true"></i> Back</button></a>
                      </div>
                   </div>
                </div>
@@ -110,78 +110,78 @@
 											</div>
 											<!-- tab-content -->
 											<div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-        <div class="email-list dz-scroll" id="emails">
-            @php
-                $announcements = DB::table('announcements')->paginate(10);
-            @endphp
+                                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                                    <div class="email-list dz-scroll" id="emails">
+                                                        @php
+                                                            $announcements = DB::table('announcements')->paginate(10);
+                                                        @endphp
 
-            @forelse($announcements as $announcement)
-                <div class="message">
-                    <div>
-                        <div class="d-flex message-single">
-                            <div class="ps-1 align-self-center">
-                                <div class="form-check custom-checkbox">
-                                    <input type="checkbox" class="form-check-input" id="checkbox{{ $announcement->id }}">
-                                    <label class="form-check-label" for="checkbox{{ $announcement->id }}"></label>
-                                </div>
-                            </div>
-                            <div class="ms-2">
-                                <label class="bookmark-btn">
-                                    <input type="checkbox">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                        <a href="/admin/announcements_virw/{{ $announcement->id }}" class="col-mail col-mail-2">
-                            <div class="head">{{ substr($announcement->message, 0, 19) }}</div>
-                            <div class="subject">Admin</div>
-                            <div class="date">{{ \Carbon\Carbon::parse($announcement->created_at)->format('Y-m-d h:i A') }}</div>
-                        </a>
-                        <div class="icon">
-                            <a href="javascript:void(0);" class="ms-2">
-                                <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <!-- SVG icon code -->
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            @empty
-                <p>No announcements found.</p>
-            @endforelse
-        </div>
-    </div>
-</div>
+                                                        @forelse($announcements as $announcement)
+                                                            <div class="message">
+                                                                <div>
+                                                                    <div class="d-flex message-single">
+                                                                        <div class="ps-1 align-self-center">
+                                                                            <div class="form-check custom-checkbox">
+                                                                                <input type="checkbox" class="form-check-input" id="checkbox{{ $announcement->id }}">
+                                                                                <label class="form-check-label" for="checkbox{{ $announcement->id }}"></label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="ms-2">
+                                                                            <label class="bookmark-btn">
+                                                                                <input type="checkbox">
+                                                                                <span class="checkmark"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="/admin/announcements_virw/{{ $announcement->id }}" class="col-mail col-mail-2">
+                                                                        <div class="head">{{ substr($announcement->message, 0, 19) }}</div>
+                                                                        <div class="subject">Admin</div>
+                                                                        <div class="date">{{ \Carbon\Carbon::parse($announcement->created_at)->format('Y-m-d h:i A') }}</div>
+                                                                    </a>
+                                                                    <div class="icon">
+                                                                        <a href="javascript:void(0);" class="ms-2">
+                                                                            <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <!-- SVG icon code -->
+                                                                            </svg>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @empty
+                                                            <p class="text-center mt-3 mb-5">No announcements found.</p>
+                                                        @endforelse
+                                                    </div>
+                                                </div>
+                                            </div>
 
-<div class="row">
-    <div class="col-12 ps-3">
-        <div class="table-pagination">
-            <p class="mb-0">Showing <span>{{ $announcements->firstItem() }}-{{ $announcements->lastItem() }}</span> from <span>{{ $announcements->total() }}</span> announcements</p>
-            <nav>
-                <ul class="pagination pagination-sm">
-                    <li class="page-item {{ $announcements->previousPageUrl() ? '' : 'disabled' }}">
-                        <a class="page-link" href="{{ $announcements->previousPageUrl() }}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
+                                            <div class="row">
+                                                <div class="col-12 ps-3">
+                                                    <div class="table-pagination">
+                                                        <p class="mb-0">Showing <span>{{ $announcements->firstItem() }}-{{ $announcements->lastItem() }}</span> from <span>{{ $announcements->total() }}</span> announcements</p>
+                                                        <nav>
+                                                            <ul class="pagination pagination-sm">
+                                                                <li class="page-item {{ $announcements->previousPageUrl() ? '' : 'disabled' }}">
+                                                                    <a class="page-link" href="{{ $announcements->previousPageUrl() }}" aria-label="Previous">
+                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                    </a>
+                                                                </li>
 
-                    @for ($i = 1; $i <= $announcements->lastPage(); $i++)
-                        <li class="page-item {{ $i == $announcements->currentPage() ? 'active' : '' }}">
-                            <a class="page-link" href="{{ $announcements->url($i) }}">{{ $i }}</a>
-                        </li>
-                    @endfor
+                                                                @for ($i = 1; $i <= $announcements->lastPage(); $i++)
+                                                                    <li class="page-item {{ $i == $announcements->currentPage() ? 'active' : '' }}">
+                                                                        <a class="page-link" href="{{ $announcements->url($i) }}">{{ $i }}</a>
+                                                                    </li>
+                                                                @endfor
 
-                    <li class="page-item {{ $announcements->nextPageUrl() ? '' : 'disabled' }}">
-                        <a class="page-link" href="{{ $announcements->nextPageUrl() }}" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</div>
+                                                                <li class="page-item {{ $announcements->nextPageUrl() ? '' : 'disabled' }}">
+                                                                    <a class="page-link" href="{{ $announcements->nextPageUrl() }}" aria-label="Next">
+                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </nav>
+                                                    </div>
+                                                </div>
+                                            </div>
 
 										</div>
 									</div>

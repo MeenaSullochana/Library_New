@@ -1,5 +1,6 @@
 <div class="footer">
     <div class="copyright">
-        <p>Copyright © Developed by <a href="#" target="_blank">Government of Tamil Nadu - Book Procurement</a> 2023</p>
+        <p> Copyright © 2023
+            Directorate of Public Libraries, பொது நூலக இயக்ககம்   <a href="#">| Design by Gladindia</p>
     </div>
 </div>

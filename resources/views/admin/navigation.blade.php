@@ -2533,7 +2533,7 @@
                     </li>
                     <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                             <i class="bi bi-cash-stack"></i>
-                            <span class="nav-text">Management budget</span>
+                            <span class="nav-text">Management Budget</span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="/admin/budget">Make Budget</a></li>
@@ -2700,7 +2700,7 @@
 							<span class="nav-text">Report Management</span>
 						</a>
 						<ul aria-expanded="false">
-						<li><a href="report_download">Book Fair Report Download</a></li>
+						{{-- <li><a href="report_download">Book Fair Report Download</a></li> --}}
                             <li><a href="report_download_publisher">Publisher Report Download</a></li>
                             <li><a href="report_download_order">Order Management Download</a></li>
 							<li><a href="report_download_payment">Payment Report Download</a></li>

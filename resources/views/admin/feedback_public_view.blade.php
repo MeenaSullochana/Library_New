@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement </title>
+    <title>Government of Tamil Nadu - Book Procurement - View Public Feedback</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -57,7 +57,7 @@
                             <h3 class="mb-0 bc-title">
                                 <b>View Distributor Feedback</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="feedback_public_list.php">
+                            <a class="btn btn-primary  btn-sm" href="feedback_public_list">
                                 <i class="fa fa-chevron-left" aria-hidden="true"></i> Back </a>
                         </div>
                     </div>
@@ -73,9 +73,9 @@
                                             <div class="">
                                                 <img src="images/user1.jpg" class="rounded-circle">
                                             </div>
-                                            <a class="icon-wrapper" href="edit-profile.html">
+                                            {{-- <a class="icon-wrapper" href="edit-profile.html">
                                                 <i class="fa-solid fa-pencil"></i>
-                                            </a>
+                                            </a> --}}
                                         </div>
                                         <div class="user-details">
 

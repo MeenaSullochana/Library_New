@@ -15,7 +15,7 @@
       <meta name="format-detection" content="telephone=no">
       <meta name="csrf-token" content="{{ csrf_token() }}">
       <!-- PAGE TITLE HERE -->
-      <title>Government of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement - Apply For Procurement</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="images/fevi.svg">
       <link href="
@@ -60,7 +60,7 @@
                   <div class="card-body">
                      <div class="d-sm-flex align-items-center justify-content-between">
                         <h3 class="mb-0 bc-title">
-                           <b>All Books List</b>
+                           <b>Apply For Procurement</b>
                         </h3>
                         {{-- <a class="btn btn-primary  btn-sm" href="book_manage_add.php"> --}}
                         {{-- <i class="fas fa-plus"></i> Add Book</a> --}}
@@ -243,6 +243,14 @@
    </body>
 </html>
 <style>
+    .active-projects.style-1 .dt-buttons .dt-button {
+    top: -50px;
+    right: 0 !important;
+    }
+
+    .active-projects tbody tr td:last-child {
+        text-align: center;
+    }
    table {
    border: 1px solid #ccc;
    border-collapse: collapse;

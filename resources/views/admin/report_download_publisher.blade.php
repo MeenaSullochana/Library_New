@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Publisher Report Download</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -60,7 +60,7 @@
                             <h3 class="mb-0 bc-title">
                                 <b>Publisher Report Download</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="index.php">
+                            <a class="btn btn-primary  btn-sm" href="index">
                                     <i class="fas fa-plus"></i> Dashboard </a>
                         </div>
                     </div>
@@ -76,14 +76,14 @@
                                     <div class="row">
                                         <div class="col-xl-4 mb-3">
                                             <div class="example">
-                                                <p class="mb-1">From Date</p>
+                                                <p class="mb-1">From Date <span class="text-danger">*</span></p>
                                                 <input class="form-control input-daterange-datepicker" type="date"
                                                     name="daterange" value="01/01/2015 - 01/31/2015">
                                             </div>
                                         </div>
                                         <div class="col-xl-4 mb-3">
                                             <div class="example">
-                                                <p class="mb-1">To Date</p>
+                                                <p class="mb-1">To Date <span class="text-danger">*</span></p>
                                                 <input type="date" class="form-control input-daterange-timepicker"
                                                     name="daterange" value="01/01/2015 1:30 PM - 01/01/2015 2:00 PM">
                                             </div>

@@ -60,7 +60,7 @@
                             <h3 class="mb-0 bc-title">
                                 <b>List of Public Feedback</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="feedback_public_view.php">
+                            <a class="btn btn-primary  btn-sm" href="feedback_public_view">
                                 <i class="fas fa-plus"></i> View Feedback </a>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex">
-                                                    <a href="feedback_public_view.php"
+                                                    <a href="feedback_public_view"
                                                             class="btn btn-success shadow btn-xs sharp me-1">
                                                             <i class="fa fa-eye"></i>
                                                         </a>

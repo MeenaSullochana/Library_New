@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Government of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement -  Book Gsm Edit</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -85,12 +85,12 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
-                                                        <label for="slug">Book Gsm Number *</label>
+                                                        <label for="slug">Book Gsm Number  <span class="text-danger">*</span></label>
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="{{$data->name}}" Required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4" id="adding">
-                                                    <label for="slug">Status *</label>
+                                                    <label for="slug">Status  <span class="text-danger">*</span></label>
                                                     <div class="dropdown bootstrap-select default-select form-control wide form-control-sm">
                                                         <select id="status" name="status" class="default-select form-control wide form-control-sm" Required>
                                                              @if($data->status == 1)

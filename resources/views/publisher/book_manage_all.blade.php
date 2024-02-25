@@ -16,7 +16,7 @@
       <meta name="csrf-token" content="{{ csrf_token() }}">
 
       <!-- PAGE TITLE HERE -->
-      <title>Government of Tamil Nadu - Book Procurement</title>
+      <title>Government of Tamil Nadu - Book Procurement - All Books List</title>
       <!-- FAVICONS ICON -->
       <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -55,7 +55,7 @@
                   <div class="card-body">
                      <div class="d-sm-flex align-items-center justify-content-between">
                         <h3 class="mb-0 bc-title">
-                           <b>All books list</b>
+                           <b>All Books List</b>
                         </h3>
                         <a class="btn btn-primary  btn-sm" href="{{ url('publisher/book_add') }}">
                         <i class="fas fa-plus"></i> Add Book</a>
@@ -91,38 +91,19 @@
                                             <label class="form-check-label" for="checkAll2"></label>
                                         </div>
                                         </th>
-                                        <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                        colspan="1" aria-label="ERoll No: activate to sort column ascending"
-                                        style="width: 97.5156px;">Book ID</th>
-                                        <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                        colspan="1"
-                                        aria-label="Books: activate to sort column ascending"
-                                        style="width: 145.219px;">Title</th>
-                                        <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                        colspan="1"
-                                        aria-label="Books: activate to sort column ascending"
-                                        style="width: 145.219px;">Author</th>
-                                        <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                        colspan="1"
-                                        aria-label="Books: activate to sort column ascending"
-                                        style="width: 145.219px;">Primary Language</th>
-                                        <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                        colspan="1"
-                                        aria-label="Stock: activate to sort column ascending"
-                                        style="width: 109.984px;">Price</th>
-                                        <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                        colspan="1"
-                                        aria-label="ISBN(10/13): activate to sort column ascending"
-                                        style="width: 126.609px;">ISBN(10/13)</th>
+                                        <th>Book ID</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Primary Language</th>
+                                        <th>Price</th>
+                                        <th>ISBN(10/13)</th>
                                         {{-- <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1" aria-label="Quantity: activate to sort column ascending"
                                         style="width: 65.3594px;">Type</th> --}}
                                         <!-- <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1" aria-label="Issued: activate to sort column ascending"
                                         style="width: 72.7031px;"> Issued</th> -->
-                                        <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                        colspan="1" aria-label="Action: activate to sort column ascending"
-                                        style="width: 87.4688px;">  Action</th>
+                                        <th>  Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

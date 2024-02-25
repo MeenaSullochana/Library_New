@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Negotiation Process Books List</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
         include "publisher_and_distributor/plugin/plugin_css.php";
@@ -56,10 +56,10 @@
                     <div class="card-body">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Negotiation Books List</b>
+                                <b>Negotiation Process Books List</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
-                                <i class="fas fa-plus"></i> Add Book</a>
+                            <a class="btn btn-primary  btn-sm" href="nego_pending_list">
+                                <i class="fas fa-plus"></i> Back</a>
                             <!-- <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
                                <li class="breadcrumb-item"><a href="allocated_location_view.php">View Allocated Location</a></li>
@@ -92,9 +92,9 @@
 
                                                 <th>S.no</th>
                                                 <th>Title</th>
-                                                <th>book Cost</th>
-                                                <th>Admin Cost</th>
-                                                <th>Negotiation Cost</th>
+                                                <th>Book Price</th>
+                                                <th>Admin Price</th>
+                                                <th>Negotiation Price</th>
                                                 <th>Negotiation </th>
                                                 <th>Negotiation Message</th>
                                                 <th>Action</th>

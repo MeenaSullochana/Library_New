@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Inactive Book List</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -55,7 +55,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>All Books List</b>
+                                <b>Inactive Books List</b>
                             </h3>
                             <!-- <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
                         <i class="fas fa-plus"></i> Add Book</a> -->
@@ -72,7 +72,7 @@
 
                 <div class="col-xl-12">
                     <div class="card">
-                        <div class="card-body p-0">
+                        <div class="card-body p-3">
                             <div class="table-responsive active-projects style-1 ItemsCheckboxSec shorting ">
                                 <div class="tbl-caption">
                                     <span>
@@ -209,7 +209,7 @@
 
                                                 @if($val->user_type == "publisher_distributor")
                                                 <td>
-                                                    <span> publisher cum distributor</span>
+                                                    <span> Publisher cum Gistributor</span>
                                                 </td>
                                                 @else
                                                 <td>
@@ -597,4 +597,16 @@ body {
     line-height: 18px;
     border-radius: 0.25rem;
 }
+.active-projects.style-1 .dt-buttons .dt-button {
+    top: -50px;
+    right: 0 !important;
+}
+   .active-projects.style-1 .dt-buttons .dt-button {
+    top: -50px;
+    right: 0 !important;
+}
+
+.active-projects tbody tr td:last-child {
+        text-align: center;
+    }
 </style>

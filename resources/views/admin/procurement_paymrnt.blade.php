@@ -11,7 +11,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="robots" content="noindex, nofollow" />
    <!-- PAGE TITLE HERE -->
-   <title>Government of Tamil Nadu - Book Procurement</title>
+   <title>Government of Tamil Nadu - Book Procurement - Payment List</title>
    <!-- FAVICONS ICON -->
    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -52,7 +52,7 @@
                <div class="card-body">
                    <div class="d-flex align-items-center justify-content-between">
                        <h3 class="mb-0 bc-title">
-                           <b>Publisher List</b>
+                           <b>Payment List</b>
                        </h3>
                        <a class="btn btn-primary  btn-sm" href="member_create">
                            <i class="fas fa-chevron-left"></i> Dashboard</a>
@@ -87,7 +87,7 @@
                               <td>{{$val->invoiceNumber}}</td>
 
                               <td>{{ \Carbon\Carbon::parse($val->created_at)->format('Y-m-d ') }}</td>
-                              <td><a href="payment_invoice/{{$val->id}}"><i class="fa fa-eye p-2"></i></a>
+                              <td><a href="payment_invoice/{{$val->id}}"><i class="fa fa-eye p-2 text-primary"></i></a>
 
                               </td>
                            </tr>
