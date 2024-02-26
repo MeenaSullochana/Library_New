@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Negotiation Failed Books List </title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
         include "publisher_and_distributor/plugin/plugin_css.php";
@@ -56,7 +56,7 @@
                     <div class="card-body">
                         <div class="d-sm-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Negotiation Books List</b>
+                                <b>Negotiation Failed Books List</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="javascript:history.back()">
                                 <i class="fas fa-arrow-lef"></i> Back</a>
@@ -75,7 +75,7 @@
                             <div class="table-responsive active-projects style-1 ItemsCheckboxSec shorting ">
                                 <div class="tbl-caption">
                                     <span class="bulk-action">
-                                        <a href="book_manage_view.php" class="btn btn-success shadow btn-xs sharp me-1">
+                                        <a href="#" class="btn btn-success shadow btn-xs sharp me-1">
                                             <i class="fa fa-eye"></i>
                                         </a>
                                         <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
@@ -87,11 +87,11 @@
                                     <table id="example3" class="table dataTable no-footer" role="grid" aria-describedby="empoloyees-tbl3_info">
                                         <thead>
                                             <tr role="row">
-                                                <th>S.no</th>
+                                                <th>S.No</th>
                                                 <th>Books</th>
-                                                <th>book Cost</th>
-                                                <th>Admin Cost</th>
-                                                <th>negotiation </th>
+                                                <th>Book Price</th>
+                                                <th>Admin Price</th>
+                                                <th>Negotiation </th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -112,7 +112,7 @@
                                                 <td data-label="Title">
                                                     <div class="products">
                                                         <div>
-                                                            <h6><a class="text-left" href="book_manage_view.php">{{$val->book_title}}</a></h6>
+                                                            <h6><a class="text-left" href="#">{{$val->book_title}}</a></h6>
                                                             <span class="text-left">{{$val->subtitle}}</span>
                                                         </div>
                                                     </div>
@@ -131,7 +131,7 @@
                                                     @if($val->negotiation_reject_message !=null)
                                                 <button type="button" id="successButton11" class="btn btn-primary" data-id="{{$val->negotiation_reject_message}}">View</button>
                                                 @endif
-                                                        <a href="book_manage_view.php" class="btn btn-success shadow btn-xs sharp me-1">
+                                                        <a href="#" class="btn btn-success shadow btn-xs sharp me-1">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
                                                         <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">

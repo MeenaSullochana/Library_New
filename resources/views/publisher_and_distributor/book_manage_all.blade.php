@@ -57,8 +57,8 @@
                         <h3 class="mb-0 bc-title">
                            <b>All Books List</b>
                         </h3>
-                        <a class="btn btn-primary  btn-sm" href="javascript:history.back()">
-                        <i class="fas fa-plus"></i> Back</a>
+                        <a class="btn btn-primary  btn-sm" href="book_add">
+                        <i class="fas fa-plus"></i> Add Book </a>
                         <!-- <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
                                <li class="breadcrumb-item"><a href="allocated_location_view.php">View Allocated Location</a></li>

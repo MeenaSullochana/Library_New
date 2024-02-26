@@ -245,6 +245,14 @@
 	body {
 		background: #f2f2f2;
 	}
+        .active-projects.style-1 .dt-buttons .dt-button {
+        top: -50px;
+        right: 0 !important;
+    }
+
+    .active-projects tbody tr td:last-child {
+        text-align: center;
+    }
 </style>
 
 </html>

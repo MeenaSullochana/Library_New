@@ -12,7 +12,7 @@
 
 
 	<!-- PAGE TITLE HERE -->
-	<title>Government of Tamil Nadu - Book Procurement</title>
+	<title>Government of Tamil Nadu - Book Procurement </title>
 
 	<!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
@@ -539,5 +539,12 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
 @endif
 </html>
 <style>
+.active-projects.style-1 .dt-buttons .dt-button {
+    top: -50px;
+    right: 0 !important;
+    }
 
+    .active-projects tbody tr td:last-child {
+            text-align: center;
+        }
 </style>

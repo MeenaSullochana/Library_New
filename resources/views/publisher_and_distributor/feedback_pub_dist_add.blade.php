@@ -60,8 +60,8 @@
                         <h3 class="mb-0 bc-title">
                             <b>Create Feedback</b>
                         </h3>
-                        <a class="btn btn-primary  btn-sm" href="/publisher_and_distributor/feedbackadd">
-                            <i class="fas fa-plus"></i> Create Feedback </a>
+                        {{-- <a class="btn btn-primary  btn-sm" href="/publisher_and_distributor/feedbackadd">
+                            <i class="fas fa-plus"></i> Create Feedback </a> --}}
                     </div>
                 </div>
                 <div class="row">
@@ -93,6 +93,45 @@
                     </div>
 
                 </div>
+                {{-- <div class="row p-2 bg-white">
+                    <div class="col-xl-12">
+                        <div class="card-body p-0">
+                            <div class="table-responsive active-projects style-1 ItemsCheckboxSec shorting ">
+                                <div id="empoloyees-tbl3_wrapper" class="dataTables_wrapper no-footer">
+                                    <table id="example3" class="table dataTable no-footer" role="grid" aria-describedby="empoloyees-tbl3_info">
+                                        <thead>
+                                            <tr role="row">
+
+
+                                                <th>S.No</th>
+                                                <th>Subject</th>
+                                                <th>Description</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr role="row" class="odd">
+
+                                                <td>1</td>
+                                                <td> Subject </td>
+                                                <td>Description</td>
+                                                
+                                                <td data-label="control">
+                                                    <div class="d-flex mt-p0">
+                                                        </a>
+                                                        <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
+                                                            <i class="fa fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
         </div>
         <!--************

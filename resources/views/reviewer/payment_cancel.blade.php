@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Cancel Payment List</title>
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('reviewer/images/fevi.svg') }}">
@@ -114,7 +114,7 @@
                 <div class="card-body p-0 bg-white mt-3">
                     <div class="table-responsive active-projects">
                         <div class="tbl-caption">
-                            <h4 class="heading mb-0">Transaction</h4>
+                            <h4 class="heading mb-0">Cancel Payment List</h4>
                         </div>
                         <table id="projects-tbl" class="table">
                             <thead>

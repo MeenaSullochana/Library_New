@@ -78,17 +78,17 @@
                                     <div class="tbl-caption">
                                         <h4 class="heading mb-0">Scheme List</h4>
                                     </div>
-                                    <table id="empoloyeestbl2" class="table">
+                                    <table id="example3" class="table">
                                         <thead>
                                             <tr>
                                                 <th>
                                                 </th>
-                                                <th>S.no</th>
+                                                <th>S.No</th>
                                                 <th>Library Type</th>
                                                 <th>Total Amount</th>
 
                                                 <th>Date</th>
-                                                <th class="text-end">Controle</th>
+                                                <th class="text-end">Control</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -164,3 +164,13 @@
 </body>
 
 </html>
+<style>
+       .active-projects.style-1 .dt-buttons .dt-button {
+        top: -50px;
+        right: 0 !important;
+    }
+
+    .active-projects tbody tr td:last-child {
+        text-align: center;
+    }
+</style>

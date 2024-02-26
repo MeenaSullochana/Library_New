@@ -569,50 +569,64 @@
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox10" name="specialized_category_books[]"
                                     value="Children" class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox10">Children - <span
-                                    class="mt-056">குழந்தைகள்</span></label>
+                                 <label class="custom-control-label" for="customCheckbox10"> Children Books - <span
+                                    class="mt-056">சிறுவர் நூல்கள்</span></label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox20" name="specialized_category_books[]"
                                     value="Academic" class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox20">Academic - <span
-                                    class="mt-056">கல்வி </span></label>
+                                 <label class="custom-control-label" for="customCheckbox20">Academic Text Books - <span
+                                    class="mt-056">பாட நூல்கள் </span></label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox30" name="specialized_category_books[]"
                                     value="Competitive" class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox30">Competitive Exams -
-                                 <span class="mt-056">போட்டித்தேர்வு </span></label>
+                                 <label class="custom-control-label" for="customCheckbox30">Competitive Examination Books -
+                                 <span class="mt-056">போட்டித்தேர்வு நூல்கள் </span></label>
                               </div>
 
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox40" name="specialized_category_books[]"
                                     value="fiction" class="custom-control-input">
                                  <label class="custom-control-label" for="customCheckbox30">Fiction - <span
-                                    class="mt-056">கற்பனை</span>
+                                    class="mt-056">புனைவு நூல்கள்</span>
                                  </label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox40" name="specialized_category_books[]"
                                     value="nonfiction" class="custom-control-input">
                                  <label class="custom-control-label" for="customCheckbox30">Non Fiction - <span
-                                    class="mt-056">கற்பனை அல்ல</span>
+                                    class="mt-056">புனைவிலி நூல்கள்</span>
                                  </label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox40" name="specialized_category_books[]"
                                     value="rkdocument" class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox30">Archival Documentation - <span
-                                    class="mt-056">ஆவண பதிவு காப்பகம்</span>
+                                 <label class="custom-control-label" for="customCheckbox30">Documentation Editions - <span
+                                    class="mt-056">ஆவணப் பதிப்பு நூல்கள்</span>
                                  </label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox50" name="specialized_category_books[]"
                                     value="Translate" class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox30">Translated - <span
-                                    class="mt-056">மொழிப்பெயர்ப்பு</span>
+                                 <label class="custom-control-label" for="customCheckbox30">Translated Books - <span
+                                    class="mt-056">மொழிபெயர்ப்பு நூல்கள்</span>
                                  </label>
                               </div>
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" id="customCheckbox50" name="specialized_category_books[]"
+                                   value="government-publications" class="custom-control-input">
+                                <label class="custom-control-label" for="customCheckbox30">Government Publications - <span
+                                   class="mt-056">அரசு வெளியீடுகள்</span>
+                                </label>
+                             </div>
+                             <div class="custom-control custom-checkbox">
+                                <input type="checkbox" id="customCheckbox50" name="specialized_category_books[]"
+                                   value="foreign-books" class="custom-control-input">
+                                <label class="custom-control-label" for="customCheckbox30">Foreign Books - <span
+                                   class="mt-056">வெளிநாட்டில் அச்சடிக்கப்பட்ட நூல்கள்</span>
+                                </label>
+                             </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" name="specialized_category_books[]"
                                     id="specialized_category_check" value="Other If Any"
@@ -2001,52 +2015,65 @@
                                  <input type="checkbox" id="customCheckbox10"
                                     name="pub_dis_specialized_category_books[]" value="Children"
                                     class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox10">Children - <span
-                                    class="mt-056">குழந்தைகள்</span></label>
+                                 <label class="custom-control-label" for="customCheckbox10">Children Book - <span
+                                    class="mt-056">சிறுவர் நூல்கள்</span></label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox20"
                                     name="pub_dis_specialized_category_books[]" value="Academic"
                                     class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox20">Academic - <span
-                                    class="mt-056">கல்வி சார்ந்த</span></label>
+                                 <label class="custom-control-label" for="customCheckbox20"> Academic Text Books - <span
+                                    class="mt-056">பாட நூல்கள்</span></label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox30"
                                     name="pub_dis_specialized_category_books[]" value="Competitive"
                                     class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox30">Competitive
-                                 Examinations - <span class="mt-056">போட்டித்தேர்வு சார்ந்த</span></label>
+                                 <label class="custom-control-label" for="customCheckbox30">Competitive Examination Books - <span class="mt-056">போட்டித்தேர்வு நூல்கள்</span></label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox40" name="specialized_category_books[]"
                                     value="fiction" class="custom-control-input">
                                  <label class="custom-control-label" for="customCheckbox30">Fiction - <span
-                                    class="mt-056">கற்பனை</span>
+                                    class="mt-056">புனைவு நூல்கள்</span>
                                  </label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox40" name="specialized_category_books[]"
                                     value="nonfiction" class="custom-control-input">
                                  <label class="custom-control-label" for="customCheckbox30">Non Fiction - <span
-                                    class="mt-056">கற்பனை அல்ல</span>
+                                    class="mt-056">புனைவிலி நூல்கள்</span>
                                  </label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox40" name="specialized_category_books[]"
                                     value="rkdocument" class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox30">Archival Documentation - <span
-                                    class="mt-056"> ஆவண பதிவு காப்பகம்</span>
+                                 <label class="custom-control-label" for="customCheckbox30">Documentation Editions - <span
+                                    class="mt-056"> ஆவணப் பதிப்பு நூல்கள்</span>
                                  </label>
                               </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" id="customCheckbox50"
                                     name="pub_dis_specialized_category_books[]" value="Tanslated"
                                     class="custom-control-input">
-                                 <label class="custom-control-label" for="customCheckbox30">Translated - <span
-                                    class="mt-056">மொழிப்பெயர்ப்பு</span>
+                                 <label class="custom-control-label" for="customCheckbox30"> Translated Books - <span
+                                    class="mt-056">மொழிபெயர்ப்பு நூல்கள்</span>
                                  </label>
                               </div>
+                              <div class="custom-control custom-checkbox">
+                                <input type="checkbox" id="customCheckbox50" name="specialized_category_books[]"
+                                   value="government-publications" class="custom-control-input">
+                                <label class="custom-control-label" for="customCheckbox30">Government Publications - <span
+                                   class="mt-056">அரசு வெளியீடுகள்</span>
+                                </label>
+                             </div>
+                             <div class="custom-control custom-checkbox">
+                                <input type="checkbox" id="customCheckbox50" name="specialized_category_books[]"
+                                   value="foreign-books" class="custom-control-input">
+                                <label class="custom-control-label" for="customCheckbox30">Foreign Books - <span
+                                   class="mt-056">வெளிநாட்டில் அச்சடிக்கப்பட்ட நூல்கள்</span>
+                                </label>
+                             </div>
                               <div class="custom-control custom-checkbox">
                                  <input type="checkbox" name="pub_dis_specialized_category_books[]"
                                     id="specialized_category_check2" value="Other" class="custom-control-input">

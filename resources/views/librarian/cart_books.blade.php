@@ -186,17 +186,17 @@
 									<div class="tbl-caption">
 										<h4 class="heading mb-0">Quote Book List</h4>
 									</div>
-									<table id="empoloyeestbl2" class="table">
+									<table id="example3" class="table">
 										<thead>
 											<tr>
 												<th>
 												</th>
-												<th>#</th>
+												<th>S.No</th>
 												<th>Quote id</th>
 												<th>Quote Date</th>
                                                 <th>Status</th>
                                                 <th>Quote Status</th>
-												<th class="text-end">Control</th>
+												<th>Control</th>
 											</tr>
 										</thead>
 										<tbody>

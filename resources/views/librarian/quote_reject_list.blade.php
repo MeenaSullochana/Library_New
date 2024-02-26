@@ -131,12 +131,12 @@
 									<div class="tbl-caption">
 										<h4 class="heading mb-0">Book List</h4>
 									</div>
-									<table id="empoloyeestbl2" class="table">
+									<table id="example" class="table">
 										<thead>
 											<tr>
 												<th>
 												</th>
-												<th>#</th>
+												<th>S.No</th>
 												<th>Quote id</th>
 												<th>Status</th>
 												<th>Quote Date</th>
@@ -235,3 +235,13 @@
     ?>
 </body>
 </html>
+<style>
+       .active-projects.style-1 .dt-buttons .dt-button {
+        top: -50px;
+        right: 0 !important;
+    }
+
+    .active-projects tbody tr td:last-child {
+        text-align: center;
+    }
+</style>
