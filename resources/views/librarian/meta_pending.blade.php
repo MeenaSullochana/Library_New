@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Pending Meta Book Check List</title>
 
     <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
@@ -62,9 +62,9 @@
                         <div class="card-body">
                             <div class="d-sm-flex align-items-center justify-content-between">
                                 <h3 class="mb-0 bc-title">
-                                    <b>Pending Books List</b>
+                                    <b>Pending Meta Book Check List</b>
                                 </h3>
-                                <a class="btn btn-primary  btn-sm" href="book_manage_add.php">
+                                <a class="btn btn-primary  btn-sm" href="index">
                                     <i class="fas fa-home"></i> Home</a>
                                 <!-- <nav aria-label="breadcrumb">
                            <ol class="breadcrumb">
@@ -168,10 +168,10 @@
                     </div>
                     <div class="col-xl-12">
                         <div class="card">
-                            <div class="card-body p-0">
+                            <div class="card-body p-3">
                                 <div class="table-responsive active-projects task-table">
                                     <div class="tbl-caption">
-                                        <h4 class="heading mb-0"><i class="fa fa-trash p-2" aria-hidden="true"></i></h4>
+                                        <h4 class="heading mb-0"><i class="fa fa-trash p-2 text-danger" aria-hidden="true"></i></h4>
                                     </div>
                                     <table id="example4" class="table">
                                         <thead>
@@ -179,7 +179,7 @@
                                             <tr>
                                                 <th>
                                                 </th>
-                                                <th>S.no</th>
+                                                <th>S.No</th>
                                                 <th>Book Name</th>
                                                 <th>Book Number</th>
                                                 <th>Meta Check</th>
@@ -406,3 +406,13 @@
 
     </script>
 </html>
+<style>
+      .active-projects.style-1 .dt-buttons .dt-button {
+        top: -50px;
+        right: 0 !important;
+    }
+
+    .active-projects tbody tr td:last-child {
+        text-align: center;
+    }
+</style>

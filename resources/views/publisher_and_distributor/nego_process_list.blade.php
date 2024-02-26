@@ -75,7 +75,7 @@
                             <div class="table-responsive active-projects style-1 ItemsCheckboxSec shorting ">
                                 <div class="tbl-caption">
                                     <span class="bulk-action">
-                                        <a href="book_manage_view.php" class="btn btn-success shadow btn-xs sharp me-1">
+                                        <a href="#" class="btn btn-success shadow btn-xs sharp me-1">
                                             <i class="fa fa-eye"></i>
                                         </a>
                                         <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
@@ -90,7 +90,7 @@
                                             <tr role="row">
 
 
-                                                <th>S.no</th>
+                                                <th>S.No</th>
                                                 <th>Title</th>
                                                 <th>Book Price</th>
                                                 <th>Admin Price</th>
@@ -118,7 +118,7 @@
                                                 <td data-label="Title">
                                                     <div class="products">
                                                         <div>
-                                                            <h6><a class="text-left" href="book_manage_view.php">{{$val->book_title}}</a></h6>
+                                                            <h6><a class="text-left" href="#">{{$val->book_title}}</a></h6>
                                                             <span class="text-left">{{$val->subtitle}}</span>
                                                         </div>
                                                     </div>
@@ -140,7 +140,7 @@
 
                                                 <td data-label="control">
                                                     <div class="d-flex mt-p0">
-                                                        <a href="book_manage_view.php" class="btn btn-success shadow btn-xs sharp me-1">
+                                                        <a href="#" class="btn btn-success shadow btn-xs sharp me-1">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
                                                         <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">

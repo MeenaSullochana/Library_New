@@ -59,7 +59,7 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                             <h3 class="mb-0 bc-title">
                                 <b>Book View</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="#">
+                            <a class="btn btn-primary  btn-sm" href="book_manage_all">
                                 <i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a>
                         </div>
                     </div>

@@ -1739,7 +1739,7 @@
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="/librarian/book_stock_list">Stock Book list</a></li>
-							<li><a href="/librarian/book_return_list">return Book list</a></li>
+							<li><a href="/librarian/book_return_list">Return Book list</a></li>
 						</ul>
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">

@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement</title>
+    <title>Government of Tamil Nadu - Book Procurement - Book Add</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
     <?php
@@ -75,7 +75,7 @@
                                 <h4>Publication Dedails</h4>
                             </div>
                             <div class="col-md-10">
-                              
+
                                 <div class="col-lg-12">
                                     <div class="basic-form">
                                         <div class="mb-3">
@@ -93,21 +93,18 @@
                                                     name="nameOfPublisher" placeholder="Enter the Name Of Publisher" required
                                                   >
                                                     @endif
-                                            
+
 
                                             </div>
-                                           
+
                                         </div>
                                         <div class="mb-3">
                                             <label class="text-label form-label text-black"
-                                                for="validationCustomUsername"> Year Of Publication
-                                                 </label>
-<div class="input-group transparent-append">
-    <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
-</div>
-
-
-
+                                            for="validationCustomUsername"> Year Of Publication
+                                                </label>
+                                            <div class="input-group transparent-append">
+                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,35 +173,39 @@
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-12">
+
                                                 <div name="" id="" method="post">
                                                     <div class="table-responsive">
                                                         <table class="table table-bordered" id="dynamic_field_series">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>Series Number <span
-                                                                            class="text-danger maditory"></span></th>
                                                                     <th>Series Title <span
                                                                             class="text-danger maditory"></span></th>
-                                                                    <th>ISBN <span
+                                                                    <th> Current Series Number<span
+                                                                            class="text-danger maditory"></span></th>
+                                                                    <th>Total Number Series <span
                                                                             class="text-danger maditory"></span></th>
 
-                                                                    <th>Add</th>
+                                                                    {{-- <th>Add</th> --}}
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="inputContainerseries">
                                                                 <tr>
-                                                                    <td><input type="text" name="series_number[]"
-                                                                            placeholder="Series Number"
-                                                                            class="form-control" ></td>
                                                                     <td><input type="text" name="series_title[]"
                                                                             placeholder="Series Title"
+                                                                            class="form-control" >
+                                                                        </td>
+                                                                    <td>
+                                                                        {{-- <small> <b class="text-danger">Note : </b>Sample Entry 2/10 total</small> --}}
+                                                                        <input type="text" name="series_number[]"
+                                                                            placeholder="Current Series Number"
                                                                             class="form-control" ></td>
                                                                     <td><input type="text" name="isbn_number[]"
-                                                                            placeholder="ISBN"
+                                                                            placeholder="Total Number Series"
                                                                             class="form-control" ></td>
 
-                                                                    <td><button type="button" class="btn btn-success"
-                                                                            onclick="addInputRowseries()">+</button></td>
+                                                                    {{-- <td><button type="button" class="btn btn-success"
+                                                                            onclick="addInputRowseries()">+</button></td> --}}
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -238,30 +239,30 @@
                                                         <table class="table table-bordered" id="dynamic_field">
                                                             <thead>
                                                                 <tr>
-                                                                    <th>Volume Number <span
-                                                                            class="text-danger maditory"></span></th>
                                                                     <th>Volume Title <span
                                                                             class="text-danger maditory"></span></th>
-                                                                    <th>ISBN <span
+                                                                    <th>Current  Volume Number <span
+                                                                            class="text-danger maditory"></span></th>
+                                                                    <th>Total Number Volume <span
                                                                             class="text-danger maditory"></span></th>
 
-                                                                    <th>Add</th>
+                                                                    {{-- <th>Add</th> --}}
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="inputContainer">
                                                                 <tr>
-                                                                    <td><input type="text" name="volume_number[]"
-                                                                            placeholder="Volume Number"
-                                                                            class="form-control" ></td>
                                                                     <td><input type="text" name="volume_title[]"
                                                                             placeholder="Volume Title"
-                                                                            class="form-control" ></td>
+                                                                            class="form-control" >
+                                                                    <td><input type="text" name="volume_number[]"
+                                                                            placeholder="Current  Volume Number"
+                                                                            class="form-control" ></td></td>
                                                                     <td><input type="text" name="isbn_number1[]"
-                                                                            placeholder="ISBN"
+                                                                            placeholder="Total Number Volume"
                                                                             class="form-control" ></td>
 
-                                                                    <td><button type="button" class="btn btn-success"
-                                                                            onclick="addInputRow()">+</button></td>
+                                                                    {{-- <td><button type="button" class="btn btn-success"
+                                                                            onclick="addInputRow()">+</button></td> --}}
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -404,8 +405,7 @@
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Primary Author Or
-                                                            Contributor
+                                                            for="validationCustomUsername">Secondary Author
                                                         </label>
                                                         <div class="input-group">
                                                             <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
@@ -424,8 +424,7 @@
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Primary Author Or
-                                                            Contributor
+                                                            for="validationCustomUsername">Tertiary Author
                                                         </label>
                                                         <div class="input-group">
                                                             <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
@@ -879,6 +878,19 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            {{-- <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Size <span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                                        <input type="number" class="form-control" id="size" step="0.01"
+                                                            name="size" placeholder="Enter weight.." required>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div> --}}
                                         </div>
                                         <h4>Paper</h4>
                                         <hr>
