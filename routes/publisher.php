@@ -25,24 +25,25 @@ Route::prefix('publisher')->group(function () {
          if($data !==null){
              return view('publisher.payment_recept')->with("data",$data);
          }
-         
+
      });
     Route::get('/procurement_paymrnt',function(){ return view('publisher.procurement_paymrnt');});
     Route::post('/isbn',[BookController::class,'isbn']);
 
-    
+
     Route::get('/notification',function(){ return view('publisher.notification');});
     // Route::get('/notification_view',function(){ return view('publisher.notification_view');});
     Route::get('/Notification_virw/{id}',[notificationController::class,'Notification_virw']);
-    
+
     Route::get('/notificationview',function(){
         $data = Session::get('notification1');
          if($data !==null){
              return view('publisher.notification_view')->with("data",$data);
          }
-         
+
      });
     Route::get('/book_add',function(){ return view('publisher.book_add');});
+    Route::get('/book_edit',function(){ return view('publisher.book_edit');});
     // Route::get('/book_manage_view',function(){ return view('publisher.book_manage_view');});
 
     Route::get('/activitymonitor',function(){ return view('publisher.activitymonitor');});
@@ -75,7 +76,7 @@ Route::prefix('publisher')->group(function () {
      Route::get('/ticket_list',[TicketController::class,'ticketlist']);
      Route::get('/ticket_chat/{id}',[TicketController::class,'ticketchat']);
      Route::post('/chatmessage/{id}',[TicketController::class,'chatmessage']);
-     
+
      Route::get('/ticket_chat',function(){
        $data = Session::get('ticdata');
         if($data !==null){
@@ -83,19 +84,19 @@ Route::prefix('publisher')->group(function () {
         }else{
             return back();
         }
-        
+
     });
-     
+
     Route::get('/ticket_view/{id}',[TicketController::class,'ticketview']);
     Route::get('/ticket_view',function(){
        $data = Session::get('ticket');
-    
+
          if($data !==null){
              return view('publisher.ticket_view')->with("data",$data);
          }else{
              return back();
          }
-         
+
      });
      Route::get('/ticket_completed',[TicketController::class,'ticketcompleted']);
      Route::get('/ticket_pending',[TicketController::class,'ticketpending']);
@@ -109,7 +110,7 @@ Route::prefix('publisher')->group(function () {
         }else{
             return back();
         }
-        
+
     });
     Route::post('/pubapplyadd',[ApplicationController::class,'applyadd']);
     Route::get('/fair_application_list',[ApplicationController::class,'applicationlist']);
@@ -121,7 +122,7 @@ Route::prefix('publisher')->group(function () {
         }else{
             return back();
         }
-    });   
+    });
     Route::post('/changepassword',[PublisherController::class,'publisherchangepassword']);
      Route::get('/change_password',function(){ return view('publisher.change_password');});
      Route::get('/index',[dashboardController::class,'pubdistdashboard']);
@@ -134,13 +135,13 @@ Route::prefix('publisher')->group(function () {
          }else{
              return back();
          }
-         
+
      });
 
      Route::get('/pub_profile_view',[PublisherController::class,'pubprofileview']);
-     
+
      Route::post('/pubprofileimg',[PublisherController::class,'pubprofileimg']);
-     
+
      Route::post('/pubbackgroundimg',[PublisherController::class,'pubbackgroundimg']);
 
 
@@ -153,7 +154,7 @@ Route::prefix('publisher')->group(function () {
     Route::post('/bookdelete',[BookController::class,'bookdelete']);
     Route::post('/multibookdelete',[BookController::class,'multibookdelete']);
 
-    
+
     Route::post('/create/book',[BookController::class,'create']);
     Route::get('/book_manage_all',[BookController::class,'bookmanageall']);
     Route::get('/book_manage_view/{id}',[BookController::class,'bookmanageview']);
@@ -162,7 +163,7 @@ Route::prefix('publisher')->group(function () {
          if($data !==null){
              return view('publisher.book_manage_view')->with("data",$data);
          }
-         
+
      });
 
      Route::get('/procurement_completed',[BookController::class,'procurecompleted']);
@@ -171,13 +172,13 @@ Route::prefix('publisher')->group(function () {
      Route::get('/procurement',[BookController::class,'procurement']);
      Route::post('/procurement',[BookController::class,'procurementstatus']);
      Route::post('/checkBookTitle',[BookController::class,'checkBookTitle']);
-    
+
      Route::get('/payment',function(){ return view('publisher.payment');});
 
      Route::post('/applay_procurment',[BookController::class,'applay_procurment']);
      Route::post('/pay-endpoint',[BookController::class,'pay_endpoint']);
 
-// Negotiation 
+// Negotiation
 
      Route::get('/nego_pending_list',function(){ return view('publisher.nego_pending_list');});
      Route::get('/nego_approved_list',function(){ return view('publisher.nego_approved_list');});
@@ -185,14 +186,14 @@ Route::prefix('publisher')->group(function () {
      Route::get('/nego_process_list',function(){ return view('publisher.nego_process_list');});
 
 
-     
+
      Route::post('/sendnegotiationstatus',[BookController::class,'sendnegotiationstatus']);
 
-      
+
      Route::post('/sendnegotiationsamount',[BookController::class,'sendnegotiationsamount']);
 
 
-     
-    
+
+
     });
 });

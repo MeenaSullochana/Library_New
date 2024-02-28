@@ -1537,7 +1537,7 @@
                                     <div class="basic-form">
                                         <div class="row">
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername"><span class="text-danger">Note:</span> Images of key highlights, Quotes, Phrases <span
@@ -1545,13 +1545,9 @@
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                                        <input class="bg-white p-1" type="file" id="banner_img"
-                                                            name="banner_img[]" accept="image/*" multiple required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
+                                                        {{-- <input class="bg-white p-1" type="file" id="banner_img"
+                                                            name="banner_img[]" accept="image/*" multiple required> --}}
+                                                                <input type="file" id="files" name="files[]" multiple />
                                                     </div>
                                                 </div>
                                             </div>
@@ -1837,7 +1833,45 @@ $(document).ready(function () {
 });
 </script>
 
+{{-- Book Highlights --}}
+<script>
+$(document).ready(function() {
+  if (window.File && window.FileList && window.FileReader) {
+    $("#files").on("change", function(e) {
+      var files = e.target.files,
+        filesLength = files.length;
+      for (var i = 0; i < filesLength; i++) {
+        var f = files[i]
+        var fileReader = new FileReader();
+        fileReader.onload = (function(e) {
+          var file = e.target;
+          $("<span class=\"pip\">" +
+            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
+            "<br/><span class=\"remove\">Remove image</span>" +
+            "</span>").insertAfter("#files");
 
+          $(".remove").click(function(){
+            $(this).parent(".pip").remove();
+          });
+
+          // Old code here
+          /*$("<img></img>", {
+            class: "imageThumb",
+            src: e.target.result,
+            title: file.name + " | Click to remove"
+          }).insertAfter("#files").click(function(){$(this).remove();});*/
+
+        });
+        fileReader.readAsDataURL(f);
+      }
+      console.log(files);
+    });
+  } else {
+    alert("Your browser doesn't support to File API")
+  }
+});
+
+</script>
 <script>
     $(document).ready(function () {
         $("#submitbutton").click(function (event) {
@@ -2555,5 +2589,33 @@ function numberOnly(id) {
         color: #999;
     }
 
-    /* image uplode end */
+    /* Book Highlights */
+
+        input[type="file"] {
+        display: block;
+        }
+        .imageThumb {
+        max-height: 75px;
+        border: 2px solid;
+        padding: 1px;
+        cursor: pointer;
+        }
+        .pip {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+        }
+        .remove {
+        display: block;
+        background: #444;
+        border: 1px solid black;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        }
+        .remove:hover {
+        background: white;
+        color: black;
+        }
 </style>
+
+
