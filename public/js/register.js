@@ -142,7 +142,7 @@ $('#pub_email_id').keyup(function(){
           toastr.error("Password and confirm password doesn't match!!");
          e.preventDefault();
       }
-   
+
    //email
       var email = $("#emailval").val();
       if(email == 0){
@@ -208,7 +208,7 @@ else if (ownership == 'Private') {
    var aoa = $("[name='aoa']").prop('files')[0];
    var pan_tan = $("[name='pan_tan']").prop('files')[0];
    var gst = $("[name='gst']").prop('files')[0];
-   
+
         if (certification_incon.type !== 'application/pdf') {
            toastr.error('Certificate of incorporation must be a PDF file.');
            hideLoadingBar();
@@ -242,7 +242,7 @@ else if (ownership == 'Publication') {
    var certification_incon = $("[name='certification_incon']").prop('files')[0];
    var pan_tan = $("[name='pan_tan']").prop('files')[0];
    var gst = $("[name='gst']").prop('files')[0];
-   
+
         if (certification_incon.type !== 'application/pdf') {
            toastr.error('Certificate of incorporation must be a PDF file.');
            hideLoadingBar();
@@ -262,7 +262,7 @@ else if (ownership == 'Publication') {
         }
 }
 else if (ownership == 'oneperson') {
- 
+
    var udayam = $("[name='udayam']").prop('files')[0];
    var gst = $("[name='gst']").prop('files')[0];
    var pan_tan = $("[name='pan_tan']").prop('files')[0];
@@ -283,7 +283,7 @@ else if (ownership == 'oneperson') {
            hideLoadingBar();
            e.preventDefault();
 
-        } 
+        }
 }
 else if (ownership == 'limited') {
    var llp = $("[name='llp_agre']").prop('files')[0];
@@ -312,7 +312,7 @@ else if (ownership == 'limited') {
            hideLoadingBar();
            e.preventDefault();
 
-        } 
+        }
 }
 else if (ownership == 'society') {
    var society = $("[name='society']").prop('files')[0];
@@ -334,9 +334,9 @@ else if (ownership == 'society') {
            hideLoadingBar();
            e.preventDefault();
 
-        } 
+        }
 }
-//Sub-Doc 
+//Sub-Doc
 var doc = document.getElementById('subsidiary_publications');
 var doc_name = doc.value;
 var docstatus = "true";
@@ -490,7 +490,7 @@ if (arr.length !== 0) {
    // });
 
    $(document).on('click', '.btn_remove_old', function () {
-   
+
       var button_id = $(this).attr("id");
       $('#row' + button_id + '').remove();
       if (pubtrsfivecounter <= 4) {
@@ -545,7 +545,7 @@ if (arr.length !== 0) {
 
    var pubtrsfivecounter1 = 0;
    $('#translated_pub_dis_asr').click(function () {
-   
+
     // alert('Good');
       if (pubtrsfivecounter1 < 4) {
          i++;
@@ -820,6 +820,7 @@ if (arr.length !== 0) {
 
    $('#pub_ownership').on('change',function(){
       var value = $(this).val();
+    //   alert(value);
       if(value == 'Proprietorship'){
          //  $('#ownership_doc').css('display','block');
           $('.user_file_input').append('<div id="proprietorship_input"><label for="formFileSm" class="form-label">Udyam Certificate<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" placeholder="Enter Udayam*" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" placeholder="Enter GST*" class="form-control name_list" required/></div>');
@@ -830,10 +831,15 @@ if (arr.length !== 0) {
           $("#oneperson_input").remove();
           $('#limited_input').remove();
           $('#society_input').remove();
+          $('#trust_input').remove();
+          $('#institutional_input').remove();
+          $('#trust-foundation_input').remove();
+          $('#government-society_input').remove();
+
       }
       else if(value == 'Partnership'){
          // $('#ownership_doc').css('display','block');
-         $('.user_file_input').append('<div id="partnership_input"><label for="formFileSm" class="form-label">Udyam Certificate<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">Partnership Deed - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_deed" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.user_file_input').append('<div id="partnership_input"><label for="formFileSm" class="form-label">Udyam Certificate<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">Partnership Deed <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_deed" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#proprietorship_input").remove();
          $("#private_input").remove();
@@ -841,6 +847,11 @@ if (arr.length !== 0) {
          $("#oneperson_input").remove();
          $('#limited_input').remove();
          $('#society_input').remove();
+         $('#trust_input').remove();
+         $('#institutional_input').remove();
+         $('#trust-foundation_input').remove();
+         $('#government-society_input').remove();
+
      }
      else if(value == 'Private'){
       $('.user_file_input').append('<div id="private_input"><label for="formFileSm" class="form-label">Certificate of incorporation <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="certification_incon" class="form-control name_list" required/><label for="formFileSm" class="form-label">MOA <span class="mt-056"></span><span class="text-danger "></span></label><input type="file" name="moa" class="form-control name_list" required/><label for="formFileSm" class="form-label">AOA  <span class="mt-056"></span><span class="text-danger"></span></label><input type="file" name="aoa" class="form-control name_list" /><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
@@ -851,11 +862,15 @@ if (arr.length !== 0) {
       $("#oneperson_input").remove();
       $('#limited_input').remove();
       $('#society_input').remove();
+      $('#trust_input').remove();
+      $('#institutional_input').remove();
+      $('#trust-foundation_input').remove();
+      $('#government-society_input').remove();
 
      }
       else if(value == 'Publication'){
          //  $('#ownership_doc').css('display','block');
-         $('.user_file_input').append('<div id="publication_input"><label for="formFileSm" class="form-label">Certificate of incorporation <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="certification_incon" placeholder="Enter Award Author*" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" placeholder="Enter Award Author*" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" placeholder="Enter Award Author*" class="form-control name_list" required/></div>');
+         $('.user_file_input').append('<div id="publication_input"><label for="formFileSm" class="form-label">Certificate of incorporation <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="certification_incon" placeholder="Enter Award Author*" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" placeholder="Enter Award Author*" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" placeholder="Enter Award Author*" class="form-control name_list" required/></div>');
 
          $("#proprietorship_input").remove();
          $("#user_file_input").remove();
@@ -863,24 +878,32 @@ if (arr.length !== 0) {
          $("#oneperson_input").remove();
          $('#limited_input').remove();
          $('#society_input').remove();
+         $('#trust_input').remove();
+         $('#institutional_input').remove();
+         $('#trust-foundation_input').remove();
+         $('#government-society_input').remove();
 
       }else if(value == 'oneperson'){
          //  $('#ownership_doc').css('display','block');
-         $('.user_file_input').append('<div id="oneperson_input"><label for="formFileSm" class="form-label">Udyam Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.user_file_input').append('<div id="oneperson_input"><label for="formFileSm" class="form-label">Udyam Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
-         $("#proprietorship_input").remove();
+        //  $("#proprietorship_input").remove();
          $("#user_file_input").remove();
          $("#private_input").remove();
          $('#limited_input').remove();
-         $('#society_input').remove();
          $('#partnership_input').remove();
          $('#proprietorship_input').remove();
          $('#publication_input').remove();
+         $('#society_input').remove();
+         $('#trust_input').remove();
+         $('#institutional_input').remove();
+         $('#trust-foundation_input').remove();
+         $('#government-society_input').remove();
 
 
       }else if(value == 'limited'){
 
-         $('.user_file_input').append('<div id="limited_input"><label for="formFileSm" class="form-label">LLP Agreement - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="llp_agre" class="form-control name_list" required/><label for="formFileSm" class="form-label">Udyam Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.user_file_input').append('<div id="limited_input"><label for="formFileSm" class="form-label">LLP Agreement - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="llp_agre" class="form-control name_list" required/><label for="formFileSm" class="form-label">Udyam Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#proprietorship_input").remove();
          $("#user_file_input").remove();
@@ -889,12 +912,16 @@ if (arr.length !== 0) {
          $('#society_input').remove();
          $('#publication_input').remove();
          $('#oneperson_input').remove();
+         $('#trust_input').remove();
+         $('#institutional_input').remove();
+         $('#trust-foundation_input').remove();
+         $('#government-society_input').remove();
 
 
 
-      }else if(value == 'society'){
+      }else if(value == 'trust'){
 
-         $('.user_file_input').append('<div id="society_input"><label for="formFileSm" class="form-label">Society Registration Certificate<span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.user_file_input').append('<div id="trust_input"><label for="formFileSm" class="form-label">Private Trust Registration Certificate<span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#proprietorship_input").remove();
          $("#user_file_input").remove();
@@ -903,8 +930,76 @@ if (arr.length !== 0) {
          $('#limited_input').remove();
          $('#oneperson_input').remove();
          $('#publication_input').remove();
+         $('#society_input').remove();
+         $('#institutional_input').remove();
+         $('#trust-foundation_input').remove();
+         $('#government-society_input').remove();
 
-      }else{
+      }else if(value == 'society'){
+
+        $('.user_file_input').append('<div id="society_input"><label for="formFileSm" class="form-label">Private Society Registration Certificate<span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#proprietorship_input").remove();
+        $("#user_file_input").remove();
+        $("#private_input").remove();
+        $('#partnership_input').remove();
+        $('#limited_input').remove();
+        $('#oneperson_input').remove();
+        $('#publication_input').remove();
+        $('#trust_input').remove();
+        $('#institutional_input').remove();
+        $('#trust-foundation_input').remove();
+        $('#government-society_input').remove();
+
+     }else if(value == 'institutional'){
+
+        $('.user_file_input').append('<div id="institutional_input"><label for="formFileSm" class="form-label">Government Institutional Publication Registration Certificate<span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#proprietorship_input").remove();
+        $("#user_file_input").remove();
+        $("#private_input").remove();
+        $('#partnership_input').remove();
+        $('#limited_input').remove();
+        $('#oneperson_input').remove();
+        $('#publication_input').remove();
+        $('#trust_input').remove();
+        $('#society_input').remove();
+        $('#trust-foundation_input').remove();
+        $('#government-society_input').remove();
+
+     }else if(value == 'trust-foundation'){
+
+        $('.user_file_input').append('<div id="trust-foundation_input"><label for="formFileSm" class="form-label">Government Trust/Foundation Publication Registration Certificate<span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#proprietorship_input").remove();
+        $("#user_file_input").remove();
+        $("#private_input").remove();
+        $('#partnership_input').remove();
+        $('#limited_input').remove();
+        $('#oneperson_input').remove();
+        $('#publication_input').remove();
+        $('#trust_input').remove();
+        $('#society_input').remove();
+        $('#institutional_input').remove();
+        $('#government-society_input').remove();
+
+     }else if(value == 'government-society'){
+
+        $('.user_file_input').append('<div id="government-society_input"><label for="formFileSm" class="form-label">Government Society Publication Registration Certificate<span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#proprietorship_input").remove();
+        $("#user_file_input").remove();
+        $("#private_input").remove();
+        $('#partnership_input').remove();
+        $('#limited_input').remove();
+        $('#oneperson_input').remove();
+        $('#publication_input').remove();
+        $('#trust_input').remove();
+        $('#society_input').remove();
+        $('#institutional_input').remove();
+        $('#trust-foundation_input').remove();
+
+     }else{
          $("#proprietorship_input").remove();
          $("#user_file_input").remove();
          $("#private_input").remove();
@@ -912,6 +1007,10 @@ if (arr.length !== 0) {
          $("#oneperson_input").remove();
          $('#limited_input').remove();
          $('#society_input').remove();
+         $('#trust_input').remove();
+         $('#institutional_input').remove();
+         $('#trust-foundation_input').remove();
+         $('#government-society_input').remove();
       }
   });
 
@@ -1091,7 +1190,7 @@ $('#distn_email_id').keyup(function(){
          //Authorization Letter
          var documents1 = $("[name='authorization_letter[]']");
          var errorOccurred = false; // Flag to track if an error occurred
-         
+
          documents1.each(function (index, element) {
              var file = element.files[0];
              if (file && file.type !== 'application/pdf') {
@@ -1100,7 +1199,7 @@ $('#distn_email_id').keyup(function(){
                  return false; // Exit the loop early
              }
          });
-         
+
          if (errorOccurred) {
              hideLoadingBar1();
              e.preventDefault(); // Prevent form submission if an error occurred
@@ -1147,7 +1246,7 @@ else if (ownership == 'Private') {
    var aoa = $("[name='aoa']").prop('files')[0];
    var pan_tan = $("[name='pan_tan']").prop('files')[0];
    var gst = $("[name='gst']").prop('files')[0];
-   
+
         if (certification_incon.type !== 'application/pdf') {
          hideLoadingBar1();
             toastr.error('Certificate of incorporation must be a PDF file.');
@@ -1181,7 +1280,7 @@ else if (ownership == 'Publication') {
    var certification_incon = $("[name='certification_incon']").prop('files')[0];
    var pan_tan = $("[name='pan_tan']").prop('files')[0];
    var gst = $("[name='gst']").prop('files')[0];
-   
+
         if (certification_incon.type !== 'application/pdf') {
          hideLoadingBar1();
             toastr.error('Certificate of incorporation must be a PDF file.');
@@ -1201,7 +1300,7 @@ else if (ownership == 'Publication') {
         }
 }
 else if (ownership == 'oneperson') {
- 
+
    var udayam = $("[name='udayam']").prop('files')[0];
    var gst = $("[name='gst']").prop('files')[0];
    var pan_tan = $("[name='pan_tan']").prop('files')[0];
@@ -1222,7 +1321,7 @@ else if (ownership == 'oneperson') {
             toastr.error('PAN / TAN must be a PDF file.');
            e.preventDefault();
 
-        } 
+        }
 }
 else if (ownership == 'limited') {
    var llp = $("[name='llp_agre']").prop('files')[0];
@@ -1251,7 +1350,7 @@ else if (ownership == 'limited') {
             toastr.error('PAN / TAN must be a PDF file.');
            e.preventDefault();
 
-        } 
+        }
 }
 else if (ownership == 'society') {
    var society = $("[name='society']").prop('files')[0];
@@ -1273,10 +1372,10 @@ else if (ownership == 'society') {
             toastr.error('PAN must be a PDF file.');
            e.preventDefault();
 
-        } 
+        }
 }
 
-//Sub-Doc 
+//Sub-Doc
 var doc = document.getElementById('subsidiary_distributor_dis');
 var doc_name = doc.value;
 var docstatus = "true";
@@ -1387,10 +1486,14 @@ if (arr.length !== 0) {
           $("#dis_oneperson_input").remove();
           $('#dis_limited_input').remove();
           $('#dis_society_input').remove();
+          $('#dis_trust_input').remove();
+          $('#dis_institutional_input').remove();
+          $('#dis_trust-foundation_input').remove();
+          $('#dis_government-society_input').remove();
       }
       else if(value == 'Partnership'){
          // $('#ownership_doc').css('display','block');
-         $('.dis_user_file_input').append('<div id="dis_partnership_input"><label for="formFileSm" class="form-label">Udyam Certificate<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">Partnership Deed - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_deed" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.dis_user_file_input').append('<div id="dis_partnership_input"><label for="formFileSm" class="form-label">Udyam Certificate<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">Partnership Deed <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_deed" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#dis_proprietorship_input").remove();
          $("#dis_private_input").remove();
@@ -1398,10 +1501,14 @@ if (arr.length !== 0) {
          $("#dis_oneperson_input").remove();
          $('#dis_limited_input').remove();
          $('#dis_society_input').remove();
+         $('#dis_trust_input').remove();
+         $('#dis_institutional_input').remove();
+         $('#dis_trust-foundation_input').remove();
+         $('#dis_government-society_input').remove();
 
      }
      else if(value == 'Private'){
-      $('.dis_user_file_input').append('<div id="dis_private_input"><label for="formFileSm" class="form-label">Certificate of incorporation <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="certification_incon" class="form-control name_list" required/><label for="formFileSm" class="form-label">MOA </label><input type="file" name="moa" class="form-control name_list"/><label for="formFileSm" class="form-label">AOA </label><input type="file" name="aoa" class="form-control name_list"/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+      $('.dis_user_file_input').append('<div id="dis_private_input"><label for="formFileSm" class="form-label">Certificate of incorporation <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="certification_incon" class="form-control name_list" required/><label for="formFileSm" class="form-label">MOA </label><input type="file" name="moa" class="form-control name_list"/><label for="formFileSm" class="form-label">AOA </label><input type="file" name="aoa" class="form-control name_list"/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
       $("#dis_proprietorship_input").remove();
       $("#dis_partnership_input").remove();
@@ -1409,11 +1516,15 @@ if (arr.length !== 0) {
       $("#dis_oneperson_input").remove();
       $('#dis_limited_input').remove();
       $('#dis_society_input').remove();
+      $('#dis_trust_input').remove();
+      $('#dis_institutional_input').remove();
+      $('#dis_trust-foundation_input').remove();
+      $('#dis_government-society_input').remove();
 
      }
       else if(value == 'Publication'){
          //  $('#ownership_doc').css('display','block');
-         $('.dis_user_file_input').append('<div id="dis_publication_input"><label for="formFileSm" class="form-label">Certificate of incorporation <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="certification_incon" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan" class="form-control name_list" required/></div>');
+         $('.dis_user_file_input').append('<div id="dis_publication_input"><label for="formFileSm" class="form-label">Certificate of incorporation <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="certification_incon" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan" class="form-control name_list" required/></div>');
 
          $("#dis_proprietorship_input").remove();
          $("#dis_user_file_input").remove();
@@ -1421,11 +1532,15 @@ if (arr.length !== 0) {
          $("#dis_oneperson_input").remove();
          $('#dis_limited_input').remove();
          $('#dis_society_input').remove();
+         $('#dis_trust_input').remove();
+         $('#dis_institutional_input').remove();
+         $('#dis_trust-foundation_input').remove();
+         $('#dis_government-society_input').remove();
 
 
       }else if(value == 'oneperson'){
          //  $('#ownership_doc').css('display','block');
-         $('.dis_user_file_input').append('<div id="dis_oneperson_input"><label for="formFileSm" class="form-label">Udyam Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.dis_user_file_input').append('<div id="dis_oneperson_input"><label for="formFileSm" class="form-label">Udyam Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificat <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#dis_proprietorship_input").remove();
          $("#dis_user_file_input").remove();
@@ -1434,10 +1549,14 @@ if (arr.length !== 0) {
          $('#dis_society_input').remove();
          $('#dis_partnership_input').remove();
          $('#dis_proprietorship_input').remove();
+         $('#dis_trust_input').remove();
+         $('#dis_institutional_input').remove();
+         $('#dis_trust-foundation_input').remove();
+         $('#dis_government-society_input').remove();
 
       }else if(value == 'limited'){
 
-         $('.dis_user_file_input').append('<div id="dis_limited_input"><label for="formFileSm" class="form-label">LLP Agreement - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="llp_agre" class="form-control name_list" required/><label for="formFileSm" class="form-label">Udyam Certificate<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN - <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.dis_user_file_input').append('<div id="dis_limited_input"><label for="formFileSm" class="form-label">LLP Agreement  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="llp_agre" class="form-control name_list" required/><label for="formFileSm" class="form-label">Udyam Certificate<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="udayam" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN / TAN  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#dis_proprietorship_input").remove();
          $("#dis_user_file_input").remove();
@@ -1446,11 +1565,15 @@ if (arr.length !== 0) {
          $('#dis_society_input').remove();
          $('#dis_publication_input').remove();
          $('#dis_oneperson_input').remove();
+         $('#dis_trust_input').remove();
+         $('#dis_institutional_input').remove();
+         $('#dis_trust-foundation_input').remove();
+         $('#dis_government-society_input').remove();
 
 
       }else if(value == 'society'){
 
-         $('.dis_user_file_input').append('<div id="dis_society_input"><label for="formFileSm" class="form-label">Society Registration Certificate - <span class="mt-056">சமூகப் பதிவுச் சான்றிதழ்</span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+         $('.dis_user_file_input').append('<div id="dis_society_input"><label for="formFileSm" class="form-label">Private Society Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#dis_proprietorship_input").remove();
          $("#dis_user_file_input").remove();
@@ -1459,8 +1582,76 @@ if (arr.length !== 0) {
          $('#dis_limited_input').remove();
          $('#dis_oneperson_input').remove();
          $('#dis_publication_input').remove();
+         $('#dis_trust_input').remove();
+         $('#dis_institutional_input').remove();
+         $('#dis_trust-foundation_input').remove();
+         $('#dis_government-society_input').remove();
 
-      }else{
+      }else if(value == 'trust'){
+
+        $('.dis_user_file_input').append('<div id="dis_trust_input"><label for="formFileSm" class="form-label">Private Trust Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#dis_proprietorship_input").remove();
+        $("#dis_user_file_input").remove();
+        $("#dis_private_input").remove();
+        $('#dis_partnership_input').remove();
+        $('#dis_limited_input').remove();
+        $('#dis_oneperson_input').remove();
+        $('#dis_society_input').remove();
+        $('#dis_publication_input').remove();
+        $('#dis_institutional_input').remove();
+        $('#dis_trust-foundation_input').remove();
+        $('#dis_government-society_input').remove();
+
+     }else if(value == 'institutional'){
+
+        $('.dis_user_file_input').append('<div id="dis_institutional_input"><label for="formFileSm" class="form-label">Government Institutional Publication Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#dis_proprietorship_input").remove();
+        $("#dis_user_file_input").remove();
+        $("#dis_private_input").remove();
+        $('#dis_partnership_input').remove();
+        $('#dis_limited_input').remove();
+        $('#dis_oneperson_input').remove();
+        $('#dis_society_input').remove();
+        $('#dis_publication_input').remove();
+        $('#dis_trust_input').remove();
+        $('#dis_trust-foundation_input').remove();
+        $('#dis_government-society_input').remove();
+
+     }else if(value == 'trust-foundation'){
+
+        $('.dis_user_file_input').append('<div id="dis_trust-foundation_input"><label for="formFileSm" class="form-label">Government Trust/Foundation Publication Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#dis_proprietorship_input").remove();
+        $("#dis_user_file_input").remove();
+        $("#dis_private_input").remove();
+        $('#dis_partnership_input').remove();
+        $('#dis_limited_input').remove();
+        $('#dis_oneperson_input').remove();
+        $('#dis_society_input').remove();
+        $('#dis_publication_input').remove();
+        $('#dis_trust_input').remove();
+        $('#dis_institutional_input').remove();
+        $('#dis_government-society_input').remove();
+
+     }else if(value == 'government-society'){
+
+        $('.dis_user_file_input').append('<div id="dis_government-society_input"><label for="formFileSm" class="form-label">Government Trust/Foundation Publication Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate  <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#dis_proprietorship_input").remove();
+        $("#dis_user_file_input").remove();
+        $("#dis_private_input").remove();
+        $('#dis_partnership_input').remove();
+        $('#dis_limited_input').remove();
+        $('#dis_oneperson_input').remove();
+        $('#dis_society_input').remove();
+        $('#dis_publication_input').remove();
+        $('#dis_trust_input').remove();
+        $('#dis_institutional_input').remove();
+        $('#dis_trust-foundation_input').remove();
+
+     }else{
          $("#dis_proprietorship_input").remove();
          $("#dis_user_file_input").remove();
          $("#dis_private_input").remove();
@@ -1468,6 +1659,10 @@ if (arr.length !== 0) {
          $("#dis_oneperson_input").remove();
          $('#dis_limited_input').remove();
          $('#dis_society_input').remove();
+         $('#dis_trust_input').remove();
+         $('#dis_institutional_input').remove();
+         $('#dis_trust-foundation_input').remove();
+         $('#dis_government-society_input').remove();
       }
   });
 
@@ -1594,7 +1789,7 @@ if (arr.length !== 0) {
          // Add 'loading' class to the form to make it semi-transparent
          document.getElementById('reg_publisher_and_distributor_form').classList.add('loading2');
      }
- 
+
      function hideLoadingBar2() {
        document.getElementById('loadingBar2').style.display = 'none';
        document.getElementById('reg_publisher_and_distributor_form').classList.remove('loading2');
@@ -1677,7 +1872,7 @@ $(document).ready(function () {
                     hideLoadingBar2();
                      toastr.error('Udyam Certificate must be a PDF file.');
                     e.preventDefault();
-        
+
                     }
                  if (pan_deed.type !== 'application/pdf') {
                     hideLoadingBar2();
@@ -1688,13 +1883,13 @@ $(document).ready(function () {
                     hideLoadingBar2();
                      toastr.error('GST Certificate must be a PDF file.');
                     e.preventDefault();
-        
+
                  }
                  if (pan_tan.type !== 'application/pdf') {
                     hideLoadingBar2();
                      toastr.error('PAN / TAN must be a PDF file.');
                     e.preventDefault();
-        
+
                  }
         }
         else if (ownership == 'Private') {
@@ -1703,18 +1898,18 @@ $(document).ready(function () {
            var aoa = $("[name='aoa']").prop('files')[0];
            var pan_tan = $("[name='pan_tan']").prop('files')[0];
            var gst = $("[name='gst']").prop('files')[0];
-           
+
                 if (certification_incon.type !== 'application/pdf') {
                  hideLoadingBar2();
                     toastr.error('Certificate of incorporation must be a PDF file.');
                    e.preventDefault();
-        
+
                 }
                 if (moa.type !== 'application/pdf') {
                  hideLoadingBar2();
                   toastr.error('MOA must be a PDF file.');
                  e.preventDefault();
-        
+
                  }
               if (aoa.type !== 'application/pdf') {
                  hideLoadingBar2();
@@ -1725,7 +1920,7 @@ $(document).ready(function () {
                  hideLoadingBar2();
                   toastr.error('GST Certificate must be a PDF file.');
                  e.preventDefault();
-        
+
               }
                 if (pan_tan.type !== 'application/pdf') {
                  hideLoadingBar2();
@@ -1737,18 +1932,18 @@ $(document).ready(function () {
            var certification_incon = $("[name='certification_incon']").prop('files')[0];
            var pan_tan = $("[name='pan_tan']").prop('files')[0];
            var gst = $("[name='gst']").prop('files')[0];
-           
+
                 if (certification_incon.type !== 'application/pdf') {
                  hideLoadingBar2();
                     toastr.error('Certificate of incorporation must be a PDF file.');
                    e.preventDefault();
-        
+
                 }
                 if (gst.type !== 'application/pdf') {
                  hideLoadingBar2();
                   toastr.error('GST Certificate must be a PDF file.');
                  e.preventDefault();
-        
+
               }
                 if (pan_tan.type !== 'application/pdf') {
                  hideLoadingBar2();
@@ -1757,7 +1952,7 @@ $(document).ready(function () {
                 }
         }
         else if (ownership == 'oneperson') {
-         
+
            var udayam = $("[name='udayam']").prop('files')[0];
            var gst = $("[name='gst']").prop('files')[0];
            var pan_tan = $("[name='pan_tan']").prop('files')[0];
@@ -1765,20 +1960,20 @@ $(document).ready(function () {
                  hideLoadingBar2();
                     toastr.error('Udyam Certificate must be a PDF file.');
                    e.preventDefault();
-        
+
                    }
                 if (gst.type !== 'application/pdf') {
                  hideLoadingBar2();
                     toastr.error('GST Certificate must be a PDF file.');
                    e.preventDefault();
-        
+
                 }
                 if (pan_tan.type !== 'application/pdf') {
                  hideLoadingBar2();
                     toastr.error('PAN / TAN must be a PDF file.');
                    e.preventDefault();
-        
-                } 
+
+                }
         }
         else if (ownership == 'limited') {
            var llp = $("[name='llp_agre']").prop('files')[0];
@@ -1794,20 +1989,20 @@ $(document).ready(function () {
                  hideLoadingBar2();
                     toastr.error('Udyam Certificate must be a PDF file.');
                    e.preventDefault();
-        
+
                    }
                 if (gst.type !== 'application/pdf') {
                  hideLoadingBar2();
                     toastr.error('GST Certificate must be a PDF file.');
                    e.preventDefault();
-        
+
                 }
                 if (pan_tan.type !== 'application/pdf') {
                  hideLoadingBar2();
                     toastr.error('PAN / TAN must be a PDF file.');
                    e.preventDefault();
-        
-                } 
+
+                }
         }
         else if (ownership == 'society') {
            var society = $("[name='society']").prop('files')[0];
@@ -1822,16 +2017,16 @@ $(document).ready(function () {
                  hideLoadingBar2();
                     toastr.error('GST Certificate must be a PDF file.');
                    e.preventDefault();
-        
+
                 }
                 if (pan_tan.type !== 'application/pdf') {
                  hideLoadingBar2();
                     toastr.error('PAN must be a PDF file.');
                    e.preventDefault();
-        
-                } 
+
+                }
         }
-           
+
            // Sub-Doc
            var doc = document.getElementById('subsidiary_pub_yes');
            var doc_name = doc.value;
@@ -2042,7 +2237,7 @@ $(document).ready(function () {
    ********************************************/
    var trs_pub_sit1 = 0;
    $('#translated_pub_dis').click(function () {
-     
+
       if (trs_pub_sit1 < 4) {
          i++;
          trs_pub_sit1++;
@@ -2492,6 +2687,10 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
           $("#pub_dis_oneperson_input").remove();
           $('#pub_dis_limited_input').remove();
           $('#pub_dis_society_input').remove();
+          $('#pub_dis_trust_input').remove();
+          $('#pub_dis_institutional_input').remove();
+          $('#pub_dis_trust-foundation_input').remove();
+          $('#pub_dis_government-society_input').remove();
       }
       else if(value == 'Partnership'){
          // $('#ownership_doc').css('display','block');
@@ -2503,6 +2702,10 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
          $("#pub_dis_oneperson_input").remove();
          $('#pub_dis_limited_input').remove();
          $('#pub_dis_society_input').remove();
+         $('#pub_dis_trust_input').remove();
+         $('#pub_dis_institutional_input').remove();
+         $('#pub_dis_trust-foundation_input').remove();
+         $('#pub_dis_government-society_input').remove();
 
      }
      else if(value == 'Private'){
@@ -2514,6 +2717,10 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
       $("#pub_dis_oneperson_input").remove();
       $('#pub_dis_limited_input').remove();
       $('#pub_dis_society_input').remove();
+      $('#pub_dis_trust_input').remove();
+      $('#pub_dis_institutional_input').remove();
+      $('#pub_dis_trust-foundation_input').remove();
+      $('#pub_dis_government-society_input').remove();
 
      }
       else if(value == 'Publication'){
@@ -2526,6 +2733,10 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
          $("#pub_dis_oneperson_input").remove();
          $('#pub_dis_limited_input').remove();
          $('#pub_dis_society_input').remove();
+         $('#pub_dis_trust_input').remove();
+         $('#pub_dis_institutional_input').remove();
+         $('#pub_dis_trust-foundation_input').remove();
+         $('#pub_dis_government-society_input').remove();
 
 
       }else if(value == 'oneperson'){
@@ -2539,6 +2750,10 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
          $('#pub_dis_society_input').remove();
          $('#pub_dis_partnership_input').remove();
          $('#pub_dis_proprietorship_input').remove();
+         $('#pub_dis_trust_input').remove();
+         $('#pub_dis_institutional_input').remove();
+         $('#pub_dis_trust-foundation_input').remove();
+         $('#pub_dis_government-society_input').remove();
 
       }else if(value == 'limited'){
 
@@ -2551,11 +2766,31 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
          $('#pub_dis_society_input').remove();
          $('#pub_dis_publication_input').remove();
          $('#pub_dis_oneperson_input').remove();
+         $('#pub_dis_trust_input').remove();
+         $('#pub_dis_institutional_input').remove();
+         $('#pub_dis_trust-foundation_input').remove();
+         $('#pub_dis_government-society_input').remove();
 
 
-      }else if(value == 'society'){
+      }else if(value == 'trust'){
 
-         $('.pub_dis_user_file_input').append('<div id="pub_dis_society_input"><label for="formFileSm" class="form-label">Society Registration Certificate - <span class="mt-056">சமூகப் பதிவுச் சான்றிதழ்</span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+        $('.pub_dis_user_file_input').append('<div id="pub_dis_trust_input"><label for="formFileSm" class="form-label">Private Trust Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#pub_dis_proprietorship_input").remove();
+        $("#pub_dis_user_file_input").remove();
+        $("#pub_dis_private_input").remove();
+        $('#pub_dis_partnership_input').remove();
+        $('#pub_dis_limited_input').remove();
+        $('#pub_dis_society_input').remove();
+        $('#pub_dis_oneperson_input').remove();
+        $('#pub_dis_publication_input').remove();
+        $('#pub_dis_institutional_input').remove();
+        $('#pub_dis_trust-foundation_input').remove();
+        $('#pub_dis_government-society_input').remove();
+
+     }else if(value == 'society'){
+
+         $('.pub_dis_user_file_input').append('<div id="pub_dis_society_input"><label for="formFileSm" class="form-label">Private Society Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
 
          $("#pub_dis_proprietorship_input").remove();
          $("#pub_dis_user_file_input").remove();
@@ -2564,8 +2799,60 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
          $('#pub_dis_limited_input').remove();
          $('#pub_dis_oneperson_input').remove();
          $('#pub_dis_publication_input').remove();
+         $('#pub_dis_trust_input').remove();
+         $('#pub_dis_institutional_input').remove();
+         $('#pub_dis_trust-foundation_input').remove();
+         $('#pub_dis_government-society_input').remove();
 
-      }else{
+      }else if(value == 'institutional'){
+
+        $('.pub_dis_user_file_input').append('<div id="pub_dis_institutional_input"><label for="formFileSm" class="form-label">Government Institutional Publication Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#pub_dis_proprietorship_input").remove();
+        $("#pub_dis_user_file_input").remove();
+        $("#pub_dis_private_input").remove();
+        $('#pub_dis_partnership_input').remove();
+        $('#pub_dis_limited_input').remove();
+        $('#pub_dis_society_input').remove();
+        $('#pub_dis_oneperson_input').remove();
+        $('#pub_dis_publication_input').remove();
+        $('#pub_dis_trust_input').remove();
+        $('#pub_dis_trust-foundation_input').remove();
+        $('#pub_dis_government-society_input').remove();
+
+     }else if(value == 'trust-foundation'){
+
+        $('.pub_dis_user_file_input').append('<div id="pub_dis_trust-foundation_input"><label for="formFileSm" class="form-label">Government Trust/Foundation Publication Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#pub_dis_proprietorship_input").remove();
+        $("#pub_dis_user_file_input").remove();
+        $("#pub_dis_private_input").remove();
+        $('#pub_dis_partnership_input').remove();
+        $('#pub_dis_limited_input').remove();
+        $('#pub_dis_society_input').remove();
+        $('#pub_dis_oneperson_input').remove();
+        $('#pub_dis_publication_input').remove();
+        $('#pub_dis_trust_input').remove();
+        $('#pub_dis_institutional_input').remove();
+        $('#pub_dis_government-society_input').remove();
+
+     }else if(value == 'government-society'){
+
+        $('.pub_dis_user_file_input').append('<div id="pub_dis_government-society_input"><label for="formFileSm" class="form-label">Government Society Publication Registration Certificate  <span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="society" class="form-control name_list" required/><label for="formFileSm" class="form-label">GST Certificate - <span class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span class="text-danger maditory">*</span></label><input type="file" name="gst" class="form-control name_list" required/><label for="formFileSm" class="form-label">PAN<span class="mt-056"></span><span class="text-danger maditory">*</span></label><input type="file" name="pan_tan" class="form-control name_list" required/></div>');
+
+        $("#pub_dis_proprietorship_input").remove();
+        $("#pub_dis_user_file_input").remove();
+        $("#pub_dis_private_input").remove();
+        $('#pub_dis_partnership_input').remove();
+        $('#pub_dis_limited_input').remove();
+        $('#pub_dis_society_input').remove();
+        $('#pub_dis_oneperson_input').remove();
+        $('#pub_dis_publication_input').remove();
+        $('#pub_dis_trust_input').remove();
+        $('#pub_dis_institutional_input').remove();
+        $('#pub_dis_trust-foundation_input').remove();
+
+     }else{
          $("#pub_dis_proprietorship_input").remove();
          $("#pub_dis_user_file_input").remove();
          $("#pub_dis_private_input").remove();
@@ -2573,6 +2860,10 @@ $(document).on('click', '.btn_remove_best_five_my', function () {
          $("#pub_dis_oneperson_input").remove();
          $('#pub_dis_limited_input').remove();
          $('#pub_dis_society_input').remove();
+         $('#pub_dis_trust_input').remove();
+         $('#pub_dis_institutional_input').remove();
+         $('#pub_dis_trust-foundation_input').remove();
+         $('#pub_dis_government-society_input').remove();
       }
   });
 // Book Publisher

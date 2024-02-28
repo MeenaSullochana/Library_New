@@ -892,7 +892,11 @@
                                  <option value="Partnership">Partnership Firm</option>
                                  <option value="oneperson">One Person Company</option>
                                  {{-- <option value="Proprietorship">Sole Proprietorship</option> --}}
-                                 <option value="society">Society-Trust</option>
+                                 <option value="trust">Private Trust</option>
+                                 <option value="society">Private Society</option>
+                                 <option value="institutional">Government Institutional Publication</option>
+                                 <option value="trust-foundation">Government Trust/Foundation Publication</option>
+                                 <option value="government-society">Government Society Publication</option>
                               </select>
                            </div>
                            <div class="col-md-6" id="id_proof_data">
@@ -1402,7 +1406,12 @@
                                  <option value="Partnership">Partnership Firm</option>
                                  <option value="oneperson">One Person Company</option>
                                  {{-- <option value="Proprietorship">Sole Proprietorship</option> --}}
-                                 <option value="society">Society-Trust</option>
+                                 {{-- <option value="society">Society-Trust</option> --}}
+                                 <option value="trust">Private Trust</option>
+                                 <option value="society">Private Society</option>
+                                 <option value="institutional">Government Institutional Publication</option>
+                                 <option value="trust-foundation">Government Trust/Foundation Publication</option>
+                                 <option value="government-society">Government Society Publication</option>
                               </select>
                            </div>
                            <div class="col-md-6" id="id_proof_data">
@@ -2162,7 +2171,12 @@
                                  <option value="limited">Limited Liability Partnership(LLP)</option>
                                  <option value="Partnership">Partnership Firm</option>
                                  <option value="oneperson">One Person Company</option>
-                                 <option value="society">Society-Trust</option>
+                                 {{-- <option value="society">Society-Trust</option> --}}
+                                 <option value="trust">Private Trust</option>
+                                 <option value="society">Private Society</option>
+                                 <option value="institutional">Government Institutional Publication</option>
+                                 <option value="trust-foundation">Government Trust/Foundation Publication</option>
+                                 <option value="government-society">Government Society Publication</option>
                               </select>
                            </div>
                            <div class="col-md-6" id="id_proof_data">
