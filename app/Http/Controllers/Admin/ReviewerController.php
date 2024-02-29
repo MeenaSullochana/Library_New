@@ -34,17 +34,20 @@ class ReviewerController extends Controller
             return response()->json($data);  
            
         }
+
         if($req->reviewerType == "internal"){
             $validator = Validator::make($req->all(),[
                 'reviewerType'=>'required|string',
-                'name'=>'required|string',
+                'libraryType'=>'required',
+                'libraryName'=>'required|string',
+                'district'=>'required|string',
+                'librarianName'=>'required|string',
+                'Batch'=>'required|string',
                 'subject'=>'required',
-                'designation'=>'required|string',
-                'organisationDetails'=>'required|string',
                 'phoneNumber'=>'required|string|min:10|max:10',
                 'email'=>'required|unique:reviewer',
-                'profileImage'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'password'=>'required|min:8|max:8',
+                                'password'=>'required|min:8|max:8',
+
             ]);
             if($validator->fails()){
                 $data= [
@@ -53,18 +56,24 @@ class ReviewerController extends Controller
                 return response()->json($data);  
                
             }
-            if($req->profileImage !=null){
+            
+            if($req->profileImage !="undefined"){
+
                 $Admin=auth('admin')->user()->first();
                 $reviewer=new Reviewer();
                 $reviewer->reviewerType = $req->reviewerType;
-                $reviewer->name = $req->name;
-                $reviewer->subject = $req->subject;
-                $reviewer->designation = $req->designation;
-                $reviewer->organisationDetails = $req->organisationDetails;
+                $reviewer->name = $req->librarianName;
+                $reviewer->Batch = $req->Batch;
+                $reviewer->libraryType = $req->libraryType;
+                $reviewer->libraryName = $req->libraryName;
                 $reviewer->email = $req->email;
+                $reviewer->subject = $req->subject;
+                $reviewer->district = $req->district;
                 $reviewer->phoneNumber = $req->phoneNumber; 
                 $reviewer->password=Hash::make($req->password);
                 $reviewer->role = "reviewer";
+                $reviewer->creater = $Admin; 
+
                 $randomCode = str_pad(random_int(0, 99999999), 8, '0', STR_PAD_LEFT);
                 $reviewer->reviewerId= $randomCode;
                 $image = $req->file('profileImage');
@@ -86,7 +95,7 @@ class ReviewerController extends Controller
             }
                else{
                 $data= [
-                    'error' => 'ProfileImage Filed Is Rdquired',
+                    'error' => 'ProfileImage Filed Is Required',
                          ];
                 return response()->json($data);   
                } 
@@ -126,6 +135,8 @@ class ReviewerController extends Controller
             $reviewer->bankName = $req->bankName;
             $reviewer->accountNumber = $req->accountNumber;
             $reviewer->branch = $req->branch;
+            $reviewer->creater = $Admin; 
+
             $reviewer->ifscNumber = $req->ifscNumber;
             $reviewer->password=Hash::make($req->password);
             $reviewer->role = "reviewer";
@@ -672,3 +683,6 @@ public function publicedit(Request $req){
         
            }
 }
+
+	
+									

@@ -57,6 +57,7 @@ public function create(Request $request){
         return $validator->errors();
         // return redirect()->back()->withInput()->withErrors($validator->errors());
        }
+$book = new Book();
 
       $heightWidthString = $request->length_breadth;
 
@@ -64,7 +65,7 @@ public function create(Request $request){
       $dimensionsArray = explode('x', $heightWidthString);
       $length = trim($dimensionsArray[0]);
       $breadth = trim($dimensionsArray[1]);
-   
+      if ($request->series_number[0] != null && $request->series_title[0] != null && $request->isbn_number[0] != null) {
         $series_number = $request->series_number;
        $series_title = $request->series_title;
        $isbn_number = $request->isbn_number;
@@ -78,8 +79,12 @@ public function create(Request $request){
            ];
            array_push($series,$obj);
        }
+$book->series =        json_encode($series)  ;
 
+}
     //    volume
+if($request->volume_number[0] !=null && $request->volume_title[0] !=null && $request->isbn_number1[0] !=null ){
+
     $volume_number = $request->volume_number;
     $volume_title = $request->volume_title;
     $isbn_number1 = $request->isbn_number1;
@@ -93,8 +98,9 @@ public function create(Request $request){
         ];
         array_push($volume,$obj);
     }
+         $book->volume =        json_encode($volume)  ;
      
-       $book = new Book();
+       }
         if($request->sample_file == "Pdf"){
             if ($request->hasFile('sample_pdf')) {
                 $samplepdf = $request->file('sample_pdf');
@@ -135,7 +141,7 @@ if ($request->hasFile('back_img')) {
     if ($request->hasFile('full_img')) {
         $full = $request->file('full_img');
         $full_name = $request->book_title . time() . '_' . $full->getClientOriginalName();
-        $full->move(('Books/full'), $full_name);
+        $full->move(public_path('Books/full'), $full_name);
         $book->full_img = $full_name;
     }
  }
@@ -205,19 +211,22 @@ if ($request->hasFile('back_img')) {
               
             $book->other_img = json_encode($others);
         }
-
-
-   
-
        $book->book_title = $request->book_title ;
        $book->subtitle =       $request->subtitle ?? Null;
-       $book->series =        json_encode($series) ?? Null ;
-       $book->volume =        json_encode($volume) ?? Null ;
+       //    $book->series =        json_encode($series) ?? Null ;
+       //    $book->volume =        json_encode($volume) ?? Null ;
        $book->booktag =        json_encode($request->tag)  ?? Null;
        $book->edition_number =       $request->edition_number  ?? Null;
        $book->primaryauthor =      json_encode( $request->primaryauthor) ;
-       $book->trans_author =        json_encode($request->trans_author)  ?? Null;
-       $book->trans_from =        json_encode($request->trans_from)  ?? Null;
+       if($request->trans_author[0] !=null || $request->trans_author[1] !=null || $request->trans_author[2] !=null ){
+        $book->trans_author =        json_encode($request->trans_author)  ?? Null;
+
+       }
+       if($request->trans_from[0] !=null || $request->trans_from[1] !=null ){
+        $book->trans_from =        json_encode($request->trans_from)  ?? Null;
+
+       }
+    //    $book->trans_from =        json_encode($request->trans_from)  ?? Null;
        $book->type =        $request->type;
        $book->length =       $length ;
        $book->breadth =       $breadth ;
@@ -226,7 +235,6 @@ if ($request->hasFile('back_img')) {
        $book->currency_type =      $request->currency_type ;
        $book->width =       $request->width ;
        $book->weight =       $request->weight ;
-
        $book->gsm =       $request->gsm ;
        $book->quality =       $request->quality ;
        $book->multicolor =       $request->multicolor ;
@@ -234,9 +242,7 @@ if ($request->hasFile('back_img')) {
        $book->pages =       $request->pages ;
        $book->isbn =       $request->isbn ;
        $book->subject =       $request->subject ;
-
        $randomCode = str_pad(random_int(0, 99999999), 8, '0', STR_PAD_LEFT);
-
        $book->product_code =       $randomCode ;
        $book->others =       $request->others  ?? Null;
        $book->place =       $request->place ;
@@ -252,7 +258,7 @@ if ($request->hasFile('back_img')) {
        $book->bookdescription =       json_encode($request->bookdescription) ;
        $book->productdescription =       $request->productdescription  ;   
        $book->nameOfPublisher =       $request->nameOfPublisher  ;   
-       $book->yearOfPublication =       $request->yearOfPublication  ;  
+       $book->yearOfPublication =       $request->yearOfPublication  ; 
        $book->user_type =    "publisher_distributor" ;
        $book->user_id =   auth('publisher_distributor')->user()->id; 
        $book->save();

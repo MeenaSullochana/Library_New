@@ -22,6 +22,8 @@
     <?php
         include "admin/plugin/plugin_css.php";
     ?>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -102,17 +104,43 @@
                                                                class="text-danger maditory">*</span></label>
                                                             <select name="reviewer_type" id="reviewerType" class="form-select" Required>
                                                             <option></option>
-                                                                <option value="internal">Internal</option>
-                                                                <option value="external">External</option>
+                                                                <option value="internal">Librarian Reviewer</option>
+                                                                
+                                                                <option value="external">Expert Reviewer </option>
+                                                                <!-- <option value="public">Public Reviewer</option> -->
 
                                                             </select>
                                                         </div>
-                                                        <div class="col-sm-12 mb-3">
+                                                        <div class="col-sm-12 mb-3" id="basic9" style="display: none;">
+                                                        <label class="form-label">District<span
+                                                     class="text-danger maditory">*</span></label>
+                                                        <select name="district" class="form-select" id="district" Required>
+                                                        <option value="">Select District</option>
+
+                                                               @php
+                                                                $districts = DB::table('districts')->where('status', '=', 1)->get();
+                                                                @endphp
+
+                                                            @foreach($districts as $state)
+                                                             <option value="{{ $state->name }}">{{ $state->name }}</option>
+                                                             @endforeach
+                                                        </select>
+
+                                                    </div>
+                                                        <div class="col-sm-12 mb-3" id="basic6" style="display: block;">
                                                             <label class="form-label">Name<span
                                                              class="text-danger maditory">*</span></label>
                                                             <input type="text" class="form-control" placeholder="Enter Name" id="name" Required>
                                                         </div>
-                                                        <div class="col-sm-12 mb-3">
+                                                        
+                                                       
+                                                        <div class="col-sm-12 mb-3" id="basic8" style="display: none;">
+                                                            <label class="form-label">Librarian Name<span
+                                                             class="text-danger maditory">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Librarian Name" id="Librarian_Name" Required>
+                                                        </div>
+                                                    
+                                                        <div class="col-sm-12 mb-3" id="basic1" style="display: block;">
                                                             <label class="form-label">Subject<span
                                                               class="text-danger maditory">*</span></label>
                                                             <!-- <input type="text" class="form-control" placeholder="Enter Subject" id="subject" Required> -->
@@ -129,24 +157,72 @@
                                                             @endforeach
                                                     </select>
                                                         </div>
-
+<div class="col-sm-12 mb-3"  id="basic5" style="display: none;">
+                                                            <label class="form-label">Membership Id<span
+                                                                class="text-danger maditory">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Membership Id" id="membershipId" Required>
+                                                        </div>
+                                                       
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <div class="col-sm-12 mb-3">
+                                                        <div class="col-sm-12 mb-3" id="basic2" style="display: block;">
                                                             <label class="form-label">Designation<span
                                                               class="text-danger maditory">*</span></label>
                                                             <input type="text" class="form-control" placeholder="Enter designation" id="designation" Required>
                                                         </div>
-                                                        <div class="col-sm-12 mb-3">
+                                                        <div class="col-sm-12 mb-3" id="basic3" style="display: block;">
                                                             <label class="form-label">Organisation Details <span
                                                              class="text-danger maditory">*</span></label>
                                                             <input type="text" class="form-control" placeholder="Enter OrganisationDetails" id="organisationDetails"Required>
+                                                        </div>
+<div class="col-sm-12 mb-3" id="basic4" style="display: none;">
+                                                        <label class="form-label">Library Type<span
+                                 class="text-danger maditory">*</span></label>
+                                                        <select name="library_type" id="libraryType" class="form-select" Required>
+                                                        <option value="">Select One<span
+                                 class="text-danger maditory">*</span></option>
+                                                        @php
+                                                          $categori = DB::table('library_types')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-sm-12 mb-3" id="basic7" style="display: none;">
+                                                            <label class="form-label">Library Name<span
+                                                             class="text-danger maditory">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="EnterLibrary Name" id="libraryName" Required>
+                                                        </div>
+                                                        <div class="col-sm-12 mb-3" id="basic10" style="display: none;">
+                                                            <label class="form-label">Book Categories<span
+                                                              class="text-danger maditory">*</span></label>
+                                                            <!-- <input type="text" class="form-control" placeholder="Enter Subject" id="subject" Required> -->
+                                                            <select class="form-select" id="Category"
+                                                        name="Category" required>
+                                                        <option value="">Select One<span
+                                 class="text-danger maditory">*</span></option>
+                                                        @php
+                                                          $categori = DB::table('special_categories')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
+                                                    </select>
+                                                        </div>
+                                                        <div class="col-sm-12 mb-3" id="basic11" style="display: none;">
+                                                            <label class="form-label">Public Reviewer Name<span
+                                                             class="text-danger maditory">*</span></label>
+                                                            <input type="text" class="form-control" placeholder="Enter Public Reviewer Name" id="publicreviewername" Required>
                                                         </div>
                                                         <div class="col-sm-12 mb-3">
                                                             <label class="form-label">Phone number<span
                                                                class="text-danger maditory">*</span></label>
                                                             <input type="number" class="form-control" placeholder="Enter  Phonenumber" id="phoneNumber" Required>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -176,6 +252,7 @@
 
                                         </div>
                                         <div class="row" >
+
                                             <div class="col-md-12" id="bankDetailsFields" style="display: block;">
                                                  <h3 class="">Bank Details </h3>
                                                    <hr>
@@ -244,7 +321,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">Library Type<span
                                  class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" id="libraryType" class="form-select" Required>
+                                                        <select name="library_type" id="libraryType1" class="form-select" Required>
                                                         <option value="">Select One<span
                                  class="text-danger maditory">*</span></option>
                                                         @php
@@ -260,7 +337,20 @@
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">Library Name<span
                                  class="text-danger maditory">*</span></label>
-                                                        <input type="text" class="form-control" placeholder="Enter Library Name" id="libraryName" Required>
+                                                        <input type="text" class="form-control" placeholder="Enter Library Name" id="libraryName1" Required>
+</div>
+                                                    <div class="col-sm-6 mb-3">
+                                                     <label class="form-label">Subject<span
+                                 class="text-danger maditory">*</span></label>
+                                 <select id="limit-selection" name=subject[] multiple class="select2">
+                                 @php
+                                                          $categori = DB::table('book_subject')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
+</select>
                                                     </div>
                                                     <div class="col-sm-6 mb-3">
                                                      <label class="form-label">State<span
@@ -281,7 +371,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">District<span
                                                      class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" class="form-select" id="district" Required>
+                                                        <select name="library_type" class="form-select" id="district1" Required>
                                                         <option value="">Select District</option>
 
                                                                @php
@@ -314,9 +404,9 @@
                                                 <div class="col-sm-12 mb-3">
                                                     <label class="form-label">librarian Name<span
                                  class="text-danger maditory">*</span></label>
-                                                    <input type="text" class="form-control" placeholder="Enter librarian Name" id="librarianName" Required>
+                                                    <input type="text" class="form-control" placeholder="Enter librarian Name" id="librarianName1" Required>
                                                 </div>
-                                                <div class="col-sm-6 mb-3">
+                                                <div class="col-sm-12 mb-3">
                                                             <label class="form-label">Are You Meta Checker<span
                                  class="text-danger maditory">*</span></label>
                                                             <select name="" id="metaChecker" class="form-select" Required>
@@ -399,8 +489,18 @@
     <?php
         include "admin/plugin/plugin_js.php";
     ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#limit-selection').select2({
+            minimumInputLength: 0 // Disable minimum input length
+        });
+    });
+</script>
 
 </body>
+
 
 <script>
        $(document).on('click','#submitButton',function(e){
@@ -417,6 +517,17 @@
          var subject=$('#subject').val();
          var name=$('#name').val();
          var reviewerType=$('#reviewerType').val();
+var libraryType=$('#libraryType').val();
+         var libraryName=$('#libraryName').val();
+        //  var Batch=$('#Batch').val();
+         var Category=$('#Category').val();
+         var membershipId=$('#membershipId').val();
+         var publicreviewername=$('#publicreviewername').val();
+         var librarianname=$('#Librarian_Name').val();
+         var district=$('#district').val();
+
+         
+         
          var profileImage = $('#profileImage')[0].files;
          let fd = new FormData();
         fd.append('password',password);
@@ -431,7 +542,15 @@
         fd.append('subject',subject);
         fd.append('name',name);
         fd.append('reviewerType',reviewerType);
+        fd.append('libraryType',libraryType);
+        fd.append('libraryName',libraryName);
+        // fd.append('Batch',Batch);
+        fd.append('Category',Category);
+        fd.append('membershipId',membershipId);
         fd.append('profileImage',profileImage[0])
+         fd.append('librarianName',librarianname);
+        fd.append('publicreviewername',publicreviewername);
+        fd.append('district',district);
 
           $.ajaxSetup({
              headers:{
@@ -467,22 +586,24 @@
 
 $(document).on('click','#submit',function(e){
    e.preventDefault();
-   var data={
-      'libraryType':$('#libraryType').val(),
-      'metaChecker':$('#metaChecker').val(),
-      'libraryName':$('#libraryName').val(),
-      'state':$('#state').val(),
-      'district':$('#district').val(),
-      'city':$('#city').val(),
-      'Village':$('#Village').val(),
-      'librarianName':$('#librarianName').val(),
-      'librarianDesignation':$('#librarianDesignation').val(),
-      'phoneNumber':$('#mobileNumber').val(),
-      'email':$('#email1').val(),
-      'password':$('#password1').val(),
+   
 
-   }
-   console.log(data);
+   
+   var data = {
+      'libraryType': $('#libraryType1').val(),
+      'metaChecker': $('#metaChecker').val(),
+      'libraryName': $('#libraryName1').val(),
+      'state': $('#state').val(),
+      'district': $('#district1').val(),
+      'city': $('#city').val(),
+      'Village': $('#Village').val(),
+      'librarianName': $('#librarianName1').val(),
+      'librarianDesignation': $('#librarianDesignation').val(),
+      'phoneNumber': $('#mobileNumber').val(),
+      'subject': $('select[name="subject[]"]').val(), // Removed semicolon
+    'email': $('#email1').val(),
+      'password': $('#password1').val()
+};
    $.ajaxSetup({
       headers:{
          'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
@@ -497,6 +618,8 @@ $(document).on('click','#submit',function(e){
          if(response.success){
              toastr.success(response.success,{timeout:25000});
              $('#formId1')[0].reset();
+             $('select[name="subject[]"]').val(null).trigger('change');
+
          }else{
              toastr.error(response.error,{timeout:25000});
          }
@@ -539,11 +662,116 @@ $(document).on('click','#submit',function(e){
 <script>
     document.getElementById('reviewerType').addEventListener('change', function () {
         var bankDetailsFields = document.getElementById('bankDetailsFields');
+        var basic1 = document.getElementById('basic1');
+        var basic2 = document.getElementById('basic2');
+        var basic3 = document.getElementById('basic3');
+        var basic4 = document.getElementById('basic4');
+        var basic5 = document.getElementById('basic5');
+        var basic6 = document.getElementById('basic6');
+        var basic7 = document.getElementById('basic7');
+        var basic8 = document.getElementById('basic8');
+        
+        
+        var basic9 = document.getElementById('basic9');
+        var basic10 = document.getElementById('basic10');
+        var basic11 = document.getElementById('basic11');
+
+
+        
+        
        console.log(this.value );
         if (this.value === 'internal') {
             bankDetailsFields.style.display = 'none';
-        } else {
+        // basic1.style.display = 'none';
+            basic2.style.display = 'none';
+            basic3.style.display = 'none';
+            basic4.style.display = 'block';
+            basic5.style.display = 'none';
+            basic6.style.display = 'none';
+            basic7.style.display = 'block';
+            basic8.style.display = 'block';
+            basic9.style.display = 'block';
+            basic10.style.display = 'none';
+            basic11.style.display = 'none';
+            $('#ProfileImage').val('images/user.jpg');
+                $('#output').attr('src', 'images/user.jpg');
+                $('input[type=text]').val('');
+                $('input[type=number]').val('');
+                $('#libraryType').val('');
+                $('#district').val('');
+                // $('#Batch').val('');
+                $('#Category').val('');
+                $('#subject').val('');
+                $('input[type=password]').val('');
+                $('input[type=email]').val('');
+
+            // $('#bankDetailsFields')[0].reset();
+            // $('#basic1')[0].reset();
+            // $('#basic2')[0].reset();
+            // $('#basic3')[0].reset();
+            // $('#basic4')[0].reset();
+            // $('#basic5')[0].reset();
+            // $('#basic6')[0].reset();
+            // $('#basic7')[0].reset();
+            // $('#basic8')[0].reset();
+            // $('#basic9')[0].reset();
+            // $('#basic10')[0].reset();
+            // $('#basic11')[0].reset();
+
+            
+
+        } else if(this.value === 'public') {
+            bankDetailsFields.style.display = 'none';
+            basic1.style.display = 'none';
+            basic2.style.display = 'none';
+            basic3.style.display = 'none';
+            basic4.style.display = 'none';
+            basic5.style.display = 'block';
+            basic6.style.display = 'none';
+            basic7.style.display = 'none';
+            basic8.style.display = 'none';
+            basic9.style.display = 'block';
+            basic10.style.display = 'block';
+            basic11.style.display = 'block';
+            $('#ProfileImage').val('images/user.jpg');
+                $('#output').attr('src', 'images/user.jpg');
+                $('input[type=text]').val('');
+                $('input[type=number]').val('');
+                $('#district').val('');
+                // $('#Batch').val('');
+                $('#Category').val('');
+                $('#libraryType').val('');
+                $('input[type=password]').val('');
+                $('input[type=email]').val('');
+                $('#subject').val('');
+
+        }
+         else {
             bankDetailsFields.style.display = 'block';
+basic1.style.display = 'block';
+            basic2.style.display = 'block';
+            basic3.style.display = 'block';
+            basic4.style.display = 'none';
+            basic5.style.display = 'none';
+            basic6.style.display = 'block';
+            basic7.style.display = 'none';
+            basic8.style.display = 'none';
+            basic9.style.display = 'none';
+            basic10.style.display = 'none';
+            basic11.style.display = 'none';
+            $('#ProfileImage').val('images/user.jpg');
+                $('#output').attr('src', 'images/user.jpg');
+                $('input[type=text]').val('');
+                $('input[type=password]').val('');
+                $('input[type=email]').val('');
+                $('#subject').val('');
+
+                $('input[type=number]').val('');
+                $('#district').val('');
+                // $('#Batch').val('');
+                $('#Category').val('');
+                $('#libraryType').val('');
+
         }
     });
 

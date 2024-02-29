@@ -20,7 +20,9 @@ use App\Models\Reviewer;
 use Illuminate\Support\Facades\Hash;
 use File;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\MemberdetailNotification;
+use App\Notifications\MemberupdateNotification;
 class ReviewerController extends Controller
 {
     public function reviewlist(){
@@ -237,4 +239,70 @@ class ReviewerController extends Controller
 
 }
 
+
+  public function createpublicreviewer(Request $req){
+
+    $validator = Validator::make($req->all(),[
+        'publicreviewername'=>'required|string',
+        'Category'=>'required',
+        'district'=>'required|string',
+        'membershipId'=>'required|string',
+        'phoneNumber'=>'required|string|min:10|max:10',
+        'email'=>'required|unique:reviewer',
+        'password'=>'required|min:8|max:8',
+
+    ]);
+
+
+    if($validator->fails()){
+        $data= [
+            'error' => $validator->errors()->first(),
+                 ];
+        return response()->json($data);  
+       
+    }
+
+    if($req->profileImage !="undefined"){
+     
+        $Admin=auth('reviewer')->user()->first();
+        $reviewer=new Reviewer();
+        $reviewer->reviewerType = $req->reviewerType;
+        $reviewer->name = $req->publicreviewername;
+        $reviewer->Category = $req->Category;
+        $reviewer->membershipId = $req->membershipId;
+        $reviewer->email = $req->email;
+        $reviewer->district = $req->district;
+        $reviewer->phoneNumber = $req->phoneNumber; 
+        $reviewer->password=Hash::make($req->password);
+        $reviewer->role = "reviewer";
+        $reviewer->reviewerType = "public";
+
+        $reviewer->creater = $Admin; 
+
+        $randomCode = str_pad(random_int(0, 99999999), 8, '0', STR_PAD_LEFT);
+        $reviewer->reviewerId= $randomCode;
+        $image = $req->file('profileImage');
+        $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+        $image->move('reviewer/ProfileImage', $imagename);
+       
+        $reviewer->profileImage = $imagename;
+    
+         $reviewer->save();
+         $user =  $reviewer->email;
+         $record =  $reviewer;
+         $password = $req->password;
+         $url = "http://127.0.0.1:8000/member/login";
+         Notification::route('mail',$reviewer->email)->notify(new MemberdetailNotification($user, $url,$record,$password));  
+         $data= [
+            'success' => 'Reviewer Create Successfully',
+                 ];
+        return response()->json($data);   
+    }
+       else{
+        $data= [
+            'error' => 'ProfileImage Filed Is Required',
+                 ];
+        return response()->json($data);   
+       } 
+    }
 }

@@ -93,9 +93,15 @@ Route::prefix('reviewer')->group(function () {
         
     });
     Route::post('/changepassword',[ReviewerController::class,'reviewerchangepassword']);
-
     Route::post('/feedbackadd',[FeedbackController::class,'feedbackadd']);
     Route::get('/feedback_reviewer_add',function(){ return view('reviewer.feedback_reviewer_add');});
+    Route::get('/reviewer_create',function(){ return view('reviewer.reviewer_create');});
+    Route::post('/createpublicreviewer',[ReviewerController::class,'createpublicreviewer']);
+    Route::get('/reviewer_list',function(){ return view('reviewer.reviewer_list');});
+    Route::get('/reviewer_active',function(){ return view('reviewer.reviewer_active');});
+    Route::get('/reviewer_inactive',function(){ return view('reviewer.reviewer_inactive');});
+
+    
 
 });
     });
