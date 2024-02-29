@@ -32,6 +32,7 @@ return new class extends Migration
             $table->string('password'); 
             $table->string('role');
             $table->string('reviewerId');
+            $table->string('creater');
             $table->enum('status',['1','0'])->default('1');
             $table->timestamps();
         });

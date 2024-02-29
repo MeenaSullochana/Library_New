@@ -1324,7 +1324,25 @@
                             <span class="nav-text">Completed Book</span>
                         </a>
                     </li>
-				
+					
+					@if(auth('reviewer')->user()->reviewerType == "internal")
+					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+					<i class="bi bi-chat-dots"></i>
+                            <span class="nav-text">Reviewer Manage</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="/reviewer/reviewer_create">Public Reviewer Create</a></li>
+                          
+                   
+                            <li><a href="/reviewer/reviewer_list">Public Reviewer list</a></li>
+							<li><a href="/reviewer/reviewer_active">Public Reviewer Active list</a></li>
+							<li><a href="/reviewer/reviewer_inactive">Public Reviewer Inactive list</a></li>
+
+							
+                        </ul>
+                    </li>
+					
+					@endif
                        @if(auth('reviewer')->user()->reviewerType == "external")
 					<li class="menu-title">Payment Management</li>
 					<li><a href="/reviewer/payment_list" class="" aria-expanded="false">

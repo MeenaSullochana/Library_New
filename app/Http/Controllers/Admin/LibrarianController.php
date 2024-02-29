@@ -30,9 +30,11 @@ class LibrarianController extends Controller
         $validator = Validator::make($req->all(),[
             'libraryType'=>'required|string',
             'libraryName'=>'required|string',
+'subject'=>'required',
             'state'=>'required',
             'district'=>'required|string',
             'city'=>'required|string',
+'Village'=>'required',
             'Village'=>'required',
             'metaChecker'=>'required',
             'librarianName'=>'required',
@@ -53,6 +55,8 @@ class LibrarianController extends Controller
            $librarian=new Librarian();
             $librarian->libraryType = $req->libraryType;
             $librarian->libraryName = $req->libraryName;
+$librarian->subject = json_encode($req->subject);
+           
             $librarian->state = $req->state;
             $librarian->district = $req->district;
             $librarian->city = $req->city;
@@ -121,6 +125,7 @@ public function librarianstatus(Request $req){
    }
    public function librarianview(Request $req){
     $librarian= Librarian::find($req->id);
+$librarian->subject1=json_decode($librarian->subject); 
     return redirect('/admin/librariandata')->with('librarian',$librarian); 
 
    }

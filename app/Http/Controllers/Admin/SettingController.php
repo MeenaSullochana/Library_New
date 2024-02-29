@@ -19,9 +19,7 @@ use App\Mail\SmtpTestEmail;
 use App\Models\Loginhidelins;
 use App\Models\Fogothidelins;
 use App\Models\Fogotpasswordhidelins;
-
-
-
+use App\Models\Reviewerbatch;
 class SettingController extends Controller
 {
 
@@ -248,6 +246,34 @@ class SettingController extends Controller
             return response()->json($data);
         }
         
+    }
+
+public function reviewerbatchadd(Request $req){
+     
+        $validator = Validator::make($req->all(),[
+            'name'=>'required|string',
+            'status'=>'required|string',
+          
+           
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+      
+      
+             $reviewerbatch= New Reviewerbatch();
+             $reviewerbatch->name=$req->name;
+             $reviewerbatch->status=$req->status;
+             $reviewerbatch->save();
+             $data= [
+                'success' => 'Reviewer Batch  Create Successfully',
+                     ];
+            return response()->json($data);  
+    
     }
 
 

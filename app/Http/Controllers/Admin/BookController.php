@@ -123,13 +123,12 @@ public function checkBookTitle($data)
 
 
 }
-
-public function metabooks($role) {
+  public function metabooks($role){
   $query = Book::where("book_procurement_status", '=', 1)
       ->where("book_reviewer_id", '=', null);
 
-  if ($role == "publisher" || $role == "distributor" || $role == "publisher_distributor") {
-      $query->where("user_type", '=', $role);
+  if ($role !='All' ) {
+      $query->where("subject", '=', $role);
   }
 
   $data = $query->get();
@@ -172,6 +171,11 @@ public function metabooks($role) {
         $tbodyHtml .= '</div>';
         $tbodyHtml .= '</td>';
         $tbodyHtml .= '<td>' . $language . '</td>';
+$tbodyHtml .= '<td>' . $val->subject . '</td>';
+        $tbodyHtml .= '<td>' . $val->isbn . '</td>';
+        $tbodyHtml .= '<td>' . $val->author_name . '</td>';
+        $tbodyHtml .= '<td>' . $val->user_type . '</td>';
+        $tbodyHtml .= '<td>' . $val->nameOfPublisher . '</td>';
         $tbodyHtml .= '<td data-label="controlq">';
         $tbodyHtml .= '<div class="d-flex mt-p0">';
         $tbodyHtml .= '<a href="/admin/book_manage_view/' . $val->id . '" class="btn btn-success shadow btn-xs sharp me-1">';
@@ -200,6 +204,11 @@ public function metabooks($role) {
         $tbodyHtml .= '</div>';
         $tbodyHtml .= '</td>';
         $tbodyHtml .= '<td>' . $language . '</td>';
+$tbodyHtml .= '<td>' . $val->subject . '</td>';
+        $tbodyHtml .= '<td>' . $val->isbn . '</td>';
+        $tbodyHtml .= '<td>' . $val->author_name . '</td>';
+        $tbodyHtml .= '<td>' . $val->user_type . '</td>';
+        $tbodyHtml .= '<td>' . $val->nameOfPublisher . '</td>';
         $tbodyHtml .= '<td data-label="controlq">';
         $tbodyHtml .= '<div class="d-flex mt-p0">';
         $tbodyHtml .= '<a href="/admin/book_manage_view/' . $val->id . '" class="btn btn-success shadow btn-xs sharp me-1">';
@@ -215,8 +224,209 @@ public function metabooks($role) {
       }
   }
 
-  return response()->json(['success' => $tbodyHtml]);
+
+        $rev = Librarian::where("status", '=', '1')
+                        ->where("metaChecker", '=', 'yes')
+                        ->get();
+
+        $tbodyHtml2 = ''; // Initialize the variable to store HTML
+        $index1 = 1; // Initialize the index variable
+
+        foreach ($rev as $key => $val) {
+            $rec = json_decode($val->subject, true); // Decode the JSON string to an array
+
+            if (in_array($role, $rec)) {
+             
+                // Prepare the HTML for each record based on the conditions
+                $tbodyHtml2 .= '<tr>';
+                $tbodyHtml2 .= '<td>';
+                $tbodyHtml2 .= '<div class="form-check custom-checkbox checkbox-success check-lg me-3">';
+                $tbodyHtml2 .= '<input type="checkbox" class="form-check-input librarianitem" id="customCheckBox' . ($index1 + 3) . '" required="" data-librarian-id="' . $val->id . '" value="' . $val->id . '">';
+                $tbodyHtml2 .= '<label class="form-check-label" for="customCheckBox' . ($index1 + 3) . '"></label>';
+                $tbodyHtml2 .= '</div>';
+                $tbodyHtml2 .= '</td>';                
+                $tbodyHtml2 .= '<td>' . $index1 . '</td>';
+                $tbodyHtml2 .= '<td><span>' . $val->librarianName . '</span></td>';
+                $tbodyHtml2 .= '<td><span>' . $val->libraryName . '</span></td>';
+                $tbodyHtml2 .= '<td>';
+
+                // Loop through each subject in $rec
+                $count = count($rec);
+foreach ($rec as $key => $subject) {
+    $tbodyHtml2 .= '<span>' . $subject . '</span>';
+    if ($key < $count - 1) {
+        $tbodyHtml2 .= ' '; 
+    }
 }
+
+                $tbodyHtml2 .= '</td>';
+                $tbodyHtml2 .= '<td data-label="controlq">';
+                $tbodyHtml2 .= '<div class="d-flex mt-p0">';
+                $tbodyHtml2 .= '<a href="/admin/librarianview/' . $val->id . '" class="btn btn-success shadow btn-xs sharp me-1">';
+                $tbodyHtml2 .= '<i class="fa fa-eye"></i>';
+                $tbodyHtml2 .= '</a>';
+                $tbodyHtml2 .= '</div>';
+                $tbodyHtml2 .= '</td>';
+                $tbodyHtml2 .= '</tr>';
+                $index1++; // Increment the index after each iteration
+            }
+        }
+        
+       
+
+        return response()->json(['success' => $tbodyHtml, 'success2' => $tbodyHtml2]);
+    }
+
+
+// public function metabooks($role) {
+//   $query = Book::where("book_procurement_status", '=', 1)
+//       ->where("book_reviewer_id", '=', null);
+
+//   if ($role !='All' ) {
+//       $query->where("subject", '=', $role);
+//   }
+
+//   $data = $query->get();
+//   foreach($data as $key=>$val){
+//     $check = $this->checkBookTitle($val);
+//     $val->check = $check;
+      
+//    }
+//   $tbodyHtml = '';
+
+//   if ($data->isEmpty()) {
+//       $tbodyHtml = '<tr><td colspan="5" class="text-center">No records found</td></tr>';
+//   } else {
+//       $index = 1;
+
+//       foreach ($data as $val) {
+//           $language = '';
+//           if ($val->language == "Other_Indian") {
+//               $language = $val->other_indian;
+//           } elseif ($val->language == "other_foreign") {
+//               $language = $val->other_foreign;
+//           } else {
+//               $language = $val->language;
+//           }
+//        if($val->check == "unique"){
+//         $tbodyHtml .= '<tr>';
+//         $tbodyHtml .= '<td>';
+//         $tbodyHtml .= '<div class="form-check custom-checkbox checkbox-success check-lg me-3">';
+//         $tbodyHtml .= '<input type="checkbox" class="form-check-input bookitem" id="customCheckBox' . ($index + 2) . '" required="" value="' . $val->id . '" data-book-id="' . $val->id . '" >';
+//         $tbodyHtml .= '<label class="form-check-label" for="customCheckBox' . ($index + 2) . '" ></label>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</td>';
+//         $tbodyHtml .= '<td>' . $index . '</td>';
+//         $tbodyHtml .= '<td>';
+//         $tbodyHtml .= '<div class="products">';
+//         $tbodyHtml .= '<div>';
+//         $tbodyHtml .= '<h6><a class="text-left" href="/admin/book_manage_view/' . $val->id . '">' . $val->book_title . '</a></h6>';
+//         $tbodyHtml .= '<span class="text-left">' . $val->subtitle . '</span>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</td>';
+//         $tbodyHtml .= '<td>' . $language . '</td>';
+// $tbodyHtml .= '<td>' . $val->subject . '</td>';
+//         $tbodyHtml .= '<td>' . $val->isbn . '</td>';
+//         $tbodyHtml .= '<td>' . $val->author_name . '</td>';
+//         $tbodyHtml .= '<td>' . $val->user_type . '</td>';
+//         $tbodyHtml .= '<td>' . $val->nameOfPublisher . '</td>';
+//         $tbodyHtml .= '<td data-label="controlq">';
+//         $tbodyHtml .= '<div class="d-flex mt-p0">';
+//         $tbodyHtml .= '<a href="/admin/book_manage_view/' . $val->id . '" class="btn btn-success shadow btn-xs sharp me-1">';
+//         $tbodyHtml .= '<i class="fa fa-eye"></i>';
+//         $tbodyHtml .= '</a>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</td>';
+//         $tbodyHtml .= '</tr>';
+
+//         $index++;
+//        }else{
+//         $tbodyHtml .= '<tr class="red-row">';
+//         $tbodyHtml .= '<td>';
+//         $tbodyHtml .= '<div class="form-check custom-checkbox checkbox-success check-lg me-3">';
+//         $tbodyHtml .= '<input type="checkbox" class="form-check-input bookitem" id="customCheckBox' . ($index + 2) . '" required="" value="' . $val->id . '" data-book-id="' . $val->id . '" >';
+//         $tbodyHtml .= '<label class="form-check-label" for="customCheckBox' . ($index + 2) . '" ></label>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</td>';
+//         $tbodyHtml .= '<td>' . $index . '</td>';
+//         $tbodyHtml .= '<td>';
+//         $tbodyHtml .= '<div class="products">';
+//         $tbodyHtml .= '<div>';
+//         $tbodyHtml .= '<h6><a class="text-left" href="/admin/book_manage_view/' . $val->id . '">' . $val->book_title . '</a></h6>';
+//         $tbodyHtml .= '<span class="text-left">' . $val->subtitle . '</span>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</td>';
+//         $tbodyHtml .= '<td>' . $language . '</td>';
+// $tbodyHtml .= '<td>' . $val->subject . '</td>';
+//         $tbodyHtml .= '<td>' . $val->isbn . '</td>';
+//         $tbodyHtml .= '<td>' . $val->author_name . '</td>';
+//         $tbodyHtml .= '<td>' . $val->user_type . '</td>';
+//         $tbodyHtml .= '<td>' . $val->nameOfPublisher . '</td>';
+//         $tbodyHtml .= '<td data-label="controlq">';
+//         $tbodyHtml .= '<div class="d-flex mt-p0">';
+//         $tbodyHtml .= '<a href="/admin/book_manage_view/' . $val->id . '" class="btn btn-success shadow btn-xs sharp me-1">';
+//         $tbodyHtml .= '<i class="fa fa-eye"></i>';
+//         $tbodyHtml .= '</a>';
+//         $tbodyHtml .= '</div>';
+//         $tbodyHtml .= '</td>';
+//         $tbodyHtml .= '</tr>';
+
+//         $index++;
+//        }
+         
+//       }
+//   }
+
+//   $rev = Librarian::where("status", '=', '1')
+//   ->where("metaChecker", '=', 'yes')
+//   ->get();
+
+// $tbodyHtml2 = ''; // Initialize the variable to store HTML
+// $index1 = 1; // Initialize the index variable
+// foreach ($rev as $key => $val) {
+// $rec = json_decode($val->subject, true); // Decode the JSON string to an array
+
+// if (in_array($role, $rec)) {
+// // Prepare the HTML for each record based on the conditions
+// $tbodyHtml2 .= '<tr>';
+// $tbodyHtml2 .= '<td>';
+// $tbodyHtml2 .= '<div class="form-check custom-checkbox checkbox-success check-lg me-3">';
+// $tbodyHtml2 .= '<input type="checkbox" class="form-check-input librarianitem" id="customCheckBox' . ($index + 3) . '" required="" data-librarian-id="' . $val->id . '" value="' . $val->id . '">';
+// $tbodyHtml2 .= '<label class="form-check-label" for="customCheckBox' . ($index + 3) . '"></label>';
+// $tbodyHtml2 .= '</div>';
+// $tbodyHtml2 .= '</td>';
+// $tbodyHtml2 .= '<td>' . $index1  . '</td>';
+// $tbodyHtml2 .= '<td><span>' . $val->librarianName . '</span></td>';
+// $tbodyHtml2 .= '<td><span>' . $val->libraryName . '</span></td>';
+// $tbodyHtml2 .= '<td>';
+
+// // Loop through each subject in $rec
+// foreach ($rec as $subject) {
+// $tbodyHtml2 .= '<span>' . $subject . '</span>';
+// }
+
+// $tbodyHtml2 .= '</td>';
+// $tbodyHtml2 .= '<td data-label="controlq">';
+// $tbodyHtml2 .= '<div class="d-flex mt-p0">';
+// $tbodyHtml2 .= '<a href="/admin/librarianview/' . $val->id . '" class="btn btn-success shadow btn-xs sharp me-1">';
+// $tbodyHtml2 .= '<i class="fa fa-eye"></i>';
+// $tbodyHtml2 .= '</a>';
+// $tbodyHtml2 .= '</div>';
+// $tbodyHtml2 .= '</td>';
+// $tbodyHtml2 .= '</tr>';
+// $index1++; // Increment the index after each iteration
+// }
+// }
+
+// if (empty($tbodyHtml2)) {
+// $tbodyHtml2 = '<tr><td colspan="5" class="text-center">No records found</td></tr>';
+// }
+
+
+//   return response()->json(['success' => $tbodyHtml,'success2' => $tbodyHtml2]);
+// }
 
 public function meta_pending_book(){
   $data=Book::where("book_procurement_status",'=',1)->where("book_reviewer_id",'!=',null)->where("book_status",'=',null)->get();
@@ -439,7 +649,7 @@ public function get_books($id)
     $books = Book::where('subject', $id)->where('book_procurement_status', '=', '1')->where('book_status', '=', '1')->get();
 
 }
-    $reviewers = Reviewer::where('subject', $id)->where('reviewerType', '=', 'external')->where('status', '=', '1')->get();
+    $reviewers = Reviewer::where('subject',$id)->where('reviewerType', '=', 'external')->where('status', '=', 1)->get();
 
     $html = '';
     $htmldata = '';

@@ -206,14 +206,32 @@
                                         <div class="product-detail-content">
                                             <!--Product details-->
                                             <div class="product-info pr">
-                                                <h4 class="product-title"> {{ $data->book_title }} – {{ $data->edition_number }}</h4>
-                                                <!-- <h5>December 2002</h5> -->
+                                                <h4 class="product-title"> {{ $data->book_title }} 
+                                                    @if($data->volume1 !=null)
+                                                    @foreach($data->volume1  as $val)
+                                                    , {{$val->volume_number}} / {{$val->isbn_number}}
+
+                                                    , {{$val->volume_title}}
+                                                   
+                                                     @endforeach
+            
+                                                    @endif
+                                                </h4>
+                                                <!-- <h5>December 2002</h5> --> 
+                                                @if( $data->subtitle !=null)
+                                                <h6 class="product-title"> {{ $data->subtitle }} </h6>
+                                                  @endif
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <p><span class="fs-6 fw-bold text-primary">Author :</span>
-                                                            @php
-                                                                $lastKey1 = count($data->primaryauthor1) - 1;
-                                                            @endphp
+                                                        @php
+   
+    $primaryAuthors = array_filter($data->primaryauthor1, function($author) {
+        return $author !== null;
+    });
+
+    $lastKey1 = count($primaryAuthors) - 1;
+@endphp
                                                             @foreach ($data->primaryauthor1 as $key => $va11)
                                                                 <strong>{{ $va11 }}</strong>
                                                                 @if ($key < $lastKey1)
@@ -222,11 +240,19 @@
                                                             @endforeach
                                                         </p>
                                                     </div>
+                                                     @if($data->trans_author1 !=null)
                                                     <div class="col-md-6">
                                                         <p><span class="fs-6 fw-bold text-primary">Translate Author :</span>
-                                                            @php
-                                                                $lastKey2 = count($data->trans_author1) - 1;
-                                                            @endphp
+                                                        @php
+   
+                                                         $trans_author = array_filter($data->trans_author1, function($author) {
+                                                           return $author !== null;
+                                                                      });
+
+                                                             $lastKey2 = count($trans_author) - 1;
+                                                                   @endphp
+                                                        
+                                                      
                                                             @foreach ($data->trans_author1 as $key => $val2)
                                                                 <strong>{{ $val2 }}</strong>
                                                                 @if ($key < $lastKey2)
@@ -235,6 +261,8 @@
                                                             @endforeach
                                                         </p>
                                                     </div>
+@endif
+
                                                     <div class="col-md-6">
                                                         <p><span class="fs-6 fw-bold text-primary">Name Of Publisher :</span>
                                                           
@@ -244,12 +272,19 @@
                                                     </div>
                                                 </div>
                                                 <hr>
+                                                @if($data->trans_author1 !=null)
+
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <p><span class="fs-6 fw-bold text-primary">Translated Languages :</span>
-                                                            @php
-                                                                $lastKey = count($data->trans_from1) - 1;
-                                                            @endphp
+                                                        @php
+   
+   $trans_from = array_filter($data->trans_from1, function($author) {
+     return $author !== null;
+                });
+
+       $lastKey = count($trans_from) - 1;
+             @endphp
 
                                                             @foreach ($data->trans_from1 as $key => $val)
                                                                 <strong>{{ $val }}</strong>
@@ -260,6 +295,7 @@
                                                         </p>
                                                     </div>
                                                 </div>
+                                                @endif
                                                 <!-- <div class="comment-review star-rating d-flex">
                                                     <ul>
                                                         <li><i class="fa fa-star"></i></li>
@@ -285,7 +321,7 @@
                                                                         ₹{{ $data->price }}
                                                                     </b> </span>
                                                             @endif
-                                                        </p>
+                                                        </p> 
                                                     </div>
                                                     <div class="col-md-6">
                                                     <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Year Of Publication:</span> <span class="item">{{ $data->yearOfPublication }}</span> </p>
@@ -505,7 +541,7 @@
                                                     <li class="fs-5 p-1"><span class="a-list-item">
                                                         <span class="a-text-bold  d-flex justify-content-between">
                                                                 <div class="a-text-bold text-danger">
-                                                                <b>Gsm</b>
+                                                                <b>GSM</b>
                                                                     &rlm;
                                                                     :
                                                                     &lrm;
@@ -516,6 +552,21 @@
                                                             </span>
                                                         </span>
                                                     </li>
+                                                    <li class="fs-5 p-1"><span class="a-list-item">
+                                                        <span class="a-text-bold  d-flex justify-content-between">
+                                                                <div class="a-text-bold text-danger">
+                                                                <b>Edition Number</b>
+                                                                    &rlm;
+                                                                    :
+                                                                    &lrm;
+                                                                </div>
+                                                                <div class="text-data text-right">
+                                                                     <span>{{ $data->edition_number }}</span>
+                                                                </div>
+                                                            </span>
+                                                        </span>
+                                                    </li>
+                                             
                                                     <li class="fs-5 p-1"><span class="a-list-item">
                                                         <span class="a-text-bold  d-flex justify-content-between">
                                                             <div class="a-text-bold text-danger">
@@ -617,6 +668,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                @if($data->series1 !=null)
                                     <div class="col-md-6">
                                         <div class="accordion" id="accordionExample1">
                                             <div class="accordion-item">
@@ -630,36 +682,43 @@
                                                 <div id="collapseOne1" class="accordion-collapse collapse show"
                                                     aria-labelledby="headingOne1" data-bs-parent="#accordionExample1">
                                                     <div class="accordion-body">
-
+                                                      
                                                         <h3 class="card-title">Series details</h3>
                                                         <ul>
                                                             @foreach ($data->series1 as $val)
-                                                                <h3 class="card-title">Series: {{ $loop->index + 1 }}
+                                                                <!-- <h3 class="card-title">Series: {{ $loop->index + 1 }} -->
                                                                 </h3>
+                                                         
                                                                 <li class="fs-5 p-1"><span class="a-list-item"> <span
-                                                                            class="a-text-bold"><b>Series Number</b>
+                                                                            class="a-text-bold"><b>Series Title	</b>
                                                                             &rlm;
                                                                             :
                                                                             &lrm;
-                                                                        </span> <span> {{ $val->series_number }}</span>
+                                                                            </span> <span> {{ $val->series_title }}</span>
                                                                     </span>
                                                                 </li>
+                                                              
+                                                               
                                                                 <li class="fs-5 p-1"><span class="a-list-item"> <span
-                                                                            class="a-text-bold"><b>Series Title</b>
+                                                                            class="a-text-bold"><b>Current Series Number	</b>
                                                                             &rlm;
                                                                             :
                                                                             &lrm;
-                                                                        </span> <span> {{ $val->series_title }}</span>
+                                                                            </span> <span> {{ $val->series_number }}</span>
+
                                                                     </span>
                                                                 </li>
+                                                               
+                                                              
                                                                 <li class="fs-5 p-1"><span class="a-list-item"> <span
-                                                                            class="a-text-bold"><b>ISBN Number</b>
+                                                                            class="a-text-bold"><b>Total Number Of Series</b>
                                                                             &rlm;
                                                                             :
                                                                             &lrm;
                                                                         </span> <span> {{ $val->isbn_number }}</span>
                                                                     </span>
                                                                 </li>
+                                                         
                                                             @endforeach
 
 
@@ -671,6 +730,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
+                                    @if($data->volume1 !=null)
+
                                     <div class="col-md-6">
                                         <div class="accordion" id="accordionExample2">
                                             <div class="accordion-item">
@@ -686,25 +748,26 @@
                                                     <h3 class="card-title">Volume details</h3>
                                                     <ul>
                                                         @foreach ($data->volume1 as $val)
-                                                            <h3 class="card-title">Volume: {{ $loop->index + 1 }}</h3>
+                                                            <!-- <h3 class="card-title">Volume: {{ $loop->index + 1 }}</h3> -->
                                                             <li class="fs-5 p-1"><span class="a-list-item"> <span
-                                                                        class="a-text-bold"><b>Volume Number</b>
+                                                                        class="a-text-bold"><b>Volume Title	</b>
                                                                         &rlm;
                                                                         :
                                                                         &lrm;
-                                                                    </span> <span> {{ $val->volume_number }}</span>
+                                                                        </span> <span> {{ $val->volume_title }}</span>
+
                                                                 </span>
                                                             </li>
                                                             <li class="fs-5 p-1"><span class="a-list-item"> <span
-                                                                        class="a-text-bold"><b>Series Title</b>
+                                                                        class="a-text-bold"><b>Current Volume Number	</b>
                                                                         &rlm;
                                                                         :
                                                                         &lrm;
-                                                                    </span> <span> {{ $val->volume_title }}</span>
+                                                                        </span> <span> {{ $val->volume_number }}</span>
                                                                 </span>
                                                             </li>
                                                             <li class="fs-5 p-1"><span class="a-list-item"> <span
-                                                                        class="a-text-bold"><b>ISBN Number</b>
+                                                                        class="a-text-bold"><b>Total Number Of Volume</b>
                                                                         &rlm;
                                                                         :
                                                                         &lrm;
@@ -721,6 +784,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
 
                                 <!-- </div> -->
@@ -800,7 +864,7 @@
                         <div class="row">
                             <hr>
                             {{-- <h3>Product description</h3> --}}
-                            <div class="card-header bg-main text-white h3 p-2">Product Description</div>
+                            <div class="card-header bg-main text-white h3 p-2">Book Description</div>
                             <div class="col-12">
                                 <div class="product_description">
                                     <p style="text-indent:35px">{!! $data->productdescription !!}</p>

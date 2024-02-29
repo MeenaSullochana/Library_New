@@ -93,6 +93,16 @@
 											<div class="col-md-6 text-end fw-bold">Library Type : </div>
                                             <div class="col-md-6">{{$data->libraryType}}</div>
 
+<div class="col-md-6 text-end fw-bold">Subject : </div>
+											<div class="col-md-6">
+												@foreach($data->subject1 as $val)
+                                                      {{$val}}
+                                                     
+												@endforeach
+
+
+											</div>
+
 											<div class="col-md-6 text-end fw-bold"> State  : </div>
                                             <div class="col-md-6">{{$data->state}}</div>
 

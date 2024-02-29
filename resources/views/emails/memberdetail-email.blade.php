@@ -35,8 +35,8 @@
         text-align: center;"><b>Email </b> : {{$record->email}}</p>
         <p style="
         text-align: center;"><b>Password </b> : {{$password}}</p>
-        <p style="
-        text-align: center;"><b>Designation </b> :{{$record->designation}}</p>
+        <!-- <p style="
+        text-align: center;"><b>Designation </b> :{{$record->designation}}</p> -->
         <div class="button" style="text-align: center;">
             <a href="{{$url}}" style="color: #FFFFFF;
             background-color: #f35900;

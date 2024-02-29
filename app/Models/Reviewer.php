@@ -29,7 +29,7 @@ class Reviewer extends Authenticatable
         'password',
         'status',
         'reviewerId',
-        'createdby',
+        'creater',
         'approved_status',
     ];
 }

@@ -183,7 +183,7 @@
                                                                             class="text-danger maditory"></span></th>
                                                                     <th> Current Series Number<span
                                                                             class="text-danger maditory"></span></th>
-                                                                    <th>Total Number Series <span
+                                                                    <th>Total Number Of Series <span
                                                                             class="text-danger maditory"></span></th>
 
                                                                     {{-- <th>Add</th> --}}
@@ -243,7 +243,7 @@
                                                                             class="text-danger maditory"></span></th>
                                                                     <th>Current  Volume Number <span
                                                                             class="text-danger maditory"></span></th>
-                                                                    <th>Total Number Volume <span
+                                                                    <th>Total Number Of Volume <span
                                                                             class="text-danger maditory"></span></th>
 
                                                                     {{-- <th>Add</th> --}}
@@ -1854,10 +1854,77 @@ $(document).ready(function () {
     });
 
 </script>
+<!-- <script>
+    $(document).ready(function () {
+        $("#submitbutton").click(function (event) {
+            var description = document.getElementById('width').value;
 
+          
+            if (!description) {
+                toastr.error('Please enter Width.');
+                event.preventDefault();
+            }
+            
+        });
+    });
 
+</script> -->
 
+<script>
+    $(document).ready(function () {
+        $("#submitbutton").click(function (event) {
+            var description = document.getElementById('bookTitleInput').value;
 
+            if (description) {
+                var seriesTitle = document.getElementsByName('series_title[]')[0].value.trim();
+                var seriesNumber = document.getElementsByName('series_number[]')[0].value.trim();
+                var isbnNumber = document.getElementsByName('isbn_number[]')[0].value.trim();
+                var isValid = false;
+
+                if (seriesTitle === '' && seriesNumber === '' && isbnNumber === '') {
+                    isValid = true;
+                }
+                if (seriesTitle !== '' && seriesNumber !== '' && isbnNumber !== '') {
+                    isValid = true;
+                }
+                if (!isValid) {
+                    event.preventDefault(); 
+                    toastr.error('Please fill in all Series filed.');
+                   
+                    return;
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("#submitbutton").click(function (event) {
+            var description = document.getElementById('bookTitleInput').value;
+
+            if (description) {
+                var volumeTitle = document.getElementsByName('volume_title[]')[0].value.trim();
+                var volumeNumber = document.getElementsByName('volume_number[]')[0].value.trim();
+                var isbnNumber = document.getElementsByName('isbn_number1[]')[0].value.trim();
+                var isValid = false;
+
+                if (volumeTitle === '' && volumeNumber === '' && isbnNumber === '') {
+                    isValid = true;
+                }
+                if (volumeTitle !== '' && volumeNumber !== '' && isbnNumber !== '') {
+                    isValid = true;
+                }
+                if (!isValid) {
+                    event.preventDefault(); 
+                    toastr.error('Please fill in all volume filed.');
+                   
+                    return;
+                }
+            }
+        });
+    });
+</script>
 
     <script>
         // volume start
@@ -2296,62 +2363,51 @@ $(document).ready(function () {
 </script>
 
 
-
-
-
-
-
-</body><script>
-    // Function to check book ISBN via AJAX
+ <script>
     function checkBookISBN() {
         var bookisbn = $('#isbn').val();
         console.log(bookisbn);
-        // AJAX request to Laravel backend
         $.ajax({
             type: 'POST',
-            url: '/publisher/isbn', // The route to your Laravel controller method
+            url: '/publisher/isbn', 
             data: {
                 '_token': '{{ csrf_token() }}',
                 'bookisbn': bookisbn
             },
             success: function(response) {
                 if (response.error) {
-                    // Display error message
                     $('#bookTitleError').text(response.error);
                 } else {
-                    // Clear previous error message
                     $('#bookTitleError').text('');
                 }
             }
         });
     }
 
-    // Function to handle form submission
     function submitForm(event) {
-        // Prevent default form submission behavior
-        event.preventDefault();
-
-        // Check the book ISBN before submitting the form
         checkBookISBN();
 
-        // Check if there is any error message
         var errorSpan = $('#bookTitleError');
         if (errorSpan.text().trim() !== "") {
-            // Display the error message
+            event.preventDefault();
+
             toastr.error(errorSpan.text());
         } else {
-            // Clear the error message and submit the form
             errorSpan.text('');
-            // Submit the form (replace this with your actual form submission code)
-            document.forms[0].submit(); // Assuming it's the first form on the page
+            // document.forms[0].submit(); 
         }
     }
 
-    // Attach event listener to the submit button
     $(document).ready(function() {
         $('#submitbutton').on('click', submitForm);
     });
-</script>
+</script> 
+
+
+
+
+</body>
+
 <script>
 function numberOnly(id) {
    var element = document.getElementById(id);

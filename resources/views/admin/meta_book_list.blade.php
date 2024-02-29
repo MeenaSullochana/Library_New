@@ -98,9 +98,13 @@
                                        <select name="sortColumn" id="books-sort" class="form-control select-picker pr-2 d-tc" autocomplete="off" tabindex="-98">
                                        <option value="All"> <i class="fa fa-filter" aria-hidden="true"></i>All Record</option>
 
-                                          <option value="publisher" data-order="DESC">Publisher</option>
-                                         <option value="distributor" data-order="DESC">Distributor</option>
-                                      <option value="publisher_distributor" data-order="DESC">Publisher Cum Distributor</option>
+                                          @php
+                                                          $categori = DB::table('book_subject')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}" data-order="DESC">{{$val->name}}</option>
+
+                                                            @endforeach
 
                                     </select>
 
@@ -120,6 +124,12 @@
                                         <th><strong>S.no.</strong></th>
                                         <th>Book Title</th>
                                         <th>Book Language</th>
+<th>Book Subject</th>
+                                        <th>Book ISBN</th>
+                                        <th>Book Author</th>
+                                        <th>User Type</th>
+                                        <th>Publication Name</th>
+
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -150,6 +160,12 @@
                                                            @else
                                                            <td>{{$val->language}}</td>
                                                            @endif
+<td>{{$val->subject}}</td>
+                                                           <td>{{$val->isbn}}</td>
+                                                           <td>{{$val->author_name}}</td>
+
+                                                           <td>{{$val->user_type}}</td>
+                                                           <td>{{$val->nameOfPublisher}}</td>
 
                                             <td data-label="controlq">
                                                 <div class="d-flex mt-p0">
@@ -184,7 +200,11 @@
                                                            @else
                                                            <td>{{$val->language}}</td>
                                                            @endif
-
+<td>{{$val->subject}}</td>
+                                                           <td>{{$val->isbn}}</td>
+                                                           <td>{{$val->author_name}}</td>
+                                                           <td>{{$val->user_type}}</td>
+                                                           <td>{{$val->nameOfPublisher}}</td>
                                             <td data-label="controlq">
                                                 <div class="d-flex mt-p0">
                                                     <a href="/admin/book_manage_view/{{ $val->id }}" class="btn btn-success shadow btn-xs sharp me-1">
@@ -221,7 +241,7 @@
 
                         <!-- tab-content -->
                         <div class="table-responsive p-3">
-                        <table class="table table-responsive-md memeber1_table">
+                        <table class="table table-responsive-md memeber1_table" id="yourTableId1">
                             <thead>
                                 <tr>
                                     <th style="width:50px;">
@@ -232,12 +252,13 @@
                                     </th>
                                     <th><strong>S.no.</strong></th>
                                     <th>Librarian Name</th>
-                                    <th>Librarian Id</th>
+                                    <th>Library Name</th>
+                                    <th>Subject</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @php
+                                <!-- @php
                                     $rev = DB::table('librarians')->where('status','=','1')->where('metaChecker','=','yes')->get();
                                 @endphp
                                 @foreach($rev as $val)
@@ -247,15 +268,26 @@
                                                 <input type="checkbox" class="form-check-input libraianitem" id="customCheckBox{{$loop->index + 3}}" required=""
                                                     data-librarian-id="{{$val->id}}" value="{{$val->id}}">
                                                 <label class="form-check-label" for="customCheckBox{{$loop->index + 3}}"></label>
-                                            </div>
+                                            </div> 
                                         </td>
                                         <td>{{$loop->index + 1}}</td>
                                         <td>
                                             <span>{{$val->librarianName}}</span>
                                         </td>
                                         <td>
-                                            <span>{{$val->librarianId}}</span>
+                                            <span>{{$val->libraryName}}</span>
                                         </td>
+<td>
+    @php
+        $subject1 = json_decode($val->subject); 
+    @endphp
+    <span>
+        @foreach($subject1 as $subject)
+            {{ $subject }}
+        @endforeach
+    </span>
+</td>
+
                                         <td data-label="controlq">
                                             <div class="d-flex mt-p0">
                                                 <a href="/admin/librarianview/{{$val->id}}" class="btn btn-success shadow btn-xs sharp me-1">
@@ -264,7 +296,7 @@
                                             </div>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @endforeach -->
                             </tbody>
                         </table>
                         </div>
@@ -341,13 +373,13 @@
         return $(this).data('book-id');
     }).get();
 
-    var checkelibraian = $('.libraianitem:checked').map(function () {
-        return $(this).val();
-    }).get();
+    var checkedLibrarian = $('.librarianitem:checked').map(function() {
+    return $(this).data('librarian-id');
+}).get();
 
     var requestData = {
         bookId: checkebook,
-        metaLibraianId: checkelibraian,
+        metaLibraianId: checkedLibrarian,
     };
     $.ajaxSetup({
             headers: {
@@ -401,6 +433,18 @@ $(document).ready(function () {
                     $('#yourTableId tbody').html(data.success);
                     $('.memeber_table').dataTable();
                 }
+
+                if (data.success2.trim() === '<tr><td colspan="5" class="text-center">No records found</td></tr>') {
+                    $('#yourTableId1 tbody').empty();
+                    $('.memeber1_table').DataTable().clear().destroy();
+                    $('.memeber1_table').dataTable();
+                } else {
+                    $('#yourTableId1 tbody').empty();
+                    $('.memeber1_table').DataTable().clear().destroy();
+                    $('#yourTableId1 tbody').html(data.success2);
+                    $('.memeber1_table').dataTable();
+                }
+                
             },
             error: function () {
                 $('#yourTableId tbody').html('<tr><td colspan="5" class="text-center">Error loading data.</td></tr>');
