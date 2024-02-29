@@ -320,6 +320,29 @@ public function bookdelete(Request $request){
     return response()->json($data); 
   }
   
+  public function book_edit($id){
+    $book=Book::find($id);
+    $book->primaryauthor1= json_decode($book->primaryauthor); 
+    $book->trans_from1= json_decode($book->trans_from); 
+    $book->other_img1= json_decode($book->other_img); 
+    $book->series1= json_decode($book->series); 
+    // return $book;
+    $book->banner_img1= json_decode($book->banner_img); 
+    $book->booktag1= json_decode($book->booktag); 
+    $book->trans_author1= json_decode($book->trans_author); 
+    $book->bookdescription1= json_decode($book->bookdescription); 
+    $book->series1= json_decode($book->series); 
+    $book->volume1= json_decode($book->volume); 
+    $book->banner_img1= json_decode($book->banner_img); 
+    //    return$book;
+  $book->firstName=auth('publisher')->user()->firstName;
+  $book->lastName=auth('publisher')->user()->lastName;
+// return $book;
+\Session::put('book', $book);
+    return redirect('publisher/bookedit'); 
+
+  }
+
 public function bookmanageview($id){
    
     $book=Book::find($id);

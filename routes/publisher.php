@@ -43,7 +43,16 @@ Route::prefix('publisher')->group(function () {
 
      });
     Route::get('/book_add',function(){ return view('publisher.book_add');});
-    Route::get('/book_edit',function(){ return view('publisher.book_edit');});
+    // Route::get('/book_edit',function(){ return view('publisher.book_edit');});
+    Route::get('/book_edit/{id}',[BookController::class,'book_edit']);
+    Route::get('/bookedit',function(){
+        $data = Session::get('book');
+         if($data !==null){
+             return view('publisher.book_edit')->with("data",$data);
+         }
+
+     });
+    
     // Route::get('/book_manage_view',function(){ return view('publisher.book_manage_view');});
 
     Route::get('/activitymonitor',function(){ return view('publisher.activitymonitor');});
