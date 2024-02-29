@@ -136,30 +136,12 @@
                                           <label class="form-check-label" for="checkAll2"></label>
                                        </div>
                                     </th>
-                                    <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                       colspan="1" aria-label="ERoll No: activate to sort column ascending"
-                                       style="width: 97.5156px;">Book No</th>
-                                    <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                       colspan="1"
-                                       aria-label="Books: activate to sort column ascending"
-                                       style="width: 145.219px;">Books</th>
-                                    <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                       colspan="1"
-                                       aria-label="Stock: activate to sort column ascending"
-                                       style="width: 109.984px;">Price</th>
-                                    <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                       colspan="1"
-                                       aria-label="ISBN(10/13): activate to sort column ascending"
-                                       style="width: 126.609px;">ISBN(10/13)</th>
-                                    <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                       colspan="1" aria-label="Quantity: activate to sort column ascending"
-                                       style="width: 65.3594px;">User Type</th>
-                                    <!-- <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                       colspan="1" aria-label="Issued: activate to sort column ascending"
-                                       style="width: 72.7031px;"> Issued</th> -->
-                                    <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                       colspan="1" aria-label="Action: activate to sort column ascending"
-                                       style="width: 87.4688px;">  Action</th>
+                                    <th>Book No</th>
+                                    <th>Books</th>
+                                    <th>Price</th>
+                                    <th>ISBN(10/13)</th>
+                                    <th>User Type</th>
+                                    <th>Action</th>
                                  </tr>
                               </thead>
                               <tbody>
@@ -202,12 +184,12 @@
                                           <a href="/admin/book_manage_view/{{$val->id}}" class="btn btn-success shadow btn-xs sharp me-1">
                                           <i class="fa fa-eye"></i>
                                           </a>
-                                          <!-- <a href="book_manage_edit.php" class="btn btn-warning shadow btn-xs sharp me-1">
+                                          {{-- <a href="book_manage_edit.php" class="btn btn-warning shadow btn-xs sharp me-1">
                                           <i class="fa fa-edit"></i>
-                                          </a>
-                                          <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
+                                          </a> --}}
+                                          {{-- <a href="#" class="btn btn-danger shadow btn-xs sharp me-1">
                                           <i class="fa fa-trash"></i>
-                                          </a> -->
+                                          </a> --}}
                                        </div>
                                     </td>
                                  </tr>

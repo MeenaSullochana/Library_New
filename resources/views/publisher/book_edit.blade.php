@@ -1,3 +1,9 @@
+{{-- @dd(Session::all()); --}}
+@php
+    $bookDetails = (object)Session::all();
+    dd($bookDetails);
+    $bookhighlights = json_decode($bookDetails->book->banner_img,true);
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1548,6 +1554,13 @@
                                                         {{-- <input class="bg-white p-1" type="file" id="banner_img"
                                                             name="banner_img[]" accept="image/*" multiple required> --}}
                                                                 <input type="file" id="files" name="files[]" multiple />
+                                                                @foreach ($bookhighlights as $highlighImages)
+                                                                    <span class="pip"><img class="imageThumb" src="{{ url('Books/banner/'.$highlighImages) }}">
+                                                                    <br>
+                                                                    <span class="remove">Remove image</span>
+                                                                    </span>
+                                                                @endforeach
+                                                                
                                                     </div>
                                                 </div>
                                             </div>
@@ -1703,7 +1716,7 @@
             Main wrapper end
         ***********************************-->
     <?php
-    include 'publisher/plugin/plugin_js.php';
+        include 'publisher/plugin/plugin_js.php';
     ?>
     <!-- <script src="./vendor/toastr/js/toastr.min.js"></script> -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script> -->
@@ -1869,6 +1882,10 @@ $(document).ready(function() {
   } else {
     alert("Your browser doesn't support to File API")
   }
+
+  $(".remove").click(function(){
+    $(this).parent(".pip").remove();
+    });
 });
 
 </script>
@@ -2542,15 +2559,15 @@ function numberOnly(id) {
     }
 
     .file-upload {
-        display: none;
+        display: none !important;
     }
 
     .file-upload_back {
-        display: none;
+        display: none !important;
     }
 
     .file-upload_other {
-        display: none;
+        display: none !important;
     }
 
     .circle {
