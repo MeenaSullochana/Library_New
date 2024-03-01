@@ -23,6 +23,8 @@ use App\Notifications\UserCreatedNotification;
 use Illuminate\Support\Str;
 use DateTime;
 use Carbon\Carbon;
+use App\Models\Mailurl;
+
 
 class ForgotPasswordController extends Controller
 {
@@ -118,7 +120,9 @@ class ForgotPasswordController extends Controller
                 if($record2 !=null){
                     $record1=reviewer::where('email', '=', $request->email)->where('status', '=', '1')->first();
                     $user = $request->email;
-                    $url = "http://127.0.0.1:8000/member/forgot/$user/$request->usertype";
+                    $rev =Mailurl::first();
+                    $url = $rev->name ."/forgotform/$user/$request->usertype";
+        
                         if($record1 !== null){
                           
                                 Notification::route('mail',  $request->email)->notify(new ForgotPasswordNotification($user, $url));
@@ -148,7 +152,9 @@ class ForgotPasswordController extends Controller
                 if($record2 !=null){
                     $record1=Librarian::where('email', '=', $request->email)->where('status', '=', '1')->first();
                     $user = $request->email;
-                    $url = "http://127.0.0.1:8000/member/forgot/$user/$request->usertype";
+                    $rev =Mailurl::first();
+                    $url = $rev->name ."/forgotform/$user/$request->usertype";
+        
                         if($record1 !== null){
                           
                                 Notification::route('mail',  $request->email)->notify(new ForgotPasswordNotification($user, $url));

@@ -663,13 +663,7 @@ public function get_books($id)
              
             if ($datass == null) {
             
-              if ($val->user_type =="publisher_distributor") {
-                $user_type = "publisher cum distributor";
-            
-            }else{
-           
-              $user_type= $val->user_type;
-            }
+             
              
               if ($val->language =="Other_Indian") {
                 $language = $val->other_indian;
@@ -689,10 +683,10 @@ public function get_books($id)
                 </div>
                     </td>
                     <td>' . ($i) . '</td>
-                    <td><b>Name</b><br><small>' . $val->book_title . '</small></td>
+                    <td><small>' . $val->book_title . '</small></td>
                     <td>' .$language . '</td>
                     <td>' .$val->subject . '</td>
-                    <td>' .$user_type . '</td>
+                    <td>' .$val->nameOfPublisher . '</td>
                 </tr>';
             }
         }
@@ -700,7 +694,7 @@ public function get_books($id)
 
     if 
     ($reviewers->isEmpty()) {
-        $htmldata = '<tr><td colspan="3">No external reviewers found.</td></tr>';
+        $htmldata = '<tr><td colspan="3">No expert reviewers found.</td></tr>';
     } else
      {
         foreach ($reviewers as $key => $val) {
@@ -712,14 +706,78 @@ public function get_books($id)
             </div>
                 </td>
                 <td>' . ($key + 1) . '</td>
-                <td><b>Name</b><br><small>' . $val->name . '</small></td>
+                <td>' . $val->name . '</td>
+                <td>' .$val->subject . '</td>
+
             </tr>';
         }
     }
+    $tbodyHtml2 = ''; 
+    $index1 = 1; 
+    $internals = Reviewer::where('subject',$id)->where('reviewerType', '=', 'internal')->where('status', '=', 1)->get();
+    if 
+    ($internals->isEmpty()) {
+        $tbodyHtml2 = '<tr><td colspan="3">No Librarian reviewers found.</td></tr>';
+    } else
+     {
+    foreach ($internals as $key => $val) {         
+            $tbodyHtml2 .= '<tr>';
+            $tbodyHtml2 .= '<td>';
+            $tbodyHtml2 .= '<div class="form-check custom-checkbox checkbox-success check-lg me-3">';
+            $tbodyHtml2 .= '<input type="checkbox" class="form-check-input internalitem" id="customCheckBox' . ($index1 + 3) . '" required="" data-librarian-id="' . $val->id . '" value="' . $val->id . '">';
+            $tbodyHtml2 .= '<label class="form-check-label" for="customCheckBox' . ($index1 + 3) . '"></label>';
+            $tbodyHtml2 .= '</div>';
+            $tbodyHtml2 .= '</td>';                
+            $tbodyHtml2 .= '<td>' . $index1 . '</td>';
+            $tbodyHtml2 .= '<td><span>' . $val->name . '</span></td>';
+            $tbodyHtml2 .= '<td><span>' . $val->libraryName . '</span></td>';
+            $tbodyHtml2 .= '<td><span>' . $val->subject . '</span></td>';
+           
+            $tbodyHtml2 .= '</tr>';
+            $index1++; 
+        
+    }
+  }
+  if 
+  ($books->isEmpty()) {
+      $tbodyHtml3 = '<tr><td colspan="3">No Public reviewers found.</td></tr>';
+  } else
+   {
+  $tbodyHtml3 = ''; 
+  $index1 = 1; 
+  $cat=$books[0]->category;
+  $internals = Reviewer::where('Category','=',$cat)->where('reviewerType', '=', 'public')->where('status', '=', 1)->get();
+  if 
+  ($internals->isEmpty()) {
+      $tbodyHtml3 = '<tr><td colspan="3">No external reviewers found.</td></tr>';
+  } else
+   {
+  foreach ($internals as $key => $val) {         
+          $tbodyHtml3 .= '<tr>';
+          $tbodyHtml3 .= '<td>';
+          $tbodyHtml3 .= '<div class="form-check custom-checkbox checkbox-success check-lg me-3">';
+          $tbodyHtml3 .= '<input type="checkbox" class="form-check-input publiclitem" id="customCheckBox' . ($index1 + 3) . '" required="" data-public-id="' . $val->id . '" value="' . $val->id . '">';
+          $tbodyHtml3 .= '<label class="form-check-label" for="customCheckBox' . ($index1 + 3) . '"></label>';
+          $tbodyHtml3 .= '</div>';
+          $tbodyHtml3 .= '</td>';                
+          $tbodyHtml3 .= '<td>' . $index1 . '</td>';
+          $tbodyHtml3 .= '<td><span>' . $val->name . '</span></td>';
+          $tbodyHtml3 .= '<td><span>' . $val->Category . '</span></td>';
+          $tbodyHtml3 .= '<td><span>' . $val->district . '</span></td>';
+         
+          $tbodyHtml3 .= '</tr>';
+          $index1++; 
+      
+  }
+}
+   }
 
     $data = [
         'success' => $html,
         'success11' => $htmldata,
+        'success22' => $tbodyHtml2,
+        'success33' => $tbodyHtml3,
+
     ];
 
     return response()->json($data);
@@ -747,8 +805,8 @@ public function reviewpost($bookid){
       $validator = Validator::make($req->all(), [
       
         'bookId'=> 'required|array|min:1',
-        'internalReviewverId' => 'required|array|min:1',
-        'externalReviewverId' => 'required|array|min:1',
+        'LibrarianReviewverId' => 'required|array|min:1',
+        'expectReviewverId' => 'required|array|min:1',
         'publicReviewverId'   => 'required|array|min:1',
     ]);
 
@@ -759,8 +817,8 @@ public function reviewpost($bookid){
         return response()->json($data);
     }
    $bookId=$req->bookId;
-   $internalReviewverId=$req->internalReviewverId;
-   $externalReviewverId=$req->externalReviewverId;
+   $internalReviewverId=$req->LibrarianReviewverId;
+   $externalReviewverId=$req->expectReviewverId;
    $publicReviewverId=$req->publicReviewverId;
    $mergedArray = array_merge($internalReviewverId, $externalReviewverId, $publicReviewverId);
    foreach($bookId as $key=>$val1){

@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UUID;
 
-class Reviewerbatch extends Model
+class Mailurl extends Model
 {
     use HasFactory;
     use UUID;
-    protected $table = 'reviewerbatchs';
+    protected $table = 'mailurls';
     protected $fillable = [
         'name',
        'status'

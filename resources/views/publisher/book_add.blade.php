@@ -72,40 +72,33 @@
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Publication Dedails</h4>
+                                <h4>Book ISBN</h4>
                             </div>
                             <div class="col-md-10">
-
+                                <!-- <P class="fs-4">Enter your title as it appears on the book cover. This field cannot
+                                    be changed after your book is published.</P> -->
                                 <div class="col-lg-12">
                                     <div class="basic-form">
-                                        <div class="mb-3">
-                                            <label class="text-label form-label text-black"
-                                                for="validationCustomUsername">
-                                                Name Of Publisher <span class="text-danger">*</span></label>
-                                                @if(auth('publisher')->user())
+                                    <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">ISBN-10/ISBN-13<span
+                                                            class="text-danger">*</span></label>
                                                     <div class="input-group">
-                                                <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
-                                                  >
-                                                    @else
-                                                    <div class="input-group">
-                                                <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" required
-                                                  >
-                                                    @endif
+                                                        <input type="text" class="form-control" id="isbn"
+                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.."   onkeyup="checkBookISBN()"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                    <span id="bookTitleError" class="text-danger"></span>
 
-
+                                                </div>
                                             </div>
-
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="text-label form-label text-black"
-                                            for="validationCustomUsername"> Year Of Publication
-                                                </label>
-                                            <div class="input-group transparent-append">
-                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
-                                            </div>
-                                        </div>
+                                    
                                     </div>
                                 </div>
                             </div>
@@ -653,6 +646,49 @@
                                 </div>
                             </div>
                         </section> -->
+                        <section class="bg-light-new">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Publication Dedails</h4>
+                            </div>
+                            <div class="col-md-10">
+
+                                <div class="col-lg-12">
+                                    <div class="basic-form">
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="validationCustomUsername">
+                                                Name Of Publisher <span class="text-danger">*</span></label>
+                                                @if(auth('publisher')->user())
+                                                    <div class="input-group">
+                                                <input type="text" class="form-control" id="nameOfPublisher"
+                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
+                                                  >
+                                                    @else
+                                                    <div class="input-group">
+                                                <input type="text" class="form-control" id="nameOfPublisher"
+                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" required
+                                                  >
+                                                    @endif
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                            for="validationCustomUsername"> Year Of Publication <span class="text-danger">*</span>
+                                                </label>
+                                            <div class="input-group transparent-append">
+                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -1061,13 +1097,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <!-- <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">ISBN-10/ISBN-13<span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <input type="text" class="form-control" id="isbn"
                                                             name="isbn" placeholder="Enter ISBN-10/ISBN-13.."   onkeyup="checkBookISBN()"
                                                             required>
@@ -1080,7 +1115,7 @@
                                                     <span id="bookTitleError" class="text-danger"></span>
 
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"

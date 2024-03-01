@@ -1773,7 +1773,9 @@
 						<ul aria-expanded="false">
 							<li><a href="/librarian/meta_book_list">Meta Book Check List</a></li>
 							<li><a href="/librarian/meta_pending">Pending Book</a></li>
-							<li><a href="/librarian/meta_complete_book_list">Completed Book</a></li>							
+							<li><a href="/librarian/meta_complete_book_list">Completed Book</a></li>	
+							<li><a href="/librarian/meta_return">Return Book</a></li>
+						
 							<li><a href="/librarian/meta_reject">Reject Book</a></li>
 							
 						</ul>

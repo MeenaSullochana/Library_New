@@ -17,9 +17,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('reviewer/images/fevi.svg') }}">
     <?php
-    include 'librarian/plugin/plugin_css.php';
+    include 'reviewer/plugin/plugin_css.php';
     ?>
 </head>
 
@@ -42,7 +42,7 @@
         <!--**********************************
             Nav header start
             ***********************************-->
-        @include ('librarian.navigation')
+        @include ('reviewer.navigation')
         <!--**********************************
             Sidebar end
             ***********************************-->
@@ -922,7 +922,7 @@
                                                         class="avatar avatar-md rounded-circle"
                                                         alt="{{ $data->author_name }}">
                                                 @else
-                                                    <img src="{{ asset('librarian/images/default.png') }}"
+                                                    <img src="{{ asset('reviewer/images/default.png') }}"
                                                         class="avatar avatar-md rounded-circle"
                                                         alt="{{ $data->author_name }}">
                                                 @endif
@@ -1093,7 +1093,7 @@
         <!--**********************************
          Footer start
          ***********************************-->
-        @include ('librarian.footer')
+        @include ('reviewer.footer')
         <!--**********************************
          Footer end
          ***********************************-->

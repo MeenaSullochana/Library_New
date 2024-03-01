@@ -10,6 +10,8 @@ use Carbon\Carbon;
 use App\Models\Reviewer;
 use App\Models\BookReviewStatus;
 use App\Models\Book;
+use App\Models\Mailurl;
+
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\UploadedFile;
@@ -86,7 +88,9 @@ class ReviewerController extends Controller
                  $user =  $reviewer->email;
                  $record =  $reviewer;
                  $password = $req->password;
-                 $url = "http://127.0.0.1:8000/member/login";
+                 $rev =Mailurl::first();
+                 $url = $rev->name . "/member/login";
+                //  $url = "http://127.0.0.1:8000/member/login";
                  Notification::route('mail',$reviewer->email)->notify(new MemberdetailNotification($user, $url,$record,$password));  
                  $data= [
                     'success' => 'Reviewer Create Successfully',
@@ -152,7 +156,9 @@ class ReviewerController extends Controller
              $user =  $reviewer->email;
              $record =  $reviewer;
              $password = $req->password;
-             $url = "http://127.0.0.1:8000/member/login";
+             $rev =Mailurl::first();
+             $url = $rev->name . "/member/login";
+            //  $url = "http://127.0.0.1:8000/member/login";
              Notification::route('mail',$reviewer->email)->notify(new MemberdetailNotification($user, $url,$record,$password));  
              $data= [
                 'success' => 'Reviewer Create Successfully',
@@ -302,8 +308,10 @@ public function reviewerstatus(Request $req){
              $reviewer->save();
              $user =  $reviewer->email;
              $record =  $reviewer;
-             $password = "########";
-             $url = "http://127.0.0.1:8000/member/login";
+             $password = "Your Old Password";
+             $rev =Mailurl::first();
+             $url = $rev->name . "/member/login";
+            //  $url = "http://127.0.0.1:8000/member/login";
              Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
              $data = [
                 'success' => 'Reviewer update Successfully',
@@ -365,7 +373,9 @@ public function reviewerstatus(Request $req){
                  $user =  $reviewer->email;
                  $record =  $reviewer;
                  $password = $req->newpassword;
-                 $url = "http://127.0.0.1:8000/member/login";
+                //  $url = "http://127.0.0.1:8000/member/login";
+                $rev =Mailurl::first();
+                $url = $rev->name . "/member/login";
                  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
                  $data = [
                     'success' => 'Reviewer update Successfully',

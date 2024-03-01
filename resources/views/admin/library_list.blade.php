@@ -119,8 +119,8 @@
                                                 </th>
                                                         <th class="sorting" tabindex="0" aria-controls="user-tbl"
                                                             rowspan="1" colspan="1"
-                                                            aria-label="#: activate to sort column ascending"
-                                                            style="width: 0px;">#</th>
+                                                            aria-label="S.no: activate to sort column ascending"
+                                                            style="width: 0px;">S.no</th>
                                                         <th class="sorting" tabindex="0" aria-controls="user-tbl"
                                                             rowspan="1" colspan="1"
                                                             aria-label="Library Id: activate to sort column ascending"

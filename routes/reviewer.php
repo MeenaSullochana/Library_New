@@ -100,8 +100,30 @@ Route::prefix('reviewer')->group(function () {
     Route::get('/reviewer_list',function(){ return view('reviewer.reviewer_list');});
     Route::get('/reviewer_active',function(){ return view('reviewer.reviewer_active');});
     Route::get('/reviewer_inactive',function(){ return view('reviewer.reviewer_inactive');});
+    Route::post('/multiple-reviewerstatus',[ReviewerController::class,'multiple_reviewerstatus']);
+
+    Route::put('/reviewerstatus',[ReviewerController::class,'reviewerstatus']);
+
+    Route::get('/reviewerview/{id}',[ReviewerController::class,'reviewer_view']);
+    Route::get('/reviewer-view',function(){
+        $data = Session::get('reviewer');
+        if($data !==null){
+            return view('reviewer.reviewer_view')->with("data",$data);
+        }
+        
+    });
+
+    Route::get('/reviewer_edit/{id}',[ReviewerController::class,'reviewer_edit']);
+    Route::get('/revieweredit',function(){
+        $data = Session::get('revieweredit');
+        if($data !==null){
+            return view('reviewer.reviewer_edit')->with("data",$data);
+        }
+        
+    });
+
+    Route::post('/editpublicreviewer',[ReviewerController::class,'editpublicreviewer']);
 
     
-
 });
     });

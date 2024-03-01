@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reviewerbatchs', function (Blueprint $table) {
+        Schema::create('mailurls', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->String('name');
             $table->enum('status',['1','0'])->default('1');

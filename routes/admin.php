@@ -190,6 +190,9 @@ Route::get('/reviewer_pending_payment',function(){ return view('admin.reviewer_p
 
 Route::get('/sub_admin_forgot_password',function(){ return view('admin.sub_admin_forgot_password');});
 
+Route::get('/mailurl',function(){ return view('admin.mailurl');});
+Route::post('/mailurl',[SettingController::class,'mailurl']);
+
 
 Route::get('/zone_name_add',function(){ return view('admin.zone_name_add');});
 Route::get('/zone_name_edit',function(){ return view('admin.zone_name_edit');});
