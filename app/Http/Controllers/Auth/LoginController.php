@@ -122,11 +122,15 @@ class LoginController extends Controller
 
     public function usercheck($user,$redirect_route,$guard){
         if($user->approved_status == "approve"){
-            if($user->status == 1){
+            if($user->status == 1 && $user->verification == 1){
              return redirect($redirect_route)->with('success',"Logged in successfully");
-            }else{
+            }else if($user->status != 1 && $user->verification == 1){
              \Auth::guard($guard)->logout();
              return back()->withInput()->with('error',"Your account was inactive");
+            }else if($user->status == 1 && $user->verification != 1){
+                \Auth::guard($guard)->logout();
+                Session::put('publisher',$user);
+                return redirect('/mailconfirmation')->with('error',"Your mail was not verified");
             }
         }
         else if($user->approved_status == "pending"){

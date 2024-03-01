@@ -891,7 +891,6 @@
                                  <option value="limited">Limited Liability Partnership(LLP)</option>
                                  <option value="Partnership">Partnership Firm</option>
                                  <option value="oneperson">One Person Company</option>
-                                 {{-- <option value="Proprietorship">Sole Proprietorship</option> --}}
                                  <option value="trust">Private Trust</option>
                                  <option value="society">Private Society</option>
                                  <option value="institutional">Government Institutional Publication</option>
@@ -903,34 +902,6 @@
                               <div class="user_file_input"></div>
 
                            </div>
-                           {{-- <div class="col-lg-6 mb-3" id="passport_no">
-                              <div class="mb-3">
-                                 <label for="rel_doc" class="form-label">Relevant Documents Details - <span
-                                    class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span
-                                    class="text-danger maditory">*</span></label></label>
-                                 <div class="row">
-                                    <div class="col-md-12 col-sm-12">
-                                       <input class="form-control" id="passport_number" type="file" name="rel_doc"
-                                          multiple required>
-                                       <span class="text-danger"><small> PDF format only </small></span>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div> --}}
-                           {{-- <div class="col-lg-6 mb-3" id="ownership_doc">
-                              <div class="mb-3">
-                                 <label for="formFileSm" class="form-label">Relevant Documents Details - <span
-                                    class="mt-056">தொடர்புடைய ஆவணங்கள் விவரங்கள்</span><span
-                                    class="text-danger maditory">*</span></label></label>
-                                 <div class="row">
-                                    <div class="col-md-12 col-sm-12">
-                                       <input class="form-control" id="passport_number" type="file" name="rel_doc"
-                                          multiple required>
-                                       <span class="text-danger"><small> PDF format only </small></span>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div> --}}
                            <div class="col-md-12 form-group ">
                               <label for="text">Do you have any subsidiary publications? If yes, list the
                               subsidary publication - <span class="mt-056">தங்கள் பதிப்பகத்திற்கு துணை
@@ -1528,11 +1499,11 @@
                            </hr>
                            <div class="col-md-6">
                               <label for="inputEmail4" class="form-label"> Publisher Name / Distributor Name - <span
-                                 class="mt-056">பதிப்பகத்தின் பெயர் / விற்பனையாளரின் பெயர் </span><span
+                                 class="mt-056">பதிப்பாளரின் பெயர் / விற்பனையாளரின் பெயர் </span><span
                                  class="text-danger maditory">*</span></label>
                               <input type="text" class="form-control" id="publication_name_dist_name"
                                  name="publication_name_dist_name"
-                                 placeholder="Enter publication name / distributor" required>
+                                 placeholder="Enter publisher name / distributor name" required>
                            </div>
                            <h4 class="fw-bold">Login Details - <span class="mt-055">உள்நுழைவு விவரங்கள்</span> <span class="mt-055"> </span></h4>
                            </hr>

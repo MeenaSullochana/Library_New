@@ -9,7 +9,6 @@ use App\Models\Budget;
 class BudgetController extends Controller
 {
     public function budgetadd(Request $req){
-     
         $validator = Validator::make($req->all(),[
             'libraryType'=>'required|string',
             'subject'=>'required|string',
@@ -39,7 +38,7 @@ class BudgetController extends Controller
         $budget->subject = $req->subject;
         $budget->description = $req->description;
         $budget->totalAmount = $req->totalAmount;
-        $budget->CategorieAmount = json_encode($req->CategorieAmount); // Fix the typo here
+        $budget->CategorieAmount = json_encode($req->CategorieAmount); 
         $budget->save();
         
         $data= [

@@ -12,7 +12,6 @@ use App\Models\District;
 use App\Models\State;
 use App\Models\Admin;
 use App\Models\Reviewer;
-use App\Http\Controllers\Facades\Session;
 use App\Models\Notifications;
 use App\Models\Country;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -23,7 +22,9 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\UserCreatedNotification;
 use Illuminate\Support\Str;
-use File;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
+
 use App\Models\Otp;
 use Illuminate\Support\Carbon;
 class RegisterController extends Controller
@@ -266,19 +267,7 @@ class RegisterController extends Controller
             $publisher->udyamProof =  $udayam_proof_name;
         }
 
-         //society
-         if($request->hasFile('society'))
-         {
-             
-         $path = 'publisher/images/proof/society'.$request->society;
-         if(File::exists($path)){
-         File::delete($path);
-         }
-         $society_proof = $request->file('society');
-         $society_proof_name= $request->pub_first_name.time().'_'.$society_proof->getClientOriginalName();
-         $request->society->move(('publisher/images/proof/society'),$society_proof_name);  
-         $publisher->societyProof =  $society_proof_name;
-     }
+
                    //certification_incon
                    if($request->hasFile('certification_incon'))
                    {
@@ -374,7 +363,72 @@ class RegisterController extends Controller
               $request->aoa->move(('publisher/images/proof/aoa'),$aoa_proof_name);
               $publisher->aoaProof    =  $aoa_proof_name; 
               }
-
+//private_society
+         if($request->hasFile('private_society'))
+         {
+             
+         $path = 'publisher/images/proof/privatesociety'.$request->private_society;
+         if(File::exists($path)){
+         File::delete($path);
+         }
+         $private_society_proof = $request->file('private_society');
+         $private_society_proof_name= $request->pub_first_name.time().'_'.$private_society_proof->getClientOriginalName();
+         $request->private_society->move(('publisher/images/proof/privatesociety'),$private_society_proof_name);  
+         $publisher->privateSocietyProof =  $private_society_proof_name;
+     }
+     //private_trust
+     if($request->hasFile('private_trust'))
+     {
+         
+     $path = 'publisher/images/proof/privatetrust'.$request->private_trust;
+     if(File::exists($path)){
+     File::delete($path);
+     }
+     $private_trust_proof = $request->file('private_trust');
+     $private_trust_proof_name= $request->pub_first_name.time().'_'.$private_trust_proof->getClientOriginalName();
+     $request->private_trust->move(('publisher/images/proof/privatetrust'),$private_trust_proof_name);  
+     $publisher->privateTrustProof =  $private_trust_proof_name;
+ }
+      //institution
+      if($request->hasFile('institution'))
+      {
+          
+      $path = 'publisher/images/proof/institution'.$request->institution;
+      if(File::exists($path)){
+      File::delete($path);
+      }
+      $institution_proof = $request->file('institution');
+      $institution_proof_name= $request->pub_first_name.time().'_'.$institution_proof->getClientOriginalName();
+      $request->institution->move(('publisher/images/proof/institution'),$institution_proof_name);  
+      $publisher->institutionProof =  $institution_proof_name;
+  }
+        //trust_foundation
+        if($request->hasFile('trust_foundation'))
+        {
+            
+        $path = 'publisher/images/proof/trustfoundation'.$request->trust_foundation;
+        if(File::exists($path)){
+        File::delete($path);
+        }
+        $trust_foundation_proof = $request->file('trust_foundation');
+        $trust_foundation_proof_name= $request->pub_first_name.time().'_'.$trust_foundation_proof->getClientOriginalName();
+        $request->trust_foundation->move(('publisher/images/proof/trustfoundation'),$trust_foundation_proof_name);  
+        $publisher->trustFoundationProof =  $trust_foundation_proof_name;
+    }
+         //govt society
+         if($request->hasFile('society'))
+         {
+             
+         $path = 'publisher/images/proof/society'.$request->society;
+         if(File::exists($path)){
+         File::delete($path);
+         }
+         $society_proof = $request->file('society');
+         $society_proof_name= $request->pub_first_name.time().'_'.$society_proof->getClientOriginalName();
+         $request->society->move(('publisher/images/proof/society'),$society_proof_name);  
+         $publisher->societyProof =  $society_proof_name;
+     }
+      
 //special category
                 $special = $request->specialized_category_books;
                 foreach ($special as $key=>$val){
@@ -429,7 +483,8 @@ class RegisterController extends Controller
            $publisher->usertype                    = $request->usertype;
            $publisher->have_translated_books            = $request->member_in_publishers_yes_old;
            $publisher->have_award_title                 = $request ->member_in_publishers_yes_old_asr; 
-
+           $publisher->approved_status        ="approve";
+           $publisher->status                 ="1";
             if ($publisher->save()) {
         
                 $randomCode = str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
@@ -447,8 +502,9 @@ class RegisterController extends Controller
                 $otps->dateTime= Carbon::now();
                 $otps->save();
            } 
+           Session::put('publisher',$publisher);
         //    return view('mailconfirm',compact('publisher'));
-           return redirect('/mailconfirmation')->with('publisher',$publisher); 
+           return redirect('/mailconfirmation'); 
         //   return back()->with('success',"You are registered successfully!! Please wait for admin apporval mail");
     }
 //username check
@@ -615,20 +671,6 @@ public function emailCheck(Request $request){
       $request->udayam->move(('distributor/images/proof/udayam'),$udayam_proof_name);  
       $distributor->udyamProof =  $udayam_proof_name;
   }
-
-           //society
-           if($request->hasFile('society'))
-           {
-               
-           $path = 'distributor/images/proof/society'.$request->society;
-           if(File::exists($path)){
-           File::delete($path);
-           }
-           $society_proof = $request->file('society');
-           $society_proof_name= $request->distn_first_name.time().'_'.$society_proof->getClientOriginalName();
-           $request->society->move(('distributor/images/proof/society'),$society_proof_name);  
-           $distributor->societyProof =  $society_proof_name;
-       }
              //certification_incon
              if($request->hasFile('certification_incon'))
              {
@@ -725,6 +767,71 @@ public function emailCheck(Request $request){
         $distributor->aoaProof    =  $aoa_proof_name; 
         }
 
+ //private_society
+         if($request->hasFile('private_society'))
+         {
+             
+         $path = 'distributor/images/proof/privatesociety'.$request->private_society;
+         if(File::exists($path)){
+         File::delete($path);
+         }
+         $private_society_proof = $request->file('private_society');
+         $private_society_proof_name= $request->distn_first_name.time().'_'.$private_society_proof->getClientOriginalName();
+         $request->private_society->move(('distributor/images/proof/privatesociety'),$private_society_proof_name);  
+         $distributor->privateSocietyProof =  $private_society_proof_name;
+     }
+     //private_trust
+     if($request->hasFile('private_trust'))
+     {
+         
+     $path = 'distributor/images/proof/privatetrust'.$request->private_trust;
+     if(File::exists($path)){
+     File::delete($path);
+     }
+     $private_trust_proof = $request->file('private_trust');
+     $private_trust_proof_name= $request->distn_first_name.time().'_'.$private_trust_proof->getClientOriginalName();
+     $request->private_trust->move(('distributor/images/proof/privatetrust'),$private_trust_proof_name);  
+     $distributor->privateTrustProof =  $private_trust_proof_name;
+ }
+      //institution
+      if($request->hasFile('institution'))
+      {
+          
+      $path = 'distributor/images/proof/institution'.$request->institution;
+      if(File::exists($path)){
+      File::delete($path);
+      }
+      $institution_proof = $request->file('institution');
+      $institution_proof_name= $request->distn_first_name.time().'_'.$institution_proof->getClientOriginalName();
+      $request->institution->move(('distributor/images/proof/institution'),$institution_proof_name);  
+      $distributor->institutionProof =  $institution_proof_name;
+  }
+        //trust_foundation
+        if($request->hasFile('trust_foundation'))
+        {
+            
+        $path = 'distributor/images/proof/trustfoundation'.$request->trust_foundation;
+        if(File::exists($path)){
+        File::delete($path);
+        }
+        $trust_foundation_proof = $request->file('trust_foundation');
+        $trust_foundation_proof_name= $request->distn_first_name.time().'_'.$trust_foundation_proof->getClientOriginalName();
+        $request->trust_foundation->move(('distributor/images/proof/trustfoundation'),$trust_foundation_proof_name);  
+        $distributor->trustFoundationProof =  $trust_foundation_proof_name;
+    }
+         //govt society
+         if($request->hasFile('society'))
+         {
+             
+         $path = 'distributor/images/proof/society'.$request->society;
+         if(File::exists($path)){
+         File::delete($path);
+         }
+         $society_proof = $request->file('society');
+         $society_proof_name= $request->distn_first_name.time().'_'.$society_proof->getClientOriginalName();
+         $request->society->move(('distributor/images/proof/society'),$society_proof_name);  
+         $distributor->societyProof =  $society_proof_name;
+     }
             
      //language
      $lang = $request->language_of_books_you_dealing_with;
@@ -768,7 +875,8 @@ public function emailCheck(Request $request){
            $distributor->dis_ownership                   = $request->dis_ownership;
            $distributor->bookCatalogue               =$book_proof_name;
            $distributor->usertype                    = $request->usertype;
-          
+           $distributor->approved_status="approve";
+           $distributor->status="1";
           if ($distributor->save()) {
             $publisher=$distributor;
             $randomCode = str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
@@ -786,8 +894,9 @@ public function emailCheck(Request $request){
             $otps->dateTime= Carbon::now();
             $otps->save();
        } 
+       Session::put('publisher',$publisher);
     //    return view('mailconfirm',compact('publisher'));
-       return redirect('/mailconfirmation')->with('publisher',$publisher); 
+       return redirect('/mailconfirmation'); 
 
     }
    
@@ -1065,19 +1174,6 @@ public function disemailCheck(Request $request){
       $publisher->udyamProof =  $udayam_proof_name;
   }
 
-   //society
-   if($request->hasFile('society'))
-   {
-       
-   $path = 'publisher_and_distributor/images/proof/society'.$request->society;
-   if(File::exists($path)){
-   File::delete($path);
-   }
-   $society_proof = $request->file('society');
-   $society_proof_name= $request->pub_first_name.time().'_'.$society_proof->getClientOriginalName();
-   $request->society->move(('publisher_and_distributor/images/proof/society'),$society_proof_name);  
-   $publisher->societyProof =  $society_proof_name;
-}
              //certification_incon
              if($request->hasFile('certification_incon'))
              {
@@ -1173,7 +1269,71 @@ public function disemailCheck(Request $request){
         $request->aoa->move(('publisher_and_distributor/images/proof/aoa'),$aoa_proof_name);
         $publisher->aoaProof    =  $aoa_proof_name; 
         }
-
+//private_society
+         if($request->hasFile('private_society'))
+         {
+             
+         $path = 'publisher_and_distributor/images/proof/privatesociety'.$request->private_society;
+         if(File::exists($path)){
+         File::delete($path);
+         }
+         $private_society_proof = $request->file('private_society');
+         $private_society_proof_name= $request->pub_first_name.time().'_'.$private_society_proof->getClientOriginalName();
+         $request->private_society->move(('publisher_and_distributor/images/proof/privatesociety'),$private_society_proof_name);  
+         $publisher->privateSocietyProof =  $private_society_proof_name;
+     }
+     //private_trust
+     if($request->hasFile('private_trust'))
+     {
+         
+     $path = 'publisher_and_distributor/images/proof/privatetrust'.$request->private_trust;
+     if(File::exists($path)){
+     File::delete($path);
+     }
+     $private_trust_proof = $request->file('private_trust');
+     $private_trust_proof_name= $request->pub_first_name.time().'_'.$private_trust_proof->getClientOriginalName();
+     $request->private_trust->move(('publisher_and_distributor/images/proof/privatetrust'),$private_trust_proof_name);  
+     $publisher->privateTrustProof =  $private_trust_proof_name;
+ }
+      //institution
+      if($request->hasFile('institution'))
+      {
+          
+      $path = 'publisher_and_distributor/images/proof/institution'.$request->institution;
+      if(File::exists($path)){
+      File::delete($path);
+      }
+      $institution_proof = $request->file('institution');
+      $institution_proof_name= $request->pub_first_name.time().'_'.$institution_proof->getClientOriginalName();
+      $request->institution->move(('publisher_and_distributor/images/proof/institution'),$institution_proof_name);  
+      $publisher->institutionProof =  $institution_proof_name;
+  }
+        //trust_foundation
+        if($request->hasFile('trust_foundation'))
+        {
+            
+        $path = 'publisher_and_distributor/images/proof/trustfoundation'.$request->trust_foundation;
+        if(File::exists($path)){
+        File::delete($path);
+        }
+        $trust_foundation_proof = $request->file('trust_foundation');
+        $trust_foundation_proof_name= $request->pub_first_name.time().'_'.$trust_foundation_proof->getClientOriginalName();
+        $request->trust_foundation->move(('publisher_and_distributor/images/proof/trustfoundation'),$trust_foundation_proof_name);  
+        $publisher->trustFoundationProof =  $trust_foundation_proof_name;
+    }
+         //govt society
+         if($request->hasFile('society'))
+         {
+             
+         $path = 'publisher_and_distributor/images/proof/society'.$request->society;
+         if(File::exists($path)){
+         File::delete($path);
+         }
+         $society_proof = $request->file('society');
+         $society_proof_name= $request->pub_first_name.time().'_'.$society_proof->getClientOriginalName();
+         $request->society->move(('publisher_and_distributor/images/proof/society'),$society_proof_name);  
+         $publisher->societyProof =  $society_proof_name;
+     }
 
       //special category
                 $special = $request->pub_dis_specialized_category_books;
@@ -1231,7 +1391,8 @@ public function disemailCheck(Request $request){
            $publisher->usertype                                 =   $request->usertype;
            $publisher->have_translated_books                    = $request->member_in_publishers_yes_old_lby;
            $publisher->have_award_title                         = $request ->member_in_publishers_yes_old_asrmy; 
-        
+           $publisher->approved_status="approve";
+           $publisher->status="1";
           if ( $publisher->save()) {
           
             $randomCode = str_pad(random_int(0, 9999), 4, '0', STR_PAD_LEFT);
@@ -1249,8 +1410,9 @@ public function disemailCheck(Request $request){
             $otps->dateTime= Carbon::now();
             $otps->save();
        } 
+       Session::put('publisher',$publisher);
     //    return view('mailconfirm',compact('publisher'));
-       return redirect('/mailconfirmation')->with('publisher',$publisher); 
+       return redirect('/mailconfirmation'); 
 
        
            

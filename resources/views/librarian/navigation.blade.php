@@ -1755,6 +1755,15 @@
 						</ul>
 					</li>
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
+					<i class="bi bi-chat-dots"></i>
+                            <span class="nav-text">Website</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="/product">Book List</a></li>
+                          
+                        </ul>
+                    </li>
+					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 							<i class="bi bi-bag-plus"></i>	
 							<span class="nav-text">Order Management</span>
 						</a>

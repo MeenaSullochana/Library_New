@@ -53,7 +53,8 @@ class UserNotification extends Notification implements ShouldQueue
       
         if($this->user->usertype ){
             $subject = "Welcome ".$this->user->firstName;
-            $message = "Congratulations! Your registration was successful. It's currently awaiting approval. You'll receive an email once it's approved.";
+            // $message = "Congratulations! Your registration was successful. It's currently awaiting approval. You'll receive an email once it's approved.";
+            $message = "Congratulations! Your registration was successful.";
         }else{
             $subject = "Welcome ".$this->user->name;
             $message = "Congratulations! Your registration was successful.";
