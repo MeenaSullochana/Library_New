@@ -65,6 +65,9 @@ Route::prefix('librarian')->group(function () {
     Route::get('/meta_complete_book_list',[LibrarianController::class,'meta_complete_book_list']);
     Route::get('/meta_pending',[LibrarianController::class,'meta_pending']);
     Route::get('/meta_reject',[LibrarianController::class,'meta_reject']);
+    Route::get('/meta_return',[LibrarianController::class,'meta_return']);
+
+ 
     Route::get('/book_view/{id}',[LibrarianController::class,'bookview']);
     Route::get('/bookview',function(){
         $data = Session::get('book');
@@ -90,9 +93,13 @@ Route::prefix('librarian')->group(function () {
        Route::post('/feedbackadd',[FeedbackController::class,'feedbackadd']);
       
      Route::get('/feedback_librarian_add',function(){ return view('librarian.feedback_librarian_add');});
+     Route::post('/categoryupdate',[LibrarianController::class,'categoryupdate']);
 
+     Route::post('/subjectupdate',[LibrarianController::class,'subjectupdate']);
+     Route::post('/librarianreturnmessage',[LibrarianController::class,'librarianreturnmessage']);
 
-    
+     
+      
 
 });
 });

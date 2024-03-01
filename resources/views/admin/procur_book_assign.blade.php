@@ -121,7 +121,9 @@
                                  <th>Book Name</th>
                                  <th>language</th>
                                  <th>Subject</th>
-                                 <th>User Type</th>
+                                 <th>Publication Name</th>
+                                        
+
                               </tr>
                            </thead>
                            <tbody>
@@ -155,7 +157,7 @@
             </div>
         </td>
         <td>{{ $loop->index + 1 }}</td>
-        <td><b>Name</b><br><small>{{ $val->book_title }}</small></td>
+        <td><small>{{ $val->book_title }}</small></td>
         @if($val->language == "Other_Indian") 
                 <td>{{  $val->other_indian }}</td>
             @elseif ($val->language == "other_foreign") 
@@ -164,7 +166,7 @@
                 <td>{{ $val->language }}</td>
             @endif
             <td>{{ $val->subject }}</td>
-          <td>{{ $val->user_type }}</td>
+            <td>{{$val->nameOfPublisher}}</td>
     </tr>
 @endforeach
   
@@ -193,7 +195,9 @@
                                        </div>
                                     </th>
                                     <th>Sl</th>
-                                    <th>User Name</th>
+                                    <th>Expert Reviewer Name</th>
+                                    <th>Subject</th>
+
                                  </tr>
                               </thead>
                               <tbody>
@@ -223,7 +227,7 @@
                      </div>
                      <div class="card-body text-center">
                         <div class="table-responsive">
-                        <table class="display table table-striped internal_table" style="width:100%">
+                        <table class="display table table-striped internal_table" id="yourTableId22" style="width:100%">
                         <thead>
                            <tr>
                                  <th>
@@ -233,11 +237,14 @@
                                     </div>
                                  </th>
                                  <th>Sl</th>
-                                 <th>Book Name</th>
+                                 <th>Librarian Name </th>
+                                 <th>Library Name </th>
+                                 <th>Subject </th>
+
                            </tr>
                         </thead>
                         <tbody>
-                           @php
+                           <!-- @php
                                  $categori = DB::table('reviewer')->where('reviewerType', '=', 'internal')->where('status', '=', '1')->get();
                            @endphp
                            @foreach($categori as $val)
@@ -249,9 +256,9 @@
                                        </div>
                                     </td>
                                     <td>{{$loop->index +1}}</td>
-                                    <td><b> Name</b><br><small>{{$val->name}}</small></td>
+                                    <td><small>{{$val->name}}</small></td>
                                  </tr>
-                           @endforeach
+                           @endforeach -->
                         </tbody>
                      </table>
 
@@ -278,7 +285,7 @@
                      </div>
                      <div class="card-body text-center">
                         <div class="table-responsive">
-                        <table class="display table table-striped public_table" style="width:100%">
+                        <table class="display table table-striped public_table" id="yourTableId33" style="width:100%">
                         <thead>
                            <tr>
                                  <th>
@@ -288,11 +295,14 @@
                                     </div>
                                  </th>
                                  <th>Sl</th>
-                                 <th>User Name</th>
+                                 <th>Public Reviewer Name</th>
+                                 <th>Category</th>
+                                 <th>District</th>
+
                            </tr>
                         </thead>
                         <tbody>
-                           @php
+                           <!-- @php
                                  $categori = DB::table('reviewer')->where('reviewerType', '=', 'public')->where('status', '=', '1')->get();
                            @endphp
                            @foreach($categori as $val)
@@ -306,7 +316,7 @@
                                     <td>{{$loop->index +1}}</td>
                                     <td><b> Name</b><br><small>{{$val->name}}</small></td>
                                  </tr>
-                           @endforeach
+                           @endforeach -->
                         </tbody>
                      </table>
 
@@ -370,34 +380,53 @@
 
 
 
-        $('#selectAllpublic').change(function () {
-        $('.publicitem').prop('checked', $(this).prop('checked'));
-    });
+   //      $('#selectAllpublic').change(function () {
+   //      $('.publicitem').prop('checked', $(this).prop('checked'));
+   //  });
 
-    $('.publicitem').change(function () {
-        if ($('.publicitem:checked').length === $('.publicitem').length) {
-            $('#selectAllpublic').prop('checked', true);
-        } else {
-            $('#selectAllpublic').prop('checked', false);
-        }
-    });
+   //  $('.publicitem').change(function () {
+   //      if ($('.publicitem:checked').length === $('.publicitem').length) {
+   //          $('#selectAllpublic').prop('checked', true);
+   //      } else {
+   //          $('#selectAllpublic').prop('checked', false);
+   //      }
+   //  });
 
 
-    $('#selectAllinternal').change(function () {
-        $('.internalitem').prop('checked', $(this).prop('checked'));
-    });
+   //  $('#selectAllinternal').change(function () {
+   //      $('.librarianitem').prop('checked', $(this).prop('checked'));
+   //  });
 
-    $('.internalitem').change(function () {
-        if ($('.internalitem:checked').length === $('.internalitem').length) {
-            $('#selectAllinternal').prop('checked', true);
-        } else {
-            $('#selectAllinternal').prop('checked', false);
-        }
-    });
+   //  $('.librarianitem').change(function () {
+   //      if ($('.librarianitem:checked').length === $('.librarianitem').length) {
+   //          $('#selectAllinternal').prop('checked', true);
+   //      } else {
+   //          $('#selectAllinternal').prop('checked', false);
+   //      }
+   //  });
       });
 
 
    </script>
+   
+   <script>
+    $(document).ready(function () {
+        $('#selectAllpublic').on('click', function () {
+         console.log('hi');
+            var isChecked = $(this).prop('checked');
+            $('.publiclitem').prop('checked', isChecked);
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $('#selectAllinternal').on('click', function () {
+         console.log('hi');
+            var isChecked = $(this).prop('checked');
+            $('.internalitem').prop('checked', isChecked);
+        });
+    });
+</script>
 <script>
     $(document).ready(function () {
         $('#selectAllIbook').on('click', function () {
@@ -459,8 +488,27 @@
                     $('#yourTableId11 tbody').html(data.success11);
                     $('.externel_reviewer').dataTable();
                     }
-
-
+                    if (data.success22.trim() === '<tr><td colspan="3">No external reviewers found.</td></tr>') {
+                     $('#yourTableId22 tbody').empty();
+                    $('.internal_table').DataTable().clear().destroy();
+                     $('.internal_table').dataTable();
+                    }else{
+                     $('#yourTableId22 tbody').empty();
+                    $('.internal_table').DataTable().clear().destroy();
+                    $('#yourTableId22 tbody').html(data.success22);
+                    $('.internal_table').dataTable();
+                    }
+                    if (data.success33.trim() === '<tr><td colspan="3">No external reviewers found.</td></tr>') {
+                     $('#yourTableId33 tbody').empty();
+                    $('.public_table').DataTable().clear().destroy();
+                     $('.public_table').dataTable();
+                    }else{
+                     $('#yourTableId33 tbody').empty();
+                    $('.public_table').DataTable().clear().destroy();
+                    $('#yourTableId33 tbody').html(data.success33);
+                    $('.public_table').dataTable();
+                    }
+                    
                 },
                 error: function () {
 
@@ -475,8 +523,8 @@
 <script>
     $('.submitbutton11').click(function () {
 
-        var checkepublic = $('.publicitem:checked').map(function () {
-            return $(this).val();
+        var checkepublic = $('.publiclitem:checked').map(function () {
+         return $(this).data('public-id');
         }).get();
 
 
@@ -484,11 +532,11 @@
            return $(this).data('book-id');
                 }).get();
 
-        var checkeinternal = $('.internalitem:checked').map(function () {
-            return $(this).val();
-        }).get();
+        var checkeinternal = $('.internalitem:checked').map(function() {
+    return $(this).data('librarian-id');
+}).get();
 
-
+      
         var checkeexternel = $('.externel:checked').map(function () {
          return $(this).data('externel-id')
         }).get();
@@ -496,8 +544,8 @@
 
         var requestData = {
             bookId: checkebook,
-            internalReviewverId: checkeinternal,
-            externalReviewverId: checkeexternel,
+            LibrarianReviewverId: checkeinternal,
+            expectReviewverId: checkeexternel,
             publicReviewverId: checkepublic,
         };
         console.log(requestData);

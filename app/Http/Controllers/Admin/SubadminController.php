@@ -16,6 +16,7 @@ use Carbon\Carbon;
  use Illuminate\Http\UploadedFile;
 use App\Models\Subadmin;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Mailurl;
 
 
 
@@ -140,7 +141,9 @@ class SubadminController extends Controller
               $user = $subadmin->email;
               $record = $subadmin;
               $password = $req->password;
-              $url = "http://127.0.0.1:8000/admin/login";
+              // $url = "http://127.0.0.1:8000/admin/login";
+              $rev =Mailurl::first();
+              $url = $rev->name . "/admin/login";
               Notification::route('mail',$subadmin->email)->notify(new SubAdmindetailNotification($user, $url,$record,$password));  
              
                          

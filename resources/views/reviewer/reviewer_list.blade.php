@@ -59,10 +59,10 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>All Reviewer List</b>
+                                <b>Public Reviewer List</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="/reviewer/member_create">
-                                <i class="fas fa-plus"></i> Add Reviewer</a>
+                            <a class="btn btn-primary  btn-sm" href="/reviewer/reviewer_create">
+                                <i class="fas fa-plus"></i> Add Public Reviewer</a>
 
                         </div>
                     </div>
@@ -211,12 +211,12 @@
 
                                                     <td data-label="controlq">
                                                         <div class="d-flex mt-p0">
-                                                            <a href="/reviewer/memberview/{{ $val->id }}"
+                                                            <a href="/reviewer/reviewerview/{{ $val->id }}"
                                                                 class="btn btn-success shadow btn-xs sharp me-1">
                                                                 <i class="fa fa-eye"></i>
                                                             </a>
                                                          
-                                                                <a href="/reviewer/member_edit/{{ $val->id }}"
+                                                                <a href="/reviewer/reviewer_edit/{{ $val->id }}"
                                                                     class="btn btn-warning shadow btn-xs sharp me-1">
                                                                     <i class="fa fa-edit"></i>
                                                                 </a>
@@ -319,7 +319,7 @@
                 success: function(response) {
                     if (response.success) {
                         setTimeout(function() {
-                            window.location.href = "/reviewer/member_list"
+                            window.location.href = "/reviewer/reviewer_list"
                         }, 3000);
                         toastr.success(response.success, {
                             timeout: 45000
@@ -329,7 +329,7 @@
                             timeout: 45000
                         });
                         setTimeout(function() {
-                            window.location.href = "/reviewer/member_list"
+                            window.location.href = "/reviewer/reviewer_list"
                         }, 3000);
                     }
 
@@ -378,7 +378,7 @@
                     $('#basicModal').modal('hide');
                     //    $('#basicModal').hide();
                     setTimeout(function() {
-                        window.location.href = "/reviewer/member_list"
+                        window.location.href = "/reviewer/reviewer_list"
                     }, 3000);
                     toastr.success(response.success, {
                         timeout: 45000
@@ -429,7 +429,7 @@
                 if (response.success) {
                     $('#basicModal1').modal('hide');
                     setTimeout(function() {
-                        window.location.href = "/reviewer/member_list"
+                        window.location.href = "/reviewer/reviewer_list"
                     }, 3000);
                     toastr.success(response.success, {
                         timeout: 45000

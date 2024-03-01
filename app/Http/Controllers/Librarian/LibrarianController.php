@@ -139,6 +139,12 @@ public function bookview($id){
     return redirect('librarian/bookview')->with('book',$book); 
     
 }
+
+public function meta_return(){
+  $id=auth('librarian')->user()->id; 
+  $book = Book::where('book_reviewer_id','=',$id)->where('book_status','=','2')->get();
+  return view('librarian/meta_return')->with('book',$book); 
+ }
 public function meta_reject(){
     $id=auth('librarian')->user()->id; 
     $book = Book::where('book_reviewer_id','=',$id)->where('book_status','=','0')->get();
@@ -186,5 +192,44 @@ public function meta_reject(){
     }
 
 }
+
+
+public function categoryupdate(Request $req){
+  $book = Book::find($req->id);
+  $book->category=$req->category;
+  $book->update();
+
+  $data= [
+    'success' => 'Category Updated Successfully',
+         ];
+return response()->json($data);  
+
+
+}
+public function subjectupdate(Request $req){
+  
+  $book = Book::find($req->id);
+  $book->subject=$req->subject;
+  $book->update();
+    $data= [
+    'success' => 'Subject Updated Successfully',
+         ];
+return response()->json($data);  
+
+
+}
+
+public function librarianreturnmessage(Request $req){
+  $book = Book::find($req->id);
+  $book->book_status="2";
+  $book->return_message=$req->returnmessage;
+  $book->save();
+  $data= [
+      'success' => 'Book review status change Successfully',
+           ];
+  return response()->json($data); 
+
+ }
+
     }
     

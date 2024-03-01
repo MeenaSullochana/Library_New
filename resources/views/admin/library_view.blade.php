@@ -166,13 +166,13 @@
                                             <div class="">{{$data->phoneNumber}}</div>
                                         </div>
                                     </div>
-									<div class="row">
+									<!-- <div class="row">
                                         <div class="col-sm-3">
                                             <div class="review-block-name"><a href="#">Contact Number  </a></div>
                                         </div>
                                         <div class="col-sm-9 mt-2">
                                             <div class="">{{$data->phoneNumber}}</div>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                                 </div>
@@ -224,7 +224,7 @@
 			-webkit-box-pack: center;
 			-ms-flex-pack: center;
 			justify-content: center;
-			background-image: url('https://www.shutterstock.com/image-vector/old-book-cover-260nw-1285303255.jpg');
+			/* background-image: url('/librarian/images'); */
 			background-size: cover;
 			background-position: center center;
 			padding: 30px 15px;
@@ -265,7 +265,7 @@
 			width: 6em;
 			border-radius: 50%;
 			border: 2px solid #37a000;
-			background-image: url('https://jlongroadmedia.files.wordpress.com/2013/12/catchingfire.jpg');
+			background-image: url('{{ asset('admin/images/default.png') }}');
 			background-size: cover;
 			background-position: center center;
 			box-shadow: 1px 3px 3px #3E4142;

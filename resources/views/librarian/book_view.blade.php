@@ -325,9 +325,45 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                     <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Year Of Publication:</span> <span class="item">{{ $data->yearOfPublication }}</span> </p>
+                                                    <p class="p-0 m-0">
+    <span class="fs-6 fw-bold text-primary">Category:</span>
+    <span class="item">
+        <select class="form-select small" id="Category" data-id="{{ $data->id }}" name="Category" required style="font-size: 12px;">
+            <option value="{{ $data->category }}">
+                {{ $data->category }}
+            </option>
+            @php
+            $categori = DB::table('special_categories')
+                            ->where('status','=','1')
+                            ->where('name','!=',$data->category)
+                            ->get();
+            @endphp
+            @foreach($categori as $val)
+            <option value="{{$val->name}}">{{$val->name}}</option>
+            @endforeach
+        </select>
+    </span>
+</p>
 
-                                                        <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Category:</span> <span class="item">{{ $data->category }}</span> </p>
-                                                        <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Subject:</span> <span class="item">{{ $data->subject }}</span> </p>
+                                                        <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Subject:</span>
+                    
+    <span class="item">
+        <select class="form-select small" id="subject" data-id="{{ $data->id }}" name="subjrct"  style="font-size: 12px;">
+            <option value="{{ $data->subject }}">
+                {{$data->subject }}
+               
+            </option>
+            @php
+            $categori =  DB::table('book_subject')->where('status','=','1')->where('name','!=',$data->subject)->get();
+                            
+                            
+            @endphp
+            @foreach($categori as $val)
+            <option value="{{$val->name}}">{{$val->name}}</option>
+            @endforeach
+        </select>
+    </span>
+</p>
                                                         <p class="p-0 m-0"><span class="fs-6 fw-bold text-primary">Book ID:</span> <span class="item">{{ $data->product_code }}</span>
                                                         </p>
                                                     </div>
@@ -1561,14 +1597,6 @@
         }
     }
 
-<<<<<<< Updated upstream
-
-=======
-    /* .avatar.avatar-md {
-        height: 100px !important;
-        width: 100px !important;
-    } */
->>>>>>> Stashed changes
     .product-title {
     font-size: 20px;
     font-family: 'Line Awesome Free';

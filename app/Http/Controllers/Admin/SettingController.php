@@ -20,6 +20,7 @@ use App\Models\Loginhidelins;
 use App\Models\Fogothidelins;
 use App\Models\Fogotpasswordhidelins;
 use App\Models\Reviewerbatch;
+use App\Models\Mailurl;
 class SettingController extends Controller
 {
 
@@ -113,6 +114,30 @@ class SettingController extends Controller
         }
         
     }
+    
+    public function mailurl(Request $req){
+        // $hidelin = new Mailurl();
+        $record = Mailurl::first();
+        if ($record == null) {
+            $hidelin = new Mailurl();
+            $hidelin->name = $req->mailurl;
+            $hidelin->save();
+        
+            return back()->with('success' , 'Mail urln Updated Successfully');
+
+        } else {
+           
+            $record->name = $req->mailurl;
+            $record->save();
+        
+          
+                
+          
+        
+            return back()->with('success' , 'Mail urln Updated Successfully');
+        }
+    
+}
 
     public function loginhidelins_title(Request $req)
     {

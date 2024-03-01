@@ -17,6 +17,8 @@ use App\Models\Distributor;
 use App\Models\PublisherDistributor; 
 use App\Models\Publisher;
  use Illuminate\Support\Str;
+ use App\Models\Mailurl;
+
  
  use Illuminate\Support\Facades\Notification;
 use App\Notifications\Member1detailNotification;
@@ -75,7 +77,9 @@ $librarian->subject = json_encode($req->subject);
              $user =  $librarian->email;
              $record =  $librarian;
              $password = $req->password;
-             $url = "http://127.0.0.1:8000/member/login";
+            //  $url = "http://127.0.0.1:8000/member/login";
+            $rev =Mailurl::first();
+            $url = $rev->name . "/member/login";
              Notification::route('mail',$librarian->email)->notify(new Member1detailNotification($user, $url,$record,$password));  
              $data= [
                 'success' => 'librarian Create Successfully',
@@ -179,8 +183,10 @@ $librarian->subject1=json_decode($librarian->subject);
              $user =  $librarian->email;
              $record =  $librarian;
            
-             $password = "########";
-             $url = "http://127.0.0.1:8000/member/login";
+             $password = "Your Old Password";
+             $rev =Mailurl::first();
+             $url = $rev->name . "/member/login";
+            //  $url = "http://127.0.0.1:8000/member/login";
              Notification::route('mail',$librarian->email)->notify(new Member1detailNotification($user, $url,$record,$password));  
              $data= [
                 'success' => 'librarian Update Successfully',
@@ -219,7 +225,9 @@ $librarian->subject1=json_decode($librarian->subject);
              $user =  $librarian->email;
              $record =  $librarian;
              $password = $req->password;
-             $url = "http://127.0.0.1:8000/member/login";
+            //  $url = "http://127.0.0.1:8000/member/login";
+            $rev =Mailurl::first();
+            $url = $rev->name . "/member/login";
              Notification::route('mail',$librarian->email)->notify(new Member1detailNotification($user, $url,$record,$password));  
              $data= [
                 'success' => 'librarian update Successfully',

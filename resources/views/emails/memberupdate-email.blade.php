@@ -11,7 +11,7 @@
     padding: 10px;
     color: red;
     font-family: serif;">
-        <h1> Admin Update Reviewer Details</h1>
+        <h1>Update Reviewer Details</h1>
     </div>
     <div class="top_image" style="text-align: center;">
         <img class="imf-width" style="width:18%" src="https://th.bing.com/th/id/R.12d97b5845e41e70c25541e8be3ba5b0?rik=fZzi8WZzDImSLw&riu=http%3a%2f%2fclipart-library.com%2fimage_gallery2%2fClick-Here-Free-Download-PNG.png&ehk=i88wZx8gEfRwJRlXRZbPq5FDydpPt9WNRCnzK9nYPPU%3d&risl=&pid=ImgRaw&r=0">

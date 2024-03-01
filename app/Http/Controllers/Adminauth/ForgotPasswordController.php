@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Subadmin;
 use App\Models\Admin;
+use App\Models\Mailurl;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Notification;
@@ -32,7 +33,10 @@ class ForgotPasswordController extends Controller
             if($request->usertype == "admin"){
                 $record=Admin::where('email', '=', $request->email)->first();
                 $user = $request->email;
-                $url = "http://127.0.0.1:8000/admin/forgot/$user/$request->usertype";
+                $rev =Mailurl::first();
+                $url = $rev->name ."/admin/forgot/$user/$request->usertype";
+    
+             
                     if($record !== null){
                       
                             Notification::route('mail',  $request->email)->notify(new ForgotPasswordNotification($user, $url));
@@ -51,8 +55,9 @@ class ForgotPasswordController extends Controller
                 $record=Subadmin::where('email', '=', $request->email)->first();
                 if($record !== null){
                     $user = $request->email;
-                    $url = "http://127.0.0.1:8000/admin/forgot/$user/$request->usertype";
-                        if($record !== null){
+                    $rev =Mailurl::first();
+                    $url = $rev->name ."/admin/forgot/$user/$request->usertype";
+                                if($record !== null){
                           
                                 Notification::route('mail',  $request->email)->notify(new ForgotPasswordNotification($user, $url));
                     $data= [

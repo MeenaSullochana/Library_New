@@ -1561,14 +1561,6 @@
         }
     }
 
-<<<<<<< Updated upstream
-
-=======
-    /* .avatar.avatar-md {
-        height: 100px !important;
-        width: 100px !important;
-    } */
->>>>>>> Stashed changes
     .product-title {
     font-size: 20px;
     font-family: 'Line Awesome Free';

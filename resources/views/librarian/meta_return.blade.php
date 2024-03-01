@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement - All Meta Book Check List</title>
+    <title>Government of Tamil Nadu - Book Procurement - Reject Meta Book Check List</title>
 
     <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
@@ -62,7 +62,7 @@
                         <div class="card-body">
                             <div class="d-sm-flex align-items-center justify-content-between">
                                 <h3 class="mb-0 bc-title">
-                                    <b>All Meta Book Check List</b>
+                                    <b>Return Meta Book Check List</b>
                                 </h3>
                                 <a class="btn btn-primary  btn-sm" href="index">
                                     <i class="fas fa-home"></i> Home</a>
@@ -106,7 +106,7 @@
                                                   @endphp
                                                   {{ $recordCount }}
 
-                                                </h2>
+                                                  </h2>
                                                 <span>Pending Review</span>
                                             </div>
                                             <p>Pending Review</p>
@@ -144,6 +144,22 @@
                                             <p>Reject Review</p>
                                         </div>
                                     </div>
+                                    <div class="col-xl-2 col-sm-4 col-6">
+                                        <div class="task-summary">
+                                            <div class="d-flex align-items-baseline">
+                                                <h2 class="text-danger count">
+
+                                                @php
+                                                 $id=auth('librarian')->user()->id;
+                                                 $recordCount = DB::table('books')->where('book_reviewer_id','=',$id)->where('book_status','=','2')->count();
+                                                  @endphp
+                                                  {{ $recordCount }}
+                                                </h2>
+                                                <span>Returned Book</span>
+                                            </div>
+                                            <p>Return Book</p>
+                                        </div>
+                                    </div>
                                     <!-- <div class="col-xl-2 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
@@ -171,11 +187,10 @@
                             <div class="card-body p-3">
                                 <div class="table-responsive active-projects task-table">
                                     <div class="tbl-caption">
-                                        <h4 class="heading mb-0"><i class="fa fa-trash p-2" aria-hidden="true"></i></h4>
+                                        <h4 class="heading mb-0"><i class="fa fa-trash p-2 text-danger" aria-hidden="true"></i></h4>
                                     </div>
                                     <table id="example4" class="table">
                                         <thead>
-
                                             <tr>
                                                 <th>
                                                 </th>
@@ -188,6 +203,7 @@
                                         </thead>
                                         <tbody>
                                         @foreach($book as $key=>$val)
+
                                             <tr>
                                                 <td>
                                                     <div class="form-check custom-checkbox">
@@ -208,42 +224,22 @@
                                                     <span>{{$val->product_code}}</span>
                                                 </td>
 
-                                                 @if($val->book_status==Null)
-                          <td>
-                              <div class="col-sm-12 m-b30">
-                                  <select  class="col-sm-12 m-b30"  name="user_approval" id="user_approval"   data-id="{{$val->id}}">
-                                  <option style="color: red;" value="Pending">Pending</option>
-                                 <option style="color: green;" value="Approve">Approve</option>
-                                 <option style="color: orange;" value="return">Return To 
+
+                           @if($val->book_status=='2')
+                          <td> <span class="badge bg-success text-white">Return To 
                                  @if($val->user_type == "publisher_distributor") 
                                  publisher cum distributor
                                 @else
                                 {{$val->user_type}}
-                            @endif    </option>
-                                 <option style="color: blue;" value="Reject">Reject</option>
-                                  </select>
-                                  </div>
-                           </td>
-                           @elseif($val->book_status=='1')
+                            @endif</span></td>
 
-                          <td> <span class="badge bg-success text-white">Approve</span></td>
-                          @elseif($val->book_status=='2')
-
-                          <td> <span class="badge bg-danger text-white">Return To 
-                                 @if($val->user_type == "publisher_distributor") 
-                                 publisher cum distributor
-                                @else
-                                {{$val->user_type}}
-                            @endif </span></td>
-                            @else
-                           <td> <span class="badge bg-danger text-white">Reject</span></td>
                            @endif
 
                                                 <td>
                                                     <a href="/librarian/book_view/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
-                                                    @if($val->book_status=='0')
-                                                    <a class="btn btn-primary mb-2" data-bs-toggle="modal" data-id="{{$val->reject_message}}" data-bs-target="#myModal">View</a>
-                                                    @endif
+
+                                                    <a class="btn btn-primary mb-2" data-bs-toggle="modal" data-id="{{$val->return_message}}" data-bs-target="#myModal">View</a>
+
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -271,66 +267,7 @@
     <!--**********************************
            Support ticket button start
         ***********************************-->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Application Reject</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-               <input type="hidden" name="userid" id="hiddenInput">
-               <label for="Reject remark">Please Enter Any Remark </label>
-               <textarea name="remark" id="reject_remark" cols="30" rows="10" class="form-control"></textarea>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="submitButton" >submit</button>
-            </div>
-         </div>
-      </div>
 
-      </div>
-      <div class="modal fade" id="staticBackdrop22" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Book Correction</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-               <input type="hidden" name="userid" id="hiddenInput22">
-               <label for="return_message">Please Enter Any Correction </label>
-               <textarea name="return_message" id="return_message" cols="800" rows="30" class="form-control"></textarea>
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="submitButton33" >submit</button>
-            </div>
-         </div>
-      </div>
-
-      </div>
-
-
-      <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-         <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Book Approve </h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <label>Are you sure you want to approve? </label>
-               <input type="hidden" name="userid" id="hiddenInput1">
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="submitButton1" >submit</button>
-            </div>
-         </div>
-      </div>
-      </div>
     <!--**********************************
            Support ticket button end
         ***********************************-->
@@ -341,16 +278,21 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Reject Message</h5>
+                <h5 class="modal-title">Return Book Message</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body" id="modalBodyContent"></div>
+            <div class="modal-body" style="overflow-y: auto;">
+                <p id="modalBodyContent"></p>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
+
+
+
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -358,150 +300,6 @@
         include "librarian/plugin/plugin_js.php";
     ?>
 </body>
-<script>
-                 $('#example4').on( 'change', "select[name='user_approval']", function (e) {
-                  var approval_ = $(this).val();
-
-                  var id = $(this).data('id');
-                  if(approval_ == 'Reject'){
-                     $('#hiddenInput').val(id);
-                     $('#staticBackdrop').modal('show');
-                  }else if(approval_ == 'Approve'){
-                    $('#hiddenInput1').val(id);
-                     $('#staticBackdrop1').modal('show');
-
-                  }else if(approval_ == 'return'){
-                    $('#hiddenInput22').val(id);
-                     $('#staticBackdrop22').modal('show');
-
-                  }
-                  });
-                  </script>
-
-<script>
-      $(document).on('click','#submitButton33',function(e){
-        e.preventDefault();
-        var data={
-           'id':$('#hiddenInput22').val(),
-           'returnmessage':$('#return_message').val(),
-
-        }
-         console.log(data);
-        $('#staticBackdrop22').modal('hide');
-        $.ajaxSetup({
-           headers:{
-              'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-           }
-        });
-        $.ajax({
-           type:"post",
-           url:"/librarian/librarianreturnmessage",
-           data:data,
-           dataType:"json",
-           success: function(response) {
-              console.log(response);
-              if(response.success){
-                setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
-                     }, 3000);
-                toastr.success(response.success,{timeout:45000});
-               }else{
-                toastr.error(response.error,{timeout:45000});
-                setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
-                     }, 3000);
-               }
-
-        }
-      });
-  })
-
-
-
-    </script>
-<script>
-      $(document).on('click','#submitButton',function(e){
-        e.preventDefault();
-        var data={
-           'id':$('#hiddenInput').val(),
-           'rejectmessage':$('#reject_remark').val(),
-
-        }
-        console.log(data);
-        $('#staticBackdrop').modal('hide');
-        $.ajaxSetup({
-           headers:{
-              'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-           }
-        });
-        $.ajax({
-           type:"post",
-           url:"/librarian/librarianrejectstatus",
-           data:data,
-           dataType:"json",
-           success: function(response) {
-              console.log(response);
-              if(response.success){
-                setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
-                     }, 3000);
-                toastr.success(response.success,{timeout:45000});
-               }else{
-                toastr.error(response.error,{timeout:45000});
-                setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
-                     }, 3000);
-               }
-
-        }
-      });
-  })
-
-
-
-    </script>
-
-<script>
-      $(document).on('click','#submitButton1',function(e){
-        e.preventDefault();
-        var data={
-           'id':$('#hiddenInput1').val(),
-        }
-        console.log(data);
-        $('#staticBackdrop1').modal('hide');
-
-                  $.ajaxSetup({
-                        headers:{
-                           'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-                        }
-                     });
-                     $.ajax({
-                        type: "post",
-                        dataType: "json",
-                        url: '/librarian/librarianapprovestatus',
-                        data: data,
-                        success: function(response) {
-
-                           if(response.success){
-                           setTimeout(function() {
-                              window.location.href ="/librarian/meta_book_list"
-                                 }, 3000);
-                           toastr.success(response.success,{timeout:45000});
-                           }else{
-                           toastr.error(response.error,{timeout:45000});
-                           setTimeout(function() {
-                              window.location.href ="/librarian/meta_book_list"
-                                 }, 3000);
-                           }
-
-                        }
-                  });
-  })
-
-
-
-    </script>
-
 <script>
     $(document).ready(function () {
         $('#myModal').on('show.bs.modal', function (event) {
@@ -514,6 +312,8 @@
         });
     });
 </script>
+
+
 </html>
 <style>
       .active-projects.style-1 .dt-buttons .dt-button {
@@ -525,3 +325,4 @@
         text-align: center;
     }
 </style>
+

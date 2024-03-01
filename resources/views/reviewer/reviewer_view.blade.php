@@ -14,456 +14,576 @@
     <meta property="og:description" content="">
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
+
     <!-- PAGE TITLE HERE -->
     <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('reviewer/images/fevi.svg') }}">
     <?php
-        include "admin/plugin/plugin_css.php";
+        include "reviewer/plugin/plugin_css.php";
     ?>
 </head>
 
 <body>
-    <!--*******
-         Preloader start
-         ********-->
+
+    <!--*******************
+        Preloader start
+    ********************-->
     <div id="preloader">
         <div class="text-center">
             <img src="images/goverment_loader.gif" alt="" width="25%">
         </div>
     </div>
-    <!--*******
-         Preloader end
-         ********-->
-    <!--************
-         Main wrapper start
-         *************-->
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
     <div id="main-wrapper">
-        <!--************
-         Nav header start
-         *************-->
-         @include ('admin.navigation')
-        <!--************
-         Sidebar end
-         *************-->
-        <!--************
-         Content body start
-         *************-->
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        @include ('reviewer.navigation')
+
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+        <!--**********************************
+            Content body start
+        ***********************************-->
         <div class="content-body">
             <div class="container-fluid">
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                            <div class="page-title-right">
-                            <h5 class="text-primary">Reviwer Information</h5>
-                                <!-- <ol class="breadcrumb m-0">
-                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                                    <li class="breadcrumb-item">Create</li>
-                                    <li class="breadcrumb-item">patient</li>
-                                </ol> -->
-                            </div>
-                            <!-- <h3 class="mb-0 bc-title">
-                        <b>Create Patient</b>
-                        </h3> -->
-                            <a class="btn btn-primary  btn-sm" href="/admin/member_list">
-                                <i class="bi bi-card-checklist"></i> List </a>
+                            <h3 class="mb-0 bc-title">
+                                <b>Library View</b>
+                            </h3>
+                            <a class="btn btn-primary  btn-sm" href="/reviewer/reviewer_list">
+                                <i class="fas fa-plus"></i> List Of Reviewer</a>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-4">
-                        <div class="bg-white overflow-hidden mb-3">
-                            <div class="bg-primary-subtle">
-                                <div class="row">
-                                    <div class="col-7">
-                                        <div class="text-primary p-3">
-                                            <h5 class="text-primary">Reviwer Information</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-5 align-self-end">
-                                        <img src="https://doctorly.themesbrand.website/build/images/profile-img.png" alt="" class="img-fluid">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                    @if($data->profileImage != null)
-                                        <div class="avatar-md profile-user-wid mb-4">
-                                            <img src="{{ asset('reviewer/ProfileImage/'.$data->profileImage) }}" alt="" class="img-thumbnail rounded-circle">
-                                        </div>
-                                        @else
-                                        <div class="avatar-md profile-user-wid mb-4">
-                                            <img src='{{ asset("images/default.png") }}' alt="" class="img-thumbnail rounded-circle">
-                                        </div>
-                                        @endif
-                                        <h5 class="font-size-12">Reviewer Name:</h5>
-                                        <h5 class="font-size-15 text-truncate"> {{$data->name}}
-                                        </h5>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <div class="pt-4">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <h5 class="font-size-12">Join Date :</h5>
-                                                    <p class="text-muted mb-0"> {{ $data->created_at->format('Y-m-d') }} </p>
-                                                </div>
-                                            </div>
-                                            <!-- <div class="mt-4">
-                                                <a href="patiend_edit.php" class="btn btn-primary waves-effect waves-light btn-sm">Edit Profile
-                                                    <i class="mdi mdi-arrow-right ms-1"></i></a>
-                                            </div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                        <div class="bg-white">
-                            <div class="card-body">
-                                <h4 class="card-title mb-4">Personal Information</h4>
-                                <div class="table-responsive">
-                                    <table class="table mb-0">
-                                        <tbody>
-
-
-                                            <tr>
-                                                <th scope="row">Reviwer type:</th>
-                                                <td><span class="badge bg-primary">{{$data->reviewerType}}</span></td>
-                                            </tr>
-                                            <tr>
-                                               <th scope="row">Reviwer Id:</th>
-                                               <td><span>{{$data->reviewerId}}</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Name:</th>
-                                                <td>{{$data->name}}</td>
-                                            </tr>
-                                            @if($data->reviewerType != "public")
-                                            <tr>
-                                                <th scope="row">Designation:</th>
-                                                <td> {{$data->designation}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Organisation Details:</th>
-                                                <td> {{$data->organisationDetails}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Subject:</th>
-                                                <td> {{$data->subject}}</td>
-                                            </tr>
-                                            @endif
-                                            @if($data->reviewerType == "public")
-                                            <tr>
-                                                <th scope="row">District:</th>
-                                                <td> {{$data->district}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Membership Id:</th>
-                                                <td> {{$data->membershipId}}</td>
-                                            </tr>
-                                            @endif
-                                            <tr>
-                                                <th scope="row">Email:</th>
-                                                <td> {{$data->email}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Phone number:</th>
-                                                <td>{{$data->phoneNumber}} </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end card -->
-                    </div>
-                    <div class="col-xl-8">
-                        <div class="card">
-                            <div class="row">
-                                <div class="col-md-6 p-4">
-                                    <h4> User Details</h4>
-                                </div>
-                                <div class="col-md-6 ">
-                                    <!-- Button trigger modal -->
-                                    <div class=" d-flex justify-content-end p-4">
-                                        <!-- <a class="btn btn-primary btn-sm" href="member_list">
-                                            <i class="fa fa-angle-double-left" aria-hidden="true"></i> List </a> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <!-- Nav tabs -->
-                                <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active" data-bs-toggle="tab" href="#Medical_info" role="tab" aria-selected="true">
-                                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                                            <span class="d-none d-sm-block">Basic Information</span>
-                                        </a>
-                                    </li>
-                                    @if($data->reviewerType == "external")
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#AppointmentList" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-                                            <span class="d-none d-sm-block">Bank Information</span>
-                                        </a>
-                                    </li>
-                                    @endif
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link" data-bs-toggle="tab" href="#ExaminationList" role="tab" aria-selected="false" tabindex="-1">
-                                            <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-                                            <span class="d-none d-sm-block">Review Details</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- Tab panes -->
-                                <div class="tab-content p-3 text-muted">
-                                    <div class="tab-pane active show" id="Medical_info" role="tabpanel">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped mb-0">
-                                                <tbody>
-                                                <tr>
-                                                <th scope="row">Reviwer type:</th>
-                                                <td><span class="badge bg-primary">{{$data->reviewerType}}</span></td>
-                                            </tr>
-                                            <tr>
-                                               <th scope="row">Reviwer Id:</th>
-                                               <td><span>{{$data->reviewerId}}</span></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Name:</th>
-                                                <td>{{$data->name}}</td>
-                                            </tr>
-                                            <!-- <tr>
-                                                <th scope="row">Designation:</th>
-                                                <td> {{$data->designation}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Organisation Details:</th>
-                                                <td> {{$data->organisationDetails}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Subject:</th>
-                                                <td> {{$data->subject}}</td>
-                                            </tr> -->
-                                            <tr>
-                                                <th scope="row">Email:</th>
-                                                <td> {{$data->email}} </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Phone number:</th>
-                                                <td>{{$data->phoneNumber}} </td>
-                                            </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="AppointmentList" role="tabpanel">
-                                        <div class="row">
-                                            <div class="col-md-6 p-4">
-                                                <h4> Bank Information Details</h4>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <!-- Button trigger modal -->
-                                                <div class=" d-flex justify-content-end p-4">
-                                                    <!-- <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#bd-example-modal-lg" href="#"> -->
-                                                        <!-- <i class="fa fa-plus" aria-hidden="true"></i> Edit Bank Information </a> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="table-responsive">
-                                            <table class="table table-striped mb-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row" class="w-75">Bank Name</th>
-                                                        <td> {{$data->bankName}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row" class="w-75">Branch Name</th>
-                                                        <td> {{$data->branch}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row" class="w-75">Account Number</th>
-                                                        <td> {{$data->accountNumber}}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row" class="w-75">IFSC Number</th>
-                                                        <td> {{$data->ifscNumber}}</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane" id="ExaminationList" role="tabpanel">
-                                        <div class="row">
-                                            <div class="col-md-6 p-4">
-                                                <h4> Book Details</h4>
-                                            </div>
-                                            <div class="col-md-6 ">
-                                                <!-- Button trigger modal -->
-                                                <!-- <div class=" d-flex justify-content-end p-4">
-                                                    <a class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#bd-example-modal-lg-examination" href="#">
-                                                        <i class="fa fa-plus" aria-hidden="true"></i> Add Examination
-                                                    </a>
-                                                </div> -->
-
-                                            </div>
-                                            <table class="table table-bordered dt-responsive nowrap " style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Sr. No</th>
-                                                        <th>Book Name</th>
-                                                        <th>Date</th>
-                                                        <th>Status</th>
-                                                        <th>Action</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                @if ($data->record !== null)
-                                              @foreach($data->record as $key => $val)
-
-                                                <tr>
-                                                    <td>{{$loop->index +1}}</td>
-                                                    <td>{{$val->bookname}} <span>({{$val->subbookname}})<br> </span></td>
-                                                    <td>{{ $val->created_at->format('Y-m-d') }}</td>
-                                                    @if($val->mark !=Null)
-                                                    <td>
-                                                        <span class="badge bg-success">Complete!</span>
-                                                    </td>
-                                                    @else
-                                                    <td>
-                                                        <span class="badge bg-danger">Pending</span>
-                                                    </td>
-                                                    @endif
-                                                    <td>
-                                                    <button type="button" class="btn btn-primary mb-2 mb-md-0 fetch-review-btn"
-                                                    data-remark="{{$val->remark}}"
-                                                    data-review_type="{{$val->review_type}}"
-                                                    data-bookname="{{$val->bookname}}"
-                                                    data-subbookname="{{$val->subbookname}}"
-                                                    data-bs-toggle="modal"
-                                                    data-bs-target="#view_information">
-                                                    <i class="fa fa-eye"></i> View Details
-                                                </button>
-                                                    </td>
-                                                </tr>
-
-                                                        @endforeach
-                                                    @endif
-
-                                                </tbody>
-                                            </table>
-                                            <div class="col-md-12 text-center mt-3">
-                                                <div class="d-flex justify-content-start">
-                                                    Showing to
-                                                    of 0 entries
-                                                </div>
-                                                <div class="d-flex justify-content-end">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end row -->
-            </div>
-        </div>
-        <!--************
-            Content body end
-            *************-->
-        <!--************
-            Footer start
-            *************-->
-            @include ("admin.footer")
-        <!--************
-            Footer end
-            *************-->
-        <!--************
-            Support ticket button start
-            *************-->
-
-
-            <div class="modal fade" id="view_information">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Review Details View</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
+                <div class="container bootdey">
+                    <section class="col-md-12">
                         <div class="row">
-                            <div class="col-md-12 mb-3">
-                                <h5><b>Book Name: <span id="bookName"></span> (<span id="subBookName"></span>)</b></h5>
-                                <h5><b>Valuable Feedback: <span id="reviewType"></span></b></h5>
-                                <h5><b>Comment: <span id="remark"></span></b></h5>
+                            <div class="col-sm-12 col-md-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <div class="card-header-menu">
+                                            <i class="fa fa-bars"></i>
+                                        </div>
+                                        <div class="card-header-headshot"></div>
+                                    </div>
+                                    <div class="card-content ">
+                                        <div class="card-content-member">
+                                            <h4 class="m-t-0">Public Reviewer Name</h4>
+                                            <p class="m-0"><i class="pe-7s-map-marker"></i>{{$data->name}} </p>
+                                        </div>
+                                            <h3 class="text-center pt-4">Reviewer Details</h3>
+                                        <div class="row pb-5 ">
+                                            <div class="col-md-6 text-end fw-bold"> Reviewer Name : </div>
+                                            <div class="col-md-6">{{$data->name}}</div>
+                                            <div class="col-md-6 text-end fw-bold"> Reviewer Email : </div>
+                                            <div class="col-md-6">{{$data->email}}</div>
+                                            <div class="col-md-6 text-end fw-bold"> Reviewer phonenumber : </div>
+                                            <div class="col-md-6">{{$data->phoneNumber}}</div>
+
+                                               <div class="col-md-6 text-end fw-bold">Category : </div>
+											<div class="col-md-6">
+											 
+                                                      {{$data->Category}}
+                    
+											</div>
+
+											<div class="col-md-6 text-end fw-bold"> MembershipId  : </div>
+                                            <div class="col-md-6">{{$data->membershipId}}</div>
+
+											<div class="col-md-6 text-end fw-bold"> District  : </div>
+                                            <div class="col-md-6">{{$data->district}}</div>
+
+					
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
                             </div>
-                            <p>Other Info:</p>
-                            <hr>
-                            <h5><b>Payment Status: <span class="badge bg-primary">Paid!</span></b></h5>
+                          
                         </div>
-                    </div>
+                    </section>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-</div>
+   <!--**********************************
+            Content body end
+        ***********************************-->
+	<!--**********************************
+            Footer start
+        ***********************************-->
+        @include ("reviewer.footer")
 
-         <?php
-        include "admin/plugin/plugin_js.php";
+	<!--**********************************
+            Footer end
+        ***********************************-->
+
+	<!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+	<!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+	</div>
+	<!--**********************************
+        Main wrapper end
+    ***********************************-->
+	<style>
+		/*** Portfolio page
+==============================================================================*/
+
+		.card {
+			margin-bottom: 20px;
+		}
+
+		.card-header {
+			position: relative;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			/* background-image: url('/librarian/images'); */
+			background-size: cover;
+			background-position: center center;
+			padding: 30px 15px;
+			border-top-left-radius: 4px;
+			border-top-right-radius: 4px;
+		}
+
+		.card-header-menu {
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 4em;
+			width: 4em;
+		}
+
+		.card-header-menu:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			content: "";
+			border-left: 2em solid transparent;
+			border-bottom: 2em solid transparent;
+			border-right: 2em solid #37a000;
+			border-top: 2em solid #37a000;
+			border-top-right-radius: 4px;
+		}
+
+		.card-header-menu i {
+			position: absolute;
+			top: 9px;
+			right: 9px;
+			color: #fff;
+			z-index: 1;
+		}
+
+		.card-header-headshot {
+			height: 6em;
+			width: 6em;
+			border-radius: 50%;
+			border: 2px solid #37a000;
+            background-image: url('{{ !empty($data->profileImage) ? asset('reviewer/ProfileImage/' . $data->profileImage) : asset('reviewer/images/default.png') }}');
+			background-size: cover;
+			background-position: center center;
+			box-shadow: 1px 3px 3px #3E4142;
+		}
+
+		.card-content-member {
+			position: relative;
+			background-color: #fff;
+			padding: 1em;
+			box-shadow: 0 2px 2px rgba(62, 65, 66, 0.15);
+		}
+
+		.card-content-member {
+			text-align: center;
+		}
+
+		.card-content-member p i {
+			font-size: 16px;
+			margin-right: 10px;
+		}
+
+		.card-content-languages {
+			background-color: #fff;
+			padding: 15px;
+		}
+
+		.card-content-languages .card-content-languages-group {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			padding-bottom: 0.5em;
+		}
+
+		.card-content-languages .card-content-languages-group:last-of-type {
+			padding-bottom: 0;
+		}
+
+		.card-content-languages .card-content-languages-group>div:first-of-type {
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 5em;
+			flex: 0 0 5em;
+		}
+
+		.card-content-languages h4 {
+			line-height: 1.5em;
+			margin: 0;
+			font-size: 15px;
+			font-weight: 500;
+			letter-spacing: 0.5px;
+		}
+
+		.card-content-languages li {
+			display: inline-block;
+			padding-right: 0.5em;
+			font-size: 0.9em;
+			line-height: 1.5em;
+		}
+
+		.card-content-summary {
+			background-color: #fff;
+			padding: 15px;
+		}
+
+		.card-content-summary p {
+			text-align: center;
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		.card-footer-stats {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			background-color: #2c3136;
+		}
+
+		.card-footer-stats div {
+			-webkit-box-flex: 1;
+			-ms-flex: 1 0 33%;
+			flex: 1 0 33%;
+			padding: 0.75em;
+		}
+
+		.card-footer-stats div:nth-of-type(2) {
+			border-left: 1px solid #3E4142;
+			border-right: 1px solid #3E4142;
+		}
+
+		.card-footer-stats p {
+			font-size: 0.8em;
+			color: #A6A6A6;
+			margin-bottom: 0.4em;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+		.card-footer-stats i {
+			color: #ddd;
+		}
+
+		.card-footer-stats span {
+			color: #ddd;
+		}
+
+		.card-footer-stats span.stats-small {
+			font-size: 0.9em;
+		}
+
+		.card-footer-message {
+			background-color: #37a000;
+			padding: 15px;
+			border-bottom-left-radius: 4px;
+			border-bottom-right-radius: 4px;
+		}
+
+		.card-footer-message h4 {
+			margin: 0;
+			text-align: center;
+			color: #fff;
+			font-weight: 400;
+		}
+
+		.review-number {
+			float: left;
+			width: 35px;
+			line-height: 1;
+		}
+
+		.review-number div {
+			height: 9px;
+			margin: 5px 0
+		}
+
+		.review-progress {
+			float: left;
+			width: 230px;
+		}
+
+		.review-progress .progress {
+			margin: 8px 0;
+		}
+
+		.progress-number {
+			margin-left: 10px;
+			float: left;
+		}
+
+		.rating-block,
+		.review-block {
+			background-color: #fff;
+			border: 1px solid #e1e6ef;
+			padding: 15px;
+			border-radius: 4px;
+			margin-bottom: 20px;
+		}
+
+		.review-block {
+			margin-bottom: 20px;
+		}
+
+		.review-block-img img {
+			height: 60px;
+			width: 60px;
+		}
+
+		.review-block-name {
+			font-size: 12px;
+			margin: 10px 0;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.review-block-name a {
+			color: #374767;
+		}
+
+		.review-block-date {
+			font-size: 12px;
+		}
+
+		.review-block-rate {
+			font-size: 13px;
+			margin-bottom: 15px;
+		}
+
+		.review-block-title {
+			font-size: 15px;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+
+		.review-block-description {
+			font-size: 13px;
+		}
+
+
+
+		/* Widgets page
+==============================================================================*/
+
+
+		/*-- Monthly calender --*/
+
+		.monthly_calender {
+			width: 100%;
+			max-width: 600px;
+			display: inline-block;
+		}
+
+
+		/*-- Profile widget --*/
+
+		.profile-widget .panel-heading {
+			min-height: 200px;
+			background: #fff;
+			background-size: cover;
+		}
+
+		.profile-widget .media-heading {
+			color: #5B5147;
+		}
+
+		.profile-widget .panel-body {
+			padding: 25px 15px;
+		}
+
+		.profile-widget .panel-body .img-circle {
+			height: 90px;
+			width: 90px;
+			padding: 8px;
+			border: 1px solid #e2dfdc;
+		}
+
+		.profile-widget .panel-footer {
+			padding: 0px;
+			border: none;
+		}
+
+		.profile-widget .panel-footer .btn-group .btn {
+			border: none;
+			font-size: 1.2em;
+			background-color: #F6F1ED;
+			color: #BAACA3;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+			padding: 15px 0;
+		}
+
+		.profile-widget .panel-footer .btn-group .btn:hover {
+			color: #F6F1ED;
+			background-color: #8F7F70;
+		}
+
+		.profile-widget .panel-footer .btn-group>.btn:not(:first-child) {
+			border-left: 1px solid #fff;
+		}
+
+		.profile-widget .panel-footer .btn-group .highlight {
+			color: #E56E4C;
+		}
+
+		.circle-image img {
+
+			border: 6px solid #fff;
+			border-radius: 100%;
+			padding: 0px;
+			top: -28px;
+			position: relative;
+			width: 70px;
+			height: 70px;
+			border-radius: 100%;
+			z-index: 1;
+			background: #e7d184;
+			cursor: pointer;
+
+		}
+
+
+		.dot {
+			height: 18px;
+			width: 18px;
+			background-color: blue;
+			border-radius: 50%;
+			display: inline-block;
+			position: relative;
+			border: 3px solid #fff;
+			top: -48px;
+			left: 186px;
+			z-index: 1000;
+		}
+
+		.name {
+			margin-top: -21px;
+			font-size: 18px;
+		}
+
+
+		.fw-500 {
+			font-weight: 500 !important;
+		}
+
+
+		.start {
+
+			color: green;
+		}
+
+		.stop {
+			color: red;
+		}
+
+
+		.rate {
+
+			border-bottom-right-radius: 12px;
+			border-bottom-left-radius: 12px;
+
+		}
+
+
+
+		.rating {
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: center
+		}
+
+		.rating>input {
+			display: none
+		}
+
+		.rating>label {
+			position: relative;
+			width: 1em;
+			font-size: 30px;
+			font-weight: 300;
+			color: #FFD600;
+			cursor: pointer
+		}
+
+		.rating>label::before {
+			content: "\2605";
+			position: absolute;
+			opacity: 0
+		}
+
+		.rating>label:hover:before,
+		.rating>label:hover~label:before {
+			opacity: 1 !important
+		}
+
+		.rating>input:checked~label:before {
+			opacity: 1
+		}
+
+		.rating:hover>input:checked~label:before {
+			opacity: 0.4
+		}
+
+
+		.buttons {
+			top: 36px;
+			position: relative;
+		}
+
+
+		.rating-submit {
+			border-radius: 15px;
+			color: #fff;
+			height: 49px;
+		}
+
+
+		.rating-submit:hover {
+
+			color: #fff;
+		}
+	</style>
+    <?php
+        include "reviewer/plugin/plugin_js.php";
     ?>
-<script>
-    // Attach a click event to the button
-    $('.fetch-review-btn').on('click', function () {
-        // Retrieve data attributes
-        var remark = $(this).data('remark');
-        var reviewType = $(this).data('review_type');
-        var bookName = $(this).data('bookname');
-        var subBookName = $(this).data('subbookname');
-
-        // Update modal content with fetched data
-        $('#view_information #bookName').text(bookName);
-        $('#view_information #reviewType').text(reviewType);
-        $('#view_information #remark').text(remark);
-        $('#view_information #subBookName').text(subBookName);
-        // You can similarly update other elements as needed
-
-        // Trigger the modal
-        $('#view_information').modal('show');
-    });
-</script>
-
 </body>
+
 </html>
-<style>
-    .avatar-title {
-        align-items: center;
-        background-color: #556ee6;
-        color: #fff;
-        display: flex;
-        font-weight: 500;
-        height: 100%;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .bg-primary-subtle {
-        background-color: rgba(85, 110, 230, .25);
-    }
-
-    .avatar-md {
-        height: 4.5rem;
-        width: 4.5rem;
-    }
-
-    .profile-user-wid {
-        margin-top: -26px;
-    }
-</style>

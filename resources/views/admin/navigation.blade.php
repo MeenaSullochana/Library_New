@@ -2137,6 +2137,9 @@
                             <li><a href="banner_setting">Home Setting</a></li>
                             <li><a href="site_announcement">Announcement Setting</a></li>
                             <li><a href="smtp">SMTP</a></li>
+                            <li><a href="mailurl">Mail Url</a></li>
+
+                          
                             {{-- <li><a href="country_list">Country List</a></li>
                             <li><a href="state_list">State List</a></li>
                             <li><a href="district_list">District List</a></li>
