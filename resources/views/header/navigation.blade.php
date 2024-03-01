@@ -1,3 +1,4 @@
+
 <div id="header-sticky" class="header__main-area d-none d-xl-block">
             <div class="container">
                <div class="header__for-megamenu p-relative">
@@ -56,24 +57,31 @@
                      </div>
                      <div class="col-lg-1 col-md-1 col-3 col-sm-5">
                      <div class="header__info d-flex align-items-center">
-                        <!-- <div class="header__info-search tpcolor__purple ml-10 d-none d-sm-block">
-                           <button class="tp-search-toggle"><i class="icon-search"></i></button>
-                        </div>
-                        <div class="header__info-user tpcolor__yellow ml-10 d-none d-sm-block">
-                           <a href="log-in.html"><i class="icon-user"></i></a>
-                        </div> -->
-                        <!-- <div class="header__info-wishlist tpcolor__greenish ml-10 d-none d-sm-block">
-                           <a href="wishlist.php"><i class="icon-heart icons"></i></a>
-                        </div> -->
-                        <!-- tp-cart-toggle -->
                         <div class="header__info-cart tpcolor__oasis ml-10 ">
-                            <a href="/cart">
-                                <button><i><img src="assets/img/icon/cart-1.svg" alt=""></i>
-                                    <span>0</span>
-                                </button>
-                           </a>
-                        </div>
-                     </div>
+                        @php
+$user = auth('librarian')->user();
+@endphp
+
+@if($user)
+   
+<a href="/cart">                
+                           <button>
+                              <i><img src="assets/img/icon/cart-1.svg" alt=""></i>
+                                 @if(Session::has('cart'))
+                                    <span>
+                                    {{count(Session::get('cart'))}}
+                                    </span>
+                                 @else
+                                 <span>
+                                    0
+                                    </span>
+                                    @endif
+                           </button>
+                        </a>
+@endif
+                        
+                  </div>
+               </div>
                   </div>
                   </div>
                </div>

@@ -7,6 +7,7 @@
    <title>Directorate of Public Libraries </title>
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="csrf-token" content="{{ csrf_token() }}">
    <?php
    include "plugin/css.php";
    ?>
@@ -54,48 +55,37 @@
          </div>
       </div>
       <!-- breadcrumb-area-end -->
-      <div class="container">
+      <!-- <div class="container">
          <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
          
-            <strong>!Sorry</strong> Can't Purches Because Your Limit End
+            <strong>!Sorry</strong> Can't Purchase Because Your Limit End
          </div>
          <div class="alert alert-success alert-dismissible fade show" role="alert">
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
          
             <strong>!Sucess</strong> Your Cart Item List here
          </div>
-      </div>
+      </div> -->
       
       <!-- Total Leval For Buy item -->
       <section class="cart-item-leval text-center">
          <div class="container">
-            <h3 class="text-secondary text-start p-2">Purches Category Leval</h3>
-            <div class="d-flex align-items-center">
+            <h3 class="text-secondary text-start p-2">Purchase Category Level</h3>
+            <div class="d-flex align-items-center" id="budArrContainer">
+            @php
+             $bud_arr = Session::get('bud_arr');
+             $total = Session::get('total');
+            @endphp
+
+            @foreach($bud_arr as $val)
                <div class="item">
-                  <p>Children</p>
-                  <div class="pie animate no-round" style="--p:20"> 20%</div>
-               </div>
-               <div class="item">
-                  <p>Children</p>
-                  <div class="pie" style="--p:40;--c:darkblue;--b:10px"> 40%</div>
-               </div>
-               <div class="item">
-                  <p>Children</p>
-                  <div class="pie no-round" style="--p:60;--c:purple;--b:15px"> 60%</div>
-               </div>
-               <div class="item">
-                  <p>Children</p>
-                  <div class="pie animate no-round" style="--p:80;--c:orange;"> 80%</div>
-               </div>
-               <div class="item">
-                  <p>Children</p>
-                  <div class="pie animate no-round" style="--p:60;--c:red;"> 60%</div>
-               </div>
-               <div class="item">
-                  <p>Children</p>
-                  <div class="pie animate" style="--p:90;--c:lightgreen"> 90%</div>
-               </div>
+                  <p>{{ $val->category }}</p>
+                 <div class="pie animate no-round" style="--p:{{ $val->percentage }}">{{ $val->percentage }}</div>
+                 <p>Allotted Amount : {{$val->budget_price}}</p>
+                 <p>Purchased Amount : {{$val->cart_price}}</p> 
+                </div>
+         @endforeach
             </div>
          </div>
       </section>
@@ -121,64 +111,45 @@
                               </tr>
                            </thead>
                            <tbody>
-                              <tr>
-                                 <td class="product-thumbnail">
-                                    <a href="shope.php">
-                                       <img src="https://marketplace.canva.com/EAFKA0RgDtw/1/0/1003w/canva-brown-and-orange-elegant-simple-young-adult-fantasy-book-cover-Qb8uSVdJDzw.jpg" style="width:75px;height:75px" alt="">
-                                    </a>
-                                 </td>
-                                 <td class="product-name" style="width:250px">
-                                    <a href="shope.php">Three Thousand Stitches: Ordinary People, Extraordinary Lives [Paperback] Murty, Sudha</a>
-                                 </td>
-                                 <td class="Category-name">
-                                    <span class="Category">Children</span>
-                                 </td>
-                                 <td class="product-price">
-                                    <span class="amount">$130.00</span>
-                                 </td>
-                                 <td class="product-quantity">
-                                    <span class="cart-minus">-</span>
-                                    <input class="cart-input" type="text" value="1">
-                                    <span class="cart-plus">+</span>
-                                 </td>
-                                 <td class="product-subtotal">
-                                    <span class="amount">$130.00</span>
-                                 </td>
-                                 <td class="product-remove">
-                                    <a href="#"><i class="fa fa-times"></i></a>
-                                 </td>
-                              </tr>
-                              <tr>
-                                 <td class="product-thumbnail">
-                                    <a href="shope.php">
-                                       <img src="https://marketplace.canva.com/EAFKA0RgDtw/1/0/1003w/canva-brown-and-orange-elegant-simple-young-adult-fantasy-book-cover-Qb8uSVdJDzw.jpg" style="width:75px;height:75px" alt="">
-                                    </a>
-                                 </td>
-                                 <td class="product-name" style="width:75px">
-                                    <a href="shope.php">Three Thousand Stitches: Ordinary People, Extraordinary Lives [Paperback] Murty, Sudha</a>
-                                 </td>
-                                 <td class="Category-name">
-                                    <span class="Category">Children</span>
-                                 </td>
-                                 <td class="product-price">
-                                    <span class="amount">$120.50</span>
-                                 </td>
-                                 <td class="product-quantity">
-                                    <span class="cart-minus">-</span>
-                                    <input class="cart-input" type="text" value="1">
-                                    <span class="cart-plus">+</span>
-                                 </td>
-                                 <td class="product-subtotal">
-                                    <span class="amount">$120.50</span>
-                                 </td>
-                                 <td class="product-remove">
-                                    <a href="#"><i class="fa fa-times"></i></a>
-                                 </td>
-                              </tr>
+                           @forelse($cart ?? [] as $key => $val)
+        <tr>
+            <td class="product-thumbnail">
+                <a href="shope.php">
+                    <img src="{{ asset('Books/front/' . $val['image']) }}" style="width:75px;height:75px" alt="">
+                </a>
+            </td>
+            <td class="product-name" style="width:250px">
+                <a href="shope.php">{{ $val['name'] }}</a>
+            </td>
+            <td class="Category-name">
+                <span class="Category">{{ $val['subject'] }}</span>
+            </td>
+            <td class="unitprice">
+                <input class="unit-price" type="text" value="{{ $val['price'] }}" hidden>
+                <input class="productid" type="text" value="{{ $val['id'] }}" hidden>
+                <span class="amount">{{ $val['price'] }}</span>
+            </td>
+            <td class="product-quantity">
+                <span class="cart-minus">-</span>
+                <input class="cart-input" type="text" value="{{ $val['qty'] }}">
+                <span class="cart-plus ">+</span>
+            </td>
+            <td class="product-subtotal">
+                <span class="amount product-price">{{ $val['price'] * $val['qty'] }}</span>
+            </td>
+            <td class="product-remove">
+                <a href="/product/destroy/cart/{{ $val['id'] }}"><i class="fa fa-times"></i></a>
+            </td>
+        </tr>
+        @empty
+        <tr>
+            <td colspan="7">No items in the cart</td>
+        </tr>
+        @endforelse
                            </tbody>
                         </table>
                      </div>
-                     <div class="row">
+                     <!-- <div class="row">
                         <div class="col-12">
                            <div class="coupon-all">
                               <div class="coupon">
@@ -191,14 +162,14 @@
                               </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="row justify-content-end">
+                     </div> -->
+                     <div class="row">
                         <div class="col-md-5 ">
                            <div class="cart-page-total">
                               <h2>Cart totals</h2>
-                              <ul class="mb-20">
-                                 <li>Subtotal <span>$250.00</span></li>
-                                 <li>Total <span>$250.00</span></li>
+                              <ul class="mb-20" id="total">
+                                 <!-- <li>Subtotal <span>0</span></li> -->
+                                 <li>Total <span>{{$total}}</span></li>
                               </ul>
                               <a href="/checkout" class="tp-btn tp-color-btn banner-animation">Proceed to Checkout</a>
                            </div>
@@ -221,6 +192,102 @@
    include "plugin/js.php";
    ?>
 </body>
+@if (Session::has('success'))
+
+<script>
+
+toastr.success("{{ Session::get('success') }}",{timeout:15000});
+
+</script>
+@elseif (Session::has('error'))
+<script>
+
+toastr.error("{{ Session::get('error') }}",{timeout:15000});
+
+</script>
+
+
+@endif
+<script>
+   $(document).ready(function() {
+    // Plus button click event
+    $('.cart-plus').on('click', function() {
+        var input = $(this).siblings('.cart-input');
+        var currentValue = parseInt(input.val());
+        updateTotalPrice(input);
+        updateSession(input);
+    });
+
+    // Minus button click event
+    $('.cart-minus').on('click', function() {
+        var input = $(this).siblings('.cart-input');
+        var currentValue = parseInt(input.val());
+        if (currentValue >= 1) {
+            updateTotalPrice(input);
+            updateSession(input);
+        }
+    });
+
+    // Function to update total price
+    function updateTotalPrice(input) {
+        var unitPriceElement = input.closest('tr').find('.unit-price');
+        var unitPriceValue = unitPriceElement.val();
+        var unitPrice = parseFloat(unitPriceValue);
+        var quantity = parseInt(input.val()); 
+        var totalPrice = unitPrice * quantity; 
+        input.closest('tr').find('.product-price').text(totalPrice); 
+    }
+
+
+    function updateSession(input) {
+        var id = input.closest('tr').find('.productid').val();
+        var quantity = input.val();
+
+        $.ajax({
+    url: '/product/update/cart',
+    method: 'POST',
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    data: {
+        _token: $('meta[name="csrf-token"]').attr('content'), // Alternative way to include CSRF token
+        id: id,
+        quantity: quantity
+    },
+    success: function(response) {
+      if(response.success != "true"){
+         toastr.error(response.msg,{timeout:25000});
+      }
+  
+     
+             $('#budArrContainer').empty();
+
+                // Populate the container with the updated session data
+                response.bud_arr.forEach(function(val) {
+                    $('#budArrContainer').append(
+                        `<div class="item">
+                            <p>${val.category}</p>
+                            <div class="pie animate no-round" style="--p:${val.percentage}">${val.percentage}</div>
+                            <p>Allotted Amount : ${val.budget_price}</p>
+                            <p>Purchased Amount : ${val.cart_price}</p>
+                            </div>`
+                    );
+                });
+
+                $('#total').html(`<li>Total <span>${response.total}</span></li>`);
+    },
+    error: function(xhr, status, error) {
+        console.error(xhr.responseText);
+    }
+});
+    }
+
+    // On input change event
+    $('.cart-input').on('input', function() {
+        updateTotalPrice($(this));
+    });
+});
+</script>
 <style>
    @property --p {
       syntax: '<number>';

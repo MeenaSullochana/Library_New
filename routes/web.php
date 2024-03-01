@@ -11,7 +11,7 @@ include(base_path('routes/publisher_and_distributor.php'));
 include(base_path('routes/reviewer.php'));
 include(base_path('routes/memberauth.php'));
 include(base_path('routes/librarian.php'));
-
+include(base_path('routes/order.php'));
 
 Route::get('/', function () {return view('index');});
 

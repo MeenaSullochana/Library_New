@@ -269,7 +269,8 @@ class ForgotPasswordController extends Controller
                   $record->save();
                   Notification::route('mail',  $record->email)->notify(new UserNotification($record, $record->password));
                   $data = [
-                    'success' => 'Registration waiting for approval. You\'ll receive an email when it\'s approved',
+                    // 'success' => 'Registration waiting for approval. You\'ll receive an email when it\'s approved',
+                    'success' => 'Registered Successfully',
                     'type' => 'publisher'
                 ];
                 
@@ -282,7 +283,8 @@ class ForgotPasswordController extends Controller
                     $record->save();
                     Notification::route('mail',  $record->email)->notify(new UserNotification($record, $record->password));
                     $data = [
-                        'success' => 'Registration waiting for approval. You\'ll receive an email when it\'s approved',
+                        // 'success' => 'Registration waiting for approval. You\'ll receive an email when it\'s approved',
+                        'success' => 'Registered Successfully',
                         'type' => 'distributor'
                     ];
                     
@@ -295,7 +297,7 @@ class ForgotPasswordController extends Controller
                    
                     Notification::route('mail',  $record->email)->notify(new UserNotification($record, $record->password));
                     $data = [
-                        'success' => 'Registration Successfully.',
+                        'success' => 'Registered Successfully',
                         'type' => 'reviewer'
                     ];
                     
@@ -308,7 +310,8 @@ class ForgotPasswordController extends Controller
                     $record->save();
                     Notification::route('mail',  $record->email)->notify(new UserNotification($record, $record->password));
                     $data = [
-                        'success' => 'Registration waiting for approval. You\'ll receive an email when it\'s approved',
+                        // 'success' => 'Registration waiting for approval. You\'ll receive an email when it\'s approved',
+                        'success' => 'Registered Successfully',
                         'type' => 'pubdist'
                     ];
                     

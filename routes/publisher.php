@@ -174,6 +174,7 @@ Route::prefix('publisher')->group(function () {
          }
 
      });
+    Route::post('/update/book',[BookController::class,'update']);
 
      Route::get('/procurement_completed',[BookController::class,'procurecompleted']);
      Route::get('/procurement_list',[BookController::class,'procurelist']);

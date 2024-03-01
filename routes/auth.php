@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Subadmin\TicketController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\WebsitebookController;
+use Illuminate\Support\Facades\Session;
 
 
 //USER
@@ -61,8 +62,6 @@ Route::get('/mailconfirmation',function(){
     $data = Session::get('publisher');
     if($data !==null){
         return view('mailconfirm')->with("data",$data);
-    }else{
-        return back();
     }
 
 });
@@ -79,16 +78,21 @@ Route::get('/public_register',function(){return view('public_register');});
 Route::post('/publicregister', [RegisterController::class, 'publicregister']);
 
 
-Route::get('/cart',function(){ return view('cart');});
-Route::get('/cart_books',function(){ return view('cart_books');});
-// Route::get('/product',function(){ return view('product');});
-Route::get('/shope',function(){ return view('shope');});
-Route::get('/wishlist',function(){ return view('wishlist');});
-Route::get('/checkout',function(){ return view('checkout');});
-Route::get('/product', [WebsitebookController::class, 'websitebook']);
-Route::get('/book_categories', [WebsitebookController::class, 'book_categories']);
 
-Route::get('/shope/{id}', [WebsitebookController::class, 'bookview']);
+// Route::get('/cart_books',function(){ return view('cart_books');});
+// Route::get('/product',function(){ return view('product');});
+// Route::get('/shope',function(){ return view('shope');});
+// Route::get('/wishlist',function(){ return view('wishlist');});
+// Route::get('/checkout',function(){ return view('checkout');});
+// Route::get('/product', [WebsitebookController::class, 'websitebook']);
+// Route::get('/product/add/cart/{id}',[WebsitebookController::class, 'addToCart']);
+// Route::post('/product/update/cart',[WebsitebookController::class, 'updatecart']);
+// Route::get('/product/destroy/cart/{id}',[WebsitebookController::class, 'destroy']); 
+// Route::get('/book_categories', [WebsitebookController::class, 'book_categories']);
+
+
+// Route::get('/cart',[WebsitebookController::class, 'bookcart']);
+// Route::get('/shope/{id}', [WebsitebookController::class, 'bookview']);
 
 Route::get('/singlebookview',function(){
     $data = Session::get('book');

@@ -418,7 +418,7 @@
                                                 <div class="tpproduct__hover-text">
                                                     <div
                                                         class="tpproduct__hover-btn d-flex justify-content-center mb-10">
-                                                        <a class="tp-btn-2" href="/cart">Add to cart</a>
+                                                        <a class="tp-btn-2" href="/product/add/cart/{{$val->id}}">Add to cart</a>
                                                     </div>
                                                     <div class="tpproduct__descrip">
                                                         <ul>

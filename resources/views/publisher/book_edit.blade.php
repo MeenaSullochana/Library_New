@@ -1,8 +1,6 @@
-{{-- @dd(Session::all()); --}}
 @php
-    $bookDetails = (object)Session::all();
-    dd($bookDetails);
-    $bookhighlights = json_decode($bookDetails->book->banner_img,true);
+  $bookhighlights = $data->banner_img1;
+$booktag = $data->booktag1;
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -72,9 +70,10 @@
                         </div>
                     </div>
                 </div>
-                <form class="row g-3 mt-2" method="POST" enctype="multipart/form-data" id ="ourFormId" action="/publisher/create/book"
+                <form class="row g-3 mt-2" method="POST" enctype="multipart/form-data" id ="ourFormId" action="/publisher/update/book"
                     autocomplete="on">
                     @csrf
+                    <input type="text" value="{{$data->id}}" name="id" hidden>
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -96,7 +95,7 @@
                                                     @else
                                                     <div class="input-group">
                                                 <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" required
+                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" value="{{$data->nameOfPublisher}}" required
                                                   >
                                                     @endif
 
@@ -109,7 +108,7 @@
                                             for="validationCustomUsername"> Year Of Publication
                                                 </label>
                                             <div class="input-group transparent-append">
-                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
+                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" value="{{$data->yearOfPublication}}" required>
                                             </div>
                                         </div>
                                     </div>
@@ -135,7 +134,7 @@
                                             <div class="input-group">
                                                 <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                 <input type="text" class="form-control" id="bookTitleInput"
-                                                    name="book_title" placeholder="Enter the Book Title.." required
+                                                    name="book_title" placeholder="Enter the Book Title.." value="{{$data->book_title}}" required
                                                     onkeyup="checkBookTitle()">
 
                                             </div>
@@ -145,17 +144,8 @@
                                                 for="validationCustomUsername">Subtitle
                                                 (Optional) </label>
                                             <div class="input-group transparent-append">
-                                                <!-- <span class="input-group-text"> <i class="fa fa-lock"></i> </span> -->
-                                                <input type="text" name="subtitle" id="subtitle"
-                                                    class="form-control" placeholder="Enter Subtitle..">
-                                                <!-- <span class="input-group-text show-pass">
-                                                            <i class="fa fa-eye-slash"></i>
-                                                            <i class="fa fa-eye"></i>
-                                                        </span> -->
-                                                <!-- <div class="invalid-feedback">
-                                                        Subtitle cannot be edited agter your book has been published.
-                                                        Click here to learn more.
-                                                    </div> -->
+                                            <input type="text" name="subtitle" id="subtitle" class="form-control" placeholder="Enter Subtitle.." value="@if($data->subtitle != null) {{ $data->subtitle }} @endif">
+
                                             </div>
                                         </div>
                                     </div>
@@ -196,16 +186,17 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="inputContainerseries">
+                                                                @if($data->series == null)
                                                                 <tr>
                                                                     <td><input type="text" name="series_title[]"
-                                                                            placeholder="Series Title"
+                                                                            placeholder="Series Title" 
                                                                             class="form-control" >
                                                                         </td>
                                                                     <td>
                                                                         {{-- <small> <b class="text-danger">Note : </b>Sample Entry 2/10 total</small> --}}
                                                                         <input type="text" name="series_number[]"
                                                                             placeholder="Current Series Number"
-                                                                            class="form-control" ></td>
+                                                                            class="form-control"></td>
                                                                     <td><input type="text" name="isbn_number[]"
                                                                             placeholder="Total Number Series"
                                                                             class="form-control" ></td>
@@ -213,6 +204,25 @@
                                                                     {{-- <td><button type="button" class="btn btn-success"
                                                                             onclick="addInputRowseries()">+</button></td> --}}
                                                                 </tr>
+                                                                @else
+                                                                <tr>
+                                                                    <td><input type="text" name="series_title[]"
+                                                                            placeholder="Series Title" value="{{$data->series1[0]->series_title}}"
+                                                                            class="form-control" >
+                                                                        </td>
+                                                                    <td>
+                                                                        {{-- <small> <b class="text-danger">Note : </b>Sample Entry 2/10 total</small> --}}
+                                                                        <input type="text" name="series_number[]"
+                                                                            placeholder="Current Series Number"
+                                                                            class="form-control" value="{{$data->series1[0]->series_number}}"></td>
+                                                                    <td><input type="text" name="isbn_number[]"
+                                                                            placeholder="Total Number Series"
+                                                                            class="form-control" value="{{$data->series1[0]->isbn_number}}"></td>
+
+                                                                    {{-- <td><button type="button" class="btn btn-success"
+                                                                            onclick="addInputRowseries()">+</button></td> --}}
+                                                                </tr>
+                                                                @endif
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -256,6 +266,7 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody id="inputContainer">
+                                                                @if($data->volume1 == null)
                                                                 <tr>
                                                                     <td><input type="text" name="volume_title[]"
                                                                             placeholder="Volume Title"
@@ -270,6 +281,22 @@
                                                                     {{-- <td><button type="button" class="btn btn-success"
                                                                             onclick="addInputRow()">+</button></td> --}}
                                                                 </tr>
+                                                                @else
+                                                                <tr>
+                                                                    <td><input type="text" name="volume_title[]"
+                                                                            placeholder="Volume Title"
+                                                                            class="form-control" value="{{$data->volume1[0]->volume_title}}">
+                                                                    <td><input type="text" name="volume_number[]"
+                                                                            placeholder="Current  Volume Number"
+                                                                            class="form-control" value="{{$data->volume1[0]->volume_number}}" ></td></td>
+                                                                    <td><input type="text" name="isbn_number1[]"
+                                                                            placeholder="Total Number Volume"
+                                                                            class="form-control"  value="{{$data->volume1[0]->isbn_number}}"></td>
+
+                                                                    {{-- <td><button type="button" class="btn btn-success"
+                                                                            onclick="addInputRow()">+</button></td> --}}
+                                                                </tr>
+                                                                @endif
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -278,33 +305,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="col-lg-6">
-                                    <div class="basic-form">
-                                        <div class="mb-3">
-                                            <label class="text-label form-label text-black"
-                                                for="validationCustomUsername">Add Series Details</label>
-
-                                            <button id="rowAdder" type="button" class="btn btn-dark">
-                                                <span class="bi bi-plus-square-dotted">
-                                                </span> Add Series Details
-                                            </button>
-                                            <div id="newinput"></div>
-                                            <div id="row">
-                                                <div class="input-group m-3">
-                                                    <div class="input-group-prepend">
-                                                        <button class="btn btn-danger" id="DeleteRow" type="button">
-                                                            <i class="bi bi-trash"></i>
-                                                            Delete
-                                                        </button>
-                                                    </div>
-                                                    <input type="text" class="form-control m-input" id="series"
-                                                        name="series[]">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div> --}}
+                            
                             </div>
                         </div>
                     </section>
@@ -327,7 +328,7 @@
                                             <div class="input-group">
                                                 <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                 <input type="text" class="form-control" id="edition_number"
-                                                    name="edition_number" placeholder="Enter the Series..">
+                                                    name="edition_number" placeholder="Enter the Series.." value="@if($data->edition_number != null) {{ $data->edition_number }} @endif">
                                                 <!-- <div class="invalid-feedback">
                                                         Edition Number cannot be edited agter your book has been
                                                         published.
@@ -349,41 +350,6 @@
                                 <P class="fs-4">Enter the primary author or contributor. Pen names are allowed.
                                     Additional authors can be added in the Contributors field.</P>
                                 <div class="row">
-                                    <!-- <div class="col-lg-12">
-                                            <div class="basic-form">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Primary Author or Contributor
-                                                        <span class="text-danger">*</span></label>
-                                                    <div class="">
-
-                                                        <div class="row">
-                                                            <div class="col-md-4">
-                                                                <input type="text" class="form-control mt-1"
-                                                                    id="validationCustomUsername"
-                                                                    placeholder="Enter the Primary Author or Contributor.."
-                                                                    required>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <input type="text" class="form-control mt-1"
-                                                                    id="validationCustomUsername"
-                                                                    placeholder="Enter the Primary Author or Contributor.."
-                                                                    required>
-                                                            </div>
-                                                            <div class="col-md-4">
-                                                                <input type="text" class="form-control mt-1"
-                                                                    id="validationCustomUsername"
-                                                                    placeholder="Enter the Primary Author or Contributor.."
-                                                                    required>
-                                                            </div>
-                                                        </div>
-                                                        <div class="invalid-feedback">
-                                                            Primary Author or Contributor
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
                                     <div class="col-lg-12">
                                         <div class="basic-form">
                                             <div class="row mb-3">
@@ -398,7 +364,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo.."
+                                                                placeholder="Enter Primary Author Or Contributo.." value="@if($data->primaryauthor1[0] != null) {{ $data->primaryauthor1[0] }} @endif"
                                                                 required>
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
@@ -418,7 +384,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo..">
+                                                                placeholder="Enter Primary Author Or Contributo.." value="@if($data->primaryauthor1[1] != null) {{ $data->primaryauthor1[1] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -437,7 +403,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo..">
+                                                                placeholder="Enter Primary Author Or Contributo.." value="@if($data->primaryauthor1[2] != null) {{ $data->primaryauthor1[2] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -446,37 +412,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-md-6">
-                                                    <div class="group_wrapper">
-                                                        <table id="itemTable" class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="text-black">Translator
-                                                                        Contributor <span class="text-danger"></span>
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="field_wrapper_new">
-                                                                <tr class="item">
-                                                                    <td><input type="text" class="form-control"
-                                                                            id="trans_author" name="trans_author[]"
-                                                                            placeholder="Translater Author or Contributor">
-                                                                    </td>
-                                                                    <td><a href="javascript:void(0);"
-                                                                            class="add_button btn btn-sm btn-primary"
-                                                                            title="Add field"><i
-                                                                                class="fa fa-plus"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="invalid-feedback">
-                                                        Contributors cannot be edited agter your book has been
-                                                        published.
-                                                        Click here to learn more.
-                                                    </div>
-                                                </div> -->
+                                                
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4">
@@ -489,9 +425,9 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="trans_author" name="trans_author[]"
-                                                                placeholder="Enter Translator One..">
+                                                                placeholder="Enter Translator One.." value="@if($data->trans_author1 != null && $data->trans_author1[0] != null) {{ $data->trans_author1[0] }} @endif">
                                                             <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
+                                                                Book Title cannot be edited after your book has been
                                                                 published.
                                                                 Click here to learn more.
                                                             </div>
@@ -508,7 +444,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="trans_author" name="trans_author[]"
-                                                                placeholder="Enter Translator Two..">
+                                                                placeholder="Enter Translator Two.." value="@if($data->trans_author1 != null && $data->trans_author1[1] != null) {{ $data->trans_author1[1] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -527,7 +463,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="trans_author" name="trans_author[]"
-                                                                placeholder="Enter Translator Three..">
+                                                                placeholder="Enter Translator Three.." value="@if($data->trans_author1 != null && $data->trans_author1[2] != null) {{ $data->trans_author1[2] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -548,7 +484,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="trans_from" name="trans_from[]"
-                                                                placeholder="Translated to.">
+                                                                placeholder="Translated to." value="@if($data->trans_from1 != null && $data->trans_from1[0] != null) {{ $data->trans_from1[0] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book title cannot be edited after your book has been published.
                                                             </div>
@@ -565,7 +501,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="trans_from" name="trans_from[]"
-                                                                placeholder="Translated to.">
+                                                                placeholder="Translated to." value="@if($data->trans_from1 != null && $data->trans_from1[1] != null) {{ $data->trans_from1[1] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -574,23 +510,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Translation From Language Three
-                                                            </label>
-                                                        <div class="input-group">
-
-                                                            <input type="text" class="form-control" id="primaryauthor"
-                                                                name="primaryauthor" placeholder="Enter Translation From Language Three.." required>
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -598,184 +518,16 @@
                             </div>
                         </div>
                     </section>
-                    <!-- <section class="bg-light-new mt-4">
-
-                            <div class="row p-3">
-                                <div class="col-md-2">
-                                    <h4>Ebook</h4>
-                                </div>
-                                <div class="col-md-10">
-                                    <P class="fs-4"> If others contributed to your book, you can add them and they'll be
-                                        listed on the Amazon product detail page. For multiple authours, They'll appear
-                                        in
-                                        the same sequence as you add them below.</P>
-                                    <div class="col-lg-12">
-                                        <div class="basic-form">
-                                            <div class="mb-3">
-                                                <label class="text-label form-label text-black"
-                                                    for="validationCustomUsername">Contributors (Optional) <span
-                                                        class="text-danger">*</span></label>
-                                                <div class="">
-                                                    <div class="group_wrapper">
-                                                        <table id="itemTable" class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="text-black">Language</th>
-                                                                    <th class="text-black">Other</th>
-                                                                    <th class="text-black">File</th>
-                                                                    <th class="text-black">Action</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="field_wrapper">
-                                                                <tr class="item">
-                                                                    <td><select class="default-select wide form-control"
-                                                                            id="validationCustom05">
-                                                                            <option data-display="Select">Please select
-                                                                            </option>
-                                                                            <option value="html">tamil</option>
-                                                                        </select></td>
-                                                                    <td><input type="text" class="form-control"
-                                                                            placeholder="First Name"></td>
-                                                                    <td><input type="file" class="form-control"
-                                                                            placeholder="Last Name"></td>
-                                                                    <td><a href="javascript:void(0);"
-                                                                            class="add_button_new2 btn btn-sm btn-primary"
-                                                                            title="Add field"><i
-                                                                                class="fa fa-plus"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="invalid-feedback">
-                                                        Contributors cannot be edited agter your book has been
-                                                        published.
-                                                        Click here to learn more.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section> -->
+                  
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
                                 <h4>Book Details</h4>
                             </div>
                             <div class="col-md-10">
-                                <!-- <P class="fs-4"> Enter the primary author or contributor. Pen names are allowed.
-                                    Additional authors can be addedd in the contributors field. This field cannot be
-                                    changed after your book is published. <a href="#">Learn more about
-                                        authorship.</a>
-                                </P> -->
                                 <div class="col-lg-12">
                                     <div class="basic-form">
-                                        <!-- <h4>Book Details</h4>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Book Binding <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-
-                                                        <input type="number" class="form-control" id=""
-                                                            name="" placeholder="Enter Book Binding.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Book Size <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-
-                                                        <input type="number" class="form-control" id=""
-                                                            name="" placeholder="Enter Book Size.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">GSM <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="gsm" name="gsm"
-                                                            placeholder="Enter GSM.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="row">
-                                        <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Paper Quality <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="quality"
-                                                            name="quality" placeholder="Enter Paper Quality.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Page <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <input type="number" class="form-control" id=""
-                                                            name="" placeholder="Enter Page.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Primary <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <input type="number" class="form-control" id=""
-                                                            name="" placeholder="Enter Primary.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div> -->
+                                      
                                         <h4>Binding</h4>
                                         <hr>
                                         <div class="card-body">
@@ -784,16 +536,16 @@
                                                     <div class="mb-3">
                                                         <div class="form-check form-check-inline">
                                                             <label class="form-check-label">
-                                                                <input type="radio" class="form-check-input"
-                                                                    id="paperback1" name="type" value="Paperback"
-                                                                    checked="">Paper Back
+
+                                                            <input type="radio" class="form-check-input" id="paperback1" name="type" value="Paperback" @if($data->type == "Paperback") checked @endif> Paperback
+
                                                             </label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <label class="form-check-label">
                                                                 <input type="radio" class="form-check-input"
                                                                     id="hardbound" name="type"
-                                                                    value="Hardbound">Hard
+                                                                    value="Hardbound" @if($data->type == "Hardbound") checked @endif>Hard
                                                                 Bound
                                                             </label>
                                                         </div>
@@ -812,14 +564,16 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="length_breadth"
                                                         name="length_breadth" required>
-                                                        <option value="">Select One<span
-                                 class="text-danger maditory">*</span></option>
+                                                       
                                                         @php
                                                           $categori = DB::table('book_dimensions')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
+                                                            @if($data->length_breadth == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                            @else
                                                             <option value="{{$val->name}}">{{$val->name}}</option>
-
+                                                            @endif
                                                             @endforeach
                                                     </select>
                                                         <!-- <input type="number" class="form-control" id="height_width"
@@ -832,24 +586,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Width(in centimetres) <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                        <!-- <input type="number" class="form-control" id="width"
-                                                            name="width" placeholder="Enter Width.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-                                            <!-- </div> -->
+                                       
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
@@ -858,7 +595,7 @@
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <input type="number" class="form-control" id="width" step="0.01"
-                                                            name="width" placeholder="Enter width.." required>
+                                                            name="width" placeholder="Enter width.." value="{{$data->width}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -875,7 +612,7 @@
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <input type="number" class="form-control" id="weight" step="0.01"
-                                                            name="weight" placeholder="Enter weight.." required>
+                                                            name="weight" placeholder="Enter weight.." value="{{$data->weight}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -884,19 +621,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {{-- <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Size <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-                                                        <input type="number" class="form-control" id="size" step="0.01"
-                                                            name="size" placeholder="Enter weight.." required>
-
-                                                    </div>
-                                                </div>
-                                            </div> --}}
+                         
                                         </div>
                                         <h4>Paper</h4>
                                         <hr>
@@ -909,14 +634,16 @@
                                                     <div class="input-group">
                                                     <select class="default-select wide form-control" id="gsm"
                                                         name="gsm" required>
-                                                        <option value="">Select One<span
-                                 class="text-danger maditory">*</span></option>
+                                                    
                                                         @php
                                                           $categori = DB::table('book_gsm')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
-
+                                                          @if($data->gsm == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                         @else
+                                                         <option value="{{$val->name}}">{{$val->name}}</option>
+                                                         @endif
                                                             @endforeach
                                                     </select>
                                                         <!-- <input type="text" class="form-control" id="gsm"
@@ -938,14 +665,16 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="quality"
                                                         name="quality" required>
-                                                        <option value="">Select One<span
-                                                                 class="text-danger maditory">*</span></option>
+                                                       
                                                         @php
                                                           $categori = DB::table('book_papertype')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
-
+                                                            @if($data->quality == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                         @else
+                                                         <option value="{{$val->name}}">{{$val->name}}</option>
+                                                         @endif
                                                             @endforeach
                                                     </select>
                                                         <!-- <input type="text" class="form-control" id="quality"
@@ -968,13 +697,16 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="paper_finishing"
                                                         name="paper_finishing" required>
-                                                        <option value="">Select One<span
-                                                                 class="text-danger maditory">*</span></option>
+                                                        
                                                         @php
                                                           $categori = DB::table('book_paperfinishing')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @if($data->paper_finishing == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                         @else
+                                                         <option value="{{$val->name}}">{{$val->name}}</option>
+                                                         @endif
 
                                                             @endforeach
                                                     </select>
@@ -1000,7 +732,7 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <input type="number" class="form-control" id="pages"
-                                                            name="pages" placeholder="Enter Total Number of Pages.."
+                                                            name="pages" placeholder="Enter Total Number of Pages.." value="{{$data->pages}}"
                                                             required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
@@ -1020,7 +752,7 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <input type="number" class="form-control" id="multicolor"
                                                             name="multicolor"
-                                                            placeholder="Enter Number of Multicolor Pages.." required>
+                                                            placeholder="Enter Number of Multicolor Pages.." value="{{$data->multicolor}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -1029,25 +761,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Paper Quality <span
-                                                                class="text-danger">*</span></label>
-                                                        <div class="input-group">
-                                                            <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                            <!-- <input type="text" class="form-control"
-                                                                id="validationCustomUsername"
-                                                                placeholder="Enter Paper Quality..">
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div> -->
-                                            <!-- </div>
-                                                </div> -->
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
@@ -1058,7 +772,7 @@
 
                                                         <input type="number" class="form-control" id="monocolor"
                                                             name="monocolor"
-                                                            placeholder="Enter Number of Mono Color Pages.." required>
+                                                            placeholder="Enter Number of Mono Color Pages.." value="{{$data->monocolor}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -1075,7 +789,7 @@
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <input type="text" class="form-control" id="isbn"
-                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.."   onkeyup="checkBookISBN()"
+                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.." value="{{$data->isbn}}  onkeyup="checkBookISBN()"
                                                             required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
@@ -1094,14 +808,15 @@
                                                             class="text-danger">*</span></label>
                                                     <select class="default-select wide form-control" id="category"
                                                         name="category" required>
-                                                        <option value="">Select One<span
-                                 class="text-danger maditory">*</span></option>
                                                         @php
                                                           $categori = DB::table('special_categories')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
-
+                                                          @if($data->category == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                          @else
+                                                          <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @endif
                                                             @endforeach
                                                     </select>
                                                 </div>
@@ -1116,13 +831,16 @@
 
                                                         <select class="default-select wide form-control" id=""
                                                         name="subject" required>
-                                                        <option value="">Select One<span
-                                                        class="text-danger maditory">*</span></option>
+                                                      
                                                         @php
                                                           $categori = DB::table('book_subject')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @if($data->subject == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                          @else
+                                                          <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @endif
 
                                                             @endforeach
                                                     </select>
@@ -1134,38 +852,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {{-- <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">ISBN-13 <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="isbn13"
-                                                            name="isbn13" placeholder="Enter ISBN-13.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                            <!-- <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Stock <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" id="stock" name="stock"
-                                                            placeholder="Enter stock.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div> -->
+                                      
+                                          
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -1177,7 +865,7 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <input type="text" class="form-control" id="place"
-                                                            name="place" placeholder="Enter Country.." required>
+                                                            name="place" placeholder="Enter Country.." value="{{$data->place}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -1195,13 +883,16 @@
 
                                                         <select class="default-select wide form-control" id="currency_type"
                                                         name="currency_type" required>
-                                                        <option value="">Select One<span
-                                                        class="text-danger maditory">*</span></option>
+                                                        
                                                         @php
                                                           $categori = DB::table('currency_type')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @if($data->currency_type == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                          @else
+                                                          <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @endif
 
                                                             @endforeach
                                                     </select>
@@ -1221,7 +912,7 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <input type="text" class="form-control" id="price"
-                                                            name="price" placeholder="Enter Price.." required>
+                                                            name="price" placeholder="Enter Price.." value="{{$data->price}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -1238,7 +929,7 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <textarea type="text" class="form-control" id="description" name="description" rows="3"
-                                                            placeholder="Enter Description.." required></textarea>
+                                                            placeholder="Enter Description.." value="{{$data->description}}" required></textarea>
 
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
@@ -1263,26 +954,26 @@
                             <label for="text">Primary Language of the book<span class="text-danger maditory">*</span></label></label>
 
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" required>
+                                <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" @if($data->language == "Tamil") checked @endif required>
                                 <label class="custom-control-label" for="lang1">Tamil</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="lang2" name="language" class="custom-control-input" value="English" required>
+                                <input type="radio" id="lang2" name="language" class="custom-control-input" value="English" @if($data->language == "English") checked @endif  required>
                                 <label class="custom-control-label" for="lang2">English</label>
                             </div>
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="book_primary_language_new" name="language" class="custom-control-input" value="Other_Indian" required>
+                                <input type="radio" id="book_primary_language_new" name="language" class="custom-control-input" value="Other_Indian" @if($data->language == "Other_Indian") checked @endif required>
                                 <label class="custom-control-label" for="book_primary_language_new">Other Indian Languages (please specify)</label>
                             </div>
                             <div class="col-md-12 book_primary_lang mb-2">
-                                <input type="text" class="form-control" id="other1" name="Other_Indian" placeholder="Enter Other Indian Languages (please specify)">
+                                <input type="text" class="form-control" id="other1" name="Other_Indian" placeholder="Enter Other Indian Languages (please specify)" value="@if($data->Other_Indian != null) {{$data->Other_Indian}} @endif">
                             </div>
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="book_primary_language_new_forein" name="language" class="custom-control-input" value="Other_Foreign" required>
+                                <input type="radio" id="book_primary_language_new_forein" name="language" class="custom-control-input" value="Other_Foreign" @if($data->language == "Other_Foreign") checked @endif required>
                                 <label class="custom-control-label" for="book_primary_language_new_forein">Other Foreign Languages (please specify)</label>
                             </div>
                             <div class="col-md-12 book_primary_lang_forein mb-2">
-                                <input type="text" class="form-control" id="other2" name="Other_Foreign" placeholder="Enter Other Foreign Languages (please specify)">
+                                <input type="text" class="form-control" id="other2" name="Other_Foreign" placeholder="Enter Other Foreign Languages (please specify)" value="@if($data->Other_Foreign != null) {{$data->Other_Foreign}} @endif">
                             </div>
                         </div>
 
@@ -1307,6 +998,7 @@
                                                 <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                 <!-- <select id="tagSelect" name="booktag[]" multiple="multiple" style="width: 200px;">
                                                 </select> -->
+                                                @if($booktag == null)
                                                 <select id="multi-value-select" name="tag[]" multiple="multiple">
                                                 @php
                                                           $categori = DB::table('special_categories')->where('status','=','1')->get();
@@ -1316,6 +1008,16 @@
 
                                                             @endforeach
                                                 </select>
+                                                @else
+                                                <select id="multi-value-select" name="tag[]" multiple="multiple">
+    @php
+    $categori = DB::table('special_categories')->where('status','=','1')->get();
+    @endphp
+    @foreach($categori as $val)
+        <option value="{{ $val->name }}" @if(in_array($val->name, $booktag)) selected @endif>{{ $val->name }}</option>
+    @endforeach
+</select>
+                                                @endif
                                                 <div class="invalid-feedback">
                                                     Edition Number cannot be edited agter your book has been
                                                     published.
@@ -1385,7 +1087,7 @@
                                                 <div class="small-12 medium-2 large-2 columns">
                                                     <div class="circle">
                                                         <img class="profile-pic"
-                                                            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*a3BHGbuAMpOaZj6HkTrNqA.png">
+                                                            src="{{ url('Books/front/'.$data->front_img) }}">
 
                                                     </div>
                                                     <div class="p-image">
@@ -1406,7 +1108,7 @@
                                                 <div class="small-12 medium-2 large-2 columns">
                                                     <div class="circle">
                                                         <img class="profile-pic_back"
-                                                            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*a3BHGbuAMpOaZj6HkTrNqA.png">
+                                                            src="{{ url('Books/back/'.$data->back_img) }}">
 
                                                     </div>
                                                     <div class="p-image">
@@ -1428,7 +1130,7 @@
                                                 <div class="small-12 medium-2 large-2 columns">
                                                     <div class="circle">
                                                         <img class="profile-pic_other"
-                                                            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*a3BHGbuAMpOaZj6HkTrNqA.png">
+                                                            src="{{ url('Books/full/'.$data->full_img) }}">
 
                                                     </div>
                                                     <div class="p-image">
@@ -1489,7 +1191,7 @@
 
                                                         <input type="text" class="form-control"
                                                             id="author_name" name="author_name"
-                                                            placeholder="Enter Author Name.." required>
+                                                            placeholder="Enter Author Name.." value="{{$data->author_name}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -1522,7 +1224,7 @@
                                             <!-- <div class="card-body custom-ekeditor">
                                                 <div id="ckeditor" name="author_description" required></div>
                                             </div> -->
-                                            <textarea name="author_description" id="author_description" ></textarea>
+                                            <textarea name="author_description" id="author_description">{{$data->author_description}}</textarea>
 
                                             <!-- <textarea name="author_description" required></textarea> -->
                                         </div>
@@ -1622,7 +1324,7 @@
                                         </div>
                                         <div class="row">
                                        <h4>Description<span class="text-danger">*</span></h4>
-                                        <textarea name="productdescription" id="productdescription" ></textarea>
+                                        <textarea name="productdescription" id="productdescription" >{{$data->productdescription}}</textarea>
                                       </div>
                                     </div>
                                 </div>

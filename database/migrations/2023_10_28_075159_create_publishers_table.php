@@ -57,13 +57,17 @@ return new class extends Migration
             $table->string('gstProof')->nullable();
             $table->string('panOrTanProof')->nullable();
             $table->string('udyamProof')->nullable();
-            $table->string('societyProof')->nullable();
             $table->string('certificationIncorporationProof')->nullable();
             $table->string('certificationRegistrationProof')->nullable();
             $table->string('partnershipDeedProof')->nullable();
             $table->string('llpProof')->nullable();
             $table->string('moaProof')->nullable();
             $table->string('aoaProof')->nullable();
+            $table->string('privateTrustProof')->nullable();
+            $table->string('privateSocietyProof')->nullable();
+            $table->string('institutionProof')->nullable();
+            $table->string('trustFoundationProof')->nullable();
+            $table->string('societyProof')->nullable();
             $table->string('haveSubsidiary');
             $table->json('subsidiary')->nullable();
             $table->string('declaration');
@@ -95,7 +99,6 @@ return new class extends Migration
             $table->string('gstProof');
             $table->string('panOrTanProof');
             $table->string('udyamProof');
-            $table->string('societyProof');
             $table->string('certificationIncorporationProof');
             $table->string('certificationRegistrationProof');
             $table->string('partnershipDeedProof');
@@ -104,6 +107,11 @@ return new class extends Migration
             $table->string('aoaProof');
             $table->json('topTranslatedBooks');
             $table->json('awardTitle');
+            $table->string('privateTrustProof');
+            $table->string('privateSocietyProof');
+            $table->string('institutionProof');
+            $table->string('trustFoundationProof');
+            $table->string('societyProof');
         });
     }
 };
