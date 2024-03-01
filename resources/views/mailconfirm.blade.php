@@ -159,6 +159,22 @@
   </div>
 </div>
     </body>
+    @if (Session::has('success'))
+
+<script>
+
+toastr.success("{{ Session::get('success') }}",{timeout:15000});
+
+</script>
+@elseif (Session::has('error'))
+<script>
+
+toastr.error("{{ Session::get('error') }}",{timeout:15000});
+
+</script>
+
+
+@endif
     <script>
     $(document).on('click', '#submitButton', function (e) {
         e.preventDefault();

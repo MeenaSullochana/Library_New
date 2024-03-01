@@ -44,7 +44,7 @@ return new class extends Migration
             $table->string('price'); 
             $table->string('category'); 
             $table->longtext('description'); 
-            $table->string('notes')->nullable(); 
+            $table->longtext('notes')->nullable(); 
             $table->string('product_code'); 
             $table->string('others')->nullable(); 
             $table->string('front_img'); 
@@ -71,14 +71,17 @@ return new class extends Migration
             $table->string('negotiation_status')->nullable(); 
             $table->string('negotiation_price')->nullable(); 
             $table->string('calculated_price')->nullable(); 
-            $table->string('negotiation_message')->nullable(); 
+            $table->longtext('negotiation_message')->nullable(); 
             $table->string('final_price')->nullable(); 
-            $table->string('negotiation_reject_message')->nullable(); 
-            $table->string('reject_message')->nullable(); 
+            $table->longtext('negotiation_reject_message')->nullable(); 
+            $table->longtext('reject_message')->nullable(); 
             $table->string('book_active_status')->default(1); 
             $table->string('sample_pdf')->nullable(); 
             $table->string('sample_epub')->nullable(); 
             $table->string('sample_file')->nullable(); 
+            $table->string('nameOfPublisher'); 
+            $table->longtext('return_message')->nullable(); 
+            $table->string('yearOfPublication'); 
             $table->timestamps();
         });
     }
@@ -106,17 +109,18 @@ return new class extends Migration
             $table->string('book_status'); 
             $table->string('other_indian'); 
             $table->string('other_foreign'); 
-            $table->string('reject_message'); 
+            $table->longtext('reject_message'); 
             $table->string('negotiation_status'); 
             $table->string('negotiation_price'); 
             $table->string('calculated_price'); 
-            $table->string('negotiation_message'); 
+            $table->longtext('negotiation_message'); 
             $table->string('final_price'); 
-            $table->string('negotiation_reject_message'); 
+            $table->longtext('negotiation_reject_message'); 
             $table->string('book_active_status'); 
             $table->string('sample_pdf'); 
             $table->string('sample_epub'); 
             $table->string('sample_file'); 
+            $table->longtext('return_message'); 
         });
     }
 };
