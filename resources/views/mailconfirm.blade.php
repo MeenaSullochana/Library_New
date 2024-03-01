@@ -46,42 +46,135 @@
                 <div class="card mt-5">
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="modal-bottom-logo mt-5">
+                            <div class="modal-bottom-logo">
                                 <img class="w-100" src="assets/img/logo/logo.png" alt="">
                             </div>
-                            <p class="modal-bottom-logo p-2">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum veritatis adipisci
-                                voluptas maxime similique! Sed ea dolores voluptatibus alias distinctio.
-                            </p>
                             <div class="modal-bottom-logo"><img class="text-center w-100" src="assets/img/icon/border-top.png" alt="" title=""></div>
-                            <!-- <ul class="modal-conatact-procedures">
-                                <li>
-                                    <a href="https://seedfund.startupindia.gov.in/" target="_blanck">
-                                        <img src="/content/dam/invest-india/newhomepage/seed-fund-login1.png" alt="0"
-                                            title="">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://maarg.startupindia.gov.in/" target="_blanck">
-                                        <img src="/content/dam/invest-india/newhomepage/maarg-login1.png" alt="0"
-                                            title="">
-                                    </a>
-                                </li>
+                            <div class="container">
+                                <ul class="nav nav-pills mb-4 light justify-content-center">
+                                    <li class=" nav-item">
+                                        <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false"><i class="fa fa-user p-2 text-success"></i>Publisher</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#navpills-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false"><i class="fa fa-user-circle p-2 text-success"></i>Distributor</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#navpills-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true"><i class="fa fa-users p-2 text-success"></i>Publisher Cum Distributor</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" >
+                                    <div id="navpills-1" class="tab-pane overflowTest active">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                               <div class="overflowTest ms-3">
+                                               @php
+                                                $rev = DB::table('forgothidelins_title')->where('userType', '=', 'publisher')->first();
 
-                            </ul> -->
-                            <div class="social text-center">
-                                <h5 class="social-title mb-5">Social Media:</h5>
-                                <div class="social_icons">
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fab fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                                if ($rev !== null) {
+                                                    $data1 = json_decode($rev->hidelineContent);
+                                                } else {
+                                                    $data1 = [];
+                                                }
+                                            @endphp
+
+                                            <h6 class="text-danger"><b>{{$rev ? $rev->hidelineTitle : 'Default Title'}}</b></h6>
+
+                                            @if ($data1)
+                                                @foreach($data1 as $val)
+                                                    <!-- hidelineContent -->
+                                                    <li>{{$val}}.</li>
+                                                @endforeach
+                                            @else
+                                                <p>No data available for publisher.</p>
+                                            @endif
+
+                                              <!-- <li>Publisher Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                <li>Publisher Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                <li>Publisher Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li> -->
+
+                                                <!-- <p>
+                                                    <br /> Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.</p> -->
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="navpills-2" class="tab-pane overflowTest">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="overflowTest ms-3">
+                                                @php
+                                                $rev = DB::table('forgothidelins_title')->where('userType', '=', 'distributor')->first();
+
+                                                if ($rev !== null) {
+                                                    $data1 = json_decode($rev->hidelineContent);
+                                                } else {
+                                                    $data1 = []; // Set a default value or handle accordingly
+                                                }
+                                                @endphp
+                                                <h6 class="text-danger"><b>{{$rev ? $rev->hidelineTitle : 'Default Title'}}</b></h6>
+                                                @if ($rev !== null)
+
+
+                                                    @foreach($data1 as $val)
+                                                        <!-- hidelineContent -->
+                                                        <li>{{$val}}.</li>
+                                                    @endforeach
+                                                @else
+                                                    <p>No data available for distributor.</p>
+                                                @endif
+
+                                                    <!-- <h6 class="text-danger"><b>About the Guideline Distributor</b></h6>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <p>
+                                                        <br /> Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.</p> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="navpills-3" class="tab-pane overflowTest">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="overflowTest ms-3">
+                                                @php
+                                                $rev = DB::table('forgothidelins_title')->where('userType', '=', 'publisher_and_distributor')->first();
+
+                                                if ($rev !== null) {
+                                                    $data1 = json_decode($rev->hidelineContent);
+                                                } else {
+                                                    $data1 = []; // Set a default value or handle accordingly
+                                                }
+                                            @endphp
+                                            <h6 class="text-danger"><b>{{$rev ? $rev->hidelineTitle : 'Default Title'}}</b></h6>
+
+                                            @if ($rev !== null)
+
+                                                @foreach($data1 as $val)
+                                                    <!-- hidelineContent -->
+                                                    <li>{{$val}}.</li>
+                                                @endforeach
+                                            @else
+                                                <p>No data available for publisher cum distributor.</p>
+                                            @endif
+
+                                                    <!-- <h6 class="text-danger"><b>About the Guideline Publisher Cum Distributor</b></h6> -->
+                                                    <!-- <li>Publisher Cum Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <li>Distributor Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.</li>
+                                                    <p>
+                                                        <br /> Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.</p> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal-bottom-logo"><img class="text-center w-100" src="assets/img/icon/border-top.png" alt="" title=""></div>
-                            <div class="modal-bottom-logo mb-5">
-                                <img src="assets/img/logo/gov-login-img.png" alt="0" title="0">
                             </div>
                         </div>
                         <div class="col-md-6 d-flex">
@@ -94,12 +187,12 @@
                                             
                                             <div> <span>A code has been sent to</span> <small id="emailPlaceholder">{{$data->email}}</small> </div>
                                             <h1>Welcome Back!</h1>
-                                            <p>It looks like you're trying to login from a new device. As an added security mesure, please enter the 6-character code sent to your email.</p>
+                                            <p>It looks like you're trying to login from a new device. As an added security mesure, please enter the 4-character code sent to your email.</p>
                                             <div id="otp" class="">
                                                 <label for="opt_field" class="text-start">Enter the OTP</label>
                                                 <input class="m-2 text-center form-control rounded" type="text" id="otps" maxlength="4"  />
                                                 </div>
-                                                <p class="text-start resend-code" data-userid="{{ $data->id }}" data-userrole="{{ $data->usertype }}" "> <span style="color: blue;">Resend Code</span></p>
+                                                <p class="text-start resend-code" data-userid="{{ $data->id }}" data-userrole="{{ $data->usertype }}" > <span style="color: blue;">Resend Code</span></p>
 
                                                 <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-start change-mail-id"
    data-userid="{{ $data->id }}" data-userrole="{{ $data->usertype }}" data-email="{{ $data->email }}">

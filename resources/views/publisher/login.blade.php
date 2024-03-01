@@ -13,7 +13,7 @@ include "core/login.core.php";
       <!-- PAGE TITLE HERE -->
       <title>Government of Tamil Nadu - Book Procurement - Publisher - Login </title>
       <!-- FAVICONS ICON -->
-      <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+      <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
       <link href="./vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
       <link href="./css/style.css" rel="stylesheet">
 
