@@ -91,7 +91,8 @@
                                     <div class="position-relative">
                                         <div class="card p-2 text-center">
                                             <h6>Please enter the one time otp<br> to verify your account</h6>
-                                            <div> <span>A code has been sent to</span> <small>{{$data->email}}</small> </div>
+                                            
+                                            <div> <span>A code has been sent to</span> <small id="emailPlaceholder">{{$data->email}}</small> </div>
                                             <h1>Welcome Back!</h1>
                                             <p>It looks like you're trying to login from a new device. As an added security mesure, please enter the 6-character code sent to your email.</p>
                                             <div id="otp" class="">
@@ -102,7 +103,7 @@
 
                                                 <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-start change-mail-id"
    data-userid="{{ $data->id }}" data-userrole="{{ $data->usertype }}" data-email="{{ $data->email }}">
-   Did not get Code? <span style="color: blue;">Change mail Id</span>
+   Did not get Code? <span style="color: blue;">Change Email</span>
 </a>
                                             <div class="mt-4"> <button class="btn btn-danger px-4 validate" id="submitButton"  data-id="{{$data->id}}" data-roleid="{{$data->usertype}}">Submit</button> </div>
                                         </div>
@@ -138,7 +139,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Change Email Id</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Change Email</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -255,7 +256,7 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
         var userId = $(this).data('userid');
         var userRole = $(this).data('userrole');
         var userEmail = $(this).data('email');
-
+        console.log(userEmail);
         // Set the values of input fields in the modal
         $('#current_email').val(userEmail);
         $('#new_email').val('');
@@ -287,8 +288,14 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
             },
             dataType: "json",
             success: function(response) {
+                console.log(response);
                 if (response.success) {
+                    console.log(response.email);
                     toastr.success(response.success, { timeout: 25000 });
+                    $('#emailPlaceholder').text(response.email);
+                    var anchorElement = $('.change-mail-id'); // Select the anchor element
+        anchorElement.data('email', response.email); // Update the data-email attribute
+        anchorElement.find('span').text('Change mail Id');
                     $('#exampleModal').modal('hide');
                 } else {
                     toastr.error(response.error, { timeout: 25000 });

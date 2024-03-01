@@ -414,7 +414,8 @@ class ForgotPasswordController extends Controller
             $otps->dateTime= Carbon::now();
             $otps->save();
             $data= [
-                'success' =>'Mail Change Successfully PLease Enter Otp'
+                'success' =>'Mail Change Successfully PLease Enter Otp',
+                'email'=>$publisher->email
                      ];
             return response()->json($data); 
 
@@ -440,7 +441,8 @@ class ForgotPasswordController extends Controller
                 $otps->dateTime= Carbon::now();
                 $otps->save();
                 $data= [
-                    'success' =>'Mail Change Successfully PLease Enter Otp'
+                    'success' =>'Mail Change Successfully PLease Enter Otp',
+                    'email'=>$publisher->email
                          ];
                 return response()->json($data); 
 
@@ -470,7 +472,8 @@ class ForgotPasswordController extends Controller
                     $otps->dateTime= Carbon::now();
                     $otps->save();
                     $data= [
-                        'success' =>'Mail Change Successfully PLease Enter Otp'
+                        'success' =>'Mail Change Successfully PLease Enter Otp',
+                        'email'=>$publisher->email
                              ];
                     return response()->json($data); 
     
@@ -496,7 +499,8 @@ class ForgotPasswordController extends Controller
                 $otps->dateTime= Carbon::now();
                 $otps->save();
                 $data= [
-                    'success' =>'Mail Change Successfully PLease Enter Otp'
+                    'success' =>'Mail Change Successfully PLease Enter Otp',
+                    'email'=>$publisher->email
                          ];
                 return response()->json($data); 
 
