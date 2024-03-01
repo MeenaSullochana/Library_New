@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -122,15 +123,15 @@ class LoginController extends Controller
 
     public function usercheck($user,$redirect_route,$guard){
         if($user->approved_status == "approve"){
-            if($user->status == 1 && $user->verification == 1){
+            if($user->status == 1 && $user->verfication == 1){
              return redirect($redirect_route)->with('success',"Logged in successfully");
-            }else if($user->status != 1 && $user->verification == 1){
+            }else if($user->status != 1 && $user->verfication == 1){
              \Auth::guard($guard)->logout();
              return back()->withInput()->with('error',"Your account was inactive");
-            }else if($user->status == 1 && $user->verification != 1){
+            }else if($user->status == 1 && $user->verfication != 1){
                 \Auth::guard($guard)->logout();
                 Session::put('publisher',$user);
-                return redirect('/mailconfirmation')->with('error',"Your mail was not verified");
+                return redirect('/mailconfirmation')->with('error',"Your account was not verified yet..Please verify");
             }
         }
         else if($user->approved_status == "pending"){
