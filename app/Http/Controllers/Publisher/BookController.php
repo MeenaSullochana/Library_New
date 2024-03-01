@@ -14,7 +14,6 @@ use App\Models\Ticket;
 use App\Models\Book;
 use App\Models\Publisher;
 use Illuminate\Support\Facades\Hash;
-use File;
 use Illuminate\Support\Str;
 use App\Models\Notifications;
 use App\Models\Admin;
@@ -22,7 +21,7 @@ use App\Models\Procurementpaymrnt;
 use Illuminate\Support\Facades\File;
 class BookController extends Controller
 {
-   
+
 public function create(Request $request){
 
     $validator= Validator::make($request->all(),[
@@ -52,7 +51,7 @@ public function create(Request $request){
         'author_description'                          =>['required'],
         'bookdescription.*'                          =>['required'],
         'productdescription'                          =>['required'],
-                    
+
     ]);
     if($validator->fails()){
         return $validator->errors();
@@ -100,7 +99,7 @@ if($request->volume_number[0] !=null && $request->volume_title[0] !=null && $req
         array_push($volume,$obj);
     }
          $book->volume =        json_encode($volume)  ;
-     
+
        }
         if($request->sample_file == "Pdf"){
             if ($request->hasFile('sample_pdf')) {
@@ -110,11 +109,11 @@ if($request->volume_number[0] !=null && $request->volume_title[0] !=null && $req
                 $book->sample_pdf = $samplepdf_name;
                 $book->sample_file = $request->sample_file;
 
-                
+
             }
 
         }else{
-           
+
             if ($request->hasFile('sample_epub')) {
                 $sampleepub = $request->file('sample_epub');
                $sampleepub_name = $request->book_title . time() . '_' . $sampleepub->getClientOriginalName();
@@ -123,7 +122,7 @@ if($request->volume_number[0] !=null && $request->volume_title[0] !=null && $req
                 $book->sample_file = $request->sample_file;
         }
     }
-  
+
        if ($request->hasFile('front_img')) {
         $front = $request->file('front_img');
         $front_name = $request->book_title . time() . '_' . $front->getClientOriginalName();
@@ -146,7 +145,7 @@ if ($request->hasFile('back_img')) {
         $book->full_img = $full_name;
     }
  }
-       
+
 
         //Author Image
         if ($request->hasFile('author_img')) {
@@ -155,24 +154,24 @@ if ($request->hasFile('back_img')) {
             $author_img->move(('Books/author_img'), $author_img_name);
             $book->author_img = $author_img_name;
         }
-        
+
         if(isset($request->banner_img)){
-           
+
             $bannerimg = $request->banner_img;
-            
+
             $mem_len = sizeof($bannerimg);
             $banner=[];
             for($i=0;$i<$mem_len;$i++){
                 $bannerim = $bannerimg[$i];
                 $banner_name=$request->book_title.time().'_'.$bannerim->getClientOriginalName();
-                $bannerim->move(('Books/banner'),$banner_name);  
-               
+                $bannerim->move(('Books/banner'),$banner_name);
+
                 array_push($banner,$banner_name);
             }
-              
+
             $book->banner_img = json_encode($banner);
         }
-   
+
         //Banner Image
         // if ($request->hasFile('banner_img')) {
         //     $banner = $request->file('banner_img');
@@ -180,10 +179,10 @@ if ($request->hasFile('back_img')) {
         //     $banner->move(public_path('Books/banner'), $banner_name);
         //     $book->banner_img = $banner_name;
         // }
-        
+
 
           //Product Image
-          if(isset($request->product_img)){  
+          if(isset($request->product_img)){
 
             if ($request->hasFile('product_img')) {
                 $product = $request->file('product_img');
@@ -191,25 +190,25 @@ if ($request->hasFile('back_img')) {
                 $product->move(('Books/product'), $product_name);
                 $book->product_img = $product_name;
             }
-            
+
         }
 
         //otherImg
 
         if(isset($request->other_img)){
-           
+
             $subsidiary_doc = $request->other_img;
-            
+
             $mem_len = sizeof($subsidiary_doc);
             $others=[];
             for($i=0;$i<$mem_len;$i++){
                 $other = $subsidiary_doc[$i];
                 $other_name=$request->book_title.time().'_'.$other->getClientOriginalName();
-                $other->move(('Books/other_img'),$other_name);  
-               
+                $other->move(('Books/other_img'),$other_name);
+
                 array_push($others,$other_name);
             }
-              
+
             $book->other_img = json_encode($others);
         }
        $book->book_title = $request->book_title ;
@@ -257,11 +256,11 @@ if ($request->hasFile('back_img')) {
        $book->author_name =       $request->author_name ;
        $book->author_description =       $request->author_description ;
        $book->bookdescription =       json_encode($request->bookdescription) ;
-       $book->productdescription =       $request->productdescription  ;   
-       $book->nameOfPublisher =       $request->nameOfPublisher  ;   
-       $book->yearOfPublication =       $request->yearOfPublication  ;   
+       $book->productdescription =       $request->productdescription  ;
+       $book->nameOfPublisher =       $request->nameOfPublisher  ;
+       $book->yearOfPublication =       $request->yearOfPublication  ;
        $book->user_type =    "publisher" ;
-       $book->user_id =   auth('publisher')->user()->id; 
+       $book->user_id =   auth('publisher')->user()->id;
        $book->save();
        return back()->with('success',"Books added successfully");
 
@@ -289,20 +288,20 @@ public function duplicatebook($data){
 public function bookmanageall(){
       $id=auth('publisher')->user()->id;
       $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',0)->get();
-      return view('publisher.book_manage_all')->with('data',$data);   
+      return view('publisher.book_manage_all')->with('data',$data);
 }
 public function bookdelete(Request $request){
 
     $id=auth('publisher')->user()->id;
-   
-    $data1=Book::where('user_id','=',$id)->where('id','=',$request->id)->first();  
+
+    $data1=Book::where('user_id','=',$id)->where('id','=',$request->id)->first();
     $data1->delete();
- 
- 
+
+
     $data= [
         'success' => 'Book deleted Successfully',
              ];
-    return response()->json($data); 
+    return response()->json($data);
   }
 
 
@@ -311,92 +310,92 @@ public function bookdelete(Request $request){
     $id=auth('publisher')->user()->id;
     $bookIds = $request->input('bookId', []);
     foreach($bookIds as $key=>$val){
-        $data1=Book::where('user_id','=',$id)->where('id','=',$val)->first();  
+        $data1=Book::where('user_id','=',$id)->where('id','=',$val)->first();
         $data1->delete();
 
     }
     $data= [
         'success' => 'Book deleted Successfully',
              ];
-    return response()->json($data); 
+    return response()->json($data);
   }
-  
+
   public function book_edit($id){
     $book=Book::find($id);
-    $book->primaryauthor1= json_decode($book->primaryauthor); 
-    $book->trans_from1= json_decode($book->trans_from); 
-    $book->other_img1= json_decode($book->other_img); 
-    $book->series1= json_decode($book->series); 
+    $book->primaryauthor1= json_decode($book->primaryauthor);
+    $book->trans_from1= json_decode($book->trans_from);
+    $book->other_img1= json_decode($book->other_img);
+    $book->series1= json_decode($book->series);
     // return $book;
-    $book->banner_img1= json_decode($book->banner_img); 
-    $book->booktag1= json_decode($book->booktag); 
-    $book->trans_author1= json_decode($book->trans_author); 
-    $book->bookdescription1= json_decode($book->bookdescription); 
-    $book->series1= json_decode($book->series); 
-    $book->volume1= json_decode($book->volume); 
-    $book->banner_img1= json_decode($book->banner_img); 
+    $book->banner_img1= json_decode($book->banner_img);
+    $book->booktag1= json_decode($book->booktag);
+    $book->trans_author1= json_decode($book->trans_author);
+    $book->bookdescription1= json_decode($book->bookdescription);
+    $book->series1= json_decode($book->series);
+    $book->volume1= json_decode($book->volume);
+    $book->banner_img1= json_decode($book->banner_img);
     //    return$book;
   $book->firstName=auth('publisher')->user()->firstName;
   $book->lastName=auth('publisher')->user()->lastName;
 // return $book;
 \Session::put('book', $book);
-    return redirect('publisher/bookedit'); 
+    return redirect('publisher/bookedit');
 
   }
 
 
 
 public function bookmanageview($id){
-   
+
     $book=Book::find($id);
-    $book->primaryauthor1= json_decode($book->primaryauthor); 
-    $book->trans_from1= json_decode($book->trans_from); 
-    $book->other_img1= json_decode($book->other_img); 
-    $book->series1= json_decode($book->series); 
+    $book->primaryauthor1= json_decode($book->primaryauthor);
+    $book->trans_from1= json_decode($book->trans_from);
+    $book->other_img1= json_decode($book->other_img);
+    $book->series1= json_decode($book->series);
     // return $book;
-    $book->banner_img1= json_decode($book->banner_img); 
-    $book->booktag1= json_decode($book->booktag); 
-    $book->trans_author1= json_decode($book->trans_author); 
-    $book->bookdescription1= json_decode($book->bookdescription); 
-    $book->series1= json_decode($book->series); 
-    $book->volume1= json_decode($book->volume); 
+    $book->banner_img1= json_decode($book->banner_img);
+    $book->booktag1= json_decode($book->booktag);
+    $book->trans_author1= json_decode($book->trans_author);
+    $book->bookdescription1= json_decode($book->bookdescription);
+    $book->series1= json_decode($book->series);
+    $book->volume1= json_decode($book->volume);
   $book->firstName=auth('publisher')->user()->firstName;
   $book->lastName=auth('publisher')->user()->lastName;
 // return $book;
 \Session::put('book', $book);
-    return redirect('publisher/bookmanageview');    
+    return redirect('publisher/bookmanageview');
 }
 
 public function procurement(){
     $id=auth('publisher')->user()->id;
-    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',0)->get(); 
-    return view('publisher.book_procurement')->with('data',$data); 
+    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',0)->get();
+    return view('publisher.book_procurement')->with('data',$data);
 }
 public function procurelist(){
     $id=auth('publisher')->user()->id;
-    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',1)->where('book_status','=',null)->get(); 
-    return view('publisher.book_procurement_list')->with('data',$data); 
+    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',1)->where('book_status','=',null)->get();
+    return view('publisher.book_procurement_list')->with('data',$data);
 }
 public function procurereject(){
     $id=auth('publisher')->user()->id;
-    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',1)->where('book_status','=',0)->get(); 
-    return view('publisher.book_procurement_reject')->with('data',$data); 
+    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',1)->where('book_status','=',0)->get();
+    return view('publisher.book_procurement_reject')->with('data',$data);
 }
 public function procurecompleted(){
     $id=auth('publisher')->user()->id;
-    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',1)->where('book_status','=',1)->get(); 
-    return view('publisher.book_procurement_complete')->with('data',$data); 
+    $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',1)->where('book_status','=',1)->get();
+    return view('publisher.book_procurement_complete')->with('data',$data);
 }
 
 public function procurementstatus(Request $request){
     $id=auth('publisher')->user()->id;
-    $data1=Book::where('user_id','=',$id)->where('id','=',$request->id)->first();   
+    $data1=Book::where('user_id','=',$id)->where('id','=',$request->id)->first();
     $data1->book_procurement_status = 1;
     $data1->save();
     $data= [
         'success' => 'Book applied Successfully',
              ];
-    return response()->json($data);   
+    return response()->json($data);
 }
 public function checkBookTitle(Request $request)
 {
@@ -421,11 +420,11 @@ public function checkBookTitle(Request $request)
 
      public function applay_procurment(Request $request){
         $validator = Validator::make($request->all(), [
-      
+
             'bookId'=> 'required|array|min:1',
-          
+
         ]);
-    
+
         if ($validator->fails()) {
             $data = [
                 'error' => $validator->errors()->first(),
@@ -435,7 +434,7 @@ public function checkBookTitle(Request $request)
         $bookitem=[];
         $bookIds = $request->input('bookId', []);
         foreach($bookIds as $key=>$val){
-       
+
             $books = Book::find($val);
             array_push($bookitem,$books);
 
@@ -445,7 +444,7 @@ public function checkBookTitle(Request $request)
         $data= [
             'success' => 'Book Send Payment Page Successfully',
                  ];
-        return response()->json($data);  
+        return response()->json($data);
      }
 
      public function pay_endpoint(Request $request){
@@ -455,14 +454,14 @@ public function checkBookTitle(Request $request)
        foreach($record as $key=>$val){
         array_push($bookitem,$val->id);
 
- 
+
         }
- 
+
        $id=auth('publisher')->user()->id;
        $pay = New Procurementpaymrnt();
        $pay->bookId = json_encode( $bookitem);
        $pay->userName = auth('publisher')->user()->firstName . ' ' . auth('publisher')->user()->lastName ;
-       
+
        $pay->userId = $id;
        $pay->amount = "1000";
        $pay->totalAmount =  count($record) *1000;;
@@ -472,17 +471,17 @@ public function checkBookTitle(Request $request)
        $pay->invoiceNumber =       $randomCode ;
        $pay->save();
        foreach($record as $key=>$val){
-       $data1=Book::where('user_id','=',$id)->where('id','=',$val->id)->first();  
-     
+       $data1=Book::where('user_id','=',$id)->where('id','=',$val->id)->first();
+
        $data1->book_procurement_status = "1";
        $data1->save();
 
        }
 
-     
+
        $notifi= new Notifications();
        $admin=Admin::first();
-       
+
        $notifi->message = "Book Applied For Procurement";
        $notifi->to= $admin->id;
        $notifi->from=auth('publisher')->user()->id;
@@ -491,10 +490,10 @@ public function checkBookTitle(Request $request)
        $data= [
            'success' => 'Book applied Successfully',
                 ];
-       return response()->json($data); 
+       return response()->json($data);
      }
 
-     
+
      public function sendnegotiationstatus(Request $req) {
         $bookId=$req->bookId;
         $status=$req->status;
@@ -507,7 +506,7 @@ public function checkBookTitle(Request $request)
         $data= [
             'success' => 'Approved Successfully',
                  ];
-        return response()->json($data); 
+        return response()->json($data);
        }else{
         $data1 = Book::find($bookId);
         $data1->negotiation_status ="3";
@@ -515,55 +514,55 @@ public function checkBookTitle(Request $request)
         $data= [
             'success' => 'Reject Successfully',
                  ];
-        return response()->json($data); 
+        return response()->json($data);
        }
-       
-   
-      
-       
-    
+
+
+
+
+
     }
     public function sendnegotiationsamount(Request $req) {
-    
+
        if($req->amount !=null){
         $data1 = Book::find($req->bookId);
-    
+
         $data1->negotiation_status = "1";
         $data1->negotiation_price = $req->amount;
         $data1->negotiation_message = $req->Description;
         $data1->save();
-    
+
         $data = [
             'success' => 'Negotiation send Successfully',
         ];
-    
+
         return response()->json($data);
        }else{
         $data = [
             'error' => 'Amount Filed is  Required',
         ];
-    
+
         return response()->json($data);
        }
-  
-       
+
+
     }
-    
+
     public function isbn(Request $req) {
         $id=auth('publisher')->user()->id;
-   
-        $data1=Book::where('user_id','=',$id)->where('isbn','=',$req->bookisbn)->first();  
+
+        $data1=Book::where('user_id','=',$id)->where('isbn','=',$req->bookisbn)->first();
         if($data1 != null){
             $data= [
                 'error' => 'Isbn Number Is duplecate Please Enter the Valid Isbn Number',
                      ];
             return response()->json($data);
         }
-     
-     
+
+
 
     }
-   
+
     public function update(Request $request){
         $validator= Validator::make($request->all(),[
             'book_title'                          =>['required'],
@@ -588,17 +587,17 @@ public function checkBookTitle(Request $request)
             'author_description'                          =>['required'],
             'bookdescription.*'                          =>['required'],
             'productdescription'                          =>['required'],
-                        
+
         ]);
         if($validator->fails()){
             return $validator->errors();
             // return redirect()->back()->withInput()->withErrors($validator->errors());
            }
     $book =Book::find($request->id);
-    
+
           $heightWidthString = $request->length_breadth;
-    
-    
+
+
           $dimensionsArray = explode('x', $heightWidthString);
           $length = trim($dimensionsArray[0]);
           $breadth = trim($dimensionsArray[1]);
@@ -617,11 +616,11 @@ public function checkBookTitle(Request $request)
                array_push($series,$obj);
            }
     $book->series =        json_encode($series)  ;
-    
+
     }
         //    volume
     if($request->volume_number[0] !=null && $request->volume_title[0] !=null && $request->isbn_number1[0] !=null ){
-    
+
         $volume_number = $request->volume_number;
         $volume_title = $request->volume_title;
         $isbn_number1 = $request->isbn_number1;
@@ -636,7 +635,7 @@ public function checkBookTitle(Request $request)
             array_push($volume,$obj);
         }
              $book->volume =        json_encode($volume)  ;
-         
+
            }
 
 //Sample Files
@@ -674,7 +673,7 @@ if(isset($request->sample_file)){
           }
       }
 }
-   
+
 //Front Img
 if(isset($request->front_img)){
     $oldfiletype = $book->front_img;
@@ -687,8 +686,8 @@ if(isset($request->front_img)){
         $front->move(('Books/front'), $front_name);
         $book->front_img = $front_name;
     }
-} 
-           
+}
+
 // Back Image
 if(isset($request->back_img)){
     $oldfiletype = $book->back_img;
@@ -702,7 +701,7 @@ if(isset($request->back_img)){
         $book->back_img = $back_name;
     }
 }
-    
+
 //Other Image
      if(isset($request->full_img)){
         $oldfiletype = $book->full_img;
@@ -716,7 +715,7 @@ if(isset($request->back_img)){
             $book->full_img = $full_name;
         }
      }
-           
+
 //Author Image
       if(isset($request->author_img)){
         $oldfiletype = $book->author_img;
@@ -738,14 +737,14 @@ if(isset($request->back_img)){
         for($i=0;$i<$mem_len;$i++){
             $bannerim = $bannerimg[$i];
             $banner_name=$request->book_title.time().'_'.$bannerim->getClientOriginalName();
-            $bannerim->move(('Books/banner'),$banner_name);  
+            $bannerim->move(('Books/banner'),$banner_name);
             array_push($banner,$banner_name);
         }
          $book->banner_img = json_encode($banner);
        }
-       
+
 //Product Image
-    if(isset($request->product_img)){  
+    if(isset($request->product_img)){
         $oldfiletype = $book->product_img;
         if ($oldFilePath) {
             File::delete(public_path('Books/product/' . $oldFilePath));
@@ -757,7 +756,7 @@ if(isset($request->back_img)){
             $book->product_img = $product_name;
          }
            }
-    
+
 //otherImg
     if(isset($request->other_img)){
         $subsidiary_doc = $request->other_img;
@@ -766,9 +765,9 @@ if(isset($request->back_img)){
         for($i=0;$i<$mem_len;$i++){
            $other = $subsidiary_doc[$i];
            $other_name=$request->book_title.time().'_'.$other->getClientOriginalName();
-           $other->move(('Books/other_img'),$other_name);  
+           $other->move(('Books/other_img'),$other_name);
            array_push($others,$other_name);
-         }    
+         }
            $book->other_img = json_encode($others);
        }
            $book->book_title = $request->book_title ;
@@ -781,7 +780,7 @@ if(isset($request->back_img)){
            }
            if($request->trans_from[0] !=null || $request->trans_from[1] !=null ){
             $book->trans_from =        json_encode($request->trans_from)  ?? Null;
-    
+
            }
            $book->type =        $request->type;
            $book->length =       $length ;
@@ -811,11 +810,11 @@ if(isset($request->back_img)){
            $book->author_name =       $request->author_name ;
            $book->author_description =       $request->author_description ;
            $book->bookdescription =       json_encode($request->bookdescription) ;
-           $book->productdescription =       $request->productdescription  ;   
-           $book->nameOfPublisher =       $request->nameOfPublisher  ;   
-           $book->yearOfPublication =       $request->yearOfPublication  ;   
+           $book->productdescription =       $request->productdescription  ;
+           $book->nameOfPublisher =       $request->nameOfPublisher  ;
+           $book->yearOfPublication =       $request->yearOfPublication  ;
            $book->user_type =    "publisher" ;
-           $book->user_id =   auth('publisher')->user()->id; 
+           $book->user_id =   auth('publisher')->user()->id;
            $book->save();
            return back()->with('success',"Books updated successfully");
     }

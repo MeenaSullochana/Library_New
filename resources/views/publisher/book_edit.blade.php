@@ -63,7 +63,7 @@ $booktag = $data->booktag1;
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Add Book</b>
+                                <b>Edit Book</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href=" {{ url('publisher/book_manage_all') }}">
                                 <i class="fa fa-angle-double-left" aria-hidden="true"></i> List of Book </a>
@@ -77,7 +77,7 @@ $booktag = $data->booktag1;
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Publication Dedails</h4>
+                                <h4>Publication Details</h4>
                             </div>
                             <div class="col-md-10">
 
@@ -86,16 +86,16 @@ $booktag = $data->booktag1;
                                         <div class="mb-3">
                                             <label class="text-label form-label text-black"
                                                 for="validationCustomUsername">
-                                                Name Of Publisher <span class="text-danger">*</span></label>
+                                                Name of Publisher <span class="text-danger">*</span></label>
                                                 @if(auth('publisher')->user())
                                                     <div class="input-group">
                                                 <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
+                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
                                                   >
                                                     @else
                                                     <div class="input-group">
                                                 <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" value="{{$data->nameOfPublisher}}" required
+                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" value="{{$data->nameOfPublisher}}" required
                                                   >
                                                     @endif
 
@@ -105,10 +105,10 @@ $booktag = $data->booktag1;
                                         </div>
                                         <div class="mb-3">
                                             <label class="text-label form-label text-black"
-                                            for="validationCustomUsername"> Year Of Publication
+                                            for="validationCustomUsername"> Year of Publication
                                                 </label>
                                             <div class="input-group transparent-append">
-                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" value="{{$data->yearOfPublication}}" required>
+                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" value="{{$data->yearOfPublication}}" required>
                                             </div>
                                         </div>
                                     </div>
@@ -189,7 +189,7 @@ $booktag = $data->booktag1;
                                                                 @if($data->series == null)
                                                                 <tr>
                                                                     <td><input type="text" name="series_title[]"
-                                                                            placeholder="Series Title" 
+                                                                            placeholder="Series Title"
                                                                             class="form-control" >
                                                                         </td>
                                                                     <td>
@@ -272,7 +272,7 @@ $booktag = $data->booktag1;
                                                                             placeholder="Volume Title"
                                                                             class="form-control" >
                                                                     <td><input type="text" name="volume_number[]"
-                                                                            placeholder="Current  Volume Number"
+                                                                            placeholder="Current Volume Number"
                                                                             class="form-control" ></td></td>
                                                                     <td><input type="text" name="isbn_number1[]"
                                                                             placeholder="Total Number Volume"
@@ -287,7 +287,7 @@ $booktag = $data->booktag1;
                                                                             placeholder="Volume Title"
                                                                             class="form-control" value="{{$data->volume1[0]->volume_title}}">
                                                                     <td><input type="text" name="volume_number[]"
-                                                                            placeholder="Current  Volume Number"
+                                                                            placeholder="Current Volume Number"
                                                                             class="form-control" value="{{$data->volume1[0]->volume_number}}" ></td></td>
                                                                     <td><input type="text" name="isbn_number1[]"
                                                                             placeholder="Total Number Volume"
@@ -305,7 +305,7 @@ $booktag = $data->booktag1;
                                         </div>
                                     </div>
                                 </div>
-                            
+
                             </div>
                         </div>
                     </section>
@@ -328,7 +328,8 @@ $booktag = $data->booktag1;
                                             <div class="input-group">
                                                 <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                 <input type="text" class="form-control" id="edition_number"
-                                                    name="edition_number" placeholder="Enter the Series.." value="@if($data->edition_number != null) {{ $data->edition_number }} @endif">
+                                                    name="edition_number" placeholder="Enter the Edition
+                                                    Number.." value="@if($data->edition_number != null) {{ $data->edition_number }} @endif">
                                                 <!-- <div class="invalid-feedback">
                                                         Edition Number cannot be edited agter your book has been
                                                         published.
@@ -344,7 +345,7 @@ $booktag = $data->booktag1;
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Book Author Detail</h4>
+                                <h4>Book Author Details</h4>
                             </div>
                             <div class="col-md-10">
                                 <P class="fs-4">Enter the primary author or contributor. Pen names are allowed.
@@ -356,7 +357,7 @@ $booktag = $data->booktag1;
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Primary Author Or
+                                                            for="validationCustomUsername">Primary Author or
                                                             Contributor
                                                             <span class="text-danger">*</span></label>
                                                         <div class="input-group">
@@ -364,7 +365,8 @@ $booktag = $data->booktag1;
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo.." value="@if($data->primaryauthor1[0] != null) {{ $data->primaryauthor1[0] }} @endif"
+                                                                placeholder="Enter Primary Author or
+                                                                Contributor" value="@if($data->primaryauthor1[0] != null) {{ $data->primaryauthor1[0] }} @endif"
                                                                 required>
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
@@ -384,7 +386,7 @@ $booktag = $data->booktag1;
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo.." value="@if($data->primaryauthor1[1] != null) {{ $data->primaryauthor1[1] }} @endif">
+                                                                placeholder="Enter Secondary Author" value="@if($data->primaryauthor1[1] != null) {{ $data->primaryauthor1[1] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -403,7 +405,7 @@ $booktag = $data->booktag1;
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo.." value="@if($data->primaryauthor1[2] != null) {{ $data->primaryauthor1[2] }} @endif">
+                                                                placeholder="Enter Tertiary Author" value="@if($data->primaryauthor1[2] != null) {{ $data->primaryauthor1[2] }} @endif">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -412,7 +414,7 @@ $booktag = $data->booktag1;
                                                         </div>
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4">
@@ -510,7 +512,7 @@ $booktag = $data->booktag1;
                                                         </div>
                                                     </div>
                                                 </div>
-                                               
+
                                             </div>
                                         </div>
                                     </div>
@@ -518,7 +520,7 @@ $booktag = $data->booktag1;
                             </div>
                         </div>
                     </section>
-                  
+
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -527,7 +529,7 @@ $booktag = $data->booktag1;
                             <div class="col-md-10">
                                 <div class="col-lg-12">
                                     <div class="basic-form">
-                                      
+
                                         <h4>Binding</h4>
                                         <hr>
                                         <div class="card-body">
@@ -558,13 +560,13 @@ $booktag = $data->booktag1;
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername"> Length x Breadth(in centimetres) <span
+                                                        for="validationCustomUsername"> Length x Breadth(in Centimeters) <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="length_breadth"
                                                         name="length_breadth" required>
-                                                       
+
                                                         @php
                                                           $categori = DB::table('book_dimensions')->where('status','=','1')->get();
                                                           @endphp
@@ -586,11 +588,11 @@ $booktag = $data->booktag1;
                                                     </div>
                                                 </div>
                                             </div>
-                                       
+
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Width(in centimetres) <span
+                                                        for="validationCustomUsername">Width(in Centimeters) <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
@@ -607,7 +609,7 @@ $booktag = $data->booktag1;
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Weight(in grams) <span
+                                                        for="validationCustomUsername">Weight(in Grams) <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
@@ -621,7 +623,7 @@ $booktag = $data->booktag1;
                                                     </div>
                                                 </div>
                                             </div>
-                         
+
                                         </div>
                                         <h4>Paper</h4>
                                         <hr>
@@ -634,7 +636,7 @@ $booktag = $data->booktag1;
                                                     <div class="input-group">
                                                     <select class="default-select wide form-control" id="gsm"
                                                         name="gsm" required>
-                                                    
+
                                                         @php
                                                           $categori = DB::table('book_gsm')->where('status','=','1')->get();
                                                           @endphp
@@ -659,13 +661,13 @@ $booktag = $data->booktag1;
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Type OF Paper <span
+                                                        for="validationCustomUsername">Type of Paper <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="quality"
                                                         name="quality" required>
-                                                       
+
                                                         @php
                                                           $categori = DB::table('book_papertype')->where('status','=','1')->get();
                                                           @endphp
@@ -697,7 +699,7 @@ $booktag = $data->booktag1;
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="paper_finishing"
                                                         name="paper_finishing" required>
-                                                        
+
                                                         @php
                                                           $categori = DB::table('book_paperfinishing')->where('status','=','1')->get();
                                                           @endphp
@@ -789,7 +791,7 @@ $booktag = $data->booktag1;
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <input type="text" class="form-control" id="isbn"
-                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.." value="{{$data->isbn}}  onkeyup="checkBookISBN()"
+                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.." value="{{$data->isbn}}"  onkeyup="checkBookISBN()"
                                                             required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
@@ -831,7 +833,7 @@ $booktag = $data->booktag1;
 
                                                         <select class="default-select wide form-control" id=""
                                                         name="subject" required>
-                                                      
+
                                                         @php
                                                           $categori = DB::table('book_subject')->where('status','=','1')->get();
                                                           @endphp
@@ -852,8 +854,8 @@ $booktag = $data->booktag1;
                                                     </div>
                                                 </div>
                                             </div>
-                                      
-                                          
+
+
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
@@ -865,7 +867,7 @@ $booktag = $data->booktag1;
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <input type="text" class="form-control" id="place"
-                                                            name="place" placeholder="Enter Country.." value="{{$data->place}}" required>
+                                                            name="place" placeholder="Enter Place of Origin.." value="{{$data->place}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -883,7 +885,7 @@ $booktag = $data->booktag1;
 
                                                         <select class="default-select wide form-control" id="currency_type"
                                                         name="currency_type" required>
-                                                        
+
                                                         @php
                                                           $categori = DB::table('currency_type')->where('status','=','1')->get();
                                                           @endphp
@@ -1262,7 +1264,7 @@ $booktag = $data->booktag1;
                                                                     <span class="remove">Remove image</span>
                                                                     </span>
                                                                 @endforeach
-                                                                
+
                                                     </div>
                                                 </div>
                                             </div>

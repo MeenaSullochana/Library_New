@@ -1313,7 +1313,7 @@
                             <span class="nav-text">Procurement Receipt </span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/publisher/procurement_paymrnt"> Payment Receipt Listt</a></li>
+                            <li><a href="/publisher/procurement_paymrnt"> Payment Receipt List</a></li>
 
                         </ul>
                     </li>
