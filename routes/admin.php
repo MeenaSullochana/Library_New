@@ -182,7 +182,15 @@ Route::get('/publisher_and_dis_pending_payment_list',function(){ return view('ad
 Route::get('/reviewer_all_user_payment',function(){ return view('admin.reviewer_all_user_payment');});
 Route::get('/reviewer_cencelled_payment',function(){ return view('admin.reviewer_cencelled_payment');});
 Route::get('/reviewer_pending_payment',function(){ return view('admin.reviewer_pending_payment');});
-
+// Route::get('/editreviewer/{id}',function(){ return view('editreviewerrecord');});
+Route::get('/editreviewer/{id}',[ReviewerController::class,'editreviewerrecord']);
+Route::get('/editreviewer',function(){
+    $data = Session::get('reviewer');
+    if($data !==null){
+        return view('admin.librarianreviewer_edit')->with("data",$data);
+    }
+    
+});
 
 
 
@@ -343,6 +351,7 @@ Route::put('/librarianstatus',[LibrarianController::class,'librarianstatus']);
 Route::post('/editreviewer',[ReviewerController::class,'editreviewer']);
 Route::post('/multiple-librarianstatus',[LibrarianController::class,'multiple_librarianstatus']);
 Route::post('/multiple-reviewerstatus',[ReviewerController::class,'multiple_reviewerstatus']);
+Route::get('/multimember_create',function(){ return view('admin.multimember_create');});
 
 
 

@@ -535,7 +535,7 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
-                            <h4 class="ms-5">User Name <b>User Name</b></h4>
+                            <h4 class="ms-5"><b>{{auth('publisher')->user()->publicationName}}</b></h4>
 						</div>
                         <div class="header-right d-flex align-items-center">
 							<!-- <div class="input-group search-area">

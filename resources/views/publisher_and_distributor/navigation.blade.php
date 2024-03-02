@@ -540,7 +540,7 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
-                            <h3 class="ms-5">User Name <b>Selva</b></h3>
+						<h4 class="ms-5"><b>{{auth('publisher_distributor')->user()->publicationDistributionName}}</b></h4>
 						</div>
                         <div class="header-right d-flex align-items-center">
 

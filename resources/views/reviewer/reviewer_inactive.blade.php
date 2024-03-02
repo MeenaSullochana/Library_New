@@ -216,6 +216,10 @@
                                                                 class="btn btn-success shadow btn-xs sharp me-1">
                                                                 <i class="fa fa-eye"></i>
                                                             </a>
+                                                            <a href="/reviewer/reviewer_edit/{{ $val->id }}"
+                                                                    class="btn btn-warning shadow btn-xs sharp me-1">
+                                                                    <i class="fa fa-edit"></i>
+                                                                </a>
                                                             <!-- @if ($val->reviewerType != 'public')
                                                                 <a href="/reviewer/member_edit/{{ $val->id }}"
                                                                     class="btn btn-warning shadow btn-xs sharp me-1">

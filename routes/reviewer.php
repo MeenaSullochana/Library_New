@@ -123,6 +123,11 @@ Route::prefix('reviewer')->group(function () {
     });
 
     Route::post('/editpublicreviewer',[ReviewerController::class,'editpublicreviewer']);
+    Route::get('/publicedit',function(){ return view('reviewer.publicedit');});
+    Route::get('/librarianedit',function(){ return view('reviewer.librarianedit');});
+    Route::get('/expertedit',function(){ return view('reviewer.expertedit');});
+    Route::post('/editreviewer',[ReviewerController::class,'editreviewer']);
+    Route::post('/editpublicprofile',[ReviewerController::class,'editpublicprofile']);
 
     
 });

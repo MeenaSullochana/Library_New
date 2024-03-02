@@ -98,8 +98,13 @@ Route::prefix('librarian')->group(function () {
      Route::post('/subjectupdate',[LibrarianController::class,'subjectupdate']);
      Route::post('/librarianreturnmessage',[LibrarianController::class,'librarianreturnmessage']);
 
-     
-      
+     Route::get('/library_edit',function(){ return view('librarian.library_edit');});
+     Route::post('/librarianedit',[LibrarianController::class,'librarianedit']);
 
+
+
+
+
+     
 });
 });

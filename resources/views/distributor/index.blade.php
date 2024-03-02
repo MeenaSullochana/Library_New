@@ -83,7 +83,7 @@
                                         <p class="mt-3">Lorem Ipsum is simply dummy 😎 text of the printing and
                                             typesetting industry.</p>
 
-                                        <a href="#" class="btn btn-primary btn-sm">View Profile</a>
+                                        <a href="/distributor/dist_profile_view" class="btn btn-primary btn-sm">View Profile</a>
                                     </div>
                                     <img src="images/analytics/developer_male.png" class="harry-img" alt="">
 
@@ -156,9 +156,13 @@
                                             <div class="icon-box icon-box-md bg-danger-light me-1">
                                                 <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
                                             </div>
+                                            @php
+                                                $id = auth('distributor')->user()->id;
+                                                $books = DB::table('books')->where('user_id', '=', $id)->where('book_procurement_status', '=', 1)->count();
+                                            @endphp
                                             <div class="ms-2">
-                                                <h4>5,536</h4>
-                                                <p class="mb-0">Total Book</p>
+                                                <h4>{{$books}}</h4>
+                                                <p class="mb-0">Total Apply Book</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -173,9 +177,13 @@
                                             <div class="icon-box icon-box-md bg-primary-light me-1">
                                                 <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
                                             </div>
+                                            @php
+                                                $id = auth('distributor')->user()->id;
+                                                $books1 = DB::table('books')->where('user_id', '=', $id)->where('book_status', '=', null)->where('book_procurement_status', '=', 1)->count();
+                                            @endphp
                                             <div class="ms-2">
-                                                <h4>4,613k</h4>
-                                                <p class="mb-0">Apply Book</p>
+                                                <h4>{{$books1}}</h4>
+                                                <p class="mb-0">Pending Book</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -195,9 +203,13 @@
                                             <div class="icon-box icon-box-md bg-info-light me-1">
                                                 <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
                                             </div>
+                                            @php
+                                                $id = auth('distributor')->user()->id;
+                                                $books2 = DB::table('books')->where('user_id', '=', $id)->where('book_status', '=', 0)->where('book_procurement_status', '=', 1)->count();
+                                            @endphp
                                             <div class="ms-2">
-                                                <h4>1,536k</h4>
-                                                <p class="mb-0">Pending Book</p>
+                                                <h4>{{$books2}}</h4>
+                                                <p class="mb-0">Reject Book</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -212,9 +224,13 @@
                                             <div class="icon-box icon-box-md bg-secondary-light me-1">
                                                 <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
                                             </div>
+                                            @php
+                                                $id = auth('distributor')->user()->id;
+                                                $books3 = DB::table('books')->where('user_id', '=', $id)->where('book_status', '=', 1)->where('book_procurement_status', '=', 1)->count();
+                                            @endphp
                                             <div class="ms-2">
-                                                <h4>1,536k</h4>
-                                                <p class="mb-0">Reject Book</p>
+                                                <h4>{{ $books3}}</h4>
+                                                <p class="mb-0">Selected Book</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -224,6 +240,7 @@
                             </div>
                         </div>
                     </div>
+                  
                     <div class="col-xl-12">
                         <div class="card bg-primary-light analytics-card">
                             <div class="card-body mt-4 pb-1">
@@ -300,140 +317,31 @@
                                 </div>
                             </div>
                             <div class="card-body p-0 pb-3">
-                                <ul class="country-sale dz-scroll">
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-primary  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 25.8</span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-secondary  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 18.5 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-info  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 59.5 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-success  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 60.5 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-primary  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 25.8 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-secondary  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 18.5 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-info  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 59.5 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-success  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 60.5 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-light  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 60.5 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-primary  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 25.8 </span>
-                                        </div>
-                                    </li>
-                                    <li class="d-flex">
-                                        <div class="country-flag">
-                                            <img src="images/books.png" alt="">
-                                        </div>
-                                        <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
-                                            <div class="ms-2">
-                                                <h6 class="mb-0">Book Name</h6>
-                                                <small>subtitle</small>
-                                            </div>
-                                            <span class="badge badge-secondary  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> 18.5 </span>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <ul class="country-sale dz-scroll">
+    @php
+        $id = auth('distributor')->user()->id;
+        $books = DB::table('books')->where('user_id', '=', $id)->where('book_procurement_status', '=', 1)->get();
+    @endphp
+
+    @if ($books->isEmpty())
+        <div class="text-center">No records found</div>
+    @else
+        @foreach($books as $val)
+            <li class="d-flex">
+                <div class="country-flag">
+                    <img src="{{ asset('Books/full/' . $val->full_img) }}" alt="">
+                </div>
+                <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+                    <div class="ms-2">
+                        <h6 class="mb-0">{{$val->book_title}}</h6>
+                        <small>{{$val->subtitle}}</small>
+                    </div>
+                    <span class="badge badge-primary  border-0 ms-2"><i class="fa fa-inr" aria-hidden="true"></i> {{$val->price}}</span>
+                </div>
+            </li>
+        @endforeach
+    @endif
+</ul>
                             </div>
                         </div>
                     </div>

@@ -521,4 +521,500 @@ public function editpublicreviewer(Request $req){
 
  }
 }
+
+
+public function editreviewer(Request $req){
+     
+    $validator = Validator::make($req->all(),[
+        'reviewerType'=>'required|string',
+    ]);
+    if($validator->fails()){
+        $data= [
+            'error' => $validator->errors()->first(),
+                 ];
+        return response()->json($data);  
+       
+    }
+    if($req->reviewerType == "internal"){
+     
+        $validator = Validator::make($req->all(),[
+            'reviewerType'=>'required|string',
+            'libraryType'=>'required',
+            'libraryName'=>'required|string',
+            'district'=>'required|string',
+            'librarianName'=>'required|string',
+            'subject'=>'required',
+            'phoneNumber'=>'required|string|min:10|max:10',
+            'email'=>'required',
+           
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+   
+        if(empty($req->newpassword) && empty($req->confirmpassword)) {
+        
+            // $Admin=auth('admin')->user()->first();
+            $reviewer = Reviewer::find($req->id);
+            $reviewer->reviewerType = $req->reviewerType;
+            $reviewer->name = $req->librarianName;
+         
+            $reviewer->libraryType = $req->libraryType;
+            $reviewer->libraryName = $req->libraryName;
+  
+            $reviewer->subject = $req->subject;
+            $reviewer->district = $req->district;
+            $reviewer->phoneNumber = $req->phoneNumber; 
+            if ($reviewer->email == $req->email) {
+                $reviewer->email = $req->email;
+            } else {
+                $existingReviewer = Reviewer::where('email', $req->email)->first();
+            
+                if ($existingReviewer == null) {
+                    $reviewer->email = $req->email;
+                } else {
+                    $data = [
+                        'error' => 'Email is already taken',
+                    ];
+                    return response()->json($data);
+                }
+            }
+            
+           
+          
+            if($req->profileImage !="undefined"){
+                $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
+                if(File::exists($path)){
+                 File::delete($path);
+                }
+                File::delete($path);
+                $image = $req->file('profileImage');
+                $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+                $image->move('reviewer/ProfileImage', $imagename);
+                $reviewer->profileImage = $imagename;
+              }
+       
+             $reviewer->save();
+             $user =  $reviewer->email;
+             $record =  $reviewer;
+             $password = "Your Old Password";
+            //  $rev =Mailurl::first();
+            //  $url = $rev->name . "/member/login";
+            //  $url = "http://127.0.0.1:8000/member/login";
+            //  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
+             $data = [
+                'success' => 'profile update Successfully',
+                'type' => asset("reviewer/ProfileImage/" . $reviewer->profileImage)
+            ];
+            
+            return response()->json($data);
+
+         }elseif(!empty($req->newpassword) && empty($req->confirmpassword) ){
+          
+            $data= [
+            'error' => 'please enter confirmPassword',
+                 ];
+             return response()->json($data);
+       
+         }elseif(empty($req->newpassword) && !empty($req->confirmpassword) ){
+           
+            $data= [
+            'error' => 'please enter newpassword ',
+                 ];
+             return response()->json($data);
+         }else{
+
+          if($req->newpassword == $req->confirmpassword){
+           
+            if (strlen($req->newpassword ) == 8 && strlen($req->confirmpassword) == 8) {
+                // $Admin=auth('admin')->user()->first();
+                $reviewer = Reviewer::find($req->id);
+            $reviewer->name = $req->librarianName;
+         
+            $reviewer->libraryType = $req->libraryType;
+            $reviewer->libraryName = $req->libraryName;
+  
+            $reviewer->subject = $req->subject;
+            $reviewer->district = $req->district;
+            $reviewer->phoneNumber = $req->phoneNumber; 
+                if ($reviewer->email == $req->email) {
+                    $reviewer->email = $req->email;
+                } else {
+                    $existingReviewer = Reviewer::where('email', $req->email)->first();
+                
+                    if ($existingReviewer == null) {
+                        $reviewer->email = $req->email;
+                    } else {
+                        $data = [
+                            'error' => 'Email is already taken',
+                        ];
+                        return response()->json($data);
+                    }
+                }
+                $reviewer->password=Hash::make($req->newpassword);
+                if($req->profileImage !="undefined"){
+                    $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
+                    if(File::exists($path)){
+                     File::delete($path);
+                    }
+                    File::delete($path);
+                    $image = $req->file('profileImage');
+                    $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+                    $image->move('reviewer/ProfileImage', $imagename);
+                    $reviewer->profileImage = $imagename;
+                  }
+           
+                 $reviewer->save();
+                 $user =  $reviewer->email;
+                 $record =  $reviewer;
+                 $password = $req->newpassword;
+                //  $url = "http://127.0.0.1:8000/member/login";
+                // $rev =Mailurl::first();
+                // $url = $rev->name . "/member/login";
+                //  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
+                 $data = [
+                    'success' => 'profile update Successfully',
+                    'type' => asset("reviewer/ProfileImage/" . $reviewer->profileImage)
+                ];
+                
+                return response()->json($data);
+            
+           
+          }else{
+            $data= [
+              'error' => 'newpassword must be at least 8 characters long',
+                   ];
+               return response()->json($data);
+                }
+         }else{
+          $data= [
+            'error' => 'newpassword and confirmPassword is mishmatch',
+                 ];
+             return response()->json($data);
+        }
+    }
+    }else{
+        $validator = Validator::make($req->all(),[
+            'reviewerType'=>'required|string',
+            'name'=>'required|string',
+            'subject'=>'required',
+            'designation'=>'required|string',
+            'organisationDetails'=>'required|string',
+            'phoneNumber'=>'required|string|min:10|max:10',
+            'bankName'=>'required|string',
+            'accountNumber'=>'required',
+            'branch'=>'required|string',
+            'ifscNumber'=>'required',
+            'email'=>'required',
+          
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+        if(empty($req->newpassword) && empty($req->confirmpassword)) {
+          
+            $reviewer = Reviewer::find($req->id);
+            $reviewer->name = $req->name;
+            $reviewer->subject = $req->subject;
+            $reviewer->designation = $req->designation;
+            $reviewer->bankName = $req->bankName;
+            $reviewer->accountNumber = $req->accountNumber;
+            $reviewer->branch = $req->branch;
+            $reviewer->ifscNumber = $req->ifscNumber;
+            $reviewer->organisationDetails = $req->organisationDetails;
+            if ($reviewer->email == $req->email) {
+                $reviewer->email = $req->email;
+            } else {
+                $existingReviewer = Reviewer::where('email', $req->email)->first();
+            
+                if ($existingReviewer == null) {
+                    $reviewer->email = $req->email;
+                } else {
+                    $data = [
+                        'error' => 'Email is already taken',
+                    ];
+                    return response()->json($data);
+                }
+            }
+            
+           
+            $reviewer->phoneNumber = $req->phoneNumber; 
+            if($req->profileImage !="undefined"){
+                $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
+                if(File::exists($path)){
+                 File::delete($path);
+                }
+                File::delete($path);
+                $image = $req->file('profileImage');
+                $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+                $image->move('reviewer/ProfileImage', $imagename);
+                $reviewer->profileImage = $imagename;
+              }
+       
+             $reviewer->save();
+             $user =  $reviewer->email;
+             $record =  $reviewer;
+             $password = "Your Old Password";
+            //  $rev =Mailurl::first();
+            //  $url = $rev->name . "/member/login";
+            //  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
+             $data = [
+                'success' => 'profile update Successfully',
+            ];
+            
+            return response()->json($data);
+
+         }elseif(!empty($req->newpassword) && empty($req->confirmpassword) ){
+          $data= [
+            'error' => 'please enter confirmPassword',
+                 ];
+             return response()->json($data);
+       
+         }elseif(empty($req->newpassword) && !empty($req->confirmpassword) ){
+          $data= [
+            'error' => 'please enter newpassword ',
+                 ];
+             return response()->json($data);
+         }else{
+
+          if($req->newpassword == $req->confirmpassword){
+            if (strlen($req->newpassword ) == 8 && strlen($req->confirmpassword) == 8) {
+                $Admin=auth('admin')->user()->first();
+                $reviewer = Reviewer::find($req->id);
+                $reviewer->name = $req->name;
+                $reviewer->subject = $req->subject;
+                $reviewer->designation = $req->designation;
+                $reviewer->bankName = $req->bankName;
+                $reviewer->accountNumber = $req->accountNumber;
+                $reviewer->branch = $req->branch;
+                $reviewer->ifscNumber = $req->ifscNumber;
+                $reviewer->organisationDetails = $req->organisationDetails;
+                if ($reviewer->email == $req->email) {
+                    $reviewer->email = $req->email;
+                } else {
+                    $existingReviewer = Reviewer::where('email', $req->email)->first();
+                
+                    if ($existingReviewer == null) {
+                        $reviewer->email = $req->email;
+                    } else {
+                        $data = [
+                            'error' => 'Email is already taken',
+                        ];
+                        return response()->json($data);
+                    }
+                }
+                $reviewer->password=Hash::make($req->newpassword);
+                $reviewer->phoneNumber = $req->phoneNumber; 
+                if($req->profileImage !="undefined"){
+                    $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
+                    if(File::exists($path)){
+                     File::delete($path);
+                    }
+                    File::delete($path);
+                    $image = $req->file('profileImage');
+                    $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+                    $image->move('reviewer/ProfileImage', $imagename);
+                    $reviewer->profileImage = $imagename;
+                  }
+           
+                 $reviewer->save();
+                 $user =  $reviewer->email;
+                 $record =  $reviewer;
+                 $password = $req->newpassword;
+                //  $rev =Mailurl::first();
+                //  $url = $rev->name . "/member/login";
+                //  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
+                 $data = [
+                    'success' => 'profile update Successfully',
+                ];
+                
+                return response()->json($data);
+            
+           
+          }else{
+            $data= [
+              'error' => 'Password must be at least 8 characters long',
+                   ];
+               return response()->json($data);
+                }
+         }else{
+          $data= [
+            'error' => 'Password and confirmPassword is mishmatch',
+                 ];
+             return response()->json($data);
+        }
+    }
+  
+
+}
+   
+}
+
+
+public function editpublicprofile(Request $req){
+    $validator = Validator::make($req->all(),[
+        'publicreviewername'=>'required|string',
+        'Category'=>'required',
+        'district'=>'required|string',
+        'membershipId'=>'required|string',
+        'phoneNumber'=>'required|string|min:10|max:10',
+        'email'=>'required',
+
+    ]);
+
+ 
+    if($validator->fails()){
+        $data= [
+            'error' => $validator->errors()->first(),
+                 ];
+        return response()->json($data);  
+       
+    }
+
+   if(empty($req->newpassword) && empty($req->confirmpassword)) {
+    $reviewer = Reviewer::find($req->id);
+ 
+    $reviewer->name = $req->publicreviewername;
+    $reviewer->Category = $req->Category;
+    $reviewer->membershipId = $req->membershipId;
+    $reviewer->district = $req->district;
+    $reviewer->phoneNumber = $req->phoneNumber;  
+    if ($reviewer->email == $req->email) {
+        $reviewer->email = $req->email;
+    } else {
+        $existingReviewer = Reviewer::where('email','=', $req->email)->first();
+    
+        if ($existingReviewer == null) {
+            $reviewer->email = $req->email;
+        } else {
+            $data = [
+                'error' => 'Email is already taken',
+            ];
+            return response()->json($data);
+        }
+    }
+    
+   
+    if($req->profileImage !="undefined"){
+        $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
+        if(File::exists($path)){
+         File::delete($path);
+        }
+        File::delete($path);
+        $image = $req->file('profileImage');
+        $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+        $image->move('reviewer/ProfileImage', $imagename);
+        $reviewer->profileImage = $imagename;
+      }
+
+     $reviewer->save();
+    //  $user =  $reviewer->email;
+    //  $record =  $reviewer;
+    //  $password = "Your Old Password";
+ 
+    //  $rev =Mailurl::first();
+   
+    //  $url = $rev->name . "/member/login";
+    //  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
+     $data = [
+        'success' => 'Reviewer update Successfully',
+       
+    ];
+    
+    return response()->json($data);
+
+ }elseif(!empty($req->newpassword) && empty($req->confirmpassword) ){
+   
+  $data= [
+    'error' => 'please enter confirmPassword',
+         ];
+     return response()->json($data);
+
+ }elseif(empty($req->newpassword) && !empty($req->confirmpassword) ){
+  
+
+  $data= [
+    'error' => 'please enter newpassword ',
+         ];
+     return response()->json($data);
+ }else{
+
+  if($req->newpassword == $req->confirmpassword){
+    
+
+    if (strlen($req->newpassword ) == 8 && strlen($req->confirmpassword) == 8) {
+        $reviewer = Reviewer::find($req->id);
+        $reviewer->name = $req->publicreviewername;
+        $reviewer->Category = $req->Category;
+        $reviewer->membershipId = $req->membershipId;
+        $reviewer->district = $req->district;
+        $reviewer->phoneNumber = $req->phoneNumber; 
+        if ($reviewer->email == $req->email) {
+            $reviewer->email = $req->email;
+        } else {
+            $existingReviewer = Reviewer::where('email', $req->email)->first();
+        
+            if ($existingReviewer == null) {
+                $reviewer->email = $req->email;
+            } else {
+                $data = [
+                    'error' => 'Email is already taken',
+                ];
+                return response()->json($data);
+            }
+        }
+        $reviewer->password=Hash::make($req->newpassword);
+        if($req->profileImage !="undefined"){
+            $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
+            if(File::exists($path)){
+             File::delete($path);
+            }
+            File::delete($path);
+            $image = $req->file('profileImage');
+            $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+            $image->move('reviewer/ProfileImage', $imagename);
+            $reviewer->profileImage = $imagename;
+          }
+   
+         $reviewer->save();
+        //  $user =  $reviewer->email;
+        //  $record =  $reviewer;
+        //  $password = $req->newpassword;
+        //  $rev =Mailurl::first();
+   
+        //   $url = $rev->name . "/member/login";
+        //  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
+         $data = [
+            'success' => 'Reviewer update Successfully',
+          
+        ];
+        
+        return response()->json($data);
+    
+   
+  }else{
+    $data= [
+      'error' => 'Newpassword must be at least 8 characters long',
+           ];
+       return response()->json($data);
+        }
+ }else{
+  $data= [
+    'error' => 'Newpassword and confirmPassword is mishmatch',
+         ];
+     return response()->json($data);
+}
+
+ }
+}
+
+
 }

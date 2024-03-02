@@ -44,7 +44,7 @@ class ReviewerController extends Controller
                 'libraryName'=>'required|string',
                 'district'=>'required|string',
                 'librarianName'=>'required|string',
-                'Batch'=>'required|string',
+            
                 'subject'=>'required',
                 'phoneNumber'=>'required|string|min:10|max:10',
                 'email'=>'required|unique:reviewer',
@@ -65,7 +65,7 @@ class ReviewerController extends Controller
                 $reviewer=new Reviewer();
                 $reviewer->reviewerType = $req->reviewerType;
                 $reviewer->name = $req->librarianName;
-                $reviewer->Batch = $req->Batch;
+             
                 $reviewer->libraryType = $req->libraryType;
                 $reviewer->libraryName = $req->libraryName;
                 $reviewer->email = $req->email;
@@ -250,15 +250,16 @@ public function reviewerstatus(Request $req){
        
     }
     if($req->reviewerType == "internal"){
+     
         $validator = Validator::make($req->all(),[
             'reviewerType'=>'required|string',
-            'name'=>'required|string',
+            'libraryType'=>'required',
+            'libraryName'=>'required|string',
+            'district'=>'required|string',
+            'librarianName'=>'required|string',
             'subject'=>'required',
-            'designation'=>'required|string',
-            'organisationDetails'=>'required|string',
             'phoneNumber'=>'required|string|min:10|max:10',
             'email'=>'required',
-            'profileImage'=>'required',
            
         ]);
         if($validator->fails()){
@@ -269,13 +270,19 @@ public function reviewerstatus(Request $req){
            
         }
    
-        if(empty($req->newpassword) && empty($confirmpassword)) {
+        if(empty($req->newpassword) && empty($req->confirmpassword)) {
+        
             $Admin=auth('admin')->user()->first();
             $reviewer = Reviewer::find($req->id);
-            $reviewer->name = $req->name;
+            $reviewer->reviewerType = $req->reviewerType;
+            $reviewer->name = $req->librarianName;
+         
+            $reviewer->libraryType = $req->libraryType;
+            $reviewer->libraryName = $req->libraryName;
+  
             $reviewer->subject = $req->subject;
-            $reviewer->designation = $req->designation;
-            $reviewer->organisationDetails = $req->organisationDetails;
+            $reviewer->district = $req->district;
+            $reviewer->phoneNumber = $req->phoneNumber; 
             if ($reviewer->email == $req->email) {
                 $reviewer->email = $req->email;
             } else {
@@ -292,7 +299,7 @@ public function reviewerstatus(Request $req){
             }
             
            
-            $reviewer->phoneNumber = $req->phoneNumber; 
+          
             if($req->profileImage !="undefined"){
                 $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
                 if(File::exists($path)){
@@ -321,26 +328,33 @@ public function reviewerstatus(Request $req){
             return response()->json($data);
 
          }elseif(!empty($req->newpassword) && empty($req->confirmpassword) ){
-          $data= [
+          
+            $data= [
             'error' => 'please enter confirmPassword',
                  ];
              return response()->json($data);
        
          }elseif(empty($req->newpassword) && !empty($req->confirmpassword) ){
-          $data= [
+           
+            $data= [
             'error' => 'please enter newpassword ',
                  ];
              return response()->json($data);
          }else{
 
           if($req->newpassword == $req->confirmpassword){
+           
             if (strlen($req->newpassword ) == 8 && strlen($req->confirmpassword) == 8) {
                 $Admin=auth('admin')->user()->first();
                 $reviewer = Reviewer::find($req->id);
-                $reviewer->name = $req->name;
-                $reviewer->subject = $req->subject;
-                $reviewer->designation = $req->designation;
-                $reviewer->organisationDetails = $req->organisationDetails;
+            $reviewer->name = $req->librarianName;
+         
+            $reviewer->libraryType = $req->libraryType;
+            $reviewer->libraryName = $req->libraryName;
+  
+            $reviewer->subject = $req->subject;
+            $reviewer->district = $req->district;
+            $reviewer->phoneNumber = $req->phoneNumber; 
                 if ($reviewer->email == $req->email) {
                     $reviewer->email = $req->email;
                 } else {
@@ -356,7 +370,6 @@ public function reviewerstatus(Request $req){
                     }
                 }
                 $reviewer->password=Hash::make($req->newpassword);
-                $reviewer->phoneNumber = $req->phoneNumber; 
                 if($req->profileImage !="undefined"){
                     $path = 'reviewer/ProfileImage/'.$reviewer->profileImage;
                     if(File::exists($path)){
@@ -387,13 +400,13 @@ public function reviewerstatus(Request $req){
            
           }else{
             $data= [
-              'error' => 'Password must be at least 8 characters long',
+              'error' => 'newpassword must be at least 8 characters long',
                    ];
                return response()->json($data);
                 }
          }else{
           $data= [
-            'error' => 'Password and confirmPassword is mishmatch',
+            'error' => 'newpassword and confirmPassword is mishmatch',
                  ];
              return response()->json($data);
         }
@@ -410,9 +423,8 @@ public function reviewerstatus(Request $req){
             'accountNumber'=>'required',
             'branch'=>'required|string',
             'ifscNumber'=>'required',
-            'email'=>'required|unique:reviewer',
-            'profileImage'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'password'=>'required|min:8|max:8',
+            'email'=>'required',
+          
         ]);
         if($validator->fails()){
             $data= [
@@ -421,7 +433,7 @@ public function reviewerstatus(Request $req){
             return response()->json($data);  
            
         }
-        if(empty($req->newpassword) && empty($confirmpassword)) {
+        if(empty($req->newpassword) && empty($req->confirmpassword)) {
           
             $reviewer = Reviewer::find($req->id);
             $reviewer->name = $req->name;
@@ -464,12 +476,12 @@ public function reviewerstatus(Request $req){
              $reviewer->save();
              $user =  $reviewer->email;
              $record =  $reviewer;
-             $password = "########";
-             $url = "http://127.0.0.1:8000/member/login";
+             $password = "Your Old Password";
+             $rev =Mailurl::first();
+             $url = $rev->name . "/member/login";
              Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
              $data = [
                 'success' => 'Reviewer update Successfully',
-                'type' => asset("reviewer/ProfileImage/" . $reviewer->profileImage)
             ];
             
             return response()->json($data);
@@ -531,11 +543,11 @@ public function reviewerstatus(Request $req){
                  $user =  $reviewer->email;
                  $record =  $reviewer;
                  $password = $req->newpassword;
-                 $url = "http://127.0.0.1:8000/member/login";
+                 $rev =Mailurl::first();
+                 $url = $rev->name . "/member/login";
                  Notification::route('mail',$reviewer->email)->notify(new MemberupdateNotification($user, $url,$record,$password));  
                  $data = [
                     'success' => 'Reviewer update Successfully',
-                    'type' => asset("reviewer/ProfileImage/" . $reviewer->profileImage)
                 ];
                 
                 return response()->json($data);
@@ -559,7 +571,15 @@ public function reviewerstatus(Request $req){
 }
    
 }
-    
+
+
+public function editreviewerrecord($id){
+    $reviewer= Reviewer::find($id);
+    \Session::put('reviewer', $reviewer);
+    return redirect('/admin/editreviewer'); 
+
+   }
+
 public function publicedit(Request $req){
      
 

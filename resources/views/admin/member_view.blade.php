@@ -129,7 +129,19 @@
 
                                             <tr>
                                                 <th scope="row">Reviwer type:</th>
-                                                <td><span class="badge bg-primary">{{$data->reviewerType}}</span></td>
+
+                                                @if ($data->reviewerType == 'internal')
+                                                <td><span class="badge bg-primary">Librarian</span></td>
+
+                                                            
+                                                            @elseif ($data->reviewerType == 'external')
+                                                            <td><span class="badge bg-primary">Expert</span></td>
+
+                                                            @else
+                                                            <td><span class="badge bg-primary">Public</span></td>
+
+                                                            @endif
+
                                             </tr>
                                             <tr>
                                                <th scope="row">Reviwer Id:</th>
@@ -139,7 +151,7 @@
                                                 <th scope="row">Name:</th>
                                                 <td>{{$data->name}}</td>
                                             </tr>
-                                            @if($data->reviewerType != "public")
+                                            @if($data->reviewerType == "external")
                                             <tr>
                                                 <th scope="row">Designation:</th>
                                                 <td> {{$data->designation}} </td>
@@ -153,10 +165,31 @@
                                                 <td> {{$data->subject}}</td>
                                             </tr>
                                             @endif
+
+                                            @if($data->reviewerType == "internal")
+                                            <tr>
+                                                <th scope="row">Library Type:</th>
+                                                <td> {{$data->libraryType}} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Library Name:</th>
+                                                <td> {{$data->libraryName}} </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">District:</th>
+                                                <td> {{$data->district}}</td>
+                                            </tr>
+                                          
+                                            @endif
                                             @if($data->reviewerType == "public")
                                             <tr>
                                                 <th scope="row">District:</th>
                                                 <td> {{$data->district}} </td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">Category:</th>
+                                                <td> {{$data->Category}}</td>
                                             </tr>
                                             <tr>
                                                 <th scope="row">Membership Id:</th>
@@ -224,7 +257,17 @@
                                                 <tbody>
                                                 <tr>
                                                 <th scope="row">Reviwer type:</th>
-                                                <td><span class="badge bg-primary">{{$data->reviewerType}}</span></td>
+                                                @if ($data->reviewerType == 'internal')
+                                                <td><span class="badge bg-primary">Librarian</span></td>
+
+                                                            
+                                                            @elseif ($data->reviewerType == 'external')
+                                                            <td><span class="badge bg-primary">Expert</span></td>
+
+                                                            @else
+                                                            <td><span class="badge bg-primary">Public</span></td>
+
+                                                            @endif
                                             </tr>
                                             <tr>
                                                <th scope="row">Reviwer Id:</th>

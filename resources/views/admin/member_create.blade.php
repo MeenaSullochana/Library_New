@@ -320,10 +320,10 @@
                                                 <div class="row">
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">Library Type<span
-                                 class="text-danger maditory">*</span></label>
+                                                          class="text-danger maditory">*</span></label>
                                                         <select name="library_type" id="libraryType1" class="form-select" Required>
                                                         <option value="">Select One<span
-                                 class="text-danger maditory">*</span></option>
+                                                          class="text-danger maditory">*</span></option>
                                                         @php
                                                           $categori = DB::table('library_types')->where('status','=','1')->get();
                                                           @endphp
@@ -336,25 +336,25 @@
 
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">Library Name<span
-                                 class="text-danger maditory">*</span></label>
+                                                       class="text-danger maditory">*</span></label>
                                                         <input type="text" class="form-control" placeholder="Enter Library Name" id="libraryName1" Required>
-</div>
+                                          </div>
                                                     <div class="col-sm-6 mb-3">
                                                      <label class="form-label">Subject<span
-                                 class="text-danger maditory">*</span></label>
-                                 <select id="limit-selection" name=subject[] multiple class="select2">
-                                 @php
+                                                       class="text-danger maditory">*</span></label>
+                                                       <select id="limit-selection" name=subject[] multiple class="select2">
+                                                           @php
                                                           $categori = DB::table('book_subject')->where('status','=','1')->get();
                                                           @endphp
                                                           @foreach($categori as $val)
                                                             <option value="{{$val->name}}">{{$val->name}}</option>
 
                                                             @endforeach
-</select>
+                                                       </select>
                                                     </div>
                                                     <div class="col-sm-6 mb-3">
                                                      <label class="form-label">State<span
-                                 class="text-danger maditory">*</span></label>
+                                                                class="text-danger maditory">*</span></label>
                                                         <select name="library_type" class="form-select" id="state" Required>
                                                            <option value="">Select State</option>
 
@@ -386,12 +386,12 @@
                                                     </div>
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">City<span
-                                 class="text-danger maditory">*</span></label>
+                                                         class="text-danger maditory">*</span></label>
                                                         <input type="text" class="form-control" placeholder="Enter City" id="city" Required>
                                                     </div>
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">Village<span
-                                 class="text-danger maditory">*</span></label>
+                                                          class="text-danger maditory">*</span></label>
                                                         <input type="text" class="form-control" placeholder="Enter Village" id="Village" Required>
                                                     </div>
                                                 </div>
