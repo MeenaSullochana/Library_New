@@ -296,57 +296,55 @@
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
                                                             <h5 class="f-w-500">Users Name <span
-                                                                    class="pull-end">:</span>
+                                                                    class="pull-end"></span>
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>Name</span>
+                                                            <span>: <b class="ms-3">{{$data->userName}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
                                                             <h5 class="f-w-500">First Name <span
-                                                                    class="pull-end">:</span>
+                                                                    class="pull-end"></span>
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->firstName}} </span>
+                                                            <span>: <b class="ms-3">{{$data->firstName}} </b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Last Name <span
-                                                                    class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">Last Name </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->lastName}}</span>
+                                                            <span>: <b class="ms-3">{{$data->lastName}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Email ID <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Email ID
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->email}}</span>
+                                                            <span>: <b class="ms-3">{{$data->email}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Contact Number <span
-                                                                    class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">Contact Number</h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->mobileNumber}}</span>
+                                                            <span>: <b class="ms-3">{{$data->mobileNumber}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Address <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Address
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->publicationAddress}}</span>
+                                                            <span>: <b class="ms-3">{{$data->publicationAddress}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
@@ -355,43 +353,43 @@
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->city}}</span>
+                                                            <span>: <b class="ms-3">{{$data->city}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">District <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">District
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->District}}</span>
+                                                            <span>: <b class="ms-3">{{$data->District}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">State <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">State
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->state}}</span>
+                                                            <span>: <b class="ms-3">{{$data->state}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pin Code <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Pin Code
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->postalCode}}</span>
+                                                            <span>: <b class="ms-3">{{$data->postalCode}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Country<span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Country
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->country}}</span>
+                                                            <span>: <b class="ms-3">{{$data->country}}</b></span>
                                                         </div>
                                                     </div>
                                                     <h4 class="text-primary mb-4">Contact Person Information</h4>
@@ -402,106 +400,103 @@
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactName}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactName}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Email ID<span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Email ID
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactEmail}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactEmail}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Contact Number<span
-                                                                    class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">Contact Number</h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactMobileNumber}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactMobileNumber}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Address<span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Address
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactAddress}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactAddress}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">City<span class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">City<span class="pull-end"></h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactCity}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactCity}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">District<span class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">District</h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactDistrict}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactDistrict}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">State <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">State
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactState}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactState}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pin Code<span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Pin Code
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactPostalCode}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactPostalCode}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Country<span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Country
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
-                                                            <span>{{$data->contactCountry}}</span>
+                                                            <span>: <b class="ms-3">{{$data->contactCountry}}</b></span>
                                                         </div>
                                                     </div>
                                                     <h4 class="text-primary mb-4">Publications Other Info</h4>
                                                     <hr>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-6 col-5">
-                                                            <h5 class="f-w-500">Year of Establishment<span
-                                                                    class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">Year of Establishment</h5>
                                                         </div>
                                                         <div class="col-sm-6 col-7">
-                                                            <span>{{$data->yearOfEstablishment}}</span>
+                                                            <span>: <b class="ms-3">{{$data->yearOfEstablishment}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-6 col-5">
-                                                            <h5 class="f-w-500">Number of Books Published So For<span
-                                                                    class="pull-end">:</span></h5>
+                                                            <h5 class="f-w-500">Number of Books Published So For</h5>
                                                         </div>
                                                         <div class="col-sm-6 col-7">
-                                                            <span>{{$data->bookCountSoFar}}</span>
+                                                            <span>: <b class="ms-3">{{$data->bookCountSoFar}}</b></span>
                                                         </div>
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-6 col-5">
                                                             <h5 class="f-w-500">Number of Books Published Latest
-                                                                Year<span class="pull-end">:</span></h5>
+                                                                Year</h5>
                                                         </div>
                                                         <div class="col-sm-6 col-7">
-                                                            <span>{{$data->bookCountLast3}}</span>
+                                                            <span>: <b class="ms-3">{{$data->bookCountLast3}}</b></span>
                                                         </div>
                                                     </div>
 
@@ -633,7 +628,7 @@
                                 <h4 class="text-primary">Best 5 Translated Books</h4>
                             </div>
                             <div class="card-body">
-                                <table id="example3" class="display table" style="min-width: 845px">
+                                <table id="myTable" class="display table" style="min-width: 845px">
                                     <thead>
                                         <tr>
                                             <th>Book Title</th>
@@ -675,7 +670,7 @@
                                 <h4 class="text-primary">Awarded Titles in The Publication</h4>
                             </div>
                             <div class="card-body">
-                                <table id="example3" class="display table" style="min-width: 845px">
+                                <table id="awarded-titles" class="display table" style="min-width: 845px">
                                     <thead>
                                         <tr>
                                             <th>Award Name</th>
@@ -714,7 +709,7 @@
 
                             <div class="card-body">
                             <h5 class="es-5">{{$data->haveSubsidiary}}</h5>
-                                <table id="example1" class="display table" style="min-width: 845px">
+                                <table id="subsidiary-pub" class="display table" style="min-width: 845px">
                                     <thead>
                                         <tr>
                                             <th class="fw-bold">name of the subsidiary publication</th>
@@ -961,7 +956,29 @@
     }
   };
 </script>
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable({
+            "processing": true,
+            "serverSide": true,
 
+        });
+    });
+    $(document).ready(function() {
+        $('#awarded-titles').DataTable({
+            "processing": true,
+            "serverSide": true,
+
+        });
+    });
+    $(document).ready(function() {
+        $('#subsidiary-pub').DataTable({
+            "processing": true,
+            "serverSide": true,
+
+        });
+    });
+</script>
 
 </html>
 

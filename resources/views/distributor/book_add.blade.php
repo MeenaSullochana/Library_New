@@ -98,14 +98,14 @@
 
                                                 </div>
                                             </div>
-                                    
+
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </section>
-                  
+
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -177,7 +177,7 @@
                                                                             class="text-danger maditory"></span></th>
                                                                     <th> Current Series Number<span
                                                                             class="text-danger maditory"></span></th>
-                                                                    <th>Total Number Of Series <span
+                                                                    <th>Total Number of Series <span
                                                                             class="text-danger maditory"></span></th>
 
                                                                     {{-- <th>Add</th> --}}
@@ -195,7 +195,7 @@
                                                                             placeholder="Current Series Number"
                                                                             class="form-control" ></td>
                                                                     <td><input type="text" name="isbn_number[]"
-                                                                            placeholder="Total Number Series"
+                                                                            placeholder="Total Number of Series"
                                                                             class="form-control" ></td>
 
                                                                     {{-- <td><button type="button" class="btn btn-success"
@@ -237,7 +237,7 @@
                                                                             class="text-danger maditory"></span></th>
                                                                     <th>Current  Volume Number <span
                                                                             class="text-danger maditory"></span></th>
-                                                                    <th>Total Number Of Volume <span
+                                                                    <th>Total Number of Volume <span
                                                                             class="text-danger maditory"></span></th>
 
                                                                     {{-- <th>Add</th> --}}
@@ -252,7 +252,7 @@
                                                                             placeholder="Current  Volume Number"
                                                                             class="form-control" ></td></td>
                                                                     <td><input type="text" name="isbn_number1[]"
-                                                                            placeholder="Total Number Volume"
+                                                                            placeholder="Total Number of Volume"
                                                                             class="form-control" ></td>
 
                                                                     {{-- <td><button type="button" class="btn btn-success"
@@ -315,7 +315,7 @@
                                             <div class="input-group">
                                                 <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                 <input type="text" class="form-control" id="edition_number"
-                                                    name="edition_number" placeholder="Enter the Series..">
+                                                    name="edition_number" placeholder="Enter the Edition Number..">
                                                 <!-- <div class="invalid-feedback">
                                                         Edition Number cannot be edited agter your book has been
                                                         published.
@@ -331,7 +331,7 @@
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Book Author Detail</h4>
+                                <h4>Book Author Details</h4>
                             </div>
                             <div class="col-md-10">
                                 <P class="fs-4">Enter the primary author or contributor. Pen names are allowed.
@@ -378,7 +378,7 @@
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
                                                         <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Primary Author Or
+                                                            for="validationCustomUsername">Primary Author or
                                                             Contributor
                                                             <span class="text-danger">*</span></label>
                                                         <div class="input-group">
@@ -406,7 +406,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo..">
+                                                                placeholder="Enter Secondary Author..">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -425,7 +425,7 @@
 
                                                             <input type="text" class="form-control"
                                                                 id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author Or Contributo..">
+                                                                placeholder="Enter Tertiary Author..">
                                                             <div class="invalid-feedback">
                                                                 Book Title cannot be edited agter your book has been
                                                                 published.
@@ -650,7 +650,7 @@
                         <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Publication Dedails</h4>
+                                <h4>Publication Details</h4>
                             </div>
                             <div class="col-md-10">
 
@@ -659,16 +659,16 @@
                                         <div class="mb-3">
                                             <label class="text-label form-label text-black"
                                                 for="validationCustomUsername">
-                                                Name Of Publisher <span class="text-danger">*</span></label>
+                                                Name of Publisher <span class="text-danger">*</span></label>
                                                 @if(auth('publisher')->user())
                                                     <div class="input-group">
                                                 <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
+                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
                                                   >
                                                     @else
                                                     <div class="input-group">
                                                 <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name Of Publisher" required
+                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" required
                                                   >
                                                     @endif
 
@@ -678,10 +678,10 @@
                                         </div>
                                         <div class="mb-3">
                                             <label class="text-label form-label text-black"
-                                            for="validationCustomUsername"> Year Of Publication
+                                            for="validationCustomUsername"> Year of Publication
                                             <span class="text-danger">*</span> </label>
                                             <div class="input-group transparent-append">
-                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
+                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
                                             </div>
                                         </div>
                                     </div>
@@ -837,14 +837,13 @@
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername"> Length x Breadth(in centimetres) <span
+                                                        for="validationCustomUsername"> Length x Breadth(in Centimeters) <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="length_breadth"
                                                         name="length_breadth" required>
-                                                        <option value="">Select One<span
-                                 class="text-danger maditory">*</span></option>
+                                                        <option value="">Select One</option>
                                                         @php
                                                           $categori = DB::table('book_dimensions')->where('status','=','1')->get();
                                                           @endphp
@@ -866,7 +865,7 @@
                                             <!-- <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Width(in centimetres) <span
+                                                        for="validationCustomUsername">Width(in Centimeters) <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
@@ -884,7 +883,7 @@
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Width(in centimetres) <span
+                                                        for="validationCustomUsername">Width(in Centimeters) <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
@@ -924,7 +923,7 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <input type="number" class="form-control" id="size" step="0.01"
                                                             name="size" placeholder="Enter weight.." required>
-                                                       
+
                                                     </div>
                                                 </div>
                                             </div> --}}
@@ -940,8 +939,7 @@
                                                     <div class="input-group">
                                                     <select class="default-select wide form-control" id="gsm"
                                                         name="gsm" required>
-                                                        <option value="">Select One<span
-                                 class="text-danger maditory">*</span></option>
+                                                        <option value="">Select One</option>
                                                         @php
                                                           $categori = DB::table('book_gsm')->where('status','=','1')->get();
                                                           @endphp
@@ -963,14 +961,13 @@
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Type OF Paper <span
+                                                        for="validationCustomUsername">Type of Paper <span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="quality"
                                                         name="quality" required>
-                                                        <option value="">Select One<span
-                                                                 class="text-danger maditory">*</span></option>
+                                                        <option value="">Select One</option>
                                                         @php
                                                           $categori = DB::table('book_papertype')->where('status','=','1')->get();
                                                           @endphp
@@ -999,8 +996,7 @@
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
                                                         <select class="default-select wide form-control" id="paper_finishing"
                                                         name="paper_finishing" required>
-                                                        <option value="">Select One<span
-                                                                 class="text-danger maditory">*</span></option>
+                                                        <option value="">Select One</option>
                                                         @php
                                                           $categori = DB::table('book_paperfinishing')->where('status','=','1')->get();
                                                           @endphp
@@ -1124,8 +1120,7 @@
                                                             class="text-danger">*</span></label>
                                                     <select class="default-select wide form-control" id="category"
                                                         name="category" required>
-                                                        <option value="">Select One<span
-                                 class="text-danger maditory">*</span></option>
+                                                        <option value="">Select One</option>
                                                         @php
                                                           $categori = DB::table('special_categories')->where('status','=','1')->get();
                                                           @endphp
@@ -1146,8 +1141,7 @@
 
                                                         <select class="default-select wide form-control" id=""
                                                         name="subject" required>
-                                                        <option value="">Select One<span
-                                                        class="text-danger maditory">*</span></option>
+                                                        <option value="">Select One</option>
                                                         @php
                                                           $categori = DB::table('book_subject')->where('status','=','1')->get();
                                                           @endphp
@@ -1156,6 +1150,24 @@
 
                                                             @endforeach
                                                     </select>
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Place of Origin<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                        <input type="text" class="form-control" id="place"
+                                                            name="place" placeholder="Enter Place of Origin.." required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -1198,24 +1210,7 @@
                                             </div> -->
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Place of Origin<span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                                        <input type="text" class="form-control" id="place"
-                                                            name="place" placeholder="Enter Country.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
@@ -1225,8 +1220,7 @@
 
                                                         <select class="default-select wide form-control" id="currency_type"
                                                         name="currency_type" required>
-                                                        <option value="">Select One<span
-                                                        class="text-danger maditory">*</span></option>
+                                                        <option value="">Select One</option>
                                                         @php
                                                           $categori = DB::table('currency_type')->where('status','=','1')->get();
                                                           @endphp
@@ -1260,7 +1254,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black" for="validationCustomUsername">Short Description <span class="text-danger">*</span></label><br>
                                                     <span class="text-danger">Note: </span>Few lines only
@@ -1287,10 +1281,10 @@
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Primary Language of the book</h4>
+                                <h4>Primary Language of the Book</h4>
                             </div>
                             <div class="col-md-6 form-group">
-                            <label for="text">Primary Language of the book<span class="text-danger maditory">*</span></label></label>
+                            <label for="text">Primary Language of the Book<span class="text-danger maditory">*</span></label></label>
 
                             <div class="custom-control custom-radio">
                                 <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" required>
@@ -1501,7 +1495,7 @@
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>About the author</h4>
+                                <h4>About the Author</h4>
                             </div>
                             <div class="col-md-10">
                                 <P class="fs-4">Please give a brief description about the author.</a>
@@ -1895,12 +1889,12 @@ $(document).ready(function () {
         $("#submitbutton").click(function (event) {
             var description = document.getElementById('width').value;
 
-          
+
             if (!description) {
                 toastr.error('Please enter Width.');
                 event.preventDefault();
             }
-            
+
         });
     });
 
@@ -1924,9 +1918,9 @@ $(document).ready(function () {
                     isValid = true;
                 }
                 if (!isValid) {
-                    event.preventDefault(); 
+                    event.preventDefault();
                     toastr.error('Please fill in all Series filed.');
-                   
+
                     return;
                 }
             }
@@ -1952,9 +1946,9 @@ $(document).ready(function () {
                     isValid = true;
                 }
                 if (!isValid) {
-                    event.preventDefault(); 
+                    event.preventDefault();
                     toastr.error('Please fill in all volume filed.');
-                   
+
                     return;
                 }
             }
@@ -2405,7 +2399,7 @@ $(document).ready(function () {
         console.log(bookisbn);
         $.ajax({
             type: 'POST',
-            url: '/distributor/isbn', 
+            url: '/distributor/isbn',
             data: {
                 '_token': '{{ csrf_token() }}',
                 'bookisbn': bookisbn
@@ -2430,14 +2424,14 @@ $(document).ready(function () {
             toastr.error(errorSpan.text());
         } else {
             errorSpan.text('');
-            // document.forms[0].submit(); 
+            // document.forms[0].submit();
         }
     }
 
     $(document).ready(function() {
         $('#submitbutton').on('click', submitForm);
     });
-</script> 
+</script>
 
 
 
@@ -2646,6 +2640,8 @@ function numberOnly(id) {
         transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
         color: #999;
     }
-
+    .table thead th{
+        text-transform: initial !important;
+    }
     /* image uplode end */
 </style>

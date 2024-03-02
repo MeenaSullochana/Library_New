@@ -184,7 +184,7 @@
                                     <div class="position-relative">
                                         <div class="card p-2 text-center">
                                             <h6>Please enter the one time otp<br> to verify your account</h6>
-                                            
+
                                             <div> <span>A code has been sent to</span> <small id="emailPlaceholder">{{$data->email}}</small> </div>
                                             <h1>Welcome Back!</h1>
                                             <p>It looks like you're trying to login from a new device. As an added security mesure, please enter the 4-character code sent to your email.</p>
