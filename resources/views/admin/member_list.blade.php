@@ -113,7 +113,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Role Type: activate to sort column ascending"
-                                                    style="width: 65.3594px;">Role Type</th>
+                                                    style="width: 65.3594px;">Reviewer Type</th>
                                                 <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending"
@@ -180,9 +180,22 @@
                                                     </td>
                                                     <td><a href="javascript:void(0)"
                                                             class="text-primary">{{ $val->phoneNumber }}</a></td>
+                                                    
+                                                    @if ($val->reviewerType == 'internal')
                                                     <td>
-                                                        <span>{{ $val->reviewerType }}</span>
+                                                        <span>Librarian </span>
                                                     </td>
+                                                            
+                                                            @elseif ($val->reviewerType == 'external')
+                                                            <td>
+                                                        <span>Expert </span>
+                                                    </td>
+                                                            @else
+                                                            <td>
+                                                        <span>Public </span>
+                                                    </td>
+                                                            @endif
+
                                                     <td class="sorting_1">
                                                         <div class="form-check form-switch id="load">
                                                             <input class="form-check-input toggle-class" type="checkbox"
@@ -215,16 +228,22 @@
                                                                 class="btn btn-success shadow btn-xs sharp me-1">
                                                                 <i class="fa fa-eye"></i>
                                                             </a>
-                                                            @if ($val->reviewerType != 'public')
+                                                            @if ($val->reviewerType == 'internal')
+                                                            <a href="/admin/editreviewer/{{ $val->id }}"
+                                                                    class="btn btn-warning shadow btn-xs sharp me-1">
+                                                                    <i class="fa fa-edit"></i>
+                                                                </a>
+                                                            
+                                                            @elseif ($val->reviewerType == 'external')
                                                                 <a href="/admin/member_edit/{{ $val->id }}"
                                                                     class="btn btn-warning shadow btn-xs sharp me-1">
                                                                     <i class="fa fa-edit"></i>
                                                                 </a>
                                                             @else
-                                                                <a href="/admin/member_publicedit/{{ $val->id }}"
+                                                                <!-- <a href="/admin/member_publicedit/{{ $val->id }}"
                                                                     class="btn btn-warning shadow btn-xs sharp me-1">
                                                                     <i class="fa fa-edit"></i>
-                                                                </a>
+                                                                </a> -->
                                                             @endif
 
 

@@ -121,7 +121,7 @@ class ForgotPasswordController extends Controller
                     $record1=reviewer::where('email', '=', $request->email)->where('status', '=', '1')->first();
                     $user = $request->email;
                     $rev =Mailurl::first();
-                    $url = $rev->name ."/forgotform/$user/$request->usertype";
+                    $url = $rev->name ."/member/forgot/$user/$request->usertype";
         
                         if($record1 !== null){
                           
@@ -153,7 +153,7 @@ class ForgotPasswordController extends Controller
                     $record1=Librarian::where('email', '=', $request->email)->where('status', '=', '1')->first();
                     $user = $request->email;
                     $rev =Mailurl::first();
-                    $url = $rev->name ."/forgotform/$user/$request->usertype";
+                    $url = $rev->name ."/member/forgot/$user/$request->usertype";
         
                         if($record1 !== null){
                           

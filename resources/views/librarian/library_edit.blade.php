@@ -18,9 +18,9 @@
     <!-- PAGE TITLE HERE -->
     <title>Government of Tamil Nadu - Book Procurement </title>
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
     <?php
-        include "admin/plugin/plugin_css.php";
+        include "librarian/plugin/plugin_css.php";
     ?>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
 
@@ -47,7 +47,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        @include ('admin.navigation')
+        @include ('librarian.navigation')
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -67,6 +67,13 @@
                         </div>
                     </div>
                 </div>
+                @php
+    $id = auth('librarian')->user()->id;
+    $data = DB::table('librarians')->find($id);
+    $data->subject1= json_decode($data->subject); 
+@endphp
+
+
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
@@ -99,8 +106,6 @@
                                                        class="text-danger maditory">*</span></label>
                                                         <input type="text" class="form-control" placeholder="Enter Library Name" value="{{$data->libraryName}}" id="libraryName" Required>
                                           </div>
-
-                                          
                                           <div class="col-sm-6 mb-3">
                                                      <label class="form-label">State<span
                                                                 class="text-danger maditory">*</span></label>
@@ -114,6 +119,7 @@
     @endforeach
 </select>
 </div>
+
                                                     <div class="col-sm-6 mb-3">
                                                      <label class="form-label">State<span
                                                                 class="text-danger maditory">*</span></label>
@@ -248,7 +254,7 @@
     <!--**********************************
             Footer start
         ***********************************-->
-        @include ("admin.footer")
+        @include ("librarian.footer")
     <!--**********************************
             Footer end
         ***********************************-->
@@ -267,7 +273,7 @@
         Main wrapper end
     ***********************************-->
     <?php
-        include "admin/plugin/plugin_js.php";
+        include "librarian/plugin/plugin_js.php";
     ?>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
@@ -310,7 +316,7 @@ $(document).on('click','#submit',function(e){
    });
    $.ajax({
       type:"post",
-      url:"/admin/librarianedit",
+      url:"/librarian/librarianedit",
       data:data,
       dataType:"json",
       success: function(response) {
@@ -318,7 +324,7 @@ $(document).on('click','#submit',function(e){
              toastr.success(response.success,{timeout:25000});
              $('#formId1')[0].reset();
              setTimeout(function() {
-                        window.location.href = "/admin/library_list"
+                        window.location.href = "/librarian/library_edit"
                     }, 3000);
          }else{
              toastr.error(response.error,{timeout:25000});

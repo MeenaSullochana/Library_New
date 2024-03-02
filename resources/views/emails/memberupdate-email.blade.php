@@ -27,8 +27,16 @@
        
         <p style="
         text-align: center;"><b>Name </b> : {{$record->name}}</p>
-         <p style="
-        text-align: center;"><b>Reviewer Type </b> : {{$record->reviewerType}}</p>
+     @if($record->reviewerType == "external")
+        <p style="
+        text-align: center;"><b>Reviewer Type </b> : expert reviewer</p>
+        @elseif($record->reviewerType == "internal")
+        <p style="
+        text-align: center;"><b>Reviewer Type </b> : librarian reviewer</p>
+        @else
+        <p style="
+        text-align: center;"><b>Reviewer Type </b> :  public reviewer</p>
+        @endif
           <p style="
         text-align: center;"><b>User Role </b> : {{$record->role}}</p>
           <p style="

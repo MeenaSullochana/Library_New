@@ -136,6 +136,9 @@ $librarian->subject1=json_decode($librarian->subject);
 
    public function libraryedit(Request $req){
     $librarian= Librarian::find($req->id);
+   
+   $librarian->subject1= json_decode($librarian->subject); 
+
     return redirect('/admin/librarydata')->with('librarian',$librarian); 
 
    }
@@ -145,6 +148,7 @@ $librarian->subject1=json_decode($librarian->subject);
         'libraryName'=>'required|string',
         'state'=>'required',
         'district'=>'required|string',
+        'subject'=>'required',
         'city'=>'required|string',
         'Village'=>'required',
         'metaChecker'=>'required',
@@ -163,7 +167,7 @@ $librarian->subject1=json_decode($librarian->subject);
     }
   
     if(empty($req->newpassword) && empty($req->confirmpassword)) {
-        
+       
              $librarian=Librarian::find($req->id);
            
             $librarian->libraryType = $req->libraryType;
@@ -171,13 +175,27 @@ $librarian->subject1=json_decode($librarian->subject);
             $librarian->state = $req->state;
             $librarian->district = $req->district;
             $librarian->city = $req->city;
-            $librarian->email = $req->email;
+            if ($librarian->email == $req->email) {
+                $librarian->email = $req->email;
+            } else {
+                $existinglibrarian = Librarian::where('email', $req->email)->first();
+            
+                if ($existinglibrarian == null) {
+                    $librarian->email = $req->email;
+                } else {
+                    $data = [
+                        'error' => 'Email is already taken',
+                    ];
+                    return response()->json($data);
+                }
+            }
             $librarian->phoneNumber = $req->phoneNumber; 
             $librarian->Village = $req->Village;
             $librarian->metaChecker = $req->metaChecker;
             $librarian->librarianName = $req->librarianName;
             $librarian->librarianDesignation = $req->librarianDesignation;
-        
+            $librarian->subject = json_encode($req->subject);
+
              $librarian->save();
 
              $user =  $librarian->email;
@@ -214,9 +232,24 @@ $librarian->subject1=json_decode($librarian->subject);
             $librarian->state = $req->state;
             $librarian->district = $req->district;
             $librarian->city = $req->city;
-            $librarian->email = $req->email;
+            if ($librarian->email == $req->email) {
+                $librarian->email = $req->email;
+            } else {
+                $existinglibrarian = Librarian::where('email', $req->email)->first();
+            
+                if ($existinglibrarian == null) {
+                    $librarian->email = $req->email;
+                } else {
+                    $data = [
+                        'error' => 'Email is already taken',
+                    ];
+                    return response()->json($data);
+                }
+            }
             $librarian->phoneNumber = $req->phoneNumber; 
             $librarian->Village = $req->Village;
+            $librarian->subject = json_encode($req->subject);
+
             $librarian->metaChecker = $req->metaChecker;
             $librarian->librarianName = $req->librarianName;
             $librarian->librarianDesignation = $req->librarianDesignation;
