@@ -1,6 +1,9 @@
 @php
   $bookhighlights = $data->banner_img1;
 $booktag = $data->booktag1;
+$otherImages = $data->other_img1;
+$bookdescription = $data->bookdescription1;
+
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -77,46 +80,40 @@ $booktag = $data->booktag1;
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Publication Details</h4>
+                                <h4>Book ISBN</h4>
                             </div>
                             <div class="col-md-10">
-
+                                <!-- <P class="fs-4">Enter your title as it appears on the book cover. This field cannot
+                                    be changed after your book is published.</P> -->
                                 <div class="col-lg-12">
                                     <div class="basic-form">
-                                        <div class="mb-3">
-                                            <label class="text-label form-label text-black"
-                                                for="validationCustomUsername">
-                                                Name of Publisher <span class="text-danger">*</span></label>
-                                                @if(auth('publisher')->user())
+                                    <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">ISBN-10/ISBN-13<span
+                                                            class="text-danger">*</span></label>
                                                     <div class="input-group">
-                                                <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
-                                                  >
-                                                    @else
-                                                    <div class="input-group">
-                                                <input type="text" class="form-control" id="nameOfPublisher"
-                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" value="{{$data->nameOfPublisher}}" required
-                                                  >
-                                                    @endif
+                                                    <input type="text" class="form-control" id="isbn"
+                                                            name="isbn" placeholder="Enter ISBN-10/ISBN-13.." value="{{$data->isbn}}"  onkeyup="checkBookISBN()"
+                                                            required>
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                    <span id="bookTitleError" class="text-danger"></span>
 
-
+                                                </div>
                                             </div>
 
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="text-label form-label text-black"
-                                            for="validationCustomUsername"> Year of Publication
-                                                </label>
-                                            <div class="input-group transparent-append">
-                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" value="{{$data->yearOfPublication}}" required>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
 
                         </div>
                     </section>
+                   
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -520,7 +517,49 @@ $booktag = $data->booktag1;
                             </div>
                         </div>
                     </section>
+                    <section class="bg-light-new">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Publication Details</h4>
+                            </div>
+                            <div class="col-md-10">
 
+                                <div class="col-lg-12">
+                                    <div class="basic-form">
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="validationCustomUsername">
+                                                Name of Publisher <span class="text-danger">*</span></label>
+                                                @if(auth('publisher')->user())
+                                                    <div class="input-group">
+                                                <input type="text" class="form-control" id="nameOfPublisher"
+                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" value="{{auth('publisher')->user()->publicationName}}" readonly
+                                                  >
+                                                    @else
+                                                    <div class="input-group">
+                                                <input type="text" class="form-control" id="nameOfPublisher"
+                                                    name="nameOfPublisher" placeholder="Enter the Name of Publisher" value="{{$data->nameOfPublisher}}" required
+                                                  >
+                                                    @endif
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                            for="validationCustomUsername"> Year of Publication
+                                                </label>
+                                            <div class="input-group transparent-append">
+                                                <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" value="{{$data->yearOfPublication}}" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -783,7 +822,7 @@ $booktag = $data->booktag1;
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                          {{--  <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">ISBN-10/ISBN-13<span
@@ -802,7 +841,7 @@ $booktag = $data->booktag1;
                                                     <span id="bookTitleError" class="text-danger"></span>
 
                                                 </div>
-                                            </div>
+                                            </div>--}}
                                             <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
@@ -931,7 +970,7 @@ $booktag = $data->booktag1;
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <textarea type="text" class="form-control" id="description" name="description" rows="3"
-                                                            placeholder="Enter Description.." value="{{$data->description}}" required></textarea>
+                                                            placeholder="Enter Description.."  required>{{$data->description}}</textarea>
 
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
@@ -1095,7 +1134,7 @@ $booktag = $data->booktag1;
                                                     <div class="p-image">
                                                         <i class="fa fa-camera upload-button"></i>
                                                         <input class="file-upload" name="front_img" id="front"
-                                                            type="file" accept="image/*" required />
+                                                            type="file" accept="image/*"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1117,7 +1156,7 @@ $booktag = $data->booktag1;
                                                         <i class="fa fa-camera upload-button_back"></i>
                                                         <input class="file-upload_back" name="back_img"
                                                             id="back_img" type="file" accept="image/*"
-                                                            required />
+                                                           />
                                                     </div>
                                                 </div>
                                             </div>
@@ -1139,35 +1178,47 @@ $booktag = $data->booktag1;
                                                         <i class="fa fa-camera upload-button_other"></i>
                                                         <input class="file-upload_other" name="full_img"
                                                             id="full_img" type="file" accept="image/*"
-                                                            required />
+                                                            />
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3">
-                                        <div class="basic-form">
-                                            <div class="mb-3">
-                                                <label class="text-label form-label text-black"
-                                                    for="validationCustomUsername">Other (Optional and Upload 8 Other
-                                                    Images)<span class="text-danger"></span></label>
-                                                <div class="small-12 medium-2 large-2 columns">
-                                                    <!-- <div class="circle">
-                                                        <img class="profile-pic_other"
-                                                            src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*a3BHGbuAMpOaZj6HkTrNqA.png">
+                                    <div class="col-md-12">
+                                <div class="basic-form">
+                                    <div class="mb-3">
+                                        <label class="text-label form-label text-black"
+                                            for="validationCustomUsername">Other (Optional and Upload 8 Other
+                                            Images)<span class="text-danger"></span></label>
+                                        <div id="otherImagesContainer"class="small-12 medium-2 large-2 columns">
+                                        
+                                            <input class="bg-white p-1" type="file" id="other_img"
+                                                name="other_img[]" accept="image/*" multiple>
+                                            @if (!empty($otherImages))
+                                                @forelse ($otherImages as $otherimg)
+                                                    <span class="other_image_files" data-bookid="{{ $data->id }}" data-filename="{{ $otherimg }}">
+                                                        <img class="imageThumb"
+                                                        src="{{ url('Books/other_img/'.$otherimg) }}">
 
-                                                    </div>
-                                                    <div class="p-image">
-                                                        <i class="fa fa-camera upload-button_other"></i>
-                                                        <input class="file-upload_other" name="other_img" id="other_img"
-                                                            type="file" accept="image/*" multiple />
-                                                    </div> -->
-                                                    <input class="bg-white p-1" type="file" id="other_img"
-                                                        name="other_img[]" accept="image/*" multiple>
+                                                        <span class="remove_other_images delete_image" >Remove image</span>
+                                                    </span>
+                                                @empty
+                                                @endforelse
+                                            @else
+                                                <div class="alert alert-danger alert-dismissible fade show"
+                                                    role="alert">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                                        aria-label="Close"></button>
+                                                    <strong>Sorry!</strong> No Records
                                                 </div>
-                                            </div>
+
+                                            @endif
+
+
                                         </div>
                                     </div>
+                                </div>
+                            </div>
                                 </div>
                             </div>
                         </div>
@@ -1203,24 +1254,32 @@ $booktag = $data->booktag1;
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Author Image <span
-                                                            class="text-danger"></span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="validationCustomUsername">Upload Author Image <span
+                                                    class="text-danger"></span></label>
+                                            <div class="input-group">
+                                                <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                                        <input class="bg-white p-1" type="file" id="author_img"
-                                                            name="author_img" accept="image/*">
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
+                                                <input class="bg-white p-1" type="file" id="author_img" name="author_img" accept="image/*">
+                                                <div class="invalid-feedback">
+                                                    Book Title cannot be edited agter your book has been
+                                                    published.
+                                                    Click here to learn more.
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="text-label form-label text-black" for="validationCustomUsername">Author Image <span class="text-danger"></span></label>
+                                        <div class="input-group">
+                                            <div class="avatar-preview">
+                                                <img src="{{ url('/Books/author_img/'.$data->author_img) }}" alt="" srcset="" id="author_image" class="mb-3">
+                                            </div>
+                                        
+                                        </div>
+                                </div>
+                                <br>
                                         <div class="row">
                                             <h4>Description (Author's Bio)<span class="text-danger">*</span></h4>
                                             <!-- <div class="card-body custom-ekeditor">
@@ -1235,157 +1294,507 @@ $booktag = $data->booktag1;
                             </div>
                     </section>
                     <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Book Highlights</h4>
-                            </div>
-                            <div class="col-md-10">
-                                <P class="fs-4"> Please mention some of the key highlights, Quotes, Phrases if any
-                                    mentioned in the book.</a>
-                                </P>
-                                <div class="col-lg-12">
-                                    <div class="basic-form">
-                                        <div class="row">
+                <div class="row p-3">
+                    <div class="col-md-2">
+                        <h4>Book Highlights</h4>
+                    </div>
+                    <div class="col-md-10">
+                        <P class="fs-4"> Please mention some of the key highlights, Quotes, Phrases if any
+                            mentioned in the book.</a>
+                        </P>
+                        <div class="col-lg-12">
+                            <div class="basic-form">
+                                <div class="row">
 
-                                            <div class="col-md-12">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername"><span class="text-danger">Note:</span> Images of key highlights, Quotes, Phrases <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="validationCustomUsername"><span
+                                                    class="text-danger">Note:</span> Images of key highlights, Quotes,
+                                                Phrases <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                                        {{-- <input class="bg-white p-1" type="file" id="banner_img"
+                                                {{-- <input class="bg-white p-1" type="file" id="banner_img"
                                                             name="banner_img[]" accept="image/*" multiple required> --}}
-                                                                <input type="file" id="files" name="files[]" multiple />
-                                                                @foreach ($bookhighlights as $highlighImages)
-                                                                    <span class="pip"><img class="imageThumb" src="{{ url('Books/banner/'.$highlighImages) }}">
-                                                                    <br>
-                                                                    <span class="remove">Remove image</span>
-                                                                    </span>
-                                                                @endforeach
+                                                <input type="file" id="files" name="banner_img[]" multiple />
+                                                @if (!empty($bookhighlights))
+                                                    @forelse ($bookhighlights as $highlighImages)
+                                                        <span class="pip" data-bookid="{{ $data->id }}" data-filename="{{ $highlighImages }}"><img class="imageThumb"
+                                                                src="{{ url('/Books/banner/' . $highlighImages) }}">
+                                                            <br>
+                                                            <span class="remove highlights_delete">Remove image</span>
+                                                        </span>
+                                                    @empty
+                                                    @endforelse
+                                                @else
+                                                    <div class="alert alert-danger alert-dismissible fade show"
+                                                        role="alert">
+                                                        <button type="button" class="btn-close"
+                                                            data-bs-dismiss="alert" aria-label="Close"></button>
 
+                                                        <strong>Sorry!</strong>No Records
                                                     </div>
-                                                </div>
+
+                                                @endif
+
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <h4>Description<span class="text-danger">*</span></h4>
-                                            <!-- <div class="card-body custom-ekeditor">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h4>Description<span class="text-danger">*</span></h4>
+                                    <!-- <div class="card-body custom-ekeditor">
                                                 <div id="ckeditor_new_new" name="bookdescription" required></div>
                                             </div> -->
 
 
-                                            <table id="itemTable" class="table">
-                                                <tbody class="field_wrapper_new_high">
+                                    <table id="itemTable" class="table">
+                                        <tbody class="field_wrapper_new_high">
+                                            <tr class="item">
+                                                <td>
+                                                    <textarea name="bookdescription[]" class="form-control" required>
+                                                        @php
+                                                            if(isset($bookdescription[0])){
+                                                                echo $bookdescription[0];
+                                                            }
+                                                        @endphp
+                                                    </textarea>
+                                                </td>
+                                                <td><a href="javascript:void(0);"
+                                                        class="add_button_high btn btn-sm btn-primary"
+                                                        title="Add field"><i class="fa fa-plus"></i></a>
+                                                </td>
+                                            </tr>
+                                            @if (!empty($bookdescription))
+                                                @foreach ($bookdescription as $index => $description)
+                                                    @if ($index === 0)
+                                                        @continue
+                                                    @endif
                                                     <tr class="item">
                                                         <td>
-                                                            <textarea name="bookdescription[]" class="form-control" required></textarea>
+                                                            <div class="form-group mb-0">
+                                                                <textarea name="bookdescription[]" class="form-control" required="">{{ $description }}</textarea>
+                                                            </div>
                                                         </td>
-                                                        <td><a href="javascript:void(0);"
-                                                                class="add_button_high btn btn-sm btn-primary"
-                                                                title="Add field"><i class="fa fa-plus"></i></a>
+                                                        <td> <a href="javascript:void(0);"
+                                                                class="remove_button_high btn btn-sm btn-danger">
+                                                                <i class="fa fa-minus"></i></a>
                                                         </td>
                                                     </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
+                                                @endforeach
+                                            @else
+                                                <div class="alert alert-danger alert-dismissible fade show"
+                                                    role="alert">
+                                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                                                    <strong>Sorry!</strong> No Record
+                                                </div>
+
+                                            @endif
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                    </section>
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Blurb Description</h4>
-                            </div>
-                            <div class="col-md-10">
-                                <P class="fs-4"> Please Mention the summary / blurb of the book</a>
-                                </P>
-                                <div class="col-lg-12">
-                                    <div class="basic-form">
-                                        <div class="row">
+                        </div>
+                    </div>
+            </section>
+            <section class="bg-light-new mt-4">
+                <div class="row p-3">
+                    <div class="col-md-2">
+                        <h4>Blurb Description</h4>
+                    </div>
+                    <div class="col-md-10">
+                        <P class="fs-4"> Please Mention the summary / blurb of the book</a>
+                        </P>
+                        <div class="col-lg-12">
+                            <div class="basic-form">
+                                <div class="row">
 
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <!-- <label class="text-label form-label text-black"
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <!-- <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Book Images </label> -->
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                            <div class="input-group">
+                                                <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                                        <!-- <input class="bg-white p-1" type="file" id="product_img"
+                                                <!-- <input class="bg-white p-1" type="file" id="product_img"
                                                             name="product_img" accept="image/*" multiple> -->
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
+                                                <div class="invalid-feedback">
+                                                    Book Title cannot be edited agter your book has been
+                                                    published.
+                                                    Click here to learn more.
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                       <h4>Description<span class="text-danger">*</span></h4>
-                                        <textarea name="productdescription" id="productdescription" >{{$data->productdescription}}</textarea>
-                                      </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <h4>Description<span class="text-danger">*</span></h4>
+                                    <textarea name="productdescription" id="productdescription">{{$data->productdescription}}</textarea>
+                                </div>
                             </div>
-                    </section>
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Sample Book Details</h4>
-                            </div>
-                            <div class="col-md-10">
-                                <P class="fs-4"> Please Mention the summary / Sample Book Details (Upload epub or pdf files only)</a>
-                                </P>
-                                <div class="col-lg-12">
-                                    <div class="basic-form">
-                                        <div class="row">
+                        </div>
+                    </div>
+            </section>
+            <section class="bg-light-new mt-4">
+                <div class="row p-3">
+                    <div class="col-md-2">
+                        <h4>Sample Book Details</h4>
+                    </div>
+                    <div class="col-md-10">
+                        <P class="fs-4"> Please Mention the summary / Sample Book Details (Upload epub or pdf files
+                            only)</a>
+                        </P>
+                        <div class="col-lg-12">
+                            <div class="basic-form">
+                                <div class="row">
 
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <!-- <label class="text-label form-label text-black"
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <!-- <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Book Images </label> -->
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                            <div class="input-group">
+                                                <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                                        <!-- <input class="bg-white p-1" type="file" id="product_img"
+                                                <!-- <input class="bg-white p-1" type="file" id="product_img"
                                                             name="product_img" accept="image/*" multiple> -->
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
+                                                <div class="invalid-feedback">
+                                                    Book Title cannot be edited agter your book has been
+                                                    published.
+                                                    Click here to learn more.
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12 col-md-6 form-group mt-4 mb-4">
-                                                <label for="sex">Select file format <span class="text-danger ms-2">*</span></label><br>
-                                                <div class="div">
-                                                    <input type="radio" class="ms-2" id="attendingYes" name="sample_file" value="Epub" required>
-                                                    <label for="attendingYes">Epub file</label><br>
-                                                    <input type="radio" class="ms-2" id="attendingNo" name="sample_file" value="Pdf">
-                                                    <label for="attendingNo">PDF file</label><br>
-                                                </div>
-                                            </div>
-                                                <div class="col-sm-12 col-md-6 form-group mt-2" style="display:none" id="fileInputYes" class="hidden">
-                                                    <label for="fname">Upload Epub file <span class="text-danger ms-2">*</span></label><br>
-                                                    <input type="file" id="sample_epub" name="sample_epub" >
-                                                </div>
-
-                                                <div class="col-sm-12 col-md-6  form-group mt-2" style="display:none" id="fileInputNo" class="hidden">
-                                                    <label for="fname">Upload PDF file <span class="text-danger ms-2">*</span></label><br>
-                                                    <input type="file" id="sample_pdf" name="sample_pdf" >
-                                                </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-6 form-group mt-4 mb-4">
+                                        <label for="sex">Select file format <span
+                                                class="text-danger ms-2">*</span></label><br>
+                                        <div class="div">
+                                            <input type="radio" class="ms-2" id="attendingYes"
+                                                name="sample_file" value="Epub" >
+                                            <label for="attendingYes">Epub file</label><br>
+                                            <input type="radio" class="ms-2" id="attendingNo"
+                                                name="sample_file" value="Pdf">
+                                            <label for="attendingNo">PDF file</label><br>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 form-group mt-2" style="display:none"
+                                        id="fileInputYes" class="hidden">
+                                        <label for="fname">Upload Epub file <span
+                                                class="text-danger ms-2">*</span></label><br>
+                                        <input type="file" id="sample_epub" name="sample_epub">
+                                    </div>
+
+                                    <div class="col-sm-12 col-md-6  form-group mt-2" style="display:none"
+                                        id="fileInputNo" class="hidden">
+                                        <label for="fname">Upload PDF file <span
+                                                class="text-danger ms-2">*</span></label><br>
+                                        <input type="file" id="sample_pdf" name="sample_pdf">
+                                    </div>
+                                </div>
+                              
                             </div>
-                    </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="row container d-flex justify-content-between">
+                    {{-- {{ $data->sample_pdf }} --}}
+                    @isset($data->sample_pdf)
+                    <div class="d-flex text-left"> Download here <a href="{{url('/Books/samplepdf/'.$data->sample_pdf)}}" class="p-2" target="_blank" rel="noopener noreferrer" download="true">{{ $data->sample_pdf }}</a></div>
+                        <!-- <iframe src="https://docs.google.com/viewer?url={{url('/Books/samplepdf/'.$data->sample_pdf)}}&embedded=true" frameborder="0" height="500px" width="100%"></iframe> -->
+                    @endisset
+
+                    @isset($data->sample_epub)
+                        <p class="h3">Select Your Topic</p>
+                        <select id="toc" class="form-control"></select>
+                        <div class="container m-0 p-0">
+                            <a id="prev" href="#prev" class="arrow">‹</a>
+                            <a id="next" href="#next" class="arrow">›</a>
+                        </div>
+                        <div id="viewer" class="spreads w-100"></div>
+                    @endisset
+                    
+                    
+                    
+                </div>
+                <style>
+                    #title {
+                    width: 900px;
+                    min-height: 18px;
+                    margin: 10px auto;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #E2E2E2;
+                    font-weight: 400;
+                    }
+
+                    #title:hover {
+                    color: #777;
+                    }
+
+                    #viewer.spreads {
+                    width: 900px;
+                    height: 600px;
+                    box-shadow: 0 0 4px #ccc; */
+                    border-radius: 5px;
+                    padding: 0;
+                    margin: 10px auto;
+                    background: white url('ajax-loader.gif') center center no-repeat;
+                    top: calc(50vh - 400px);
+                    }
+
+                    #viewer.spreads .epub-view > iframe {
+                        background: white;
+                    }
+
+                    #viewer.scrolled {
+                    overflow: hidden;
+                    width: 800px;
+                    margin: 0 auto;
+                    position: relative;
+                    background: url('ajax-loader.gif') center center no-repeat;
+
+                    }
+
+                    #viewer.scrolled .epub-container {
+                    background: white;
+                    box-shadow: 0 0 4px #ccc;
+                    margin: 10px;
+                    padding: 20px;
+                    }
+
+                    #viewer.scrolled .epub-view > iframe {
+                        background: white;
+                    }
+
+                    #prev {
+                    left: 0;
+                    }
+
+                    #next {
+                    right: 0;
+                    }
+
+                    #toc {
+                    display: block;
+                    margin: 10px auto;
+                    }
+
+                    @media (min-width: 1000px) {
+                    #viewer.spreads:after {
+                        position: absolute;
+                        width: 1px;
+                        height: auto;
+                        border-right: 1px #000 solid;
+                        z-index: 1;
+                        left: 50%;
+                        margin-left: -1px;
+                        top: 5%;
+                        opacity: .15;
+                        box-shadow: -2px 0 15px rgba(0, 0, 0, 1);
+                        content:  "";
+                    }
+
+                    #viewer.spreads.single:after {
+                        display: none;
+                    }
+
+                    #prev {
+                        left: 73px;
+                    }
+
+                    #next {
+                        right: 0px;
+                    }
+                    }
+
+                    .arrow {
+                    top: 50%;
+                    margin-top: -32px;
+                    font-size: 64px;
+                    color: #000000;
+                    font-family: arial, sans-serif;
+                    font-weight: bold;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    user-select: none;
+                    text-decoration: none;
+                    }
+
+                    .navlink {
+                    margin: 14px;
+                    display: block;
+                    text-align: center;
+                    text-decoration: none;
+                    color: #ccc;
+                    }
+
+                    .arrow:hover, .navlink:hover {
+                    color: #777;
+                    }
+
+                    .arrow:active, .navlink:hover {
+                    color: #000;
+                    }
+
+                    /* #book-wrapper {
+                    width: 480px;
+                    height: 640px;
+                    overflow: hidden;
+                    border: 1px solid #ccc;
+                    margin: 28px auto;
+                    background: #fff;
+                    border-radius: 0 5px 5px 0;
+                    position: absolute;
+                    } */
+
+                    /* #book-viewer {
+                    width: 480px;
+                    height: 660px;
+                    margin: -30px auto;
+                    -moz-box-shadow:      inset 10px 0 20px rgba(0,0,0,.1);
+                    -webkit-box-shadow:   inset 10px 0 20px rgba(0,0,0,.1);
+                    box-shadow:           inset 10px 0 20px rgba(0,0,0,.1);
+                    } */
+
+                    #book-viewer iframe {
+                    padding: 40px 40px;
+                    }
+
+                    #controls {
+                    position: absolute;
+                    bottom: 16px;
+                    left: 50%;
+                    width: 400px;
+                    margin-left: -200px;
+                    text-align: center;
+                    display: none;
+                    }
+
+                    #controls > input[type=range] {
+                        width: 400px;
+                    }
+
+                    #navigation {
+                    width: 400px;
+                    height: 100vh;
+                    position: absolute;
+                    overflow: auto;
+                    top: 0;
+                    left: 0;
+                    background: #777;
+                    -webkit-transition: -webkit-transform .25s ease-out;
+                    -moz-transition: -moz-transform .25s ease-out;
+                    -ms-transition: -moz-transform .25s ease-out;
+                    transition: transform .25s ease-out;
+
+                    }
+
+                    #navigation.fixed {
+                    position: fixed;
+                    }
+
+                    #navigation h1 {
+                    width: 200px;
+                    font-size: 16px;
+                    font-weight: normal;
+                    color: #fff;
+                    margin-bottom: 10px;
+                    }
+
+                    #navigation h2 {
+                    font-size: 14px;
+                    font-weight: normal;
+                    color: #B0B0B0;
+                    margin-bottom: 20px;
+                    }
+
+                    #navigation ul {
+                    padding-left: 36px;
+                    margin-left: 0;
+                    margin-top: 12px;
+                    margin-bottom: 12px;
+                    width: 340px;
+                    }
+
+                    #navigation ul li {
+                    list-style: decimal;
+                    margin-bottom: 10px;
+                    color: #cccddd;
+                    font-size: 12px;
+                    padding-left: 0;
+                    margin-left: 0;
+                    }
+
+                    #navigation ul li a {
+                    color: #ccc;
+                    text-decoration: none;
+                    }
+
+                    #navigation ul li a:hover {
+                    color: #fff;
+                    text-decoration: underline;
+                    }
+
+                    #navigation ul li a.active {
+                    color: #fff;
+                    }
+
+                    #navigation #cover {
+                    display: block;
+                    margin: 24px auto;
+                    }
+
+                    #navigation #closer {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 12px;
+                    color: #cccddd;
+                    width: 24px;
+                    }
+
+                    #navigation.closed {
+                    -webkit-transform: translate(-400px, 0);
+                    -moz-transform: translate(-400px, 0);
+                    -ms-transform: translate(-400px, 0);
+                    }
+
+                    svg {
+                    display: block;
+                    }
+
+                    .close-x {
+                    stroke: #cccddd;
+                    fill: transparent;
+                    stroke-linecap: round;
+                    stroke-width: 5;
+                    }
+
+                    .close-x:hover {
+                    stroke: #fff;
+                    }
+
+                    #opener {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 10px;
+                    stroke: #E2E2E2;
+                    fill: #E2E2E2;
+
+                    }
+
+                    #opener:hover {
+                    stroke: #777;
+                    fill: #777;
+                    }
+                </style>
+            </section>
                     <div class="row">
                         <div class="col-md-12 text-end mt-5">
                             <button type="submit" class="btn me-2 btn-primary" id="submitbutton">Submit</button>
@@ -1422,16 +1831,20 @@ $booktag = $data->booktag1;
     <?php
         include 'publisher/plugin/plugin_js.php';
     ?>
-    <!-- <script src="./vendor/toastr/js/toastr.min.js"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <!-- <script src="./vendor/toastr/js/toastr.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-	    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- <script src="./vendor/ckeditor/ckeditor.js"></script> -->
     <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
     <script src="./js/plugins-init/select2-init.js"></script>
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.2/tinymce.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
+    <script src="https://futurepress.github.io/epub.js/dist/epub.js"></script>
     <!-- <script>
     $(document).ready(function () {
         $("#submitbutton").click(function () {
@@ -1460,57 +1873,29 @@ $booktag = $data->booktag1;
     }
 </script> -->
 <script>
-    $(document).ready(function () {
-        // Event listener for radio buttons
-        $('input[name="sample_file"]').change(function () {
-            if ($(this).val() === 'Epub') {
-                $('#fileInputYes').show();
-                $('#fileInputNo').hide();
-            } else {
-                $('#fileInputYes').hide();
-                $('#fileInputNo').show();
-            }
+        $(document).ready(function() {
+            // Event listener for radio buttons
+            $('input[name="sample_file"]').change(function() {
+                if ($(this).val() === 'Epub') {
+                    $('#fileInputYes').show();
+                    $('#fileInputNo').hide();
+                } else {
+                    $('#fileInputYes').hide();
+                    $('#fileInputNo').show();
+                }
+            });
         });
-    });
-</script>
-<!-- <script>
-    $(document).ready(function () {
-        $("#submitbutton").click(function () {
-            var description = document.getElementById('author_name').value;
-            console.log(description);
-            if (description) {
-                validateForm();
-            }
+    </script>
+    <!-- <script>
+        $(document).ready(function() {
+            $("#submitbutton").click(function() {
+                var description = document.getElementById('author_name').value;
+                console.log(description);
+                if (description) {
+                    validateForm();
+                }
+            });
         });
-    });
-
-    function validateForm() {
-        if (!$('#front').val()) {
-            toastr.error('Please upload front images.');
-        } else if (!$('#back_img').val()) {
-            toastr.error('Please upload back images.');
-        } else if (!$('#full_img').val()) {
-            toastr.error('Please upload full images.');
-        } else {
-            $('#imageForm').submit();
-        }
-    }
-</script> -->
-<script>
-    $(document).ready(function () {
-        $("#submitbutton").click(function (event) {
-            var descriptionValue1 = tinymce.get("author_description").getContent().trim();
-            var descriptionValue = tinymce.get("productdescription").getContent().trim();
-            if (descriptionValue1) {
-            if (!descriptionValue) {
-                toastr.error('Please enter a description.');
-                event.preventDefault();
-            } else {
-                validateForm();
-            }
-        }
-        });
-
 
         function validateForm() {
             if (!$('#front').val()) {
@@ -1523,92 +1908,345 @@ $booktag = $data->booktag1;
                 $('#imageForm').submit();
             }
         }
-    });
-</script>
+    </script> -->
+    <script>
+        $(document).ready(function() {
+            $("#submitbutton").click(function(event) {
+                var descriptionValue1 = tinymce.get("author_description").getContent().trim();
+                var descriptionValue = tinymce.get("productdescription").getContent().trim();
+                if (descriptionValue1) {
+                    if (!descriptionValue) {
+                        toastr.error('Please enter a description.');
+                        event.preventDefault();
+                    } else {
+                        validateForm();
+                    }
+                }
+            });
+
+
+            // function validateForm() {
+            //     if (!$('#front').val()) {
+            //         toastr.error('Please upload front images.');
+            //     } else if (!$('#back_img').val()) {
+            //         toastr.error('Please upload back images.');
+            //     } else if (!$('#full_img').val()) {
+            //         toastr.error('Please upload full images.');
+            //     } else {
+            //         $('#imageForm').submit();
+            //     }
+            // }
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#other_img').change(function() {
+                var files = $(this)[0].files;
+                if (files.length > 8) {
+                    toastr.error('You can only upload a maximum of 8 Other Image.');
+                    // Clear the file input
+                    $(this).val('');
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#banner_img').change(function() {
+                var files = $(this)[0].files;
+                if (files.length > 8) {
+                    toastr.error('You can only upload a maximum of 8 Book Highlights Book Image.');
+                    // Clear the file input
+                    $(this).val('');
+                }
+            });
+        });
+    </script>
+
+    {{-- Book Highlights --}}
+    <script>
+        $(document).ready(function() {
+            if (window.File && window.FileList && window.FileReader) {
+                $("#files").on("change", function(e) {
+                    var files = e.target.files,
+                        filesLength = files.length;
+                    for (var i = 0; i < filesLength; i++) {
+                        var f = files[i]
+                        var fileReader = new FileReader();
+                        fileReader.onload = (function(e) {
+                            var file = e.target;
+                            $("<span class=\"pip\">" +
+                                "<img class=\"imageThumb\" src=\"" + e.target.result +
+                                "\" title=\"" + file.name + "\"/>" +
+                                "<br/><span class=\"remove\">Remove image</span>" +
+                                "</span>").insertAfter("#files");
+
+                            $(".remove").click(function() {
+                                $(this).parent(".pip").remove();
+                            });
+
+                            // Old code here
+                            /*$("<img></img>", {
+                              class: "imageThumb",
+                              src: e.target.result,
+                              title: file.name + " | Click to remove"
+                            }).insertAfter("#files").click(function(){$(this).remove();});*/
+
+                        });
+                        fileReader.readAsDataURL(f);
+                    }
+                    // console.log(files);
+                });
+            } else {
+                alert("Your browser doesn't support to File API")
+            }
+
+            $("#other_img").on("change", function(e) {
+                // alert('Good');
+                var files = e.target.files,
+                    filesLength = files.length;
+                for (var i = 0; i < filesLength; i++) {
+                    var f = files[i]
+                    var fileReader = new FileReader();
+                    fileReader.onload = (function(e) {
+                        var file = e.target;
+                        $("<span class=\"other_image_files\">" +
+                            "<img class=\"imageThumb\" src=\"" + e.target.result +
+                            "\" title=\"" + file.name + "\"/>" +
+                            "<span class=\"remove_other_images\">Remove image</span>" +
+                            "</span>").insertAfter("#other_img");
+
+                        $(".remove_other_images").click(function() {
+                            // alert('good');
+                            $(this).parent(".other_image_files").remove();
+                        });
+
+                        // Old code here
+                        /*$("<img></img>", {
+                          class: "imageThumb",
+                          src: e.target.result,
+                          title: file.name + " | Click to remove"
+                        }).insertAfter("#files").click(function(){$(this).remove();});*/
+
+                    });
+                    fileReader.readAsDataURL(f);
+                }
+                // console.log(files);
+            });
+
+            $(".remove_other_images").click(function() {
+                // alert('good');
+                $(this).parent(".other_image_files").remove();
+            });
+
+            $(".remove").click(function() {
+                $(this).parent(".pip").remove();
+            });
+        });
+    </script>
 <script>
-$(document).ready(function () {
-    $('#other_img').change(function() {
-        var files = $(this)[0].files;
-        if (files.length > 8) {
-            toastr.error('You can only upload a maximum of 8 Other Image.');
-            // Clear the file input
-            $(this).val('');
+$(document).on('click', '.delete_image', function () {
+    var removeButton = $(this);
+    var imageThumb = removeButton.prev('.imageThumb');
+    var imageFileName = imageThumb.attr('src').split('/').pop();
+    var bookId = removeButton.closest('.other_image_files').data('bookid');
+
+    $.ajax({
+        url: '{{ route("remove.image") }}',
+        type: 'POST',
+        data: {
+            bookId: bookId,
+            imageFileName: imageFileName,
+            _token: '{{ csrf_token() }}'
+        },
+        success: function (response) {
+            if (response.success) {
+                console.log("Image Removed Successfully");
+              
+            } else {
+                alert('Failed to remove image.');
+            }
+        },
+        error: function () {
+            alert('Failed to remove image. Please try again later.');
         }
     });
 });
 </script>
 <script>
-$(document).ready(function () {
-    $('#banner_img').change(function() {
-        var files = $(this)[0].files;
-        if (files.length > 8) {
-            toastr.error('You can only upload a maximum of 8 Book Highlights Book Image.');
-            // Clear the file input
-            $(this).val('');
+$('.highlights_delete').on('click', function() {
+    var bookId = $(this).closest('.pip').data('bookid');
+    var filename = $(this).closest('.pip').data('filename');
+
+    $.ajax({
+        url: "{{ route('remove.image.highlights') }}",
+        type: "POST",
+        dataType: "json",
+        data: {
+            _token: "{{ csrf_token() }}",
+            bookId: bookId,
+            imageFileName: filename
+        },
+        success: function(response) {
+            // Remove the image container from the DOM
+            $(this).closest('.pip').remove();
+            // Optionally, display a success message or perform other actions
+        },
+        error: function(xhr, status, error) {
+            // Handle errors if any
         }
     });
 });
 </script>
-
-{{-- Book Highlights --}}
-<script>
-$(document).ready(function() {
-  if (window.File && window.FileList && window.FileReader) {
-    $("#files").on("change", function(e) {
-      var files = e.target.files,
-        filesLength = files.length;
-      for (var i = 0; i < filesLength; i++) {
-        var f = files[i]
-        var fileReader = new FileReader();
-        fileReader.onload = (function(e) {
-          var file = e.target;
-          $("<span class=\"pip\">" +
-            "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-            "<br/><span class=\"remove\">Remove image</span>" +
-            "</span>").insertAfter("#files");
-
-          $(".remove").click(function(){
-            $(this).parent(".pip").remove();
-          });
-
-          // Old code here
-          /*$("<img></img>", {
-            class: "imageThumb",
-            src: e.target.result,
-            title: file.name + " | Click to remove"
-          }).insertAfter("#files").click(function(){$(this).remove();});*/
-
+    @isset($data->sample_epub)
+    <script>
+        var params = URLSearchParams && new URLSearchParams(document.location.search.substring(1));
+        var url = params && params.get("url") && decodeURIComponent(params.get("url"));
+        var currentSectionIndex = (params && params.get("loc")) ? params.get("loc") : undefined;
+    
+        // Load the opf
+        var book = ePub(url || '{{ url("/Books/sampleepub/".$data->sample_epub) }}');
+        // var book = ePub(url || "https://s3.amazonaws.com/moby-dick/moby-dick.epub");
+        var rendition = book.renderTo("viewer", {
+          width: "100%",
+          height: 600,
+          spread: "always"
         });
-        fileReader.readAsDataURL(f);
-      }
-      console.log(files);
-    });
-  } else {
-    alert("Your browser doesn't support to File API")
-  }
-
-  $(".remove").click(function(){
-    $(this).parent(".pip").remove();
-    });
-});
-
-</script>
-<script>
-    $(document).ready(function () {
-        $("#submitbutton").click(function (event) {
-            var description = document.getElementById('author_name').value;
-
-            if (description) {
-                var descriptionValue = tinymce.get("author_description").getContent().trim();
-            if (!descriptionValue) {
-                toastr.error('Please enter a Author description.');
-                event.preventDefault();
+    
+        rendition.display(currentSectionIndex);
+    
+        book.ready.then(() => {
+    
+          var next = document.getElementById("next");
+    
+          next.addEventListener("click", function(e){
+            book.package.metadata.direction === "rtl" ? rendition.prev() : rendition.next();
+            e.preventDefault();
+          }, false);
+    
+          var prev = document.getElementById("prev");
+          prev.addEventListener("click", function(e){
+            book.package.metadata.direction === "rtl" ? rendition.next() : rendition.prev();
+            e.preventDefault();
+          }, false);
+    
+          var keyListener = function(e){
+    
+            // Left Key
+            if ((e.keyCode || e.which) == 37) {
+              book.package.metadata.direction === "rtl" ? rendition.next() : rendition.prev();
             }
+    
+            // Right Key
+            if ((e.keyCode || e.which) == 39) {
+              book.package.metadata.direction === "rtl" ? rendition.prev() : rendition.next();
             }
+    
+          };
+    
+          rendition.on("keyup", keyListener);
+          document.addEventListener("keyup", keyListener, false);
+    
+        })
+    
+        var title = document.getElementById("title");
+    
+        rendition.on("rendered", function(section){
+          var current = book.navigation && book.navigation.get(section.href);
+    
+          if (current) {
+            var $select = document.getElementById("toc");
+            var $selected = $select.querySelector("option[selected]");
+            if ($selected) {
+              $selected.removeAttribute("selected");
+            }
+    
+            var $options = $select.querySelectorAll("option");
+            for (var i = 0; i < $options.length; ++i) {
+              let selected = $options[i].getAttribute("ref") === current.href;
+              if (selected) {
+                $options[i].setAttribute("selected", "");
+              }
+            }
+          }
+    
         });
-    });
+    
+        rendition.on("relocated", function(location){
+        //   console.log(location);
+    
+          var next = book.package.metadata.direction === "rtl" ?  document.getElementById("prev") : document.getElementById("next");
+          var prev = book.package.metadata.direction === "rtl" ?  document.getElementById("next") : document.getElementById("prev");
+    
+          if (location.atEnd) {
+            next.style.visibility = "hidden";
+          } else {
+            next.style.visibility = "visible";
+          }
+    
+          if (location.atStart) {
+            prev.style.visibility = "hidden";
+          } else {
+            prev.style.visibility = "visible";
+          }
+    
+        });
+    
+        rendition.on("layout", function(layout) {
+          let viewer = document.getElementById("viewer");
+    
+          if (layout.spread) {
+            viewer.classList.remove('single');
+          } else {
+            viewer.classList.add('single');
+          }
+        });
+    
+        window.addEventListener("unload", function () {
+        //   console.log("unloading");
+          this.book.destroy();
+        });
+    
+        book.loaded.navigation.then(function(toc){
+                var $select = document.getElementById("toc"),
+                        docfrag = document.createDocumentFragment();
+    
+                toc.forEach(function(chapter) {
+                    var option = document.createElement("option");
+                    option.textContent = chapter.label;
+                    option.setAttribute("ref", chapter.href);
+    
+                    docfrag.appendChild(option);
+                });
+    
+                $select.appendChild(docfrag);
+    
+                $select.onchange = function(){
+                        var index = $select.selectedIndex,
+                                url = $select.options[index].getAttribute("ref");
+                        rendition.display(url);
+                        return false;
+                };
+    
+            });
+    
+    </script>
+    @endisset
+    <script>
+        $(document).ready(function() {
+            $("#submitbutton").click(function(event) {
+                var description = document.getElementById('author_name').value;
 
-</script>
+                if (description) {
+                    var descriptionValue = tinymce.get("author_description").getContent().trim();
+                    if (!descriptionValue) {
+                        toastr.error('Please enter a Author description.');
+                        event.preventDefault();
+                    }
+                }
+            });
+        });
+    </script>
 
 
 
@@ -1647,11 +2285,11 @@ $(document).ready(function() {
             const row = button.closest("tr");
             row.remove();
         }
-            // volume end
+        // volume end
 
 
-            //  series series
-            function addInputRowseries() {
+        //  series series
+        function addInputRowseries() {
             const inputContainerseries = document.getElementById("inputContainerseries");
             const newRow = document.createElement("tr");
 
@@ -1671,7 +2309,8 @@ $(document).ready(function() {
             newRow.appendChild(languageFromCell);
 
             const actionCell = document.createElement("td");
-            actionCell.innerHTML = '<button type="button" class="btn btn-danger" onclick="removeInputRowseries(this)">-</button>';
+            actionCell.innerHTML =
+                '<button type="button" class="btn btn-danger" onclick="removeInputRowseries(this)">-</button>';
             newRow.appendChild(actionCell);
 
             inputContainerseries.appendChild(newRow);
@@ -1681,7 +2320,7 @@ $(document).ready(function() {
             const row = button.closest("tr");
             row.remove();
         }
-            // volume end
+        // volume end
     </script>
     <script>
         ClassicEditor
@@ -1690,7 +2329,7 @@ $(document).ready(function() {
                 console.log(editor);
             })
             .catch(error => {
-                console.error(error);
+                // console.error(error);
             });
     </script>
     <script>
@@ -1700,7 +2339,7 @@ $(document).ready(function() {
                 console.log(editor);
             })
             .catch(error => {
-                console.error(error);
+                // console.error(error);
             });
     </script>
     <script>
@@ -1710,7 +2349,7 @@ $(document).ready(function() {
                 console.log(editor);
             })
             .catch(error => {
-                console.error(error);
+                // console.error(error);
             });
     </script>
     <script>
@@ -1976,15 +2615,44 @@ $(document).ready(function() {
             $('#selectedTags').text('Selected Tags: ' + selectedTags.join(', '));
         });
     </script>
-<script>
-    // Hide initially
-    $('.book_primary_lang, .book_primary_lang_forein').hide();
+    <script>
+        // Hide initially
+        $('.book_primary_lang, .book_primary_lang_forein').hide();
 
-    // Function to hide visibility and required attribute
-    function hideVisibility(element, input) {
-        $(element).hide();
-        $(input).prop('required', false);
-    }
+        // Function to hide visibility and required attribute
+        function hideVisibility(element, input) {
+            $(element).hide();
+            $(input).prop('required', false);
+        }
+
+        // Initialize an array to store the values of checked gender checkboxes
+            var checkedGenders = [];
+            // Check if any gender checkbox is checked
+            if ($('input[name="language"]:checked').length > 0) {
+                // Iterate over each checked gender checkbox
+                $('input[name="language"]:checked').each(function() {
+                    // Push the value of the checked checkbox to the array
+                    checkedGenders.push($(this).val());
+                    if($(this).val() == 'Other_Indian'){
+                        $('.book_primary_lang_forein').hide();
+                        $('#other2').prop('required', false);
+                        $('.book_primary_lang').show();
+                        $('#other1').prop('required', true);
+                    }else if($(this).val() == 'Other_Foreign'){
+                        $('.book_primary_lang').hide();
+                        $('#other1').prop('required', false);
+                        $('.book_primary_lang_forein').show();
+                        $('#other2').prop('required', true);
+                    }else {
+                        $('.book_primary_lang, .book_primary_lang_forein').hide();
+                        $('#other1, #other2').prop('required', false);
+                    }
+                });
+                // Log the values of the checked gender checkboxes
+                console.log('Checked genders: ' + checkedGenders.join(', '));
+            } else {
+                console.log('No gender checkbox is checked');
+            }
 
     // Radio button click event handlers
     $("input[name='language']").change(function () {
@@ -2002,15 +2670,28 @@ $(document).ready(function() {
             $('.book_primary_lang, .book_primary_lang_forein').hide();
             $('#other1, #other2').prop('required', false);
         }
-    });
-</script>
+    }); 
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#author_image').css('background-image', 'url('+e.target.result +')');
+                $('#author_image').attr('src', e.target.result);
+                $('#author_image').hide();
+                $('#author_image').fadeIn(650);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+        }
+        $("#author_img").change(function() {
+            readURL(this);
+        });
+    </script>
 
-<script>
-    $(document).ready(function () {
-        $("#submitbutton").click(function (event) {
-
+    <script>
+        $(document).ready(function() {
+            $("#submitbutton").click(function(event) {
                 const selectedFormat = document.querySelector('input[name="sample_file"]:checked').value;
-
                 if (selectedFormat === 'Epub') {
                     const epubFileInput = document.getElementById('samle_epub');
                     if (!epubFileInput.files.length || !isEpubFile(epubFileInput.files[0])) {
@@ -2037,18 +2718,18 @@ $(document).ready(function() {
 
 
 
-            return true;
+                return true;
+            });
+
+            function isEpubFile(file) {
+                return file && file.type === 'application/epub+zip';
+            }
+
+            function isPdfFile(file) {
+                return file && file.type === 'application/pdf';
+            }
         });
-
-        function isEpubFile(file) {
-            return file && file.type === 'application/epub+zip';
-        }
-
-        function isPdfFile(file) {
-            return file && file.type === 'application/pdf';
-        }
-    });
-</script>
+    </script>
 
 
 
@@ -2056,11 +2737,12 @@ $(document).ready(function() {
 
 
 
-</body><script>
+</body>
+<script>
     // Function to check book ISBN via AJAX
     function checkBookISBN() {
         var bookisbn = $('#isbn').val();
-        console.log(bookisbn);
+        // console.log(bookisbn);
         // AJAX request to Laravel backend
         $.ajax({
             type: 'POST',
@@ -2108,10 +2790,10 @@ $(document).ready(function() {
     });
 </script>
 <script>
-function numberOnly(id) {
-   var element = document.getElementById(id);
-   element.value = element.value.replace(/[^0-9]/gi, "");
-}
+    function numberOnly(id) {
+        var element = document.getElementById(id);
+        element.value = element.value.replace(/[^0-9]/gi, "");
+    }
 </script>
 
 @if (Session::has('success'))
@@ -2128,28 +2810,29 @@ function numberOnly(id) {
     </script>
 @endif
 <script>
-      $(document).ready(function () {
-    tinymce.init({
-        selector: "#productdescription",
-        plugins: 'advlist lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
+    $(document).ready(function() {
+        tinymce.init({
+            selector: "#productdescription",
+            plugins: 'advlist lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
             toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | removeformat | link image | charmap | print preview anchor | searchreplace visualblocks code fullscreen | insertdatetime media table | paste code help wordcount',
+        });
     });
-});
 </script>
 <script>
-      $(document).ready(function () {
-    tinymce.init({
-        selector: "#author_description",
-        plugins: 'advlist lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
+    $(document).ready(function() {
+        tinymce.init({
+            selector: "#author_description",
+            plugins: 'advlist lists link image charmap print preview anchor searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
             toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor | alignleft aligncenter alignright alignjustify | outdent indent | numlist bullist | removeformat | link image | charmap | print preview anchor | searchreplace visualblocks code fullscreen | insertdatetime media table | paste code help wordcount',
+        });
     });
-});
 </script>
+
 </html>
 <style>
-    section.bg-light-new {
-        background-color: #d7dadd80;
-    }
+    .avatar-preview {
+    width: 150px;
+}
 
     #image-container {
         display: flex;
@@ -2312,31 +2995,67 @@ function numberOnly(id) {
 
     /* Book Highlights */
 
-        input[type="file"] {
+    input[type="file"] {
         display: block;
-        }
-        .imageThumb {
+    }
+
+    .imageThumb {
         max-height: 75px;
         border: 2px solid;
         padding: 1px;
         cursor: pointer;
-        }
-        .pip {
+    }
+
+    .pip {
         display: inline-block;
         margin: 10px 10px 0 0;
-        }
-        .remove {
+    }
+
+    .remove {
         display: block;
         background: #444;
         border: 1px solid black;
         color: white;
         text-align: center;
         cursor: pointer;
-        }
-        .remove:hover {
+    }
+
+    .remove:hover {
         background: white;
         color: black;
-        }
+    }
+
+    /* Other images Css */
+
+    input[type="file"] {
+        display: block;
+    }
+
+    .imageThumb {
+        max-height: 75px;
+        border: 2px solid;
+        padding: 1px;
+        cursor: pointer;
+    }
+
+    .other_image_files {
+        display: inline-block;
+        margin: 10px 10px 0 0;
+    }
+
+    .remove_other_images {
+        display: block;
+        background: #444;
+        border: 1px solid black;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .remove_other_images:hover {
+        background: white;
+        color: black;
+    }
 </style>
 
 

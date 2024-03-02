@@ -19,6 +19,7 @@ use App\Models\Notifications;
 use App\Models\Admin;
 use App\Models\Procurementpaymrnt;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 class BookController extends Controller
 {
 
@@ -325,26 +326,86 @@ public function bookdelete(Request $request){
     $book->primaryauthor1= json_decode($book->primaryauthor);
     $book->trans_from1= json_decode($book->trans_from);
     $book->other_img1= json_decode($book->other_img);
-    $book->series1= json_decode($book->series);
-    // return $book;
-    $book->banner_img1= json_decode($book->banner_img);
     $book->booktag1= json_decode($book->booktag);
     $book->trans_author1= json_decode($book->trans_author);
     $book->bookdescription1= json_decode($book->bookdescription);
     $book->series1= json_decode($book->series);
     $book->volume1= json_decode($book->volume);
     $book->banner_img1= json_decode($book->banner_img);
-    //    return$book;
-  $book->firstName=auth('publisher')->user()->firstName;
-  $book->lastName=auth('publisher')->user()->lastName;
-// return $book;
-\Session::put('book', $book);
+    $book->firstName=auth('publisher')->user()->firstName;
+    $book->lastName=auth('publisher')->user()->lastName;
+    Session::put('book', $book);
     return redirect('publisher/bookedit');
 
   }
 
+  public function removeImage(Request $request)
+  {
+      $book = Book::find($request->bookId);
+      $imageFileName = $request->input('imageFileName');
+      $otherImages = json_decode($book->other_img, true);
+      $index = array_search($imageFileName, $otherImages);
+      if ($index !== false) {
+          unset($otherImages[$index]);
+      }
+      $book->other_img = json_encode($otherImages);
+      $book->save();
 
 
+      $book->primaryauthor1= json_decode($book->primaryauthor);
+      $book->trans_from1= json_decode($book->trans_from);
+      $book->other_img1= json_decode($book->other_img);
+      $book->booktag1= json_decode($book->booktag);
+      $book->trans_author1= json_decode($book->trans_author);
+      $book->bookdescription1= json_decode($book->bookdescription);
+      $book->series1= json_decode($book->series);
+      $book->volume1= json_decode($book->volume);
+      $book->banner_img1= json_decode($book->banner_img);
+      $book->firstName=auth('publisher')->user()->firstName;
+      $book->lastName=auth('publisher')->user()->lastName;
+      if(Session::has('book')){
+        Session::forget('book');
+      }
+      Session::put('book',$book);
+      $filePath = public_path('Books/other_img/' . $imageFileName);
+      if (file_exists($filePath)) {
+          unlink($filePath);
+      }
+      return response()->json(['success' => true, "otherImages" => $otherImages]);
+  }
+  
+  public function removeImageHighlights(Request $request)
+  {
+      $book = Book::find($request->bookId);
+      $imageFileName = $request->input('imageFileName');
+      $otherImages = json_decode($book->banner_img, true);
+      $index = array_search($imageFileName, $otherImages);
+      if ($index !== false) {
+          unset($otherImages[$index]);
+      }
+      $book->banner_img = json_encode($otherImages);
+      $book->save();
+      if(Session::has('book')){
+        Session::forget('book');
+      }
+      $book->primaryauthor1= json_decode($book->primaryauthor);
+      $book->trans_from1= json_decode($book->trans_from);
+      $book->other_img1= json_decode($book->other_img);
+      $book->booktag1= json_decode($book->booktag);
+      $book->trans_author1= json_decode($book->trans_author);
+      $book->bookdescription1= json_decode($book->bookdescription);
+      $book->series1= json_decode($book->series);
+      $book->volume1= json_decode($book->volume);
+      $book->banner_img1= json_decode($book->banner_img);
+      $book->firstName=auth('publisher')->user()->firstName;
+      $book->lastName=auth('publisher')->user()->lastName;
+      Session::put('book',$book);
+      $filePath = public_path('Books/other_img/' . $imageFileName);
+      if (file_exists($filePath)) {
+          unlink($filePath);
+      }
+      return response()->json(['success' => true, "otherImages" => $otherImages]);
+  }
 public function bookmanageview($id){
 
     $book=Book::find($id);
@@ -602,7 +663,7 @@ public function checkBookTitle(Request $request)
           $length = trim($dimensionsArray[0]);
           $breadth = trim($dimensionsArray[1]);
           if ($request->series_number[0] != null && $request->series_title[0] != null && $request->isbn_number[0] != null) {
-            $series_number = $request->series_number;
+           $series_number = $request->series_number;
            $series_title = $request->series_title;
            $isbn_number = $request->isbn_number;
            $series_num = sizeof($series_number);
@@ -647,12 +708,14 @@ if(isset($request->sample_file)){
             // Delete the old file
             File::delete(public_path('Books/samplepdf/' . $oldFilePath));
         }
+        $book->sample_pdf = null;
     } else {
         $oldFilePath = $book->sample_epub;
         if ($oldFilePath) {
             // Delete the old file
             File::delete(public_path('Books/sampleepub/' . $oldFilePath));
         }
+        $book->sample_epub = null;
     }
     if($request->sample_file == "Pdf"){
         if ($request->hasFile('sample_pdf')) {
@@ -733,7 +796,12 @@ if(isset($request->back_img)){
     if(isset($request->banner_img)){
         $bannerimg = $request->banner_img;
         $mem_len = sizeof($bannerimg);
-        $banner=[];
+        $banner=json_decode($book->banner_img);
+        if(count($banner)>0){
+          $banner= $banner;
+        }else{
+          $banner = [];
+        }
         for($i=0;$i<$mem_len;$i++){
             $bannerim = $bannerimg[$i];
             $banner_name=$request->book_title.time().'_'.$bannerim->getClientOriginalName();
@@ -761,7 +829,12 @@ if(isset($request->back_img)){
     if(isset($request->other_img)){
         $subsidiary_doc = $request->other_img;
         $mem_len = sizeof($subsidiary_doc);
-        $others=[];
+        $others=json_decode($book->other_img);
+        if(count($others)>0){
+          $others= $others;
+        }else{
+          $others = [];
+        }
         for($i=0;$i<$mem_len;$i++){
            $other = $subsidiary_doc[$i];
            $other_name=$request->book_title.time().'_'.$other->getClientOriginalName();
