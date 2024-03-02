@@ -540,9 +540,10 @@
                 <nav class="navbar navbar-expand">
                     <div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
-
+                            <h3 class="ms-5">User Name <b>Selva</b></h3>
 						</div>
                         <div class="header-right d-flex align-items-center">
+
 							<!-- <div class="input-group search-area">
 								<input type="text" class="form-control" placeholder="Search here...">
 								<span class="input-group-text"><a href="javascript:void(0)">
