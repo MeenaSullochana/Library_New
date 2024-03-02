@@ -180,7 +180,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                     <div class="card-footer">
                                         <div class=" bottom-footer clearfix m-t10 m-b20 row text-center">
                                             <div class="col-lg-12 text-center">
-                                            <span> Copyright © 2023
+                                            <span> Copyright © 2024
                                        Directorate of Public Libraries, பொது நூலக இயக்ககம்   <a href="#">| Design by Gladindia</a></span>
                                             </div>
                                         </div>

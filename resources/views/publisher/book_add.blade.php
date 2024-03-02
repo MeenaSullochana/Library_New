@@ -2642,6 +2642,8 @@ function numberOnly(id) {
     .table thead th{
         text-transform: inherit !important;
     }
-
+    .table thead th{
+        text-transform: initial !important;
+    }
     /* image uplode end */
 </style>
