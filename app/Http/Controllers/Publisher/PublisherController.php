@@ -70,14 +70,13 @@ class PublisherController extends Controller
         
          } 
          public function pubprofileview(){
-            $data=auth('publisher')->user()->first();
+            $data=auth('publisher')->user();
             $data->topTitles1= json_decode($data->topTitles);
             $data->topTranslatedBooks1= json_decode($data->topTranslatedBooks);
             $data->awardTitle1= json_decode($data->awardTitle); 
             $data->association1= json_decode($data->association);
             $data->subsidiary1= json_decode($data->subsidiary);
-            // return $data;
-            return view('publisher.pub_profile_view')->with('data',$data);
+            return view('publisher.pub_profile_view',compact('data',$data));
             
              } 
              public function pubprofileedit(){

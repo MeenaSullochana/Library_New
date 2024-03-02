@@ -585,67 +585,7 @@
                             </div>
                         </div>
                     </section>
-                    <!-- <section class="bg-light-new mt-4">
-
-                            <div class="row p-3">
-                                <div class="col-md-2">
-                                    <h4>Ebook</h4>
-                                </div>
-                                <div class="col-md-10">
-                                    <P class="fs-4"> If others contributed to your book, you can add them and they'll be
-                                        listed on the Amazon product detail page. For multiple authours, They'll appear
-                                        in
-                                        the same sequence as you add them below.</P>
-                                    <div class="col-lg-12">
-                                        <div class="basic-form">
-                                            <div class="mb-3">
-                                                <label class="text-label form-label text-black"
-                                                    for="validationCustomUsername">Contributors (Optional) <span
-                                                        class="text-danger">*</span></label>
-                                                <div class="">
-                                                    <div class="group_wrapper">
-                                                        <table id="itemTable" class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="text-black">Language</th>
-                                                                    <th class="text-black">Other</th>
-                                                                    <th class="text-black">File</th>
-                                                                    <th class="text-black">Action</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody class="field_wrapper">
-                                                                <tr class="item">
-                                                                    <td><select class="default-select wide form-control"
-                                                                            id="validationCustom05">
-                                                                            <option data-display="Select">Please select
-                                                                            </option>
-                                                                            <option value="html">tamil</option>
-                                                                        </select></td>
-                                                                    <td><input type="text" class="form-control"
-                                                                            placeholder="First Name"></td>
-                                                                    <td><input type="file" class="form-control"
-                                                                            placeholder="Last Name"></td>
-                                                                    <td><a href="javascript:void(0);"
-                                                                            class="add_button_new2 btn btn-sm btn-primary"
-                                                                            title="Add field"><i
-                                                                                class="fa fa-plus"></i></a>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="invalid-feedback">
-                                                        Contributors cannot be edited agter your book has been
-                                                        published.
-                                                        Click here to learn more.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section> -->
+                 
                         <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -1243,7 +1183,7 @@
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
-                                                        <input type="text" class="form-control" id="price"
+                                                        <input type="number" class="form-control" id="price"
                                                             name="price" placeholder="Enter Price.." required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been

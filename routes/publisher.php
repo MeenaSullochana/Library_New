@@ -175,7 +175,8 @@ Route::prefix('publisher')->group(function () {
 
      });
     Route::post('/update/book',[BookController::class,'update']);
-
+    Route::post('/remove-image', [BookController::class,'removeImage'])->name('remove.image');
+    Route::post('/remove-image-highlights', [BookController::class,'removeImageHighlights'])->name('remove.image.highlights');
      Route::get('/procurement_completed',[BookController::class,'procurecompleted']);
      Route::get('/procurement_list',[BookController::class,'procurelist']);
      Route::get('/procurement_reject',[BookController::class,'procurereject']);
