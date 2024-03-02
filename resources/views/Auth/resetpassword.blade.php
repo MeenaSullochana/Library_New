@@ -222,7 +222,7 @@
                                             <i class="toggle-password fa fa-fw fa-eye-slash"></i>
                                     </div>
                                     <p class="reg-redirect mt-3 p-0 ms-3 m-0">
-                                        Don't have an account? <a class="text-primary" href="#"> Register Now</a>
+                                        Don't have an account? <a class="text-primary" href="/register"> Register Now</a>
                                     </p>
                                     <p class="reg-redirect ms-3 p-0 m-0">
                                          <a class="text-primary" href="#"> Back To Login?</a>
@@ -396,5 +396,11 @@ div {
 
 div::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
+}
+.toggle-password {
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: -25px;
 }
 </style>

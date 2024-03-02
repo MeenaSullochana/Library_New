@@ -261,7 +261,7 @@
                                     </div>
                                     <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" /><br>
                                     <p class="reg-redirect mt-3 p-0 m-0">
-                                        Don't have an account? <a class="text-primary" href="#" id="tooltip-2" title="User Login"> Login</a>
+                                        If you have an account <a class="text-primary" href="/login" id="tooltip-2" title="User Login"> Login</a>
                                     </p>
                                     <p class="reg-redirect p-0 m-0">
                                         <a class="text-primary" href="/forgotform" id="tooltip-3" title="Forgot User Password"> Forgot Password?</a>
