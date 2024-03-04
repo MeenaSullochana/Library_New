@@ -62,7 +62,7 @@
                         <thead>
                            <tr>
                               <th>Roll No</th>
-                              <th>distributor and publisher Name</th>
+                              <th>Publisher Cum Distributor Name</th>
                               <th>Contact Number</th>
                               <th>State </th>
                               <th>Update Status</th>
@@ -90,8 +90,8 @@
                               <td><span class="badge light badge-success">Active</span></td>
                               <td>10-02-2023</td>
                               <td><a href="#"><i class="fa fa-eye p-2"></i></a>
-                                 <i class="fa fa-pencil p-2"></i>
-                                 <i class="fa fa-trash p-2"></i>
+                                 <!-- <i class="fa fa-pencil p-2"></i>
+                                 <i class="fa fa-trash p-2"></i> -->
                                  <a href="#"><i class="fa fa-list-check p-2"></i></a>
                               </td>
                            </tr>

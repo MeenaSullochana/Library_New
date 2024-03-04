@@ -847,7 +847,7 @@
                                     class="text-danger maditory">*</span></label></label>
                                  <input class="form-control" id="latest_book_categories1" type="file"
                                     name="latest_book_categories" required>
-                                 <span class="text-success"><a href="{{ asset('Excel/BookCatalogue.xlsx') }}" download><small>Download Sample Excel Format</small></a></span>
+                                 <span class="text-success"><a href="{{ asset('Excel/Book catalogue _Sample Excel Format.xlsx') }}" download><small>Download Sample Excel Format</small></a></span>
                               </div>
                            </div> --}}
                            <div class="col-md-6 form-group">
@@ -857,7 +857,7 @@
                                           class="text-danger maditory">*</span></label>
                                   <input class="form-control" id="latest_book_categories1" type="file" name="latest_book_categories"
                                       required>
-                                  <span class="text-success"><a href="{{ asset('Excel/BookCatalogue.xlsx') }}" download><small>Download Sample
+                                  <span class="text-success"><a href="{{ asset('Excel/Book catalogue _Sample Excel Format.xlsx') }}" download><small>Download Sample
                                               Excel Format</small></a></span>
                               </div>
                           </div>
@@ -1356,7 +1356,7 @@
                                     class="text-danger maditory">*</span></label></label>
                                  <input class="form-control" id="latest_book_categories2" type="file"
                                     name="latest_book_categories" required>
-                                 <span class="text-success"><a href="{{ asset('Excel/BookCatalogue.xlsx') }}" download><small>Download Sample Excel Format</small></a></span>
+                                 <span class="text-success"><a href="{{ asset('Excel/Book catalogue _Sample Excel Format.xlsx') }}" download><small>Download Sample Excel Format</small></a></span>
                               </div>
                            </div>
                            <h4 class="fw-bold">Nature of Your Publication Ownership</h4>
@@ -2121,7 +2121,7 @@
                                           class="text-danger maditory">*</span></label>
                                   <input class="form-control" id="latest_book_categories3" type="file" name="latest_book_categories"
                                       required>
-                                  <span class="text-success"><a href="{{ asset('Excel/BookCatalogue.xlsx') }}" download><small>Download Sample
+                                  <span class="text-success"><a href="{{ asset('Excel/Book catalogue _Sample Excel Format.xlsx') }}" download><small>Download Sample
                                               Excel Format</small></a></span>
                               </div>
                           </div>

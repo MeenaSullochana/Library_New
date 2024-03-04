@@ -53,10 +53,10 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Distriputer Pending List</b>
+                                <b>Distributor Pending List</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/distributor_list">
-                                <i class="fas fa-plus"></i> List Of Distriputer </a>
+                                <i class="fas fa-plus"></i> List of Distributor </a>
                         </div>
                     </div>
                 </div>
@@ -68,7 +68,7 @@
                         <thead>
                            <tr>
                               <th>Roll No</th>
-                              <th>Distriputer Name</th>
+                              <th>Distributor Name</th>
                               <th>Contact Number</th>
                               <th>District </th>
                               <th>Status </th>
@@ -118,8 +118,8 @@
                            <td><span class="badge light badge-success">{{$val->created_at->format('Y-m-d')}}</span>
                               <td>
                                  <a href="/admin/dist_profile/{{$val->id}}"><i class="fa fa-eye p-2"></i></a>
-                                 <i class="fa fa-pencil p-2"></i>
-                                 <i class="fa fa-trash p-2"></i>
+                                 <!-- <i class="fa fa-pencil p-2"></i>
+                                 <i class="fa fa-trash p-2"></i> -->
                                  <a href="/admin/pub_payment_list"><i class="fa fa-list-check p-2"></i></a>
                               </td>
                            </tr>

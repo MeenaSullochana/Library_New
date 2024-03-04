@@ -75,7 +75,7 @@ class DistributorController extends Controller
            $data->publisher1= json_decode($data->publisher);
             $data->subsidiary1= json_decode($data->subsidiary);
            
-            return view('distributor.dist_profile_view')->with('data',$data); 
+            return view('distributor.dist_profile_view',compact('data',$data)); 
             
              } 
 
@@ -123,7 +123,8 @@ class DistributorController extends Controller
                     if($distributor->save()){
                         // return "hiii";
                         $data= [
-                            'success' => 'Profile Updated Successfully',
+                            'success' => 'Profile Image Updated Successfully',
+                            'profileImageFilename'=>$distributor->profileImage
                                  ];
                         return response()->json($data);
                     }
@@ -168,7 +169,7 @@ class DistributorController extends Controller
                     if($distributor->save()){
                         // return "hiii";
                         $data= [
-                            'success' => 'Profile Updated Successfully',
+                            'success' => 'Background Image Updated Successfully',
                                  ];
                         return response()->json($data);
                     }

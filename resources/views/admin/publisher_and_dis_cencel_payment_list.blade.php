@@ -65,7 +65,7 @@
                         <thead>
                            <tr>
                               <th>Roll No</th>
-                              <th>distributor and publisher Name</th>
+                              <th>Publisher Cum Distributor Name</th>
                               <th>Contact Number</th>
                               <th>State </th>
                               <th>Update Status</th>

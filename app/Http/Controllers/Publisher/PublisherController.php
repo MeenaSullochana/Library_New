@@ -124,7 +124,8 @@ class PublisherController extends Controller
                     if($publisher->save()){
                         // return "hiii";
                         $data= [
-                            'success' => 'Profile Updated Successfully',
+                            'success' => 'Profile Image Updated Successfully',
+                            'profileImageFilename'=>$publisher->profileImage
                                  ];
                         return response()->json($data);
                     }
@@ -169,7 +170,7 @@ class PublisherController extends Controller
                     if($publisher->save()){
                         // return "hiii";
                         $data= [
-                            'success' => 'Profile Updated Successfully',
+                            'success' => 'Background Image Updated Successfully',
                                  ];
                         return response()->json($data);
                     }
