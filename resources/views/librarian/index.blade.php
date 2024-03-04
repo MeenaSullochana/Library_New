@@ -127,12 +127,114 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-6">
+							<div class="col-xl-6 col-md-6">
+                        <div class="row">
+                            <div class="col-xl-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <div class="icon-box icon-box-md bg-danger-light me-1">
+                                                <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
+                                            </div>
+                                            @php
+                                                $id = auth('librarian')->user()->id;
+                                                $books = DB::table('books')->where('book_reviewer_id', '=', $id)->count();
+                                            @endphp
+                                            <div class="ms-2">
+                                                <h4>{{$books}}</h4>
+                                                <p class="mb-0">Total Meta Book</p>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)"><i
+                                                class="fa-solid fa-chevron-right text-danger"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <div class="icon-box icon-box-md bg-primary-light me-1">
+                                                <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
+                                            </div>
+											@php
+    $id = auth('librarian')->user()->id;
+    $books1 = DB::table('books')
+                ->where('book_reviewer_id', $id)
+                ->where(function ($query) {
+                    $query->whereNull('book_status')
+                          ->orWhere('book_status', 2)
+                          ->orWhere('book_status', 3);
+                })
+                ->count();
+@endphp
+                                            <div class="ms-2">
+                                                <h4>{{$books1}}</h4>
+                                                <p class="mb-0">Pending meta Book</p>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)"><i
+                                                class="fa-solid fa-chevron-right text-primary"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+					    <div class="col-xl-6 col-md-6">
+                        <div class="row">
+						<div class="col-xl-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <div class="icon-box icon-box-md bg-info-light me-1">
+                                                <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
+                                            </div>
+											@php
+                                                $id = auth('librarian')->user()->id;
+                                                $books3 = DB::table('books')->where('book_reviewer_id', '=', $id)->where('book_status', '=', 1)->count();
+                                            @endphp
+                                            <div class="ms-2">
+                                                <h4>{{$books3}}</h4>
+                                                <p class="mb-0">Complite Book</p>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)"><i
+                                                class="fa-solid fa-chevron-right text-info"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-sm-6">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-between align-items-center">
+                                        <div class="d-flex">
+                                            <div class="icon-box icon-box-md bg-info-light me-1">
+                                                <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
+                                            </div>
+											@php
+                                                $id = auth('librarian')->user()->id;
+                                                $books2 = DB::table('books')->where('book_reviewer_id', '=', $id)->where('book_status', '=', 0)->count();
+                                            @endphp
+                                            <div class="ms-2">
+                                                <h4>{{$books2}}</h4>
+                                                <p class="mb-0">Reject Book</p>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)"><i
+                                                class="fa-solid fa-chevron-right text-info"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                 
+							<div class="col-xl-12">
 								<div class="card">
 									<div class="card-body p-0">
 										<div class="table-responsive active-projects">
 											<div class="tbl-caption">
-												<h4 class="heading mb-0">MetaCheck Complete BookList</h4>
+												<h4 class="heading mb-0">MetaCheck BookList</h4>
 											</div>
 											<table id="projects-tbl" class="table">
 												<thead>
@@ -184,102 +286,8 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-6">
-								<div class="card">
-									<div class="card-body p-0">
-										<div class="table-responsive active-projects">
-											<div class="tbl-caption">
-												<h4 class="heading mb-0">Best Seller</h4>
-											</div>
-											<table id="projects-tbl" class="table">
-												<thead>
-													<tr>
-														<th>SELLER NAME</th>
-														<th>STATUS</th>
-														<th>RATING</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<img src="images/contacts/pic1.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>
-
-															</div>
-														</td>
-														<td>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star"></i>
-														</td>
-														<td>
-															<span class="badge badge-primary light border-0">Inprogress</span>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<img src="images/contacts/pic2.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>
-															</div>
-														</td>
-														<td>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star"></i>
-														</td>
-														<td>
-															<span class="badge badge-success light border-0">Success</span>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<img src="images/contacts/pic3.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>
-															</div>
-														</td>
-														<td>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star"></i>
-														</td>
-														<td>
-															<span class="badge badge-warning light border-0">Pending</span>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="d-flex align-items-center">
-																<img src="images/contacts/pic3.jpg" class="avatar avatar-md rounded-circle" alt="">
-																<p class="mb-0 ms-2">Daniel Arran</p>
-															</div>
-														</td>
-														<td>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star-fill"></i>
-															<i class="bi bi-star"></i>
-														</td>
-														<td>
-															<span class="badge badge-danger light border-0">Cancle</span>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-6">
+						
+							<!-- <div class="col-xl-6">
 								<div class="card">
 									<div class="card-header border-0">
 										<h4 class="heading mb-0">New Book</h4>
@@ -380,8 +388,8 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="col-xl-6">
+							</div> -->
+							<!-- <div class="col-xl-6">
 								<div class="card">
 									<div class="card-header border-0">
 										<h4 class="heading mb-0">Top rating books</h4>
@@ -487,7 +495,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

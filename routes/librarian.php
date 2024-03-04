@@ -102,6 +102,7 @@ Route::prefix('librarian')->group(function () {
      Route::post('/librarianedit',[LibrarianController::class,'librarianedit']);
 
 
+     Route::get('/meta_update_return',[LibrarianController::class,'meta_update_return']);
 
 
 

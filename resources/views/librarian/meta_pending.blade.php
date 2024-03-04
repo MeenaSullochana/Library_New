@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- PAGE TITLE HERE -->
-    <title>Government of Tamil Nadu - Book Procurement - Pending Meta Book Check List</title>
+    <title>Government of Tamil Nadu - Book Procurement - All Meta Book Check List</title>
 
     <!-- FAVICONS ICON -->
 	<link rel="shortcut icon" type="image/png" href="{{ asset('librarian/images/fevi.svg') }}">
@@ -171,14 +171,13 @@
                             <div class="card-body p-3">
                                 <div class="table-responsive active-projects task-table">
                                     <div class="tbl-caption">
-                                        <h4 class="heading mb-0"><i class="fa fa-trash p-2 text-danger" aria-hidden="true"></i></h4>
+                                        <h4 class="heading mb-0"><i class="fa fa-trash p-2" aria-hidden="true"></i></h4>
                                     </div>
                                     <table id="example4" class="table">
                                         <thead>
 
                                             <tr>
-                                                <th>
-                                                </th>
+                                               
                                                 <th>S.No</th>
                                                 <th>Book Name</th>
                                                 <th>Book Number</th>
@@ -189,12 +188,7 @@
                                         <tbody>
                                         @foreach($book as $key=>$val)
                                             <tr>
-                                                <td>
-                                                    <div class="form-check custom-checkbox">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox3" required>
-                                                        <label class="form-check-label" for="customCheckBox3"></label>
-                                                    </div>
-                                                </td>
+                                              
                                                 <td><span>{{$loop->index +1}}</span></td>
                                                 <td>
                                                     <div class="products">
@@ -214,6 +208,12 @@
                                   <select  class="col-sm-12 m-b30"  name="user_approval" id="user_approval"   data-id="{{$val->id}}">
                                   <option style="color: red;" value="Pending">Pending</option>
                                  <option style="color: green;" value="Approve">Approve</option>
+                                 <option style="color: orange;" value="return">Return To 
+                                 @if($val->user_type == "publisher_distributor") 
+                                 publisher cum distributor
+                                @else
+                                {{$val->user_type}}
+                            @endif    </option>
                                  <option style="color: blue;" value="Reject">Reject</option>
                                   </select>
                                   </div>
@@ -221,13 +221,23 @@
                            @elseif($val->book_status=='1')
 
                           <td> <span class="badge bg-success text-white">Approve</span></td>
+                          @elseif($val->book_status=='2')
 
+                          <td> <span class="badge bg-danger text-white">Return To 
+                                 @if($val->user_type == "publisher_distributor") 
+                                 publisher cum distributor
+                                @else
+                                {{$val->user_type}}
+                            @endif </span></td>
                             @else
                            <td> <span class="badge bg-danger text-white">Reject</span></td>
                            @endif
 
                                                 <td>
                                                     <a href="/librarian/book_view/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
+                                                    @if($val->book_status=='0')
+                                                    <a class="btn btn-primary mb-2" data-bs-toggle="modal" data-id="{{$val->reject_message}}" data-bs-target="#myModal">View</a>
+                                                    @endif
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -275,6 +285,28 @@
       </div>
 
       </div>
+      <div class="modal fade" id="staticBackdrop22" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Book Correction</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <input type="hidden" name="userid" id="hiddenInput22">
+               <label for="return_message">Please Enter Any Correction </label>
+               <textarea name="return_message" id="return_message" cols="800" rows="30" class="form-control"></textarea>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="submitButton33" >submit</button>
+            </div>
+         </div>
+      </div>
+
+      </div>
+
+
       <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
          <div class="modal-content">
@@ -299,6 +331,20 @@
 
 
     </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Reject Message</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="modalBodyContent"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
     <!--**********************************
         Main wrapper end
     ***********************************-->
@@ -318,11 +364,55 @@
                     $('#hiddenInput1').val(id);
                      $('#staticBackdrop1').modal('show');
 
+                  }else if(approval_ == 'return'){
+                    $('#hiddenInput22').val(id);
+                     $('#staticBackdrop22').modal('show');
+
                   }
                   });
                   </script>
 
+<script>
+      $(document).on('click','#submitButton33',function(e){
+        e.preventDefault();
+        var data={
+           'id':$('#hiddenInput22').val(),
+           'returnmessage':$('#return_message').val(),
 
+        }
+         console.log(data);
+        $('#staticBackdrop22').modal('hide');
+        $.ajaxSetup({
+           headers:{
+              'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+           }
+        });
+        $.ajax({
+           type:"post",
+           url:"/librarian/librarianreturnmessage",
+           data:data,
+           dataType:"json",
+           success: function(response) {
+              console.log(response);
+              if(response.success){
+                setTimeout(function() {
+                    window.location.href ="/librarian/meta_pending"
+                     }, 3000);
+                toastr.success(response.success,{timeout:45000});
+               }else{
+                toastr.error(response.error,{timeout:45000});
+                setTimeout(function() {
+                    window.location.href ="/librarian/meta_pending"
+                     }, 3000);
+               }
+
+        }
+      });
+  })
+
+
+
+    </script>
 <script>
       $(document).on('click','#submitButton',function(e){
         e.preventDefault();
@@ -405,6 +495,19 @@
 
 
     </script>
+
+<script>
+    $(document).ready(function () {
+        $('#myModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var rejectMessage = button.data('id');
+            var modal = $(this);
+
+            // Update modal body with the reject message
+            modal.find('#modalBodyContent').html(rejectMessage);
+        });
+    });
+</script>
 </html>
 <style>
       .active-projects.style-1 .dt-buttons .dt-button {

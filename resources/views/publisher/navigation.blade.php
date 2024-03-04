@@ -1292,6 +1292,8 @@
                         <ul aria-expanded="false">
                             <li><a href="/publisher/procurement">Apply For Procurement</a></li>
                             <li><a href="/publisher/procurement_list">Pending List </a></li>
+							<li><a href="/publisher/book_updatelist">Return Correction Book List</a></li>
+
                             <li><a href="/publisher/procurement_completed">Screened List </a></li>
                             <li><a href="/publisher/procurement_reject">Reject List </a></li>
                         </ul>
@@ -1303,6 +1305,7 @@
                     <ul aria-expanded="false">
                         <li><a href="/publisher/nego_pending_list">Negotiation List</a></li>
                         <li><a href="/publisher/nego_process_list">Negotiation Process List</a></li>
+
                         <li><a href="/publisher/nego_approved_list">Approved List</a></li>
                         <li><a href="/publisher/nego_failed_list">Failed list</a></li>
 

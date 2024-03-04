@@ -192,8 +192,7 @@
                                     <table id="example4" class="table">
                                         <thead>
                                             <tr>
-                                                <th>
-                                                </th>
+                                                
                                                 <th>S.No</th>
                                                 <th>Book Name</th>
                                                 <th>Book Number</th>
@@ -205,12 +204,7 @@
                                         @foreach($book as $key=>$val)
 
                                             <tr>
-                                                <td>
-                                                    <div class="form-check custom-checkbox">
-                                                        <input type="checkbox" class="form-check-input" id="customCheckBox3" required>
-                                                        <label class="form-check-label" for="customCheckBox3"></label>
-                                                    </div>
-                                                </td>
+                                             
                                                 <td><span>{{$loop->index +1}}</span></td>
                                                 <td>
                                                     <div class="products">

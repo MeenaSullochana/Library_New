@@ -1306,7 +1306,9 @@
                         <ul aria-expanded="false">
                             <li><a href="/publisher_and_distributor/procurement">Apply For Procurement</a></li>
                             <li><a href="/publisher_and_distributor/procurement_list">pending List </a></li>
-                            <li><a href="/publisher_and_distributor/procurement_completed">Complete List </a></li>
+							<li><a href="/publisher_and_distributor/book_updatelist">Return Correction Book List</a></li>
+
+							<li><a href="/publisher_and_distributor/procurement_completed">Complete List </a></li>
                             <li><a href="/publisher_and_distributor/procurement_reject">Reject List </a></li>
                         </ul>
                     </li>
@@ -1326,7 +1328,9 @@
                         <ul aria-expanded="false">
                             <li><a href="/publisher_and_distributor/nego_pending_list">Negotiation List</a></li>
                             <li><a href="/publisher_and_distributor/nego_process_list">Negotiation Process List</a></li>
-                            <li><a href="/publisher_and_distributor/nego_approved_list">Approved List</a></li>
+                           
+
+							<li><a href="/publisher_and_distributor/nego_approved_list">Approved List</a></li>
                             <li><a href="/publisher_and_distributor/nego_failed_list">Failed list</a></li>
 
                         </ul>
