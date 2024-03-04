@@ -353,6 +353,7 @@ Route::post('/multiple-librarianstatus',[LibrarianController::class,'multiple_li
 Route::post('/multiple-reviewerstatus',[ReviewerController::class,'multiple_reviewerstatus']);
 Route::get('/multimember_create',function(){ return view('admin.multimember_create');});
 
+Route::get('/mailverificationcontent',function(){ return view('admin.mailverificationcontent');});
 
 
  Route::post('/addreviewer',[ReviewerController::class,'createreviewer']);
@@ -624,6 +625,9 @@ Route::get('/categoriesedit',function(){
 //   homecontent
 Route::get('/homecontent',function(){ return view('admin.homecontent');});
   Route::post('/hidelins_title',[SettingController::class,'hidelins_title']);
+  Route::post('/mailverification_title',[SettingController::class,'mailverification_title']);
+
+  
 //  loginecontent
 Route::get('/logincontent',function(){ return view('admin.logincontent');});
   Route::post('/loginhidelins_title',[SettingController::class,'loginhidelins_title']);

@@ -2131,7 +2131,7 @@
                         <li><a href="forgotcontent">Forgot Page Content</a></li>
 
                         <li><a href="forgotpasswordcontent">Forgotpassword page Content</a></li>
-
+                        <li><a href="mailverificationcontent">Mail Verification page Content</a></li>
 
                             <li><a href="manage_general_setting">General Setting</a></li>
                             <li><a href="banner_setting">Home Setting</a></li>

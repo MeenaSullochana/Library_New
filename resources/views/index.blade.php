@@ -50,7 +50,15 @@
         <section tion class="category-area grey-bg pb-40">
             <div class="container">
                 <div class="swiper-container category-active">
+                @php
+                                $categories = DB::table('special_categories')
+
+    ->where('status', '=', '1')
+ 
+    ->get();
+    @endphp
                     <div class="swiper-wrapper">
+                        @foreach($categories as $val)
                         <div class="swiper-slide">
                             <div class="category__item mb-30 cover-photo shadow-lg">
                                 <div class="category__thumb fix mb-15">
@@ -58,20 +66,20 @@
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name </a></h5>
-                                    <span class="category__count">05-06-22</span>
+                                    <h5 class="category__title"><a href="#">{{$val->name}} </a></h5>
+                                    <!-- <span class="category__count">05-06-22</span> -->
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
+                        @endforeach
+                        <!-- <div class="swiper-slide">
                             <div class="category__item mb-30 cover-photo shadow-lg">
                                 <div class="category__thumb fix mb-15">
                                     <a href="#"><img src="assets/img/catagory/2.jpg"
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name </a></h5>
-                                    <span class="category__count">06-03-22</span>
+                                    <h5 class="category__title"><a href="#">{{$categories[1]->name}} </a></h5>
                                 </div>
                             </div>
                         </div>
@@ -82,8 +90,7 @@
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name 6</a></h5>
-                                    <span class="category__count">09-09-22</span>
+                                    <h5 class="category__title"><a href="#">{{$categories[2]->name}}</a></h5>
                                 </div>
                             </div>
                         </div>
@@ -94,8 +101,7 @@
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name 4</a></h5>
-                                    <span class="category__count">11-09-22</span>
+                                    <h5 class="category__title"><a href="#">{{$categories[3]->name}}</a></h5>
                                 </div>
                             </div>
                         </div>
@@ -106,8 +112,7 @@
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name 8</a></h5>
-                                    <span class="category__count">02-09-23</span>
+                                    <h5 class="category__title"><a href="#">{{$categories[4]->name}}</a></h5>
                                 </div>
                             </div>
                         </div>
@@ -118,8 +123,7 @@
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name 6</a></h5>
-                                    <span class="category__count">16-09-22</span>
+                                    <h5 class="category__title"><a href="#">{{$categories[5]->name}}</a></h5>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +134,7 @@
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name 7</a></h5>
+                                    <h5 class="category__title"><a href="#">{{$categories[6]->name}}</a></h5>
                                     <span class="category__count">10-11-2022</span>
                                 </div>
                             </div>
@@ -142,11 +146,21 @@
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
-                                    <h5 class="category__title"><a href="#">Book Name 8</a></h5>
-                                    <span class="category__count">11-01-2022</span>
+                                    <h5 class="category__title"><a href="#">{{$categories[7]->name}}</a></h5>
                                 </div>
                             </div>
                         </div>
+                        <div class="swiper-slide">
+                            <div class="category__item mb-30 cover-photo shadow-lg">
+                                <div class="category__thumb fix mb-15">
+                                    <a href="#"><img src="assets/img/catagory/5.jpg"
+                                            alt="category-thumb"></a>
+                                </div>
+                                <div class="category__content">
+                                    <h5 class="category__title"><a href="#">{{$categories[8]->name}}</a></h5>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

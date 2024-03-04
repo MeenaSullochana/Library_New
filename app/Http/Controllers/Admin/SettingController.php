@@ -18,6 +18,9 @@ use msztorc\LaravelEnv\Env;
 use App\Mail\SmtpTestEmail;
 use App\Models\Loginhidelins;
 use App\Models\Fogothidelins;
+use App\Models\Mailconfirmtitle;
+
+
 use App\Models\Fogotpasswordhidelins;
 use App\Models\Reviewerbatch;
 use App\Models\Mailurl;
@@ -71,6 +74,50 @@ class SettingController extends Controller
         //     return back()->with('error', 'Invalid email configuration. Mail send failed.');
         // }
     }
+    public function mailverification_title(Request $req)
+    {
+        $validator = Validator::make($req->all(),[
+            'userType'=>'required|string',
+            'hidelineTitle'=>'required|string',
+            'hidelineContent'=>'required',
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+      
+        $record = Mailconfirmtitle::where('userType','=','$req->userType')->first();
+        if ($record == null) {
+            $hidelin = new Mailconfirmtitle();
+            $hidelin->userType = $req->userType;
+            $hidelin->hidelineTitle = $req->hidelineTitle;
+            $hidelin->hidelineContent = json_encode($req->hidelineContent);
+            $hidelin->save();
+        
+            $data = [
+                'success' => 'Mailconfirmtitle Hidelin Created Successfully',
+            ];
+        
+            return response()->json($data);
+        } else {
+           
+            $record->userType = $req->userType;
+            $record->hidelineTitle = $req->hidelineTitle;
+            $record->hidelineContent = json_encode($req->hidelineContent);
+            $record->save();
+        
+            $data = [
+                'success' => 'Mailconfirmtitle Hidelin Updated Successfully',
+            ];
+        
+            return response()->json($data);
+        }
+        
+    }
+
     public function hidelins_title(Request $req)
     {
         $validator = Validator::make($req->all(),[

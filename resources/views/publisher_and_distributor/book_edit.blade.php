@@ -24,9 +24,9 @@ $bookdescription = $data->bookdescription1;
     <!-- PAGE TITLE HERE -->
     <title>Government of Tamil Nadu - Book Procurement - Book Add</title>
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('publisher/images/fevi.svg') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('publisher_and_distributor/images/fevi.svg') }}">
     <?php
-    include 'publisher/plugin/plugin_css.php';
+    include 'publisher_and_distributor/plugin/plugin_css.php';
     ?>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
@@ -53,7 +53,7 @@ $bookdescription = $data->bookdescription1;
         <!--**********************************
                 Nav header start
             ***********************************-->
-        @include ('publisher.navigation')
+        @include ('publisher_and_distributor.navigation')
         <!--**********************************
                 Sidebar end
             ***********************************-->
@@ -68,12 +68,12 @@ $bookdescription = $data->bookdescription1;
                             <h3 class="mb-0 bc-title">
                                 <b>Edit Book</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href=" {{ url('publisher/book_manage_all') }}">
+                            <a class="btn btn-primary  btn-sm" href=" {{ url('publisher_and_distributor/book_manage_all') }}">
                                 <i class="fa fa-angle-double-left" aria-hidden="true"></i> List of Book </a>
                         </div>
                     </div>
                 </div>
-                <form class="row g-3 mt-2" method="POST" enctype="multipart/form-data" id ="ourFormId" action="/publisher/update/book"
+                <form class="row g-3 mt-2" method="POST" enctype="multipart/form-data" id ="ourFormId" action="/publisher_and_distributor/update/book"
                     autocomplete="on">
                     @csrf
                     <input type="text" value="{{$data->id}}" name="id" hidden>
@@ -1810,7 +1810,7 @@ $bookdescription = $data->bookdescription1;
     <!--**********************************
                 Footer start
             ***********************************-->
-    @include ('publisher.footer')
+    @include ('publisher_and_distributor.footer')
     <!--**********************************
                 Footer end
             ***********************************-->
@@ -1829,7 +1829,7 @@ $bookdescription = $data->bookdescription1;
             Main wrapper end
         ***********************************-->
     <?php
-        include 'publisher/plugin/plugin_js.php';
+        include 'publisher_and_distributor/plugin/plugin_js.php';
     ?>
      <!-- <script src="./vendor/toastr/js/toastr.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.1/toastify.js"></script> -->
@@ -2044,7 +2044,7 @@ $bookdescription = $data->bookdescription1;
             });
         });
     </script>
-<script>
+    <script>
 $(document).on('click', '.delete_image', function () {
     var removeButton = $(this);
     var imageThumb = removeButton.prev('.imageThumb');
@@ -2052,7 +2052,7 @@ $(document).on('click', '.delete_image', function () {
     var bookId = removeButton.closest('.other_image_files').data('bookid');
 
     $.ajax({
-        url: '/publisher/remove-image',
+        url: '/publisher_and_distributor/remove-image',
         type: 'POST',
         data: {
             bookId: bookId,
@@ -2079,7 +2079,7 @@ $('.highlights_delete').on('click', function() {
     var filename = $(this).closest('.pip').data('filename');
 
     $.ajax({
-        url: "/publisher/remove-image-highlights",
+        url: "/publisher_and_distributor/remove-image-highlights",
         type: "POST",
         dataType: "json",
         data: {
@@ -2746,7 +2746,7 @@ $('.highlights_delete').on('click', function() {
         // AJAX request to Laravel backend
         $.ajax({
             type: 'POST',
-            url: '/publisher/isbn', // The route to your Laravel controller method
+            url: '/publisher_and_distributor/isbn', // The route to your Laravel controller method
             data: {
                 '_token': '{{ csrf_token() }}',
                 'bookisbn': bookisbn
