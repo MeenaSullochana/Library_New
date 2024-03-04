@@ -68,7 +68,7 @@
                            <tr>
                               <th>S/No</th>
                               <th>Quote Number</th>
-                              <th>Transection Number</th>
+                              <th>Transaction Number</th>
                               <th>Invoice Number</th>
                               <th>Update Status</th>
                               <th>Status</th>

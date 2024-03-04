@@ -1204,7 +1204,7 @@
                                                         <img  src="{{asset("images/default.png")}}"  alt="">
 
                                                         @else
-                                                        <img  src="{{asset("distributor/images/profile/".auth('distributor')->user()->profileImage)}}"  alt="">
+                                                        <img  id="navprofileImage" src="{{asset("distributor/images/profile/".auth('distributor')->user()->profileImage)}}"  alt="">
 
                                                         @endif
 												</div>

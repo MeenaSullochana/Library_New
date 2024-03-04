@@ -117,8 +117,8 @@
                            <td><span class="badge light badge-success">{{$val->created_at->format('Y-m-d')}}</span>
                               <td>
                                  <a href="/admin/pub_profile/{{$val->id}}"><i class="fa fa-eye p-2"></i></a>
-                                 <i class="fa fa-pencil p-2"></i>
-                                 <i class="fa fa-trash p-2"></i>
+                                 <!-- <i class="fa fa-pencil p-2"></i>
+                                 <i class="fa fa-trash p-2"></i> -->
                                  <a href="/admin/pub_payment_list"><i class="fa fa-list-check p-2"></i></a>
                               </td>
                            </tr>

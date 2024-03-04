@@ -695,7 +695,7 @@
                                                         <img  src="{{asset("images/default.png")}}"  class="avatar avatar-md"  alt="">
 
                                                         @else
-                                                        <img  src="{{asset("publisher_and_distributor/images/profile/".auth('publisher_distributor')->user()->profileImage)}}"  class="avatar avatar-md" alt="">
+                                                        <img  id="navprofileImage" src="{{asset("publisher_and_distributor/images/profile/".auth('publisher_distributor')->user()->profileImage)}}"  class="avatar avatar-md" alt="">
 
                                                         @endif
 												</div>

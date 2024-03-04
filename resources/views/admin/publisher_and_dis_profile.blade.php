@@ -53,9 +53,9 @@
                             <div class="profile-head">
                                 <div class="photo-content">
                                 @if($data->backgroundImage == Null)
-                                    <div class="cover-photo rounded" style="background: url('{{asset("images/default.png")}}')" id="output1" ></div>
+                                    <div class="cover-photo rounded" style="background: url('{{asset("images/default.png")}}'); background-size:cover;" id="output1" ></div>
                                     @else
-                                    <div class="cover-photo rounded" style="background: url('{{asset("publisher_and_distributor/images/profile/".$data->backgroundImage)}}')" id="output1" ></div>
+                                    <div class="cover-photo rounded" style="background: url('{{asset("publisher_and_distributor/images/profile/".$data->backgroundImage)}}'); background-size:cover;" id="output1" ></div>
 
                                         @endif
                                 </div>
@@ -70,17 +70,17 @@
                                     <div class="profile-details">
                                     <div class="profile-name px-3 pt-2">
                                             <h4 class="text-primary mb-0">
-                                                Name Of The Users
+                                                Name of Publisher/Distributor
                                             </h4>
                                             <p>{{$data->firstName}}   {{$data->lastName}}</p>
                                         </div>
                                         <div class="profile-email px-2 pt-2">
-                                            <h4 class="text-muted mb-0">User Email ID
+                                            <h4 class="text-muted mb-0">Email
                                             </h4>
                                             <p>{{$data->email}} </p>
                                         </div>
                                         <div class="dropdown ms-auto">
-                                            <a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown"
+                                            {{--<a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown"
                                                 aria-expanded="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
@@ -103,7 +103,7 @@
                                                     Add to group</li>
                                                 <li class="dropdown-item"><i class="fa fa-ban text-primary me-2"></i>
                                                     Block</li>
-                                            </ul>
+                                            </ul>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +182,27 @@
                                         <div class="profile-interest">
                                             <h5 class="text-primary d-inline">Nature of Your Publication Ownership</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
-                                                <p>{{$data->pubOwnership}}</p>
+                                            @if($data->pubOwnership == 'Publication')
+                                                <p>Public Limited</p>
+                                                @elseif($data->pubOwnership =='Private' )
+                                                <p>Private Limited</p>
+                                                @elseif($data->pubOwnership == 'limited')
+                                                <p>Limited Liability Partnership(LLP)</p>
+                                                @elseif($data->pubOwnership == 'Partnership' )
+                                                <p>Partnership Firm</p>
+                                                @elseif($data->pubOwnership == 'oneperson' )
+                                                <p>One Person Company</p>
+                                                @elseif($data->pubOwnership == 'trust')
+                                                <p>Private Trust</p>
+                                                @elseif($data->pubOwnership == 'society')
+                                                <p>Private Society</p>
+                                                @elseif($data->pubOwnership == 'institutional')
+                                                <p>Government Institutional Publication</p>
+                                                @elseif($data->pubOwnership == 'trust-foundation')
+                                                <p>Government Trust/Foundation Publication</p>
+                                                @elseif($data->pubOwnership == 'government-society')
+                                                <p>Government Society Publication</p>
+                                                @endif
                                                  @if($data->gstProof != null)
                                                 <a href="{{asset("publisher_and_distributor/images/proof/gst/".$data->gstProof)}}" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/gst/".$data->gstProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/gst/".$data->gstProof)}}"
@@ -190,13 +210,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">GST Certificate</h3>
                                                 </a>
                                                 @endif
-                                                @if($data->societyProof != null)
-                                                      <a href="#" data-exthumbimage="{{asset("publisher/images/proof/pan_tan/".$data->panOrTanProof)}}"
-                                                    data-src="{{asset("publisher/images/proof/pan_tan/".$data->panOrTanProof)}}"
-                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
-                                                    <h3  class="btn btn-primary light btn-xs mb-1"> Society Proof  </h3>
-                                                </a>
-                                                @endif
+                                              
                                                  @if($data->panOrTanProof != null)
                                                       <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/pan_tan/".$data->panOrTanProof)}}"
                                                     data-src="{{asset("publisher_and_distributor/images/proof/pan_tan/".$data->panOrTanProof)}}"
@@ -253,6 +267,41 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  AOA </h3>
                                                 </a>
                                                 @endif
+                                                @if($data->privateTrustProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/privatetrust/".$data->privateTrustProof)}}"
+                                                    data-src="{{asset("publisher_and_distributor/images/proof/privatetrust/".$data->privateTrustProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">  Private Trust Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->privateSocietyProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/privatesociety/".$data->privateSocietyProof)}}"
+                                                    data-src="{{asset("publisher_and_distributor/images/proof/privatesociety/".$data->privateSocietyProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">  Private Society Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->institutionProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/institution/".$data->institutionProof)}}"
+                                                    data-src="{{asset("publisher_and_distributor/images/proof/institution/".$data->institutionProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">Government Institutional Publication Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->trustFoundationProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/trustfoundation/".$data->trustFoundationProof)}}"
+                                                    data-src="{{asset("publisher_and_distributor/images/proof/trustfoundation/".$data->trustFoundationProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">Government Trust/Foundation Publication Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->societyProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher_and_distributor/images/proof/society/".$data->societyProof)}}"
+                                                    data-src="{{asset("publisher_and_distributor/images/proof/society/".$data->societyProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1"> Government Society Publication Registration Certificate </h3>
+                                                </a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -270,16 +319,16 @@
                                     <div class="custom-tab-1">
                                         <ul class="nav nav-tabs">
                                             <li class="nav-item"><a href="#info" data-bs-toggle="tab"
-                                                    class="nav-link ">User Detais</a>
+                                                    class="nav-link ">Info</a>
                                             </li>
                                             <li class="nav-item"><a href="#other_Info" data-bs-toggle="tab"
-                                                    class="nav-link active show">User Other Detais</a>
+                                                    class="nav-link active show">Other Info</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
                                             <div id="info" class="tab-pane fade">
                                                 <div class="profile-personal-info">
-                                                    <h4 class="text-primary mb-4 pt-4 border-bottom-1 pb-3">Users
+                                                    <h4 class="text-primary mb-4 pt-4 border-bottom-1 pb-3">User
                                                         Information</h4>
                                                         <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
@@ -366,7 +415,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pin Code <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Pincode <span class="pull-end">:</span>
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
@@ -450,7 +499,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pin Code <span class="pull-end">:</span>
+                                                            <h5 class="f-w-500">Pincode <span class="pull-end">:</span>
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
@@ -488,7 +537,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-6 col-5">
-                                                            <h5 class="f-w-500">NNumber of Books Published in the last 3
+                                                            <h5 class="f-w-500">Number of Books Published in the last 3
                                                                 years<span class="pull-end">:</span></h5>
                                                         </div>
                                                         <div class="col-sm-6 col-7">
@@ -521,8 +570,8 @@
                                                                 style="min-width: 845px">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>Enter member name</th>
-                                                                        <th>Enter member id</th>
+                                                                        <th>Member Name</th>
+                                                                        <th>Member Id</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -567,8 +616,8 @@
                                                 <table id="example4" class="display table" style="min-width: 845px">
                                                     <thead>
                                                         <tr>
-                                                            <th>Enter Title</th>
-                                                            <th>Enter Author</th>
+                                                            <th>Title</th>
+                                                            <th>Author</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -636,11 +685,11 @@
                                                 <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                     colspan="1"
                                                     aria-label="Book Lang From: activate to sort column ascending"
-                                                    style="width: 276.734px;">Book Lang From</th>
+                                                    style="width: 276.734px;">Language From</th>
                                                 <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1"
                                                     colspan="1"
                                                     aria-label="Book To From: activate to sort column ascending"
-                                                    style="width: 242.547px;">Book To From</th>
+                                                    style="width: 242.547px;">Language To</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -762,7 +811,12 @@
                             </div>
 
                             <div class="card-body">
-                            <h5 class="es-5">{{$data->haveSubsidiary}}</h5>
+                                @if($data->haveSubsidiary == 'yes')
+                                <h5 class="es-5">Yes</h5>
+                                @else
+                                <h5 class="es-5">No</h5>
+                                @endif
+                         
                                 <table id="example1" class="display table" style="min-width: 845px">
                                     <thead>
                                         <tr>

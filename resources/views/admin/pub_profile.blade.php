@@ -58,9 +58,9 @@
                             <div class="profile-head">
                                 <div class="photo-content">
                                 @if($data->backgroundImage == Null)
-                                    <div class="cover-photo rounded" style="background: url('{{asset("images/default.png")}}')" id="output1" ></div>
+                                    <div class="cover-photo rounded" style="background: url('{{asset("images/default.png")}}'); background-size:cover;" id="output1" ></div>
                                     @else
-                                    <div class="cover-photo rounded" style="background: url('{{asset("publisher/images/profile/".$data->backgroundImage)}}')" id="output1" ></div>
+                                    <div class="cover-photo rounded" style="background: url('{{asset("publisher/images/profile/".$data->backgroundImage)}}'); background-size:cover;" id="output1" ></div>
 
                                         @endif
                                 </div>
@@ -75,17 +75,17 @@
                                     <div class="profile-details">
                                         <div class="profile-name px-3 pt-2">
                                             <h4 class="text-primary mb-0">
-                                                Name Of Publication
+                                                Name Of Publisher
                                             </h4>
                                             <p>{{$data->publicationName}}</p>
                                         </div>
                                         <div class="profile-email px-2 pt-2">
-                                            <h4 class="text-muted mb-0">User Email ID
+                                            <h4 class="text-muted mb-0">Email
                                             </h4>
                                             <p>{{$data->email}} </p>
                                         </div>
                                         <div class="dropdown ms-auto">
-                                            <a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown"
+                                           {{-- <a href="#" class="btn btn-primary light sharp" data-bs-toggle="dropdown"
                                                 aria-expanded="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink" width="18px"
@@ -97,7 +97,7 @@
                                                         <circle fill="#000000" cx="19" cy="12" r="2"></circle>
                                                     </g>
                                                 </svg>
-                                            </a>
+                                            </a>--}}
                                             {{-- <ul class="dropdown-menu dropdown-menu-end">
                                                 <li class="dropdown-item"><i
                                                         class="fa fa-user-circle text-primary me-2"></i> View profile
@@ -182,7 +182,27 @@
                                         <div class="profile-interest">
                                             <h5 class="text-primary d-inline">Nature of Your Publication Ownership</h5>
                                             <div class="row mt-4 sp4" id="lightgallery">
-                                                <p>{{$data->pubOwnership}}</p>
+                                            @if($data->pubOwnership == 'Publication')
+                                                <p>Public Limited</p>
+                                                @elseif($data->pubOwnership =='Private' )
+                                                <p>Private Limited</p>
+                                                @elseif($data->pubOwnership == 'limited')
+                                                <p>Limited Liability Partnership(LLP)</p>
+                                                @elseif($data->pubOwnership == 'Partnership' )
+                                                <p>Partnership Firm</p>
+                                                @elseif($data->pubOwnership == 'oneperson' )
+                                                <p>One Person Company</p>
+                                                @elseif($data->pubOwnership == 'trust')
+                                                <p>Private Trust</p>
+                                                @elseif($data->pubOwnership == 'society')
+                                                <p>Private Society</p>
+                                                @elseif($data->pubOwnership == 'institutional')
+                                                <p>Government Institutional Publication</p>
+                                                @elseif($data->pubOwnership == 'trust-foundation')
+                                                <p>Government Trust/Foundation Publication</p>
+                                                @elseif($data->pubOwnership == 'government-society')
+                                                <p>Government Society Publication</p>
+                                                @endif
                                                  @if($data->gstProof != null)
                                                 <a href="{{asset("publisher/images/proof/gst/".$data->gstProof)}}" data-exthumbimage="{{asset("publisher/images/proof/gst/".$data->gstProof)}}"
                                                     data-src="{{asset("publisher/images/proof/gst/".$data->gstProof)}}"
@@ -197,13 +217,7 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  PAN / TAN  </h3>
                                                 </a>
                                                 @endif
-                                                @if($data->societyProof != null)
-                                                      <a href="{{asset("publisher/images/proof/pan_tan/".$data->panOrTanProof)}}" data-exthumbimage="{{asset("publisher/images/proof/pan_tan/".$data->panOrTanProof)}}"
-                                                    data-src="{{asset("publisher/images/proof/pan_tan/".$data->panOrTanProof)}}"
-                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
-                                                    <h3  class="btn btn-primary light btn-xs mb-1"> Society Proof  </h3>
-                                                </a>
-                                                @endif
+                                            
 
                                                  @if($data->udyamProof != null)
                                                     <a href="{{asset("publisher/images/proof/udayam/".$data->udyamProof)}}" data-exthumbimage="{{asset("publisher/images/proof/udayam/".$data->udyamProof)}}"
@@ -254,6 +268,41 @@
                                                     <h3  class="btn btn-primary light btn-xs mb-1">  AOA </h3>
                                                 </a>
                                                 @endif
+                                                @if($data->privateTrustProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher/images/proof/privatetrust/".$data->privateTrustProof)}}"
+                                                    data-src="{{asset("publisher/images/proof/privatetrust/".$data->privateTrustProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">  Private Trust Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->privateSocietyProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher/images/proof/privatesociety/".$data->privateSocietyProof)}}"
+                                                    data-src="{{asset("publisher/images/proof/privatesociety/".$data->privateSocietyProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">  Private Society Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->institutionProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher/images/proof/institution/".$data->institutionProof)}}"
+                                                    data-src="{{asset("publisher/images/proof/institution/".$data->institutionProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">Government Institutional Publication Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->trustFoundationProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher/images/proof/trustfoundation/".$data->trustFoundationProof)}}"
+                                                    data-src="{{asset("publisher/images/proof/trustfoundation/".$data->trustFoundationProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1">Government Trust/Foundation Publication Registration Certificate </h3>
+                                                </a>
+                                                @endif
+                                                @if($data->societyProof != null)
+                                                        <a href="#" data-exthumbimage="{{asset("publisher/images/proof/society/".$data->societyProof)}}"
+                                                    data-src="{{asset("publisher/images/proof/society/".$data->societyProof)}}"
+                                                    class="mb-1 col-lg-4 col-xl-4 col-sm-4 col-6" download="true">
+                                                    <h3  class="btn btn-primary light btn-xs mb-1"> Government Society Publication Registration Certificate </h3>
+                                                </a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
@@ -277,7 +326,7 @@
                                         <div class="tab-content">
                                             <div id="info" class="tab-pane fade">
                                                 <div class="profile-personal-info">
-                                                    <h4 class="text-primary mb-4 pt-4 border-bottom-1 pb-3">Users
+                                                    <h4 class="text-primary mb-4 pt-4 border-bottom-1 pb-3">User
                                                         Information</h4>
                                                     {{-- <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
@@ -360,7 +409,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pin Code
+                                                            <h5 class="f-w-500">Pincode
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
@@ -439,7 +488,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pin Code
+                                                            <h5 class="f-w-500">Pincode
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
@@ -616,8 +665,8 @@
                                         <tr>
                                             <th>Book Title</th>
                                             <th>Book Author</th>
-                                            <th>Book Lang From</th>
-                                            <th>Book To From</th>
+                                            <th>Language From</th>
+                                            <th>Language To</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -691,7 +740,12 @@
                             </div>
 
                             <div class="card-body">
-                            <h5 class="es-5">{{$data->haveSubsidiary}}</h5>
+                                @if($data->haveSubsidiary == 'yes')
+                                <h5 class="es-5">Yes</h5>
+                                @else
+                                <h5 class="es-5">No</h5>
+                                @endif
+                         
                                 <table id="subsidiary-pub" class="display table" style="min-width: 845px">
                                     <thead>
                                         <tr>
