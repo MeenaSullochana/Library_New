@@ -152,8 +152,10 @@ Route::prefix('publisher')->group(function () {
      Route::post('/pubprofileimg',[PublisherController::class,'pubprofileimg']);
 
      Route::post('/pubbackgroundimg',[PublisherController::class,'pubbackgroundimg']);
+     Route::get('/book_updatelist',function(){ return view('publisher.book_updatelist');});
+     Route::post('/bookupdatedandreturn',[BookController::class,'bookupdatedandreturn']);
 
-
+     
      Route::get('/pub_profile_edit',[PublisherController::class,'pubprofileedit']);
      Route::get('/feedback_publisher_add',function(){ return view('publisher.feedback_publisher_add');});
     //  feedbackadd

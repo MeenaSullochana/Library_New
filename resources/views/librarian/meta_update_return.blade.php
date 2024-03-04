@@ -62,7 +62,7 @@
                         <div class="card-body">
                             <div class="d-sm-flex align-items-center justify-content-between">
                                 <h3 class="mb-0 bc-title">
-                                    <b>All Meta Book Check List</b>
+                                    <b>Update Return Book List</b>
                                 </h3>
                                 <a class="btn btn-primary  btn-sm" href="index">
                                     <i class="fas fa-home"></i> Home</a>
@@ -177,11 +177,12 @@
                                         <thead>
 
                                             <tr>
-                                               
+                                                
                                                 <th>S.No</th>
                                                 <th>Book Name</th>
                                                 <th>Book Number</th>
                                                 <th>Meta Check</th>
+                                                <th>Status</th>
                                                 <th class="text-end">Control</th>
                                             </tr>
                                         </thead>
@@ -202,42 +203,24 @@
                                                     <span>{{$val->product_code}}</span>
                                                 </td>
 
-                                                 @if($val->book_status==Null)
+                                                
                           <td>
                               <div class="col-sm-12 m-b30">
                                   <select  class="col-sm-12 m-b30"  name="user_approval" id="user_approval"   data-id="{{$val->id}}">
                                   <option style="color: red;" value="Pending">Pending</option>
                                  <option style="color: green;" value="Approve">Approve</option>
-                                 <option style="color: orange;" value="return">Return To 
-                                 @if($val->user_type == "publisher_distributor") 
-                                 publisher cum distributor
-                                @else
-                                {{$val->user_type}}
-                            @endif    </option>
+                         
                                  <option style="color: blue;" value="Reject">Reject</option>
                                   </select>
                                   </div>
                            </td>
-                           @elseif($val->book_status=='1')
-
-                          <td> <span class="badge bg-success text-white">Approve</span></td>
-                          @elseif($val->book_status=='2')
-
-                          <td> <span class="badge bg-danger text-white">Return To 
-                                 @if($val->user_type == "publisher_distributor") 
-                                 publisher cum distributor
-                                @else
-                                {{$val->user_type}}
-                            @endif </span></td>
-                            @else
-                           <td> <span class="badge bg-danger text-white">Reject</span></td>
-                           @endif
+   
+                           <td> <span class="badge bg-danger text-white">Book Update TO return</span></td>
+                         
 
                                                 <td>
                                                     <a href="/librarian/book_view/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
-                                                    @if($val->book_status=='0')
-                                                    <a class="btn btn-primary mb-2" data-bs-toggle="modal" data-id="{{$val->reject_message}}" data-bs-target="#myModal">View</a>
-                                                    @endif
+                                                    <a class="btn btn-primary mb-2" data-bs-toggle="modal" data-id="{{$val->return_message}}" data-bs-target="#myModal">View</a>
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -335,10 +318,12 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Reject Message</h5>
+                <h5 class="modal-title">Return Book Message</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <div class="modal-body" id="modalBodyContent"></div>
+            <div class="modal-body" style="overflow-y: auto;">
+                <p id="modalBodyContent"></p>
+            </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
             </div>
@@ -396,13 +381,13 @@
               console.log(response);
               if(response.success){
                 setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
+                    window.location.href ="/librarian/meta_update_return"
                      }, 3000);
                 toastr.success(response.success,{timeout:45000});
                }else{
                 toastr.error(response.error,{timeout:45000});
                 setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
+                    window.location.href ="/librarian/meta_update_return"
                      }, 3000);
                }
 
@@ -437,13 +422,13 @@
               console.log(response);
               if(response.success){
                 setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
+                    window.location.href ="/librarian/meta_update_return"
                      }, 3000);
                 toastr.success(response.success,{timeout:45000});
                }else{
                 toastr.error(response.error,{timeout:45000});
                 setTimeout(function() {
-                    window.location.href ="/librarian/meta_book_list"
+                    window.location.href ="/librarian/meta_update_return"
                      }, 3000);
                }
 
@@ -478,13 +463,13 @@
 
                            if(response.success){
                            setTimeout(function() {
-                              window.location.href ="/librarian/meta_book_list"
+                              window.location.href ="/librarian/meta_update_return"
                                  }, 3000);
                            toastr.success(response.success,{timeout:45000});
                            }else{
                            toastr.error(response.error,{timeout:45000});
                            setTimeout(function() {
-                              window.location.href ="/librarian/meta_book_list"
+                              window.location.href ="/librarian/meta_update_return"
                                  }, 3000);
                            }
 

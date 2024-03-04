@@ -1793,7 +1793,8 @@
 							<li><a href="/librarian/meta_pending">Pending Book</a></li>
 							<li><a href="/librarian/meta_complete_book_list">Completed Book</a></li>	
 							<li><a href="/librarian/meta_return">Return Book</a></li>
-						
+							<li><a href="/librarian/meta_update_return">Return Updated Book</a></li>
+
 							<li><a href="/librarian/meta_reject">Reject Book</a></li>
 							
 						</ul>

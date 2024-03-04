@@ -345,7 +345,16 @@ public function procurecompleted(){
     $data=Book::where('user_id','=',$id)->where('book_procurement_status','=',1)->where('book_status','=',1)->get(); 
     return view('distributor.book_procurement_complete')->with('data',$data); 
 }
-
+public function bookupdatedandreturn(Request $request){
+    $id=auth('distributor')->user()->id;
+    $data1=Book::where('user_id','=',$id)->where('id','=',$request->id)->first();
+    $data1->book_status = 3;
+    $data1->save();
+    $data= [
+        'success' => 'Book applied Successfully',
+             ];
+    return response()->json($data);
+}
 public function procurementstatus(Request $request){
     $id=auth('distributor')->user()->id;
     $data1=Book::where('user_id','=',$id)->where('id','=',$request->id)->first();   

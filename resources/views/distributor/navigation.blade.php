@@ -1390,7 +1390,9 @@
                         <ul aria-expanded="false">
                             <li><a href="/distributor/procurement">Apply For Procurement</a></li>
                             <li><a href="/distributor/procurement_list">pending List </a></li>
-                            <li><a href="/distributor/procurement_completed">Completed List </a></li>
+							<li><a href="/distributor/book_updatelist">Return Correction Book List</a></li>
+
+							<li><a href="/distributor/procurement_completed">Completed List </a></li>
                             <li><a href="/distributor/procurement_reject">Reject List </a></li>
                         </ul>
                     </li>
@@ -1401,7 +1403,8 @@
                         <ul aria-expanded="false">
                             <li><a href="/distributor/nego_pending_list">Negotiation List</a></li>
                             <li><a href="/distributor/nego_process_list">Negotiation Process List</a></li>
-                            <li><a href="/distributor/nego_approved_list">Approved List</a></li>
+
+							<li><a href="/distributor/nego_approved_list">Approved List</a></li>
                             <li><a href="/distributor/nego_failed_list">Failed list</a></li>
 
                         </ul>

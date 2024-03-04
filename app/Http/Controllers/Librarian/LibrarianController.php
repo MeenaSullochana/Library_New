@@ -145,6 +145,12 @@ public function meta_return(){
   $book = Book::where('book_reviewer_id','=',$id)->where('book_status','=','2')->get();
   return view('librarian/meta_return')->with('book',$book); 
  }
+ public function meta_update_return(){
+  $id=auth('librarian')->user()->id; 
+  $book = Book::where('book_reviewer_id','=',$id)->where('book_status','=','3')->get();
+  return view('librarian/meta_update_return')->with('book',$book); 
+ }
+ 
 public function meta_reject(){
     $id=auth('librarian')->user()->id; 
     $book = Book::where('book_reviewer_id','=',$id)->where('book_status','=','0')->get();
