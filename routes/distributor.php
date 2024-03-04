@@ -168,6 +168,16 @@ Route::get('/report_download', function () {return view('distributor.report_down
      Route::post('/sendnegotiationsamount',[BookController::class,'sendnegotiationsamount']);
      Route::get('/book_updatelist',function(){ return view('distributor.book_updatelist');});
      Route::post('/bookupdatedandreturn',[BookController::class,'bookupdatedandreturn']);
-
+     Route::get('/book_edit/{id}',[BookController::class,'book_edit']);
+     Route::get('/bookedit',function(){
+         $data = Session::get('book');
+          if($data !==null){
+              return view('distributor.book_edit')->with("data",$data);
+          }
+ 
+      });
+      Route::post('/update/book',[BookController::class,'update']);
+      Route::post('/remove-image', [BookController::class,'removeImage'])->name('remove.image');
+      Route::post('/remove-image-highlights', [BookController::class,'removeImageHighlights'])->name('remove.image.highlights');
 });
 });

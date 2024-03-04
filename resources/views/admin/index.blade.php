@@ -3145,7 +3145,7 @@
                         <div class="col-xl-6 col-xxl-8 col-lg-7">
                             <div class="card h-auto">
                                 <div class="card-header border-0 pb-3">
-                                    <h4 class="heading mb-0">Running Event</h4>
+                                    <h4 class="heading mb-0">Toprating Books </h4>
                                     <a href="/admin/book_manage_all" class="btn btn-sm btn-primary">View All</a>
                                 </div>
                                 <div class="card-body pt-0">

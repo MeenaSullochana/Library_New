@@ -160,7 +160,9 @@
                                             <a href="/publisher_and_distributor/book_manage_view/{{$val->id}}" class="btn btn-success shadow btn-xs sharp me-1">
                                             <i class="fa fa-eye"></i>
                                             </a>
-
+                                            <a href="/publisher_and_distributor/book_edit/{{$val->id}}" class="btn btn-warning shadow btn-xs sharp me-1">
+                                                <i class="fa fa-edit"></i>
+                                                </a>
                                             <a class="btn btn-danger shadow btn-xs sharp delete-btn" data-id="{{ $val->id }}">
                                                 <i class="fa fa-trash"></i>
                                             </a>

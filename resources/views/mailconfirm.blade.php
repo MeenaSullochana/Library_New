@@ -68,7 +68,7 @@
                                             <div class="col-md-12">
                                                <div class="overflowTest ms-3">
                                                @php
-                                                $rev = DB::table('forgothidelins_title')->where('userType', '=', 'publisher')->first();
+                                                $rev = DB::table('mailconfirm_title')->where('userType', '=', 'publisher')->first();
 
                                                 if ($rev !== null) {
                                                     $data1 = json_decode($rev->hidelineContent);
@@ -103,7 +103,7 @@
                                             <div class="col-md-12">
                                                 <div class="overflowTest ms-3">
                                                 @php
-                                                $rev = DB::table('forgothidelins_title')->where('userType', '=', 'distributor')->first();
+                                                $rev = DB::table('mailconfirm_title')->where('userType', '=', 'distributor')->first();
 
                                                 if ($rev !== null) {
                                                     $data1 = json_decode($rev->hidelineContent);
@@ -141,7 +141,7 @@
                                             <div class="col-md-12">
                                                 <div class="overflowTest ms-3">
                                                 @php
-                                                $rev = DB::table('forgothidelins_title')->where('userType', '=', 'publisher_and_distributor')->first();
+                                                $rev = DB::table('mailconfirm_title')->where('userType', '=', 'publisher_and_distributor')->first();
 
                                                 if ($rev !== null) {
                                                     $data1 = json_decode($rev->hidelineContent);

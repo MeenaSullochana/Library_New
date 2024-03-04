@@ -10,8 +10,16 @@
           <div class="col-lg-6 col-md-12">
              <div class="header__top-right d-flex align-items-center">
                 <div class="header__top-link">
-                    @if (Auth::check())
-                        <a class="text-white fw-bold" href="/login">Dashboard</a>
+                    @if (auth('publisher')->user())
+                        <a class="text-white fw-bold" href="/publisher/index">Dashboard</a>
+                    @elseif (auth('distributor')->user())
+                        <a class="text-white fw-bold" href="/distributor/index">Dashboard</a>
+                    @elseif (auth('publisher_distributor')->user())
+                        <a class="text-white fw-bold" href="/publisher_distributor/index">Dashboard</a>
+                    @elseif (auth('librarian')->user())
+                        <a class="text-white fw-bold" href="/librarian/index">Dashboard</a>
+                    @elseif (auth('reviewer')->user())
+                        <a class="text-white fw-bold" href="/reviewer/index">Dashboard</a>
                     @else
                         <a class="text-white fw-bold" href="/login">Login</a>
                         <a class="text-white fw-bold" href="/register">Register</a>
