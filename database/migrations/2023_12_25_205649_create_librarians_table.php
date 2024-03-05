@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('metaChecker'); 
             $table->string('role');
             $table->string('librarianId');
+            $table->json('subject');
             $table->enum('status',['1','0'])->default('1');
             $table->timestamps();
         });

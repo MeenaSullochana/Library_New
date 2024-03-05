@@ -352,7 +352,7 @@ Route::post('/editreviewer',[ReviewerController::class,'editreviewer']);
 Route::post('/multiple-librarianstatus',[LibrarianController::class,'multiple_librarianstatus']);
 Route::post('/multiple-reviewerstatus',[ReviewerController::class,'multiple_reviewerstatus']);
 Route::get('/multimember_create',function(){ return view('admin.multimember_create');});
-
+Route::post('/reviewer/import', [ReviewerController::class,'importFile']);
 Route::get('/mailverificationcontent',function(){ return view('admin.mailverificationcontent');});
 
 
