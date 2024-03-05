@@ -63,21 +63,31 @@ $user = auth('librarian')->user();
 @endphp
 
 @if($user)
-   
-<a href="/cart">                
+@if(Session::has('cart'))
+              <a href="/cart">              
                            <button>
                               <i><img src="assets/img/icon/cart-1.svg" alt=""></i>
-                                 @if(Session::has('cart'))
+                                
                                     <span>
                                     {{count(Session::get('cart'))}}
                                     </span>
-                                 @else
+                               
+                               
+                           </button>
+                        </a>
+                        @else
+                        <a href="#">              
+                           <button>
+                              <i><img src="assets/img/icon/cart-1.svg" alt=""></i>
+                                
+                                
                                  <span>
                                     0
                                     </span>
-                                    @endif
+                                  
                            </button>
                         </a>
+                        @endif
 @endif
                         
                   </div>

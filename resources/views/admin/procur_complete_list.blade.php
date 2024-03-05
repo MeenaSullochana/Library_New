@@ -149,7 +149,7 @@
                                         <span class="text-left">Review/Assign</span>
                                           </th>
                                           <th>
-                                          <h6>External</h6>
+                                          <h6>Expert</h6>
                                           <span class="text-left">Review/Assign</span>
                                             </th>
                                             <th>
@@ -158,7 +158,7 @@
                                               </th>
 
                                         <th>Internal</th>
-                                        <th>External</th>
+                                        <th>Expert</th>
                                         <th>Public</th>
                                         <th>Total</th>
                                         <th>  Action</th>

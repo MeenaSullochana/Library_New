@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,32 +90,26 @@
                                     </div>
                                 </div>
                                 <div class="reviewer">
-                                    <form form class="profile-form" id="formId">
-                                        @csrf
-                                    <div class="form-validation">
-                                       
-                                        <div class="row" >
-
-                            
-                                            <h3 class="">Reviewer Excel Uplode</h3>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="col-sm-12 mb-3">
-                                                        <label class="form-label"></label>
-                                                         <input type="file" class="form-control" id="file" accept=".xls, .xlsx" multiple required>
-                                                    </div>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-12 text-end">
-                                                    <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    </form>
+<form class="profile-form" id="formId" action="/admin/reviewer/import" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="form-validation">
+        <h3 class="mb-3">Reviewer Excel Upload</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="file" class="form-label">Choose Excel File</label>
+                    <input type="file" class="form-control" name="file_reviewer" id="file" accept=".xls, .xlsx" required>
+                    <small class="form-text text-muted">Select .xls or .xlsx files only.</small>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-end">
+                <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
                                 </div>
                                 <div class="library">
                                     <form form class="profile-form" id="formId1">

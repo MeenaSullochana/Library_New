@@ -161,7 +161,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1"
                                         aria-label="ISBN(10/13): activate to sort column ascending"
-                                        style="width: 126.609px;">No.of.External</th>
+                                        style="width: 126.609px;">No.of.Expert</th>
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1"
                                         aria-label="ISBN(10/13): activate to sort column ascending"

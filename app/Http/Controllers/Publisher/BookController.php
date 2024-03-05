@@ -899,6 +899,27 @@ if(isset($request->back_img)){
            $book->user_type =    "publisher" ;
            $book->user_id =   auth('publisher')->user()->id;
            $book->save();
+
+          
+
+
+
+      $book->primaryauthor1= json_decode($book->primaryauthor);
+      $book->trans_from1= json_decode($book->trans_from);
+      $book->other_img1= json_decode($book->other_img);
+      $book->booktag1= json_decode($book->booktag);
+      $book->trans_author1= json_decode($book->trans_author);
+      $book->bookdescription1= json_decode($book->bookdescription);
+      $book->series1= json_decode($book->series);
+      $book->volume1= json_decode($book->volume);
+      $book->banner_img1= json_decode($book->banner_img);
+      $book->firstName=auth('publisher')->user()->firstName;
+      $book->lastName=auth('publisher')->user()->lastName;
+      if(Session::has('book')){
+        Session::forget('book');
+      }
+      Session::put('book',$book);
+
            return back()->with('success',"Books updated successfully");
     }
 }
