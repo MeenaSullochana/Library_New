@@ -168,7 +168,7 @@
                               </div>
                            </div>
                         </div> -->
-                            <div class="tpshop__widget mb-30 pb-25">
+                            {{-- <div class="tpshop__widget mb-30 pb-25">
                                 <h4 class="tpshop__widget-title">FILTER BY AUTHOR</h4>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault18">
@@ -206,8 +206,8 @@
                                         Paul Gaultier (15)
                                     </label>
                                 </div>
-                            </div>
-                            <div class="tpshop__widget">
+                            </div> --}}
+                            {{-- <div class="tpshop__widget">
                                 <h4 class="tpshop__widget-title">FILTER BY RATING</h4>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault24">
@@ -264,7 +264,7 @@
                                         (02)
                                     </label>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <!-- <div class="tpshop__widget">
                             <div class="tpshop__sidbar-thumb mt-35">
@@ -274,7 +274,7 @@
                     </div>
                     <div class="col-xl-10 col-lg-12 col-md-12">
                         <div class="tpshop__top ml-60">
-                            <div class="tpshop__banner mb-30"
+                            <div class="tpshop__banner mb-30" style="background-size: 100%;"
                                 data-background="https://img.lovepik.com/background/20211022/large/lovepik-a-book-that-blossomed-in-the-dark-background-image_500602193.jpg">
                                 <div class="tpshop__content text-center">
                                     <span>The Salad</span>
@@ -344,7 +344,7 @@
                                             </nav>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
+                                    {{-- <div class="col-sm-4">
                                         <div class="product__navtabs d-flex justify-content-end align-items-center">
                                             <div class="tp-shop-selector">
                                                 <select style="display: none;">
@@ -353,19 +353,10 @@
                                                     <option>Show 08</option>
                                                     <option>Show 20</option>
                                                 </select>
-                                                <div class="nice-select" tabindex="0">
-                                                    <span class="current">Default sorting</span>
-                                                    <ul class="list">
-                                                        <li data-value="Show 12" class="option selected">Default sorting
-                                                        </li>
-                                                        <li data-value="Show 14" class="option">Short popularity</li>
-                                                        <li data-value="Show 08" class="option">Show 08</li>
-                                                        <li data-value="Show 20" class="option">Show 20</li>
-                                                    </ul>
-                                                </div>
+
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="tab-content" id="nav-tabContent">
