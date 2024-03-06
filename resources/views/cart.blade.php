@@ -69,20 +69,20 @@
       </div> -->
       
       <!-- Total Leval For Buy item -->
-      <section class="cart-item-leval text-center">
+      <section class="cart-item-leval text-center bg-gray">
          <div class="container">
-            <h3 class="text-secondary text-start p-2">Purchase Category Level</h3>
-            <div class="d-flex align-items-center" id="budArrContainer">
+            <h3 class="text-secondary text-start p-3 fs-4 p-4 fw-bold">Purchase Category Level</h3>
+            <div class="d-flex-wrap align-items-center row" id="budArrContainer">
             @php
              $bud_arr = Session::get('bud_arr');
              $total = Session::get('total');
             @endphp
 
             @foreach($bud_arr as $val)
-               <div class="item">
+               <div class="item col-sm-6 col-md-6 col-lg-3 card rounded p-2 max-h-350 m-2">
                   <p>{{ $val->category }}</p>
                  <div class="pie animate no-round" style="--p:{{ $val->percentage }}">{{ $val->percentage }}</div>
-                 <p>Allotted Amount : {{$val->budget_price}}</p>
+                 <p class="p-0 m-0">Allotted Amount : {{$val->budget_price}}</p>
                  <p>Purchased Amount : {{$val->cart_price}}</p> 
                 </div>
          @endforeach
@@ -93,7 +93,7 @@
       <!-- cart area -->
       <section class="cart-area pb-80">
          <div class="container">
-            <h3>Cart Section</h3>
+            <h3 class="p-3">Cart Section</h3>
             <div class="row">
                <div class="col-12">
                   <form action="#">
@@ -163,7 +163,7 @@
                            </div>
                         </div>
                      </div> -->
-                     <div class="row">
+                     <div class="row mx-auto">
                         <div class="col-md-5 ">
                            <div class="cart-page-total">
                               <h2>Cart totals</h2>
@@ -289,6 +289,9 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
 });
 </script>
 <style>
+   .bg-gray{
+      background-color: #f2f2f6;
+   }
    @property --p {
       syntax: '<number>';
       inherits: true;
@@ -345,15 +348,28 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
    .no-round:after {
       content: none;
    }
-
+   .max-h-350{
+      max-height: 310px;
+      min-height: 310px;
+   }
    @keyframes p {
       from {
          --p: 0
       }
    }
-
-   body {
-      background: #f2f2f2;
+   .d-flex-wrap{
+      display: flex !important;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    align-items: stretch;
+   }
+   .cart-area{
+      padding-bottom: 80px;
+    background-color: #f2f2f6;
+    margin-top: 10px;
+    margin-bottom: 10px;
    }
 </style>
 

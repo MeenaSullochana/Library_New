@@ -4097,7 +4097,7 @@ input::placeholder {
   text-transform: uppercase;
   color: var(--tp-common-white);
   background-color: var(--tp-heading-secondary);
-  padding: 13px 97px;
+  padding: 13px 53px;
   border-radius: 30px;
   display: inline-block;
 }
