@@ -45,24 +45,20 @@
         <!-- slider-area-start -->
         @include("slider.slider")
         <!-- slider-area-end -->
-
-        <!-- category-area-start -->
+        @php
+     $categories = DB::table('special_categories') ->where('status', '=', '1')->get();
+    @endphp
+    @if($categories->isNotEmpty())
         <section tion class="category-area grey-bg pb-40">
             <div class="container">
                 <div class="swiper-container category-active">
-                @php
-                                $categories = DB::table('special_categories')
-
-    ->where('status', '=', '1')
  
-    ->get();
-    @endphp
                     <div class="swiper-wrapper">
                         @foreach($categories as $val)
                         <div class="swiper-slide">
                             <div class="category__item mb-30 cover-photo shadow-lg">
                                 <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/1.jpg"
+                                    <a href="#"><img src="{{ asset('admin/categorieImage/' . $val->categorieImage) }}"
                                             alt="category-thumb"></a>
                                 </div>
                                 <div class="category__content">
@@ -72,99 +68,15 @@
                             </div>
                         </div>
                         @endforeach
-                        <!-- <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/2.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[1]->name}} </a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/3.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[2]->name}}</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/4.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[3]->name}}</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/5.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[4]->name}}</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/6.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[5]->name}}</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/7.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[6]->name}}</a></h5>
-                                    <span class="category__count">10-11-2022</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/8.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[7]->name}}</a></h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="category__item mb-30 cover-photo shadow-lg">
-                                <div class="category__thumb fix mb-15">
-                                    <a href="#"><img src="assets/img/catagory/5.jpg"
-                                            alt="category-thumb"></a>
-                                </div>
-                                <div class="category__content">
-                                    <h5 class="category__title"><a href="#">{{$categories[8]->name}}</a></h5>
-                                </div>
-                            </div>
-                        </div> -->
+              
                     </div>
                 </div>
             </div>
         </section>
+   
+       
+        @endif
+
         <!-- category-area-end -->
 
         <!-- about-area-start -->

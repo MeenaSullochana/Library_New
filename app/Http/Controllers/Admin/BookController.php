@@ -1184,9 +1184,20 @@ return response()->json($data);
 
 }
   }
-
-
-  
+  public function reviewerlist($id) {
+ $external =  BookReviewStatus::where('book_id','=',$id)->where('reviewertype','=','external')->get();
+ $internal =  BookReviewStatus::where('book_id','=',$id)->where('reviewertype','=','internal')->get();
+ $public =  BookReviewStatus::where('book_id','=',$id)->where('reviewertype','=','public')->get();
+ $reviewer=(Object)[
+  'external'=>$external,
+  'internal'=>$internal,
+  'public'=>$public
+];
+ 
+ \Session::put('reviewer', $reviewer);
+    // return $book;
+      return redirect('admin/review'); 
+  }
     } 
     
     

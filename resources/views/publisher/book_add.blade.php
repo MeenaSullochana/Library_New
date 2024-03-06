@@ -1193,6 +1193,41 @@
                                                     </div>
                                                 </div>
                                             </div>
+ <div class="col-md-6">
+    <div class="mb-3">
+        <label class="text-label form-label text-black"
+            for="validationCustomUsername">Discount(%) <span class="text-danger">*</span></label>
+        <div class="input-group">
+            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+            <input type="number" class="form-control" id="discount"
+                name="discount" placeholder="Enter discount.." required>
+            <div class="invalid-feedback">
+                Book Title cannot be edited agter your book has been
+                published.
+                Click here to learn more.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="text-label form-label text-black"
+            for="validationCustomUsername">Discounted Price<span class="text-danger">*</span></label>
+        <div class="input-group">
+            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+            <input type="number" class="form-control" id="discountedprice1"
+                name="discountedprice1" placeholder="Enter final amount.." hidden>
+            <input type="number" class="form-control" id="discountedprice"
+                name="discountedprice" placeholder="Enter final amount.." disabled>
+            <div class="invalid-feedback">
+                Book Title cannot be edited agter your book has been
+                published.
+                Click here to learn more.
+            </div>
+        </div>
+    </div>
+</div>
                                             <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black" for="validationCustomUsername">Short Description <span class="text-danger">*</span></label><br>
@@ -1715,6 +1750,45 @@
         return true;
     }
 </script> -->
+<!-- 
+<script>
+    // JavaScript code
+    document.getElementById('discount').addEventListener('keyup', function() {
+        var price = parseFloat(document.getElementById('price').value);
+        var discount = parseFloat(this.value);
+
+        if (!isNaN(price) && !isNaN(discount)) {
+            var discountedPrice = Math.round(price - (price * discount / 100)); // Round to the nearest integer
+            document.getElementById('discountamount').value = discountedPrice;
+        } else {
+            document.getElementById('discountamount').textContent = '';
+        }
+    });
+</script> -->
+
+<script>
+    // JavaScript code
+    function calculateDiscount() {
+        var price = parseFloat(document.getElementById('price').value);
+        var discount = parseFloat(document.getElementById('discount').value);
+        
+        if (!isNaN(price) && !isNaN(discount)) {
+            var discountedPrice = Math.round(price - (price * discount / 100)); // Round to the nearest integer
+            document.getElementById('discountedprice').value = discountedPrice;       
+                 document.getElementById('discountedprice1').value = discountedPrice;
+
+
+        } else {
+
+            document.getElementById('discountedprice').value = '';
+            document.getElementById('discountedprice1').value = '';
+
+        }
+    }
+    
+    document.getElementById('price').addEventListener('keyup', calculateDiscount);
+    document.getElementById('discount').addEventListener('keyup', calculateDiscount);
+</script>
 <script>
     $(document).ready(function () {
         // Event listener for radio buttons

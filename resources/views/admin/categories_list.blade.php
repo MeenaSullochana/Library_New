@@ -113,12 +113,23 @@
                                                     <td>
                                                         <strong>{{$loop->index +1}}</strong>
                                                     </td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <!-- <img src="images\avatar\1.png" class="rounded-lg me-2"
-                                                                width="24" alt=""> -->
-                                                            <span class="w-space-no">{{$val->name}}</span>
-                                                        </div>
+                                                    <td class="py-3">
+                                                        <a href="#">
+                                                            <div class="media d-flex align-items-left">
+                                                              
+                                                                    <div class="avatar avatar-sm me-4">
+                                                                        <div class=""><img
+                                                                                class="rounded-circle img-fluid"
+                                                                                src="{{ asset('admin/categorieImage/' . $val->categorieImage) }}"
+                                                                                width="30" alt="">
+                                                                        </div>
+                                                                    </div>
+                                                          
+                                                                <div class="media-body">
+                                                                    <h6 class="mb-0 fs--1">{{ $val->name }}</h6>
+                                                                </div>
+                                                            </div>
+                                                        </a>
                                                     </td>
                                                     <td>
     @if($val->status == 1)                                     <div class="dropdown">

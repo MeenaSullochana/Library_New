@@ -82,6 +82,10 @@ return new class extends Migration
             $table->string('nameOfPublisher'); 
             $table->longtext('return_message')->nullable(); 
             $table->string('yearOfPublication'); 
+            $table->string('discountedprice'); 
+            $table->string('discount'); 
+
+            
             $table->timestamps();
         });
     }

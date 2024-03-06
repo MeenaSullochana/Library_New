@@ -845,11 +845,14 @@ img.profile-pic.img-circle {
     }
   };
 
-  $(document).ready(function() {
-        $('#subsidiary-pub').DataTable({
-            "processing": true,
-            "serverSide": true,
+ 
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
-        });
+<script>
+    $(document).ready(function() {
+        $('#subsidiary-pub').DataTable();
+
     });
 </script>

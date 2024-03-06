@@ -157,7 +157,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1"
                                         aria-label="ISBN(10/13): activate to sort column ascending"
-                                        style="width: 126.609px;"> No.of.Internal</th>
+                                        style="width: 126.609px;"> No.of.Librarian</th>
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1"
                                         aria-label="ISBN(10/13): activate to sort column ascending"
@@ -179,7 +179,7 @@
                                         <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
                                         colspan="1" aria-label="Action: activate to sort column ascending"
                                         style="width: 87.4688px;">  Action</th>
-                                        <th>Member List</th>
+                                        <th>Reviwer List</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -231,7 +231,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <a href="procur_book_assign.php" class="btn btn-primary shadow btn-sm m-0 me-1" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa fa-list" aria-hidden="true"></i>
+                                            <a href="/admin/reviewerlist/{{$val->book->id}}" class="btn btn-primary shadow btn-sm m-0 me-1" > <i class="fa fa-list" aria-hidden="true"></i>
                                                 </a>
                                         </td>
                                     </tr>

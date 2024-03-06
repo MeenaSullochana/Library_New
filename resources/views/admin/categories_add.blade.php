@@ -99,6 +99,28 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="col-xl-4 col-lg-4">
+                                                <div class="clearfix">
+                                                    <div class="card card-bx profile-card author-profile m-b30">
+                                                        
+                                                            <div class="p-1">
+                                                                <div class="author-profile">
+                                                                    <div class="author-media">
+                                                                        <img src="images/user.jpg" alt="" id="output" >
+                                                                        <div class="upload-link" title="" data-toggle="tooltip" data-placement="right" data-original-title="update">
+                                                                            <input type="file" class="update-flie" id="profileImage" onchange="loadFile(event)" Required>
+                                                                            <i class="fa fa-camera"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="author-info">
+                                                                        <h6 class="title">Add Category Image</h6>
+                                                                    </div>
+                                                                </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                                 <div class="col-md-4">
                                                     <div class="form-group mt-4">
                                                         <button type="button" class="btn btn-secondary" id="submitbutton">Submit</button>
@@ -148,39 +170,54 @@
         include "admin/plugin/plugin_js.php";
     ?>
 </body>
+
+
 <script>
+    $("#submitbutton").on("click", function (e) {
+        e.preventDefault();
+        var name = $("#name").val();
+        var status = $("#status").val();
+        var profileImage = $('#profileImage')[0].files[0]; // Corrected to access the first file
 
-        $("#submitbutton").on("click", function (e) {
-            e.preventDefault();
-          console.log(formData);
-            var formData = {
-                name: $("#name").val(),
-                status: $("#status").val()
-            };
-            $.ajaxSetup({
-                headers:{
-                    'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: "/admin/categoryadd", // Replace with your actual API endpoint
-                type: "POST",
-                data: formData,
-                success: function (response) {
-                    if(response.success){
-                    toastr.success(response.success,{timeout:2000});
-                    setTimeout(function() {
-                        window.location.href = "/admin/categories_add"
-                    }, 3000);
+        let fd = new FormData();
+        fd.append('name', name);
+        fd.append('status', status);
+        fd.append('categorieImage', profileImage); // Changed 'SubjectImage' to 'image'
 
-                }else{
-                    toastr.error(response.error,{timeout:2000});
-                }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
-            });
-
         });
 
+        $.ajax({
+            url: "/admin/categoryadd",
+            type: "POST",
+            data: fd,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response.success) {
+                    toastr.success(response.success, {timeout: 2000});
+                    setTimeout(function () {
+                        window.location.href = "/admin/categories_add";
+                    }, 3000);
+                } else {
+                    toastr.error(response.error, {timeout: 2000});
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
 </script>
 </html>
 <style>

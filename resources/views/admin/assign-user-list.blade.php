@@ -47,328 +47,379 @@
       <!--**********************************
             Content body start
         ***********************************-->
-      <div class="content-body">
-        <div class="container-fluid">
-          <div class="row">
-            <!-- Column  -->
-            <div class="col-xl-12">
-              <div class="card dz-card">
-                <div class="card-header flex-wrap border-0" id="default-tab">
-                  <ul class="nav nav-tabs dzm-tabs" id="myTab" role="tablist">
-                    <!-- <li class="nav-item" role="presentation"><button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#DefaultTab" type="button" role="tab" aria-controls="home" aria-selected="true">Preview</button></li><li class="nav-item" role="presentation"><button class="nav-link " id="profile-tab" data-bs-toggle="tab" data-bs-target="#DefaultTab-html" type="button" role="tab">HTML</button></li> -->
-                  </ul>
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="card-header flex-wrap bg-white mb-5">
+                    <div class="d-sm-flex align-items-center justify-content-between py-3">
+                        <h5 class=" mb-0 text-gray-800 pl-3">Reviewer List</h5>
+
+                    </div>
                 </div>
-                <div class="tab-content" id="myTabContent">
-                  <div class="tab-pane fade show active" id="DefaultTab" role="tabpanel" aria-labelledby="home-tab">
-                    <div class="card-body pt-0">
-                      <div class="col-lg-12">
-                        <div class="card dz-card" id="buttons-with-icon">
-                          <div class="card-header flex-wrap d-flex justify-content-between border-0 ">
-                            <div>
-                              <h4 class="card-title">Control panel</h4>
-                            </div>
-                            <ul class="nav nav-tabs dzm-tabs" id="myTab-1" role="tablist">
-                              <li class="nav-item" role="presentation">
-                              <a href="book_section.php"><button
-                                                class="nav-link active " type="button" role="tab" aria-controls="home"
-                                                aria-selected="true">
-                                                << Back</button></a>
-                              </li>
-                              <li class="nav-item" role="presentation">
-                              <button class="nav-link " type="button"
-                                            role="tab">Admin</button>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="tab-content" id="myTabContent-1">
-                            <div class="tab-pane fade show active" id="Buttons-Icon" role="tabpanel" aria-labelledby="home-tab-1">
-                              <div class="card-body pt-0">
-                                <a href="book_section_add_new.php">
-                                  <button type="button" class="btn btn-primary">
-                                    <i class="fa-brands fa-plus me-2"></i>Add New </button>
-                                </a>
-                                <a href="book_section_print.php">
-                                  <button type="button" class="btn btn-secondary">
-                                    <i class="fa-solid fa-print me-2"></i>Print Preview </button>
-                                </a>
-                                <a href="#">
-                                  <button type="button" class="btn btn-success">
-                                    <i class="fa-solid fa-download me-2"></i> Save CSV </button>
-                                </a>
-                                <a href="#">
-                                  <button type="button" class="btn btn-danger">
-                                    <i class="fa-solid fa-filter me-2"></i>Filter </button>
-                                </a>
-                                <a href="#">
-                                  <button type="button" class="btn btn-warning">
-                                    <i class="fa-solid fa-times me-2"></i>Show All </button>
-                                </a>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade " id="Buttons-Icon-html" role="tabpanel" aria-labelledby="home-tab">
-                              <div class="card-body p-0 code-area"></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- /Column  -->
-                      <div class="col-xl-12">
-                                <div class="card">
-                                    <div class="card-body p-0">
-                                        <div class="table-responsive active-projects task-table">
-                                            <!-- <div class="tbl-caption">
-                                                <h4 class="heading mb-0">Task</h4>
-                                            </div> -->
-                                            <table id="empoloyeestbl2" class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>
-                                                        <div class="form-check custom-checkbox">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="customCheckBox3" required>
-                                                                <label class="form-check-label"
-                                                                    for="customCheckBox3"></label>
-                                                            </div>
-                                                        </th>
-                                                        <th> No</th>
-                                                        <th>Language </th>
-                                                        <th>Name  </th>
-                                                        <th>Date of Receipt </th>
-                                                        <th>Date Published</th>
-                                                        <th>Pages </th>
-                                                        <th>Price</th>
-                                                        <th>Type</th>
-                                                        <th>Publisher</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check custom-checkbox">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="customCheckBox3" required>
-                                                                <label class="form-check-label"
-                                                                    for="customCheckBox3"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>1</span></td>
-                                                        <td>
-                                                            <div class="products">
-                                                                <div>
-                                                                    <h6>English</h6>
-                                                                    <span>INV-100023456</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>The Standard</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <!-- <td>
-                                                            <select class="default-select status-select">
-                                                                <option value="complete">Complete</option>
-                                                                <option value="pending">Pending</option>
-                                                                <option value="testing">Testing</option>
-                                                                <option value="progress">In Progress</option>
-                                                            </select>
-                                                        </td> -->
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td>
-                                                            <span>35</span>
-                                                        </td>
-                                                        <!-- <td>
-                                                            <div class="avatar-list avatar-list-stacked">
-                                                                <img src="images/contacts/pic666.jpg"
-                                                                    class="avatar avatar-md rounded-circle" alt="">
-                                                                <img src="images/contacts/pic555.jpg"
-                                                                    class="avatar avatar-md rounded-circle" alt="">
-                                                                <img src="images/contacts/pic666.jpg"
-                                                                    class="avatar avatar-md rounded-circle" alt="">
-                                                            </div>
-                                                        </td> -->
-                                                        <td>
-                                                            <span
-                                                                class="badge badge-primary light border-0 me-1">300,00</span>
-                                                            <!-- <span
-                                                                class="badge badge-secondary light border-0 ms-1">HTML</span> -->
-                                                        </td>
-                                                        <td>
-                                                        <span>News</span>
-                                                        </td>
-                                                        <td><span>Standard Group Media</span></td>
-                                                        <!-- <td class="text-end">
-                                                            <select class="default-select status-select">
-                                                                <option value="Medium">Medium</option>
-                                                                <option value="High">High</option>
-                                                                <option value="Low">Low</option>
-                                                            </select>
-                                                        </td> -->
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check custom-checkbox">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="customCheckBox3" required>
-                                                                <label class="form-check-label"
-                                                                    for="customCheckBox3"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>2</span></td>
-                                                        <td>
-                                                            <div class="products">
-                                                                <div>
-                                                                    <h6>English</h6>
-                                                                    <span>INV-100023456</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>The Standard</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td>
-                                                            <span>35</span>
-                                                        </td>
-                                                        <td>
-                                                            <span
-                                                                class="badge badge-primary light border-0 me-1">300,00</span>
-                                                        </td>
-                                                        <td>
-                                                        <span>News</span>
-                                                        </td>
-                                                        <td><span>Standard Group Media</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check custom-checkbox">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="customCheckBox3" required>
-                                                                <label class="form-check-label"
-                                                                    for="customCheckBox3"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>3</span></td>
-                                                        <td>
-                                                            <div class="products">
-                                                                <div>
-                                                                    <h6>English</h6>
-                                                                    <span>INV-100023456</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>The Standard</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td>
-                                                            <span>35</span>
-                                                        </td>
-                                                        <td>
-                                                            <span
-                                                                class="badge badge-primary light border-0 me-1">300,00</span>
-                                                        </td>
-                                                        <td>
-                                                        <span>News</span>
-                                                        </td>
-                                                        <td><span>Standard Group Media</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check custom-checkbox">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="customCheckBox3" required>
-                                                                <label class="form-check-label"
-                                                                    for="customCheckBox3"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>4</span></td>
-                                                        <td>
-                                                            <div class="products">
-                                                                <div>
-                                                                    <h6>English</h6>
-                                                                    <span>INV-100023456</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>The Standard</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td>
-                                                            <span>35</span>
-                                                        </td>
-                                                        <td>
-                                                            <span
-                                                                class="badge badge-primary light border-0 me-1">300,00</span>
-                                                        </td>
-                                                        <td>
-                                                        <span>News</span>
-                                                        </td>
-                                                        <td><span>Standard Group Media</span></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="form-check custom-checkbox">
-                                                                <input type="checkbox" class="form-check-input"
-                                                                    id="customCheckBox3" required>
-                                                                <label class="form-check-label"
-                                                                    for="customCheckBox3"></label>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>5</span></td>
-                                                        <td>
-                                                            <div class="products">
-                                                                <div>
-                                                                    <h6>English</h6>
-                                                                    <span>INV-100023456</span>
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td><span>The Standard</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td><span>02/24/2023</span></td>
-                                                        <td>
-                                                            <span>35</span>
-                                                        </td>
-                                                        <td>
-                                                            <span
-                                                                class="badge badge-primary light border-0 me-1">300,00</span>
-                                                        </td>
-                                                        <td>
-                                                        <span>News</span>
-                                                        </td>
-                                                        <td><span>Standard Group Media</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+        <section class="content pr-3 pl-3">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <div class="table-responsive-lg table-responsive-sm table-responsive-md">
+                    
+                                        <div class="container">
+                                          
+                                            <ul class="nav nav-pills mb-4 light">
+                                                <li class=" nav-item">
+                                                    <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab"
+                                                        aria-expanded="false">Expert Reviewer</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#navpills-2" class="nav-link" data-bs-toggle="tab"
+                                                        aria-expanded="false">Librarian Reviewer</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="#navpills-3" class="nav-link" data-bs-toggle="tab"
+                                                        aria-expanded="false">public Reviewer</a>
+                                                </li>
+                                            </ul>
                                         </div>
+
+                                        <div class="tab-content">
+                                            <div id="navpills-1" class="tab-pane active">
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <div class="card">
+                                                            <div class="card-body p-0">
+                                                                <div
+                                                                    class="table-responsive active-projects task-table">
+                                                                    <div class="tbl-caption">
+                                                                        <h4 class="heading mb-0">Reviewer Details
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="empoloyeestbl2_wrapper"
+                                                                        class="dataTables_wrapper no-footer">
+                                                                        <div class="dt-buttons"><button
+                                                                                class="dt-button buttons-excel buttons-html5 btn btn-sm border-0"
+                                                                                tabindex="0"
+                                                                                aria-controls="empoloyeestbl2"
+                                                                                type="button"><span><i
+                                                                                        class="fa-solid fa-file-excel"></i>
+                                                                                    Export Report</span></button>
+                                                                        </div>
+                                                                        <table id="empoloyeestbl2"
+                                                                            class="table dataTable no-footer"
+                                                                            role="grid"
+                                                                            aria-describedby="empoloyeestbl2_info">
+                                                                            <thead>
+                                                                                <tr role="row">
+                                                                                  
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="S.No: activate to sort column ascending"
+                                                                                        style="width: 24.25px;">S.No
+                                                                                    </th>
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="User name: activate to sort column ascending"
+                                                                                        style="width: 222.562px;">
+                                                                                        Reviewer Name</th>
+                                                                                      
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Account Name: activate to sort column ascending"
+                                                                                        style="width: 109px;">
+                                                                                       Assign Date 
+                                                                                    </th>
+                                                                                  
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Bank: activate to sort column ascending"
+                                                                                        style="width: 73.4688px;">
+                                                                                        Reviewer Remark</th>
+                                                                            
+                                                                                    <th class="text-end sorting"
+                                                                                        tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Status: activate to sort column ascending"
+                                                                                        style="width: 91px;">
+                                                                                        Status</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                          @foreach($data->external as $val)
+                                                                       
+                                                                                <tr role="row" class="odd">
+                                                                                <td class="sorting_1">{{$loop->index 
+                                                                                    +1}} </td>
+                                                                                    @php
+                                                                                    $reviewer = DB::table('reviewer')->find($val->reviewer_id);
+                                                                                     @endphp 
+
+                                                                                    <td><span>{{$reviewer->name}}</span></td>
+                                                                                    <td>
+                                                                                    {{$val->created_at->format('Y-m-d h:i A')}}
+                                                                                    </td>
+                                                                                    <td>
+                                                                                   {{$val->review_type}}
+                                                                                    </td>
+                                                                                
+                                                                                 @if($val->review_type != null)
+                                                                                    <td class="py-2 "><span
+                                                                                            class="badge badge-success badge-sm"> Complited<span
+                                                                                                class="ms-1 fa fa-check"></span></span>
+                                                                                    </td>
+                                                                               
+                                                                                @else
+                                                                                <td class="py-2 "><span
+                                                                                            class="badge badge-danger badge-sm"> Not Completed<span
+                                                                                                class="ms-1 fa fa-check"></span></span>
+                                                                                    </td>
+
+                                                                                @endif
+                                                                                </tr>
+                                                                               @endforeach
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             
+                                            </div>
+                                            <div id="navpills-2" class="tab-pane">
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <div class="card">
+                                                            <div class="card-body p-0">
+                                                                <div
+                                                                    class="table-responsive active-projects task-table">
+                                                                    <div class="tbl-caption">
+                                                                        <h4 class="heading mb-0">User Details
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="empoloyeestbl2_wrapper"
+                                                                        class="dataTables_wrapper no-footer">
+                                                                        <div class="dt-buttons"><button
+                                                                                class="dt-button buttons-excel buttons-html5 btn btn-sm border-0"
+                                                                                tabindex="0"
+                                                                                aria-controls="empoloyeestbl2"
+                                                                                type="button"><span><i
+                                                                                        class="fa-solid fa-file-excel"></i>
+                                                                                    Export Report</span></button>
+                                                                        </div>
+                                                                        <table id="empoloyeestbl2"
+                                                                            class="table dataTable no-footer"
+                                                                            role="grid"
+                                                                            aria-describedby="empoloyeestbl2_info">
+                                                                            <thead>
+                                                                                <tr role="row">
+                                                                                <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="S.No: activate to sort column ascending"
+                                                                                        style="width: 24.25px;">S.No
+                                                                                    </th>
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="User name: activate to sort column ascending"
+                                                                                        style="width: 222.562px;">
+                                                                                        Reviewer Name</th>
+                                                                                      
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Account Name: activate to sort column ascending"
+                                                                                        style="width: 109px;">
+                                                                                       Assign Date 
+                                                                                    </th>
+                                                                                  
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Bank: activate to sort column ascending"
+                                                                                        style="width: 73.4688px;">
+                                                                                        Reviewer Remark</th>
+                                                                            
+                                                                                    <th class="text-end sorting"
+                                                                                        tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Status: activate to sort column ascending"
+                                                                                        style="width: 91px;">
+                                                                                        Status</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                           
+                                                                            @foreach($data->internal as $val)
+                                                                       
+                                                                       <tr role="row" class="odd">
+                                                                       <td class="sorting_1">{{$loop->index 
+                                                                           +1}} </td>
+                                                                           @php
+                                                                           $reviewer = DB::table('reviewer')->find($val->reviewer_id);
+                                                                            @endphp 
+
+                                                                           <td><span>{{$reviewer->name}}</span></td>
+                                                                           <td>
+                                                                           {{$val->created_at->format('Y-m-d h:i A')}}
+                                                                           </td>
+                                                                           <td>
+                                                                          {{$val->review_type}}
+                                                                           </td>
+                                                                       
+                                                                        @if($val->review_type != null)
+                                                                           <td class="py-2 "><span
+                                                                                   class="badge badge-success badge-sm"> Complited<span
+                                                                                       class="ms-1 fa fa-check"></span></span>
+                                                                           </td>
+                                                                      
+                                                                       @else
+                                                                       <td class="py-2 "><span
+                                                                                   class="badge badge-danger badge-sm"> Not Completed<span
+                                                                                       class="ms-1 fa fa-check"></span></span>
+                                                                           </td>
+
+                                                                       @endif
+                                                                       </tr>
+                                                                      @endforeach
+                                                                              
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              
+                                            </div>
+                                            <div id="navpills-3" class="tab-pane">
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <div class="card">
+                                                            <div class="card-body p-0">
+                                                                <div
+                                                                    class="table-responsive active-projects task-table">
+                                                                    <div class="tbl-caption">
+                                                                        <h4 class="heading mb-0">Public Details
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div id="empoloyeestbl2_wrapper"
+                                                                        class="dataTables_wrapper no-footer">
+                                                                        <div class="dt-buttons"><button
+                                                                                class="dt-button buttons-excel buttons-html5 btn btn-sm border-0"
+                                                                                tabindex="0"
+                                                                                aria-controls="empoloyeestbl2"
+                                                                                type="button"><span><i
+                                                                                        class="fa-solid fa-file-excel"></i>
+                                                                                    Export Report</span></button>
+                                                                        </div>
+                                                                        <table id="empoloyeestbl2"
+                                                                            class="table dataTable no-footer"
+                                                                            role="grid"
+                                                                            aria-describedby="empoloyeestbl2_info">
+                                                                            <thead>
+                                                                                <tr role="row">
+                                                                                <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="S.No: activate to sort column ascending"
+                                                                                        style="width: 24.25px;">S.No
+                                                                                    </th>
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="User name: activate to sort column ascending"
+                                                                                        style="width: 222.562px;">
+                                                                                        Reviewer Name</th>
+                                                                                      
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Account Name: activate to sort column ascending"
+                                                                                        style="width: 109px;">
+                                                                                       Assign Date 
+                                                                                    </th>
+                                                                                  
+                                                                                    <th class="sorting" tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Bank: activate to sort column ascending"
+                                                                                        style="width: 73.4688px;">
+                                                                                        Reviewer Remark</th>
+                                                                            
+                                                                                    <th class="text-end sorting"
+                                                                                        tabindex="0"
+                                                                                        aria-controls="empoloyeestbl2"
+                                                                                        rowspan="1" colspan="1"
+                                                                                        aria-label="Status: activate to sort column ascending"
+                                                                                        style="width: 91px;">
+                                                                                        Status</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            @foreach($data->public as $val)
+                                                                       
+                                                                       <tr role="row" class="odd">
+                                                                       <td class="sorting_1">{{$loop->index 
+                                                                           +1}} </td>
+                                                                           @php
+                                                                           $reviewer = DB::table('reviewer')->find($val->reviewer_id);
+                                                                            @endphp 
+
+                                                                           <td><span>{{$reviewer->name}}</span></td>
+                                                                           <td>
+                                                                           {{$val->created_at->format('Y-m-d h:i A')}}
+                                                                           </td>
+                                                                           <td>
+                                                                          {{$val->review_type}}
+                                                                           </td>
+                                                                       
+                                                                        @if($val->review_type != null)
+                                                                           <td class="py-2 "><span
+                                                                                   class="badge badge-success badge-sm"> Complited<span
+                                                                                       class="ms-1 fa fa-check"></span></span>
+                                                                           </td>
+                                                                      
+                                                                       @else
+                                                                       <td class="py-2 "><span
+                                                                                   class="badge badge-danger badge-sm"> Not Completed<span
+                                                                                       class="ms-1 fa fa-check"></span></span>
+                                                                           </td>
+
+                                                                       @endif
+                                                                       </tr>
+                                                                      @endforeach
+                                                                              
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                              
+                                            </div>
+                                     
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /Column  -->
-            <!-- Column  -->
-          </div>
-        </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
-        <!--**********************************
-            Footer start
-        ***********************************-->
-        @include ("admin.footer")
-        <!--**********************************
-            Footer end
-        ***********************************-->
-        <!--**********************************
-           Support ticket button start
-        ***********************************-->
-        <!--**********************************
-           Support ticket button end
-        ***********************************-->
-      </div>
+                        </div>
+                    </div> <!-- row-->
+       </section>
       <!--**********************************
         Main wrapper end
     ***********************************--> 
+</div>
+</div>
     <?php
         include "admin/plugin/plugin_js.php";
     ?>

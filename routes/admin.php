@@ -802,6 +802,15 @@ Route::get('/notification',function(){ return view('admin.notification');});
 Route::put('/bookstatuschange',[BookController::class,'bookstatuschange']);
 Route::get('/get-activebooks/{id}',[BookController::class,'get_activebooks']);
 Route::post('/multiple-statuschangebook',[BookController::class,'multiple_statuschangebook']);
+Route::get('/reviewerlist/{id}',[BookController::class,'reviewerlist']);
+Route::get('/review',function(){
+    $data = Session::get('reviewer');
+
+    return view('admin.assign-user-list')->with("data",$data);
+  
+     
+ });
+
 
 Route::get('/assign-user-list',function(){ return view('admin.assign-user-list');});
     });
