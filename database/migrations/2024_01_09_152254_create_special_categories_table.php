@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->String('name');
             $table->enum('status',['1','0'])->default('1');
+            $table->String('categorieImage');
             $table->timestamps();
         });
     }

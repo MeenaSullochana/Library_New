@@ -145,7 +145,7 @@
                                         <th>Book Title</th>
                                         <th>UserType</th>
                                         <th>
-                                        <h6>Internal</h6>
+                                        <h6>Librarian</h6>
                                         <span class="text-left">Review/Assign</span>
                                           </th>
                                           <th>
@@ -157,11 +157,14 @@
                                             <span class="text-left">Review/Assign</span>
                                               </th>
 
-                                        <th>Internal</th>
+                                        <th>Librarian</th>
                                         <th>Expert</th>
                                         <th>Public</th>
                                         <th>Total</th>
                                         <th>  Action</th>
+                                        <th>  Reviwer List</th>
+
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -226,6 +229,10 @@
 
 
                                             </div>
+                                        </td>
+                                        <td>
+                                            <a href="/admin/reviewerlist/{{$val->book->id}}" class="btn btn-primary shadow btn-sm m-0 me-1" > <i class="fa fa-list" aria-hidden="true"></i>
+                                                </a>
                                         </td>
                                     </tr>
                                     @endforeach

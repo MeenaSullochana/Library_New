@@ -469,20 +469,15 @@
       ?>
 
 </body>
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const filterButton = document.getElementById('filterButton');
+$(document).ready(function() {
+    $(document).on('click', '#filterButton', function() {
+
+    handlePaginationAndFiltering();
+
     const checkboxes = document.querySelectorAll('.category-checkbox');
-
-    filterButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default action of the button
-
-        // Loop through all checkboxes and check them
-        // checkboxes.forEach((checkbox) => {
-        //     checkbox.checked = true;
-        // });
-
-        // Get the data-id values of all checked checkboxes
         const checkedIds = Array.from(checkboxes)
             .filter(checkbox => checkbox.checked)
             .map(checkbox => checkbox.getAttribute('data-id'));
@@ -494,33 +489,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 '_token': '{{ csrf_token() }}',
                 'checkedIds': checkedIds
             },
-
             success: function(response) {
-                $('#nav-all')
-            .empty(); // Clear existing content of the element with id 'nav-all'
-                $('#nav-all').html(response
-                .success); // Set new content from the 'success' property of the response
-
-
-
-
+                $('#nav-all').html(response.success); 
+                handlePaginationAndFiltering();
+                
+                if (response.pagination) {
+                    $('#pagination-container').html(response.pagination);
+                }
             },
             error: function(xhr, status, error) {
-
                 console.log('Error:', error);
             }
         });
-
     });
+
+    function handlePaginationAndFiltering() {
+        $('body').on('click', '.basic-pagination a', function(e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+            
+            $.ajax({
+                url: url,
+                method: 'get',
+                success: function(response) {
+                    $('#nav-all').html(response.success); 
+                },
+                error: function(xhr, status, error) {
+                    console.log('Error:', error);
+                }
+            });
+        });
+    }
+
 });
-
-
 </script>
-<!-- <script>
-$('#nextPageLink').click(function(e) {
-    e.preventDefault();
-    var nextPageUrl = $(this).attr('href');
-    loadNextPage(nextPageUrl);
-});
-</script> -->
+
 </html>

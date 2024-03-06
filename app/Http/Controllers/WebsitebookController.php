@@ -17,12 +17,12 @@ class WebsitebookController extends Controller
     $books = Book::where('negotiation_status', '=', 2)
     ->where('book_active_status', '=', 1)
     ->orderBy('marks', 'desc')
-    ->paginate(3); // Adjust the pagination size as needed
+    ->paginate(2); // Adjust the pagination size as needed
 
    $popularBooks = Book::where('negotiation_status', '=', 2)
             ->where('book_active_status', '=', 1)
             ->orderBy('marks', 'desc')
-            ->paginate(3);
+            ->paginate(2);
 
 return view('product', compact('books', 'popularBooks'));
                
@@ -42,7 +42,7 @@ public function book_categories(Request $req)
         $books->whereIn('category', $checkedIds); // Apply whereIn() to the $books query builder
     }
 
-    $books = $books->orderBy('marks', 'desc')->paginate(3);
+    $books = $books->orderBy('marks', 'desc')->paginate(1);
 
     $html = '<div class="row row-cols-xxl-3 row-cols-xl-3 row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-1 tpproduct__shop-item">';
 

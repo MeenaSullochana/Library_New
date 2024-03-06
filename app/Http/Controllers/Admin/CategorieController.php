@@ -6,6 +6,8 @@ use Throwable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\Specialcategories;
+use File;
+use Illuminate\Support\Str;
 class CategorieController extends Controller
 {
     public function categoryadd(Request $req){
@@ -13,7 +15,7 @@ class CategorieController extends Controller
         $validator = Validator::make($req->all(),[
             'name'=>'required|string',
             'status'=>'required|string',
-           
+           'categorieImage'=>'required',
            
         ]);
         if($validator->fails()){
@@ -24,10 +26,15 @@ class CategorieController extends Controller
            
         }
        
-      
+   
              $category= New Specialcategories();
              $category->name=$req->name;
              $category->status=$req->status;
+             $image = $req->file('categorieImage');
+             $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+             $image->move('admin/categorieImage', $imagename);
+            
+             $category->categorieImage = $imagename;
              $category->save();
              $data= [
                 'success' => 'Special Categories  Create Successfully',
@@ -69,10 +76,21 @@ class CategorieController extends Controller
             return response()->json($data);  
            
         }
+
+        // categorieImage
        
              $category=Specialcategories::find($req->id);
+           
              $category->name=$req->name;
              $category->status=$req->status;
+             if($req->categorieImage !="undefined"){
+                File::delete(public_path('admin/categorieImage/' . $category->categorieImage));
+                $image = $req->file('categorieImage');
+                $imagename = $req->name . time() . '.' . $image->getClientOriginalExtension();
+                $image->move('admin/categorieImage', $imagename);
+               
+                $category->categorieImage = $imagename;
+             }
              $category->save();
              $data= [
                 'success' => 'Special Categories  Update Successfully',

@@ -156,7 +156,7 @@
                                                             </div>
                                                             <div class="progress">
                                                                 <div class="progress-bar bg-secondary"
-                                                                    style="width:50%; height:5px; border-radius:4px;"
+                                                                    style="width:{{ $activepubcount != 0 ? ($activepubcount / $allpubcount * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                     role="progressbar"></div>
                                                             </div>
                                                         </div>
@@ -202,7 +202,7 @@
                                                             </div>
                                                             <div class="progress">
                                                                 <div class="progress-bar bg-secondary"
-                                                                    style="width:50%; height:5px; border-radius:4px;"
+                                                                    style="width:{{ $inactivepubcount != 0 ? ($inactivepubcount / $allpubcount * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                     role="progressbar"></div>
                                                             </div>
                                                         </div>
@@ -297,7 +297,7 @@
                                                             </div>
                                                             <div class="progress">
                                                                 <div class="progress-bar bg-secondary"
-                                                                    style="width:50%; height:5px; border-radius:4px;"
+                                                                    style="width:{{ $activedistcount != 0 ? ($activedistcount / $alldistcount * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                     role="progressbar"></div>
                                                             </div>
                                                         </div>
@@ -343,7 +343,7 @@
                                                             </div>
                                                             <div class="progress">
                                                                 <div class="progress-bar bg-secondary"
-                                                                    style="width:50%; height:5px; border-radius:4px;"
+                                                                    style="width:{{ $inactivedistcount != 0 ? ($inactivedistcount / $alldistcount * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                     role="progressbar"></div>
                                                             </div>
                                                         </div>
@@ -438,7 +438,7 @@
                                                             </div>
                                                             <div class="progress">
                                                                 <div class="progress-bar bg-secondary"
-                                                                    style="width:50%; height:5px; border-radius:4px;"
+                                                                    style="width:{{ $activepubdistcount != 0 ? ($activepubdistcount / $allpubdistcount * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                     role="progressbar"></div>
                                                             </div>
                                                         </div>
@@ -484,7 +484,7 @@
                                                             </div>
                                                             <div class="progress">
                                                                 <div class="progress-bar bg-secondary"
-                                                                    style="width:50%; height:5px; border-radius:4px;"
+                                                                    style="width:{{ $inactivepubdistcount != 0 ? ($inactivepubdistcount / $allpubdistcount * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                     role="progressbar"></div>
                                                             </div>
                                                         </div>
@@ -496,14 +496,162 @@
                                 </div>
                             </div>
                         </div>
+                        <h4>Library</h4>
+                                        <div class="row">
+                                            <div class="col-xl-4 col-sm-4">
+                                                <div class="card">
+                                                    <div class="card-body depostit-card">
+                                                    @php
+                                                                   
+                                                                   $librarian = DB::table('librarians')->count();
+                                                                   $librarianactive = DB::table('librarians')->where('status','=',1)->count();
+                                                                   $librarianinactive = DB::table('librarians')->where('status','=',0)->count();
+                                                                      @endphp
+                                                        <div
+                                                            class="depostit-card-media d-flex justify-content-between style-1">
+                                                            <div>
+                                                                <h6>Number of Library</h6>
+                                                                <h3>{{$librarian}}</h3>
+                                                            </div>
+                                                            <div class="icon-box bg-secondary">
+                                                                <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_3_566)">
+                                                                        <path opacity="0.3" fill-rule="evenodd"
+                                                                            clip-rule="evenodd"
+                                                                            d="M8 3V3.5C8 4.32843 8.67157 5 9.5 5H14.5C15.3284 5 16 4.32843 16 3.5V3H18C19.1046 3 20 3.89543 20 5V21C20 22.1046 19.1046 23 18 23H6C4.89543 23 4 22.1046 4 21V5C4 3.89543 4.89543 3 6 3H8Z"
+                                                                            fill="#222B40" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M10.875 15.75C10.6354 15.75 10.3958 15.6542 10.2042 15.4625L8.2875 13.5458C7.90417 13.1625 7.90417 12.5875 8.2875 12.2042C8.67083 11.8208 9.29375 11.8208 9.62917 12.2042L10.875 13.45L14.0375 10.2875C14.4208 9.90417 14.9958 9.90417 15.3792 10.2875C15.7625 10.6708 15.7625 11.2458 15.3792 11.6292L11.5458 15.4625C11.3542 15.6542 11.1146 15.75 10.875 15.75Z"
+                                                                            fill="#222B40" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M11 2C11 1.44772 11.4477 1 12 1C12.5523 1 13 1.44772 13 2H14.5C14.7761 2 15 2.22386 15 2.5V3.5C15 3.77614 14.7761 4 14.5 4H9.5C9.22386 4 9 3.77614 9 3.5V2.5C9 2.22386 9.22386 2 9.5 2H11Z"
+                                                                            fill="#222B40" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_3_566">
+                                                                            <rect width="24" height="24" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-box mt-0">
+                                                            <div class="d-flex justify-content-between">
+                                                                <p class="mb-0">Status </p>
+                                                                <p class="mb-0">{{$librarian}}</p>
+                                                            </div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-secondary"
+                                                                    style="width:100%; height:5px; border-radius:4px;"
+                                                                    role="progressbar"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-4">
+                                                <div class="card">
+                                                    <div class="card-body depostit-card">
+                                                        <div
+                                                            class="depostit-card-media d-flex justify-content-between style-1">
+                                                            <div>
+                                                                <h6>Active Library</h6>
+                                                                <h3>{{$librarianactive}}</h3>
+                                                            </div>
+                                                            <div class="icon-box bg-secondary">
+                                                                <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_3_566)">
+                                                                        <path opacity="0.3" fill-rule="evenodd"
+                                                                            clip-rule="evenodd"
+                                                                            d="M8 3V3.5C8 4.32843 8.67157 5 9.5 5H14.5C15.3284 5 16 4.32843 16 3.5V3H18C19.1046 3 20 3.89543 20 5V21C20 22.1046 19.1046 23 18 23H6C4.89543 23 4 22.1046 4 21V5C4 3.89543 4.89543 3 6 3H8Z"
+                                                                            fill="#222B40" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M10.875 15.75C10.6354 15.75 10.3958 15.6542 10.2042 15.4625L8.2875 13.5458C7.90417 13.1625 7.90417 12.5875 8.2875 12.2042C8.67083 11.8208 9.29375 11.8208 9.62917 12.2042L10.875 13.45L14.0375 10.2875C14.4208 9.90417 14.9958 9.90417 15.3792 10.2875C15.7625 10.6708 15.7625 11.2458 15.3792 11.6292L11.5458 15.4625C11.3542 15.6542 11.1146 15.75 10.875 15.75Z"
+                                                                            fill="#222B40" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M11 2C11 1.44772 11.4477 1 12 1C12.5523 1 13 1.44772 13 2H14.5C14.7761 2 15 2.22386 15 2.5V3.5C15 3.77614 14.7761 4 14.5 4H9.5C9.22386 4 9 3.77614 9 3.5V2.5C9 2.22386 9.22386 2 9.5 2H11Z"
+                                                                            fill="#222B40" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_3_566">
+                                                                            <rect width="24" height="24" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-box mt-0">
+                                                            <div class="d-flex justify-content-between">
+                                                                <p class="mb-0">Status</p>
+                                                                <p class="mb-0">{{$librarian}}</p>
+                                                            </div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-secondary"
+                                                                    style="width:{{ $librarianactive != 0 ? ($librarianactive / $librarian * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                    role="progressbar"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-sm-4">
+                                                <div class="card">
+                                                    <div class="card-body depostit-card">
+                                                        <div
+                                                            class="depostit-card-media d-flex justify-content-between style-1">
+                                                            <div>
+                                                                <h6>Inactive Librarian</h6>
+                                                                <h3>{{$librarianinactive}}</h3>
+                                                            </div>
+                                                            <div class="icon-box bg-secondary">
+                                                                <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <g clip-path="url(#clip0_3_566)">
+                                                                        <path opacity="0.3" fill-rule="evenodd"
+                                                                            clip-rule="evenodd"
+                                                                            d="M8 3V3.5C8 4.32843 8.67157 5 9.5 5H14.5C15.3284 5 16 4.32843 16 3.5V3H18C19.1046 3 20 3.89543 20 5V21C20 22.1046 19.1046 23 18 23H6C4.89543 23 4 22.1046 4 21V5C4 3.89543 4.89543 3 6 3H8Z"
+                                                                            fill="#222B40" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M10.875 15.75C10.6354 15.75 10.3958 15.6542 10.2042 15.4625L8.2875 13.5458C7.90417 13.1625 7.90417 12.5875 8.2875 12.2042C8.67083 11.8208 9.29375 11.8208 9.62917 12.2042L10.875 13.45L14.0375 10.2875C14.4208 9.90417 14.9958 9.90417 15.3792 10.2875C15.7625 10.6708 15.7625 11.2458 15.3792 11.6292L11.5458 15.4625C11.3542 15.6542 11.1146 15.75 10.875 15.75Z"
+                                                                            fill="#222B40" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M11 2C11 1.44772 11.4477 1 12 1C12.5523 1 13 1.44772 13 2H14.5C14.7761 2 15 2.22386 15 2.5V3.5C15 3.77614 14.7761 4 14.5 4H9.5C9.22386 4 9 3.77614 9 3.5V2.5C9 2.22386 9.22386 2 9.5 2H11Z"
+                                                                            fill="#222B40" />
+                                                                    </g>
+                                                                    <defs>
+                                                                        <clipPath id="clip0_3_566">
+                                                                            <rect width="24" height="24" fill="white" />
+                                                                        </clipPath>
+                                                                    </defs>
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                        <div class="progress-box mt-0">
+                                                            <div class="d-flex justify-content-between">
+                                                                <p class="mb-0">Status</p>
+                                                                <p class="mb-0">{{$librarian}}</p>
+                                                            </div>
+                                                            <div class="progress">
+                                                                <div class="progress-bar bg-secondary"
+                                                                    style="width:{{ $librarianinactive != 0 ? ($librarianinactive / $librarian * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                    role="progressbar"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <h4>Reviewer</h4> 
                         <div class="row">
                             <div class="col-xl-9 col-xxl-12">
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="row">
-                                            <div class="col-xl-6">
+                                            <div class="col-xl-12">
                                                 <div class="row">
-                                                    <div class="col-xl-6 col-sm-6">
+                                                    <!-- <div class="col-xl-6 col-sm-6">
                                                         <div class="card bg-primary text-white">
                                                             <div class="card-header border-0 flex-wrap">
                                                                 <div class="revenue-date">
@@ -520,8 +668,7 @@
                                                                 </div>
 
                                                             </div>
-                                                            <div
-                                                                class="card-body pb-0 custome-tooltip d-flex align-items-center">
+                                                            <div class="card-body pb-0 custome-tooltip d-flex align-items-center">
                                                                 <div id="chartBar" class="chartBar"></div>
                                                                 <div>
                                                                     <svg width="20" height="20" viewBox="0 0 20 20"
@@ -547,8 +694,8 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-xl-6 col-sm-6">
+                                                    </div> -->
+                                                    <!-- <div class="col-xl-6 col-sm-6">
                                                         <div class="card bg-secondary text-white">
                                                             <div class="card-header border-0">
                                                                 <div class="revenue-date">
@@ -600,16 +747,22 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-xl-6 col-sm-6">
+                                                    </div> -->
+                                                    <div class="col-xl-3 col-sm-6">
                                                         <div class="card">
                                                             <div class="card-body depostit-card">
                                                                 <div
                                                                     class="depostit-card-media d-flex justify-content-between style-1">
+                                                                    @php
+                                                                   
+                                                                        $rev = DB::table('reviewer')->count();
+                                                                        $revactive = DB::table('reviewer')->where('status','=',1)->count();
+                                                                        $revinactive = DB::table('reviewer')->where('status','=',0)->count();
+                                                                           @endphp
                                                                     <div>
-                                                                        <h6>Withdraw</h6>
-                                                                        <h3><i class="fa fa-inr" aria-hidden="true"></i>
-                                                                            20</h3>
+                                                                        <h6>Total Reviewer</h6>
+                                                                        <h3>
+                                                                            {{$rev}}</h3> 
                                                                     </div>
                                                                     <div class="icon-box bg-secondary">
                                                                         <svg width="24" height="24" viewBox="0 0 24 24"
@@ -640,45 +793,248 @@
                                                                 </div>
                                                                 <div class="progress-box mt-0">
                                                                     <div class="d-flex justify-content-between">
-                                                                        <p class="mb-0">Complete Task</p>
-                                                                        <p class="mb-0">20/28</p>
+                                                                        <p class="mb-0">Active Reviewer</p>
+                                                                        <p class="mb-0">{{$rev}}/{{$revactive}}</p>
                                                                     </div>
                                                                     <div class="progress">
-                                                                        <div class="progress-bar bg-secondary"
-                                                                            style="width:50%; height:5px; border-radius:4px;"
-                                                                            role="progressbar"></div>
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $revactive != 0 ? ($revactive / $rev * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="progress-box mt-0">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">Inactive Reviewer</p>
+                                                                        <p class="mb-0">{{$rev}}/{{$revinactive}}</p>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $revinactive != 0 ? ($revinactive / $revr * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xl-6 col-sm-6">
-                                                        <div class="card same-card">
-                                                            <div class="card-body depostit-card p-0">
+                                                    <div class="col-xl-3 col-sm-6">
+                                                        <div class="card">
+                                                            <div class="card-body depostit-card">
                                                                 <div
-                                                                    class="depostit-card-media d-flex justify-content-between pb-0">
+                                                                    class="depostit-card-media d-flex justify-content-between style-1">
+                                                                    @php
+                                                                   
+                                                                        $reviewer1 = DB::table('reviewer')->where('reviewerType','=','external')->count();
+                                                                        $revieweractive1 = DB::table('reviewer')->where('status','=',1)->where('reviewerType','=','external')->count();
+                                                                        $reviewerinactive1= DB::table('reviewer')->where('status','=',0)->where('reviewerType','=','external')->count();
+                                                                           @endphp
                                                                     <div>
-                                                                        <h6>Total Deposit</h6>
-                                                                        <h3><i class="fa fa-inr" aria-hidden="true"></i>
-                                                                            1200.00</h3>
+                                                                        <h6>Total Expert Reviewer</h6>
+                                                                        <h3>
+                                                                            {{$reviewer1}}</h3> 
                                                                     </div>
-                                                                    <div class="icon-box bg-primary">
-                                                                        <svg width="12" height="20" viewBox="0 0 12 20"
+                                                                    <div class="icon-box bg-secondary">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24"
                                                                             fill="none"
                                                                             xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M11.4642 13.7074C11.4759 12.1252 10.8504 10.8738 9.60279 9.99009C8.6392 9.30968 7.46984 8.95476 6.33882 8.6137C3.98274 7.89943 3.29927 7.52321 3.29927 6.3965C3.29927 5.14147 4.93028 4.69493 6.32655 4.69493C7.34341 4.69493 8.51331 5.01109 9.23985 5.47964L10.6802 3.24887C9.73069 2.6333 8.43112 2.21342 7.14783 2.0831V0H4.49076V2.22918C2.12884 2.74876 0.640949 4.29246 0.640949 6.3965C0.640949 7.87005 1.25327 9.03865 2.45745 9.86289C3.37331 10.4921 4.49028 10.83 5.56927 11.1572C7.88027 11.8557 8.81873 12.2813 8.80805 13.691L8.80799 13.7014C8.80799 14.8845 7.24005 15.3051 5.89676 15.3051C4.62786 15.3051 3.248 14.749 2.46582 13.9222L0.535522 15.7481C1.52607 16.7957 2.96523 17.5364 4.4907 17.8267V20.0001H7.14783V17.8735C9.7724 17.4978 11.4616 15.9177 11.4642 13.7074Z"
-                                                                                fill="#fff" />
+                                                                            <g clip-path="url(#clip0_3_566)">
+                                                                                <path opacity="0.3" fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M8 3V3.5C8 4.32843 8.67157 5 9.5 5H14.5C15.3284 5 16 4.32843 16 3.5V3H18C19.1046 3 20 3.89543 20 5V21C20 22.1046 19.1046 23 18 23H6C4.89543 23 4 22.1046 4 21V5C4 3.89543 4.89543 3 6 3H8Z"
+                                                                                    fill="#222B40" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M10.875 15.75C10.6354 15.75 10.3958 15.6542 10.2042 15.4625L8.2875 13.5458C7.90417 13.1625 7.90417 12.5875 8.2875 12.2042C8.67083 11.8208 9.29375 11.8208 9.62917 12.2042L10.875 13.45L14.0375 10.2875C14.4208 9.90417 14.9958 9.90417 15.3792 10.2875C15.7625 10.6708 15.7625 11.2458 15.3792 11.6292L11.5458 15.4625C11.3542 15.6542 11.1146 15.75 10.875 15.75Z"
+                                                                                    fill="#222B40" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M11 2C11 1.44772 11.4477 1 12 1C12.5523 1 13 1.44772 13 2H14.5C14.7761 2 15 2.22386 15 2.5V3.5C15 3.77614 14.7761 4 14.5 4H9.5C9.22386 4 9 3.77614 9 3.5V2.5C9 2.22386 9.22386 2 9.5 2H11Z"
+                                                                                    fill="#222B40" />
+                                                                            </g>
+                                                                            <defs>
+                                                                                <clipPath id="clip0_3_566">
+                                                                                    <rect width="24" height="24"
+                                                                                        fill="white" />
+                                                                                </clipPath>
+                                                                            </defs>
                                                                         </svg>
                                                                     </div>
                                                                 </div>
-                                                                <div id="NewExperience"></div>
+                                                                <div class="progress-box mt-0">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">Active  Reviewer</p>
+                                                                        <p class="mb-0">{{$reviewer1}}/{{$revieweractive1}}</p>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $revieweractive1 != 0 ? ($revieweractive1 / $reviewer1 * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="progress-box mt-0">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">Inactive Reviewer</p>
+                                                                        <p class="mb-0">{{$reviewer1}}/{{$reviewerinactive1}}</p>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $reviewerinactive1 != 0 ? ($reviewerinactive1 / $reviewer1 * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-sm-6">
+                                                        <div class="card">
+                                                            <div class="card-body depostit-card">
+                                                                <div
+                                                                    class="depostit-card-media d-flex justify-content-between style-1">
+                                                                    @php
+                                                                   
+                                                                        $reviewer2 = DB::table('reviewer')->where('reviewerType','=','internal')->count();
+                                                                        $revieweractive2 = DB::table('reviewer')->where('status','=',1)->where('reviewerType','=','internal')->count();
+                                                                        $reviewerinactive2= DB::table('reviewer')->where('status','=',0)->where('reviewerType','=','internal')->count();
+                                                                           @endphp
+                                                                    <div>
+                                                                        <h6>Total Librarian Reviewer</h6>
+                                                                        <h3>
+                                                                            {{$reviewer2}}</h3> 
+                                                                    </div>
+                                                                    <div class="icon-box bg-secondary">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <g clip-path="url(#clip0_3_566)">
+                                                                                <path opacity="0.3" fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M8 3V3.5C8 4.32843 8.67157 5 9.5 5H14.5C15.3284 5 16 4.32843 16 3.5V3H18C19.1046 3 20 3.89543 20 5V21C20 22.1046 19.1046 23 18 23H6C4.89543 23 4 22.1046 4 21V5C4 3.89543 4.89543 3 6 3H8Z"
+                                                                                    fill="#222B40" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M10.875 15.75C10.6354 15.75 10.3958 15.6542 10.2042 15.4625L8.2875 13.5458C7.90417 13.1625 7.90417 12.5875 8.2875 12.2042C8.67083 11.8208 9.29375 11.8208 9.62917 12.2042L10.875 13.45L14.0375 10.2875C14.4208 9.90417 14.9958 9.90417 15.3792 10.2875C15.7625 10.6708 15.7625 11.2458 15.3792 11.6292L11.5458 15.4625C11.3542 15.6542 11.1146 15.75 10.875 15.75Z"
+                                                                                    fill="#222B40" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M11 2C11 1.44772 11.4477 1 12 1C12.5523 1 13 1.44772 13 2H14.5C14.7761 2 15 2.22386 15 2.5V3.5C15 3.77614 14.7761 4 14.5 4H9.5C9.22386 4 9 3.77614 9 3.5V2.5C9 2.22386 9.22386 2 9.5 2H11Z"
+                                                                                    fill="#222B40" />
+                                                                            </g>
+                                                                            <defs>
+                                                                                <clipPath id="clip0_3_566">
+                                                                                    <rect width="24" height="24"
+                                                                                        fill="white" />
+                                                                                </clipPath>
+                                                                            </defs>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="progress-box mt-0">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">Active  Reviewer</p>
+                                                                        <p class="mb-0">{{$reviewer2}}/{{$revieweractive2}}</p>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $revieweractive2 != 0 ? ($revieweractive2 / $reviewer2 * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="progress-box mt-0">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">Inactive Reviewer</p>
+                                                                        <p class="mb-0">{{$reviewer2}}/{{$reviewerinactive2}}</p>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $reviewerinactive2 != 0 ? ($reviewerinactive2 / $reviewer2 * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3 col-sm-6">
+                                                        <div class="card">
+                                                            <div class="card-body depostit-card">
+                                                                <div
+                                                                    class="depostit-card-media d-flex justify-content-between style-1">
+                                                                    @php
+                                                                   
+                                                                        $reviewer3 = DB::table('reviewer')->where('reviewerType','=','public')->count();
+                                                                        $revieweractive3 = DB::table('reviewer')->where('status','=',1)->where('reviewerType','=','public')->count();
+                                                                        $reviewerinactive3= DB::table('reviewer')->where('status','=',0)->where('reviewerType','=','public')->count();
+                                                                           @endphp
+                                                                    <div>
+                                                                        <h6>Total Librarian Reviewer</h6>
+                                                                        <h3>
+                                                                            {{$reviewer3}}</h3> 
+                                                                    </div>
+                                                                    <div class="icon-box bg-secondary">
+                                                                        <svg width="24" height="24" viewBox="0 0 24 24"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                            <g clip-path="url(#clip0_3_566)">
+                                                                                <path opacity="0.3" fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M8 3V3.5C8 4.32843 8.67157 5 9.5 5H14.5C15.3284 5 16 4.32843 16 3.5V3H18C19.1046 3 20 3.89543 20 5V21C20 22.1046 19.1046 23 18 23H6C4.89543 23 4 22.1046 4 21V5C4 3.89543 4.89543 3 6 3H8Z"
+                                                                                    fill="#222B40" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M10.875 15.75C10.6354 15.75 10.3958 15.6542 10.2042 15.4625L8.2875 13.5458C7.90417 13.1625 7.90417 12.5875 8.2875 12.2042C8.67083 11.8208 9.29375 11.8208 9.62917 12.2042L10.875 13.45L14.0375 10.2875C14.4208 9.90417 14.9958 9.90417 15.3792 10.2875C15.7625 10.6708 15.7625 11.2458 15.3792 11.6292L11.5458 15.4625C11.3542 15.6542 11.1146 15.75 10.875 15.75Z"
+                                                                                    fill="#222B40" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M11 2C11 1.44772 11.4477 1 12 1C12.5523 1 13 1.44772 13 2H14.5C14.7761 2 15 2.22386 15 2.5V3.5C15 3.77614 14.7761 4 14.5 4H9.5C9.22386 4 9 3.77614 9 3.5V2.5C9 2.22386 9.22386 2 9.5 2H11Z"
+                                                                                    fill="#222B40" />
+                                                                            </g>
+                                                                            <defs>
+                                                                                <clipPath id="clip0_3_566">
+                                                                                    <rect width="24" height="24"
+                                                                                        fill="white" />
+                                                                                </clipPath>
+                                                                            </defs>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="progress-box mt-0">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">Active  Reviewer</p>
+                                                                        <p class="mb-0">{{$reviewer3}}/{{$revieweractive3}}</p>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $revieweractive3 != 0 ? ($revieweractive3 / $reviewer3 * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="progress-box mt-0">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <p class="mb-0">Inactive Reviewer</p>
+                                                                        <p class="mb-0">{{$reviewer3}}/{{$reviewerinactive3}}</p>
+                                                                    </div>
+                                                                    <div class="progress">
+                                                                        
+                                                                    <div class="progress-bar bg-secondary"
+                                                                       style="width:{{ $reviewerinactive3 != 0 ? ($reviewerinactive3 / $reviewer3 * 100) : 0 }}%; height:5px; border-radius:4px;"
+                                                                            role="progressbar">
+                                                                                    </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-3 col-sm-6">
+                                            <!-- <div class="col-xl-3 col-sm-6">
                                                 <div class="card bg-success rainbow-box"
                                                     style="background-image: url(images/rainbow.gif);background-size: cover;background-blend-mode: luminosity;">
                                                     <div class="card-header border-0">
@@ -2766,7 +3122,7 @@
                                                     </div>
 
                                                 </div>
-                                            </div>
+                                            </div> -->
                                             <div class="col-xl-8">
                                                 <div class="card overflow-hidden">
                                                     <div class="card-header border-0 pb-0 flex-wrap">

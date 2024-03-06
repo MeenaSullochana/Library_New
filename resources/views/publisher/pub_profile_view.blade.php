@@ -1009,29 +1009,19 @@
     }
   };
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
 <script>
     $(document).ready(function() {
-        $('#myTable').DataTable({
-            "processing": true,
-            "serverSide": true,
+        $('#myTable').DataTable();
 
-        });
-    });
-    $(document).ready(function() {
-        $('#awarded-titles').DataTable({
-            "processing": true,
-            "serverSide": true,
+        $('#awarded-titles').DataTable();
 
-        });
-    });
-    $(document).ready(function() {
-        $('#subsidiary-pub').DataTable({
-            "processing": true,
-            "serverSide": true,
-
-        });
+        $('#subsidiary-pub').DataTable();
     });
 </script>
+
 
 </html>
 
