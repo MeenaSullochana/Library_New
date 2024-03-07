@@ -17,10 +17,12 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->String('type');
             $table->String('bookImage');
-            $table->String('Category');
+            $table->String('category');
             $table->String('booktitle');
-            $table->String('Subtitle');
-            $table->String('Description'); 
+            $table->String('subtitle');
+            $table->String('description'); 
+            $table->enum('status',['1','0'])->default('1');
+
             $table->timestamps();
         });
     }

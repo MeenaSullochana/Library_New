@@ -628,8 +628,12 @@ Route::get('/categoriesedit',function(){
 Route::get('/homecontent',function(){ return view('admin.homecontent');});
   Route::post('/hidelins_title',[SettingController::class,'hidelins_title']);
   Route::post('/mailverification_title',[SettingController::class,'mailverification_title']);
+//   homepageboookadd
+Route::get('/homecontent',function(){ return view('admin.homecontent');});
+  Route::post('/homepageboookadd',[SettingController::class,'homepageboookadd']);
+  Route::post('/mailverification_title',[SettingController::class,'mailverification_title']);
 
-
+  
 //  loginecontent
 Route::get('/logincontent',function(){ return view('admin.logincontent');});
   Route::post('/loginhidelins_title',[SettingController::class,'loginhidelins_title']);

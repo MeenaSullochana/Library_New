@@ -3126,14 +3126,21 @@
                                             <div class="col-xl-6 col-sm-6">
                                                         <div class="card text-white">
                                                             <div class="card-header border-0 flex-wrap">
-                                                                @php
-                                                                    $dataPoints = array(
-                                                                            array("label"=>"External", "y"=>($reviewer1 / $rev) * 100),
-                                                                            array("label"=>"Librarian", "y"=>($reviewer2 / $rev) * 100),
-                                                                            array("label"=>"Public", "y"=>($reviewer3 / $rev) * 100),
+                                                            @php
+    $dataPoints = array();
 
-                                                                        )
-                                                                @endphp
+    if ($rev != 0) {
+        $dataPoints[] = array("label"=>"External", "y"=>($reviewer1 / $rev) * 100);
+        $dataPoints[] = array("label"=>"Librarian", "y"=>($reviewer2 / $rev) * 100);
+        $dataPoints[] = array("label"=>"Public", "y"=>($reviewer3 / $rev) * 100);
+    } else {
+       
+        $dataPoints[] = array("label"=>"External", "y"=>0);
+        $dataPoints[] = array("label"=>"Librarian", "y"=>0);
+        $dataPoints[] = array("label"=>"Public", "y"=>0);
+    }
+@endphp
+
 
                                                                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                                                             </div>
@@ -3143,14 +3150,21 @@
                                                         <div class="card text-white">
                                                             <div class="card-header border-0 flex-wrap">
                                                             @php
-                                                            $totaluser = $allpubcount + $alldistcount + $allpubdistcount;
+    $totaluser = $allpubcount + $alldistcount + $allpubdistcount;
+    $userPoints = array();
 
-                                                              $userPoints = array(
-                                                               array("label"=>"Publisher", "y"=>($allpubcount / $totaluser) * 100),
-                                                               array("label"=>"Distributor", "y"=>($alldistcount / $totaluser) * 100),
-                                                               array("label"=>"Publisher Cum Distributor", "y"=>($allpubdistcount / $totaluser) * 100)
-                                                               );
-                                                           @endphp
+    if ($totaluser != 0) {
+        $userPoints[] = array("label"=>"Publisher", "y"=>($allpubcount / $totaluser) * 100);
+        $userPoints[] = array("label"=>"Distributor", "y"=>($alldistcount / $totaluser) * 100);
+        $userPoints[] = array("label"=>"Publisher Cum Distributor", "y"=>($allpubdistcount / $totaluser) * 100);
+    } else {
+    
+        $userPoints[] = array("label"=>"Publisher", "y"=>0);
+        $userPoints[] = array("label"=>"Distributor", "y"=>0);
+        $userPoints[] = array("label"=>"Publisher Cum Distributor", "y"=>0);
+    }
+@endphp
+
 
                                                                 <div id="userschartContainer" style="height: 370px; width: 100%;"></div>
                                                             </div>
