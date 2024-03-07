@@ -81,13 +81,29 @@ let dataSet = [
 	
 	var table = $('#projects-tbl1').DataTable({
 		//dom: 'Bfrtip',
-		'dom': 'ZBfrltip',
+		dom: '<"d-flex justify-content-between"Blf>rtip',
 		buttons: [
-            
-			{ extend: 'excel', text: '<i class="fa-solid fa-file-excel"></i> Export Report',
-              className: 'btn btn-sm border-0'
+			{
+				extend: 'excel',
+				text: '<i class="fa-solid fa-file-excel"></i> Export Excel',
+				className: 'btn btn-outline-primary btn-sm'
+			},
+			{
+				extend: 'pdf',
+				text: '<i class="fa-solid fa-file-pdf"></i> Export PDF',
+				className: 'btn btn-outline-primary btn-sm'
+			},
+			{
+				extend: 'copy',
+				text: '<i class="fa-solid fa-copy"></i>Export Copy ',
+				className: 'btn btn-outline-primary btn-sm'
+			},
+			{
+				extend: 'print',
+				text: '<i class="fa-solid fa-print"></i>Export Print',
+				className: 'btn btn-outline-primary btn-sm'
 			}
-        ],
+		],
 		searching: false,
 		pageLength:5,
 		select: false,            
@@ -101,6 +117,46 @@ let dataSet = [
 		},
 		
     });
+
+	var table = $('#refresh').DataTable({
+		//dom: 'Bfrtip',
+		dom: '<"d-flex justify-content-between"Blf>rtip',
+		buttons: [
+			{
+				extend: 'excel',
+				text: '<i class="fa-solid fa-file-excel"></i> Export Excel',
+				className: 'btn btn-outline-primary btn-sm'
+			},
+			{
+				extend: 'pdf',
+				text: '<i class="fa-solid fa-file-pdf"></i> Export PDF',
+				className: 'btn btn-outline-primary btn-sm'
+			},
+			{
+				extend: 'copy',
+				text: '<i class="fa-solid fa-copy"></i>Export Copy ',
+				className: 'btn btn-outline-primary btn-sm'
+			},
+			{
+				extend: 'print',
+				text: '<i class="fa-solid fa-print"></i>Export Print',
+				className: 'btn btn-outline-primary btn-sm'
+			}
+		],
+		searching: false,
+		pageLength:5,
+		select: false,            
+        lengthChange:false ,
+		language: {
+			paginate: {
+				next: '<i class="fa-solid fa-angle-right"></i>',
+				previous: '<i class="fa-solid fa-angle-left"></i>' 
+			}
+			
+		},
+		
+    });
+
 	var table = $('#projects-tb22').DataTable({
 		//dom: 'Bfrtip',
 		'dom': 'ZBfrltip',
@@ -426,8 +482,7 @@ let dataSet = [
 			  next: '<i class="fa-solid fa-angle-right"></i>',
 			  previous: '<i class="fa-solid fa-angle-left"></i>' 
 			}
-		  }
-		
+		  }	
 	}); 
 	
 	// dataTable6

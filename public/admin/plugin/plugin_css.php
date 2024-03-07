@@ -4,8 +4,14 @@
 	<link href="../vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.6.4/nouislider.min.css">
-	<link href="../vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-	<link href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css" rel="stylesheet">
+	
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+	<!-- DataTables Extensions CSS -->
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.3.0/css/buttons.dataTables.min.css">
+
+
 	<link href="../vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<!-- <link href="../vendor/mckenziearts\laravel-notify/dist/notify.css" rel="stylesheet"> -->
 	<!-- tagify-css -->

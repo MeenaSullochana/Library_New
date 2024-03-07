@@ -112,6 +112,7 @@
                                                                             <i class="fa fa-camera"></i>
                                                                         </div>
                                                                     </div>
+                                                                    <p class="text-danger"><b>Note</b> : Uploaded file to be dimension175 * 175</p>
                                                                     <div class="author-info">
                                                                         <h6 class="title">Add Category Image</h6>
                                                                     </div>

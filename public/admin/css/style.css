@@ -31535,7 +31535,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-bottom: 20px;
     display: inline-block; }
     .author-profile .author-media img {
-      width: 130px;
+      width: 175px;
+      height: 175px;
       border-radius: 100%; }
   .author-profile .author-info .title {
     font-size: 15px;

@@ -796,11 +796,6 @@
 
 			load:function(){
 				NewExperience();
-				AllProject();
-				overiewChart();
-				chartBar();
-				expensesChart();
-				redial();
 				swiperreview();
 
 			},

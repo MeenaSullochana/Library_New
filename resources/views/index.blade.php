@@ -135,7 +135,7 @@
                     <div class="col-lg-12 text-center">
                         <div class="tpsection mb-35">
                             <!--<h4 class="tpsection__sub-title">~ Procurement ~</h4>-->
-                            <h4 class="tpsection__title">Book Procurement Events & Festivals</h4>
+                            <h4 class="tpsection__title">Popular Books</h4>
                             <!--<p>The liber tempor cum soluta nobis eleifend option congue doming quod mazim.</p>-->
                         </div>
                     </div>
