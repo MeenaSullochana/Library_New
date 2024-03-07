@@ -65,9 +65,8 @@
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <h3 class="mb-0 bc-title"><b>Book Subject Create</b> </h3>
-                                        <a class="btn btn-primary btn-sm" href="booksubject_list"><i
-                                                class="fas fa-chevron-left"></i> Back</a>
+                                        <h3 class="mb-0 bc-title"><b> Book Subject Create</b> </h3>
+                                        <a class="btn btn-primary btn-sm" href="booksubject_list"><i class="fa-solid fa-list">Subject List</i></a>
                                     </div>
                                 </div>
                             </div>

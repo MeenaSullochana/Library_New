@@ -66,8 +66,8 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <h3 class="mb-0 bc-title"><b>Book Gsm Create</b> </h3>
-                                        <a class="btn btn-primary btn-sm" href="/admin/bookgsm_list"><i
-                                                class="fas fa-chevron-left"></i> Back</a>
+                                        <a class="btn btn-primary btn-sm" href="/admin/bookgsm_list">
+                                            <i class="fa-solid fa-list"></i> List</a>
                                     </div>
                                 </div>
                             </div>

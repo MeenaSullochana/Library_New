@@ -157,7 +157,6 @@ foreach ($months as $month) {
     }
 }
 
-// Calculate percentage for each category and each month
 foreach ($categoryCountsPerCategory as $category => &$countsPerMonth) {
     foreach ($countsPerMonth as $month => &$count) {
         if ($categoryTotalCountsPerMonth[$month] > 0) {
