@@ -2,12 +2,12 @@
 
 (function($) {
     /* "use strict" */
-	
+
  var dzChartlist = function(){
-	
+
 	var screenWidth = $(window).width();
 	let draw = Chart.controllers.line.__super__.draw; //draw shadow
-	
+
 	var NewExperience = function(){
 		var options = {
 		  series: [
@@ -15,7 +15,7 @@
 				name: 'Net Profit',
 				data: [100,300, 200, 250, 200, 240, 180,230,200, 250, 300],
 				/* radius: 30,	 */
-			}, 				
+			},
 		],
 			chart: {
 			type: 'area',
@@ -30,9 +30,9 @@
 			sparkline: {
 				enabled: true
 			}
-			
+
 		},
-		
+
 		colors:['var(--primary)'],
 		dataLabels: {
 		  enabled: false,
@@ -47,7 +47,7 @@
 		  curve:'straight',
 		  colors:['var(--primary)'],
 		},
-		
+
 		grid: {
 			show:false,
 			borderColor: '#eee',
@@ -117,10 +117,10 @@
 		fill: {
 		  opacity: 0.9,
 		  colors:'var(--primary)',
-		  type: 'gradient', 
+		  type: 'gradient',
 		  gradient: {
-			colorStops:[ 
-				
+			colorStops:[
+
 				{
 				  offset: 0,
 				  color: 'var(--primary)',
@@ -137,7 +137,7 @@
 				  opacity: 0
 				}
 			  ],
-			  
+
 			}
 		},
 		tooltip: {
@@ -155,7 +155,7 @@
 
 		var chartBar1 = new ApexCharts(document.querySelector("#NewExperience"), options);
 		chartBar1.render();
-	 
+
 	}
 	var AllProject = function(){
 		var options = {
@@ -187,7 +187,7 @@
 						fontWeight:'500',
 						fontFamily:'Arial',
 						label: 'Compete',
-					   
+
 						formatter: function (w) {
 						  return w.globals.seriesTotals.reduce((a, b) => {
 							return a + b
@@ -209,9 +209,9 @@
         };
 		var chartBar1 = new ApexCharts(document.querySelector("#AllProject"), options);
 		chartBar1.render();
-	 
+
 	}
-	
+
 	var overiewChart = function(){
 		 var options = {
           series: [{
@@ -244,7 +244,7 @@
 			fontSize: '13px',
 			fontFamily: 'poppins',
 			 labels: {
-				  colors:'#888888', 
+				  colors:'#888888',
 			 }
 		},
         plotOptions: {
@@ -253,7 +253,7 @@
 			 borderRadius:6	,
           }
         },
-        
+
         fill: {
           //opacity: [0.1, 0.1, 1],
 		  type : 'gradient',
@@ -344,7 +344,7 @@
                 return y.toFixed(0) + " points";
               }
               return y;
-        
+
             }
           }
         }
@@ -352,7 +352,7 @@
 
         var chart = new ApexCharts(document.querySelector("#overiewChart"), options);
         chart.render();
-		
+
 		$(".mix-chart-tab .nav-link").on('click',function(){
 			var seriesType = $(this).attr('data-series');
 			var columnData = [];
@@ -400,7 +400,7 @@
 				}
 			]);
 		})
-	 
+
 	}
 
 	var chartBar = function(){
@@ -409,22 +409,22 @@
 				{
 					name: 'Running',
 					data: [50, 90, 90],
-					//radius: 12,	
-				}, 
+					//radius: 12,
+				},
 				{
 				  name: 'Cycling',
 				  data: [50, 60, 55]
-				}, 
-				
+				},
+
 			],
 				chart: {
 				type: 'bar',
 				height: 120,
-				
+
 				toolbar: {
 					show: false,
 				},
-				
+
 			},
 			plotOptions: {
 			  bar: {
@@ -433,7 +433,7 @@
 				endingShape: "rounded",
 				borderRadius: 8,
 			  },
-			  
+
 			},
 			states: {
 			  hover: {
@@ -445,13 +445,13 @@
 			  enabled: false,
 			  offsetY: -30
 			},
-			
+
 			legend: {
 				show: false,
 				fontSize: '12px',
 				labels: {
 					colors: '#000000',
-					
+
 					},
 				markers: {
 				width: 18,
@@ -459,7 +459,7 @@
 				strokeWidth: 8,
 				strokeColor: '#fff',
 				fillColors: undefined,
-				radius: 12,	
+				radius: 12,
 				}
 			},
 			stroke: {
@@ -480,7 +480,7 @@
 						lines: {
 							show: false
 						}
-					},  				
+					},
 			},
 			xaxis: {
 				categories: ['JAN', 'FEB', 'MAR', 'APR', 'MAY'],
@@ -502,7 +502,7 @@
 				},
 				axisTicks: {
 					show: false,
-				}, 			
+				},
 			},
 			yaxis: {
 				labels: {
@@ -529,22 +529,22 @@
 				{
 					name: 'Running',
 					data: [40, 80, 70],
-					//radius: 12,	
-				}, 
+					//radius: 12,
+				},
 				{
 				  name: 'Cycling',
 				  data: [60, 30, 70]
-				}, 
-				
+				},
+
 			],
 				chart: {
 				type: 'bar',
 				height: 120,
-				
+
 				toolbar: {
 					show: false,
 				},
-				
+
 			},
 			plotOptions: {
 			  bar: {
@@ -553,7 +553,7 @@
 				endingShape: "rounded",
 				borderRadius: 8,
 			  },
-			  
+
 			},
 			states: {
 			  hover: {
@@ -565,13 +565,13 @@
 			  enabled: false,
 			  offsetY: -30
 			},
-			
+
 			legend: {
 				show: false,
 				fontSize: '12px',
 				labels: {
 					colors: '#000000',
-					
+
 					},
 				markers: {
 				width: 18,
@@ -579,7 +579,7 @@
 				strokeWidth: 8,
 				strokeColor: '#fff',
 				fillColors: undefined,
-				radius: 12,	
+				radius: 12,
 				}
 			},
 			stroke: {
@@ -600,7 +600,7 @@
 						lines: {
 							show: false
 						}
-					},  				
+					},
 			},
 			xaxis: {
 				categories: ['JAN', 'FEB', 'MAR', 'APR', 'MAY'],
@@ -622,7 +622,7 @@
 				},
 				axisTicks: {
 					show: false,
-				}, 			
+				},
 			},
 			yaxis: {
 				labels: {
@@ -662,7 +662,7 @@
 			strokeWidth: '100%',
 			margin: 3,
 		  },
-		  
+
 		  hollow: {
 			margin: 20,
 			size: '60%',
@@ -672,7 +672,7 @@
 			imageOffsetY: 0,
 			position: 'front',
 		  },
-		  
+
 		  dataLabels: {
 			name: {
 			  show: false
@@ -694,7 +694,7 @@
 		  },
 		}
 	  }
-	  
+
 	  ],
 	  grid: {
 		padding: {
@@ -722,12 +722,12 @@
 
 	  var chart = new ApexCharts(document.querySelector("#redial"), options);
 	  chart.render();
-  
-  
+
+
   }
 
   var swiperreview = function() {
-		
+
 	var swiper = new Swiper('.mySwiper', {
 		speed: 1500,
 		parallax: true,
@@ -741,7 +741,7 @@
 			prevEl: ".swiper-button-prev",
 		},
 		breakpoints: {
-			
+
 		  300: {
 			slidesPerView: 1,
 			spaceBetween: 20,
@@ -772,28 +772,28 @@
 		}
 	})
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/* Function ============ */
 		return {
 			init:function(){
 			},
-			
-			
+
+
 			load:function(){
 				NewExperience();
 				AllProject();
@@ -802,24 +802,24 @@
 				expensesChart();
 				redial();
 				swiperreview();
-				
+
 			},
-			
+
 			resize:function(){
 			}
 		}
-	
+
 	}();
 
-	
-		
+
+
 	jQuery(window).on('load',function(){
 		setTimeout(function(){
 			dzChartlist.load();
-		}, 1000); 
-		
+		}, 1000);
+
 	});
 
-     
+
 
 })(jQuery);

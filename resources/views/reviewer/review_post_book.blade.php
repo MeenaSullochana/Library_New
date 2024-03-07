@@ -110,7 +110,7 @@
                                  </div>
                               </div>
                               <div class="card-content-summary">
-                                  <h3 class="form-label">Description</h3>
+                                  <h3 class="form-label">Book Description</h3>
                                  <p class="text-start">{{$book->description}}</p>
                               </div>
                            </div>
@@ -120,13 +120,13 @@
                                  <div class=" mb-5">
                                     <input type="hidden" name="bookid" value={{$book->id}}>
                                     <input type="hidden" name="rev" value={{$rev->id}}>
-                                    <label class="form-label text-left">Your Score<span class="text-danger maditory">*</span></label>
+                                    <label class="form-label text-left">Your Score <span class="text-danger maditory">*</span></label>
                                     <select class="form-control mb-3" name="review">
                                        <option value="Highly Recommended">Highly Recommended</option>
                                        <option value="May Be Considered">May be Considered</option>
                                        <option value="Not Recommended">Not Recommended</option>
                                     </select>
-                                    <label class="form-label text-left">Description<span class="text-danger maditory">*</span></label>
+                                    <label class="form-label text-left">Remark <span class="text-danger maditory">*</span></label>
                                     <textarea class="form-control" name="about_book" rows="4" cols="5" required></textarea>
                                     <div class="rate bg-success py-3 text-white mt-3">
                                        <div class="buttons px-4 mt-0">

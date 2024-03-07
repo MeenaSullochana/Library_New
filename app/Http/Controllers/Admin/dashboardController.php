@@ -20,41 +20,41 @@ class dashboardController extends Controller
     public function admindashboard(){
         $currentYear = date('Y');
         $categoryCountsPerMonth = [];
-        
-  
+
+
         for ($targetMonth = 1; $targetMonth <= 12; $targetMonth++) {
-      
+
            $books = Book::whereYear('created_at', '=', $currentYear)
                          ->whereMonth('created_at', '=', $targetMonth)
                          ->where("book_procurement_status", '=', 1)
                          ->get();
-        
-       
+
+
             $categoryCounts = [];
             $specialCategories = Specialcategories::where('status', '=', 1)->get();
-        
+
             foreach ($specialCategories as $category) {
                 $categoryCounts[$category->name] = 0;
             }
-        
-          
+
+
             foreach ($books as $book) {
                 if (isset($categoryCounts[$book->category])) {
                     $categoryCounts[$book->category]++;
                 }
             }
-        
-           
+
+
             $categoryCountsPerMonth[$targetMonth] = [
                 'totalBooks' => count($books),
                 'categoryCounts' => $categoryCounts
             ];
         }
-        
-      
-        return $categoryCountsPerMonth;
-        
-        
+
+
+        // return $categoryCountsPerMonth;
+
+
 
        $allpub=Publisher::all();
        $activepub=Publisher::where('status', '=', '1')->where('approved_status', '=', 'approve')->get();

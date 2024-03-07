@@ -29,21 +29,23 @@ Route::prefix('admin')->group(function () {
     Route::get('/notifications',[notificationController::class,'notifi']);
     Route::get('/notificationstatus',[notificationController::class,'notificationstatus']);
     Route::get('/Notification_virw/{id}/{type}',[notificationController::class,'Notification_virw']);
-    
+
     Route::get('/notificationview',function(){
         $data = Session::get('notification1');
          if($data !==null){
              return view('admin.notification_view')->with("data",$data);
          }
-         
+
      });
-    
+
 Route::get('/activitymonitor',function(){return view('admin.activitymonitor');});
 Route::get('/application_approved',function(){return view('admin.application_approved');});
 Route::get('/application_list',function(){return view('admin.application_list');});
 Route::get('/application_rejected',function(){return view('admin.application_rejected');});
 Route::get('/application_view',function(){return view('admin.application_view');});
 Route::get('/banner_setting',function(){return view('admin.banner_setting');});
+Route::get('/banner_setting_edit',function(){return view('admin.banner_setting_edit');});
+Route::get('/banner_setting_list',function(){return view('admin.banner_setting_list');});
 Route::get('/book_section_add_new',function(){return view('admin.book_section_add_new');});
 Route::get('/book_section_print',function(){return view('admin.book_section_print');});
 Route::get('/book_section',function(){return view('admin.book_section');});
@@ -189,7 +191,7 @@ Route::get('/editreviewer',function(){
     if($data !==null){
         return view('admin.librarianreviewer_edit')->with("data",$data);
     }
-    
+
 });
 
 
@@ -226,7 +228,7 @@ Route::get('/sub_admin_view',function(){
     }else{
         return back();
     }
-    
+
 });
 Route::get('/sub_admin_edit/{id}',[SubadminController::class,'subadminedit']);
 Route::get('/sub_admin_edit',function(){
@@ -236,7 +238,7 @@ Route::get('/sub_admin_edit',function(){
     }else{
         return back();
     }
-    
+
 });
 // fair
 Route::get('/fair_manage_add',[FairController::class,'district']);
@@ -250,7 +252,7 @@ Route::get('/fair_manage_view',function(){
     }else{
         return back();
     }
-    
+
 });
 Route::get('/fair_manage_edit/{id}',[FairController::class,'fairmanageedit']);
 Route::get('/fair_manage_edit',function(){
@@ -260,7 +262,7 @@ Route::get('/fair_manage_edit',function(){
     }else{
         return back();
     }
-    
+
 });
 Route::post('/fairupdate/{id}',[FairController::class,'fairupdate']);
 Route::get('/fair_manage_delete/{id}',[FairController::class,'fairmanagedelete']);
@@ -276,7 +278,7 @@ Route::get('/aplication_fairview',function(){
      }else{
          return back();
      }
-     
+
  });
 // publisherget
 Route::get('/publisher_list',[PublisherController::class,'publisherget']);
@@ -297,7 +299,7 @@ Route::get('/pubprofile',function(){
     }else{
         return back();
     }
-    
+
 });
 // distributorget
 Route::get('/distributor_list',[DistributorController::class,'distributorget']);
@@ -319,7 +321,7 @@ Route::get('/distprofile',function(){
     }else{
         return back();
     }
-    
+
 });
 // pubdist
 
@@ -342,7 +344,7 @@ Route::get('/pubdistprofile',function(){
     }else{
         return back();
     }
-    
+
 });
 // reviewer
 Route::get('/reviewer_list',function(){ return view('admin.reviewer_list');});
@@ -365,7 +367,7 @@ Route::get('/mailverificationcontent',function(){ return view('admin.mailverific
     }else{
         return back();
     }
-    
+
  });
 
  Route::get('/libraryedit/{id}',[LibrarianController::class,'libraryedit']);
@@ -376,7 +378,7 @@ Route::get('/mailverificationcontent',function(){ return view('admin.mailverific
     }else{
         return back();
     }
-    
+
  });
  Route::post('/librarianedit',[LibrarianController::class,'librarianedit']);
  Route::get('/member_publicedit/{id}',[ReviewerController::class,'reviewerpublic']);
@@ -387,11 +389,11 @@ Route::get('/mailverificationcontent',function(){ return view('admin.mailverific
     }else{
         return back();
     }
-    
+
  });
  Route::post('/publicedit',[ReviewerController::class,'publicedit']);
 
- 
+
  Route::get('/member_edit/{id}',[ReviewerController::class,'memberedit']);
  Route::get('/revieweredit',function(){
     $data = Session::get('reviewer');
@@ -400,7 +402,7 @@ Route::get('/mailverificationcontent',function(){ return view('admin.mailverific
     }else{
         return back();
     }
-    
+
  });
 
 
@@ -415,7 +417,7 @@ Route::get('/librariandata',function(){
    }else{
        return back();
    }
-   
+
 });
 
 //smtp
@@ -437,7 +439,7 @@ Route::get('/feedback_publisher',function(){
     }else{
         return back();
     }
-    
+
 });
 // feedback_distributor
 Route::get('/feedback_distributor_list',[FeedbackController::class,'feedbackdistributorlist']);
@@ -449,7 +451,7 @@ Route::get('/feedback_distributor',function(){
     }else{
         return back();
     }
-    
+
 });
 // feedback_publisher_distributor
 Route::get('/feedback_publisher_distributor_list',[FeedbackController::class,'feedbackpubdistlist']);
@@ -461,7 +463,7 @@ Route::get('/feedbackpubdist',function(){
     }else{
         return back();
     }
-    
+
 });
 Route::get('/feedbackdelete/{id}',[FeedbackController::class,'feedbackdelete']);
 Route::get('/book_manage_all',[BookController::class,'bookmanageall']);
@@ -471,7 +473,7 @@ Route::get('/book_manage_view/{id}',[BookController::class,'bookmanageview']);
      if($data !==null){
          return view('admin.book_manage_view')->with("data",$data);
      }
-     
+
  });
  Route::get('/user_view/{id}/{type}',[BookController::class,'user_view']);
  Route::get('/userview',function(){
@@ -479,9 +481,9 @@ Route::get('/book_manage_view/{id}',[BookController::class,'bookmanageview']);
     if($data !==null){
         return view('admin.book_manage_view')->with("data",$data);
     }
-    
+
 });
- 
+
  Route::get('/meta_book_list',[BookController::class,'meta_book_list']);
  Route::get('/meta_pending_book',[BookController::class,'meta_pending_book']);
  Route::get('/meta_book_complete',[BookController::class,'meta_book_complete']);
@@ -498,39 +500,39 @@ Route::get('/book_manage_view/{id}',[BookController::class,'bookmanageview']);
     }else{
         return back();
     }
-    
+
 });
  Route::get('/procur_book_list',[BookController::class,'procur_book_list']);
  Route::get('/procur_pending_list',[BookController::class,'procur_pending_list']);
  Route::get('/procur_complete_list',[BookController::class,'procur_complete_list']);
  Route::get('/procur_reject_view',[BookController::class,'procur_reject_view']);
 //  Route::get('/procur_book_assign/{id}',[BookController::class,'procur_assign']);
- 
+
 //  Route::get('/procur_book_assign',function(){
 //     $data = Session::get('data');
 //     if($data !==null){
 //         $book = $data->book;
-//         $internal = $data->internal; 
-//         $external = $data->external; 
-//         $public = $data->public; 
+//         $internal = $data->internal;
+//         $external = $data->external;
+//         $public = $data->public;
 //         return view('admin.procur_book_assign',compact('book','internal','external','public'));
 //     }else{
 //         return back();
 //     }
-    
+
 // });
 Route::get('/procur_complete_view/{bookid}',[BookController::class,'reviewpost']);
 Route::get('/procur_complete_view',function(){
     $data = Session::get('data');
     if($data !==null){
         $book = $data->book;
-        $rev = $data->rev; 
-        
+        $rev = $data->rev;
+
         return view('admin.procur_complete_view',compact('book','rev'));
     }else{
         return back();
     }
-    
+
 });
  Route::post('/assign/librarian',[BookController::class,'assignlibrarian']);
  Route::post('/assign/reviewer',[BookController::class,'assignreviewer']);
@@ -538,34 +540,34 @@ Route::get('/procur_complete_view',function(){
  Route::get('/anoncement',function(){ return view('admin.anoncement');});
  Route::post('/announcementsend',[notificationController::class,'announcementsend']);
  Route::get('/announcementsvirw',function(){
-  
+
     $data = Session::get('Announce');
      if($data !==null){
-       
+
          return view('admin.anouncemenview')->with("data",$data);
      }
-     
+
  });
  Route::get('/paymentinvoice',function(){
-  
+
    $data = Session::get('paymrnt');
      if($data !==null){
-       
+
          return view('admin.payment_invoice')->with("data",$data);
      }
-     
+
  });
- 
+
 
  Route::get('/procurement_paymrnt',function(){ return view('admin.procurement_paymrnt');});
 
  Route::get('/',function(){ return view('admin.payment_invoice');});
  Route::get('/payment_invoice/{id}',[PaymentController::class,'payment_invoice']);
 
- 
+
  Route::get('/announcements_virw/{id}',[notificationController::class,'announcements_virw']);
 
- 
+
  Route::get('/anouncemenlist',function(){ return view('admin.anouncemenlist');});
 
  Route::get('/anouncemenview',function(){ return view('admin.anouncemenview');});
@@ -574,15 +576,15 @@ Route::get('/procur_complete_view',function(){
  Route::post('/budgetadd',[BudgetController::class,'budgetadd']);
  Route::get('/budgetview/{id}',[BudgetController::class,'budgetview']);
  Route::get('/budget_view',function(){
-  
+
    $data = Session::get('budget');
     if($data !==null){
-      
+
         return view('admin.budgetview')->with("data",$data);
     }
-    
+
 });
- 
+
  Route::get('/budgetlist',function(){ return view('admin.budgetlist');});
 //  Route::get('/budgetview',function(){ return view('admin.budgetview');});
 // categories
@@ -595,13 +597,13 @@ Route::post('/categoryedit',[CategorieController::class,'categoryedit']);
 Route::post('/categoryadd',[CategorieController::class,'categoryadd']);
 Route::get('/categories_edit/{id}',[CategorieController::class,'categories_edit']);
 Route::get('/categoriesedit',function(){
-  
+
     $data = Session::get('category');
      if($data !==null){
-       
+
          return view('admin.categories_edit')->with("data",$data);
      }
-     
+
  });
  Route::post('/categories_delete',[CategorieController::class,'categoriesdelete']);
 
@@ -613,10 +615,10 @@ Route::get('/categoriesedit',function(){
  Route::get('/librarytypeedit',function(){
      $data = Session::get('category');
       if($data !==null){
-        
+
           return view('admin.library_type_edit')->with("data",$data);
       }
-      
+
   });
   Route::post('/librarytypeedit',[LibraryTypeController::class,'librarytype_edit']);
   Route::post('/library_type_delete',[LibraryTypeController::class,'librarytypedelete']);
@@ -627,18 +629,18 @@ Route::get('/homecontent',function(){ return view('admin.homecontent');});
   Route::post('/hidelins_title',[SettingController::class,'hidelins_title']);
   Route::post('/mailverification_title',[SettingController::class,'mailverification_title']);
 
-  
+
 //  loginecontent
 Route::get('/logincontent',function(){ return view('admin.logincontent');});
   Route::post('/loginhidelins_title',[SettingController::class,'loginhidelins_title']);
-// 
+//
 Route::get('/forgotcontent',function(){ return view('admin.forgotcontent');});
   Route::post('/forgothidelins_title',[SettingController::class,'forgothidelins_title']);
   Route::get('/forgotpasswordcontent',function(){ return view('admin.forgotpasswordcontent');});
   Route::post('/forgotpasswordhidelins_title',[SettingController::class,'forgotpasswordhidelins_title']);
 
-  
-  
+
+
 // feedback_librarian
 Route::get('/feedback_librarian_list',[FeedbackController::class,'feedbacklibrarian']);
 Route::get('/feedback_librarian/{id}',[FeedbackController::class,'feedback_librarian']);
@@ -649,9 +651,9 @@ Route::get('/feedbacklibrariant',function(){
     }else{
         return back();
     }
-    
+
 });
-  
+
 // feedback_reviewer
 Route::get('/feedback_reviewer_list',[FeedbackController::class,'feedbackreviewer']);
 Route::get('/feedback_reviewer_edit/{id}',[FeedbackController::class,'feedback_reviewer']);
@@ -662,7 +664,7 @@ Route::get('/feedbackreviewer',function(){
     }else{
         return back();
     }
-    
+
 });
 Route::get('/booksubject_add',function(){ return view('admin.booksubject_add');});
 Route::post('/booksubjectadd',[LibraryTypeController::class,'booksubject']);
@@ -674,10 +676,10 @@ Route::get('/booksubject_edit/{id}',[LibraryTypeController::class,'booksubject_e
 Route::get('/Booksubjectedit',function(){
     $data = Session::get('Booksubject');
      if($data !==null){
-       
+
          return view('admin.booksubject_edit')->with("data",$data);
      }
-     
+
  });
 
  Route::post('/book_subject_edit',[LibraryTypeController::class,'book_subject_edit']);
@@ -700,8 +702,8 @@ Route::get('/Bookgsmdata',function(){
     $data = Session::get('Bookgsm');
 
     return view('admin.bookgsm_edit')->with("data",$data);
-  
-     
+
+
  });
  Route::post('/book_gsm_edit',[LibraryTypeController::class,'book_gsm_edit']);
 
@@ -720,8 +722,8 @@ Route::post('/dimension_statuschange',[LibraryTypeController::class,'dimension_s
     $data = Session::get('Bookdimension');
 
     return view('admin.bookdimension_edit')->with("data",$data);
-  
-     
+
+
  });
   Route::post('/book_dimension_edit',[LibraryTypeController::class,'book_dimension_edit']);
 
@@ -740,8 +742,8 @@ Route::post('/papertype_statuschange',[LibraryTypeController::class,'papertype_s
     $data = Session::get('Bookpapertype');
 
     return view('admin.bookpapertype_edit')->with("data",$data);
-  
-     
+
+
  });
   Route::post('/book_papertype_edit',[LibraryTypeController::class,'book_papertype_edit']);
 
@@ -757,13 +759,13 @@ Route::post('/paperfinishing_statuschange',[LibraryTypeController::class,'paperf
     $data = Session::get('Bookpaperfinishing');
 
     return view('admin.bookpaperfinishing_edit')->with("data",$data);
-  
-     
+
+
  });
   Route::post('/book_paperfinishing_edit',[LibraryTypeController::class,'book_paperfinishing_edit']);
 
 
- 
+
 //currencytype
 Route::get('/currencytype_add',function(){ return view('admin.currencytype_add');});
 Route::post('/currencytypeadd',[LibraryTypeController::class,'currencytypeadd']);
@@ -777,13 +779,13 @@ Route::post('/currencytype_statuschange',[LibraryTypeController::class,'currency
     $data = Session::get('Currencytype');
 
     return view('admin.currencytype_edit')->with("data",$data);
-  
-     
+
+
  });
   Route::post('/currencytype_edit',[LibraryTypeController::class,'currencytype_edit']);
 
 
- 
+
 Route::get('/get-metabooks/{id}',[BookController::class,'metabooks']);
 
 // negotiation

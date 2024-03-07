@@ -93,6 +93,10 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                         class="nav-link">Scripts</a>
                                                     <a href="#v-pills-footer" data-bs-toggle="pill"
                                                         class="nav-link">Footer & Contact Page</a>
+                                                    <a href="#v-pills-fbanner" data-bs-toggle="pill"
+                                                        class="nav-link">First Banner</a>
+                                                    <a href="#v-pills-sbanner" data-bs-toggle="pill"
+                                                        class="nav-link">Second Banner</a>
                                                 </div>
                                             </div>
                                             <div class="col-sm-8 mt-3">
@@ -846,6 +850,106 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
 
                                                         </div>
                                                     </div>
+                                                    <div id="v-pills-fbanner" class="tab-pane fade">
+                                                        <form class="admin-form" action="#" method="POST"
+                                                            enctype="multipart/form-data">
+
+                                                            <input type="hidden" name="_token" value="">
+
+                                                            <!-- banner 2 -->
+
+                                                            <div class="form-group">
+                                                                <label for="name">Set Image1 <span
+                                                                        class="text-danger">*</span></label>
+                                                                <br>
+                                                                <img class="admin-img" src="images\avatar\11.png"
+                                                                    alt="No Image Found">
+                                                                <br>
+                                                                <span class="mt-1">Image Size Should Be 496 x
+                                                                    204.</span>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3 file">
+                                                                        <input class="form-control" type="file"
+                                                                            id="formFile">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            {{-- <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="slug">Title <span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Enter Title " value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3">
+                                                                        <label for="slug">Subtitle <span
+                                                                                class="text-danger">*</span></label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Enter Subtitle" value="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group mb-4 mt-3">
+                                                                        <label for="meta_description">Description <span
+                                                                                class="text-danger">*</span></label>
+                                                                        <textarea name="meta_description" id="meta_description" class="form-control" rows="5"
+                                                                            placeholder="Enter Description">  Multipurpose eCommerce  Shopping Platform Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over .</textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div> --}}
+
+                                                            <div class="form-group d-flex justify-contant-end">
+                                                                <button type="submit"
+                                                                    class="btn btn-primary ">Submit</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <!-- logo start -->
+
+                                                    <div id="v-pills-sbanner" class="tab-pane fade">
+
+                                                        <form class="admin-form" action="#" method="POST"
+                                                            enctype="multipart/form-data">
+
+                                                            <input type="hidden" name="_token" value="">
+
+                                                            <!-- banner 2 -->
+
+                                                            <div class="form-group">
+                                                                <label for="name">Set Image1 <span
+                                                                        class="text-danger">*</span></label>
+                                                                <br>
+                                                                <img class="admin-img" src="images\avatar\11.png"
+                                                                    alt="No Image Found">
+                                                                <br>
+                                                                <span class="mt-1">Image Size Should Be 496 x
+                                                                    204.</span>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="mb-3 file">
+                                                                        <input class="form-control" type="file"
+                                                                            id="formFile">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group d-flex justify-contant-end">
+                                                                <button type="submit"
+                                                                    class="btn btn-primary ">Submit</button>
+                                                            </div>
+
+                                                        </form>
+                                                    </div>
+                                                    <!-- Logo End -->
                                                 </div>
                                             </div>
                                         </div>
