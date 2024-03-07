@@ -25,32 +25,32 @@
 
 <body>
 
-    <!--*******************
+    <!--*******
         Preloader start
-    ********************-->
+    ********-->
     <div id="preloader">
         <div class="text-center">
             <img src="images/goverment_loader.gif" alt="" width="25%">
         </div>
     </div>
-    <!--*******************
+    <!--*******
         Preloader end
-    ********************-->
+    ********-->
 
-    <!--**********************************
+    <!--************
         Main wrapper start
-    ***********************************-->
+    *************-->
     <div id="main-wrapper">
-        <!--**********************************
+        <!--************
             Nav header start
-        ***********************************-->
+        *************-->
         @include ('admin.navigation')
-        <!--**********************************
+        <!--************
             Sidebar end
-        ***********************************-->
-        <!--**********************************
+        *************-->
+        <!--************
             Content body start
-        ***********************************-->
+        *************-->
         {{-- <div class="content-body">
             <div class="container-fluid">
             <div class="content">
@@ -204,7 +204,7 @@
 
                             <!-- banner 2 -->
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="name">Set Image1 <span class="text-danger">*</span></label>
                                 <br>
                                 <img class="admin-img" src="images\avatar\11.png" alt="No Image Found">
@@ -219,25 +219,41 @@
                                         <input class="form-control" type="file" id="formFile" required>
                                     </div>
                                 </div>
+                            </div> --}}
+                            <div class="form-group">
+                                <label for="name">Set Image1 <span class="text-danger">*</span></label>
+                                <br>
+                                <img class="admin-img" id="bookimage" src="images\avatar\11.png" alt="No Image Found">
+                                <br>
+                                <span class="mt-1">Image Size Should Be 270 x 340.</span>
+                            </div>
+
+                            <div class="mb-3 file">
+                                <input class="form-control" type="file" id="formFile">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="slug">Slider <span class="text-danger">*</span></label>
                                     <div class="dropdown bootstrap-select default-select form-control wide form-control-sm">
-                                        <select id="" name="" class="default-select form-control wide form-control-sm" required>
+                                        <select id="type" name="type" class="default-select form-control wide form-control-sm" required>
                                             <option value=""> </option>
-                                            <option value="1">List of Popular Category </option>
-                                            <option value="0">List of Latest Book</option>
+                                            <option value="popularcategory"> Popular Category Book </option>
+                                            <option value="topratedbooks">Latest Top Rated Books </option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="slug">Category <span class="text-danger">*</span></label>
                                     <div class="dropdown bootstrap-select default-select form-control wide form-control-sm">
-                                        <select id="" name="" class="default-select form-control wide form-control-sm" required>
-                                            <option value=""> </option>
-                                            <option value="1">Active </option>
-                                            <option value="0">Inactive</option>
+                                        <select id="category" name="category" class="default-select form-control wide form-control-sm" required>
+                                        <option value=""></option>
+                                        @php
+                                                          $categori = DB::table('special_categories')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -246,24 +262,24 @@
 
                                 <div class="col-md-6">
                                     <div class="mb-3 mt-3 ">
-                                        <label for="slug">Title <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Title "
-                                            value="" required>
+                                        <label for="slug"> Book Title <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Enter  Book Title "
+                                        id="booktitle" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3 mt-3 ">
                                         <label for="slug">Subtitle </label>
-                                        <input type="text" class="form-control" placeholder="Enter Subtitle"
-                                            value="" >
+                                        <input type="text" class="form-control" placeholder="Enter Book Subtitle"
+                                        id="subtitle" >
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group mb-4 mt-3">
                                         <label for="meta_description">Description <span
                                                 class="text-danger">*</span></label>
-                                        <textarea name="meta_description" id="meta_description" class="form-control" rows="5"
-                                            placeholder="Enter Description" required>  Multipurpose eCommerce  Shopping Platform Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over .</textarea>
+                                        <textarea name="meta_description" id="description" class="form-control" rows="5"
+                                            placeholder="Enter Description" required> </textarea>
                                     </div>
                                 </div>
                             </div>
@@ -276,33 +292,117 @@
                 </div>
             </div>
         </div>
-        <!--**********************************
+        <!--************
             Content body end
-        ***********************************-->
-        <!--**********************************
+        *************-->
+        <!--************
             Footer start
-        ***********************************-->
+        *************-->
         @include ('admin.footer')
-        <!--**********************************
+        <!--************
             Footer end
-        ***********************************-->
+        *************-->
 
-        <!--**********************************
+        <!--************
            Support ticket button start
-        ***********************************-->
+        *************-->
 
-        <!--**********************************
+        <!--************
            Support ticket button end
-        ***********************************-->
+        *************-->
 
 
     </div>
-    <!--**********************************
+    <!--************
         Main wrapper end
-    ***********************************-->
+    *************-->
     <?php
     include 'admin/plugin/plugin_js.php';
     ?>
+    <script>
+        $(document).ready(function () {
+            $("#formFile").change(function () {
+                readURL(this);
+            });
+        });
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    var img = new Image();
+                    img.onload = function() {
+                        if (img.width === 270 && img.height === 340) {
+                            $('#bookimage')
+                                .attr('src', e.target.result)
+                                .width(270)
+                                .height(340);
+                        } else {
+                            toastr.error('Image must be 270x340 pixels', {timeout: 2000});
+
+                          
+                            $('#bookimage').removeAttr('src');
+                            input.value = ''; // clear the file input
+                        }
+                    };
+                    img.src = URL.createObjectURL(input.files[0]);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+    </script>
+
+    
+<script>
+    $("#submitbutton").on("click", function (e) {
+        e.preventDefault();
+        var type = $("#type").val();
+        var bookTitle = $("#bookTitle").val();
+        var subtitle = $("#subtitle").val();
+        var description = $("#description").val();
+        var category = $("#category").val();
+
+        
+        var bookimage = $('#bookimage')[0].files[0]; // Corrected to access the first file
+
+        let fd = new FormData();
+        fd.append('type', type);
+        fd.append('booktitle', bookTitle);
+        fd.append('subtitle', subtitle);
+        fd.append('description', description);
+        fd.append('category', category);
+
+        
+        fd.append('bookImage', bookimage); 
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            url: "/admin/homepageboookadd",
+            type: "POST",
+            data: fd,
+            processData: false,
+            contentType: false,
+            success: function (response) {
+                if (response.success) {
+                    toastr.success(response.success, {timeout: 2000});
+                    setTimeout(function () {
+                        window.location.href = "/admin/categories_add";
+                    }, 3000);
+                } else {
+                    toastr.error(response.error, {timeout: 2000});
+                }
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
