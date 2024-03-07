@@ -182,12 +182,8 @@
                             <h3 class="mb-0 bc-title">
                                 <b>Home Page Setting</b>
                             </h3>
-                           <div>
-                            {{-- <a class="btn btn-primary btn-sm" href="/admin/banner_setting_list"><i class="fas fa-arrow-left"></i>
-                                List of Popular Category</a> --}}
-                                <a class="btn btn-primary btn-sm" href="/admin/banner_setting_list"><i class="fas fa-arrow-left"></i>
-                                    List of Books</a>
-                           </div>
+                            <a class="btn btn-primary btn-sm" href="/admin/index"><i class="fas fa-chevron-left"></i>
+                                Dashboard</a>
                         </div>
                     </div>
                 </div>
@@ -197,6 +193,9 @@
 
 
                 <div class="card mt-3">
+                    <div class="card-header">
+                        <h3 class="">Home Book Slider</h3>
+                    </div>
                     <div class="card-body">
                         <form class="admin-form" action="#" method="POST" enctype="multipart/form-data">
 
@@ -226,8 +225,8 @@
                                     <div class="dropdown bootstrap-select default-select form-control wide form-control-sm">
                                         <select id="" name="" class="default-select form-control wide form-control-sm" required>
                                             <option value=""> </option>
-                                            <option value="1">List of Popular Category </option>
-                                            <option value="0">List of Latest Book</option>
+                                            <option value="1">Active </option>
+                                            <option value="0">Inactive</option>
                                         </select>
                                     </div>
                                 </div>

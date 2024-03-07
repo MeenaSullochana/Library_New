@@ -502,7 +502,7 @@
                                                 <div class="card">
                                                     <div class="card-body depostit-card">
                                                     @php
-                                                                   
+
                                                                    $librarian = DB::table('librarians')->count();
                                                                    $librarianactive = DB::table('librarians')->where('status','=',1)->count();
                                                                    $librarianinactive = DB::table('librarians')->where('status','=',0)->count();
@@ -643,7 +643,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <h4>Reviewer</h4> 
+                                        <h4>Reviewer</h4>
                         <div class="row">
                             <div class="col-xl-9 col-xxl-12">
                                 <div class="row">
@@ -754,7 +754,7 @@
                                                                 <div
                                                                     class="depostit-card-media d-flex justify-content-between style-1">
                                                                     @php
-                                                                   
+
                                                                         $rev = DB::table('reviewer')->count();
                                                                         $revactive = DB::table('reviewer')->where('status','=',1)->count();
                                                                         $revinactive = DB::table('reviewer')->where('status','=',0)->count();
@@ -762,7 +762,7 @@
                                                                     <div>
                                                                         <h6>Total Reviewer</h6>
                                                                         <h3>
-                                                                            {{$rev}}</h3> 
+                                                                            {{$rev}}</h3>
                                                                     </div>
                                                                     <div class="icon-box bg-secondary">
                                                                         <svg width="24" height="24" viewBox="0 0 24 24"
@@ -809,7 +809,7 @@
                                                                         <p class="mb-0">{{$rev}}/{{$revinactive}}</p>
                                                                     </div>
                                                                     <div class="progress">
-                                                                        
+
                                                                     <div class="progress-bar bg-secondary"
                                                                        style="width:{{ $revinactive != 0 ? ($revinactive / $revr * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                             role="progressbar">
@@ -825,7 +825,7 @@
                                                                 <div
                                                                     class="depostit-card-media d-flex justify-content-between style-1">
                                                                     @php
-                                                                   
+
                                                                         $reviewer1 = DB::table('reviewer')->where('reviewerType','=','external')->count();
                                                                         $revieweractive1 = DB::table('reviewer')->where('status','=',1)->where('reviewerType','=','external')->count();
                                                                         $reviewerinactive1= DB::table('reviewer')->where('status','=',0)->where('reviewerType','=','external')->count();
@@ -833,7 +833,7 @@
                                                                     <div>
                                                                         <h6>Total Expert Reviewer</h6>
                                                                         <h3>
-                                                                            {{$reviewer1}}</h3> 
+                                                                            {{$reviewer1}}</h3>
                                                                     </div>
                                                                     <div class="icon-box bg-secondary">
                                                                         <svg width="24" height="24" viewBox="0 0 24 24"
@@ -880,7 +880,7 @@
                                                                         <p class="mb-0">{{$reviewer1}}/{{$reviewerinactive1}}</p>
                                                                     </div>
                                                                     <div class="progress">
-                                                                        
+
                                                                     <div class="progress-bar bg-secondary"
                                                                        style="width:{{ $reviewerinactive1 != 0 ? ($reviewerinactive1 / $reviewer1 * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                             role="progressbar">
@@ -896,7 +896,7 @@
                                                                 <div
                                                                     class="depostit-card-media d-flex justify-content-between style-1">
                                                                     @php
-                                                                   
+
                                                                         $reviewer2 = DB::table('reviewer')->where('reviewerType','=','internal')->count();
                                                                         $revieweractive2 = DB::table('reviewer')->where('status','=',1)->where('reviewerType','=','internal')->count();
                                                                         $reviewerinactive2= DB::table('reviewer')->where('status','=',0)->where('reviewerType','=','internal')->count();
@@ -904,7 +904,7 @@
                                                                     <div>
                                                                         <h6>Total Librarian Reviewer</h6>
                                                                         <h3>
-                                                                            {{$reviewer2}}</h3> 
+                                                                            {{$reviewer2}}</h3>
                                                                     </div>
                                                                     <div class="icon-box bg-secondary">
                                                                         <svg width="24" height="24" viewBox="0 0 24 24"
@@ -951,7 +951,7 @@
                                                                         <p class="mb-0">{{$reviewer2}}/{{$reviewerinactive2}}</p>
                                                                     </div>
                                                                     <div class="progress">
-                                                                        
+
                                                                     <div class="progress-bar bg-secondary"
                                                                        style="width:{{ $reviewerinactive2 != 0 ? ($reviewerinactive2 / $reviewer2 * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                             role="progressbar">
@@ -967,7 +967,7 @@
                                                                 <div
                                                                     class="depostit-card-media d-flex justify-content-between style-1">
                                                                     @php
-                                                                   
+
                                                                         $reviewer3 = DB::table('reviewer')->where('reviewerType','=','public')->count();
                                                                         $revieweractive3 = DB::table('reviewer')->where('status','=',1)->where('reviewerType','=','public')->count();
                                                                         $reviewerinactive3= DB::table('reviewer')->where('status','=',0)->where('reviewerType','=','public')->count();
@@ -975,7 +975,7 @@
                                                                     <div>
                                                                         <h6>Total Librarian Reviewer</h6>
                                                                         <h3>
-                                                                            {{$reviewer3}}</h3> 
+                                                                            {{$reviewer3}}</h3>
                                                                     </div>
                                                                     <div class="icon-box bg-secondary">
                                                                         <svg width="24" height="24" viewBox="0 0 24 24"
@@ -1022,7 +1022,7 @@
                                                                         <p class="mb-0">{{$reviewer3}}/{{$reviewerinactive3}}</p>
                                                                     </div>
                                                                     <div class="progress">
-                                                                        
+
                                                                     <div class="progress-bar bg-secondary"
                                                                        style="width:{{ $reviewerinactive3 != 0 ? ($reviewerinactive3 / $reviewer3 * 100) : 0 }}%; height:5px; border-radius:4px;"
                                                                             role="progressbar">
@@ -3127,11 +3127,11 @@
                                                         <div class="card text-white">
                                                             <div class="card-header border-0 flex-wrap">
                                                                 @php
-                                                                    $dataPoints = array( 
+                                                                    $dataPoints = array(
                                                                             array("label"=>"External", "y"=>($reviewer1 / $rev) * 100),
                                                                             array("label"=>"Librarian", "y"=>($reviewer2 / $rev) * 100),
                                                                             array("label"=>"Public", "y"=>($reviewer3 / $rev) * 100),
-                                                                           
+
                                                                         )
                                                                 @endphp
 
@@ -3145,7 +3145,7 @@
                                                             @php
                                                             $totaluser = $allpubcount + $alldistcount + $allpubdistcount;
 
-                                                              $userPoints = array( 
+                                                              $userPoints = array(
                                                                array("label"=>"Publisher", "y"=>($allpubcount / $totaluser) * 100),
                                                                array("label"=>"Distributor", "y"=>($alldistcount / $totaluser) * 100),
                                                                array("label"=>"Publisher Cum Distributor", "y"=>($allpubdistcount / $totaluser) * 100)
@@ -3158,30 +3158,30 @@
                                                     </div>
                                                     <div class="col-xl-3">
                                                 @php
-                                                    $publisherPoints = array( 
+                                                    $publisherPoints = array(
                                                         array("y" =>  $activepubcount, "label" => "Active Users" ),
                                                         array("y" => $inactivepubcount, "label" => "Inactive Users" ),
                                                     );
-                                                @endphp   
-                                                <div id="publisherPoints" style="height: 370px; width: 100%;"></div>  
+                                                @endphp
+                                                <div id="publisherPoints" style="height: 370px; width: 100%;"></div>
                                             </div>
                                             <div class="col-xl-3">
                                                 @php
-                                                    $distriputorPoints = array( 
+                                                    $distriputorPoints = array(
                                                         array("y" => $activedistcount, "label" => "Active Users" ),
                                                         array("y" => $inactivedistcount, "label" => "Inactive Users" ),
                                                     );
-                                                @endphp   
-                                                <div id="distriputorPoints" style="height: 370px; width: 100%;"></div>  
+                                                @endphp
+                                                <div id="distriputorPoints" style="height: 370px; width: 100%;"></div>
                                             </div>
                                             <div class="col-xl-3">
                                                 @php
-                                                    $pubanddisPoints = array( 
+                                                    $pubanddisPoints = array(
                                                         array("y" => $activepubdistcount, "label" => "Active Users" ),
                                                         array("y" => $inactivepubdistcount, "label" => "Inactive Users" ),
                                                     );
-                                                @endphp   
-                                                <div id="pubanddisPoints" style="height: 370px; width: 100%;"></div>  
+                                                @endphp
+                                                <div id="pubanddisPoints" style="height: 370px; width: 100%;"></div>
                                             </div>
                                             <div class="col-xl-3">
                                                 <div class="card">
@@ -3239,7 +3239,7 @@
                                     <div class="card my-calendar">
                                         <div class="card-body schedules-cal p-2">
                                             <input type="text" class="form-control d-none" id="datetimepicker1">
-                                            <div class="events">
+                                            {{-- <div class="events">
                                                 <h6>events</h6>
                                                 <div class="dz-scroll event-scroll">
                                                     <div class="event-media">
@@ -3299,7 +3299,7 @@
                                                         <span class="text-white">12:05 PM</span>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -3355,7 +3355,7 @@
                                     array("label"=> "2015", "y"=> 44.7),
                                     array("label"=> "2016", "y"=> 43.9)
                                 );
-                                
+
                                 $expertPoints = array(
                                     array("label"=> "2006", "y"=> 4.1),
                                     array("label"=> "2007", "y"=> 4.2),
@@ -3369,7 +3369,7 @@
                                     array("label"=> "2015", "y"=> 5.3),
                                     array("label"=> "2016", "y"=> 5.2)
                                 );
-                                
+
                                 $publicpoints = array(
                                     array("label"=> "2006", "y"=> 20.8),
                                     array("label"=> "2007", "y"=> 21.7),
@@ -3383,7 +3383,7 @@
                                     array("label"=> "2015", "y"=> 27.0),
                                     array("label"=> "2016", "y"=> 25.8)
                                 );
-                               
+
                             @endphp
                             <div id="reviewerListChart" style="height: 370px; width: 100%;"></div>
                         </div>
@@ -3822,7 +3822,7 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
     var currentYear = <?php echo date("Y"); ?>;
 
 
-var chartTitle = "Book Procurement - " + currentYear;
+    var chartTitle = "Book Procurement - " + currentYear;
         var chart6 = new CanvasJS.Chart("reviewerListChart", {
         title: {
             text: chartTitle
@@ -3860,12 +3860,12 @@ var chartTitle = "Book Procurement - " + currentYear;
                 yValueFormatString: "#0.0#\"%\"",
                 dataPoints: <?php echo json_encode($publicpoints, JSON_NUMERIC_CHECK); ?>
             }
-            
+
         ]
     });
-    
+
     chart6.render();
-    
+
     function toggleDataSeries(e){
         if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
             e.dataSeries.visible = false;

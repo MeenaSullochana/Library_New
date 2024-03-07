@@ -334,7 +334,7 @@
 								<div class="card">
 									<div class="card-body">
 										<div class="students1 d-flex align-items-center justify-content-between flex-wrap">
-											
+
 										@php
 										$id = auth('reviewer')->user()->id;
 										$record = DB::table('book_review_statuses')->where('reviewer_id', $id)->count();
@@ -347,7 +347,7 @@
 											@php
 											$total =2;
                                    $percentage = ($record / $total) * 100;
-	
+
                                      @endphp
 
                                      <div class="d-inline-block position-relative donut-chart-sale mb-3">
@@ -356,7 +356,7 @@
                                           <path d="M 50 0 A 50 50 0 1 1 1.2536043909088193 61.126046697815724 L 17.82737889799982 57.34319082055838 A 33 33 0 1 0 50 17" data-value="{{ $record }}" fill="rgb(59, 215, 225)"></path>
                                          <path d="M 1.2536043909088193 61.126046697815724 A 50 50 0 0 1 49.99999999999999 0 L 49.99999999999999 17 A 33 33 0 0 0 17.82737889799982 57.34319082055838" data-value="{{ $total - $record }}" fill="rgba(245, 245, 245, 1)"></path>
                                               </svg>
-    
+
                                      <small>{{ $percentage }}%</small>
                                                </div>
 
@@ -455,12 +455,12 @@
 					</div>
 					<div class="col-xl-6">
 						<div class="card">
-							<div class="card-body p-0">
+							<div class="card-body p-3">
 								<div class="table-responsive active-projects">
 									<div class="tbl-caption">
 										<h4 class="heading mb-0">Active Review Books</h4>
 									</div>
-									<table id="projects-tbl" class="table">
+									<table id="example3" class="table">
 										<thead>
 											<tr>
 
@@ -509,12 +509,12 @@
 					</div>
 					<div class="col-xl-6">
 						<div class="card">
-							<div class="card-body p-0">
+							<div class="card-body p-3">
 								<div class="table-responsive active-projects">
 									<div class="tbl-caption">
 										<h4 class="heading mb-0">Review Book History</h4>
 									</div>
-									<table id="empoloyees-tbl3" class="table">
+									<table id="example3" class="table">
 										<thead>
 											<tr>
 												<th>Book Name</th>
