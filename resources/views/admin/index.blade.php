@@ -3123,64 +3123,67 @@
 
                                                 </div>
                                             </div> -->
-                                            <div class="col-xl-8">
-                                                <div class="card overflow-hidden">
-                                                    <div class="card-header border-0 pb-0 flex-wrap">
-                                                        <h4 class="heading mb-0">Total Users</h4>
-                                                        <ul class="nav nav-pills mix-chart-tab" id="pills-tab"
-                                                            role="tablist">
-                                                            <li class="nav-item" role="presentation">
-                                                                <button class="nav-link active" data-series="week"
-                                                                    id="pills-week-tab" data-bs-toggle="pill"
-                                                                    data-bs-target="#pills-week" type="button"
-                                                                    role="tab" aria-selected="true">Publisher</button>
-                                                            </li>
-                                                            <li class="nav-item" role="presentation">
-                                                                <button class="nav-link" data-series="month"
-                                                                    id="pills-month-tab" data-bs-toggle="pill"
-                                                                    data-bs-target="#pills-month" type="button"
-                                                                    role="tab"
-                                                                    aria-selected="false">Distributor</button>
-                                                            </li>
-                                                            <li class="nav-item" role="presentation">
-                                                                <button class="nav-link" data-series="year"
-                                                                    id="pills-year-tab" data-bs-toggle="pill"
-                                                                    data-bs-target="#pills-year" type="button"
-                                                                    role="tab" aria-selected="false">Publisher and
-                                                                    Distributor</button>
-                                                            </li>
-                                                            <li class="nav-item" role="presentation">
-                                                                <button class="nav-link" data-series="all"
-                                                                    id="pills-all-tab" data-bs-toggle="pill"
-                                                                    data-bs-target="#pills-all" type="button" role="tab"
-                                                                    aria-selected="false">All</button>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                    <div class="card-body custome-tooltip p-0">
-                                                        <div id="overiewChart"></div>
-                                                        <div class="ttl-project">
-                                                            <div class="pr-data">
-                                                                <h5>12,721</h5>
-                                                                <span>Number of Users</span>
+                                            <div class="col-xl-6 col-sm-6">
+                                                        <div class="card text-white">
+                                                            <div class="card-header border-0 flex-wrap">
+                                                                @php
+                                                                    $dataPoints = array( 
+                                                                            array("label"=>"External", "y"=>($reviewer1 / $rev) * 100),
+                                                                            array("label"=>"Librarian", "y"=>($reviewer2 / $rev) * 100),
+                                                                            array("label"=>"Public", "y"=>($reviewer3 / $rev) * 100),
+                                                                           
+                                                                        )
+                                                                @endphp
+
+                                                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                                                             </div>
-                                                            <div class="pr-data">
-                                                                <h5 class="text-primary">721</h5>
-                                                                <span>Active Users</span>
-                                                            </div>
-                                                            <div class="pr-data">
-                                                                <h5>250</h5>
-                                                                <span>Inactive Users</span>
-                                                            </div>
-                                                            <!-- <div class="pr-data">
-                                                                <h5 class="text-success">12,275h</h5>
-                                                                <span>Working Hours</span>
-                                                            </div> -->
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <div class="col-xl-6 col-sm-6">
+                                                        <div class="card text-white">
+                                                            <div class="card-header border-0 flex-wrap">
+                                                            @php
+                                                            $totaluser = $allpubcount + $alldistcount + $allpubdistcount;
+
+                                                              $userPoints = array( 
+                                                               array("label"=>"Publisher", "y"=>($allpubcount / $totaluser) * 100),
+                                                               array("label"=>"Distributor", "y"=>($alldistcount / $totaluser) * 100),
+                                                               array("label"=>"Publisher Cum Distributor", "y"=>($allpubdistcount / $totaluser) * 100)
+                                                               );
+                                                           @endphp
+
+                                                                <div id="userschartContainer" style="height: 370px; width: 100%;"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-3">
+                                                @php
+                                                    $publisherPoints = array( 
+                                                        array("y" =>  $activepubcount, "label" => "Active Users" ),
+                                                        array("y" => $inactivepubcount, "label" => "Inactive Users" ),
+                                                    );
+                                                @endphp   
+                                                <div id="publisherPoints" style="height: 370px; width: 100%;"></div>  
                                             </div>
-                                            <div class="col-xl-4">
+                                            <div class="col-xl-3">
+                                                @php
+                                                    $distriputorPoints = array( 
+                                                        array("y" => $activedistcount, "label" => "Active Users" ),
+                                                        array("y" => $inactivedistcount, "label" => "Inactive Users" ),
+                                                    );
+                                                @endphp   
+                                                <div id="distriputorPoints" style="height: 370px; width: 100%;"></div>  
+                                            </div>
+                                            <div class="col-xl-3">
+                                                @php
+                                                    $pubanddisPoints = array( 
+                                                        array("y" => $activepubdistcount, "label" => "Active Users" ),
+                                                        array("y" => $inactivepubdistcount, "label" => "Inactive Users" ),
+                                                    );
+                                                @endphp   
+                                                <div id="pubanddisPoints" style="height: 370px; width: 100%;"></div>  
+                                            </div>
+                                            <div class="col-xl-3">
                                                 <div class="card">
                                                     <div class="card-header border-0 flex-wrap">
                                                         <h4 class="heading mb-0">Latest Updates</h4>
@@ -3335,8 +3338,55 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-xxl-12">
 
+                        <div class="col-xl-6 col-xxl-12">
+                        <div class="col-12">
+                            @php
+                                $librarianPoints = array(
+                                    array("label"=> "2006", "y"=> 60.1),
+                                    array("label"=> "2007", "y"=> 59.1),
+                                    array("label"=> "2008", "y"=> 57.9),
+                                    array("label"=> "2009", "y"=> 57.0),
+                                    array("label"=> "2010", "y"=> 56.4),
+                                    array("label"=> "2011", "y"=> 54.8),
+                                    array("label"=> "2012", "y"=> 53.4),
+                                    array("label"=> "2013", "y"=> 50.6),
+                                    array("label"=> "2014", "y"=> 47.4),
+                                    array("label"=> "2015", "y"=> 44.7),
+                                    array("label"=> "2016", "y"=> 43.9)
+                                );
+                                
+                                $expertPoints = array(
+                                    array("label"=> "2006", "y"=> 4.1),
+                                    array("label"=> "2007", "y"=> 4.2),
+                                    array("label"=> "2008", "y"=> 4.1),
+                                    array("label"=> "2009", "y"=> 4.3),
+                                    array("label"=> "2010", "y"=> 4.3),
+                                    array("label"=> "2011", "y"=> 4.5),
+                                    array("label"=> "2012", "y"=> 4.5),
+                                    array("label"=> "2013", "y"=> 4.8),
+                                    array("label"=> "2014", "y"=> 5.4),
+                                    array("label"=> "2015", "y"=> 5.3),
+                                    array("label"=> "2016", "y"=> 5.2)
+                                );
+                                
+                                $publicpoints = array(
+                                    array("label"=> "2006", "y"=> 20.8),
+                                    array("label"=> "2007", "y"=> 21.7),
+                                    array("label"=> "2008", "y"=> 23.0),
+                                    array("label"=> "2009", "y"=> 23.8),
+                                    array("label"=> "2010", "y"=> 24.4),
+                                    array("label"=> "2011", "y"=> 24.9),
+                                    array("label"=> "2012", "y"=> 25.6),
+                                    array("label"=> "2013", "y"=> 26.1),
+                                    array("label"=> "2014", "y"=> 26.9),
+                                    array("label"=> "2015", "y"=> 27.0),
+                                    array("label"=> "2016", "y"=> 25.8)
+                                );
+                               
+                            @endphp
+                            <div id="reviewerListChart" style="height: 370px; width: 100%;"></div>
+                        </div>
                             <!-- publisher -->
                             <div class="col-xl-12 col-xxl-12">
                                 <div class="card">
@@ -3659,7 +3709,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-
+    {{-- Canvas Chart --}}
+    <script src="https://cdn.canvasjs.com/ga/canvasjs.min.js"></script>
+    <script src="https://cdn.canvasjs.com/ga/canvasjs.stock.min.js"></script>
 
 
 </body>
@@ -3679,6 +3731,149 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
 
 @endif
 </html>
-<style>
+<script>
+    window.onload = function() {
+        var chart1 = new CanvasJS.Chart("userschartContainer", {
+            animationEnabled: true,
+            title: {
+                text: "Reviewer Data List"
+            },
+            subtitles: [{
+                text: ""
+            }],
+            data: [{
+                type: "pie",
+                yValueFormatString: "#,##0.00\"%\"",
+                indexLabel: "{label} ({y})",
+                dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+        chart1.render();
 
-</style>
+        var chart2 = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            title: {
+                text: "User Data List"
+            },
+            subtitles: [{
+                text: ""
+            }],
+            data: [{
+                type: "pie",
+                yValueFormatString: "#,##0.00\"%\"",
+                indexLabel: "{label} ({y})",
+                dataPoints: <?php echo json_encode($userPoints, JSON_NUMERIC_CHECK); ?>
+            }]
+        });
+        chart2.render();
+
+        var chart3 = new CanvasJS.Chart("publisherPoints", {
+        animationEnabled: true,
+        theme: "light2",
+        title:{
+            text: "Publisher Users"
+        },
+        axisY: {
+            title: "Overall Publisher"
+        },
+        data: [{
+            type: "column",
+            yValueFormatString: "#,##0.## tonnes",
+            dataPoints: <?php echo json_encode($publisherPoints, JSON_NUMERIC_CHECK); ?>
+        }]
+    });
+    chart3.render();
+
+    var chart4 = new CanvasJS.Chart("distriputorPoints", {
+        animationEnabled: true,
+        theme: "light2",
+        title:{
+            text: "Distributor Users"
+        },
+        axisY: {
+            title: "Overall Distributor"
+        },
+        data: [{
+            type: "column",
+            yValueFormatString: "#,##0.## tonnes",
+            dataPoints: <?php echo json_encode($distriputorPoints, JSON_NUMERIC_CHECK); ?>
+        }]
+    });
+    chart4.render();
+
+    var chart5 = new CanvasJS.Chart("pubanddisPoints", {
+        animationEnabled: true,
+        theme: "light2",
+        title:{
+            text: "Publisher and Distributor Users"
+        },
+        axisY: {
+            title: "Overall Publisher and Distributor"
+        },
+        data: [{
+            type: "column",
+            yValueFormatString: "#,##0.## tonnes",
+            dataPoints: <?php echo json_encode($pubanddisPoints, JSON_NUMERIC_CHECK); ?>
+        }]
+    });
+    chart5.render();
+
+
+    var currentYear = <?php echo date("Y"); ?>;
+
+
+var chartTitle = "Book Procurement - " + currentYear;
+        var chart6 = new CanvasJS.Chart("reviewerListChart", {
+        title: {
+            text: chartTitle
+        },
+        axisY:{
+            suffix: "%"
+        },
+        toolTip: {
+            shared: true,
+            reversed: true
+        },
+        legend:{
+            cursor: "pointer",
+            itemclick: toggleDataSeries
+        },
+        data: [
+            {
+                type: "stackedArea100",
+                name: "Public",
+                showInLegend: true,
+                yValueFormatString: "#0.0#\"%\"",
+                dataPoints: <?php echo json_encode($librarianPoints, JSON_NUMERIC_CHECK); ?>
+            },
+            {
+                type: "stackedArea100",
+                name: "Internel",
+                showInLegend: true,
+                yValueFormatString: "#0.0#\"%\"",
+                dataPoints: <?php echo json_encode($expertPoints, JSON_NUMERIC_CHECK); ?>
+            },
+            {
+                type: "stackedArea100",
+                name: "Externel",
+                showInLegend: true,
+                yValueFormatString: "#0.0#\"%\"",
+                dataPoints: <?php echo json_encode($publicpoints, JSON_NUMERIC_CHECK); ?>
+            }
+            
+        ]
+    });
+    
+    chart6.render();
+    
+    function toggleDataSeries(e){
+        if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        }
+        else{
+            e.dataSeries.visible = true;
+        }
+        chart6.render();
+    }
+    }
+    </script>
