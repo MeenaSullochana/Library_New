@@ -3242,7 +3242,7 @@
                                             {{-- <div class="events">
                                                 <h6>events</h6>
                                                 <div class="dz-scroll event-scroll">
-                                                    <div class="event-media">
+                                                    <!-- <div class="event-media">
                                                         <div class="d-flex align-items-center">
                                                             <div class="event-box">
                                                                 <h5 class="mb-0">20</h5>
@@ -3341,52 +3341,18 @@
 
                         <div class="col-xl-6 col-xxl-12">
                         <div class="col-12">
-                            @php
-                                $librarianPoints = array(
-                                    array("label"=> "2006", "y"=> 60.1),
-                                    array("label"=> "2007", "y"=> 59.1),
-                                    array("label"=> "2008", "y"=> 57.9),
-                                    array("label"=> "2009", "y"=> 57.0),
-                                    array("label"=> "2010", "y"=> 56.4),
-                                    array("label"=> "2011", "y"=> 54.8),
-                                    array("label"=> "2012", "y"=> 53.4),
-                                    array("label"=> "2013", "y"=> 50.6),
-                                    array("label"=> "2014", "y"=> 47.4),
-                                    array("label"=> "2015", "y"=> 44.7),
-                                    array("label"=> "2016", "y"=> 43.9)
-                                );
-
-                                $expertPoints = array(
-                                    array("label"=> "2006", "y"=> 4.1),
-                                    array("label"=> "2007", "y"=> 4.2),
-                                    array("label"=> "2008", "y"=> 4.1),
-                                    array("label"=> "2009", "y"=> 4.3),
-                                    array("label"=> "2010", "y"=> 4.3),
-                                    array("label"=> "2011", "y"=> 4.5),
-                                    array("label"=> "2012", "y"=> 4.5),
-                                    array("label"=> "2013", "y"=> 4.8),
-                                    array("label"=> "2014", "y"=> 5.4),
-                                    array("label"=> "2015", "y"=> 5.3),
-                                    array("label"=> "2016", "y"=> 5.2)
-                                );
-
-                                $publicpoints = array(
-                                    array("label"=> "2006", "y"=> 20.8),
-                                    array("label"=> "2007", "y"=> 21.7),
-                                    array("label"=> "2008", "y"=> 23.0),
-                                    array("label"=> "2009", "y"=> 23.8),
-                                    array("label"=> "2010", "y"=> 24.4),
-                                    array("label"=> "2011", "y"=> 24.9),
-                                    array("label"=> "2012", "y"=> 25.6),
-                                    array("label"=> "2013", "y"=> 26.1),
-                                    array("label"=> "2014", "y"=> 26.9),
-                                    array("label"=> "2015", "y"=> 27.0),
-                                    array("label"=> "2016", "y"=> 25.8)
-                                );
-
-                            @endphp
-                            <div id="reviewerListChart" style="height: 370px; width: 100%;"></div>
-                        </div>
+    @php
+    $catPoints = [];
+    foreach($categoryCountsPerCategory as $category => $values) {
+        $categoryDataPoints = [];
+        foreach($values as $key => $value) {
+            $categoryDataPoints[] = ["label" => $key, "y" => $value];
+        }
+        $catPoints[$category] = $categoryDataPoints;
+    }
+    @endphp
+    <div id="reviewerListChart" style="height: 370px; width: 100%;"></div>
+</div>
                             <!-- publisher -->
                             <div class="col-xl-12 col-xxl-12">
                                 <div class="card">
@@ -3819,58 +3785,58 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
     chart5.render();
 
 
-    var currentYear = <?php echo date("Y"); ?>;
 
 
-    var chartTitle = "Book Procurement - " + currentYear;
-        var chart6 = new CanvasJS.Chart("reviewerListChart", {
+    
+    var chartTitle = "Book Procurement - <?php echo date('Y'); ?>";
+    var catPoints = <?php echo json_encode($catPoints, JSON_NUMERIC_CHECK); ?>;
+
+    var chart6 = new CanvasJS.Chart("reviewerListChart", {
         title: {
             text: chartTitle
         },
-        axisY:{
+        axisY: {
             suffix: "%"
         },
         toolTip: {
             shared: true,
             reversed: true
         },
-        legend:{
+        legend: {
             cursor: "pointer",
             itemclick: toggleDataSeries
         },
         data: [
+            <?php foreach($catPoints as $key => $categoryDataPoints): ?>
             {
                 type: "stackedArea100",
-                name: "Public",
-                showInLegend: true,
+                name: "<?php echo $key; ?>",
+                showInLegend: false,
                 yValueFormatString: "#0.0#\"%\"",
-                dataPoints: <?php echo json_encode($librarianPoints, JSON_NUMERIC_CHECK); ?>
+                color: getRandomColor(),
+                dataPoints: <?php echo json_encode($categoryDataPoints, JSON_NUMERIC_CHECK); ?>
             },
-            {
-                type: "stackedArea100",
-                name: "Internel",
-                showInLegend: true,
-                yValueFormatString: "#0.0#\"%\"",
-                dataPoints: <?php echo json_encode($expertPoints, JSON_NUMERIC_CHECK); ?>
-            },
-            {
-                type: "stackedArea100",
-                name: "Externel",
-                showInLegend: true,
-                yValueFormatString: "#0.0#\"%\"",
-                dataPoints: <?php echo json_encode($publicpoints, JSON_NUMERIC_CHECK); ?>
-            }
-
+            <?php endforeach; ?>
         ]
     });
 
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
     chart6.render();
+
+
 
     function toggleDataSeries(e){
         if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
             e.dataSeries.visible = false;
-        }
-        else{
+        } else {
             e.dataSeries.visible = true;
         }
         chart6.render();
