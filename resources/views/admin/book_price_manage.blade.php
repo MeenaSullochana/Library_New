@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,19 +62,19 @@
                                     <h3 class="mb-0 bc-title">
                                         <b>Manage Book Price Config</b>
                                     </h3>
-                                    <a class="btn btn-primary  btn-sm" href="#">
-                                        <i class="fas fa-plus"></i> List Of Member </a>
+                                    <a class="btn btn-primary  btn-sm" href="javascript:history.back()">
+                                        <i class="fa-solid fa-arrow-left"></i> Back </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row container">
                     <div class="col-md-12 bg-white">
                         <h3 class="text-left p-2">Set GSM Price Details </h3>
                         <hr>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="mb-3">
@@ -96,8 +95,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                            <h3 class="text-left p-2">Set GSM Price List </h3>
+                            <div class="col-md-6">
+                                <h3 class="text-left p-2">Set GSM Price List </h3>
                                 <hr>
                                 <div class="table-responsive">
                                     <table class="table" id="example3">
@@ -115,7 +114,7 @@
                                                 <td>0.12</td>
                                                 <td>12</td>
                                                 <td>
-                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2" ></i>
+                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2"></i>
                                                     <i class="bi bi-eye" class="fs-3 text-danger p-2"></i>
                                                 </td>
                                             </tr>
@@ -124,7 +123,7 @@
                                                 <td>0.12</td>
                                                 <td>12</td>
                                                 <td>
-                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2" ></i>
+                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2"></i>
                                                     <i class="bi bi-eye" class="fs-3 text-danger p-2"></i>
                                                 </td>
                                             </tr>
@@ -161,7 +160,7 @@
                         <h3 class="text-left p-2">Set Color Paper Price </h3>
                         <hr>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="mb-3">
@@ -182,8 +181,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                            <h3 class="text-left p-2">Set Color Paper List </h3>
+                            <div class="col-md-6">
+                                <h3 class="text-left p-2">Set Color Paper List </h3>
                                 <hr>
                                 <div class="table-responsive">
                                     <table class="table" id="example3">
@@ -201,7 +200,7 @@
                                                 <td>0.12</td>
                                                 <td>12</td>
                                                 <td>
-                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2" ></i>
+                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2"></i>
                                                     <i class="bi bi-eye" class="fs-3 text-danger p-2"></i>
                                                 </td>
                                             </tr>
@@ -210,7 +209,7 @@
                                                 <td>0.12</td>
                                                 <td>12</td>
                                                 <td>
-                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2" ></i>
+                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2"></i>
                                                     <i class="bi bi-eye" class="fs-3 text-danger p-2"></i>
                                                 </td>
                                             </tr>
@@ -246,7 +245,7 @@
                         <h3 class="text-left p-2">Set Inner Paper Price </h3>
                         <hr>
                         <div class="row">
-                            <div class="col-6">
+                            <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-4">
                                         <div class="mb-3">
@@ -267,8 +266,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                            <h3 class="text-left p-2">Set Inner Paper List </h3>
+                            <div class="col-md-6">
+                                <h3 class="text-left p-2">Set Inner Paper List </h3>
                                 <hr>
                                 <div class="table-responsive">
                                     <table class="table" id="example3">
@@ -286,7 +285,7 @@
                                                 <td>0.12</td>
                                                 <td>12</td>
                                                 <td>
-                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2" ></i>
+                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2"></i>
                                                     <i class="bi bi-eye" class="fs-3 text-danger p-2"></i>
                                                 </td>
                                             </tr>
@@ -295,7 +294,7 @@
                                                 <td>0.12</td>
                                                 <td>12</td>
                                                 <td>
-                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2" ></i>
+                                                    <i class="bi bi-trash" class="fs-3 text-danger p-2"></i>
                                                     <i class="bi bi-eye" class="fs-3 text-danger p-2"></i>
                                                 </td>
                                             </tr>
@@ -336,7 +335,7 @@
     <!--**********************************
             Footer start
         ***********************************-->
-        @include ("admin.footer")
+    @include ("admin.footer")
     <!--**********************************
             Footer end
         ***********************************-->
