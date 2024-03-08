@@ -66,7 +66,7 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <h3 class="mb-0 bc-title"><b>Create Book Paper Type </b> </h3>
-                                         <a class="btn btn-primary btn-sm" href="admin/bookpapertype_list"><i
+                                         <a class="btn btn-primary btn-sm" href="bookpapertype_list"><i
                                                 class="fas fa-chevron-left"></i> Back</a>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
-                                                        <label for="slug">Book Papertype Name  <span class="text-danger">*</span></label>
+                                                        <label for="slug">Book Paper Type Name  <span class="text-danger">*</span></label>
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" Required>
                                                     </div>
                                                 </div>

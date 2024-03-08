@@ -55,7 +55,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>List Of Book Paper type</b>
+                                <b>List of Book Paper type</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/bookpapertype_add">
                                 <i class="fas fa-plus"></i> Add Book Paper type</a>

@@ -3127,19 +3127,19 @@
                                                         <div class="card text-white">
                                                             <div class="card-header border-0 flex-wrap">
                                                             @php
-    $dataPoints = array();
+                                                                $dataPoints = array();
 
-    if ($rev != 0) {
-        $dataPoints[] = array("label"=>"External", "y"=>($reviewer1 / $rev) * 100);
-        $dataPoints[] = array("label"=>"Librarian", "y"=>($reviewer2 / $rev) * 100);
-        $dataPoints[] = array("label"=>"Public", "y"=>($reviewer3 / $rev) * 100);
-    } else {
-       
-        $dataPoints[] = array("label"=>"External", "y"=>0);
-        $dataPoints[] = array("label"=>"Librarian", "y"=>0);
-        $dataPoints[] = array("label"=>"Public", "y"=>0);
-    }
-@endphp
+                                                                if ($rev != 0) {
+                                                                    $dataPoints[] = array("label"=>"External", "y"=>($reviewer1 / $rev) * 100);
+                                                                    $dataPoints[] = array("label"=>"Librarian", "y"=>($reviewer2 / $rev) * 100);
+                                                                    $dataPoints[] = array("label"=>"Public", "y"=>($reviewer3 / $rev) * 100);
+                                                                } else {
+                                                                
+                                                                    $dataPoints[] = array("label"=>"External", "y"=>0);
+                                                                    $dataPoints[] = array("label"=>"Librarian", "y"=>0);
+                                                                    $dataPoints[] = array("label"=>"Public", "y"=>0);
+                                                                }
+                                                            @endphp
 
 
                                                                 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
@@ -3150,27 +3150,27 @@
                                                         <div class="card text-white">
                                                             <div class="card-header border-0 flex-wrap">
                                                             @php
-    $totaluser = $allpubcount + $alldistcount + $allpubdistcount;
-    $userPoints = array();
+                                                                $totaluser = $allpubcount + $alldistcount + $allpubdistcount;
+                                                                $userPoints = array();
 
-    if ($totaluser != 0) {
-        $userPoints[] = array("label"=>"Publisher", "y"=>($allpubcount / $totaluser) * 100);
-        $userPoints[] = array("label"=>"Distributor", "y"=>($alldistcount / $totaluser) * 100);
-        $userPoints[] = array("label"=>"Publisher Cum Distributor", "y"=>($allpubdistcount / $totaluser) * 100);
-    } else {
-    
-        $userPoints[] = array("label"=>"Publisher", "y"=>0);
-        $userPoints[] = array("label"=>"Distributor", "y"=>0);
-        $userPoints[] = array("label"=>"Publisher Cum Distributor", "y"=>0);
-    }
-@endphp
+                                                                if ($totaluser != 0) {
+                                                                    $userPoints[] = array("label"=>"Publisher", "y"=>($allpubcount / $totaluser) * 100);
+                                                                    $userPoints[] = array("label"=>"Distributor", "y"=>($alldistcount / $totaluser) * 100);
+                                                                    $userPoints[] = array("label"=>"Publisher Cum Distributor", "y"=>($allpubdistcount / $totaluser) * 100);
+                                                                } else {
+                                                                
+                                                                    $userPoints[] = array("label"=>"Publisher", "y"=>0);
+                                                                    $userPoints[] = array("label"=>"Distributor", "y"=>0);
+                                                                    $userPoints[] = array("label"=>"Publisher Cum Distributor", "y"=>0);
+                                                                }
+                                                            @endphp
 
 
                                                                 <div id="userschartContainer" style="height: 370px; width: 100%;"></div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-xl-3">
+                                                    <div class="col-xl-6 p-3">
                                                 @php
                                                     $publisherPoints = array(
                                                         array("y" =>  $activepubcount, "label" => "Active Users" ),
@@ -3179,7 +3179,7 @@
                                                 @endphp
                                                 <div id="publisherPoints" style="height: 370px; width: 100%;"></div>
                                             </div>
-                                            <div class="col-xl-3">
+                                            <div class="col-xl-6 p-3">
                                                 @php
                                                     $distriputorPoints = array(
                                                         array("y" => $activedistcount, "label" => "Active Users" ),
@@ -3188,7 +3188,7 @@
                                                 @endphp
                                                 <div id="distriputorPoints" style="height: 370px; width: 100%;"></div>
                                             </div>
-                                            <div class="col-xl-3">
+                                            <div class="col-xl-6 p-3">
                                                 @php
                                                     $pubanddisPoints = array(
                                                         array("y" => $activepubdistcount, "label" => "Active Users" ),
@@ -3197,8 +3197,8 @@
                                                 @endphp
                                                 <div id="pubanddisPoints" style="height: 370px; width: 100%;"></div>
                                             </div>
-                                            <div class="col-xl-3">
-                                                <div class="card">
+                                            <div class="col-xl-6 p-3">
+                                                <div style="height: calc(90% - 32px) !important;" class="card">
                                                     <div class="card-header border-0 flex-wrap">
                                                         <h4 class="heading mb-0">Latest Updates</h4>
                                                         <div>

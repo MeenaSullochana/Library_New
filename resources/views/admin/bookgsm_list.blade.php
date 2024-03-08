@@ -15,7 +15,7 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
 	<!-- PAGE TITLE HERE -->
-	<title>Government of Tamil Nadu - Book Procurement List of Book Gsm</title>
+	<title>Government of Tamil Nadu - Book Procurement List of Book GSM</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -55,10 +55,10 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Book Gsm List</b>
+                                <b>Book GSM List</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/bookgsm_add">
-                                <i class="fas fa-plus"></i> Add Gsm</a>
+                                <i class="fas fa-plus"></i> Add GSM</a>
                         </div>
                     </div>
                 </div>

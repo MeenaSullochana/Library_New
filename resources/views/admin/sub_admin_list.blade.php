@@ -57,7 +57,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>List Of Sub Admin</b>
+                                <b>List of Sub Admin</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/sub_admin_add">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add Sub Admin </a>
@@ -102,8 +102,8 @@
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                                 <img src="{{asset("sub_admin/SubAdminImage/".$val->subadminImage)}}"
-                                                                        class="avatar" alt="">
-                                                            <span class="w-space-no">Dr. {{$val->name}}</span>
+                                                                        class="avatar" alt=""> 
+                                                            <span class="w-space-no"> {{$val->name}}</span>
                                                         </div>
                                                     </td>
                                                     <td>+91 {{$val->mobileNumber}}</td>
@@ -115,7 +115,7 @@
 
                                                     @endif
                                                     <td class="sorting_1">
-                                                        <div class="form-check form-switch id="load">
+                                                        <div class="form-check form-switch" id="load">
                                                              <input class="form-check-input toggle-class" type="checkbox"
                                                                 data-id="{{$val->id}}" name="featured_status"
                                                                      data-isprm="1" data-onstyle="success"

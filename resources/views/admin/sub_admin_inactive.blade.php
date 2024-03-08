@@ -103,7 +103,7 @@
                                                         <div class="d-flex align-items-center">
                                                                 <img src="{{asset("sub_admin/SubAdminImage/".$val->subadminImage)}}"
                                                                         class="avatar" alt="">
-                                                            <span class="w-space-no">Dr. {{$val->name}}</span>
+                                                            <span class="w-space-no">{{$val->name}}</span>
                                                         </div>
                                                     </td>
                                                     <td>+91 {{$val->mobileNumber}}</td>

@@ -13,14 +13,13 @@ include 'core/login.core.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- PAGE TITLE HERE -->
     <title>Government of Tamil Nadu - Book Procurement </title>
-    <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
+    <!-- FAVICONS ICON -->    
+    <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
+    {{-- <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}"> --}}
     <link href="./vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
 
-    <link href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
-" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
 <body class="vh-100">
@@ -31,7 +30,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
             <div class="bg-img-fix overflow-hidden"
                 style="background:#fff url(images/background/bg6.jpg); height: 100vh;">
                 <div class="row gx-0">
-                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 vh-100 bg-white ">
+                    <div class="mx-auto col-xl-4 col-lg-5 col-md-6 col-sm-12 vh-100 bg-white ">
                         <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside"
                             style="max-height: 653px;" tabindex="0">
                             <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;"

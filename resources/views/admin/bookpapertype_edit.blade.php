@@ -85,7 +85,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
-                                                        <label for="slug">Book Papertype Name  <span class="text-danger">*</span></label>
+                                                        <label for="slug">Book Paper Type Name  <span class="text-danger">*</span></label>
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="{{$data->name}}" Required>
                                                     </div>
                                                 </div>

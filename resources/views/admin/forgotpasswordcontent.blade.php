@@ -101,14 +101,14 @@
                                                     </div>
 
                                                     <div class="table-responsive">
-                                                        <label for="discription">Discription Content  <span class="text-danger">*</span></label>
+                                                        <label for="description">Description Content  <span class="text-danger">*</span></label>
                                                         <table class="table table-bordered" id="titles_name">
                                                             <tr>
-                                                                <th>Discription Content</th>
+                                                                <th>Description Content</th>
                                                                 <th>Add</th>
                                                             </tr>
                                                             <tr>
-                                                                <td><input type="text" name="subject[]" placeholder="Enter Discription Content" class="form-control name_list" /></td>
+                                                                <td><input type="text" name="subject[]" placeholder="Enter Description Content" class="form-control name_list" /></td>
                                                                 <td><button type="button" name="awarded_titles" class="btn btn-success add_row">+</button></td>
                                                             </tr>
                                                         </table>
@@ -169,7 +169,7 @@ $(document).ready(function(){
         e.preventDefault();
         if(table.find('tr').length < max_rows){
             var newRow = '<tr>' +
-                '<td><input type="text" name="subject[]" placeholder="Enter Discription Content" class="form-control name_list" /></td>' +
+                '<td><input type="text" name="subject[]" placeholder="Enter Description Content" class="form-control name_list" /></td>' +
                 '<td><button type="button" class="btn btn-danger remove_row">-</button></td>' +
                 '</tr>';
             table.append(newRow); // Add row

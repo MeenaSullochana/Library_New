@@ -22,7 +22,8 @@
     <!-- PAGE TITLE HERE -->
     <title>Government of Tamil Nadu - Book Procurement</title>
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/fevi.svg"> <?php
+    <link rel="shortcut icon" type="image/png" href="images/fevi.svg"> 
+    <?php
         include "plugin/plugin_css.php";
     ?>
 </head>

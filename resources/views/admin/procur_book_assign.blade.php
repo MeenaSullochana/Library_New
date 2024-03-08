@@ -117,9 +117,9 @@
                                           <label class="form-check-label" for="selectAllIbook"></label>
                                        </div>
                                  </th>
-                                 <th>Sl</th>
+                                 <th>S.No</th>
                                  <th>Book Name</th>
-                                 <th>language</th>
+                                 <th>Language</th>
                                  <th>Subject</th>
                                  <th>Publication Name</th>
                                         
@@ -194,7 +194,7 @@
                                           <label class="form-check-label" for="selectAllIexternel"></label>
                                        </div>
                                     </th>
-                                    <th>Sl</th>
+                                    <th>S.No</th>
                                     <th>Expert Reviewer Name</th>
                                     <th>Subject</th>
 
@@ -236,7 +236,7 @@
                                        <label class="form-check-label" for="selectAllinternal"></label>
                                     </div>
                                  </th>
-                                 <th>Sl</th>
+                                 <th>S.No</th>
                                  <th>Librarian Name </th>
                                  <th>Library Name </th>
                                  <th>Subject </th>
@@ -294,7 +294,7 @@
                                        <label class="form-check-label" for="selectAllpublic"></label>
                                     </div>
                                  </th>
-                                 <th>Sl</th>
+                                 <th>S.No</th>
                                  <th>Public Reviewer Name</th>
                                  <th>Category</th>
                                  <th>District</th>

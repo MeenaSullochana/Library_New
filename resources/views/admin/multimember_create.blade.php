@@ -84,32 +84,33 @@
                                         <select name="role" id="role" class="form-control">
                                             <option value="2">Select Role</option>
                                             <option value="0">Reviewer</option>
-                                            <option value="1">library</option>
+                                            <option value="1">Library</option>
 
                                         </select>
                                     </div>
                                 </div>
                                 <div class="reviewer">
-<form class="profile-form" id="formId" action="/admin/reviewer/import" method="POST" enctype="multipart/form-data">
-    @csrf
-    <div class="form-validation">
-        <h3 class="mb-3">Reviewer Excel Upload</h3>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="file" class="form-label">Choose Excel File</label>
-                    <input type="file" class="form-control" name="file_reviewer" id="file" accept=".xls, .xlsx" required>
-                    <small class="form-text text-muted">Select .xls or .xlsx files only.</small>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 text-end">
-                <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
-            </div>
-        </div>
-    </div>
-</form>
+                                    <form class="profile-form" id="formId" action="/admin/reviewer/import" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="form-validation">
+                                            <h3 class="mb-3">Reviewer Excel Upload</h3>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="file" class="form-label">Choose Excel File</label>
+                                                        <input type="file" class="form-control mb-2" name="file_reviewer" id="file" accept=".xls, .xlsx" required>
+                                                        <small class="form-text text-muted mt-3"><img style="width: 30px; height=30px;" src="images/excel.png" alt="" width="25%"><b class="ms-3">Select .csv files only.</b></small>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 text-end">
+                                                    <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                                 <div class="library">
                                     <form form class="profile-form" id="formId1">
@@ -118,12 +119,13 @@
                                         <div class="row" >
 
                             
-<h3 class=""> Library Excel Uplode</h3>
+<h3 class=""> Library Excel Upload</h3>
 <div class="row">
     <div class="col-md-6">
         <div class="col-sm-12 mb-3">
             <label class="form-label"></label>
-             <input type="file" class="form-control" id="file" accept=".xls, .xlsx" multiple required>
+             <input type="file" class="form-control mb-3" id="file" accept=".xls, .xlsx" multiple required>
+             <small class="form-text text-muted mt-3 ms-"><img style="width: 30px; height=30px;" src="images/excel.png" alt="" width="25%"><b class="ms-3">Select .csv files only.</b></small>
         </div>
     </div>
    

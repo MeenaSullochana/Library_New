@@ -85,7 +85,7 @@
                                         <select name="role" id="role" class="form-control">
                                             <option value="2">Select Role</option>
                                             <option value="0">Reviewer</option>
-                                            <option value="1">library</option>
+                                            <option value="1">Library</option>
 
                                         </select>
                                     </div>
@@ -102,8 +102,8 @@
                                                         <div class="col-sm-12 mb-3">
                                                             <label class="form-label">Select Reviewer Type<span
                                                                class="text-danger maditory">*</span></label>
-                                                            <select name="reviewer_type" id="reviewerType" class="form-select" Required>
-                                                            <option></option>
+                                                            <select name="reviewer_type" id="reviewerType" class="form-select bg-white" Required>
+                                                            <option >Select One</option>
                                                                 <option value="internal">Librarian Reviewer</option>
                                                                 
                                                                 <option value="external">Expert Reviewer </option>
@@ -114,7 +114,7 @@
                                                         <div class="col-sm-12 mb-3" id="basic9" style="display: none;">
                                                         <label class="form-label">District<span
                                                      class="text-danger maditory">*</span></label>
-                                                        <select name="district" class="form-select" id="district" Required>
+                                                        <select name="district" class="form-select bg-white" id="district" Required>
                                                         <option value="">Select District</option>
 
                                                                @php
@@ -144,7 +144,7 @@
                                                             <label class="form-label">Subject<span
                                                               class="text-danger maditory">*</span></label>
                                                             <!-- <input type="text" class="form-control" placeholder="Enter Subject" id="subject" Required> -->
-                                                            <select class="form-select" id="subject"
+                                                            <select class="form-select bg-white" id="subject"
                                                         name="subject" required>
                                                         <option value="">Select One<span
                                  class="text-danger maditory">*</span></option>
@@ -173,7 +173,7 @@
                                                         <div class="col-sm-12 mb-3" id="basic3" style="display: block;">
                                                             <label class="form-label">Organisation Details <span
                                                              class="text-danger maditory">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Enter OrganisationDetails" id="organisationDetails"Required>
+                                                            <input type="text" class="form-control" placeholder="Enter Organisation Details" id="organisationDetails"Required>
                                                         </div>
 <div class="col-sm-12 mb-3" id="basic4" style="display: none;">
                                                         <label class="form-label">Library Type<span
@@ -193,7 +193,7 @@
                                                     <div class="col-sm-12 mb-3" id="basic7" style="display: none;">
                                                             <label class="form-label">Library Name<span
                                                              class="text-danger maditory">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="EnterLibrary Name" id="libraryName" Required>
+                                                            <input type="text" class="form-control" placeholder="Enter Library Name" id="libraryName" Required>
                                                         </div>
                                                         <div class="col-sm-12 mb-3" id="basic10" style="display: none;">
                                                             <label class="form-label">Book Categories<span
@@ -218,9 +218,9 @@
                                                             <input type="text" class="form-control" placeholder="Enter Public Reviewer Name" id="publicreviewername" Required>
                                                         </div>
                                                         <div class="col-sm-12 mb-3">
-                                                            <label class="form-label">Phone number<span
+                                                            <label class="form-label">Phone Number<span
                                                                class="text-danger maditory">*</span></label>
-                                                            <input type="number" class="form-control" placeholder="Enter  Phonenumber" id="phoneNumber" Required>
+                                                            <input type="number" class="form-control" placeholder="Enter  Phone Number" id="phoneNumber" Required>
                                                         </div>
 
                                                     </div>
@@ -321,7 +321,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">Library Type<span
                                                           class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" id="libraryType1" class="form-select" Required>
+                                                        <select name="library_type" id="libraryType1" class="form-select bg-white" Required>
                                                         <option value="">Select One<span
                                                           class="text-danger maditory">*</span></option>
                                                         @php
@@ -355,7 +355,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                      <label class="form-label">State<span
                                                                 class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" class="form-select" id="state" Required>
+                                                        <select name="library_type" class="form-select bg-white" id="state" Required>
                                                            <option value="">Select State</option>
 
                                                           @php
@@ -371,7 +371,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">District<span
                                                      class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" class="form-select" id="district1" Required>
+                                                        <select name="library_type" class="form-select bg-white" id="district1" Required>
                                                         <option value="">Select District</option>
 
                                                                @php
@@ -402,14 +402,14 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="col-sm-12 mb-3">
-                                                    <label class="form-label">librarian Name<span
+                                                    <label class="form-label">Librarian Name<span
                                  class="text-danger maditory">*</span></label>
-                                                    <input type="text" class="form-control" placeholder="Enter librarian Name" id="librarianName1" Required>
+                                                    <input type="text" class="form-control" placeholder="Enter Librarian Name" id="librarianName1" Required>
                                                 </div>
                                                 <div class="col-sm-12 mb-3">
                                                             <label class="form-label">Are You Meta Checker<span
                                  class="text-danger maditory">*</span></label>
-                                                            <select name="" id="metaChecker" class="form-select" Required>
+                                                            <select name="" id="metaChecker" class="form-select bg-white" Required>
                                                             <option value="">Select One</option>
                                                                 <option value="yes">Yes</option>
                                                                 <option value="no">No</option>
@@ -419,14 +419,14 @@
                                             </div>
                                             <div class="col-md-6">
                                             <div class="col-sm-12 mb-3">
-                                                    <label class="form-label">librarian Designation<span
+                                                    <label class="form-label">Librarian Designation<span
                                  class="text-danger maditory">*</span></label>
-                                                    <input type="text" class="form-control" placeholder="Enter librarian Designation" id="librarianDesignation" Required>
+                                                    <input type="text" class="form-control" placeholder="Enter Librarian Designation" id="librarianDesignation" Required>
                                                 </div>
                                                 <div class="col-sm-12 mb-3">
-                                                    <label class="form-label">Phone number<span
+                                                    <label class="form-label">Phone Number<span
                                  class="text-danger maditory">*</span></label>
-                                                    <input type="number" class="form-control" placeholder="Enter Phone number" id="mobileNumber" Required>
+                                                    <input type="number" class="form-control" placeholder="Enter Phone Number" id="mobileNumber" Required>
                                                 </div>
 
                                             </div>
@@ -437,7 +437,7 @@
                                                 <div class="col-sm-12 mb-3">
                                                     <label class="form-label">Email<span
                                  class="text-danger maditory">*</span></label>
-                                                    <input type="email" class="form-control" placeholder="Enter Emaile" id="email1" Required>
+                                                    <input type="email" class="form-control" placeholder="Enter Email" id="email1" Required>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -783,5 +783,10 @@ basic1.style.display = 'block';
 
 </html>
 <style>
-
+.profile-form .form-control, .profile-form .bootstrap-select .dropdown-toggle {
+    height: 35px !important;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    border-color: #E6E6E6;
+}
 </style>

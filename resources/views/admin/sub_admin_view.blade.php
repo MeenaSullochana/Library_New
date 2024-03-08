@@ -98,7 +98,6 @@
                                         <div class="col-md-6">
                                             <div class="col-sm-12">
                                                 <label class="form-label"> <b class="text-primary">Name  :</b>  {{$data->name}}</label>
-
                                             </div>
                                             <div class="col-sm-12">
                                                 <label class="form-label"><b class="text-primary">User Name  :</b>   {{$data->userName}}</label>

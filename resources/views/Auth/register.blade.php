@@ -904,7 +904,7 @@
                            </div>
                            <div class="col-md-12 form-group ">
                               <label for="text">Do you have any subsidiary publications? If yes, list the
-                              subsidary publication - <span class="mt-056">தங்கள் பதிப்பகத்திற்கு துணை
+                              subsidiary publication - <span class="mt-056">தங்கள் பதிப்பகத்திற்கு துணை
                               பதிப்பகங்கள் உள்ளனவா? ஆமெனில், துணை பதிப்பகத்தின் பட்டியல்
                               தரவும்</span><span class="text-danger maditory">*</span></label></label>
                               <!-- <label for="text">Do you have any subsidiary publications? </label> -->
@@ -1391,7 +1391,7 @@
                            </div>
                            <div class="col-md-6 form-group ">
                               <label for="text">Do you have any subsidiary Distributors? If yes, list the
-                              subsidary distributor - <span class="mt-056">தங்கள் பதிப்பகத்திற்கு துணை
+                              subsidiary distributor - <span class="mt-056">தங்கள் பதிப்பகத்திற்கு துணை
                               பதிப்பகங்கள் உள்ளனவா? ஆமெனில், துணை பதிப்பகத்தின் பட்டியல்
                               தரவும்</span><span class="text-danger maditory">*</span></label></label>
                               <!-- <label for="text">Do you have any subsidiary publications? </label> -->
@@ -2158,7 +2158,7 @@
                            </hr>
                            <div class="col-md-6 form-group ">
                               <label for="text">Do you have any subsidiary publisher and distributor? If yes, list
-                              the subsidary publisher and distributor - <span class="mt-056">பதிப்பகத்திற்கு
+                              the subsidiary publisher and distributor - <span class="mt-056">பதிப்பகத்திற்கு
                               துணை பதிப்பகங்கள் உள்ளனவா? ஆமெனில், துணை பதிப்பகத்தின் பட்டியல்
                               தரவும்</span><span class="text-danger maditory">*</span> </label>
                               <!-- <label for="text">Do you have any subsidiary publications? </label> -->

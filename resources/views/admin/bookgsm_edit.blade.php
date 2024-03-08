@@ -17,7 +17,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 	<!-- PAGE TITLE HERE -->
-	<title>Government of Tamil Nadu - Book Procurement -  Book Gsm Edit</title>
+	<title>Government of Tamil Nadu - Book Procurement -  Book GSM Edit</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
     <?php
@@ -65,7 +65,7 @@
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <h3 class="mb-0 bc-title"><b>Edit Book gsm</b> </h3>
+                                        <h3 class="mb-0 bc-title"><b>Edit Book GSM</b> </h3>
                                         <a class="btn btn-primary btn-sm" href="/admin/bookgsm_list"><i
                                                 class="fas fa-chevron-left"></i> Back</a>
                                     </div>
@@ -85,7 +85,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
-                                                        <label for="slug">Book Gsm Number  <span class="text-danger">*</span></label>
+                                                        <label for="slug">Book GSM Number  <span class="text-danger">*</span></label>
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" value="{{$data->name}}" Required>
                                                     </div>
                                                 </div>

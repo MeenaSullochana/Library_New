@@ -65,7 +65,7 @@
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <h3 class="mb-0 bc-title"><b>Book Gsm Create</b> </h3>
+                                        <h3 class="mb-0 bc-title"><b>Book GSM Create</b> </h3>
                                         <a class="btn btn-primary btn-sm" href="/admin/bookgsm_list">
                                             <i class="fa-solid fa-list"></i> List</a>
                                     </div>
@@ -85,7 +85,7 @@
                                             <div class="row justify-content-center">
                                                 <div class="col-md-4">
                                                     <div class="mb-3">
-                                                        <label for="slug">Book Gsm Number <span class="text-danger">*</span></label>
+                                                        <label for="slug">Book GSM Number <span class="text-danger">*</span></label>
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" Required>
                                                     </div>
                                                 </div>
