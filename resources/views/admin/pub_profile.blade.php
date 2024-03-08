@@ -409,7 +409,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pincode
+                                                            <h5 class="f-w-500">Pin Code
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
@@ -488,7 +488,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pincode
+                                                            <h5 class="f-w-500">Pin Code
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
@@ -740,6 +740,7 @@
                             </div>
 
                             <div class="card-body">
+                                <p>Having Subsidiary Publication</p>
                                 @if($data->haveSubsidiary == 'yes')
                                 <h5 class="es-5">Yes</h5>
                                 @else

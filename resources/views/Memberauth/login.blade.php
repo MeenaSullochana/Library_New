@@ -38,9 +38,9 @@
         <div class="browse-job login-style3">
             <!-- Coming Soon -->
             <div class="bg-img-fix overflow-hidden"
-                style="background:#fff url('{{asset("reviewer/images/background/bg6.jpg")}}'); height: 100vh;">
+                style="background:#fff url('{{asset("reviewer/images/background/bg6.png")}}'); height: 100vh;">
                 <div class="row gx-0">
-                    <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 vh-100 bg-white ">
+                    <div class="mx-auto col-xl-4 col-lg-5 col-md-6 col-sm-12 vh-100 bg-white ">
                         <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside"
                             style="max-height: 653px;" tabindex="0">
                             <div id="mCSB_1_container" class="mCSB_container" style="position:relative; top:0; left:0;"

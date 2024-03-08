@@ -1178,7 +1178,7 @@
                                         </svg>
                                     </a>
                                 </li> -->
-                                <li class="nav-item dropdown notification_dropdown">
+                                {{-- <li class="nav-item dropdown notification_dropdown">
                                     <a class="nav-link " href="javascript:void(0);" data-bs-toggle="dropdown">
                                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
@@ -1258,7 +1258,7 @@
                                             </ul>
                                         </div>
                                     </div>
-                                </li>
+                                </li> --}}
                                 <li class="nav-item ps-3">
                                     <div class="dropdown header-profile2">
                                         <a class="nav-link" href="javascript:void(0);" role="button"
@@ -1320,7 +1320,7 @@
                                                                 stroke-linecap="round" stroke-linejoin="round" />
                                                         </svg>
 
-                                                        <span class="ms-2">Change Paaword </span>
+                                                        <span class="ms-2">Change Password </span>
                                                     </a>
                                                     <!-- <a href="javascript:void(0);" class="dropdown-item ai-icon ">
                                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -1435,10 +1435,10 @@
                             <li><a href="/admin/booksubject_add">Book Subject Add</a></li>
                             <li><a href="/admin/booksubject_list">Book Subject List</a></li>
                             </ul>
-                            <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Book Gsm Type   </a>
+                            <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Book GSM Type   </a>
                         <ul aria-expanded="false">
-                            <li><a href="/admin/bookgsm_add">Book Gsm Add</a></li>
-                            <li><a href="/admin/bookgsm_list">Book Gsm List</a></li>
+                            <li><a href="/admin/bookgsm_add">Book GSM Add</a></li>
+                            <li><a href="/admin/bookgsm_list">Book GSM List</a></li>
                             </ul>
                             <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Book Dimension Type</a>
                         <ul aria-expanded="false">
@@ -1528,12 +1528,12 @@
                         <li><a href="logincontent">Login Page Content</a></li>
                         <li><a href="forgotcontent">Forgot Page Content</a></li>
 
-                        <li><a href="forgotpasswordcontent">Forgotpassword page Content</a></li>
-                        <li><a href="mailverificationcontent">Mail Verification page Content</a></li>
+                        <li><a href="forgotpasswordcontent">Password Page Content</a></li>
+                        <li><a href="mailverificationcontent">Mail Verification Page Content</a></li>
 
                             <li><a href="manage_general_setting">General Setting</a></li>
                             <li><a href="banner_setting">Home Setting</a></li>
-                            <li><a href="site_announcement">Announcement Setting</a></li>
+                            {{-- <li><a href="site_announcement">Announcement Setting</a></li> --}}
                             <li><a href="smtp">SMTP</a></li>
                             <li><a href="mailurl">Mail Url</a></li>
 
@@ -1992,11 +1992,11 @@
 <!--
                     <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                         <i class="bi bi-megaphone"></i>
-                            <span class="nav-text">Manage Anoncement</span>
+                            <span class="nav-text">Manage Announcement</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/admin/anoncement">Make Anoncement</a></li>
-                            <li><a href="/admin/anouncemenlist">Anoncement List</a></li>
+                            <li><a href="/admin/anoncement">Make Announcement</a></li>
+                            <li><a href="/admin/anouncemenlist">Announcement List</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
@@ -2009,11 +2009,11 @@
                     </li> -->
                     <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                         <i class="bi bi-megaphone"></i>
-                            <span class="nav-text">Management Anoncement</span>
+                            <span class="nav-text">Manage Announcement</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/admin/anoncement">Make Anoncement</a></li>
-                            <li><a href="/admin/anouncemenlist">Anoncement List</a></li>
+                            <li><a href="/admin/anoncement">Make Announcement</a></li>
+                            <li><a href="/admin/anouncemenlist">Announcement List</a></li>
                         </ul>
                     </li>
 
@@ -2053,13 +2053,13 @@
                     </li>  -->
                     <li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
                             <i class="bi bi-person-lines-fill"></i>
-                            <span class="nav-text">Management Account  </span>
+                            <span class="nav-text">Account Management   </span>
                         </a>
                         <ul aria-expanded="false">
                             <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Publisher Payment</a>
                                 <ul aria-expanded="false">
                                     <li><a href="publisher_payment_list">List Payment</a></li>
-                                    <li><a href="publisher_payment_cancel_list">Cencelled Payment</a></li>
+                                    <li><a href="publisher_payment_cancel_list">Cancelled Payment</a></li>
                                     <li><a href="publisher_payment_pending_list">Pending Payment</a></li>
                                     <!-- <li><a href="#">Refound Payment</a></li> -->
                                 </ul>
@@ -2067,7 +2067,7 @@
                             <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Distributor Payment</a>
                                 <ul aria-expanded="false">
                                     <li><a href="distributor_all_payment_list">List Payment</a></li>
-                                    <li><a href="distributor_cencel_payment_list">Cencelled Payment</a></li>
+                                    <li><a href="distributor_cencel_payment_list">Cancelled Payment</a></li>
                                     <li><a href="distributor_pending_payment_list">Pending Payment</a></li>
                                     <!-- <li><a href="#">Refound Payment</a></li> -->
                                 </ul>
@@ -2075,7 +2075,7 @@
                             <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Publisher & Distributor Payment</a>
                                 <ul aria-expanded="false">
                                     <li><a href="publisher_and_dis_all_payment_list">List Payment</a></li>
-                                    <li><a href="publisher_and_dis_cencel_payment_list">Cencelled Payment</a></li>
+                                    <li><a href="publisher_and_dis_cencel_payment_list">Cancelled Payment</a></li>
                                     <li><a href="publisher_and_dis_pending_payment_list">Pending Payment</a></li>
                                     <!-- <li><a href="#">Refound Payment</a></li> -->
                                 </ul>
@@ -2083,7 +2083,7 @@
                             <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Reviewer Payment</a>
                                 <ul aria-expanded="false">
                                     <li><a href="reviewer_all_user_payment">List Payment</a></li>
-                                    <li><a href="reviewer_cencelled_payment">Cencelled Payment</a></li>
+                                    <li><a href="reviewer_cencelled_payment">Cancelled Payment</a></li>
                                     <li><a href="reviewer_pending_payment">Pending Payment</a></li>
                                     <!-- <li><a href="reviewer_refound_payment.php">Refound Payment</a></li> -->
                                 </ul>
@@ -2091,7 +2091,7 @@
                             <!-- <li><a class="has-arrow" href="javascript:void(0);" aria-expanded="false">Other Payment</a>
                                 <ul aria-expanded="false">
                                     <li><a href="#">List Payment</a></li>
-                                    <li><a href="#">Cencelled Payment</a></li>
+                                    <li><a href="#">Cancelled Payment</a></li>
                                     <li><a href="#">Pending Payment</a></li>
                                     <li><a href="#">Refound Payment</a></li>
                                 </ul>

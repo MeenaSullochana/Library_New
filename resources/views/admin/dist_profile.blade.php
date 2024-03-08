@@ -70,7 +70,7 @@
                                     <div class="profile-details">
                                          <div class="profile-name px-3 pt-2">
                                             <h4 class="text-primary mb-0">
-                                                Name of distributor
+                                                Name of Distributor
                                             </h4>
                                             <p>{{ $data->distributionName }}</p>
                                         </div>
@@ -388,7 +388,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pincode
+                                                            <h5 class="f-w-500">Pin Code
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7">
@@ -461,7 +461,7 @@
                                                     </div>
                                                     <div class="row mb-2">
                                                         <div class="col-sm-3 col-5">
-                                                            <h5 class="f-w-500">Pincode
+                                                            <h5 class="f-w-500">Pin Code
                                                             </h5>
                                                         </div>
                                                         <div class="col-sm-9 col-7"><span>: <b class="ms-3">{{$data->contactPostalCode}}</b></span>
@@ -584,6 +584,7 @@
                             </div>
 
                             <div class="card-body">
+                                <p>Having Subsidiary Publication</p>
                                 @if($data->haveSubsidiary == 'yes')
                                 <h5 class="es-5">Yes</h5>
                                 @else
