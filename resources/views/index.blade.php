@@ -78,7 +78,8 @@
         @endif
 
         <!-- category-area-end -->
-
+        
+     
         <!-- about-area-start -->
         <section class="about-area grey-bg pt-100 pb-60">
             <div class="container">
@@ -127,6 +128,10 @@
             </div>
         </section>
         <!-- about-area-end -->
+        @php
+     $homepagebooks = DB::table('homepagebooks')->where('type', '=', 'topratedbooks')->where('status', '=', '1')->get();
+    @endphp
+    @if($homepagebooks->isNotEmpty())
 
         <!-- product-area-start -->
         <section class="product-area grey-bg pb-0">
@@ -143,46 +148,38 @@
                 <div class="tpproduct__arrow p-relative">
                     <div class="swiper-container tpproduct-active tpslider-bottom p-relative">
                         <div class="swiper-wrapper">
+                        @foreach($homepagebooks as $val)
                             <div class="swiper-slide">
                                 <div class="tpproduct p-relative">
                                     <div class="tpproduct__thumb p-relative text-center">
-                                        <a href="#"><img src="assets/img/books/4.webp" alt=""></a>
+                                        <a href="#"><img src="{{ asset('admin/bookImage/' . $val->bookImage) }}" alt=""></a>
                                         <a class="tpproduct__thumb-img" href="#"><img
-                                                src="assets/img/books/4.webp" alt=""></a>
-                                        <!-- <div class="tpproduct__info bage">
-                                    <span class="tpproduct__info-discount bage__discount">-50%</span>
-                                    <span class="tpproduct__info-hot bage__hot">HOT</span>
-                                 </div> -->
+                                                src="{{ asset('admin/bookImage/' . $val->bookImage) }}" alt=""></a>
+                                   
                                     </div>
                                     <div class="tpproduct__content">
                                         <span class="tpproduct__content-weight">
-                                            <a href="#">Fiction</a>
-                                            <!-- <a href="#">Fiction</a>,
-                                    <a href="#">Vagetables</a> -->
+                                            <a href="#">{{$val->category}}</a>
+                                     
                                         </span>
                                         <h4 class="tpproduct__title">
-                                            <a href="#">Tamil Section</a>
+                                            <a href="#">{{$val->booktitle}}</a>
                                         </h4>
+                                        @if($val->booktitle !=null)
+                                        <h4 class="tpproduct__title">
+                                            <a href="#">{{$val->subtitle}}</a>
+                                           
+                                        </h4>
+                                        @endif
                                         <div class="tpproduct__price">
-                                            <p class="small">Second Floor of this library is dedicated to “Classical
-                                                Language (Semmozhi)” Tamil.</p>
+                                            <p class="small">{{$val->description}}.</p>
                                         </div>
                                     </div>
-                                    <!-- <div class="tpproduct__hover-text">
-                                 <div class="tpproduct__hover-btn d-flex justify-content-center mb-10">
-                                    <a class="tp-btn-2" href="#">Add to cart</a>
-                                 </div>
-                                 <div class="tpproduct__descrip">
-                                    <ul>
-                                       <li>Type: Organic</li>
-                                       <li>MFG: August 4.2021</li>
-                                       <li>LIFE: 60 days</li>
-                                    </ul>
-                                 </div>
-                              </div> -->
+                               
                                 </div>
                             </div>
-                            <div class="swiper-slide">
+                            @endforeach
+                            <!-- <div class="swiper-slide">
                                 <div class="tpproduct p-relative">
                                     <div class="tpproduct__thumb p-relative text-center">
                                         <a href="#"><img src="assets/img/books/3.webp" alt=""></a>
@@ -202,8 +199,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
+                            </div> -->
+                            <!-- <div class="swiper-slide">
                                 <div class="tpproduct p-relative">
                                     <div class="tpproduct__thumb p-relative text-center">
                                         <a href="#"><img src="assets/img/books/2.webp" alt=""></a>
@@ -244,8 +241,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
+                            </div> -->
+                            <!-- <div class="swiper-slide">
                                 <div class="tpproduct p-relative">
                                     <div class="tpproduct__thumb p-relative text-center">
                                         <a href="#"><img src="assets/img/books/5.webp" alt=""></a>
@@ -255,7 +252,6 @@
                                     <div class="tpproduct__content">
                                         <span class="tpproduct__content-weight">
                                             <a href="#">Fiction</a>,
-                                            <!--<a href="#">Vagetables</a>-->
                                         </span>
                                         <h4 class="tpproduct__title">
                                             <a href="#">Chennai Book </a>
@@ -266,8 +262,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
+                            </div> -->
+                            <!-- <div class="swiper-slide">
                                 <div class="tpproduct p-relative">
                                     <div class="tpproduct__thumb p-relative text-center">
                                         <a href="#"><img src="assets/img/books/6.webp" alt=""></a>
@@ -287,7 +283,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="tpproduct-btn">
@@ -300,16 +296,15 @@
             </div>
         </section>
         <!-- product-area-end -->
-
+        @endif
 
         <!-- product-feature-area-start -->
-        <section class="product-feature-area product-feature grey-bg pt-80 pb-40 ">
+        <!-- <section class="product-feature-area product-feature grey-bg pt-80 pb-40 ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <div class="tpproduct-feature p-relative pt-45 pb-40">
                             <div class="tpsection tpfeature__content mb-35">
-                                <!--<h4 class="tpsection__sub-title mb-0">~ The Best For Your ~</h4>-->
                                 <h4 class="tpsection__title tpfeature__title mb-25">Upcoming Events</h4>
                             </div>
                         </div>
@@ -356,7 +351,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- product-feature-area-end -->
 
         <!-- banner-area-start -->
@@ -368,7 +363,10 @@
             </div>
         </section>
         <!-- banner-area-end -->
-
+        @php
+     $homepagebooks = DB::table('homepagebooks')->where('type', '=', 'popularcategory')->where('status', '=', '1')->get();
+    @endphp
+    @if($homepagebooks->isNotEmpty())
         <!-- product-area-start -->
         <section class="weekly-product-area grey-bg pb-70">
             <div class="container">
@@ -390,6 +388,64 @@
                                     <div class="tpproduct__arrow p-relative">
                                         <div class="swiper-container tpproduct-active tpslider-bottom p-relative">
                                             <div class="swiper-wrapper">
+                                            @foreach($homepagebooks as $val)
+                                            <div class="swiper-slide">
+                                <div class="tpproduct p-relative">
+                                    <div class="tpproduct__thumb p-relative text-center">
+                                        <a href="#"><img src="{{ asset('admin/bookImage/' . $val->bookImage) }}" alt=""></a>
+                                        <a class="tpproduct__thumb-img" href="#"><img
+                                                src="{{ asset('admin/bookImage/' . $val->bookImage) }}" alt=""></a>
+                                   
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <span class="tpproduct__content-weight">
+                                            <a href="#">{{$val->category}}</a>
+                                     
+                                        </span>
+                                      
+                                        <h4 class="tpproduct__title">
+                                            <a href="#">{{$val->booktitle}}</a>
+                                           
+                                        </h4>
+                                        @if($val->booktitle !=null)
+                                        <h4 class="tpproduct__title">
+                                            <a href="#">{{$val->subtitle}}</a>
+                                           
+                                        </h4>
+                                        @endif
+                                        <div class="tpproduct__price">
+                                            <p class="small">{{$val->description}}.</p>
+                                        </div>
+                                    </div>
+                               
+                                </div>
+                            </div>
+                                                @endforeach
+                                                <!-- <div class="swiper-slide">
+                                                    <div class="tpproduct p-relative">
+                                                        <div class="tpproduct__thumb p-relative text-center">
+                                                            <a href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                            <a class="tpproduct__thumb-img"
+                                                                href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                        </div>
+                                                        <div class="tpproduct__content">
+                                                            <span class="tpproduct__content-weight">
+                                                                <a href="#">Fiction</a>
+                                                            
+                                                            </span>
+                                                            <h4 class="tpproduct__title">
+                                                                <a href="#">Tamil Section</a>
+                                                            </h4>
+                                                            <div class="tpproduct__price">
+                                                                <p class="small">Second Floor of this library is
+                                                                    dedicated to “Classical
+                                                                    Language (Semmozhi)” Tamil.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="swiper-slide">
                                                     <div class="tpproduct p-relative">
                                                         <div class="tpproduct__thumb p-relative text-center">
@@ -401,9 +457,83 @@
                                                         </div>
                                                         <div class="tpproduct__content">
                                                             <span class="tpproduct__content-weight">
-                                                                <a href="#">Chidren</a>
-                                                                <!-- <a href="#">Fiction</a>,
-                                                                <a href="#">Vagetables</a> -->
+                                                                <a href="#">Fiction</a>
+                                                        
+                                                            </span>
+                                                            <h4 class="tpproduct__title">
+                                                                <a href="#">Tamil Section</a>
+                                                            </h4>
+                                                            <div class="tpproduct__price">
+                                                                <p class="small">Second Floor of this library is
+                                                                    dedicated to “Classical
+                                                                    Language (Semmozhi)” Tamil.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="tpproduct p-relative">
+                                                        <div class="tpproduct__thumb p-relative text-center">
+                                                            <a href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                            <a class="tpproduct__thumb-img"
+                                                                href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                        </div>
+                                                        <div class="tpproduct__content">
+                                                            <span class="tpproduct__content-weight">
+                                                                <a href="#">Fiction</a>
+                                                      
+                                                            </span>
+                                                            <h4 class="tpproduct__title">
+                                                                <a href="#">Tamil Section</a>
+                                                            </h4>
+                                                            <div class="tpproduct__price">
+                                                                <p class="small">Second Floor of this library is
+                                                                    dedicated to “Classical
+                                                                    Language (Semmozhi)” Tamil.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="tpproduct p-relative">
+                                                        <div class="tpproduct__thumb p-relative text-center">
+                                                            <a href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                            <a class="tpproduct__thumb-img"
+                                                                href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                        </div>
+                                                        <div class="tpproduct__content">
+                                                            <span class="tpproduct__content-weight">
+                                                                <a href="#">Fiction</a>
+                                                       
+                                                            </span>
+                                                            <h4 class="tpproduct__title">
+                                                                <a href="#">Tamil Section</a>
+                                                            </h4>
+                                                            <div class="tpproduct__price">
+                                                                <p class="small">Second Floor of this library is
+                                                                    dedicated to “Classical
+                                                                    Language (Semmozhi)” Tamil.</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="tpproduct p-relative">
+                                                        <div class="tpproduct__thumb p-relative text-center">
+                                                            <a href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                            <a class="tpproduct__thumb-img"
+                                                                href="#"><img
+                                                                    src="assets/img/books/3.webp" alt=""></a>
+                                                        </div>
+                                                        <div class="tpproduct__content">
+                                                            <span class="tpproduct__content-weight">
+                                                                <a href="#">Fiction</a>
+                                                        
                                                             </span>
                                                             <h4 class="tpproduct__title">
                                                                 <a href="#">Tamil Section</a>
@@ -416,138 +546,7 @@
                                                         </div>
 
                                                     </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="tpproduct p-relative">
-                                                        <div class="tpproduct__thumb p-relative text-center">
-                                                            <a href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                            <a class="tpproduct__thumb-img"
-                                                                href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                        </div>
-                                                        <div class="tpproduct__content">
-                                                            <span class="tpproduct__content-weight">
-                                                                <a href="#">Fiction</a>
-                                                                <!-- <a href="#">Fiction</a>,
-                                                                    <a href="#">Vagetables</a> -->
-                                                            </span>
-                                                            <h4 class="tpproduct__title">
-                                                                <a href="#">Tamil Section</a>
-                                                            </h4>
-                                                            <div class="tpproduct__price">
-                                                                <p class="small">Second Floor of this library is
-                                                                    dedicated to “Classical
-                                                                    Language (Semmozhi)” Tamil.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="tpproduct p-relative">
-                                                        <div class="tpproduct__thumb p-relative text-center">
-                                                            <a href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                            <a class="tpproduct__thumb-img"
-                                                                href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                        </div>
-                                                        <div class="tpproduct__content">
-                                                            <span class="tpproduct__content-weight">
-                                                                <a href="#">Fiction</a>
-                                                                <!-- <a href="#">Fiction</a>,
-                                                        <a href="#">Vagetables</a> -->
-                                                            </span>
-                                                            <h4 class="tpproduct__title">
-                                                                <a href="#">Tamil Section</a>
-                                                            </h4>
-                                                            <div class="tpproduct__price">
-                                                                <p class="small">Second Floor of this library is
-                                                                    dedicated to “Classical
-                                                                    Language (Semmozhi)” Tamil.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="tpproduct p-relative">
-                                                        <div class="tpproduct__thumb p-relative text-center">
-                                                            <a href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                            <a class="tpproduct__thumb-img"
-                                                                href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                        </div>
-                                                        <div class="tpproduct__content">
-                                                            <span class="tpproduct__content-weight">
-                                                                <a href="#">Fiction</a>
-                                                                <!-- <a href="#">Fiction</a>,
-                                                        <a href="#">Vagetables</a> -->
-                                                            </span>
-                                                            <h4 class="tpproduct__title">
-                                                                <a href="#">Tamil Section</a>
-                                                            </h4>
-                                                            <div class="tpproduct__price">
-                                                                <p class="small">Second Floor of this library is
-                                                                    dedicated to “Classical
-                                                                    Language (Semmozhi)” Tamil.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="tpproduct p-relative">
-                                                        <div class="tpproduct__thumb p-relative text-center">
-                                                            <a href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                            <a class="tpproduct__thumb-img"
-                                                                href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                        </div>
-                                                        <div class="tpproduct__content">
-                                                            <span class="tpproduct__content-weight">
-                                                                <a href="#">Fiction</a>
-                                                                <!-- <a href="#">Fiction</a>,
-                                                        <a href="#">Vagetables</a> -->
-                                                            </span>
-                                                            <h4 class="tpproduct__title">
-                                                                <a href="#">Tamil Section</a>
-                                                            </h4>
-                                                            <div class="tpproduct__price">
-                                                                <p class="small">Second Floor of this library is
-                                                                    dedicated to “Classical
-                                                                    Language (Semmozhi)” Tamil.</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="swiper-slide">
-                                                    <div class="tpproduct p-relative">
-                                                        <div class="tpproduct__thumb p-relative text-center">
-                                                            <a href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                            <a class="tpproduct__thumb-img"
-                                                                href="#"><img
-                                                                    src="assets/img/books/3.webp" alt=""></a>
-                                                        </div>
-                                                        <div class="tpproduct__content">
-                                                            <span class="tpproduct__content-weight">
-                                                                <a href="#">Fiction</a>
-                                                                <!-- <a href="#">Fiction</a>,
-                                                        <a href="#">Vagetables</a> -->
-                                                            </span>
-                                                            <h4 class="tpproduct__title">
-                                                                <a href="#">Tamil Section</a>
-                                                            </h4>
-                                                            <div class="tpproduct__price">
-                                                                <p class="small">Second Floor of this library is
-                                                                    dedicated to “Classical
-                                                                    Language (Semmozhi)” Tamil.</p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                         <div class="tpproduct-btn">
@@ -573,6 +572,7 @@
                 </div> -->
             </div>
         </section>
+        @endif
         <!-- product-area-end -->
 
         <!-- product-coundown-area-start -->

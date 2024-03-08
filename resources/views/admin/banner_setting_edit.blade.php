@@ -25,155 +25,33 @@
 
 <body>
 
-    <!--*******************
+    <!--*******
         Preloader start
-    ********************-->
+    ********-->
     <div id="preloader">
         <div class="text-center">
             <img src="images/goverment_loader.gif" alt="" width="25%">
         </div>
     </div>
-    <!--*******************
+    <!--*******
         Preloader end
-    ********************-->
+    ********-->
 
-    <!--**********************************
+    <!--************
         Main wrapper start
-    ***********************************-->
+    *************-->
     <div id="main-wrapper">
-        <!--**********************************
+        <!--************
             Nav header start
-        ***********************************-->
+        *************-->
         @include ('admin.navigation')
-        <!--**********************************
+        <!--************
             Sidebar end
-        ***********************************-->
-        <!--**********************************
+        *************-->
+        <!--************
             Content body start
-        ***********************************-->
-        {{-- <div class="content-body">
-            <div class="container-fluid">
-            <div class="content">
-                    <div class="page-inner">
+        *************-->
 
-                        <div class="container-fluid">
-
-                            <!-- Page Heading -->
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center justify-content-between">
-                                        <h3 class="mb-0 bc-title"><b>Banner Change</b> </h3>
-                                        <a class="btn btn-primary btn-sm"
-                                            href="/admin/index"><i
-                                                class="fas fa-chevron-left"></i> Back</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Form -->
-                            <div class="row">
-
-                                <div class="col-xl-12 col-lg-12 col-md-12">
-
-                                    <div class="card o-hidden border-0 shadow-lg">
-                                        <div class="card-body ">
-                                            <!-- Nested Row within Card Body -->
-                                            <div class="row justify-content-center">
-                                                <div class="col-lg-12">
-                                                    <form class="admin-form"
-                                                        action="#"
-                                                        method="POST" enctype="multipart/form-data">
-
-                                                        <input type="hidden" name="_token"
-                                                            value="">
-
-                                                        <!-- banner 2 -->
-
-                                                        <div class="form-group">
-                                                            <label for="name">Set Image1  <span class="text-danger">*</span></label>
-                                                            <br>
-                                                            <img class="admin-img"
-                                                                src="images\avatar\11.png"
-                                                                alt="No Image Found">
-                                                            <br>
-                                                            <span class="mt-1">Image Size Should Be 496 x 204.</span>
-                                                        </div>
-
-                                                        <div class="mb-3 file">
-                                                            <input class="form-control" type="file" id="formFile">
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="slug">Title  <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Enter Title " value="">
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="slug">Subtitle  <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Enter Subtitle" value="">
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="slug">URL 1  <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Enter URL 1" value="">
-                                                        </div>
-
-                                                        <!-- banner 2 -->
-
-                                                        <div class="form-group">
-                                                            <label class="mt-5" for="name">Set Image2  <span class="text-danger">*</span></label>
-                                                            <br>
-                                                            <img class="admin-img"
-                                                                src="images\avatar\11.png"
-                                                                alt="No Image Found">
-                                                            <br>
-                                                            <span class="mt-1">Image Size Should Be 496 x 204.</span>
-                                                        </div>
-
-                                                        <div class="mb-3 file">
-                                                            <input class="form-control" type="file" id="formFile">
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="slug">Title  <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Enter Title " value="">
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="slug">Subtitle  <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Enter Subtitle" value="">
-                                                        </div>
-
-                                                        <div class="mb-3">
-                                                            <label for="slug">URL 1  <span class="text-danger">*</span></label>
-                                                            <input type="text" class="form-control" placeholder="Enter URL 1" value="">
-                                                        </div>
-
-
-                                                        <div class="form-group">
-                                                            <button type="submit"
-                                                                class="btn btn-secondary ">Submit</button>
-                                                        </div>
-
-                                                        <div>
-
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         <div class="content-body">
             <div class="container-fluid">
                 <div class="card mb-4">
@@ -182,8 +60,12 @@
                             <h3 class="mb-0 bc-title">
                                 <b>Home Page Setting</b>
                             </h3>
-                            <a class="btn btn-primary btn-sm" href="/admin/index"><i class="fas fa-chevron-left"></i>
-                                Dashboard</a>
+                           <div>
+                            {{-- <a class="btn btn-primary btn-sm" href="/admin/banner_setting_list"><i class="fas fa-arrow-left"></i>
+                                List of Popular Category</a> --}}
+                                <a class="btn btn-primary btn-sm" href="/admin/banner_setting_list"><i class="fas fa-arrow-left"></i>
+                                    List of Books</a>
+                           </div>
                         </div>
                     </div>
                 </div>
@@ -193,17 +75,14 @@
 
 
                 <div class="card mt-3">
-                    <div class="card-header">
-                        <h3 class="">Home Book Slider</h3>
-                    </div>
                     <div class="card-body">
-                        <form class="admin-form" action="#" method="POST" enctype="multipart/form-data">
+                      
 
                             <input type="hidden" name="_token" value="">
 
                             <!-- banner 2 -->
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="name">Set Image1 <span class="text-danger">*</span></label>
                                 <br>
                                 <img class="admin-img" src="images\avatar\11.png" alt="No Image Found">
@@ -218,25 +97,46 @@
                                         <input class="form-control" type="file" id="formFile" required>
                                     </div>
                                 </div>
+                            </div> --}}
+                            <div class="form-group">
+                                <label for="name">Set Image1 <span class="text-danger">*</span></label>
+                                <br>
+                                <img class="admin-img" id="bookimage" src="{{ asset('admin/bookImage/' . $data->bookImage) }}" alt="No Image Found">
+                                <br>
+                                <span class="mt-1">Image Size Should Be 270 x 340.</span>
+                            </div>
+
+                            <div class="mb-3 file">
+                                <input class="form-control" type="file" id="formFile" onchange="loadFile(event)">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="slug">Slider <span class="text-danger">*</span></label>
+                                    <label for="slug">Slider Type <span class="text-danger">*</span></label>
                                     <div class="dropdown bootstrap-select default-select form-control wide form-control-sm">
-                                        <select id="" name="" class="default-select form-control wide form-control-sm" required>
-                                            <option value=""> </option>
-                                            <option value="1">Active </option>
-                                            <option value="0">Inactive</option>
+                                        <select id="type" name="type" class="default-select form-control wide form-control-sm" required>
+                                           @if($data->type ==  'popularcategory')
+                                            <option value="popularcategory"> Popular Category Book </option>
+                                            <option value="topratedbooks">Latest Top Rated Books </option>
+                                            @else($data->type ==  'topratedbooks')
+                                            <option value="popularcategory"> Popular Category Book </option>
+
+                                            <option value="topratedbooks">Latest Top Rated Books </option>
+                                       @endif
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="slug">Category <span class="text-danger">*</span></label>
                                     <div class="dropdown bootstrap-select default-select form-control wide form-control-sm">
-                                        <select id="" name="" class="default-select form-control wide form-control-sm" required>
-                                            <option value=""> </option>
-                                            <option value="1">Active </option>
-                                            <option value="0">Inactive</option>
+                                        <select id="category" name="category" class="default-select form-control wide form-control-sm" required>
+                                        <option value="{{$data->category}}">{{$data->category}}</option>
+                                        @php
+                                                          $categori = DB::table('special_categories')->where('status','=','1')->where('name','!=',$data->category)->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -245,67 +145,136 @@
 
                                 <div class="col-md-6">
                                     <div class="mb-3 mt-3 ">
-                                        <label for="slug">Title <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" placeholder="Enter Title "
-                                            value="" required>
+                                        <label for="slug"> Book Title <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Enter  Book Title "
+                                        id="booktitle" value="{{$data->booktitle}}" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="mb-3 mt-3 ">
                                         <label for="slug">Subtitle </label>
-                                        <input type="text" class="form-control" placeholder="Enter Subtitle"
-                                            value="" >
+                                        <input type="text" class="form-control" placeholder="Enter Book Subtitle"
+                                        id="subtitle" value="{{$data->subtitle}}" >
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group mb-4 mt-3">
                                         <label for="meta_description">Description <span
                                                 class="text-danger">*</span></label>
-                                        <textarea name="meta_description" id="meta_description" class="form-control" rows="5"
-                                            placeholder="Enter Description" required>  Multipurpose eCommerce  Shopping Platform Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over .</textarea>
+                                        <textarea name="meta_description" id="description" class="form-control" rows="5"
+                                            placeholder="Enter Description" required>{{$data->description}} </textarea>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group d-flex justify-contant-end">
-                                <button type="submit" class="btn btn-primary ">Submit</button>
+                                <button type="submit"  data-id="{{$data->id}}" id="submitbutton" class="btn btn-primary ">Submit</button>
                             </div>
-                        </form>
+                       
                     </div>
                 </div>
             </div>
         </div>
-        <!--**********************************
+        <!--************
             Content body end
-        ***********************************-->
-        <!--**********************************
+        *************-->
+        <!--************
             Footer start
-        ***********************************-->
+        *************-->
         @include ('admin.footer')
-        <!--**********************************
+        <!--************
             Footer end
-        ***********************************-->
+        *************-->
 
-        <!--**********************************
+        <!--************
            Support ticket button start
-        ***********************************-->
+        *************-->
 
-        <!--**********************************
+        <!--************
            Support ticket button end
-        ***********************************-->
+        *************-->
 
 
     </div>
-    <!--**********************************
+    <!--************
         Main wrapper end
-    ***********************************-->
+    *************-->
     <?php
     include 'admin/plugin/plugin_js.php';
     ?>
+    
+<script>
+        document.getElementById('formFile').addEventListener('change', function() {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('bookimage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                document.getElementById('bookimage').src = 'images\avatar\11.png'; // Default image
+            }
+        });
+    </script>
+   <script>
+        $(document).ready(function() {
+            $("#submitbutton").on("click", function (e) {
+                e.preventDefault();
+                var type = $("#type").val();
+                var booktitle = $("#booktitle").val();
+                var subtitle = $("#subtitle").val();
+                var description = $("#description").val();
+                var category = $("#category").val();
+                var id = $(this).data('id');
+              
+                var bookimage = document.querySelector('input[type=file]').files[0];
+
+                let fd = new FormData();
+                fd.append('id', id);
+                fd.append('slidertype', type);
+                fd.append('booktitle', booktitle);
+                fd.append('subtitle', subtitle);
+                fd.append('description', description);
+                fd.append('category', category);
+                fd.append('bookImage', bookimage); 
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    url: "/admin/homepageboookedit",
+                    type: "POST",
+                    data: fd,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            toastr.success(response.success, {timeout: 2000});
+                            setTimeout(function () {
+                                window.location.href = "/admin/banner_setting_list";
+                            }, 3000);
+                        } else {
+                            toastr.error(response.error, {timeout: 2000});
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 
 </html>
 <style>
+    .admin-img {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+        }
     .admin-form span {
         color: #777;
     }

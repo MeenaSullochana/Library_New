@@ -154,182 +154,6 @@
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Series</h4>
-                            </div>
-                            <div class="col-md-10">
-                                <P class="fs-4">If your book is part of a series, please enter details so readers can easily find
-                                    the
-                                    titles on a single page.(Optional)</P>
-                                <p>Add your title to an existing series or create a new one. Linked formats for this
-                                    title will be automatically added to the series once setup is complete.</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-
-                                                <div name="" id="" method="post">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered" id="dynamic_field_series">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Series Title <span
-                                                                            class="text-danger maditory"></span></th>
-                                                                    <th> Current Series Number<span
-                                                                            class="text-danger maditory"></span></th>
-                                                                    <th>Total Number of Series <span
-                                                                            class="text-danger maditory"></span></th>
-
-                                                                    {{-- <th>Add</th> --}}
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="inputContainerseries">
-                                                                <tr>
-                                                                    <td><input type="text" name="series_title[]"
-                                                                            placeholder="Series Title"
-                                                                            class="form-control" >
-                                                                        </td>
-                                                                    <td>
-                                                                        {{-- <small> <b class="text-danger">Note : </b>Sample Entry 2/10 total</small> --}}
-                                                                        <input type="text" name="series_number[]"
-                                                                            placeholder="Current Series Number"
-                                                                            class="form-control" ></td>
-                                                                    <td><input type="text" name="isbn_number[]"
-                                                                            placeholder="Total Number of Series"
-                                                                            class="form-control" ></td>
-
-                                                                    {{-- <td><button type="button" class="btn btn-success"
-                                                                            onclick="addInputRowseries()">+</button></td> --}}
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Volume</h4>
-                            </div>
-                            <div class="col-md-10">
-                                <P class="fs-4">If your book is part of a volume, please enter details so readers can easily find
-                                    the
-                                    titles on a single page.(Optional)</P>
-                                <p>Add your title to an existing volume or create a new one. Linked formats for this
-                                    title will be automatically added to the volume once setup is complete.</p>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div name="add_name" id="add_name" method="post">
-                                                    <div class="table-responsive">
-                                                        <table class="table table-bordered" id="dynamic_field">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>Volume Title <span
-                                                                            class="text-danger maditory"></span></th>
-                                                                    <th>Current  Volume Number <span
-                                                                            class="text-danger maditory"></span></th>
-                                                                    <th>Total Number of Volume <span
-                                                                            class="text-danger maditory"></span></th>
-
-                                                                    {{-- <th>Add</th> --}}
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="inputContainer">
-                                                                <tr>
-                                                                    <td><input type="text" name="volume_title[]"
-                                                                            placeholder="Volume Title"
-                                                                            class="form-control" >
-                                                                    <td><input type="text" name="volume_number[]"
-                                                                            placeholder="Current  Volume Number"
-                                                                            class="form-control" ></td></td>
-                                                                    <td><input type="text" name="isbn_number1[]"
-                                                                            placeholder="Total Number Volume"
-                                                                            class="form-control" ></td>
-
-                                                                    {{-- <td><button type="button" class="btn btn-success"
-                                                                            onclick="addInputRow()">+</button></td> --}}
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{-- <div class="col-lg-6">
-                                    <div class="basic-form">
-                                        <div class="mb-3">
-                                            <label class="text-label form-label text-black"
-                                                for="validationCustomUsername">Add Series Details</label>
-
-                                            <button id="rowAdder" type="button" class="btn btn-dark">
-                                                <span class="bi bi-plus-square-dotted">
-                                                </span> Add Series Details
-                                            </button>
-                                            <div id="newinput"></div>
-                                            <div id="row">
-                                                <div class="input-group m-3">
-                                                    <div class="input-group-prepend">
-                                                        <button class="btn btn-danger" id="DeleteRow" type="button">
-                                                            <i class="bi bi-trash"></i>
-                                                            Delete
-                                                        </button>
-                                                    </div>
-                                                    <input type="text" class="form-control m-input" id="series"
-                                                        name="series[]">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div> --}}
-                            </div>
-                        </div>
-                    </section>
-
-
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Edition Number</h4>
-                            </div>
-                            <div class="col-md-10">
-                                <P class="fs-4">You can provide an edition number if this title is a new edition of an existing book.</p>
-                                <div class="col-lg-12">
-                                    <div class="basic-form">
-                                        <div class="mb-3">
-                                            <label class="text-label form-label text-black"
-                                                for="edition_number">Edition
-                                                Number (Optional) (ex : 1st Edition,
-                                                2nd Edition)</label>
-                                            <div class="input-group">
-                                                <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-                                                <input type="text" class="form-control" id="edition_number"
-                                                    name="edition_number" placeholder="Enter the Edition Number..">
-                                                <!-- <div class="invalid-feedback">
-                                                        Edition Number cannot be edited agter your book has been
-                                                        published.
-                                                        Click here to learn more.
-                                                    </div> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
                                 <h4>Book Author Details</h4>
                             </div>
                             <div class="col-md-10">
@@ -585,6 +409,183 @@
                             </div>
                         </div>
                     </section>
+                    <section class="bg-light-new mt-4">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Series</h4>
+                            </div>
+                            <div class="col-md-10">
+                                <P class="fs-4">If your book is part of a series, please enter details so readers can easily find
+                                    the
+                                    titles on a single page.(Optional)</P>
+                                <p>Add your title to an existing series or create a new one. Linked formats for this
+                                    title will be automatically added to the series once setup is complete.</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <div name="" id="" method="post">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered" id="dynamic_field_series">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Series Title <span
+                                                                            class="text-danger maditory"></span></th>
+                                                                    <th> Current Series Number<span
+                                                                            class="text-danger maditory"></span></th>
+                                                                    <th>Total Number of Series <span
+                                                                            class="text-danger maditory"></span></th>
+
+                                                                    {{-- <th>Add</th> --}}
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="inputContainerseries">
+                                                                <tr>
+                                                                    <td><input type="text" name="series_title[]"
+                                                                            placeholder="Series Title"
+                                                                            class="form-control" >
+                                                                        </td>
+                                                                    <td>
+                                                                        {{-- <small> <b class="text-danger">Note : </b>Sample Entry 2/10 total</small> --}}
+                                                                        <input type="text" name="series_number[]"
+                                                                            placeholder="Current Series Number"
+                                                                            class="form-control" ></td>
+                                                                    <td><input type="text" name="isbn_number[]"
+                                                                            placeholder="Total Number of Series"
+                                                                            class="form-control" ></td>
+
+                                                                    {{-- <td><button type="button" class="btn btn-success"
+                                                                            onclick="addInputRowseries()">+</button></td> --}}
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-light-new mt-4">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Volume</h4>
+                            </div>
+                            <div class="col-md-10">
+                                <P class="fs-4">If your book is part of a volume, please enter details so readers can easily find
+                                    the
+                                    titles on a single page.(Optional)</P>
+                                <p>Add your title to an existing volume or create a new one. Linked formats for this
+                                    title will be automatically added to the volume once setup is complete.</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div name="add_name" id="add_name" method="post">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-bordered" id="dynamic_field">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Volume Title <span
+                                                                            class="text-danger maditory"></span></th>
+                                                                    <th>Current  Volume Number <span
+                                                                            class="text-danger maditory"></span></th>
+                                                                    <th>Total Number of Volume <span
+                                                                            class="text-danger maditory"></span></th>
+
+                                                                    {{-- <th>Add</th> --}}
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="inputContainer">
+                                                                <tr>
+                                                                    <td><input type="text" name="volume_title[]"
+                                                                            placeholder="Volume Title"
+                                                                            class="form-control" >
+                                                                    <td><input type="text" name="volume_number[]"
+                                                                            placeholder="Current  Volume Number"
+                                                                            class="form-control" ></td></td>
+                                                                    <td><input type="text" name="isbn_number1[]"
+                                                                            placeholder="Total Number Volume"
+                                                                            class="form-control" ></td>
+
+                                                                    {{-- <td><button type="button" class="btn btn-success"
+                                                                            onclick="addInputRow()">+</button></td> --}}
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- <div class="col-lg-6">
+                                    <div class="basic-form">
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="validationCustomUsername">Add Series Details</label>
+
+                                            <button id="rowAdder" type="button" class="btn btn-dark">
+                                                <span class="bi bi-plus-square-dotted">
+                                                </span> Add Series Details
+                                            </button>
+                                            <div id="newinput"></div>
+                                            <div id="row">
+                                                <div class="input-group m-3">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-danger" id="DeleteRow" type="button">
+                                                            <i class="bi bi-trash"></i>
+                                                            Delete
+                                                        </button>
+                                                    </div>
+                                                    <input type="text" class="form-control m-input" id="series"
+                                                        name="series[]">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> --}}
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section class="bg-light-new mt-4">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Edition Number</h4>
+                            </div>
+                            <div class="col-md-10">
+                                <P class="fs-4">You can provide an edition number if this title is a new edition of an existing book.</p>
+                                <div class="col-lg-12">
+                                    <div class="basic-form">
+                                        <div class="mb-3">
+                                            <label class="text-label form-label text-black"
+                                                for="edition_number">Edition
+                                                Number (Optional) (ex : 1st Edition,
+                                                2nd Edition)</label>
+                                            <div class="input-group">
+                                                <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                                <input type="text" class="form-control" id="edition_number"
+                                                    name="edition_number" placeholder="Enter the Edition Number..">
+                                                <!-- <div class="invalid-feedback">
+                                                        Edition Number cannot be edited agter your book has been
+                                                        published.
+                                                        Click here to learn more.
+                                                    </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                  
                  
                         <section class="bg-light-new">
                         <div class="row p-3">
@@ -623,9 +624,86 @@
                                                 <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year Of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" required>
                                             </div>
                                         </div>
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Place of Origin<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                        <input type="text" class="form-control" id="place"
+                                                            name="place" placeholder="Enter of Origin.." required>
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                         
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+                    </section>
+                    <section class="bg-light-new">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Categorization</h4>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="col-lg-12">
+                                     <div class="basic-form">
+ 
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Book Category <span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="default-select wide form-control" id="category"
+                                                        name="category" required>
+                                                        <option value="">Select One</option>
+                                                        @php
+                                                          $categori = DB::table('special_categories')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
+                                                    </select>
+                                                </div>
+                                         
+                                          
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Subject <span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                        <select class="default-select wide form-control" id=""
+                                                        name="subject" required>
+                                                        <option value="">Select One</option>
+                                                        @php
+                                                          $categori = DB::table('book_subject')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
+                                                    </select>
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                         
+         
+    </div>
+</div>
+</div>
 
                         </div>
                     </section>
@@ -1052,69 +1130,8 @@
 
                                                 </div>
                                             </div> -->
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Book Categories <span
-                                                            class="text-danger">*</span></label>
-                                                    <select class="default-select wide form-control" id="category"
-                                                        name="category" required>
-                                                        <option value="">Select One</option>
-                                                        @php
-                                                          $categori = DB::table('special_categories')->where('status','=','1')->get();
-                                                          @endphp
-                                                          @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
-
-                                                            @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Subject <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                        <select class="default-select wide form-control" id=""
-                                                        name="subject" required>
-                                                        <option value="">Select One</option>
-                                                        @php
-                                                          $categori = DB::table('book_subject')->where('status','=','1')->get();
-                                                          @endphp
-                                                          @foreach($categori as $val)
-                                                            <option value="{{$val->name}}">{{$val->name}}</option>
-
-                                                            @endforeach
-                                                    </select>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Place of Origin<span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                        <input type="text" class="form-control" id="place"
-                                                            name="place" placeholder="Enter of Origin.." required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        
+                                         
                                             {{-- <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"

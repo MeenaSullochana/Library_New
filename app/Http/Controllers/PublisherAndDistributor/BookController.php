@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
 use App\Models\Notifications;
 use App\Models\Admin;
 use App\Models\Procurementpaymrnt;
+use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller
 {
@@ -529,7 +530,8 @@ public function isbn(Request $req) {
 
 
 public function book_edit($id){
-    $book=Book::find($id);
+   
+  $book=Book::find($id);
     $book->primaryauthor1= json_decode($book->primaryauthor);
     $book->trans_from1= json_decode($book->trans_from);
     $book->other_img1= json_decode($book->other_img);
@@ -542,7 +544,7 @@ public function book_edit($id){
     $book->firstName=auth('publisher_distributor')->user()->firstName;
     $book->lastName=auth('publisher_distributor')->user()->lastName;
     Session::put('book', $book);
-    return redirect('publisher_distributor/bookedit');
+    return redirect('publisher_and_distributor/bookedit');
 
   }
 
@@ -846,6 +848,8 @@ if(isset($request->other_img)){
         $book->trans_from =        json_encode($request->trans_from)  ?? Null;
 
        }
+       $book->discountedprice =        $request->discountedprice1;
+       $book->discount =       $request->discount ;
        $book->type =        $request->type;
        $book->length =       $length ;
        $book->breadth =       $breadth ;

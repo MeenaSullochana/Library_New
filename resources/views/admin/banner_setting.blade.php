@@ -198,7 +198,7 @@
 
                 <div class="card mt-3">
                     <div class="card-body">
-                        <form class="admin-form" action="#" method="POST" enctype="multipart/form-data">
+                      
 
                             <input type="hidden" name="_token" value="">
 
@@ -229,11 +229,11 @@
                             </div>
 
                             <div class="mb-3 file">
-                                <input class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file" id="formFile" onchange="loadFile(event)">
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="slug">Slider <span class="text-danger">*</span></label>
+                                    <label for="slug">Slider Type <span class="text-danger">*</span></label>
                                     <div class="dropdown bootstrap-select default-select form-control wide form-control-sm">
                                         <select id="type" name="type" class="default-select form-control wide form-control-sm" required>
                                             <option value=""> </option>
@@ -285,9 +285,9 @@
                             </div>
 
                             <div class="form-group d-flex justify-contant-end">
-                                <button type="submit" class="btn btn-primary ">Submit</button>
+                                <button type="submit" id="submitbutton" class="btn btn-primary ">Submit</button>
                             </div>
-                        </form>
+                       
                     </div>
                 </div>
             </div>
@@ -319,94 +319,77 @@
     <?php
     include 'admin/plugin/plugin_js.php';
     ?>
-    <script>
-        $(document).ready(function () {
-            $("#formFile").change(function () {
-                readURL(this);
-            });
-        });
-
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    var img = new Image();
-                    img.onload = function() {
-                        if (img.width === 270 && img.height === 340) {
-                            $('#bookimage')
-                                .attr('src', e.target.result)
-                                .width(270)
-                                .height(340);
-                        } else {
-                            toastr.error('Image must be 270x340 pixels', {timeout: 2000});
-
-                          
-                            $('#bookimage').removeAttr('src');
-                            input.value = ''; // clear the file input
-                        }
-                    };
-                    img.src = URL.createObjectURL(input.files[0]);
-                }
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-    </script>
-
     
 <script>
-    $("#submitbutton").on("click", function (e) {
-        e.preventDefault();
-        var type = $("#type").val();
-        var bookTitle = $("#bookTitle").val();
-        var subtitle = $("#subtitle").val();
-        var description = $("#description").val();
-        var category = $("#category").val();
-
-        
-        var bookimage = $('#bookimage')[0].files[0]; // Corrected to access the first file
-
-        let fd = new FormData();
-        fd.append('type', type);
-        fd.append('booktitle', bookTitle);
-        fd.append('subtitle', subtitle);
-        fd.append('description', description);
-        fd.append('category', category);
-
-        
-        fd.append('bookImage', bookimage); 
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        document.getElementById('formFile').addEventListener('change', function() {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('bookimage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                document.getElementById('bookimage').src = 'images\avatar\11.png'; // Default image
             }
         });
+    </script>
+   <script>
+        $(document).ready(function() {
+            $("#submitbutton").on("click", function (e) {
+                e.preventDefault();
+                var type = $("#type").val();
+                var booktitle = $("#booktitle").val();
+                var subtitle = $("#subtitle").val();
+                var description = $("#description").val();
+                var category = $("#category").val();
 
-        $.ajax({
-            url: "/admin/homepageboookadd",
-            type: "POST",
-            data: fd,
-            processData: false,
-            contentType: false,
-            success: function (response) {
-                if (response.success) {
-                    toastr.success(response.success, {timeout: 2000});
-                    setTimeout(function () {
-                        window.location.href = "/admin/categories_add";
-                    }, 3000);
-                } else {
-                    toastr.error(response.error, {timeout: 2000});
-                }
-            }
+                var bookimage = document.querySelector('input[type=file]').files[0];
+
+                let fd = new FormData();
+                fd.append('slidertype', type);
+                fd.append('booktitle', booktitle);
+                fd.append('subtitle', subtitle);
+                fd.append('description', description);
+                fd.append('category', category);
+                fd.append('bookImage', bookimage); 
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    url: "/admin/homepageboookadd",
+                    type: "POST",
+                    data: fd,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            toastr.success(response.success, {timeout: 2000});
+                            setTimeout(function () {
+                                window.location.href = "/admin/banner_setting";
+                            }, 3000);
+                        } else {
+                            toastr.error(response.error, {timeout: 2000});
+                        }
+                    }
+                });
+            });
         });
-    });
-</script>
+    </script>
+
 </body>
 
 </html>
 <style>
+    .admin-img {
+            max-width: 200px;
+            max-height: 200px;
+            margin-top: 10px;
+        }
     .admin-form span {
         color: #777;
     }

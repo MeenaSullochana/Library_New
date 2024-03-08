@@ -19,8 +19,11 @@ use App\Mail\SmtpTestEmail;
 use App\Models\Loginhidelins;
 use App\Models\Fogothidelins;
 use App\Models\Mailconfirmtitle;
-
-
+use App\Models\Homepagebooks;
+use File;
+use Illuminate\Support\Str;
+use App\Models\Homefooter;
+use App\Models\Homebanner;
 use App\Models\Fogotpasswordhidelins;
 use App\Models\Reviewerbatch;
 use App\Models\Mailurl;
@@ -347,7 +350,182 @@ public function reviewerbatchadd(Request $req){
             return response()->json($data);  
     
     }
+    public function homepageboookadd(Request $req){
+
+        $validator = Validator::make($req->all(),[
+            'slidertype'=>'required|string',
+            'category'=>'required|string',
+            'booktitle'=>'required|string',
+          
+            'description'=>'required|string',
+           
+           
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+     if($req->bookImage == "undefined"){
+        $data= [
+            'error' => 'bookImage Filed Is Required',
+                 ];
+        return response()->json($data);   
+       
+     }else{
+     
+              $Homepagebooks=New Homepagebooks();
+              $Homepagebooks->type=$req->slidertype;
+              $Homepagebooks->category=$req->category;
+              $Homepagebooks->booktitle=$req->booktitle;
+              $Homepagebooks->subtitle=$req->subtitle;
+              $Homepagebooks->description=$req->description;
+              $image = $req->file('bookImage');
+              $imagename = $req->booktitle . time() . '.' . $image->getClientOriginalExtension();
+              $image->move('admin/bookImage', $imagename);
+             
+              $Homepagebooks->bookImage = $imagename;
+              $Homepagebooks->save();
+              $data= [
+                 'success' => 'Homepage Boook Create Successfully',
+                      ];
+             return response()->json($data);  
+     }
+   
+
+    }
+    public function bannerstatus(Request $req){
+        $Homepagebooks= Homepagebooks::find($req->bannerid);
+        if($req->status == '0'){
+            $Homepagebooks->status="0";
+        }else{
+            $Homepagebooks->status="1";
+        }
+       
+       
+        $Homepagebooks->update();
+        $data= [
+            'success' => 'Homepage Boook status change Successfully',
+                 ];
+        return response()->json($data); 
+    }
+    public function book_banner_delete(Request $req){
+        $Homepagebooks= Homepagebooks::find($req->id);
+        $Homepagebooks->delete();
+        $data= [
+            'success' => 'Homepage Boook delete Successfully',
+                 ];
+        return response()->json($data); 
+    }
+    public function banner_settingedit($id){
+        $banner= Homepagebooks::find($id);
+        \Session::put('banner', $banner);
+     
+          return redirect('admin/bannerview'); 
+    }
+    public function homepageboookedit(Request $req){
+        $Homepagebooks= Homepagebooks::find($req->id);
+        $Homepagebooks->type=$req->slidertype;
+              $Homepagebooks->category=$req->category;
+              $Homepagebooks->booktitle=$req->booktitle;
+              $Homepagebooks->subtitle=$req->subtitle;
+              $Homepagebooks->description=$req->description;
+              if($req->bookImage != "undefined"){
+                File::delete(public_path('admin/bookImage/' . $Homepagebooks->bookImage));
+              $image = $req->file('bookImage');
+              $imagename = $req->booktitle . time() . '.' . $image->getClientOriginalExtension();
+              $image->move('admin/bookImage', $imagename);
+              $Homepagebooks->bookImage = $imagename;
+              }
+              $Homepagebooks->save();
+              $data= [
+                 'success' => 'Homepage Boook Update Successfully',
+                      ];
+             return response()->json($data);
+        
+    }
+
+    
+    public function footeradd(Request $req){
+
+        $validator = Validator::make($req->all(),[
+            'about'=>'required|string',
+            'address'=>'required',
+            'phoneNumber'=>'required|string',
+            'faxNumber'=>'required|string',
+            'email'=>'required|string',
+            'copyright'=>'required|string',
 
 
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+        $record=Homefooter::first();
+        if($record == null){
+            $Homefooter=New Homefooter();
+            $Homefooter->about=$req->about;
+            $Homefooter->address=$req->address;
+            $Homefooter->phoneNumber=$req->phoneNumber;
+            $Homefooter->faxNumber=$req->faxNumber;
+            $Homefooter->email=$req->email;
+            $Homefooter->copyright=$req->copyright;
+            $Homefooter->facebook=$req->facebook;
+            $Homefooter->twitter=$req->twitter;
+            $Homefooter->youtube=$req->youtube;
+            $Homefooter->save();
+            $data= [
+                'success' => 'Home footer Create Successfully',
+                     ];
+            return response()->json($data);
+        }else{
+          
+            $record->about=$req->about;
+            $record->address=$req->address;
+            $record->phoneNumber=$req->phoneNumber;
+            $record->faxNumber=$req->faxNumber;
+            $record->email=$req->email;
+            $record->copyright=$req->copyright;
+            $record->facebook=$req->facebook;
+            $record->twitter=$req->twitter;
+            $record->linkedin=$req->linkedin;
+            $record->save();
+            $data= [
+                'success' => 'Home footer Update Successfully',
+                     ];
+            return response()->json($data);
+        }
+      
+    }
+    
+
+    public function banneradd(Request $req){
+        $validator = Validator::make($req->all(),[
+            'bannerImage'=>'required',
+           
+
+
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+           dd($req);
+        //    $image = $req->file('bookImage');
+        //    $imagename = $req->booktitle . time() . '.' . $image->getClientOriginalExtension();
+        //    $image->move('admin/bookImage', $imagename);
+        //    $Homepagebooks->bookImage = $imagename;
+
+
+    }
     
 }

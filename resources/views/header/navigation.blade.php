@@ -5,7 +5,7 @@
                   <div class="row align-items-center">
                      <div class="col-xl-4">
                         <div class="header__logo">
-                           <a href="index.html"><img class="w-100" src="assets/img/logo/logo.png" alt="logo"></a>
+                           <a href="/"><img class="w-100" src="assets/img/logo/logo.png" alt="logo"></a>
                         </div>
                      </div>
                      <div class="col-xl-7">
@@ -19,12 +19,12 @@
                                  <li class=" has-megamenu" >
                                     <a href="#">About Us</a>
                                  </li>
-                                 <li class="#">
+                                 <!-- <li class="#">
                                     <a href="#">Facilities</a>
-                                 </li>
-                                 <li class="#">
+                                 </li> -->
+                                 <!-- <li class="#">
                                     <a href="#">Library Catalogue</a>
-                                 </li>
+                                 </li> -->
                                  <li class="has-dropdown">
                                     <a href="#">Staff Login</a>
                                     <ul class="sub-menu">

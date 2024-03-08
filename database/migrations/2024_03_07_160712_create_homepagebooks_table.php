@@ -19,7 +19,7 @@ return new class extends Migration
             $table->String('bookImage');
             $table->String('category');
             $table->String('booktitle');
-            $table->String('subtitle');
+            $table->String('subtitle')->nullable();
             $table->String('description'); 
             $table->enum('status',['1','0'])->default('1');
 
@@ -34,6 +34,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('homepagebooks');
+        Schema::create('homepagebooks', function (Blueprint $table) {
+            $table->string('subtitle');
+         
+        });
     }
 };

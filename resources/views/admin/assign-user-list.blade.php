@@ -156,8 +156,10 @@
                                                                                     $reviewer = DB::table('reviewer')->find($val->reviewer_id);
                                                                                      @endphp 
 
-                                                                                    <td><span>{{$reviewer->name}}</span></td>
-                                                                                    <td>
+                                                                                     @if( $reviewer !=null)
+                                                                           <td><span>{{$reviewer->name}}</span></td>
+                                                                           <td>
+                                                                            @endif
                                                                                     {{$val->created_at->format('Y-m-d h:i A')}}
                                                                                     </td>
                                                                                     <td>
@@ -263,9 +265,10 @@
                                                                            @php
                                                                            $reviewer = DB::table('reviewer')->find($val->reviewer_id);
                                                                             @endphp 
-
+@if( $reviewer !=null)
                                                                            <td><span>{{$reviewer->name}}</span></td>
                                                                            <td>
+                                                                            @endif
                                                                            {{$val->created_at->format('Y-m-d h:i A')}}
                                                                            </td>
                                                                            <td>
@@ -372,8 +375,10 @@
                                                                            $reviewer = DB::table('reviewer')->find($val->reviewer_id);
                                                                             @endphp 
 
+                                                                            @if( $reviewer !=null)
                                                                            <td><span>{{$reviewer->name}}</span></td>
                                                                            <td>
+                                                                            @endif
                                                                            {{$val->created_at->format('Y-m-d h:i A')}}
                                                                            </td>
                                                                            <td>
