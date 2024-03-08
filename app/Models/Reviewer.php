@@ -31,6 +31,9 @@ class Reviewer extends Authenticatable
         'reviewerId',
         'creater',
         'approved_status',
+        'libraryType',
+        'libraryName',
+        'Category'
     ];
 }
 

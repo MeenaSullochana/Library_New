@@ -64,19 +64,37 @@ class LoginController extends Controller
     {
         if(isset($request->usertype)){
                $validator=Validator::make($request->all(),[
-                    "email"=>"required|email",
+                    "email"=>"required",
                     "password"=>"required|min:8",
                     "usertype"=>"required"
                    ]);
         if($validator->fails()){
          return redirect()->back()->withInput()->withErrors($validator->errors());
          }
+
+         $u=Validator::make($request->all(),[
+            "email"=>"email",
+           ]);
+           if($u->fails())
+            {
+                if($request->usertype == "librarian"){
+                    $user = "librarianId";
+                }else if($request->usertype == "reviewer"){
+                    $user = "reviewerId";
+                }
+              
+            }
+             else{
+              $user = "email";
+             }
+
+           $credentials = [$user => $request->email, 'password' => $request->password];
+         
         } else{
             return back()->withInput($request->only('email', 'remember'))->with('error',"Please select your usertype ");
         }
             if($request->usertype == "reviewer"){
-                if (\Auth::guard('reviewer')->attempt($request->only(['email','password']), $request->get('remember'))){
-                
+                if (\Auth::guard('reviewer')->attempt($credentials)){
                         $login_user = auth('reviewer')->user();
                         $redirect_route = '/reviewer/index';
                         $guard = 'reviewer';
@@ -85,7 +103,7 @@ class LoginController extends Controller
                 return back()->withInput($request->only('email', 'remember'))->with('error',"Invalid Credentials");
             }
            else if($request->usertype == "librarian"){
-            if (\Auth::guard('librarian')->attempt($request->only(['email','password']), $request->get('remember'))){
+            if (\Auth::guard('librarian')->attempt($credentials)){
                 $login_user = auth('librarian')->user();
                 $redirect_route = '/librarian/index';
                 $guard = 'librarian';
