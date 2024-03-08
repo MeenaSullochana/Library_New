@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +41,7 @@
         <!--**********************************
             Nav header start
             ***********************************-->
-            @include ('admin.navigation')
+        @include ('admin.navigation')
         <!--**********************************
             Sidebar end
             ***********************************-->
@@ -76,9 +75,14 @@
                             <div class="table-responsive active-projects style-1 ItemsCheckboxSec shorting ">
                                 <div class="tbl-caption">
                                     <span>
-                                    <button class="btn btn-info assignPro mb-5 justify-content-between active-btn" data-bs-toggle="modal" data-bs-target="#basicModal" data-state="active">Active</button>
+                                        <button class="btn btn-info assignPro mb-5 justify-content-between active-btn"
+                                            data-bs-toggle="modal" data-bs-target="#basicModal"
+                                            data-state="active">Active</button>
 
-                                     <button class="btn  btn-danger assignPro mb-5 justify-content-between inactive-btn" data-bs-toggle="modal" data-bs-target="#basicModal1" data-state="inactive">Inactive</button>
+                                        <button
+                                            class="btn  btn-danger assignPro mb-5 justify-content-between inactive-btn"
+                                            data-bs-toggle="modal" data-bs-target="#basicModal1"
+                                            data-state="inactive">Inactive</button>
 
                                     </span>
                                     <div>
@@ -127,14 +131,18 @@
                                             </div> -->
 
                                             @php
-                                        $categori = DB::table('book_subject')->where('status','=','1')->get();
-                                       @endphp
-                                       <select name="sortColumn" id="books-sort" class="form-control select-picker pr-2 d-tc" autocomplete="off" tabindex="-98">
-                                       <option data-order="DESC"> <i class="fa fa-filter" aria-hidden="true"></i>Select One</option>
-                                       @foreach($categori as $val)
-                                          <option value="{{ $val->name }}" data-order="DESC">{{ $val->name }}</option>
-                                       @endforeach
-                                    </select>
+                                            $categori = DB::table('book_subject')->where('status','=','1')->get();
+                                            @endphp
+                                            <select name="sortColumn" id="books-sort"
+                                                class="form-control select-picker pr-2 d-tc" autocomplete="off"
+                                                tabindex="-98">
+                                                <option data-order="DESC"> <i class="fa fa-filter"
+                                                        aria-hidden="true"></i>Select One</option>
+                                                @foreach($categori as $val)
+                                                <option value="{{ $val->name }}" data-order="DESC">{{ $val->name }}
+                                                </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -144,10 +152,11 @@
                                         <thead>
                                             <tr role="row">
                                                 <th>
-                                                <div class="form-check custom-checkbox ms-0">
-    <input type="checkbox" class="form-check-input dataall" id="dataall" required="">
-    <label class="form-check-label" for="dataall"></label>
-</div>
+                                                    <div class="form-check custom-checkbox ms-0">
+                                                        <input type="checkbox" class="form-check-input dataall"
+                                                            id="dataall" required="">
+                                                        <label class="form-check-label" for="dataall"></label>
+                                                    </div>
 
                                                 </th>
                                                 <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3"
@@ -166,12 +175,14 @@
                                                     rowspan="1" colspan="1"
                                                     aria-label="Ranking: activate to sort column ascending"
                                                     style="width: 126.609px;">User Type</th>
-                                                <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                                colspan="1" aria-label="Status: activate to sort column ascending"
-                                                style="width: 65.3594px;">Status</th>
-                                                <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3" rowspan="1"
-                                                colspan="1" aria-label="Change Status: activate to sort column ascending"
-                                                style="width: 72.7031px;"> Change Status</th>
+                                                <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Status: activate to sort column ascending"
+                                                    style="width: 65.3594px;">Status</th>
+                                                <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Change Status: activate to sort column ascending"
+                                                    style="width: 72.7031px;"> Change Status</th>
                                                 <th class="sorting" tabindex="0" aria-controls="empoloyees-tbl3"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Action: activate to sort column ascending"
@@ -179,35 +190,37 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @php
-                                $books = DB::table('books')
-                                ->where('marks', '>=', 40)
-                               ->where('negotiation_status', '=', 2)
+                                            @php
+                                            $books = DB::table('books')
+                                            ->where('marks', '>=', 40)
+                                            ->where('negotiation_status', '=', 2)
 
-                               ->get();
-                                             @endphp
+                                            ->get();
+                                            @endphp
 
-                                             @foreach($books as $val)
+                                            @foreach($books as $val)
                                             <tr role="row" class="odd">
-                                            <td class="sorting_1">
-                                                <div class="form-check custom-checkbox">
-                                                    <input type="checkbox" class="form-check-input bookitem" id="customCheckBox100" data-book-id="{{$val->id}}"  value="{{$val->id}}">
-                                                    <label class="form-check-label" for="customCheckBox100"></label>
-                                                </div>
-                                            </td>
+                                                <td class="sorting_1">
+                                                    <div class="form-check custom-checkbox">
+                                                        <input type="checkbox" class="form-check-input bookitem"
+                                                            id="customCheckBox100" data-book-id="{{$val->id}}"
+                                                            value="{{$val->id}}">
+                                                        <label class="form-check-label" for="customCheckBox100"></label>
+                                                    </div>
+                                                </td>
                                                 <td><span>{{$loop->index+1}}</span></td>
 
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <img src="{{asset("Books/front/".$val->front_img)}}" class="avatar avatar-md"
-                                                            alt="">
+                                                        <img src="{{asset("Books/front/".$val->front_img)}}"
+                                                            class="avatar avatar-md" alt="">
                                                         <p class="mb-0 ms-2">{{$val->book_title}}</p>
                                                     </div>
                                                 </td>
-                                                <td >
-                                                {{$val->final_price}}
+                                                <td>
+                                                    {{$val->final_price}}
 
-                                                @if($val->user_type == "publisher_distributor")
+                                                    @if($val->user_type == "publisher_distributor")
                                                 <td>
                                                     <span> publisher cum distributor</span>
                                                 </td>
@@ -219,26 +232,28 @@
 
                                                 @if($val->book_active_status == 1)
                                                 <td>
-                                                        <span class="btn btn-success shadow btn-xs me-1>Active">Active</span>
-                                                    </td>
-                                                    @else
-                                                    <td>
-                                                        <span class="badge bg-danger">Inactive</span>
-                                                    </td>
+                                                    <span
+                                                        class="btn btn-success shadow btn-xs me-1>Active">Active</span>
+                                                </td>
+                                                @else
+                                                <td>
+                                                    <span class="badge bg-danger">Inactive</span>
+                                                </td>
 
-                                                    @endif
+                                                @endif
 
-                                                    <td class="sorting_1">
-                                                        <div class="form-check form-switch id="load">
-                                                             <input class="form-check-input toggle-class" type="checkbox"
-                                                                data-id="{{$val->id}}" name="featured_status"
-                                                                     data-isprm="1" data-onstyle="success"
-                                                                             data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $val->book_active_status ? 'checked' : '' }}>
-                                                               <label class="form-check-label"
-                                                                     for="flexSwitchCheckDefault"></label>
-                                                               </div>
-                                                           </td>
-                                                    </td>
+                                                <td class="sorting_1">
+                                                    <div class="form-check form-switch id=" load">
+                                                        <input class="form-check-input toggle-class" type="checkbox"
+                                                            data-id="{{$val->id}}" name="featured_status" data-isprm="1"
+                                                            data-onstyle="success" data-offstyle="danger"
+                                                            data-toggle="toggle" data-on="Active" data-off="InActive"
+                                                            {{ $val->book_active_status ? 'checked' : '' }}>
+                                                        <label class="form-check-label"
+                                                            for="flexSwitchCheckDefault"></label>
+                                                    </div>
+                                                </td>
+                                                </td>
 
                                                 <td data-label="controlq text-center">
                                                     <div class="d-flex mt-p0">
@@ -246,8 +261,7 @@
                                                             class="btn btn-success shadow btn-xs sharp me-1">
                                                             <i class="fa fa-eye"></i>
                                                         </a>
-                                                        <a href="#"
-                                                            class="btn btn-danger  shadow btn-xs sharp me-1">
+                                                        <a href="#" class="btn btn-danger  shadow btn-xs sharp me-1">
                                                             <i class="fa fa-trash"></i>
                                                         </a>
                                                     </div>
@@ -269,7 +283,7 @@
         <!--**********************************
             Footer start
             ***********************************-->
-            @include ("admin.footer")
+        @include ("admin.footer")
         <!--**********************************
             Footer end
             ***********************************-->
@@ -283,107 +297,119 @@
     <!--**********************************
          Main wrapper end
          ***********************************-->
-         <?php
+    <?php
         include "admin/plugin/plugin_js.php";
     ?>
-      <div class="modal fade" id="basicModal">
-            <div class="modal-dialog" role="document">
+    <div class="modal fade" id="basicModal">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-body">
-                <p>Do you want to proceed?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                <button type="button" id="submitbutton11" class="btn btn-primary submitbutton11">Confirm</button>
+                <div class="modal-body">
+                    <p>Do you want to proceed?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="submitbutton11" class="btn btn-primary submitbutton11">Confirm</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="basicModal1">
-            <div class="modal-dialog" role="document">
+    <div class="modal fade" id="basicModal1">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-body">
-                <p>Do you want to proceed?</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                <button type="button" id="submitbutton22" class="btn btn-primary submitbutton22">Confirm</button>
+                <div class="modal-body">
+                    <p>Do you want to proceed?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="submitbutton22" class="btn btn-primary submitbutton22">Confirm</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 <script>
-        $(document).ready(function () {
+$(document).ready(function() {
 
 
-            $('.memeber1_table').dataTable();
+    $('.memeber1_table').dataTable();
 
-        });
-    </script>
-<script>
-    $(document).ready(function() {
-        $('#example3').on('change', '.toggle-class', function() {
-            var status = $(this).prop('checked') ? 1 : 0;
-            var bookid = $(this).data('id');
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-            $.ajax({
-                type: "put",
-                dataType: "json",
-                url: '/admin/bookstatuschange',
-                data: { 'status': status, 'bookid': bookid },
-                success: function(response) {
-                    if (response.success) {
-                        setTimeout(function() {
-                            window.location.href = "/admin/manage_book_list";
-                        }, 3000);
-                        toastr.success(response.success, { timeout: 45000 });
-                    } else {
-                        toastr.error(response.error, { timeout: 45000 });
-                        setTimeout(function() {
-                            window.location.href = "/admin/manage_book_list";
-                        }, 3000);
-                    }
-                }
-            });
-        });
-    });
-
-
+});
 </script>
 <script>
-$(document).ready(function () {
-    $('#books-sort').change(function () {
+$(document).ready(function() {
+    $('#example3').on('change', '.toggle-class', function() {
+        var status = $(this).prop('checked') ? 1 : 0;
+        var bookid = $(this).data('id');
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            type: "put",
+            dataType: "json",
+            url: '/admin/bookstatuschange',
+            data: {
+                'status': status,
+                'bookid': bookid
+            },
+            success: function(response) {
+                if (response.success) {
+                    setTimeout(function() {
+                        window.location.href = "/admin/manage_book_list";
+                    }, 3000);
+                    toastr.success(response.success, {
+                        timeout: 45000
+                    });
+                } else {
+                    toastr.error(response.error, {
+                        timeout: 45000
+                    });
+                    setTimeout(function() {
+                        window.location.href = "/admin/manage_book_list";
+                    }, 3000);
+                }
+            }
+        });
+    });
+});
+</script>
+<script>
+$(document).ready(function() {
+    $('#books-sort').change(function() {
         var sortColumn = $(this).val();
 
         $.ajax({
             url: '/admin/get-activebooks/' + sortColumn,
-            data: { 'status': 'all' },
+            data: {
+                'status': 'all'
+            },
             type: 'GET',
-            success: function (data) {
+            success: function(data) {
                 console.log(data);
 
-                if (data.html.trim() === '<tr><td colspan="5" class="text-center">No records found</td></tr>') {
+                if (data.html.trim() ===
+                    '<tr><td colspan="5" class="text-center">No records found</td></tr>') {
                     $('#example3 tbody').empty();
                     $('.memeber1_table').DataTable().clear().destroy();
                     $('.memeber1_table').dataTable();
                 } else {
                     $('#example3 tbody').empty();
                     $('.memeber1_table').DataTable().clear().destroy();
-                     $('#example3 tbody').html(data.html);
-                     $('.memeber1_table').dataTable();
+                    $('#example3 tbody').html(data.html);
+                    $('.memeber1_table').dataTable();
                 }
             },
-            error: function () {
-                $('#example3 tbody').html('<tr><td colspan="5" class="text-center">Error loading data.</td></tr>');
-                $('#example3 tbody').html('<tr><td colspan="5" class="text-center">Error loading data.</td></tr>');
+            error: function() {
+                $('#example3 tbody').html(
+                    '<tr><td colspan="5" class="text-center">Error loading data.</td></tr>'
+                );
+                $('#example3 tbody').html(
+                    '<tr><td colspan="5" class="text-center">Error loading data.</td></tr>'
+                );
             }
         });
     });
@@ -396,12 +422,11 @@ $(document).ready(function() {
         $('.bookitem').prop('checked', this.checked);
     });
 });
-
 </script>
 
 <script>
-   $('.submitbutton11').click(function () {
-    var checkebook = $('.bookitem:checked').map(function () {
+$('.submitbutton11').click(function() {
+    var checkebook = $('.bookitem:checked').map(function() {
         return $(this).data('book-id');
     }).get();
 
@@ -412,42 +437,48 @@ $(document).ready(function() {
     };
     console.log(requestData);
     $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: '/admin/multiple-statuschangebook',
-            method: 'POST',
-            data: { 'requestData': requestData, 'status': '1' },
-            success: function (response) {
-              console.log(response.data);
-              if(response.success){
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: '/admin/multiple-statuschangebook',
+        method: 'POST',
+        data: {
+            'requestData': requestData,
+            'status': '1'
+        },
+        success: function(response) {
+            console.log(response.data);
+            if (response.success) {
                 $('#basicModal').modal('hide');
-            //    $('#basicModal').hide();
+                //    $('#basicModal').hide();
                 setTimeout(function() {
-                    window.location.href ="/admin/manage_book_list"
-                     }, 3000);
-                toastr.success(response.success,{timeout:45000});
-               }else{
+                    window.location.href = "/admin/manage_book_list"
+                }, 3000);
+                toastr.success(response.success, {
+                    timeout: 45000
+                });
+            } else {
                 $('#basicModal').modal('hide');
                 //   $('#basicModal').hide();
-                toastr.error(response.error,{timeout:45000});
+                toastr.error(response.error, {
+                    timeout: 45000
+                });
 
-               }
-
-            },
-            error: function (xhr, status, error) {
-                console.error('AJAX error:', status, error);
             }
-        });
+
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX error:', status, error);
+        }
+    });
 
 });
-
 </script>
 <script>
-   $('.submitbutton22').click(function () {
-    var checkebook = $('.bookitem:checked').map(function () {
+$('.submitbutton22').click(function() {
+    var checkebook = $('.bookitem:checked').map(function() {
         return $(this).data('book-id');
     }).get();
 
@@ -458,37 +489,44 @@ $(document).ready(function() {
     };
     console.log(requestData);
     $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $.ajax({
-            url: '/admin/multiple-statuschangebook',
-            method: 'POST',
-            data: { 'requestData': requestData, 'status': '0' },
-            success: function (response) {
-              console.log(response.data);
-              if(response.success){
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $.ajax({
+        url: '/admin/multiple-statuschangebook',
+        method: 'POST',
+        data: {
+            'requestData': requestData,
+            'status': '0'
+        },
+        success: function(response) {
+            console.log(response.data);
+            if (response.success) {
                 $('#basicModal1').modal('hide');
                 setTimeout(function() {
-                    window.location.href ="/admin/manage_book_list"
-                     }, 3000);
-                toastr.success(response.success,{timeout:45000});
-               }else{
+                    window.location.href = "/admin/manage_book_list"
+                }, 3000);
+                toastr.success(response.success, {
+                    timeout: 45000
+                });
+            } else {
                 $('#basicModal1').modal('hide');
-                toastr.error(response.error,{timeout:45000});
+                toastr.error(response.error, {
+                    timeout: 45000
+                });
 
-               }
-
-            },
-            error: function (xhr, status, error) {
-                console.error('AJAX error:', status, error);
             }
-        });
+
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX error:', status, error);
+        }
+    });
 
 });
-
 </script>
+
 </html>
 <style>
 table {
@@ -597,16 +635,18 @@ body {
     line-height: 18px;
     border-radius: 0.25rem;
 }
+
 .active-projects.style-1 .dt-buttons .dt-button {
     top: -50px;
     right: 0 !important;
 }
-   .active-projects.style-1 .dt-buttons .dt-button {
+
+.active-projects.style-1 .dt-buttons .dt-button {
     top: -50px;
     right: 0 !important;
 }
 
 .active-projects tbody tr td:last-child {
-        text-align: center;
-    }
+    text-align: center;
+}
 </style>
