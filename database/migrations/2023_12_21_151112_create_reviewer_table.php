@@ -28,6 +28,9 @@ return new class extends Migration
             $table->string('ifscNumber')->nullable(); 
             $table->string('district')->nullable(); 
             $table->string('membershipId')->nullable(); 
+            $table->string('libraryType')->nullable(); 
+            $table->string('libraryName')->nullable(); 
+            $table->string('Category')->nullable(); 
             $table->string('email');
             $table->string('password'); 
             $table->string('role');
@@ -56,6 +59,9 @@ return new class extends Migration
             $table->string('ifscNumber'); 
             $table->string('district'); 
             $table->string('membershipId'); 
+            $table->string('libraryType'); 
+            $table->string('libraryName'); 
+            $table->string('Category'); 
             
         });
     }

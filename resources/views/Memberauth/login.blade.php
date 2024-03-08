@@ -85,9 +85,9 @@
                                                                 </div>
                                                             </div>
                                                             <div class="form-group mb-3">
-                                                                <input type="email" id="email" value="{{ old('email') }}" required name="email"
+                                                                <input type="text" id="email" value="{{ old('email') }}" required name="email"
                                                                 class="field form-control @error('email') is-invalid @enderror"
-                                                                placeholder="{{ __('email_address') }}">
+                                                                placeholder="{{ __('Enter Username/Email') }}">
                                                                    @error('email')
                                                                 <span class="invalid-feedback" role="alert">{{ __($message) }}</span>
                                                                  @enderror

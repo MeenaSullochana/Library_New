@@ -797,28 +797,16 @@ public function importFile(Request $request)
                     }
                 }
             }
+            $review = [];
             foreach ($fileContents as $line) {
                 $data = str_getcsv($line);
+              
                 if ($data[0] == "internal" && isset($data[1]) && isset($data[5]) && isset($data[7]) && isset($data[8])) {
                     $randomCode = str_pad(random_int(0, 99999999), 8, '0', STR_PAD_LEFT);
-                    // Reviewer::create([
-                    //     'reviewerType' => $data[0],
-                    //     'libraryType' => $data[1],
-                    //     'libraryName' => $data[2],
-                    //     'district' => $data[3],
-                    //     'name' => $data[4],
-                    //     'subject' => $data[5],
-                    //     'phoneNumber' => $data[6] ?? null,
-                    //     'email' => $data[7],
-                    //     'password' => Hash::make($data[8] ?? 'default'), // Set a default password
-                    //     'role' => "reviewer",
-                    //     'creater' => $admin,
-                    //     "reviewerId" => $randomCode,
-                    // ]);
                     $reviewer = new Reviewer();
+            
                     $reviewer->reviewerType = $data[0];
                     $reviewer->name = $data[4];
-                 
                     $reviewer->libraryType = $data[1];
                     $reviewer->libraryName =$data[2];
                     $reviewer->email = $data[7];
@@ -828,19 +816,21 @@ public function importFile(Request $request)
                     $reviewer->password=Hash::make($data[8]);
                     $reviewer->role = "reviewer";
                     $reviewer->creater = $admin->id; 
-    
                     $randomCode = str_pad(random_int(0, 99999999), 8, '0', STR_PAD_LEFT);
                     $reviewer->reviewerId= $randomCode;
+                   
                     $reviewer->save();
-                    return $reviewer;
+                 
                 }
             }
+            // return $review;
             return redirect()->back();
         } else {
             return redirect()->back();
         }
     } catch (Throwable $e) {
         // Handle the exception (e.g., log it)
+        // return $e;
         return redirect()->back()->with('error', 'An error occurred while importing.');
     }
 }

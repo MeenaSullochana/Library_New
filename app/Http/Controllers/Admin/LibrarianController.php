@@ -32,11 +32,10 @@ class LibrarianController extends Controller
         $validator = Validator::make($req->all(),[
             'libraryType'=>'required|string',
             'libraryName'=>'required|string',
-'subject'=>'required',
+           'subject'=>'required',
             'state'=>'required',
             'district'=>'required|string',
             'city'=>'required|string',
-'Village'=>'required',
             'Village'=>'required',
             'metaChecker'=>'required',
             'librarianName'=>'required',
@@ -53,11 +52,11 @@ class LibrarianController extends Controller
            
         }
       
-            $Admin=auth('admin')->user()->first();
-           $librarian=new Librarian();
+            $Admin=auth('admin')->user();
+            $librarian=new Librarian();
             $librarian->libraryType = $req->libraryType;
             $librarian->libraryName = $req->libraryName;
-$librarian->subject = json_encode($req->subject);
+            $librarian->subject = json_encode($req->subject);
            
             $librarian->state = $req->state;
             $librarian->district = $req->district;
@@ -79,6 +78,12 @@ $librarian->subject = json_encode($req->subject);
              $password = $req->password;
             //  $url = "http://127.0.0.1:8000/member/login";
             $rev =Mailurl::first();
+            if($rev == null){
+                $data= [
+                    'error' => "Mail Url not updated",
+                         ];
+                return response()->json($data);  
+            }
             $url = $rev->name . "/member/login";
              Notification::route('mail',$librarian->email)->notify(new Member1detailNotification($user, $url,$record,$password));  
              $data= [

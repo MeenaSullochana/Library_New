@@ -370,6 +370,8 @@
                                         DB::table('books')->where('negotiation_status','=',2)->where('book_active_status','=',1)
                                         ->orderBy('marks', 'desc')
                                         ->get();
+                                        $budget = DB::table('libeaey_budgets')->where('libraryType',auth('librarian')->user()->libraryType)->orderBy('created_at','DESC')->first();
+                            
                                         @endphp
                                         @foreach($books as $val)
                                         <div class="col">
@@ -383,11 +385,11 @@
 
                                                     </div>
                                                     <div class="tpproduct__shopping">
-                                                        <a class="tpproduct__shopping-wishlist" href="/wishlist"><i
+                                                        <!-- <a class="tpproduct__shopping-wishlist" href="/wishlist"><i
                                                                 class="icon-heart icons"></i></a>
                                                         <a class="tpproduct__shopping-wishlist" href="#"><i
-                                                                class="icon-layers"></i></a>
-                                                        <a class="tpproduct__shopping-cart" href="#"><i
+                                                                class="icon-layers"></i></a> -->
+                                                        <a class="tpproduct__shopping-cart" href="/shope/{{$val->id}}"><i
                                                                 class="icon-eye"></i></a>
                                                     </div>
                                                 </div>
@@ -406,19 +408,22 @@
 
                                                     </div>
                                                 </div>
+                                                @if($budget != null)
                                                 <div class="tpproduct__hover-text">
-                                                    <div
-                                                        class="tpproduct__hover-btn d-flex justify-content-center mb-10">
+                                                  
+                                                    <div class="tpproduct__hover-btn d-flex justify-content-center mb-10">
                                                         <a class="tp-btn-2" href="/product/add/cart/{{$val->id}}">Add to cart</a>
                                                     </div>
+                                                   
                                                     <div class="tpproduct__descrip">
                                                         <ul>
                                                             <li>Subject:{{$val->subject}}</li>
-                                                            <li>MFG: August 4.2021</li>
-                                                            <li>LIFE: 60 days</li>
+                                                            <!-- <li>MFG: August 4.2021</li>
+                                                            <li>LIFE: 60 days</li> -->
                                                         </ul>
                                                     </div>
                                                 </div>
+                                                @endif
                                             </div>
                                         </div>
                                         @endforeach

@@ -610,13 +610,15 @@ public function procur_complete_list(){
       $avginternal = $suminternal/$rinternalcount;
      }
       if($rexternalcount != 0){
-        $avgexternal = $sumexternal/$rexternalcount;
+        // $avgexternal = $sumexternal/$rexternalcount;
+        $avgexternal = ($externalcount/$rexternalcount) * $sumexternal;
       }
       if($rpubliccount != 0){
         $avgpublic = $sumpublic/$rpubliccount;
       }
      
-      $total = (2*$avgexternal) + $avginternal + $avgpublic;
+      // $total = (2*$avgexternal) + $avginternal + $avgpublic;
+      $total = ($avgexternal) + $avginternal + $avgpublic;
        $obj=(Object)[
            'book'=>$book,
            'internalcount'=>$internalcount,

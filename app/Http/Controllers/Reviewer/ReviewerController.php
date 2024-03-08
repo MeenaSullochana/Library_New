@@ -76,7 +76,8 @@ class ReviewerController extends Controller
         $rev->remark=$req->about_book;
         $rev->save();
        if($rev->reviewertype == "external"){
-            $rmark = 2 * $mark;
+            // $rmark = 2 * $mark;
+            $rmark = $mark;
        }else{
            $rmark = $mark;
        }
