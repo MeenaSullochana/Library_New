@@ -6,16 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UUID;
 
-class Homepagebooks extends Model
+class Homebanner extends Model
 {
     use UUID;
 
-    protected $table = 'homepagebooks';
+    protected $table = 'homefooter';
     protected $fillable = [
-        'userType',
-        'hidelineTitle',
-        'hidelineContent',
-        
-       
+        'type',
+        'bannerImage',
     ];
 }
+;

@@ -73,14 +73,7 @@
                                         <table class="table table-responsive-md" id="example3">
                                             <thead>
                                                 <tr>
-                                                    <th style="width:50px;">
-                                                        <div
-                                                            class="form-check custom-checkbox checkbox-success check-lg me-3">
-                                                            <input type="checkbox" class="form-check-input"
-                                                                id="checkAll" required="">
-                                                            <label class="form-check-label" for="checkAll"></label>
-                                                        </div>
-                                                    </th>
+                                                 
                                                     <th>
                                                         <strong>S.No</strong>
                                                     </th>
@@ -111,45 +104,47 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            @php
+     $homepagebooks = DB::table('homepagebooks')->where('type', '=', 'popularcategory')->get();
+    @endphp
+              @foreach($homepagebooks as $val)
                                                 <tr>
-                                                    <td>
-                                                        <div
-                                                            class="form-check custom-checkbox checkbox-success check-lg me-3">
-                                                            <input type="checkbox" class="form-check-input"
-                                                                id="customCheckBox2" required="">
-                                                            <label class="form-check-label"
-                                                                for="customCheckBox2"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>1</td>
+                                                   
+                                                    <td>{{$loop->index +1}}</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <img src="images/contacts/pic1.jpg" class="avatar avatar-md rounded-circle" alt="">
+                                                            <img src="{{ asset('admin/bookImage/' . $val->bookImage) }}" class="avatar avatar-md rounded-circle" alt="">
                                                         </div>
                                                     </td>
-                                                    <td> <p class="mb-0 ms-2">Liam Risher</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Category</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Title</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Subtitle</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Description</p></td>
-                                                    <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                                         </div>
-                                                    </td>
+                                                    <td> <p class="mb-0 ms-2">{{$val->type}}</p></td>
+                                                    <td> <p class="mb-0 ms-2">{{$val->category}}</p></td>
+                                                    <td> <p class="mb-0 ms-2">	{{$val->booktitle}}</p></td>
+                                                    <td> <p class="mb-0 ms-2">	{{$val->subtitle}}	</p></td>
+                                                    <td> <p class="mb-0 ms-2">{{$val->description}}	</p></td>
+                                                    <td class="sorting_1">
+                               <div class="form-check form-switch id="load">
+                                     <input class="form-check-input toggle-class" type="checkbox"
+                                    data-id="{{$val->id}}" name="featured_status"
+                                   data-isprm="1" data-onstyle="success"
+                                   data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $val->status ? 'checked' : '' }}>
+                                  <label class="form-check-label"
+                                 for="flexSwitchCheckDefault"></label>
+                             </div>
+                          </td>
                                                     <td>
                                                         <div class="d-flex">
 
-                                                            <a href="\admin\banner_setting_edit"
+                                                        <a href="/admin/banner_settingedit/{{$val->id}}"
                                                                 class="btn btn-primary shadow btn-xs sharp me-1">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
-                                                            <a  class="btn btn-danger shadow btn-xs sharp delete-btn"  id="delete" >
+                                                            <a  class="btn btn-danger shadow btn-xs sharp delete-btn"  id="delete" data-id="{{ $val->id }}">
                                                                 <i class="fa fa-trash"></i>
                                                             </a>
                                                         </div>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
@@ -181,14 +176,7 @@
                                         <table class="table table-responsive-md" id="example3">
                                             <thead>
                                                 <tr>
-                                                    <th style="width:50px;">
-                                                        <div
-                                                            class="form-check custom-checkbox checkbox-success check-lg me-3">
-                                                            <input type="checkbox" class="form-check-input"
-                                                                id="checkAll" required="">
-                                                            <label class="form-check-label" for="checkAll"></label>
-                                                        </div>
-                                                    </th>
+                                             
                                                     <th>
                                                         <strong>S.No</strong>
                                                     </th>
@@ -219,52 +207,54 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                            @php
+     $homepagebooks = DB::table('homepagebooks')->where('type', '=', 'topratedbooks')->get();
+    @endphp
+              @foreach($homepagebooks as $val)
                                                 <tr>
-                                                    <td>
-                                                        <div
-                                                            class="form-check custom-checkbox checkbox-success check-lg me-3">
-                                                            <input type="checkbox" class="form-check-input"
-                                                                id="customCheckBox2" required="">
-                                                            <label class="form-check-label"
-                                                                for="customCheckBox2"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td>1</td>
+                                                   
+                                                    <td>{{$loop->index +1}}</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
-                                                            <img src="images/contacts/pic1.jpg" class="avatar avatar-md rounded-circle" alt="">
+                                                            <img src="{{ asset('admin/bookImage/' . $val->bookImage) }}" class="avatar avatar-md rounded-circle" alt="">
                                                         </div>
                                                     </td>
-                                                    <td> <p class="mb-0 ms-2">Liam Risher</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Category</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Title</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Subtitle</p></td>
-                                                    <td> <p class="mb-0 ms-2">	Description</p></td>
-                                                    <td>
-                                                        <div class="form-check form-switch">
-                                                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                                                         </div>
-                                                    </td>
+                                                    <td> <p class="mb-0 ms-2">{{$val->type}}</p></td>
+                                                    <td> <p class="mb-0 ms-2">{{$val->category}}</p></td>
+                                                    <td> <p class="mb-0 ms-2">	{{$val->booktitle}}</p></td>
+                                                    <td> <p class="mb-0 ms-2">	{{$val->subtitle}}	</p></td>
+                                                    <td> <p class="mb-0 ms-2">{{$val->description}}	</p></td>
+                                                    <td class="sorting_1">
+                               <div class="form-check form-switch id="load">
+                                     <input class="form-check-input toggle-class" type="checkbox"
+                                    data-id="{{$val->id}}" name="featured_status"
+                                   data-isprm="1" data-onstyle="success"
+                                   data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $val->status ? 'checked' : '' }}>
+                                  <label class="form-check-label"
+                                 for="flexSwitchCheckDefault"></label>
+                             </div>
+                          </td>
                                                     <td>
                                                         <div class="d-flex">
 
-                                                            <a href="\admin\banner_setting_edit"
+                                                            <a href="/admin/banner_settingedit/{{$val->id}}"
                                                                 class="btn btn-primary shadow btn-xs sharp me-1">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
-                                                            <a  class="btn btn-danger shadow btn-xs sharp delete-btn"  id="delete" >
+                                                            <a  class="btn btn-danger shadow btn-xs sharp delete-btn"  id="delete" data-id="{{ $val->id }}">
                                                                 <i class="fa fa-trash"></i>
                                                             </a>
                                                         </div>
                                                     </td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /tab-content -->
+                       
                     </div>
                 </div>
             </div>
@@ -351,5 +341,68 @@
     });
 
 </script>
+<script>
+  $(function() {
+    $('.toggle-class').change(function(e) {
+        e.preventDefault();
+        var status = $(this).prop('checked') == true ? 1 : 0;
+        var bannerid = $(this).data('id');
 
+        $.ajaxSetup({
+             headers:{
+                'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+             }
+          });
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: '/admin/bannerstatus',
+            data: {'status': status, 'bannerid': bannerid},
+            success: function(response) {
+               if(response.success){
+                setTimeout(function() {
+                    window.location.href ="/admin/banner_setting_list"
+                     }, 3000);
+                toastr.success(response.success,{timeout:45000});
+               }else{
+                toastr.error(response.error,{timeout:45000});
+                setTimeout(function() {
+                    window.location.href ="/admin/banner_setting_list"
+                     }, 3000);
+               }
+
+            }
+        });
+    })
+  })
+</script>
+
+<script>
+
+    $('.delete-btn').on('click', function () {
+
+        var id = $(this).data('id');
+         console.log(id);
+        $.ajax({
+            url: '/admin/book_banner_delete',
+            method: 'POST',
+            data: { '_token': '{{ csrf_token() }}', 'id': id },
+            success: function (response) {
+                if (response.success) {
+                    toastr.success(response.success, { timeout: 2000 });
+                    setTimeout(function () {
+                        window.location.href = "/admin/banner_setting_list"
+                    }, 3000);
+                } else {
+                    toastr.error(response.error, { timeout: 2000 });
+                }
+            },
+            error: function (xhr, status, error) {
+
+                console.log('Error:', error);
+            }
+        });
+    });
+
+</script>
 </html>

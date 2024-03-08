@@ -14,6 +14,8 @@
                         <a class="text-white fw-bold" href="/publisher/index">Dashboard</a>
                     @elseif (auth('distributor')->user())
                         <a class="text-white fw-bold" href="/distributor/index">Dashboard</a>
+                        @elseif (auth('admin')->user())
+                        <a class="text-white fw-bold" href="/admin/index">Dashboard</a>
                     @elseif (auth('publisher_distributor')->user())
                         <a class="text-white fw-bold" href="/publisher_distributor/index">Dashboard</a>
                     @elseif (auth('librarian')->user())
@@ -29,22 +31,21 @@
                 </div>
                 <div class="header__lang">
                    <span class="header__lang-select">English </span>
-                   {{-- <span class="header__lang-select">English <i class="far fa-angle-down"></i></span> --}}
-                   <ul class="header__lang-submenu">
+                   <!-- {{-- <span class="header__lang-select">English <i class="far fa-angle-down"></i></span> --}} -->
+                   <!-- <ul class="header__lang-submenu">
                       <li>
                          <span class="header__lang-select">English </span>
                       </li>
-                   </ul>
+                   </ul> -->
                 </div>
-                <div class="header__lang">
-                    <!--<span class="header__lang-select">INR </span>-->
+                <!-- <div class="header__lang">
                    <span class="header__lang-select">INR <i class="far fa-angle-down"></i></span>
                     <ul class="header__lang-submenu">
                        <li>
                           <span class="header__lang-select text-dark">INR </span>
                        </li>
                     </ul>
-                 </div>
+                 </div> -->
                 {{-- <div class="header__top-price">
                    <select>
                       <option>INR</option> --}}

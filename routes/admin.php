@@ -44,7 +44,6 @@ Route::get('/application_list',function(){return view('admin.application_list');
 Route::get('/application_rejected',function(){return view('admin.application_rejected');});
 Route::get('/application_view',function(){return view('admin.application_view');});
 Route::get('/banner_setting',function(){return view('admin.banner_setting');});
-Route::get('/banner_setting_edit',function(){return view('admin.banner_setting_edit');});
 Route::get('/banner_setting_list',function(){return view('admin.banner_setting_list');});
 Route::get('/book_section_add_new',function(){return view('admin.book_section_add_new');});
 Route::get('/book_section_print',function(){return view('admin.book_section_print');});
@@ -642,6 +641,22 @@ Route::get('/forgotcontent',function(){ return view('admin.forgotcontent');});
   Route::post('/forgothidelins_title',[SettingController::class,'forgothidelins_title']);
   Route::get('/forgotpasswordcontent',function(){ return view('admin.forgotpasswordcontent');});
   Route::post('/forgotpasswordhidelins_title',[SettingController::class,'forgotpasswordhidelins_title']);
+  Route::post('/bannerstatus',[SettingController::class,'bannerstatus']);
+  
+  Route::post('/book_banner_delete',[SettingController::class,'book_banner_delete']);
+
+  Route::get('/banner_settingedit/{id}',[SettingController::class,'banner_settingedit']);
+  Route::get('/bannerview',function(){
+   $data = Session::get('banner');
+    if($data !==null){
+        return view('admin.banner_setting_edit')->with("data",$data);
+    }
+
+});
+Route::post('/homepageboookedit',[SettingController::class,'homepageboookedit']);
+// footer
+Route::post('/footeradd',[SettingController::class,'footeradd']);
+Route::post('/banneradd',[SettingController::class,'banneradd']);
 
 
 

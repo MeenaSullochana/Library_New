@@ -15,6 +15,8 @@
     <meta property="og:image" content="">
     <meta name="format-detection" content="telephone=no">
     <!-- PAGE TITLE HERE -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Government of Tamil Nadu - Book Procurement - General Setting Page</title>
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin/images/fevi.svg') }}">
@@ -654,123 +656,13 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                             rows="5"
                                                                             placeholder="Enter Site Meta Description">  Multipurpose eCommerce  Shopping Platform Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over .</textarea>
                                                                     </div>
-                                                                    <h4 class="card-title">Social Icons</h4>
-                                                                    <div class="table-responsive">
-                                                                        <table class="table table-bordered" id="titles_name">
-                                                                            <tr>
-                                                                                <th>Social Icon Name</th>
-                                                                                <th>Social Icon Links</th>
-                                                                                <th>Add</th>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td><input type="text" name="subject[]" placeholder="Enter Social Name" class="form-control name_list" /></td>
-                                                                                <td><input type="text" name="subject[]" placeholder="Enter https://www.facebook.com/" class="form-control name_list" /></td>
-                                                                                <td><button type="button" name="awarded_titles" class="btn btn-success add_row">+</button></td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </div>
-                                                                    {{-- <div class="card mb-4 mt-3">
-                                                                        <div
-                                                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                                            <h6
-                                                                                class="m-0 font-weight-bold text-primary">
-                                                                                Social Links</h6>
-                                                                        </div>
-
-                                                                        <div class="card-body">
-                                                                            <div class="gocover"
-                                                                                style="background: url(https://product.geniusocean.com/genius-bank/assets/images/33CiUFaI1641808748.gif) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
-                                                                            </div>
-
-                                                                            <div class="alert alert-success alert-dismissible"
-                                                                                style="display: none;">
-                                                                                <button type="button" class="close"
-                                                                                    data-dismiss="alert">×</button>
-                                                                                <p class="m-0"></p>
-                                                                            </div>
-
-
-                                                                            <div class="alert alert-danger alert-dismissible"
-                                                                                style="display: none;" role="alert">
-                                                                                <button type="button" class="close"
-                                                                                    data-dismiss="alert">×</button>
-                                                                                <p class="m-0"></p>
-                                                                            </div>
-
-
-                                                                            <input type="hidden" name="_token"
-                                                                                value="pMgt3K6hw7NqfFlt9rk5QhdcHvYvSbeuo47lqFVX">
-
-                                                                            <div class="row mb-2">
-                                                                                <label class="control-label col-sm-3"
-                                                                                    for="facebook">Facebook
-                                                                                    *</label>
-                                                                                <div class="col-sm-6">
-                                                                                    <input class="form-control"
-                                                                                        name="facebook" id="facebook"
-                                                                                        placeholder="http://facebook.com/"
-                                                                                        type="text"
-                                                                                        value="https://www.facebook.com/">
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <label class="switch">
-                                                                                        <input type="checkbox"
-                                                                                            name="f_status" value="1"
-                                                                                            checked="">
-                                                                                        <span
-                                                                                            class="slider round"></span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-
-
-                                                                            <div class="row mb-2">
-                                                                                <label class="control-label col-sm-3"
-                                                                                    for="twitter">Twitter *</label>
-                                                                                <div class="col-sm-6">
-                                                                                    <input class="form-control"
-                                                                                        name="twitter" id="twitter"
-                                                                                        placeholder="http://twitter.com/"
-                                                                                        type="text"
-                                                                                        value="https://twitter.com/">
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <label class="switch">
-                                                                                        <input type="checkbox"
-                                                                                            name="t_status" value="1"
-                                                                                            checked="">
-                                                                                        <span
-                                                                                            class="slider round"></span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="row mb-2">
-                                                                                <label class="control-label col-sm-3"
-                                                                                    for="linkedin">Linkedin
-                                                                                    *</label>
-                                                                                <div class="col-sm-6">
-                                                                                    <input class="form-control"
-                                                                                        name="linkedin" id="linkedin"
-                                                                                        placeholder="http://linkedin.com/"
-                                                                                        type="text"
-                                                                                        value="https://www.linkedin.com/">
-                                                                                </div>
-                                                                                <div class="col-sm-3">
-                                                                                    <label class="switch">
-                                                                                        <input type="checkbox"
-                                                                                            name="l_status" value="1"
-                                                                                            checked="">
-                                                                                        <span
-                                                                                            class="slider round"></span>
-                                                                                    </label>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+                                                                 
+                                                                   <div class="card mb-4 mt-3">
+                                                                        
 
                                                                         <button type="submit" id="submit-btn"
                                                                             class="btn btn-primary mt-5 w-100">Submit</button>
-                                                                    </div> --}}
+                                                                    </div> 
                                                                     <div class="mt-3 d-flex justify-content-end">
                                                                         <button type="button" class="btn btn-primary">Submit</button>
                                                                     </div>
@@ -803,110 +695,167 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    @php
+     $homefooter = DB::table('homefooter')->first();
+   
+    @endphp
                                                     <div id="v-pills-footer" class="tab-pane fade">
-                                                        <div class="row justify-content-center">
+                                                    <div class="row justify-content-center">
 
-                                                            <div class="col-lg-12">
+<div class="col-lg-12">
+    <div class="form-group mt-3">
+        <label for="footer_content"> About Content <span class="text-danger">*</span></label>
+        <textarea type="text" name="footer_about"
+            class="form-control" id="footer_about"
+            placeholder=" About Content" rows="3" value="{{$homefooter->about}}"
+            >{{$homefooter->about}}</textarea>
+    </div>
+    <div class="form-group mt-3">
+        <label for="footer_address"> Address <span class="text-danger">*</span></label>
+        <textarea type="text" name="footer_address"
+            class="form-control" id="footer_address"
+            placeholder=" Address" rows="3"
+            value="{{$homefooter->address}}">{{$homefooter->address}}</textarea>
+    </div>
 
-                                                                <div class="form-group mt-3">
-                                                                    <label for="footer_address"> Address <span class="text-danger">*</span></label>
-                                                                    <input type="text" name="footer_address"
-                                                                        class="form-control" id="footer_address"
-                                                                        placeholder=" Address"
-                                                                        value="514 S. Magnolia St. Orlando, FL 32806, USA">
-                                                                </div>
+    <div class="form-group mt-3">
+        <label for="footer_phone"> Phone Number
+            <span class="text-danger">*</span></label>
+        <input type="text" name="footer_phone"
+            class="form-control" id="footer_phone"
+            placeholder=" Phone Number" value="{{$homefooter->phoneNumber}}"
+           >
+    </div>
+    <div class="form-group mt-3">
+        <label for="footer_Fax"> Fax Number
+            <span class="text-danger">*</span></label>
+        <input type="text" name="footer_Fax"
+            class="form-control" id="footer_Fax"
+            placeholder=" Fax Number"  value="{{$homefooter->faxNumber}}"
+            >
+    </div>
+    
 
-                                                                <div class="form-group mt-3">
-                                                                    <label for="footer_phone"> Phone Number
-                                                                        <span class="text-danger">*</span></label>
-                                                                    <input type="text" name="footer_phone"
-                                                                        class="form-control" id="footer_phone"
-                                                                        placeholder=" Phone Number"
-                                                                        value="453876234">
-                                                                </div>
+    <div class="form-group mt-3">
+        <label for="footer_email"> Email <span class="text-danger">*</span></label>
+        <input type="email" name="footer_email"
+            class="form-control" id="footer_email"
+            placeholder="Enter Email"  value="{{$homefooter->email}}"
+            >
+    </div>
+
+    <h4 class="card-title mt-3">Social Icons</h4>
+        
+    <div
+                                                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                                           
+                                                                        </div>
+
+                                                                        <div class="card-body">
+                                                                            <div class="gocover"
+                                                                                style="background: url(https://product.geniusocean.com/genius-bank/assets/images/33CiUFaI1641808748.gif) no-repeat scroll center center rgba(45, 45, 45, 0.5);">
+                                                                            </div>
+
+                                                                            <div class="alert alert-success alert-dismissible"
+                                                                                style="display: none;">
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="alert">×</button>
+                                                                                <p class="m-0"></p>
+                                                                            </div>
 
 
-                                                                <div class="form-group mt-3">
-                                                                    <label for="footer_email"> Email <span class="text-danger">*</span></label>
-                                                                    <input type="email" name="footer_email"
-                                                                        class="form-control" id="footer_email"
-                                                                        placeholder="Store Email"
-                                                                        value="demoemail123@gmail.com">
-                                                                </div>
+                                                                            <div class="alert alert-danger alert-dismissible"
+                                                                                style="display: none;" role="alert">
+                                                                                <button type="button" class="close"
+                                                                                    data-dismiss="alert">×</button>
+                                                                                <p class="m-0"></p>
+                                                                            </div>
 
 
+                                                                            <input type="hidden" name="_token"
+                                                                                value="pMgt3K6hw7NqfFlt9rk5QhdcHvYvSbeuo47lqFVX">
 
-                                                                <div class="form-group mt-3">
-                                                                    <label for="copy_right">Copyright<span class="text-danger">*</span></label>
-                                                                    <textarea name="copy_right" id="copy_right"
-                                                                        class="form-control" rows="3"
-                                                                        placeholder="Copyright">Book Fair © All rights reserved.</textarea>
-                                                                </div>
+                                                                            <div class="row mb-2">
+                                                                                <label class="control-label col-sm-3"
+                                                                                    for="facebook">Facebook
+                                                                                    </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <input class="form-control"
+                                                                                        name="footer_facebook" id="footer_facebook"
+                                                                                        placeholder="http://facebook.com/"
+                                                                                        type="text"  value="{{$homefooter->facebook}}"
+                                                                                       >
+                                                                                </div>
+                                                                                
+                                                                            </div>
 
-                                                                <div class="mt-3 d-flex justify-content-end">
-                                                                    <button type="button" class="btn btn-primary">Submit</button>
-                                                                </div>
-                                                            </div>
 
-                                                        </div>
+                                                                            <div class="row mb-2">
+                                                                                <label class="control-label col-sm-3"
+                                                                                    for="twitter">Twitter </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <input class="form-control"
+                                                                                        name="footer_twitter" id="footer_twitter"
+                                                                                        placeholder="http://twitter.com/"
+                                                                                        type="text" value="{{$homefooter->twitter}}"
+                                                                                       >
+                                                                                </div>
+                                                                                
+                                                                            </div>
+
+                                                                            <div class="row mb-2">
+                                                                                <label class="control-label col-sm-3"
+                                                                                    for="linkedin">Youtube
+                                                                                    </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <input class="form-control"
+                                                                                        name="footer_youtube" id="footer_youtube"
+                                                                                        placeholder="http://youtube.com/"
+                                                                                        type="text"  value="{{$homefooter->youtube}}"
+                                                                                       >
+                                                                                </div>
+                                                                            
+                                                                            </div>
+                                                                        </div>
+
+    <div class="form-group mt-3">
+        <label for="copy_right">Copyright<span class="text-danger">*</span></label>
+        <textarea name="footer_copyright" id="footer_copyright"
+            class="form-control" rows="3"
+            placeholder="Enter Copyright"  value="{{$homefooter->copyright}}">{{$homefooter->copyright}}</textarea>
+    </div>
+
+    <div class="mt-3 d-flex justify-content-end">
+        <button type="button" id="submit" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+</div>
                                                     </div>
                                                     <div id="v-pills-fbanner" class="tab-pane fade">
-                                                        <form class="admin-form" action="#" method="POST"
-                                                            enctype="multipart/form-data">
+                                                     
+                         
 
-                                                            <input type="hidden" name="_token" value="">
+                                                            <input type="hidden" name="type" id="type" value="firstbanner">
 
                                                             <!-- banner 2 -->
 
-                                                            <div class="form-group">
-                                                                <label for="name">Set Image1 <span
-                                                                        class="text-danger">*</span></label>
-                                                                <br>
-                                                                <img class="admin-img" src="images\avatar\11.png"
-                                                                    alt="No Image Found">
-                                                                <br>
-                                                                <span class="mt-1">Image Size Should Be 496 x
-                                                                    204.</span>
-                                                            </div>
+                                      <div class="form-group">
+                                <label for="name">Set Image1 <span class="text-danger">*</span></label>
+                                <br>
+                                <img class="admin-img" id="bannerImage" src="images\avatar\11.png" alt="No Image Found">
+                                <br>
+                                <span class="mt-1">Image Size Should Be 270 x 340.</span>
+                            </div>
 
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3 file">
-                                                                        <input class="form-control" type="file"
-                                                                            id="formFile">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            {{-- <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="slug">Title <span
-                                                                                class="text-danger">*</span></label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Enter Title " value="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="mb-3">
-                                                                        <label for="slug">Subtitle <span
-                                                                                class="text-danger">*</span></label>
-                                                                        <input type="text" class="form-control"
-                                                                            placeholder="Enter Subtitle" value="">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group mb-4 mt-3">
-                                                                        <label for="meta_description">Description <span
-                                                                                class="text-danger">*</span></label>
-                                                                        <textarea name="meta_description" id="meta_description" class="form-control" rows="5"
-                                                                            placeholder="Enter Description">  Multipurpose eCommerce  Shopping Platform Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over .</textarea>
-                                                                    </div>
-                                                                </div>
-                                                            </div> --}}
+                            <div class="mb-3 file">
+                                <input class="form-control" type="file" id="formFile1" onchange="loadFile(event)">
+                            </div>
+                                                         
 
                                                             <div class="form-group d-flex justify-contant-end">
                                                                 <button type="submit"
-                                                                    class="btn btn-primary ">Submit</button>
+                                                                    class="btn btn-primary " id="submitbutton">Submit</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -1018,6 +967,103 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
             });
         });
         </script>
+          <script>
+
+$(document).on('click','#submit',function(e){
+   e.preventDefault();
+   
+
+   
+   var data = {
+      'about': $('#footer_about').val(),
+      'address': $('#footer_address').val(),
+      'phoneNumber': $('#footer_phone').val(),
+      'faxNumber': $('#footer_Fax').val(),
+      'email': $('#footer_email').val(),
+      'facebook': $('#footer_facebook').val(),
+      'twitter': $('#footer_twitter').val(),
+      'youtube': $('#footer_youtube').val(),
+      'copyright': $('#footer_copyright').val(),
+
+   
+};
+   $.ajaxSetup({
+      headers:{
+         'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+      }
+   });
+   $.ajax({
+      type:"post",
+      url:"/admin/footeradd",
+      data:data,
+      dataType:"json",
+      success: function(response) {
+         if(response.success){
+             toastr.success(response.success,{timeout:25000});
+  
+
+         }else{
+             toastr.error(response.error,{timeout:25000});
+         }
+
+     }
+   })
+
+})
+
+</script>
+
+<script>
+        document.getElementById('formFile1').addEventListener('change', function() {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('bannerImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                document.getElementById('bannerImage').src = 'images\avatar\11.png'; // Default image
+            }
+        });
+    </script>
+
+<script>
+        $(document).ready(function() {
+            $("#submitbutton").on("click", function (e) {
+                e.preventDefault();
+            
+                var bannerImage = $('#formFile1')[0].files;
+                var type = $("#type").val();
+                let fd = new FormData();
+                fd.append('type', type);
+                fd.append('bannerImage',bannerImage[0]);  
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    url: "/admin/banneradd",
+                    type: "POST",
+                    data: fd,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            toastr.success(response.success, {timeout: 2000});
+                            setTimeout(function () {
+                                window.location.href = "/admin/banner_setting";
+                            }, 3000);
+                        } else {
+                            toastr.error(response.error, {timeout: 2000});
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

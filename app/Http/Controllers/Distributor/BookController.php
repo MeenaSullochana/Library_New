@@ -22,7 +22,7 @@ use App\Models\Procurementpaymrnt;
 
 
 
-
+use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller
 {
@@ -849,7 +849,8 @@ if(isset($request->other_img)){
         $book->trans_from =        json_encode($request->trans_from)  ?? Null;
 
        }
-    
+       $book->discountedprice =        $request->discountedprice1;
+       $book->discount =       $request->discount ;
        $book->type =        $request->type;
        $book->length =       $length ;
        $book->breadth =       $breadth ;

@@ -8,7 +8,7 @@
                   </div>
                   <div class="col-lg-8 col-md-8 col-9 col-sm-9">
                      <div class="header__logo text-center">
-                        <a href="index.html"><img class="w-100" src="assets/img/logo/logo.png" alt="logo"></a>
+                        <a href="/"><img class="w-100" src="assets/img/logo/logo.png" alt="logo"></a>
                      </div>
                   </div>
                   <!-- <div class="col-lg-4 col-md-4 col-3 col-sm-5">
@@ -37,9 +37,9 @@
           <div class="tpsideinfo">
             <button class="tpsideinfo__close">Close<i class="fal fa-times ml-10"></i></button>
             <div class="tpsideinfo__search text-center pt-35">
-               <span class="tpsideinfo__search-title mb-20">What Are You Looking For?</span>
+               <!-- <span class="tpsideinfo__search-title mb-20">What Are You Looking For?</span> -->
                <form action="#">
-                  <input type="text" placeholder="Search Products...">
+                  <input type="text" placeholder="Search ...">
                   <button><i class="icon-search"></i></button>
                </form>
             </div>
@@ -48,11 +48,11 @@
                   <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Menu</button>
                   </li>
-                  <li class="nav-item" role="presentation">
+                  <!-- <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Categories</button>
-                  </li>
+                  </li> -->
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
+                <!-- <div class="tab-content" id="pills-tabContent">
                   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
                      <div class="mobile-menu"></div>
                   </div>
@@ -69,7 +69,7 @@
                         </ul>
                      </div>
                   </div>
-                </div>
+                </div> -->
             </div>
             <div class="tpsideinfo__account-link">							
                <a href="/login"><i class="icon-user icons"></i> Login </a>

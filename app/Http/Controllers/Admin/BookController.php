@@ -1193,9 +1193,9 @@ return response()->json($data);
   'internal'=>$internal,
   'public'=>$public
 ];
- 
+
  \Session::put('reviewer', $reviewer);
-    // return $book;
+  
       return redirect('admin/review'); 
   }
     } 

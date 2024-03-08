@@ -74,6 +74,10 @@
             </div> -->
         </section>
         <!-- feature-area-end -->
+        @php
+     $homefooter = DB::table('homefooter')->first();
+   
+    @endphp
         <footer>
             <div class="tpfooter__area theme-bg-2">
                 <div class="tpfooter__top pb-15">
@@ -83,17 +87,17 @@
                                 <div class="tpfooter__widget mb-50">
                                 <!--<div class="tpfooter__widget footer-col-1 mb-50">-->
                                     <h4 class="tpfooter__widget-title">About</h4>
-                                    <p style="padding-right: 20px !important;" class="p-3"> Public Libraries were opened in Tamil Nadu as per the “Tamil Nadu Public Libraries Act, 1948”. The Directorate of Public Libraries was formed in 1972 in order to improve the library services.<br>
+                                    <p style="padding-right: 20px !important;" class="p-3"> {{$homefooter->about}}.<br>
                                         <!-- <a href="mailto:support@example.com">support@example.com</a> -->
                                     </p>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
                                 <div class="tpfooter__widget footer-col-2 mb-50">
-                                    <h4 class="tpfooter__widget-title"> Looking for Orfarm?</h4>
-                                    <p><i class="fa fa-map-marker text-white" aria-hidden="true"></i> Gandhi Mandapam Rd, Surya Nagar, Kotturpuram, Chennai, Tamil Nadu 600085</p><br>
-                                    <p><i class="fa fa-phone-square text-white" aria-hidden="true"></i> 044-28524263 Fax: 044-28412087</p><br>
-                                    <p><a href="mailto:support@example.com"> <i class="fa fa-envelope-open text-white" aria-hidden="true"></i> dplchn@tn.gov.in</a></p>
+                                    <h4 class="tpfooter__widget-title"> Address Details</h4>
+                                    <p><i class="fa fa-map-marker text-white" aria-hidden="true"></i> {{$homefooter->address}}</p><br>
+                                    <p><i class="fa fa-phone-square text-white" aria-hidden="true"></i> {{$homefooter->phoneNumber}} Fax: {{$homefooter->faxNumber}}</p><br>
+                                    <p><a href="mailto:support@example.com"> <i class="fa fa-envelope-open text-white" aria-hidden="true"></i> {{$homefooter->email}}</a></p>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
@@ -118,10 +122,11 @@
                                     <div class="tpfooter__widget-newsletter">
                                         <div class="tpfooter__widget-social mt-45">
                                             <!-- <span class="tpfooter__widget-social-title mb-5">:</span> -->
-                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                            <a href="#"><i class="fab fa-twitter"></i></a>
-                                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                            <a href="{{$homefooter->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="{{$homefooter->twitter}}"><i class="fab fa-twitter"></i></a>
+                                            <a href="{{$homefooter->youtube}}"><i class="fab fa-youtube"></i></a>
                                         </div>
+       
                                     </div>
                                     <!-- <div class="tpfooter__widget-time-info mt-35">
                                         <span>Monday – Friday: <b>8:10 AM – 6:10 PM</b></span>
@@ -137,8 +142,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                <div class="tpfooter__copyright">
-                                    <span class="tpfooter__copyright-text">Copyright © <a href="#"> Directorate of Public Libraries, பொது நூலக இயக்ககம்.</a> all rights
+                                <div class="tpfooter__copyright text-center">
+                                    <span class="tpfooter__copyright-text">Copyright © <a href="#">{{$homefooter->copyright}}.</a> all rights
                                         reserved. Powered by <a href="#">Gladindia</a>.</span>
                                 </div>
                             </div>

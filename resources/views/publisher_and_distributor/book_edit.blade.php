@@ -154,6 +154,184 @@ $bookdescription = $data->bookdescription1;
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
+                                <h4>Book Author Details</h4>
+                            </div>
+                            <div class="col-md-10">
+                                <P class="fs-4">Enter the primary author or contributor. Pen names are allowed.
+                                    Additional authors can be added in the Contributors field.</P>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="basic-form">
+                                            <div class="row mb-3">
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Primary Author or
+                                                            Contributor
+                                                            <span class="text-danger">*</span></label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="primaryauthor" name="primaryauthor[]"
+                                                                placeholder="Enter Primary Author or
+                                                                Contributor" value="@if($data->primaryauthor1[0] != null) {{ $data->primaryauthor1[0] }} @endif"
+                                                                required>
+                                                            <div class="invalid-feedback">
+                                                                Book Title cannot be edited agter your book has been
+                                                                published.
+                                                                Click here to learn more.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Secondary Author
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="primaryauthor" name="primaryauthor[]"
+                                                                placeholder="Enter Secondary Author" value="@if($data->primaryauthor1[1] != null) {{ $data->primaryauthor1[1] }} @endif">
+                                                            <div class="invalid-feedback">
+                                                                Book Title cannot be edited agter your book has been
+                                                                published.
+                                                                Click here to learn more.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Tertiary Author
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="primaryauthor" name="primaryauthor[]"
+                                                                placeholder="Enter Tertiary Author" value="@if($data->primaryauthor1[2] != null) {{ $data->primaryauthor1[2] }} @endif">
+                                                            <div class="invalid-feedback">
+                                                                Book Title cannot be edited agter your book has been
+                                                                published.
+                                                                Click here to learn more.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Translator One
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="trans_author" name="trans_author[]"
+                                                                placeholder="Enter Translator One.." value="@if($data->trans_author1 != null && $data->trans_author1[0] != null) {{ $data->trans_author1[0] }} @endif">
+                                                            <div class="invalid-feedback">
+                                                                Book Title cannot be edited after your book has been
+                                                                published.
+                                                                Click here to learn more.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Translator Two
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="trans_author" name="trans_author[]"
+                                                                placeholder="Enter Translator Two.." value="@if($data->trans_author1 != null && $data->trans_author1[1] != null) {{ $data->trans_author1[1] }} @endif">
+                                                            <div class="invalid-feedback">
+                                                                Book Title cannot be edited agter your book has been
+                                                                published.
+                                                                Click here to learn more.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Translator Three
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="trans_author" name="trans_author[]"
+                                                                placeholder="Enter Translator Three.." value="@if($data->trans_author1 != null && $data->trans_author1[2] != null) {{ $data->trans_author1[2] }} @endif">
+                                                            <div class="invalid-feedback">
+                                                                Book Title cannot be edited agter your book has been
+                                                                published.
+                                                                Click here to learn more.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Translated to (1)
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="trans_from" name="trans_from[]"
+                                                                placeholder="Translated to." value="@if($data->trans_from1 != null && $data->trans_from1[0] != null) {{ $data->trans_from1[0] }} @endif">
+                                                            <div class="invalid-feedback">
+                                                                Book title cannot be edited after your book has been published.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="mb-3">
+                                                        <label class="text-label form-label text-black"
+                                                            for="validationCustomUsername">Translated to (2)
+                                                        </label>
+                                                        <div class="input-group">
+                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                            <input type="text" class="form-control"
+                                                                id="trans_from" name="trans_from[]"
+                                                                placeholder="Translated to." value="@if($data->trans_from1 != null && $data->trans_from1[1] != null) {{ $data->trans_from1[1] }} @endif">
+                                                            <div class="invalid-feedback">
+                                                                Book Title cannot be edited agter your book has been
+                                                                published.
+                                                                Click here to learn more.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="bg-light-new mt-4">
+                        <div class="row p-3">
+                            <div class="col-md-2">
                                 <h4>Series</h4>
                             </div>
                             <div class="col-md-10">
@@ -339,184 +517,7 @@ $bookdescription = $data->bookdescription1;
                             </div>
                         </div>
                     </section>
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Book Author Details</h4>
-                            </div>
-                            <div class="col-md-10">
-                                <P class="fs-4">Enter the primary author or contributor. Pen names are allowed.
-                                    Additional authors can be added in the Contributors field.</P>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="basic-form">
-                                            <div class="row mb-3">
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Primary Author or
-                                                            Contributor
-                                                            <span class="text-danger">*</span></label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Primary Author or
-                                                                Contributor" value="@if($data->primaryauthor1[0] != null) {{ $data->primaryauthor1[0] }} @endif"
-                                                                required>
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Secondary Author
-                                                        </label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Secondary Author" value="@if($data->primaryauthor1[1] != null) {{ $data->primaryauthor1[1] }} @endif">
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Tertiary Author
-                                                        </label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="primaryauthor" name="primaryauthor[]"
-                                                                placeholder="Enter Tertiary Author" value="@if($data->primaryauthor1[2] != null) {{ $data->primaryauthor1[2] }} @endif">
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Translator One
-                                                        </label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="trans_author" name="trans_author[]"
-                                                                placeholder="Enter Translator One.." value="@if($data->trans_author1 != null && $data->trans_author1[0] != null) {{ $data->trans_author1[0] }} @endif">
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited after your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Translator Two
-                                                        </label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="trans_author" name="trans_author[]"
-                                                                placeholder="Enter Translator Two.." value="@if($data->trans_author1 != null && $data->trans_author1[1] != null) {{ $data->trans_author1[1] }} @endif">
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Translator Three
-                                                        </label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="trans_author" name="trans_author[]"
-                                                                placeholder="Enter Translator Three.." value="@if($data->trans_author1 != null && $data->trans_author1[2] != null) {{ $data->trans_author1[2] }} @endif">
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Translated to (1)
-                                                        </label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="trans_from" name="trans_from[]"
-                                                                placeholder="Translated to." value="@if($data->trans_from1 != null && $data->trans_from1[0] != null) {{ $data->trans_from1[0] }} @endif">
-                                                            <div class="invalid-feedback">
-                                                                Book title cannot be edited after your book has been published.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="mb-3">
-                                                        <label class="text-label form-label text-black"
-                                                            for="validationCustomUsername">Translated to (2)
-                                                        </label>
-                                                        <div class="input-group">
-                                                            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                            <input type="text" class="form-control"
-                                                                id="trans_from" name="trans_from[]"
-                                                                placeholder="Translated to." value="@if($data->trans_from1 != null && $data->trans_from1[1] != null) {{ $data->trans_from1[1] }} @endif">
-                                                            <div class="invalid-feedback">
-                                                                Book Title cannot be edited agter your book has been
-                                                                published.
-                                                                Click here to learn more.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                 
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -554,9 +555,95 @@ $bookdescription = $data->bookdescription1;
                                                 <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" value="{{$data->yearOfPublication}}" required>
                                             </div>
                                         </div>
+                                       
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Place of Origin<span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                        <input type="text" class="form-control" id="place"
+                                                            name="place" placeholder="Enter Place of Origin.." value="{{$data->place}}" required>
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
                                     </div>
                                 </div>
                             </div>
+
+                        </div>
+                    </section>
+                    <section class="bg-light-new">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Categorization</h4>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="col-lg-12">
+                                     <div class="basic-form">
+ 
+                                    
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Book Category <span
+                                                            class="text-danger">*</span></label>
+                                                    <select class="default-select wide form-control" id="category"
+                                                        name="category" required>
+                                                        @php
+                                                          $categori = DB::table('special_categories')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                          @if($data->category == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                          @else
+                                                          <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @endif
+                                                            @endforeach
+                                                    </select>
+                                                </div>
+                                           
+                                          
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Subject <span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+                                                        <select class="default-select wide form-control" id=""
+                                                        name="subject" required>
+
+                                                        @php
+                                                          $categori = DB::table('book_subject')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                          @if($data->subject == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                          @else
+                                                          <option value="{{$val->name}}">{{$val->name}}</option>
+                                                          @endif
+
+                                                            @endforeach
+                                                    </select>
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                          
+                                         
+         
+    </div>
+</div>
+</div>
 
                         </div>
                     </section>
@@ -842,79 +929,12 @@ $bookdescription = $data->bookdescription1;
 
                                                 </div>
                                             </div>--}}
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Book Categories <span
-                                                            class="text-danger">*</span></label>
-                                                    <select class="default-select wide form-control" id="category"
-                                                        name="category" required>
-                                                        @php
-                                                          $categori = DB::table('special_categories')->where('status','=','1')->get();
-                                                          @endphp
-                                                          @foreach($categori as $val)
-                                                          @if($data->category == $val->name)
-                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
-                                                          @else
-                                                          <option value="{{$val->name}}">{{$val->name}}</option>
-                                                          @endif
-                                                            @endforeach
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Subject <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                        <select class="default-select wide form-control" id=""
-                                                        name="subject" required>
-
-                                                        @php
-                                                          $categori = DB::table('book_subject')->where('status','=','1')->get();
-                                                          @endphp
-                                                          @foreach($categori as $val)
-                                                          @if($data->subject == $val->name)
-                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
-                                                          @else
-                                                          <option value="{{$val->name}}">{{$val->name}}</option>
-                                                          @endif
-
-                                                            @endforeach
-                                                    </select>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                          
 
 
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Place of Origin<span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-
-                                                        <input type="text" class="form-control" id="place"
-                                                            name="place" placeholder="Enter Place of Origin.." value="{{$data->place}}" required>
-                                                        <div class="invalid-feedback">
-                                                            Book Title cannot be edited agter your book has been
-                                                            published.
-                                                            Click here to learn more.
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                          
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
@@ -962,6 +982,41 @@ $bookdescription = $data->bookdescription1;
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="col-md-6">
+    <div class="mb-3">
+        <label class="text-label form-label text-black"
+            for="validationCustomUsername">Discount(%) <span class="text-danger">*</span></label>
+        <div class="input-group">
+            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+
+            <input type="number" class="form-control" value="{{$data->discount}}" id="discount"
+                name="discount" placeholder="Enter discount.." required>
+            <div class="invalid-feedback">
+                Book Title cannot be edited agter your book has been
+                published.
+                Click here to learn more.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="mb-3">
+        <label class="text-label form-label text-black"
+            for="validationCustomUsername">Discounted Price<span class="text-danger">*</span></label>
+        <div class="input-group">
+            <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+            <input type="number" class="form-control" value="{{$data->discountedprice}}" id="discountedprice1"
+                name="discountedprice1" placeholder="Enter final amount.." hidden>
+            <input type="number" class="form-control" id="discountedprice"
+                name="discountedprice" placeholder="Enter final amount.." value="{{$data->discountedprice}}" disabled>
+            <div class="invalid-feedback">
+                Book Title cannot be edited agter your book has been
+                published.
+                Click here to learn more.
+            </div>
+        </div>
+    </div>
+</div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black" for="validationCustomUsername">Short Description <span class="text-danger">*</span></label><br>
@@ -1872,6 +1927,29 @@ $bookdescription = $data->bookdescription1;
         return true;
     }
 </script> -->
+<script>
+    // JavaScript code
+    function calculateDiscount() {
+        var price = parseFloat(document.getElementById('price').value);
+        var discount = parseFloat(document.getElementById('discount').value);
+        
+        if (!isNaN(price) && !isNaN(discount)) {
+            var discountedPrice = Math.round(price - (price * discount / 100)); // Round to the nearest integer
+            document.getElementById('discountedprice').value = discountedPrice;       
+                 document.getElementById('discountedprice1').value = discountedPrice;
+
+
+        } else {
+
+            document.getElementById('discountedprice').value = '';
+            document.getElementById('discountedprice1').value = '';
+
+        }
+    }
+    
+    document.getElementById('price').addEventListener('keyup', calculateDiscount);
+    document.getElementById('discount').addEventListener('keyup', calculateDiscount);
+</script>
 <script>
         $(document).ready(function() {
             // Event listener for radio buttons
