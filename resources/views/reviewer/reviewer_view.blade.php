@@ -79,30 +79,30 @@
                                     </div>
                                     <div class="card-content ">
                                         <div class="card-content-member">
-                                            <h4 class="m-t-0">Public Reviewer Name</h4>
-                                            <p class="m-0"><i class="pe-7s-map-marker"></i>{{$data->name}} </p>
+                                            <h4 class="m-t-0 text-primary">Public Reviewer Name</h4>
+                                            <h5 class="m-0"><i class="pe-7s-map-marker"></i>{{$data->name}} </p>
                                         </div>
                                             <h3 class="text-center pt-4">Reviewer Details</h3>
                                         <div class="row pb-5 ">
-                                            <div class="col-md-6 text-end fw-bold"> Reviewer Name : </div>
-                                            <div class="col-md-6">{{$data->name}}</div>
-                                            <div class="col-md-6 text-end fw-bold"> Reviewer Email : </div>
-                                            <div class="col-md-6">{{$data->email}}</div>
-                                            <div class="col-md-6 text-end fw-bold"> Reviewer phonenumber : </div>
-                                            <div class="col-md-6">{{$data->phoneNumber}}</div>
+                                            <div class="col-md-6 text-end fw-bold text-primary"><b> Reviewer Name</b>  </div>
+                                            <div class="col-md-6">: {{$data->name}}</div>
+                                            <div class="col-md-6 text-end fw-bold text-primary"> <b>Reviewer Email</b> </div>
+                                            <div class="col-md-6">: {{$data->email}}</div>
+                                            <div class="col-md-6 text-end fw-bold text-primary"> <b>Reviewer phonenumber </b></div>
+                                            <div class="col-md-6">: {{$data->phoneNumber}}</div>
 
-                                               <div class="col-md-6 text-end fw-bold">Category : </div>
+                                               <div class="col-md-6 text-end fw-bold text-primary"><b>Category</b> </div>
 											<div class="col-md-6">
 											 
-                                                      {{$data->Category}}
+												: {{$data->Category}}
                     
 											</div>
 
-											<div class="col-md-6 text-end fw-bold"> MembershipId  : </div>
-                                            <div class="col-md-6">{{$data->membershipId}}</div>
+											<div class="col-md-6 text-end fw-bold text-primary"><b> MembershipId </b>  </div>
+                                            <div class="col-md-6">: {{$data->membershipId}}</div>
 
-											<div class="col-md-6 text-end fw-bold"> District  : </div>
-                                            <div class="col-md-6">{{$data->district}}</div>
+											<div class="col-md-6 text-end fw-bold text-primary"><b> District</b>  </div>
+                                            <div class="col-md-6">: {{$data->district}}</div>
 
 					
 

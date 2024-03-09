@@ -178,8 +178,7 @@
 
 												<td>
 													<a href="/reviewer/review_post_book/{{$val->book->id}}/{{$val->id}}"> <i class="fa fa-eye p-2"></i></a>
-													{{-- <a href="book_view.php"><i class="fa fa-edit p-2"></i></a>
-													<i class="fa fa-trash-o p-2" aria-hidden="true"></i> --}}
+													
 												</td>
 											</tr>
 											{{-- <tr>

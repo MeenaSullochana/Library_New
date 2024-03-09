@@ -14,6 +14,6 @@ include(base_path('routes/librarian.php'));
 include(base_path('routes/order.php'));
 
 Route::get('/', function () {return view('index');});
-
-
-
+Route::get('/faq',function(){return view('faq');});
+Route::get('/contact-us',function(){return view('contact-us');});
+Route::get('/about',function(){return view('about');});

@@ -10,10 +10,10 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- PAGE TITLE HERE -->
-    <title>Member - Login </title>
+    
+
     <!-- FAVICONS ICON -->
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
 
 <link href="/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 <link href="/vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
@@ -172,7 +172,7 @@
                                     <div class="card-footer">
                                         <div class=" bottom-footer clearfix m-t10 m-b20 row text-center">
                                             <div class="col-lg-12 text-center">
-                                                <span> Copyright © 2023
+                                                <span> Copyright © 2024
                                                     Directorate of Public Libraries, பொது நூலக இயக்ககம் <a href="#">|
                                                         Design by Gladindia</a></span>
                                             </div>
