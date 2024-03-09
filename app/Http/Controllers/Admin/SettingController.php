@@ -494,7 +494,7 @@ public function reviewerbatchadd(Request $req){
             $record->copyright=$req->copyright;
             $record->facebook=$req->facebook;
             $record->twitter=$req->twitter;
-            $record->linkedin=$req->linkedin;
+            $record->youtube=$req->youtube;
             $record->save();
             $data= [
                 'success' => 'Home footer Update Successfully',
@@ -527,5 +527,77 @@ public function reviewerbatchadd(Request $req){
 
 
     }
+    // public function websitelogo(Request $req)
+    // {
+    //     $validator = Validator::make($req->all(), [
+    //         'websitelogo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    //     ]);
     
+    //     if ($validator->fails()) {
+    //         $data = [
+    //             'error' => $validator->errors()->first(),
+    //         ];
+    //         return response()->json($data);  
+    //     }
+      
+
+    //     $imageName = 'logo.png';
+    //     $imagename1 = 'logo.png';
+
+    //     if($req->websitelogo != "undefined"){
+    //         File::delete(public_path('images/' . $imageName));
+    //         File::delete(public_path('assets/img/logo/' . $imagename1));
+    //       $image = $req->file('websitelogo');
+    //       $image1 = $req->file('websitelogo');
+    //       $imagename = $imageName;
+    //       $imagename1 = $imageName1;
+    //       $image->move('images', $imagename);
+    //       $image1->move('assets/img/logo', $imagename1);
+    //     }
+        
+    //     $data= [
+    //         'success' => 'Home footer Update Successfully',
+    //              ];
+    //     return response()->json($data);
+    // }
+    public function websitelogo(Request $req)
+    {
+        $validator = Validator::make($req->all(), [
+            'websitelogo' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+    
+        if ($validator->fails()) {
+            $data = [
+                'error' => $validator->errors()->first(),
+            ];
+            return response()->json($data);
+        }
+    
+        $imageName = 'logo.png';
+    
+        if ($req->hasFile('websitelogo')) {
+            $image = $req->file('websitelogo');
+    
+            File::delete(public_path('assets/img/logo/' . $imageName));
+    
+            try {
+             
+                $image->move(public_path('assets/img/logo'), $imageName);
+            } catch (\Exception $e) {
+                // If an error occurs during file move, return error response
+                $data = [
+                    'error' => 'Error occurred while uploading the file.',
+                ];
+                return response()->json($data);
+            }
+        }
+    
+        $data = [
+            'success' => 'Home footer Update Successfully',
+        ];
+        return response()->json($data);
+    }
+    
+    
+
 }

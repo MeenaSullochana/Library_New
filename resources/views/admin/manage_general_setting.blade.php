@@ -140,7 +140,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
 
                                                         <!-- /Column  -->
                                                         <div class="row">
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-12">
                                                                 <div class="col-xl-12 col-lg-12">
                                                                     <div class="clearfix">
                                                                         <div
@@ -152,53 +152,52 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                         Logo<span class="text-danger">*</span></div>
                                                                                     <div class="col-md-6">
                                                                                         <div class="dropdown">
-                                                                                            <button type="button"
+                                                                                            <!-- <button type="button"
                                                                                                 class="btn btn-success light sharp btn-sm btn-rounded dropdown-toggle"
                                                                                                 data-bs-toggle="dropdown"
                                                                                                 aria-expanded="false">
                                                                                                 Enabled
-                                                                                            </button>
-                                                                                            <div class="dropdown-menu"
-                                                                                                >
-                                                                                                <!-- Button trigger modal -->
-                                                                                                <a class="dropdown-item"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#unblock"
-                                                                                                    href="#">Enabled</a>
-                                                                                                <a class="dropdown-item"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#unblock"
-                                                                                                    href="#">Disable</a>
+                                                                                            </button> -->
+                                                                                            <div class="dropdown-menu">
+                                                                                               
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="p-5">
                                                                                     <div class="author-profile">
-                                                                                        <div class="author-media">
-                                                                                            <img src="images/user.jpg"
-                                                                                                alt="">
-                                                                                            <div class="upload-link"
-                                                                                                title=""
-                                                                                                data-toggle="tooltip"
-                                                                                                data-placement="right"
-                                                                                                data-original-title="update">
-                                                                                                <input type="file"
-                                                                                                    class="update-flie">
-                                                                                                <i
-                                                                                                    class="fa fa-camera"></i>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="author-info">
-                                                                                            <h6 class="title">Upload
-                                                                                                Picture
-                                                                                            </h6>
-                                                                                        </div>
+                                                                                    <div class="form-group">
+                                <label for="name">Set Image1 <span class="text-danger">*</span></label>
+                                <br>
+                                <img class="admin-img" id="websitelogo" src="images\avatar\11.png" alt="No Image Found">
+                                <br>
+                                <span class="mt-1">Image Size Should Be 270 x 340.</span>
+                            </div>
+
+                            <div class="mb-3 file col-md-6 mx-auto">
+                                <input class="form-control" type="file" id="formFile22" onchange="loadFile(event)">
+                            </div>
+                        
+                        
 
                                                                                     </div>
                                                                                     <div class="text-center">
                                                                                         <div class="row">
-                                                                                            <div class="col-md-12">
+                                                                                            <div class="mx-auto col-md-6">
+                                                                                                <div
+                                                                                                    class="card-body mt-004">
+                                                                                                    <button
+                                                                                                        type="submit"
+                                                                                                        id="submitbutton22" 
+                                                                                                        class="btn btn-primary mt-3 text-center btn-block">Submit</button>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                    </div>
+                                                                                    <!-- <div class="text-center">
+                                                                                        <div class="row">
+                                                                                            <div class="ms-auto">
                                                                                                 <div
                                                                                                     class="card-body mt-004">
                                                                                                     <button
@@ -209,14 +208,14 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                             </div>
                                                                                         </div>
 
-                                                                                    </div>
+                                                                                    </div> -->
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
+                                                            <!-- <div class="col-md-6">
                                                                 <div class="col-xl-12 col-lg-12">
                                                                     <div class="clearfix">
                                                                         <div
@@ -236,7 +235,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                             </button>
                                                                                             <div class="dropdown-menu"
                                                                                                >
-                                                                                                <!-- Button trigger modal -->
+                                                                                             
                                                                                                 <a class="dropdown-item"
                                                                                                     data-bs-toggle="modal"
                                                                                                     data-bs-target="#unblock"
@@ -291,7 +290,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </div> -->
                                                         </div>
                                                         <!-- /Column  -->
                                                     </div>
@@ -840,16 +839,16 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
 
                                                             <!-- banner 2 -->
 
-                                      <div class="form-group">
+                           <div class="form-group">
                                 <label for="name">Set Image1 <span class="text-danger">*</span></label>
                                 <br>
-                                <img class="admin-img" id="bannerImage" src="images\avatar\11.png" alt="No Image Found">
+                                <img class="admin-img" id="bannerImage1" src="images\avatar\11.png" alt="No Image Found">
                                 <br>
                                 <span class="mt-1">Image Size Should Be 270 x 340.</span>
                             </div>
 
                             <div class="mb-3 file">
-                                <input class="form-control" type="file" id="formFile1" onchange="loadFile(event)">
+                                <input class="form-control" type="file" id="formFile11" onchange="loadFile(event)">
                             </div>
                                                          
 
@@ -1014,30 +1013,30 @@ $(document).on('click','#submit',function(e){
 </script>
 
 <script>
-        document.getElementById('formFile1').addEventListener('change', function() {
+        document.getElementById('formFile22').addEventListener('change', function() {
             var file = this.files[0];
             if (file) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
-                    document.getElementById('bannerImage').src = e.target.result;
+                    document.getElementById('websitelogo').src = e.target.result;
                 };
                 reader.readAsDataURL(file);
             } else {
-                document.getElementById('bannerImage').src = 'images\avatar\11.png'; // Default image
+                document.getElementById('websitelogo').src = 'images\avatar\11.png'; // Default image
             }
         });
     </script>
 
 <script>
         $(document).ready(function() {
-            $("#submitbutton").on("click", function (e) {
+            $("#submitbutton22").on("click", function (e) {
                 e.preventDefault();
             
-                var bannerImage = $('#formFile1')[0].files;
-                var type = $("#type").val();
+                var websitelogo = $('#formFile22')[0].files;
+              
                 let fd = new FormData();
                 fd.append('type', type);
-                fd.append('bannerImage',bannerImage[0]);  
+                fd.append('websitelogo',websitelogo[0]);  
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1045,7 +1044,7 @@ $(document).on('click','#submit',function(e){
                 });
 
                 $.ajax({
-                    url: "/admin/banneradd",
+                    url: "/admin/websitelogo",
                     type: "POST",
                     data: fd,
                     processData: false,
@@ -1075,5 +1074,10 @@ $(document).on('click','#submit',function(e){
     border: 1px solid;
     top: 10px !important;
     margin-top: 2px;
+}
+img#websitelogo {
+    max-height: 100px;
+    max-width: 450px;
+    /* border: 1px solid #452b90; */
 }
 </style>

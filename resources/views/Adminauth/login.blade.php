@@ -43,9 +43,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                 <div class="login-form style-2">
                                     <div class="card-body">
                                         <div class="logo-header">
-                                            <a href="index.php" class="logo"><img src="images/logo.png" alt=""
+                                            <a href="index.php" class="logo"><img src="/assets/img/logo/logo.png" alt=""
                                                     class=" light-logo"></a>
-                                            <a href="index.php" class="logo"><img src="images/logo.png" alt=""
+                                            <a href="index.php" class="logo"><img src="/assets/img/logo/logo.png" alt=""
                                                     class=" dark-logo"></a>
                                         </div>
                                         <nav>
