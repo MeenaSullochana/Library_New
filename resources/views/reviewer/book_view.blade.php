@@ -57,7 +57,7 @@
                             <h3 class="mb-0 bc-title">
                                 <b>Book View</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="#">
+                            <a class="btn btn-primary  btn-sm" href="review_book_list">
                                 <i class="fa fa-arrow-left" aria-hidden="true"></i> Back </a>
                         </div>
                     </div>
@@ -917,7 +917,7 @@
                                 <div class="d-flex mb-5">
                                     <div class="auth_details">
                                         <div class="row align-items-center">
-                                            <div class="col-md-4 text-center">
+                                            <div class="col-md-auto text-center">
                                                 @if ($data->author_img != null)
                                                     <img src="{{ asset('Books/author_img/' . $data->author_img) }}"
                                                         class="avatar avatar-md rounded-circle"
@@ -1611,7 +1611,10 @@ text-align: center;
 .bg-main{
     background-color: #222B40;
 }
-
+.avatar.avatar-md {
+    height: 75px !important;
+    width: 75px !important;
+}
 /* img {
   background-position: top;
   background-size: cover;

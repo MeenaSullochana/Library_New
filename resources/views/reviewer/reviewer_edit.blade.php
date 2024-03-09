@@ -93,8 +93,8 @@
                                                         <div class="col-sm-12 mb-3" >
                                                         <label class="form-label">District<span
                                                      class="text-danger maditory">*</span></label>
-                                                        <select name="district" class="form-select" id="district" Required>
-                                                        <option value="{{$data->district}}">$data->district</option>
+                                                        <select name="district" class="form-select bg-white" id="district" Required>
+                                                        <option value="{{$data->district}}">{{$data->district}}</option>
 
                                                                @php
                                                                 $districts = DB::table('districts')->where('status', '=', 1)->where('name','!=',$data->district)->get();
@@ -121,10 +121,9 @@
                                                             <label class="form-label">Book Categories<span
                                                               class="text-danger maditory">*</span></label>
                                                             <!-- <input type="text" class="form-control" placeholder="Enter Subject" id="subject" Required> -->
-                                                            <select class="form-select" id="Category"
+                                                            <select class="form-select bg-white" id="Category"
                                                         name="Category" required>
-                                                        <option value="{{$data->Category}}">$data->Category<span
-                                 class="text-danger maditory">*</span></option>
+                                                        <option value="{{$data->Category}}">{{$data->Category}}</option>
                                                         @php
                                                           $categori = DB::table('special_categories')->where('status','=','1')->where('name','!=',$data->Category)->get();
                                                           @endphp
@@ -152,9 +151,9 @@
                                                                 <div class="author-profile">
                                                                     <div class="author-media">
                                                                     @if($data->profileImage == null)
-        <img src="{{ asset('reviewer/images/default.png') }}" alt="" id="output">
+        <img class="img-ava" src="{{ asset('reviewer/images/default.png') }}" alt="" id="output">
     @else
-        <img src="{{ asset('reviewer/ProfileImage/' . $data->profileImage) }}" alt="" id="output">
+        <img class="img-ava" src="{{ asset('reviewer/ProfileImage/' . $data->profileImage) }}" alt="" id="output">
     @endif
 
                                                                         <div class="upload-link" title="" data-toggle="tooltip" data-placement="right" data-original-title="update">
@@ -320,5 +319,8 @@
 
 </html>
 <style>
-
+.img-ava{
+    width: 175px !important;
+    height: 175px;
+}
 </style>

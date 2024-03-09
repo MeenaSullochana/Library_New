@@ -93,7 +93,7 @@
                                                         <div class="col-sm-12 mb-3" >
                                                         <label class="form-label">District<span
                                                      class="text-danger maditory">*</span></label>
-                                                        <select name="district" class="form-select" id="district" Required>
+                                                        <select name="district" class="form-select bg-white" id="district" Required>
                                                         <option value="">Select District</option>
 
                                                                @php
@@ -121,7 +121,7 @@
                                                             <label class="form-label">Book Categories<span
                                                               class="text-danger maditory">*</span></label>
                                                             <!-- <input type="text" class="form-control" placeholder="Enter Subject" id="subject" Required> -->
-                                                            <select class="form-select" id="Category"
+                                                            <select class="form-select bg-white" id="Category"
                                                         name="Category" required>
                                                         <option value="">Select One<span
                                  class="text-danger maditory">*</span></option>
@@ -136,9 +136,9 @@
                                                         </div>
                                                      
                                                         <div class="col-sm-12 mb-3">
-                                                            <label class="form-label">Phone number<span
+                                                            <label class="form-label">Phone Number<span
                                                                class="text-danger maditory">*</span></label>
-                                                            <input type="number" class="form-control" placeholder="Enter  Phonenumber" id="phoneNumber" Required>
+                                                            <input type="number" class="form-control" placeholder="Enter  Phone Number" id="phoneNumber" Required>
                                                         </div>
 
                                                     </div>
@@ -151,7 +151,7 @@
                                                             <div class="p-5">
                                                                 <div class="author-profile">
                                                                     <div class="author-media">
-                                                                        <img src="images/user.jpg" alt="" id="output" >
+                                                                        <img class="img-ava" src="images/user.jpg" alt="" id="output" >
                                                                         <div class="upload-link" title="" data-toggle="tooltip" data-placement="right" data-original-title="update">
                                                                             <input type="file" class="update-flie" id="profileImage" onchange="loadFile(event)" Required>
                                                                             <i class="fa fa-camera"></i>
@@ -308,5 +308,8 @@
 
 </html>
 <style>
-
+.img-ava{
+    width: 175px !important;
+    height: 175px;
+}
 </style>

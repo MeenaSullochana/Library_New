@@ -14,8 +14,8 @@
 	<!-- PAGE TITLE HERE -->
 	<title>Government of Tamil Nadu - Book Procurement </title>
 
-	<!-- FAVICONS ICON -->
-	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <!-- FAVICONS ICON -->
+    <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
 
 	<link href="/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<link href="/vendor/swiper/css/swiper-bundle.min.css" rel="stylesheet">
@@ -195,7 +195,7 @@
 										$rec2 = DB::table('reviewer')->where('creater', $id)->where('status', 0)->count();
 									@endphp
 										<h3 class="text-purple count">{{$rec2}}</h3>
-										<span>Total Inactive Reviewr</span>
+										<span>Total Inactive Reviewer</span>
 									</div>
 								</div>
 							</div>
