@@ -44,8 +44,8 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css
                                 <div class="login-form style-2">
                                     <div class="card-body">
                                     <div class="logo-header">
-                                        <a href="" class="logo"><img src="{{ asset('reviewer/images/logo.png') }}" alt="" class="light-logo"></a>
-                                        <a href="" class="logo"><img src="{{ asset('reviewer/images/logo.png') }}" alt="" class="dark-logo"></a>
+                                        <a href="" class="logo"><img src="/assets/img/logo/logo.png" alt="" class="light-logo"></a>
+                                        <a href="" class="logo"><img src="/assets/img/logo/logo.png" alt="" class="dark-logo"></a>
                                     </div>
                                         <nav>
                                             <div class="nav nav-tabs border-bottom-0" id="nav-tab" role="tablist">

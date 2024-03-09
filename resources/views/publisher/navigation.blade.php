@@ -7,7 +7,7 @@
 </head>
         <div class="nav-header">
             <a href="/publisher/index" class="brand-logo">
-				<img src="{{asset('publisher/images/logo.png')}}" width="111" height="24">
+				<img src="/assets/img/logo/logo.png" width="111" height="24">
             </a>
             <div class="nav-control">
                 <div class="hamburger">

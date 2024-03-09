@@ -656,7 +656,7 @@ Route::get('/forgotcontent',function(){ return view('admin.forgotcontent');});
 Route::post('/homepageboookedit',[SettingController::class,'homepageboookedit']);
 // footer
 Route::post('/footeradd',[SettingController::class,'footeradd']);
-Route::post('/banneradd',[SettingController::class,'banneradd']);
+Route::post('/websitelogo',[SettingController::class,'websitelogo']);
 
 
 
