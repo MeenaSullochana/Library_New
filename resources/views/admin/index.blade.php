@@ -69,7 +69,7 @@
                             <div class="col-xl-12">
                                 <div class="row">
                                     <div class="col-xl-12">
-                                        <h4>Publisher</h4>
+                                        <h4>Publisher new</h4>
                                         <div class="row">
                                             <div class="col-xl-4 col-sm-4">
                                                 <div class="card">
