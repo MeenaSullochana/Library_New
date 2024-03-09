@@ -17,12 +17,12 @@ class WebsitebookController extends Controller
     $books = Book::where('negotiation_status', '=', 2)
     ->where('book_active_status', '=', 1)
     ->orderBy('marks', 'desc')
-    ->paginate(2); // Adjust the pagination size as needed
+    ->paginate(6); // Adjust the pagination size as needed
 
    $popularBooks = Book::where('negotiation_status', '=', 2)
             ->where('book_active_status', '=', 1)
             ->orderBy('marks', 'desc')
-            ->paginate(2);
+            ->paginate(6);
 
 return view('product', compact('books', 'popularBooks'));
                

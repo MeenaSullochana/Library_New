@@ -1725,7 +1725,7 @@
 					</li> -->
 					<li class="menu-title">Librarian</li>
 					
-					<li><a href="../index.php" class="" aria-expanded="false">
+					<li><a href="/" class="" aria-expanded="false">
                             <div class="menu-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -1742,6 +1742,7 @@
                             <span class="nav-text">Dashboard</span>
                         </a>
                     </li>
+					@if(auth('librarian')->user()->metaChecker =="no")
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 							<i class="bi bi-book"></i>	
 							<span class="nav-text">Books Management</span>
@@ -1783,6 +1784,7 @@
 							<li><a href="../website/">Visit Book Store</a></li>
 						</ul>
 					</li>
+					@endif
 					@if(auth('librarian')->user()->metaChecker =="yes")
 					<li><a class="has-arrow " href="javascript:void(0);" aria-expanded="false">
 						<i class="bi bi-card-checklist"></i>
