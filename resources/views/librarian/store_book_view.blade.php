@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,7 +42,7 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
         <!--**********************************
             Nav header start
             ***********************************-->
-            @include ('librarian.navigation')
+        @include ('librarian.navigation')
 
         <!--**********************************
             Sidebar end
@@ -75,17 +74,25 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                     <div class="col-xl-3 col-lg-6 col-md-6">
                                         <!-- Tab panes -->
                                         <div class="tab-content" id="myTabContent">
-                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                                                <img class="img-fluid rounded" src="../user_librarian/images/books/1.webp" alt="">
+                                            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+                                                aria-labelledby="home-tab" tabindex="0">
+                                                <img class="img-fluid rounded"
+                                                    src="../user_librarian/images/books/1.webp" alt="">
                                             </div>
-                                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                                                <img class="img-fluid rounded " src="../user_librarian/images/books/2.webp" alt="">
+                                            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel"
+                                                aria-labelledby="profile-tab" tabindex="0">
+                                                <img class="img-fluid rounded "
+                                                    src="../user_librarian/images/books/2.webp" alt="">
                                             </div>
-                                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                                                <img class="img-fluid rounded" src="../user_librarian/images/books/3.webp" alt="">
+                                            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel"
+                                                aria-labelledby="contact-tab" tabindex="0">
+                                                <img class="img-fluid rounded"
+                                                    src="../user_librarian/images/books/3.webp" alt="">
                                             </div>
-                                            <div class="tab-pane fade" id="end-tab-pane" role="tabpanel" aria-labelledby="end-tab" tabindex="0">
-                                                <img class="img-fluid rounded" src="../user_librarian/images/books/4.webp" alt="">
+                                            <div class="tab-pane fade" id="end-tab-pane" role="tabpanel"
+                                                aria-labelledby="end-tab" tabindex="0">
+                                                <img class="img-fluid rounded"
+                                                    src="../user_librarian/images/books/4.webp" alt="">
                                             </div>
 
                                         </div>
@@ -93,16 +100,36 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                             <!-- Nav tabs -->
                                             <ul class="nav nav-tabs slide-item-list mt-3" id="myTab" role="tablist">
                                                 <li class="nav-item" role="presentation">
-                                                    <a href="#first" class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" role="tab" aria-controls="home-tab-pane" aria-selected="true"><img class="img-fluid me-2 rounded" src="../user_librarian/images/books/1.webp" alt="" width="80"></a>
+                                                    <a href="#first" class="nav-link active" id="home-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#home-tab-pane" role="tab"
+                                                        aria-controls="home-tab-pane" aria-selected="true"><img
+                                                            class="img-fluid me-2 rounded"
+                                                            src="../user_librarian/images/books/1.webp" alt=""
+                                                            width="80"></a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
-                                                    <a href="#second" class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><img class="img-fluid me-2 rounded" src="../user_librarian/images/books/2.webp" alt="" width="80"></a>
+                                                    <a href="#second" class="nav-link" id="profile-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                                                        role="tab" aria-controls="profile-tab-pane"
+                                                        aria-selected="false"><img class="img-fluid me-2 rounded"
+                                                            src="../user_librarian/images/books/2.webp" alt=""
+                                                            width="80"></a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
-                                                    <a href="#third" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><img class="img-fluid me-2 rounded" src="../user_librarian/images/books/3.webp" alt="" width="80"></a>
+                                                    <a href="#third" class="nav-link" id="contact-tab"
+                                                        data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                                                        role="tab" aria-controls="contact-tab-pane"
+                                                        aria-selected="false"><img class="img-fluid me-2 rounded"
+                                                            src="../user_librarian/images/books/3.webp" alt=""
+                                                            width="80"></a>
                                                 </li>
                                                 <li class="nav-item" role="presentation">
-                                                    <a href="#for" class="nav-link" id="end-tab" data-bs-toggle="tab" data-bs-target="#end-tab-pane" role="tab" aria-controls="end-tab-pane" aria-selected="false"><img class="img-fluid  rounded" src="../user_librarian/images/books/4.webp" alt="" width="80"></a>
+                                                    <a href="#for" class="nav-link" id="end-tab" data-bs-toggle="tab"
+                                                        data-bs-target="#end-tab-pane" role="tab"
+                                                        aria-controls="end-tab-pane" aria-selected="false"><img
+                                                            class="img-fluid  rounded"
+                                                            src="../user_librarian/images/books/4.webp" alt=""
+                                                            width="80"></a>
                                                 </li>
 
                                             </ul>
@@ -112,7 +139,8 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                         <div class="row">
                                             <div class="col-12 pt-2 ps-2 pe-2">
                                                 <!-- Modal trigger button -->
-                                                <button type="button" class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalId">
+                                                <button type="button" class="btn btn-outline-primary w-100"
+                                                    data-bs-toggle="modal" data-bs-target="#modalId">
                                                     Read Sample
                                                 </button>
 
@@ -135,7 +163,9 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                         <li><i class="fa fa-star"></i></li>
                                                         <li><i class="fa fa-star"></i></li>
                                                     </ul>
-                                                    <span class="review-text ms-3">(34 reviews) / </span><a class="product-review" href="" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a review?</a>
+                                                    <span class="review-text ms-3">(34 reviews) / </span><a
+                                                        class="product-review" href="" data-bs-toggle="modal"
+                                                        data-bs-target="#reviewModal">Write a review?</a>
                                                 </div>
                                                 <p>
                                                     <span class="badge badge-success light">Kindle Edition <br><b>
@@ -146,13 +176,15 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                 <!-- <div class="d-table mb-2">
                                                     <p class="price float-start d-block">$325.00</p>
                                                 </div> -->
-                                                <p>Availability: <span class="item"> In stock <i class="fa fa-shopping-basket"></i></span>
+                                                <p>Availability: <span class="item"> In stock <i
+                                                            class="fa fa-shopping-basket"></i></span>
                                                 </p>
                                                 <p>Product code: <span class="item">0405689</span> </p>
                                                 <div class="dis">
                                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                                         Phasellus imperdiet, nulla et dictum interdum, nisi lorem
-                                                        egestas vitae scel<span id="dots">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl
+                                                        egestas vitae scel<span id="dots">...</span><span
+                                                            id="more">erisque enim ligula venenatis dolor. Maecenas nisl
                                                             est, ultrices nec congue eget, auctor vitae massa. Fusce
                                                             luctus vestibulum augue ut aliquet. Nunc sagittis dictum
                                                             nisi, sed ullamcorper ipsum dignissim ac. In at libero sed
@@ -172,40 +204,55 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                     <div class="slider">
                                         <div class="carousel-wrap">
                                             <div class="owl-carousel">
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
-                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp" class="w-100">
+                                                <div class="item p-1"><img src="../user_librarian/images/books/3.webp"
+                                                        class="w-100">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="accordion" id="accordionExample">
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="headingOne">
-                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <button class="accordion-button" type="button"
+                                                        data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                        aria-expanded="true" aria-controls="collapseOne">
                                                         Book Description
                                                     </button>
                                                 </h2>
-                                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                                    aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                                     <div class="accordion-body">
                                                         So often, it's the simplest acts of courage that touch the lives
                                                         of others. Sudha Murty-through the exceptional work of the
@@ -235,7 +282,8 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                             <div class="card-body">
                                                 <h3 class="card-title">Product details</h3>
                                                 <ul>
-                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span class="a-text-bold"><b>Publisher</b>
+                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span
+                                                                class="a-text-bold"><b>Publisher</b>
                                                                 &rlm;
                                                                 :
                                                                 &lrm;
@@ -243,14 +291,16 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                                 2017)</span>
                                                         </span>
                                                     </li>
-                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span class="a-text-bold"><b>Languvage</b>
+                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span
+                                                                class="a-text-bold"><b>Languvage</b>
                                                                 &rlm;
                                                                 :
                                                                 &lrm;
                                                             </span> <span>Tamil,English</span>
                                                         </span>
                                                     </li>
-                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span class="a-text-bold"><b>Paperback</b>
+                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span
+                                                                class="a-text-bold"><b>Paperback</b>
                                                                 &rlm;
                                                                 :
                                                                 &lrm;
@@ -266,7 +316,8 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                             <div class="card-body">
                                                 <h3 class="card-title">Book Location</h3>
                                                 <ul>
-                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span class="a-text-bold"><b>Location</b>
+                                                    <li class="fs-5 p-1"><span class="a-list-item"> <span
+                                                                class="a-text-bold"><b>Location</b>
                                                                 &rlm;
                                                                 :
                                                                 &lrm;
@@ -293,49 +344,56 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                         <div class="swiper-slide">
                                             <div class="outerBox d-flex">
                                                 <div class="d-flex align-items-center">
-                                                    <p>Everyone seems to have a clear idea of how other people should lead their lives, but none about his or her own.</p>
+                                                    <p>Everyone seems to have a clear idea of how other people should
+                                                        lead their lives, but none about his or her own.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="outerBox d-flex">
                                                 <div class="d-flex align-items-center">
-                                                    <p>Everyone seems to have a clear idea of how other people should lead their lives, but none about his or her own.</p>
+                                                    <p>Everyone seems to have a clear idea of how other people should
+                                                        lead their lives, but none about his or her own.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="outerBox d-flex">
                                                 <div class="d-flex align-items-center">
-                                                    <p>Everyone seems to have a clear idea of how other people should lead their lives, but none about his or her own.</p>
+                                                    <p>Everyone seems to have a clear idea of how other people should
+                                                        lead their lives, but none about his or her own.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="outerBox d-flex">
                                                 <div class="d-flex align-items-center">
-                                                    <p>Everyone seems to have a clear idea of how other people should lead their lives, but none about his or her own.</p>
+                                                    <p>Everyone seems to have a clear idea of how other people should
+                                                        lead their lives, but none about his or her own.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="outerBox d-flex">
                                                 <div class="d-flex align-items-center">
-                                                    <p>Everyone seems to have a clear idea of how other people should lead their lives, but none about his or her own.</p>
+                                                    <p>Everyone seems to have a clear idea of how other people should
+                                                        lead their lives, but none about his or her own.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="outerBox d-flex">
                                                 <div class="d-flex align-items-center">
-                                                    <p>Everyone seems to have a clear idea of how other people should lead their lives, but none about his or her own.</p>
+                                                    <p>Everyone seems to have a clear idea of how other people should
+                                                        lead their lives, but none about his or her own.</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="swiper-slide">
                                             <div class="outerBox d-flex">
                                                 <div class="d-flex align-items-center">
-                                                    <p>Everyone seems to have a clear idea of how other people should lead their lives, but none about his or her own.</p>
+                                                    <p>Everyone seems to have a clear idea of how other people should
+                                                        lead their lives, but none about his or her own.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,7 +411,14 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                             <h3>Product description</h3>
                             <div class="col-12">
                                 <div class="product_description">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ip</p>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                                        unknown printer took a galley of type and scrambled it to make a type specimen
+                                        book. It has survived not only five centuries, but also the leap into electronic
+                                        typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                                        with the release of Letraset sheets containing Lorem Ipsum passages, and more
+                                        recently with desktop publishing software like Aldus PageMaker including
+                                        versions of Lorem Ip</p>
                                 </div>
                             </div>
                         </div>
@@ -363,15 +428,23 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                             <div class="col-12">
                                 <div class="d-flex">
                                     <div class="auth_details">
-                                            <h5>Auther Name</h5>
+                                        <h5>Auther Name</h5>
                                         <div class="author_img">
-                                            <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg" class="rounded" style="width: 75px;" alt="" srcset="">
+                                            <img src="https://img.freepik.com/free-photo/bohemian-man-with-his-arms-crossed_1368-3542.jpg"
+                                                class="rounded" style="width: 75px;" alt="" srcset="">
                                         </div>
                                     </div>
                                     <div class="auth_details">
-                                    <div class="author_description">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ip
-                                </div>
+                                        <div class="author_description">
+                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                            Lorem Ipsum has been the industry's standard dummy text ever since the
+                                            1500s, when an unknown printer took a galley of type and scrambled it to
+                                            make a type specimen book. It has survived not only five centuries, but also
+                                            the leap into electronic typesetting, remaining essentially unchanged. It
+                                            was popularised in the 1960s with the release of Letraset sheets containing
+                                            Lorem Ipsum passages, and more recently with desktop publishing software
+                                            like Aldus PageMaker including versions of Lorem Ip
+                                        </div>
                                     </div>
                                 </div>
 
@@ -402,14 +475,16 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                     </div>
                                 </div>
                                 <div class="progress mt-4">
-                                    <div class="progress-bar bg-danger" style="width:60%; height:5px; border-radius:4px;" role="progressbar"></div>
+                                    <div class="progress-bar bg-danger"
+                                        style="width:60%; height:5px; border-radius:4px;" role="progressbar"></div>
                                 </div>
                             </div>
                             <div class="card-footer d-flex justify-content-between flex-wrap">
                                 <div class="due-progress">
                                     <p class="mb-0 text-black">Due <span class="text-dabger">: 2023-06-02</span></p>
                                 </div>
-                                <div class="dropdown bootstrap-select default-select status-select"><select class="default-select status-select">
+                                <div class="dropdown bootstrap-select default-select status-select"><select
+                                        class="default-select status-select">
                                         <option value="pending">Pending</option>
                                         <option value="progress">In Progress</option>
                                         <option value="testing">Testing</option>
@@ -433,17 +508,23 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                        aria-controls="flush-collapseOne">
                                         Latest Books
                                     </button>
                                 </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body bg-white">
                                         <div class="list-group">
-                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active bg-body-secondary" aria-current="true">
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action flex-column align-items-start active bg-body-secondary"
+                                                aria-current="true">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <h5 class="mb-1">Yoga: The Science of the Soul Paperback – 1</h5>
-                                                    <small class="text-muted"><img src="images/contacts/pic666.jpg" class="avatar" alt=""></small>
+                                                    <small class="text-muted"><img src="images/contacts/pic666.jpg"
+                                                            class="avatar" alt=""></small>
                                                 </div>
                                                 <p class="mb-1">
                                                     <ul class="d-flex w-100 justify-content-between">
@@ -456,10 +537,13 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                 </p>
                                                 <small class="text-muted">Short Content</small>
                                             </a>
-                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start bg-body-secondary" aria-current="true">
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action flex-column align-items-start bg-body-secondary"
+                                                aria-current="true">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <h5 class="mb-1">Yoga: The Science of the Soul Paperback – 1</h5>
-                                                    <small class="text-muted"><img src="images/contacts/pic666.jpg" class="avatar" alt=""></small>
+                                                    <small class="text-muted"><img src="images/contacts/pic666.jpg"
+                                                            class="avatar" alt=""></small>
                                                 </div>
                                                 <p class="mb-1">
                                                     <ul class="d-flex w-100 justify-content-between">
@@ -472,10 +556,13 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                 </p>
                                                 <small class="text-muted">Short Content</small>
                                             </a>
-                                            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start bg-body-secondary" aria-current="true">
+                                            <a href="#"
+                                                class="list-group-item list-group-item-action flex-column align-items-start bg-body-secondary"
+                                                aria-current="true">
                                                 <div class="d-flex w-100 justify-content-between">
                                                     <h5 class="mb-1">Yoga: The Science of the Soul Paperback – 1</h5>
-                                                    <small class="text-muted"><img src="images/contacts/pic666.jpg" class="avatar" alt=""></small>
+                                                    <small class="text-muted"><img src="images/contacts/pic666.jpg"
+                                                            class="avatar" alt=""></small>
                                                 </div>
                                                 <p class="mb-1">
                                                     <ul class="d-flex w-100 justify-content-between">
@@ -505,7 +592,7 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
         <!--**********************************
          Footer start
          ***********************************-->
-         @include ("librarian.footer")
+        @include ("librarian.footer")
         <!--**********************************
          Footer end
          ***********************************-->
@@ -521,11 +608,13 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
          ***********************************-->
     <!-- Modal Body -->
     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+        aria-labelledby="modalTitleId" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-chevron-left"></i>Back to</button>
+                    <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close"><i
+                            class="fa fa-chevron-left"></i>Back to</button>
                     <h5 class="modal-title" id="modalTitleId">THREE THOUSAND STITCHES: ORDINARY PEOPLE, EXTRAORDINARY
                         LIVES</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -534,8 +623,15 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                     <div class="basic-list-group">
                         <div class="row">
                             <div class="col-lg-6 col-xl-2">
-                                <div class="list-group mb-4 " id="list-tab" role="tablist"><a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab">Home</a> <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab">Profile</a> <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab">Messages</a>
-                                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab">Settings</a>
+                                <div class="list-group mb-4 " id="list-tab" role="tablist"><a
+                                        class="list-group-item list-group-item-action active" id="list-home-list"
+                                        data-bs-toggle="list" href="#list-home" role="tab">Home</a> <a
+                                        class="list-group-item list-group-item-action" id="list-profile-list"
+                                        data-bs-toggle="list" href="#list-profile" role="tab">Profile</a> <a
+                                        class="list-group-item list-group-item-action" id="list-messages-list"
+                                        data-bs-toggle="list" href="#list-messages" role="tab">Messages</a>
+                                    <a class="list-group-item list-group-item-action" id="list-settings-list"
+                                        data-bs-toggle="list" href="#list-settings" role="tab">Settings</a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-xl-10">
@@ -778,119 +874,119 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
     ?>
     <!-- Optional: Place to the bottom of scripts -->
     <script>
-        const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
+    const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
     </script>
     <script src="https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        var swiper = new Swiper(".mySwiper", {
-            slidesPerView: "auto",
-            centeredSlides: true,
-            spaceBetween: 30,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 30,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
     </script>
     </script>
     <script>
-        function myFunction() {
-            var dots = document.getElementById("dots");
-            var moreText = document.getElementById("more");
-            var btnText = document.getElementById("myBtn");
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
 
-            if (dots.style.display === "none") {
-                dots.style.display = "inline";
-                btnText.innerHTML = "Read more";
-                moreText.style.display = "none";
-            } else {
-                dots.style.display = "none";
-                btnText.innerHTML = "Read less";
-                moreText.style.display = "inline";
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+            btnText.innerHTML = "Read more";
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = "Read less";
+            moreText.style.display = "inline";
+        }
+    }
+    // slider
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        navText: [
+            "<i class='fa fa-caret-left'></i>",
+            "<i class='fa fa-caret-right'></i>"
+        ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5
             }
         }
-        // slider
-        $('.owl-carousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            navText: [
-                "<i class='fa fa-caret-left'></i>",
-                "<i class='fa fa-caret-right'></i>"
-            ],
-            autoplay: true,
-            autoplayHoverPause: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 5
-                }
-            }
-        })
+    })
     </script>
 </body>
 
 </html>
 <style>
-    .outerBox {
-        height: 300px;
-        background-color: black;
-        color: white;
-        font-size: 16px;
-        padding: 10px;
-    }
+.outerBox {
+    height: 300px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}
 
-    #more {
-        display: none;
-    }
+#more {
+    display: none;
+}
 
-    /* slider */
-    .carousel-wrap {
-        margin: 10px auto;
-        padding: 0 0;
-        width: 100%;
-        position: relative;
-    }
+/* slider */
+.carousel-wrap {
+    margin: 10px auto;
+    padding: 0 0;
+    width: 100%;
+    position: relative;
+}
 
-    /* fix blank or flashing items on carousel */
-    .owl-carousel .item {
-        position: relative;
-        z-index: 100;
-        -webkit-backface-visibility: hidden;
-    }
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+    position: relative;
+    z-index: 100;
+    -webkit-backface-visibility: hidden;
+}
 
-    /* end fix */
-    .owl-nav>div {
-        margin-top: -26px;
-        position: absolute;
-        top: 50%;
-        color: #cdcbcd;
-    }
+/* end fix */
+.owl-nav>div {
+    margin-top: -26px;
+    position: absolute;
+    top: 50%;
+    color: #cdcbcd;
+}
 
-    .owl-nav i {
-        font-size: 52px;
-    }
+.owl-nav i {
+    font-size: 52px;
+}
 
-    .owl-nav .owl-prev {
-        left: -30px;
-    }
+.owl-nav .owl-prev {
+    left: -30px;
+}
 
-    .owl-nav .owl-next {
-        right: -30px;
-    }
+.owl-nav .owl-next {
+    right: -30px;
+}
 
-    .list-group-item.active {
-        background-color: #67635e !important
-    }
+.list-group-item.active {
+    background-color: #67635e !important
+}
 
-    .active-start {
-        color: yellow;
-    }
+.active-start {
+    color: yellow;
+}
 </style>

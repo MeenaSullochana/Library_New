@@ -358,11 +358,11 @@
                                              <tr>
                                                 <td><input type="text"
                                                    name="publications_shope_book_title[]"
-                                                   placeholder=" title*"
+                                                   placeholder=" Title*"
                                                     class="form-control name_list" required /></td>
                                                 <td><input type="text"
                                                    name="publications_shope_book_author[]"
-                                                   placeholder=" author*"
+                                                   placeholder=" Author*"
                                                   class="form-control name_list" required /></td>
                                                 <td><button type="button" name="add" id="add"
                                                    class="btn btn-success" onclick="">+</button></td>

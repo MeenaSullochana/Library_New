@@ -60,10 +60,10 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Edit Member</b>
+                                <b>Edit Profile</b>
                             </h3>
-                            <a class="btn btn-primary  btn-sm" href="member_list.php">
-                                <i class="fas fa-plus"></i> List Of Member </a>
+                            <!-- <a class="btn btn-primary  btn-sm" href="">
+                                <i class="fas fa-plus"></i> List Of Member </a> -->
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">Library Type<span
                                                           class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" id="libraryType" class="form-select" Required>
+                                                        <select name="library_type" id="libraryType" class="form-select bg-white" Required>
                                                         <option value="{{$data->libraryType}}">{{$data->libraryType}}</option>
                                                         @php
                                                           $categori = DB::table('library_types')->where('name','!=',$data->libraryType)->where('status','=','1')->get();
@@ -107,7 +107,7 @@
                                                         <input type="text" class="form-control" placeholder="Enter Library Name" value="{{$data->libraryName}}" id="libraryName" Required>
                                           </div>
                                           <div class="col-sm-6 mb-3">
-                                                     <label class="form-label">State<span
+                                                     <label class="form-label">Subject<span
                                                                 class="text-danger maditory">*</span></label>
                                           <select id="limit-selection" name="subject[]" multiple class="select2">
     @php
@@ -123,7 +123,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                      <label class="form-label">State<span
                                                                 class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" class="form-select" id="state" Required>
+                                                        <select name="library_type" class="form-select bg-white" id="state" Required>
                                                            <option value="{{$data->state}}">{{$data->state}}</option>
 
                                                           @php
@@ -139,7 +139,7 @@
                                                     <div class="col-sm-6 mb-3">
                                                         <label class="form-label">District<span
                                                      class="text-danger maditory">*</span></label>
-                                                        <select name="library_type" class="form-select" id="district" Required>
+                                                        <select name="library_type" class="form-select bg-white" id="district" Required>
                                                         <option value="{{$data->district}}">{{$data->district}}</option>
 
                                                                @php
@@ -170,7 +170,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="col-sm-12 mb-3">
-                                                    <label class="form-label">librarian Name<span
+                                                    <label class="form-label">Librarian Name<span
                                                             class="text-danger maditory">*</span></label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter librarian Name" id="librarianName" value="{{$data->librarianName}}"
@@ -193,7 +193,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="col-sm-12 mb-3">
-                                                    <label class="form-label">librarian Designation<span
+                                                    <label class="form-label">Librarian Designation<span
                                                             class="text-danger maditory">*</span></label>
                                                     <input type="text" class="form-control"
                                                         placeholder="Enter librarian Designation" value="{{$data->librarianDesignation}}"

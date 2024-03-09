@@ -124,7 +124,7 @@
                                 <img src="assets/img/icon/about-svg1.svg" alt="">
                             </div>
                             <div class="tpabout__content">
-                                <h4 class="tpabout__title">Select Your Products</h4>
+                                <h4 class="tpabout__title">Publisher</h4>
                                 <p>Choose from select produce to start. <br> Keep, add, or remove items.</p>
                             </div>
                         </div>
@@ -135,7 +135,7 @@
                                 <img src="assets/img/icon/about-svg2.svg" alt="">
                             </div>
                             <div class="tpabout__content">
-                                <h4 class="tpabout__title">Our Shop Orfarm </h4>
+                                <h4 class="tpabout__title">Distributor</h4>
                                 <p>We provide 100+ products, provide <br> enough nutrition for your family.
                                 </p>
                             </div>
@@ -147,7 +147,7 @@
                                 <img src="assets/img/icon/about-svg3.svg" alt="">
                             </div>
                             <div class="tpabout__content">
-                                <h4 class="tpabout__title">Delivery To Your </h4>
+                                <h4 class="tpabout__title">Publisher cum Distributor</h4>
                                 <p>Delivery to your door. Up to 100km <br> and it's completely free.</p>
                             </div>
                         </div>
@@ -156,60 +156,6 @@
             </div>
         </section>
         <!-- about-area-end -->
-
-        <!-- img-box-area-start -->
-        <section class="img-box-area grey-bg pt-80 pb-50">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="tpsection mb-35">
-                            <h4 class="tpsection__sub-title">~ Why Choose Us ~</h4>
-                            <h4 class="tpsection__title">Our Amazing Work</h4>
-                            <p>The liber tempor cum soluta nobis eleifend option congue doming quod mazim.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="img-box__wrapper text-center mb-30">
-                            <div class="img-box__thumb mb-30">
-                                <img src="assets/img/about/about-1.png" alt="">
-                            </div>
-                            <div class="img-box__content">
-                                <h4 class="img-box__title mb-10">Who We Are</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit, sed do eiusmod tempor
-                                    labore <br> et dolore dignissimos cumque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="img-box__wrapper text-center mb-30">
-                            <div class="img-box__thumb mb-30">
-                                <img src="assets/img/about/about-2.png" alt="">
-                            </div>
-                            <div class="img-box__content">
-                                <h4 class="img-box__title mb-10">Our Products</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit, sed do eiusmod tempor
-                                    labore <br> et dolore dignissimos cumque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="img-box__wrapper text-center mb-30">
-                            <div class="img-box__thumb mb-30">
-                                <img src="assets/img/about/about-3.png" alt="">
-                            </div>
-                            <div class="img-box__content">
-                                <h4 class="img-box__title mb-10">How We Work</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur <br> adipisicing elit, sed do eiusmod tempor
-                                    labore <br> et dolore dignissimos cumque.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- img-box-area-end -->
 
         <!-- video-area-start -->
         <section class="video-area pt-80 pb-50">
