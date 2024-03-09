@@ -175,7 +175,6 @@
                                     </div>
                                     <table id="example4" class="table">
                                         <thead>
-                                            @foreach($book as $key=>$val)
                                             <tr>
                                                
                                                 <th>S.No</th>
@@ -186,6 +185,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        @foreach($book as $key=>$val)
+
                                             <tr>
                                               
                                                 <td><span>{{$loop->index +1}}</span></td>

@@ -494,7 +494,7 @@ if (arr.length !== 0) {
          pubaddtencounter++;
          $('#dynamic_field').
             append('<tr id="row' + i +
-               '"><td><input type="text" name="publications_shope_book_title[]" placeholder=" titles*" class="form-control name_list" required/></td><td><input type="text" name="publications_shope_book_author[]" placeholder=" author*" class="form-control name_list" required/></td><td><button type="button" name="remove" id="' +
+               '"><td><input type="text" name="publications_shope_book_title[]" placeholder=" Titles*" class="form-control name_list" required/></td><td><input type="text" name="publications_shope_book_author[]" placeholder=" Author*" class="form-control name_list" required/></td><td><button type="button" name="remove" id="' +
                i + '" class="btn btn-danger btn_remove_best_ten">X</button></td></tr>');
       } else {
          $('#add').prop('disabled', true);
