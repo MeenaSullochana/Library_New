@@ -265,12 +265,19 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
                 // Populate the container with the updated session data
                 response.bud_arr.forEach(function(val) {
                     $('#budArrContainer').append(
-                        `<div class="item">
-                            <p>${val.category}</p>
-                            <div class="pie animate no-round" style="--p:${val.percentage}">${val.percentage}</div>
-                            <p>Allotted Amount : ${val.budget_price}</p>
-                            <p>Purchased Amount : ${val.cart_price}</p>
-                            </div>`
+                        // `<div class="item">
+                        //     <p>${val.category}</p>
+                        //     <div class="pie animate no-round" style="--p:${val.percentage}">${val.percentage}</div>
+                        //     <p>Allotted Amount : ${val.budget_price}</p>
+                        //     <p>Purchased Amount : ${val.cart_price}</p>
+                        //     </div>`
+
+               ` <div class="item col-sm-6 col-md-6 col-lg-3 card rounded p-2 max-h-350 m-2">
+                  <p>${val.category}</p>
+                 <div class="pie animate no-round" style="--p:${val.percentage}">${val.percentage}</div>
+                 <p class="p-0 m-0">Allotted Amount : ${val.budget_price}</p>
+                 <p>Purchased Amount : ${val.cart_price}</p> 
+                </div>`
                     );
                 });
 

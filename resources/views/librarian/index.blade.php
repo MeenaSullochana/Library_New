@@ -65,6 +65,7 @@
 				<div class="row">
 					<div class="col-xl-12">
 						<div class="row">
+						@if(auth('librarian')->user()->metaChecker =="no")
 							<div class="col-xl-3 col-sm-6">
 								<div class="card box-hover">
 									<div class="card-body">
@@ -73,7 +74,7 @@
 												<i class="fa-solid fa-briefcase text-success"></i>
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-success count">200+</h3>
+												<h3 class="text-success count">0</h3>
 												<span>Total Orders</span>
 											</div>
 										</div>
@@ -89,8 +90,8 @@
 
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-primary count">1560</h3>
-												<span>Total Book</span>
+												<h3 class="text-primary count">0</h3>
+												<span>Total Books</span>
 
 											</div>
 										</div>
@@ -105,7 +106,7 @@
 												<i class="fa-solid fa-users text-warning"></i>
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-warning count">400</h3>
+												<h3 class="text-warning count">0</h3>
 												<span>Total Users</span>
 											</div>
 										</div>
@@ -120,15 +121,18 @@
 												<i class="fa-solid fa-hand-holding-dollar text-danger"></i>
 											</div>
 											<div class="total-projects ms-3">
-												<h3 class="text-danger count">$1500</h3>
-												<span>Total Stock</span>
+												<h3 class="text-danger count">0</h3>
+												<span>Total Stocks</span>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-6 col-md-6">
+						@endif
+						
+				<div class="col-xl-6 col-md-6">
                         <div class="row">
+						@if(auth('librarian')->user()->metaChecker =="yes")
                             <div class="col-xl-6 col-sm-6">
                                 <div class="card">
                                     <div class="card-body d-flex justify-content-between align-items-center">
@@ -142,7 +146,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books}}</h4>
-                                                <p class="mb-0">Total Meta Book</p>
+                                                <p class="mb-0">Total Meta Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -158,19 +162,19 @@
                                                 <i class="fa fa-book ms-2 text-primary" aria-hidden="true"></i>
                                             </div>
 											@php
-    $id = auth('librarian')->user()->id;
-    $books1 = DB::table('books')
-                ->where('book_reviewer_id', $id)
-                ->where(function ($query) {
-                    $query->whereNull('book_status')
-                          ->orWhere('book_status', 2)
-                          ->orWhere('book_status', 3);
-                })
-                ->count();
-@endphp
-                                            <div class="ms-2">
+												$id = auth('librarian')->user()->id;
+												$books1 = DB::table('books')
+															->where('book_reviewer_id', $id)
+															->where(function ($query) {
+																$query->whereNull('book_status')
+																	->orWhere('book_status', 2)
+																	->orWhere('book_status', 3);
+															})
+															->count();
+											@endphp
+										<div class="ms-2">
                                                 <h4>{{$books1}}</h4>
-                                                <p class="mb-0">Pending meta Book</p>
+                                                <p class="mb-0">Pending Meta Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -178,11 +182,12 @@
                                     </div>
                                 </div>
                             </div>
-
+						@endif
                         </div>
                     </div>
 					    <div class="col-xl-6 col-md-6">
                         <div class="row">
+						@if(auth('librarian')->user()->metaChecker =="yes")
 						<div class="col-xl-6 col-sm-6">
                                 <div class="card">
                                     <div class="card-body d-flex justify-content-between align-items-center">
@@ -196,7 +201,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books3}}</h4>
-                                                <p class="mb-0">Complite Book</p>
+                                                <p class="mb-0">Completed Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -217,7 +222,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books2}}</h4>
-                                                <p class="mb-0">Reject Book</p>
+                                                <p class="mb-0">Rejected Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -225,12 +230,13 @@
                                     </div>
                                 </div>
                             </div>
-                         
+                         @endif
                         </div>
                     </div>
                  
 							<div class="col-xl-12">
 								<div class="card">
+								@if(auth('librarian')->user()->metaChecker =="yes")
 									<div class="card-body p-0">
 										<div class="table-responsive active-projects">
 											<div class="tbl-caption">
@@ -284,10 +290,11 @@
 											</table>
 										</div>
 									</div>
+									@endif
 								</div>
 							</div>
-						
-							<!-- <div class="col-xl-6">
+							@if(auth('librarian')->user()->metaChecker =="no")
+							<div class="col-xl-6">
 								<div class="card">
 									<div class="card-header border-0">
 										<h4 class="heading mb-0">New Book</h4>
@@ -309,11 +316,11 @@
 																<img src="images/contacts/d14.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">Diary of a Wimpy Kid: No Brainer</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -325,11 +332,11 @@
 																<img src="images/contacts/d10.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">Be Useful: Seven Tools for Life</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -341,11 +348,11 @@
 																<img src="images/contacts/d11.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">The Secret: Jack Reacher, Book 28</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -357,11 +364,11 @@
 																<img src="images/contacts/d12.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">Kill the Lawyers</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -373,11 +380,11 @@
 																<img src="images/contacts/d14.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">A Curse for True Love</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -388,8 +395,9 @@
 										</div>
 									</div>
 								</div>
-							</div> -->
-							<!-- <div class="col-xl-6">
+							</div>
+						
+							<div class="col-xl-6">
 								<div class="card">
 									<div class="card-header border-0">
 										<h4 class="heading mb-0">Top rating books</h4>
@@ -411,11 +419,11 @@
 																<img src="images/contacts/d1.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">Remember Love: Words for Tender Times</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -428,11 +436,11 @@
 																<img src="images/contacts/d10.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">The Way Forward</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -445,11 +453,11 @@
 																<img src="images/contacts/d11.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">Prequel: An American Fight Against Fascism</a></h6>
-																	<i class="bi bi-star-fill"></i>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -462,11 +470,11 @@
 																<img src="images/contacts/d12.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">The Secret: Jack Reacher, Book 28</a></h6>
-																	<i class="bi bi-star-fill"></i>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -479,11 +487,11 @@
 																<img src="images/contacts/d14.jpg" class="avatar avatar-sm" alt="">
 																<div>
 																	<h6><a href="javascript:void(0)">The Unmaking of June Farrow: A Novel</a></h6>
+																	<!-- <i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
 																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star-fill"></i>
-																	<i class="bi bi-star"></i>
+																	<i class="bi bi-star"></i> -->
 																</div>
 															</div>
 														</td>
@@ -495,10 +503,12 @@
 										</div>
 									</div>
 								</div>
-							</div> -->
+							</div>
+							@endif
 						</div>
 					</div>
 				</div>
+			
 			</div>
         </div>
     </div>

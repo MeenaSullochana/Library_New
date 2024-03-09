@@ -13,7 +13,7 @@
                            <nav id="mobile-menu">
                               <ul>
                                  <li class=" has-homemenu">
-                                    <a href="index.php">Home</a>
+                                    <a href="/">Home</a>
                                  </li>
 
                                  <li class=" has-megamenu" >
@@ -62,8 +62,8 @@
 $user = auth('librarian')->user();
 @endphp
 
-@if($user)
-@if(Session::has('cart'))
+@if($user && $user->metaChecker =="no")
+               @if(Session::has('cart'))
               <a href="/cart">              
                            <button>
                               <i><img src="assets/img/icon/cart-1.svg" alt=""></i>
@@ -79,12 +79,8 @@ $user = auth('librarian')->user();
                         <a href="#">              
                            <button>
                               <i><img src="assets/img/icon/cart-1.svg" alt=""></i>
-                                
-                                
-                                 <span>
-                                    0
-                                    </span>
-                                  
+                                 <!-- <span>
+                                 </span> -->
                            </button>
                         </a>
                         @endif
