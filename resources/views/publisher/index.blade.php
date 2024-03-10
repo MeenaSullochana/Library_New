@@ -75,28 +75,17 @@
                     <div class="col-xl-7">
                         <div class="card overflow-hidden">
                             <div class="card-body">
-                                <div class="any-card">
-                                    <div class="c-con">
-                                        <h4 class="heading mb-0">Welcome <strong>User Name!!</strong><img
-                                                src="images/crm/party-popper.png" alt=""></h4>
-                                        <span>Steps to follow</span>
-                                        <ul style="text-intent:30px">
-                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
-                                            typesetting industry.</li>
-                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
-                                            typesetting industry.</li>
-                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
-                                            typesetting industry.</li>
-                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
-                                            typesetting industry.</li>
-                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
-                                            typesetting industry.</li>
-                                        </ul>
-                                        <a href="/publisher/pub_profile_view" class="btn btn-primary btn-sm">View Profile</a>
+                                <div class="row">
+                                   <div class="col-md-6">
+                                        <h3 class="heading mb-0">Welcome <strong>User Name!!</strong><img
+                                                src="images/crm/party-popper.png" alt=""></h3>
+                                                <a href="/publisher/pub_profile_view" class="btn btn-primary btn-sm mt-4">View Profile</a>
                                     </div>
-                                    <img src="images/analytics/developer_male.png" class="harry-img" alt="">
-
+                                    <div class="col-md-6">
+                                        <img class="w-50" src="images/analytics/developer_male.png" class="harry-img" alt="">
+                                    </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -109,12 +98,12 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="sales-bx">
                                         <img src="images/analytics/sales.png" alt="">
-                                        <h4>$3,651</h4>
+                                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 0</h4>
                                         <span>Year Sales</span>
                                     </div>
                                     <div class="sales-bx">
                                         <img src="images/analytics/shopping.png" alt="">
-                                        <h4>5831</h4>
+                                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 0</h4>
                                         <span>Month Sales</span>
                                     </div>
                                 </div>
@@ -156,6 +145,40 @@
                             </div>
                         </div>
                     </div> --}}
+                    <div class="col-xl-6 col-md-6">
+                        <div class="row">
+                            <div class="card p-3">
+                            <div class="col-md-12">
+                                        
+                              <h3>Steps to follow</h3>
+                            <div class="scroll-view">
+                                        <ul style="text-intent:30px">
+                                                @php
+                                                        $id = auth('publisher')->user()->usertype;
+                                                        $usermanualguidelines = DB::table('usermanualguidelines')->where('usertype', '=', $id)->first();
+                                                        if ($usermanualguidelines !== null) {
+                                                            $data1 = json_decode($usermanualguidelines->content);
+                                                        } else {
+                                                            $data1 = [];
+                                                        }
+                                                    @endphp
+                                                    @if ($data1)
+                                                        @foreach($data1 as $val)
+                                                          
+                                                            <li>{{$val}}.</li>
+                                                        @endforeach
+                                                    @else
+                                                        <p>No data available.</p>
+                                                    @endif
+                                            
+                                                   
+                                        </ul>
+                                    </div>
+                                        
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-xl-6 col-md-6">
                         <div class="row">
                             <div class="col-xl-6 col-sm-6">
@@ -202,8 +225,6 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6">
                         <div class="row">
                             <div class="col-xl-6 col-sm-6">
                                 <div class="card">
@@ -303,7 +324,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="anta-data">
-                                                                <h5>Rejected Order List</h5>
+                                                                <h5>Unsupplied Order List</h5>
                                                                 <h3>0</h3>
                                                             </div>
                                                         </div>
@@ -650,11 +671,15 @@
     <script src="{{asset('publisher/js/demo.js')}}"></script>
     <script src="{{asset('publisher/js/styleSwitcher.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-
-
-
 </body>
-
+<style>
+    li{
+        list-style: decimal !important;
+        padding:10px;
+    }
+    .scroll-view {
+    height: 190px;
+    overflow: scroll;
+}
+</style>
 </html>

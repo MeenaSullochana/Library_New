@@ -62,37 +62,62 @@
                 </div>
                <div class="card-body">
 
-
+               @php
+     $thiru = DB::table('thirukkural')->get();
+   
+    @endphp
                   <div class="table-responsive">
                      <table id="example4" class="display table" style="min-width: 845px">
                         <thead>
                            <tr>
                               <th>S.No</th>
                               <th>Thirukkural</th>
+                              <th>Short Description</th>
+                              <th>long Description</th>
                               <th>Status </th>
                               <th>Control</th>
                            </tr>
                         </thead>
                         <tbody>
-                           <tr>
-                              <td>1</td>
+                           @foreach($thiru as $val)
+                           <tr> 
+                              <td>{{$loop->index +1}}</td>
                               <td>
-                                Thirukkural
+                              <p> {!! $val->thirukkuralFirstLine !!}  </p>
+                              <p> {!! $val->thirukkuralSecondLine !!}  </p>
+
                               </td>
                               
-                                <td>
-                                    <div class="col-sm-12 m-b30">
-                                        <select  class="col-sm-12 m-b30"  name="district">
-                                        <option style="color: red;">Inactive</option>
-                                        <option style="color: green;">Active</option>
-                                        </select>
-                                        </div>
-                                </td>
+                              <td>
+                              <p> {!! $val->shortDescription !!}  </p>
+                              </td>
+                              <td>
+                              <p> {!! $val->longDescription !!}  </p>
+                              
+
+                              </td>
+                              
+                              
+                              <td class="sorting_1">
+                                                        <div class="form-check form-switch id="load">
+                                                            <input class="form-check-input toggle-class" type="checkbox"
+                                                                data-id="{{ $val->id }}" name="featured_status"
+                                                                data-isprm="1" data-onstyle="success"
+                                                                data-offstyle="danger" data-toggle="toggle"
+                                                                data-on="Active" data-off="InActive"
+                                                                {{ $val->status ? 'checked' : '' }}>
+                                                            <label class="form-check-label"
+                                                                for="flexSwitchCheckDefault"></label>
+                                                        </div>
+                                                    </td>
                           
                               <td>
-                                 <i class="fa fa-trash p-2 text-danger"></i>
+                              <a class="btn btn-danger shadow btn-xs sharp delete-btn" data-id="{{ $val->id }}">
+                                                   <i class="fa fa-trash"></i>
+                                                 </a>
                               </td>
                            </tr>
+                           @endforeach
                         </tbody>
                      </table>
                   </div>
@@ -118,6 +143,20 @@
          Support ticket button end
          *************-->
    </div>
+   <div class="modal fade" id="basicModal" tabindex="-1" aria-labelledby="basicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <p>Do you want to proceed?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                <button type="button" id="confirmDeleteBtn" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
    <!--************
          Main wrapper end
          *************-->
@@ -126,4 +165,70 @@
          ?>
 </body>
 
+<script>
+  $(function() {
+    $('.toggle-class').change(function(e) {
+        e.preventDefault();
+        var status = $(this).prop('checked') == true ? 1 : 0;
+        var id = $(this).data('id');
+        $.ajaxSetup({
+             headers:{
+                'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+             }
+          });
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: '/admin/thirukkuralstatus',
+            data: {'status': status, 'id': id},
+            success: function(response) {
+               if(response.success){
+                setTimeout(function() {
+                    window.location.href ="/admin/slider_setting_list"
+                     }, 3000);
+                toastr.success(response.success,{timeout:45000});
+               }else{
+                toastr.error(response.error,{timeout:45000});
+                setTimeout(function() {
+                    window.location.href ="/admin/slider_setting_list"
+                     }, 3000);
+               }
+
+            }
+        });
+    })
+  })
+</script>
+<script>
+    $(document).ready(function () {
+        var deleteId;
+
+        $('.delete-btn').on('click', function () {
+            deleteId = $(this).data('id');
+            $('#basicModal').modal('show');
+        });
+
+        $('#confirmDeleteBtn').on('click', function () {
+            $('#basicModal').modal('hide');
+            $.ajax({
+                url: '/admin/thirukkuraldelete',
+                method: 'POST',
+                data: { '_token': '{{ csrf_token() }}', 'id': deleteId },
+                success: function (response) {
+                    if (response.success) {
+                        toastr.success(response.success, { timeout: 2000 });
+                        setTimeout(function () {
+                            window.location.href = "/admin/slider_setting_list"
+                        }, 3000);
+                    } else {
+                        toastr.error(response.error, { timeout: 2000 });
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log('Error:', error);
+                }
+            });
+        });
+    });
+</script>
 </html>

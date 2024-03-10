@@ -79,13 +79,11 @@
                                     <div class="c-con">
                                         <h4 class="heading mb-0">Congratulations <strong>User Name!!</strong><img
                                                 src="images/crm/party-popper.png" alt=""></h4>
-                                        <span>Best seller of the week</span>
-                                        <p class="mt-3">Lorem Ipsum is simply dummy 😎 text of the printing and
-                                            typesetting industry.</p>
+                                        
 
-                                        <a href="/distributor/dist_profile_view" class="btn btn-primary btn-sm">View Profile</a>
+                                        <a href="/distributor/dist_profile_view" class="btn btn-primary btn-sm mt-4">View Profile</a>
                                     </div>
-                                    <img src="images/analytics/developer_male.png" class="harry-img" alt="">
+                                    <img src="images/analytics/developer_male.png" class="harry-img w-50" alt="">
 
                                 </div>
                             </div>
@@ -100,12 +98,12 @@
                                 <div class="d-flex justify-content-between">
                                     <div class="sales-bx">
                                         <img src="images/analytics/sales.png" alt="">
-                                        <h4>$3,651</h4>
+                                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 0</h4>
                                         <span>Year Sales</span>
                                     </div>
                                     <div class="sales-bx">
                                         <img src="images/analytics/shopping.png" alt="">
-                                        <h4>5831</h4>
+                                        <h4><i class="fa fa-inr" aria-hidden="true"></i> 0</h4>
                                         <span>Month Sales</span>
                                     </div>
                                 </div>
@@ -149,6 +147,40 @@
                     </div> --}}
                     <div class="col-xl-6 col-md-6">
                         <div class="row">
+                            <div class="card p-3">
+                            <div class="col-md-12">
+                                        
+                              <h3>Steps to follow</h3>
+                            <div class="scroll-view">
+                                        <ul style="text-intent:30px">
+                                                @php
+                                                        $id = auth('distributor')->user()->usertype;
+                                                        $usermanualguidelines = DB::table('usermanualguidelines')->where('usertype', '=', $id)->first();
+                                                        if ($usermanualguidelines !== null) {
+                                                            $data1 = json_decode($usermanualguidelines->content);
+                                                        } else {
+                                                            $data1 = [];
+                                                        }
+                                                    @endphp
+                                                    @if ($data1)
+                                                        @foreach($data1 as $val)
+                                                          
+                                                            <li>{{$val}}.</li>
+                                                        @endforeach
+                                                    @else
+                                                        <p>No data available.</p>
+                                                    @endif
+                                            
+                                                   
+                                        </ul>
+                                    </div>
+                                        
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-6">
+                    <div class="row">
                             <div class="col-xl-6 col-sm-6">
                                 <div class="card">
                                     <div class="card-body d-flex justify-content-between align-items-center">
@@ -162,7 +194,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books}}</h4>
-                                                <p class="mb-0">Total Apply Book</p>
+                                                <p class="mb-0">Total Applied Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -183,7 +215,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books1}}</h4>
-                                                <p class="mb-0">Pending Book</p>
+                                                <p class="mb-0">Pending Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -193,8 +225,6 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-md-6">
                         <div class="row">
                             <div class="col-xl-6 col-sm-6">
                                 <div class="card">
@@ -209,7 +239,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books2}}</h4>
-                                                <p class="mb-0">Reject Book</p>
+                                                <p class="mb-0">Rejected Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -230,7 +260,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{ $books3}}</h4>
-                                                <p class="mb-0">Selected Book</p>
+                                                <p class="mb-0">Selected Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -262,7 +292,7 @@
                                                             </div>
                                                             <div class="anta-data">
                                                                 <h5>Completed Order List</h5>
-                                                                <h3>+23%</h3>
+                                                                <h3>0</h3>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -279,7 +309,7 @@
                                                             </div>
                                                             <div class="anta-data">
                                                                 <h5>Pending Order List</h5>
-                                                                <h3>-33%</h3>
+                                                                <h3>0</h3>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -295,8 +325,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="anta-data">
-                                                                <h5>Rejected Order List</h5>
-                                                                <h3>-23%</h3>
+                                                                <h5>Unsupplied Order List</h5>
+                                                                <h3>0</h3>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -641,11 +671,15 @@
     <script src="{{asset('distributor/js/demo.js')}}"></script>
     <script src="{{asset('distributor/js/styleSwitcher.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
-
-
-
 </body>
-
+<style>
+    li{
+        list-style: decimal !important;
+        padding:10px;
+    }
+    .scroll-view {
+    height: 190px;
+    overflow: scroll;
+}
+</style>
 </html>

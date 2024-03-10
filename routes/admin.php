@@ -657,7 +657,13 @@ Route::post('/homepageboookedit',[SettingController::class,'homepageboookedit'])
 // footer
 Route::post('/footeradd',[SettingController::class,'footeradd']);
 Route::post('/websitelogo',[SettingController::class,'websitelogo']);
+Route::post('/thirukkuraladd',[SettingController::class,'thirukkuraladd']);
+Route::post('/newsfeedadd',[SettingController::class,'newsfeedadd']);
+Route::post('/thirukkuralstatus',[SettingController::class,'thirukkuralstatus']);
+Route::post('/thirukkuraldelete',[SettingController::class,'thirukkuraldelete']);
+Route::get('/usermanualguidelines',function(){ return view('admin.usermanualguidelines');});
 
+Route::post('/manualguidelines',[SettingController::class,'manualguidelines']);
 
 
 // feedback_librarian

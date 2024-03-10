@@ -6,16 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\UUID;
 
-class Thirukkural extends Model
+class Manualguidelines extends Model
 {
-  
+    use HasFactory;
     use UUID;
-    protected $table = 'thirukkural';
+    protected $table = 'usermanualguidelines';
     protected $fillable = [
-        'thirukkural',
-        'shortDescription',
-        'longDescription',
-  
-        
+        'usertype',
+       'content'
     ];
 }

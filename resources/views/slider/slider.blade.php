@@ -6,15 +6,17 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-xxl-5 col-lg-6 col-md-6 col-12 col-sm-6">
+                            @php
+                                                $thirukkural = DB::table('thirukkural')->where('status', '=', '1')->get();
+                             @endphp
                                 <div class="tpslider__content pt-20">
                                     <!-- <span class="tpslider__sub-title mb-35">Top Seller In The Week</span> -->
-                                    <h4 class="tpslider__title fw-bolder  mb-30">உள்ளத்தாற் பொய்யா தொழுகின்
-                                        உலகத்தார்<br> உள்ளத்து ளெல்லாம் உளன். </p>
-                                        <p>ஒருவன் தன் உள்ளம் அறியப் பொய் இல்லாமல் நடப்பானானால் அத்தகையவன் உலகத்தாரின்
-                                            உள்ளங்களில் எல்லாம் இருப்பவனாவான்...</p>
-                                        <div class="tpslider__btn">
-                                            <a class="tp-btn" href="/thirukkural-view">Read More</a>
-                                        </div>
+                                    <h4 class="tpslider__title fw-bolder mb-30">{{ $thirukkural[0]->thirukkuralFirstLine}}
+                                    {{ $thirukkural[0]->thirukkuralSecondLine}}....</h4>
+                                    <p>{{ $thirukkural[0]->shortDescription}}...</p>
+                                    <div class="tpslider__btn">
+                                        <a class="tp-btn" href="/thirukkural-view">Read More</a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xxl-7 col-lg-6 col-md-6 col-12 col-sm-6">
@@ -41,12 +43,12 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-xxl-5 col-lg-6 col-md-6 col-sm-6">
+                        
                                 <div class="tpslider__content pt-20">
                                     <!-- <span class="tpslider__sub-title mb-35">Top Seller In The Week</span> -->
-                                    <h4 class="tpslider__title fw-bolder mb-30">தன்நெஞ் சறிவது பொய்யற்க பொய்த்தபின்
-                                        தன்நெஞ்சே தன்னைச் சுடும்....</h4>
-                                    <p>ஒருவன் தன் நெஞ்சம் அறிவதாகிய ஒன்றைக்குறித்துப் பொய்ச் சொல்லக்கூடாது, பொய்
-                                        சொன்னால் அதைக்குறித்துத் தன் நெஞ்சமே தன்னை வருத்தும்...</p>
+                                    <h4 class="tpslider__title fw-bolder mb-30">{{ $thirukkural[1]->thirukkuralFirstLine}}
+                                    {{ $thirukkural[1]->thirukkuralSecondLine}}....</h4>
+                                    <p>{{ $thirukkural[1]->shortDescription}}...</p>
                                     <div class="tpslider__btn">
                                         <a class="tp-btn" href="/thirukkural-view">Read More</a>
                                     </div>
@@ -76,12 +78,12 @@
                     <div class="container">
                         <div class="row align-items-center">
                             <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                      
                                 <div class="tpslider__content pt-20">
                                     <!-- <span class="tpslider__sub-title mb-35">Top Seller In The Week</span> -->
-                                    <h4 class="tpslider__title mb-30">எல்லா விளக்கும் விளக்கல்ல சான்றோர்க்குப் பொய்யா
-                                        விளக்கே விளக்கு...</h4>
-                                    <p>(புறத்தில் உள்ள இருளை நீக்கும்) விளக்குகள் எல்லாம் விளக்குகள் அல்ல, சான்றோர்க்கு
-                                        (அகத்து இருள் நீக்கும்) பொய்யாமையாகிய விளக்கே விளக்கு ஆகும்...</p>
+                                    <h4 class="tpslider__title fw-bolder mb-30">{{ $thirukkural[2]->thirukkuralFirstLine}}
+                                    {{ $thirukkural[2]->thirukkuralSecondLine}}....</h4>
+                                    <p>{{ $thirukkural[2]->shortDescription}}...</p>
                                     <div class="tpslider__btn">
                                         <a class="tp-btn" href="/thirukkural-view">Read More</a>
                                     </div>
