@@ -77,12 +77,21 @@
                             <div class="card-body">
                                 <div class="any-card">
                                     <div class="c-con">
-                                        <h4 class="heading mb-0">Congratulations <strong>User Name!!</strong><img
+                                        <h4 class="heading mb-0">Welcome <strong>User Name!!</strong><img
                                                 src="images/crm/party-popper.png" alt=""></h4>
-                                        <span>Best seller of the week</span>
-                                        <p class="mt-3">Lorem Ipsum is simply dummy 😎 text of the printing and
-                                            typesetting industry.</p>
-
+                                        <span>Steps to follow</span>
+                                        <ul style="text-intent:30px">
+                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
+                                            typesetting industry.</li>
+                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
+                                            typesetting industry.</li>
+                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
+                                            typesetting industry.</li>
+                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
+                                            typesetting industry.</li>
+                                            <li>Lorem Ipsum is simply dummy 😎 text of the printing and
+                                            typesetting industry.</li>
+                                        </ul>
                                         <a href="/publisher/pub_profile_view" class="btn btn-primary btn-sm">View Profile</a>
                                     </div>
                                     <img src="images/analytics/developer_male.png" class="harry-img" alt="">
@@ -162,7 +171,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books}}</h4>
-                                                <p class="mb-0">Total Apply Book</p>
+                                                <p class="mb-0">Total Applied Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -183,7 +192,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books1}}</h4>
-                                                <p class="mb-0">Pending Book</p>
+                                                <p class="mb-0">Pending Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -209,7 +218,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{$books2}}</h4>
-                                                <p class="mb-0">Reject Book</p>
+                                                <p class="mb-0">Rejected Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -230,7 +239,7 @@
                                             @endphp
                                             <div class="ms-2">
                                                 <h4>{{ $books3}}</h4>
-                                                <p class="mb-0">Selected Book</p>
+                                                <p class="mb-0">Selected Books</p>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)"><i
@@ -261,7 +270,7 @@
                                                             </div>
                                                             <div class="anta-data">
                                                                 <h5>Completed Order List</h5>
-                                                                <h3>+23%</h3>
+                                                                <h3>0</h3>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -278,7 +287,7 @@
                                                             </div>
                                                             <div class="anta-data">
                                                                 <h5>Pending Order List</h5>
-                                                                <h3>-33%</h3>
+                                                                <h3>0</h3>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -295,7 +304,7 @@
                                                             </div>
                                                             <div class="anta-data">
                                                                 <h5>Rejected Order List</h5>
-                                                                <h3>-23%</h3>
+                                                                <h3>0</h3>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -341,7 +350,7 @@
         @endforeach
     @endif
 </ul>
-      
+
                             </div>
                         </div>
                     </div>
