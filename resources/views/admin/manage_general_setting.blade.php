@@ -152,12 +152,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                         Logo<span class="text-danger">*</span></div>
                                                                                     <div class="col-md-6">
                                                                                         <div class="dropdown">
-                                                                                            <!-- <button type="button"
-                                                                                                class="btn btn-success light sharp btn-sm btn-rounded dropdown-toggle"
-                                                                                                data-bs-toggle="dropdown"
-                                                                                                aria-expanded="false">
-                                                                                                Enabled
-                                                                                            </button> -->
+                                                                                           
                                                                                             <div class="dropdown-menu">
                                                                                                
                                                                                             </div>
@@ -167,16 +162,16 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                 <div class="p-5">
                                                                                     <div class="author-profile">
                                                                                     <div class="form-group">
-                                <label for="name">Set Image1 <span class="text-danger">*</span></label>
-                                <br>
-                                <img class="admin-img" id="websitelogo" src="images\avatar\11.png" alt="No Image Found">
-                                <br>
-                                <span class="mt-1">Image Size Should Be 270 x 340.</span>
-                            </div>
+                                                                                           <label for="name">Set Image1 <span class="text-danger">*</span></label>
+                                                                                                  <br>
+                                                                                               <img class="admin-img" id="websitelogo" src="/assets/img/logo/logo.png" alt="No Image Found">
+                                                                                                    <br>
+                                                                                              <span class="mt-1">Image Size Should Be 270 x 340.</span>
+                                                                                                     </div>
 
-                            <div class="mb-3 file col-md-6 mx-auto">
-                                <input class="form-control" type="file" id="formFile22" onchange="loadFile(event)">
-                            </div>
+                                                                                            <div class="mb-3 file col-md-6 mx-auto">
+                                                                                             <input class="form-control" type="file" id="formFile22" onchange="loadFile(event)">
+                                                                                              </div>
                         
                         
 
@@ -195,104 +190,16 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                         </div>
 
                                                                                     </div>
-                                                                                    <!-- <div class="text-center">
-                                                                                        <div class="row">
-                                                                                            <div class="ms-auto">
-                                                                                                <div
-                                                                                                    class="card-body mt-004">
-                                                                                                    <button
-                                                                                                        type="submit"
-                                                                                                        id="submit-btn"
-                                                                                                        class="btn btn-primary mt-3 text-center btn-block">Submit</button>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                    </div> -->
+                                                                                  
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!-- <div class="col-md-6">
-                                                                <div class="col-xl-12 col-lg-12">
-                                                                    <div class="clearfix">
-                                                                        <div
-                                                                            class="card card-bx profile-card author-profile m-b30">
-                                                                            <div class="card-body">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-6 text-primary">
-                                                                                        Admin
-                                                                                        Logo<span class="text-danger">*</span></div>
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="dropdown">
-                                                                                            <button type="button"
-                                                                                                class="btn btn-success light sharp btn-sm btn-rounded dropdown-toggle"
-                                                                                                data-bs-toggle="dropdown"
-                                                                                                aria-expanded="false">
-                                                                                                Enabled
-                                                                                            </button>
-                                                                                            <div class="dropdown-menu"
-                                                                                               >
-                                                                                             
-                                                                                                <a class="dropdown-item"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#unblock"
-                                                                                                    href="#">Enabled</a>
-                                                                                                <a class="dropdown-item"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#unblock"
-                                                                                                    href="#">Disable</a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="p-5">
-                                                                                    <div class="author-profile">
-                                                                                        <div class="author-media">
-                                                                                            <img src="images/user.jpg"
-                                                                                                alt="">
-                                                                                            <div class="upload-link"
-                                                                                                title=""
-                                                                                                data-toggle="tooltip"
-                                                                                                data-placement="right"
-                                                                                                data-original-title="update">
-                                                                                                <input type="file"
-                                                                                                    class="update-flie">
-                                                                                                <i
-                                                                                                    class="fa fa-camera"></i>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="author-info">
-                                                                                            <h6 class="title">Upload
-                                                                                                Picture
-                                                                                            </h6>
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                    <div class="text-center">
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-12">
-                                                                                                <div
-                                                                                                    class="card-body mt-004">
-                                                                                                    <button
-                                                                                                        type="submit"
-                                                                                                        id="submit-btn"
-                                                                                                        class="btn btn-primary mt-3 text-center btn-block">Submit</button>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div> -->
+                                                          
                                                         </div>
-                                                        <!-- /Column  -->
+                                                      
                                                     </div>
                                                     <!-- Logo End -->
 
@@ -301,7 +208,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                     <div id="v-pills-Favicon" class="tab-pane fade">
                                                         <!-- /Column  -->
                                                         <div class="row">
-                                                            <div class="col-md-6">
+                                                            <div class="col-md-12">
                                                                 <div class="col-xl-12 col-lg-12">
                                                                     <div class="clearfix">
                                                                         <div
@@ -313,58 +220,52 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                                         Favicon<span class="text-danger">*</span></div>
                                                                                     <div class="col-md-6">
                                                                                         <div class="dropdown">
-                                                                                            <button type="button"
+                                                                                            <!-- <button type="button"
                                                                                                 class="btn btn-success light sharp btn-sm btn-rounded dropdown-toggle"
                                                                                                 data-bs-toggle="dropdown"
                                                                                                 aria-expanded="false">
                                                                                                 Enabled
-                                                                                            </button>
+                                                                                            </button> -->
                                                                                             <div class="dropdown-menu"
                                                                                                >
                                                                                                 <!-- Button trigger modal -->
-                                                                                                <a class="dropdown-item"
+                                                                                                <!-- <a class="dropdown-item"
                                                                                                     data-bs-toggle="modal"
                                                                                                     data-bs-target="#unblock"
                                                                                                     href="#">Enabled</a>
                                                                                                 <a class="dropdown-item"
                                                                                                     data-bs-toggle="modal"
                                                                                                     data-bs-target="#unblock"
-                                                                                                    href="#">Disable</a>
+                                                                                                    href="#">Disable</a> -->
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="p-5">
                                                                                     <div class="author-profile">
-                                                                                        <div class="author-media">
-                                                                                            <img src="images/user.jpg"
-                                                                                                alt="">
-                                                                                            <div class="upload-link"
-                                                                                                title=""
-                                                                                                data-toggle="tooltip"
-                                                                                                data-placement="right"
-                                                                                                data-original-title="update">
-                                                                                                <input type="file"
-                                                                                                    class="update-flie">
-                                                                                                <i
-                                                                                                    class="fa fa-camera"></i>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="author-info">
-                                                                                            <h6 class="title">Upload
-                                                                                                Picture
-                                                                                            </h6>
-                                                                                        </div>
+                                                                                    <div class="form-group">
+                                                                                           <label for="name">Set Image1 <span class="text-danger">*</span></label>
+                                                                                                  <br>
+                                                                                               <img class="admin-img" id="websitefavicon" src="images\avatar\11.png" alt="No Image Found">
+                                                                                                    <br>
+                                                                                              <span class="mt-1">Image Size Should Be 270 x 340.</span>
+                                                                                                     </div>
+
+                                                                                            <div class="mb-3 file col-md-6 mx-auto">
+                                                                                             <input class="form-control" type="file" id="formFile33" onchange="loadFile(event)">
+                                                                                              </div>
+                        
+                        
 
                                                                                     </div>
                                                                                     <div class="text-center">
                                                                                         <div class="row">
-                                                                                            <div class="col-md-12">
+                                                                                            <div class="mx-auto col-md-6">
                                                                                                 <div
                                                                                                     class="card-body mt-004">
                                                                                                     <button
                                                                                                         type="submit"
-                                                                                                        id="submit-btn"
+                                                                                                        id="submitbutton33" 
                                                                                                         class="btn btn-primary mt-3 text-center btn-block">Submit</button>
                                                                                                 </div>
                                                                                             </div>
@@ -377,81 +278,7 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                                <div class="col-xl-12 col-lg-12">
-                                                                    <div class="clearfix">
-                                                                        <div
-                                                                            class="card card-bx profile-card author-profile m-b30">
-                                                                            <div class="card-body">
-                                                                                <div class="row">
-                                                                                    <div class="col-md-6 text-primary">
-                                                                                        Admin Favicon<span class="text-danger">*</span></div>
-                                                                                    <div class="col-md-6">
-                                                                                        <div class="dropdown">
-                                                                                            <button type="button"
-                                                                                                class="btn btn-success light sharp btn-sm btn-rounded dropdown-toggle"
-                                                                                                data-bs-toggle="dropdown"
-                                                                                                aria-expanded="false">
-                                                                                                Enabled
-                                                                                            </button>
-                                                                                            <div class="dropdown-menu"
-                                                                                               >
-                                                                                                <!-- Button trigger modal -->
-                                                                                                <a class="dropdown-item"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#unblock"
-                                                                                                    href="#">Enabled</a>
-                                                                                                <a class="dropdown-item"
-                                                                                                    data-bs-toggle="modal"
-                                                                                                    data-bs-target="#unblock"
-                                                                                                    href="#">Disable</a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="p-5">
-                                                                                    <div class="author-profile">
-                                                                                        <div class="author-media">
-                                                                                            <img src="images/user.jpg"
-                                                                                                alt="">
-                                                                                            <div class="upload-link"
-                                                                                                title=""
-                                                                                                data-toggle="tooltip"
-                                                                                                data-placement="right"
-                                                                                                data-original-title="update">
-                                                                                                <input type="file"
-                                                                                                    class="update-flie">
-                                                                                                <i
-                                                                                                    class="fa fa-camera"></i>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="author-info">
-                                                                                            <h6 class="title">Upload
-                                                                                                Picture
-                                                                                            </h6>
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                    <div class="text-center">
-                                                                                        <div class="row">
-                                                                                            <div class="col-md-12">
-                                                                                                <div
-                                                                                                    class="card-body mt-004">
-                                                                                                    <button
-                                                                                                        type="submit"
-                                                                                                        id="submit-btn"
-                                                                                                        class="btn btn-primary mt-3 text-center btn-block">Submit</button>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                         
                                                         </div>
                                                         <!-- /Column  -->
                                                     </div>
@@ -1026,6 +853,20 @@ $(document).on('click','#submit',function(e){
             }
         });
     </script>
+    <script>
+        document.getElementById('formFile33').addEventListener('change', function() {
+            var file = this.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('websitefavicon').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                document.getElementById('websitefavicon').src = 'images\avatar\11.png'; // Default image
+            }
+        });
+    </script>
 
 <script>
         $(document).ready(function() {
@@ -1063,6 +904,43 @@ $(document).on('click','#submit',function(e){
             });
         });
     </script>
+    
+<script>
+        $(document).ready(function() {
+            $("#submitbutton33").on("click", function (e) {
+                e.preventDefault();
+            
+                var websitelogo = $('#formFile22')[0].files;
+              
+                let fd = new FormData();
+                fd.append('type', type);
+                fd.append('websitefavicon',websitefavicon[0]);  
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                $.ajax({
+                    url: "/admin/websitefavicon",
+                    type: "POST",
+                    data: fd,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            toastr.success(response.success, {timeout: 2000});
+                            setTimeout(function () {
+                                window.location.href = "/admin/banner_setting";
+                            }, 3000);
+                        } else {
+                            toastr.error(response.error, {timeout: 2000});
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
@@ -1076,6 +954,11 @@ $(document).on('click','#submit',function(e){
     margin-top: 2px;
 }
 img#websitelogo {
+    max-height: 100px;
+    max-width: 450px;
+    /* border: 1px solid #452b90; */
+}
+#websitefavicon {
     max-height: 100px;
     max-width: 450px;
     /* border: 1px solid #452b90; */

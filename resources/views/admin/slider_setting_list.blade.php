@@ -53,7 +53,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Publisher/Distributor Inactive List</b>
+                                <b>Thirukkural</b>
                             </h3>
                             <a class="btn btn-primary  btn-sm" href="/admin/slider_setting">
                                 <i class="fas fa-plus"></i> Create </a>

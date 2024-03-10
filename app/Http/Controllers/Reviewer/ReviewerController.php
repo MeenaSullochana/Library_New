@@ -58,6 +58,7 @@ class ReviewerController extends Controller
     }
 
     public function review(Request $req){
+      
         $rev = BookReviewStatus::find($req->rev);
         $book = Book::find($req->bookid);
         $review = $req->review;
@@ -72,6 +73,10 @@ class ReviewerController extends Controller
         }
 
         $rev->mark = $mark;
+        $rev->category = $req->category;
+        $rev->review_remark =      json_encode( $req->review_remark);
+
+    
         $rev->review_type = $review;
         $rev->remark=$req->about_book;
         $rev->save();

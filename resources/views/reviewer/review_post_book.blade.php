@@ -109,13 +109,19 @@
                                  <p class="text-start">{{$book->description}}</p>
                               </div>
                            </div>
-                           <div class="card p-5">
-                              <form action="" method="post">
-                                 <h3>புனைவு நூல்கள் (Fiction) </h3>
+                           
+                           <div class="card-footer">
+                              <form method="POST" action="/reviewer/review">
+                                 @csrf
+                               <div class="card p-5">
+                               <input type="hidden" name="category" value={{$book->category}}>
+
+                                 @if($book->category == "Fiction(புனைவு நூல்கள்)")
+                                 <h3>Fiction(புனைவு நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Engaging Plot and Characters" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Engaging Plot and Characters
                                            </label>
@@ -123,7 +129,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Writing Quality and Style" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Writing Quality and Style
                                           </label>
@@ -131,7 +137,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Originality and Creativity" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Originality and Creativity
                                             </label>
@@ -139,7 +145,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Emotional Impact" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Emotional Impact
                                             </label>
@@ -147,18 +153,19 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Cultural and Contextual Relevance" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Cultural and Contextual Relevance
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                                    <h3>புனைவிலி நூல்கள் (Non-Fiction) </h3>
+                                    @elseif($book->category == "Non Fiction(புனைவிலி நூல்கள்)")
+                                    <h3>Non Fiction(புனைவிலி நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Accuracy and Credibility" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Accuracy and Credibility
                                            </label>
@@ -166,7 +173,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Clarity and Accessibility" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Clarity and Accessibility
                                           </label>
@@ -174,7 +181,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Relevance and Timeliness" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Relevance and Timeliness
                                             </label>
@@ -182,7 +189,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Depth of Analysis" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Depth of Analysis
                                             </label>
@@ -190,19 +197,19 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Practical Applications and Solutions" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Practical Applications and Solutions
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-
-                                    <h3> போட்டித்தேர்வு நூல்கள் (Competitive Examination Books) </h3>
+                                    @elseif($book->category == "Competitive Examination Books(போட்டித்தேர்வு நூல்கள்)")
+                                    <h3>Competitive Examination Books(போட்டித்தேர்வு நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Coverage of Syllabus and Exam Patterns" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Coverage of Syllabus and Exam Patterns
                                            </label>
@@ -210,7 +217,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Clarity and Conciseness of Content" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Clarity and Conciseness of Content
                                           </label>
@@ -218,7 +225,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Practice Questions and Mock Tests" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Practice Questions and Mock Tests
                                             </label>
@@ -226,7 +233,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Explanation of Concepts and Problem-solving Techniques" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Explanation of Concepts and Problem-solving Techniques
                                             </label>
@@ -234,18 +241,20 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Success Rate and Testimonials from Previous Users" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Success Rate and Testimonials from Previous Users
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                                    <h3>சிறுவர் நூல்கள் (Children's Books) </h3>
+                                    @elseif($book->category == "Children Books(சிறுவர் நூல்கள்)")
+
+                                    <h3>Children Books(சிறுவர் நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Engagement and Entertainment Value" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Engagement and Entertainment Value
                                            </label>
@@ -253,7 +262,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Educational Content and Learning Objectives" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Educational Content and Learning Objectives
                                           </label>
@@ -261,7 +270,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Age-Appropriate Language and Themes" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Age-Appropriate Language and Themes
                                             </label>
@@ -269,7 +278,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Illustrations and Visual Appeal" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Illustrations and Visual Appeal
                                             </label>
@@ -277,18 +286,20 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Positive Messages and Moral Values" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Positive Messages and Moral Values
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                                    <h3>பாட நூல்கள் (Academic Textbooks) </h3>
+                                    @elseif($book->category == "Academic Textbooks(பாட நூல்கள்)")
+
+                                    <h3>Academic Textbooks(பாட நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Scholarly Rigor and Research Methodology" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Scholarly Rigor and Research Methodology
                                            </label>
@@ -296,7 +307,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Clarity and Organization of Content" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Clarity and Organization of Content
                                           </label>
@@ -304,7 +315,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Contribution to Scholarship and Disciplinary Knowledge" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Contribution to Scholarship and Disciplinary Knowledge
                                             </label>
@@ -312,7 +323,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Interdisciplinary Relevance" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Interdisciplinary Relevance
                                             </label>
@@ -320,18 +331,20 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Pedagogical Features and Learning Resources" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Pedagogical Features and Learning Resources
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                                    <h3>ஆவணப் பதிப்பு நூல்கள் (Documentation Editions) </h3>
+                                    @elseif($book->category == "Documentation Editions(ஆவணப் பதிப்பு நூல்கள்)")
+
+                                    <h3>Documentation Editions(ஆவணப் பதிப்பு நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Accuracy and Authenticity of Information" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Accuracy and Authenticity of Information
                                            </label>
@@ -339,7 +352,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Comprehensive Coverage of Documents or Materials" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Comprehensive Coverage of Documents or Materials
                                           </label>
@@ -347,7 +360,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox"  name="review_remark[]" value="Clarity of Presentation and Organization" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Clarity of Presentation and Organization
                                             </label>
@@ -355,7 +368,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Editorial Commentary and Annotations" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Editorial Commentary and Annotations
                                             </label>
@@ -363,18 +376,20 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Cross-referencing and Citations" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Cross-referencing and Citations
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                                    <h3>அரசு வெளியீடுகள் (Government Publications) </h3>
+                                    @elseif($book->category == "Government Publications(அரசு வெளியீடுகள்)")
+
+                                    <h3>Government Publications(அரசு வெளியீடுகள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Accuracy and Reliability of Information" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Accuracy and Reliability of Information
                                            </label>
@@ -382,7 +397,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Compliance with Legal and Regulatory Standards" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Compliance with Legal and Regulatory Standards
                                           </label>
@@ -390,7 +405,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Accessibility and Availability to the Public" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Accessibility and Availability to the Public
                                             </label>
@@ -398,7 +413,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Clarity of Language and Communication" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Clarity of Language and Communication
                                             </label>
@@ -406,18 +421,20 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Relevance to Public Policy and Governance" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Relevance to Public Policy and Governance
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                                    <h3>மொழிபெயர்ப்பு நூல்கள் (Translated Books) </h3>
+                                    @elseif($book->category == "Translated Books(மொழிபெயர்ப்பு நூல்கள்)")
+
+                                    <h3>Translated Books(மொழிபெயர்ப்பு நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Faithfulness to the Original Text" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Faithfulness to the Original Text
                                            </label>
@@ -425,7 +442,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox" name="review_remark[]" value="Clarity and Fluency of Translation" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              Clarity and Fluency of Translation
                                           </label>
@@ -433,7 +450,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Cultural Sensitivity and Contextual Adaptation" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Cultural Sensitivity and Contextual Adaptation
                                             </label>
@@ -441,7 +458,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Accuracy of Terminology and Expressions" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Accuracy of Terminology and Expressions
                                             </label>
@@ -449,18 +466,20 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Recognition and Acknowledgment of Translator's Work" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Recognition and Acknowledgment of Translator's Work
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                                    <h3>வெளிநாட்டில் அச்சடிக்கப்பட்ட நூல்கள் (Foreign Books) </h3>
+                                    @else
+
+                                    <h3>Translated Books(மொழிபெயர்ப்பு நூல்கள்) </h3>
                                     <div class="row mb-3">
                                        <div class="col-sm-10">
                                          <div class="form-check">
-                                           <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                           <input class="form-check-input" type="checkbox" name="review_remark[]" value="Translation Quality (if translated)" id="gridCheck1">
                                            <label class="form-check-label" for="gridCheck1">
                                              Translation Quality (if translated)
                                            </label>
@@ -468,7 +487,7 @@
                                        </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                          <input class="form-check-input" type="checkbox"  name="review_remark[]" value="International Recognition and Awards" id="gridCheck1">
                                           <label class="form-check-label" for="gridCheck1">
                                              International Recognition and Awards
                                           </label>
@@ -476,7 +495,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Cultural Significance and Global Impact" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Cultural Significance and Global Impact
                                             </label>
@@ -484,7 +503,7 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Relevance to Local Readers" id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Relevance to Local Readers
                                             </label>
@@ -492,18 +511,16 @@
                                         </div>
                                         <div class="col-sm-10">
                                           <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                            <input class="form-check-input" type="checkbox" name="review_remark[]" value="Availability of Supplementary Materials or Resources"  id="gridCheck1">
                                             <label class="form-check-label" for="gridCheck1">
                                              Availability of Supplementary Materials or Resources
                                             </label>
                                           </div>
                                         </div>
                                     </div>
-                              </form>
+                                    @endif
+                             
                            </div>
-                           <div class="card-footer">
-                              <form method="POST" action="/reviewer/review">
-                                 @csrf
                                  <div class=" mb-5">
                                     <input type="hidden" name="bookid" value={{$book->id}}>
                                     <input type="hidden" name="rev" value={{$rev->id}}>

@@ -1533,6 +1533,9 @@
 
                             <li><a href="manage_general_setting">General Setting</a></li>
                             <li><a href="banner_setting">Home Setting</a></li>
+                            <li><a href="slider_setting">Thirukkural</a></li>
+
+                            
                             {{-- <li><a href="site_announcement">Announcement Setting</a></li> --}}
                             <li><a href="smtp">SMTP</a></li>
                             <li><a href="mailurl">Mail Url</a></li>

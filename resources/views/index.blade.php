@@ -190,7 +190,7 @@
                             <div class="tpchoose__content">
                                 <h4 class="tpchoose__title">Other user login</h4>
                                 <p>if Other user Click here register</p>
-                                <a href="/register"
+                                <a href="/member/login/"
                                     class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
                                     Now<i class="icon-chevrons-right"></i></a>
                             </div>
@@ -282,8 +282,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="tpvideo__wrapper p-4">
                         <div class="tpvideo__icon mb-5">
+                        @php
+        $publishers = DB::table('publishers')->count();
+        @endphp
                             <i>
-                                <img src="assets/img/shape/video-dots.svg" alt=""> 5465+
+                                <img src="assets/img/shape/video-dots.svg" alt=""> {{$publishers}}+
                             </i>
                         </div>
                         <div class="tpvideo__content">
@@ -294,8 +297,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="tpvideo__wrapper p-4">
                         <div class="tpvideo__icon mb-5">
+                        @php
+        $distributors = DB::table('distributors')->count();
+        @endphp
                             <i>
-                                <img src="assets/img/shape/video-dots.svg" alt=""> 4968+
+                                <img src="assets/img/shape/video-dots.svg" alt=""> {{$distributors}}+
                             </i>
                         </div>
                         <div class="tpvideo__content">
@@ -306,8 +312,11 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="tpvideo__wrapper p-4">
                         <div class="tpvideo__icon ">
+                        @php
+        $publisher_distributors = DB::table('publisher_distributors')->count();
+        @endphp
                             <i>
-                                <img src="assets/img/shape/video-dots.svg" alt=""> 565+
+                                <img src="assets/img/shape/video-dots.svg" alt=""> {{$publisher_distributors}}+
                             </i>
                         </div>
                         <div class="tpvideo__content">
@@ -316,10 +325,15 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="tpvideo__wrapper mb-30">
-                        <div class="tpvideo__icon mb-5">
+                    <div class="tpvideo__wrapper p-4">
+                        <div class="tpvideo__icon ">
+                        @php
+        $librarians = DB::table('librarians')->count();
+        $reviewer = DB::table('reviewer')->count();
+       $librariansreviewer=$librarians +  $reviewer;
+        @endphp
                             <i>
-                                <img src="assets/img/shape/video-dots.svg" alt=""> 495+
+                                <img src="assets/img/shape/video-dots.svg" alt="">{{ $librariansreviewer}} +
                             </i>
                         </div>
                         <div class="tpvideo__content">

@@ -224,14 +224,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <p>Do you want to proceed?</p>
+                      <p>Comming Zoon</p>
                     <p>Number Of Book Selected : </p>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                    <button type="button" id="submitbutton11"
-                        class="btn btn-primary submitbutton11">Confirm</button>
+                    <!-- <button type="button" id="submitbutton11"
+                        class="btn btn-primary submitbutton11">Confirm</button> -->
                 </div>
             </div>
         </div>

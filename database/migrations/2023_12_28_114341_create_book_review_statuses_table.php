@@ -20,6 +20,8 @@ return new class extends Migration
             $table->String('reviewertype');
             $table->String('remark')->nullable();
             $table->String('mark')->nullable();
+            $table->json('review_remark')->nullable();
+            $table->String('category');
             $table->String('review_type')->nullable();
             $table->timestamps();
         });
@@ -37,6 +39,9 @@ return new class extends Migration
             $table->string('remark');
             $table->String('mark');
             $table->String('review_type');
+            $table->json('review_remark');
+
+            
         });
     }
 };

@@ -92,7 +92,7 @@ class SettingController extends Controller
            
         }
       
-        $record = Mailconfirmtitle::where('userType','=','$req->userType')->first();
+        $record = Mailconfirmtitle::where('userType','=',$req->userType)->first();
         if ($record == null) {
             $hidelin = new Mailconfirmtitle();
             $hidelin->userType = $req->userType;
@@ -136,7 +136,8 @@ class SettingController extends Controller
            
         }
       
-        $record = HidelinsTitle::where('userType','=','$req->userType')->first();
+        $record = HidelinsTitle::where('userType','=',$req->userType)->first();
+      
         if ($record == null) {
             $hidelin = new HidelinsTitle();
             $hidelin->userType = $req->userType;
@@ -204,7 +205,7 @@ class SettingController extends Controller
            
         }
       
-        $record = Loginhidelins::where('userType','=','$req->userType')->first();
+        $record = Loginhidelins::where('userType','=',$req->userType)->first();
         if ($record == null) {
             $hidelin = new Loginhidelins();
             $hidelin->userType = $req->userType;
@@ -248,7 +249,7 @@ class SettingController extends Controller
            
         }
       
-        $record = Fogothidelins::where('userType','=','$req->userType')->first();
+        $record = Fogothidelins::where('userType','=',$req->userType)->first();
       
         if ($record == null) {
             $hidelin = new Fogothidelins();
@@ -294,7 +295,7 @@ class SettingController extends Controller
            
         }
       
-        $record = Fogotpasswordhidelins::where('userType','=','$req->userType')->first();
+        $record = Fogotpasswordhidelins::where('userType','=',$req->userType)->first();
         if ($record == null) {
             $hidelin = new Fogotpasswordhidelins();
             $hidelin->userType = $req->userType;
