@@ -4,7 +4,57 @@ $(document).ready(function () {
    //###################Book Publisher#######################
    //***************************************************** */
 //Publisher-username check
+$('#pub_state').on('change', function() {
+   // alert('asfasd');
+   var stateId = $(this).val();
+   $.ajaxSetup({
+      headers:{
+         'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+      }
+   });
+   $.ajax({
+      type: "post",
+      dataType: "json",
+      url: '/getdistrict',
+      data: {'state_id':stateId},
+       success: function(response) {
+           var districts = response.districts;
+           $('#pub_district').empty();
+           $.each(districts, function(key, value) {
+               $('#pub_district').append('<option value="' + value.name + '">' + value.name + '</option>');
+           });
+       },
+       error: function(xhr, status, error) {
+           console.error(error);
+       }
+   });
+});
 
+$('#con_state').on('change', function() {
+   // alert('asfasd');
+   var stateId = $(this).val();
+   $.ajaxSetup({
+      headers:{
+         'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+      }
+   });
+   $.ajax({
+      type: "post",
+      dataType: "json",
+      url: '/getdistrict',
+      data: {'state_id':stateId},
+       success: function(response) {
+           var districts = response.districts;
+           $('#con_district').empty();
+           $.each(districts, function(key, value) {
+               $('#con_district').append('<option value="' + value.name + '">' + value.name + '</option>');
+           });
+       },
+       error: function(xhr, status, error) {
+           console.error(error);
+       }
+   });
+});
 var typingTimer;
 var doneTypingInterval = 1000;
 $('#user_name').keyup(function(){
@@ -1113,7 +1163,57 @@ if (arr.length !== 0) {
    //**********************************************************/
 
    //Distributor-username check
-
+   $('#distn_state').on('change', function() {
+      // alert('asfasd');
+      var stateId = $(this).val();
+      $.ajaxSetup({
+         headers:{
+            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+         }
+      });
+      $.ajax({
+         type: "post",
+         dataType: "json",
+         url: '/getdistrict',
+         data: {'state_id':stateId},
+          success: function(response) {
+              var districts = response.districts;
+              $('#distn_district').empty();
+              $.each(districts, function(key, value) {
+                  $('#distn_district').append('<option value="' + value.name + '">' + value.name + '</option>');
+              });
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+          }
+      });
+   });
+   
+   $('#cont_per_state').on('change', function() {
+      // alert('asfasd');
+      var stateId = $(this).val();
+      $.ajaxSetup({
+         headers:{
+            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+         }
+      });
+      $.ajax({
+         type: "post",
+         dataType: "json",
+         url: '/getdistrict',
+         data: {'state_id':stateId},
+          success: function(response) {
+              var districts = response.districts;
+              $('#cont_per_district').empty();
+              $.each(districts, function(key, value) {
+                  $('#cont_per_district').append('<option value="' + value.name + '">' + value.name + '</option>');
+              });
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+          }
+      });
+   });
 var typingTimer;
 var doneTypingInterval = 1000;
 $('#dis_user_name').keyup(function(){
@@ -1854,7 +1954,57 @@ if (arr.length !== 0) {
    //***************************************************** */
 
    //Distributor-username check
-
+   $('#dst_publication_state').on('change', function() {
+      // alert('asfasd');
+      var stateId = $(this).val();
+      $.ajaxSetup({
+         headers:{
+            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+         }
+      });
+      $.ajax({
+         type: "post",
+         dataType: "json",
+         url: '/getdistrict',
+         data: {'state_id':stateId},
+          success: function(response) {
+              var districts = response.districts;
+              $('#dst_publication_district').empty();
+              $.each(districts, function(key, value) {
+                  $('#dst_publication_district').append('<option value="' + value.name + '">' + value.name + '</option>');
+              });
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+          }
+      });
+   });
+   
+   $('#publication_contact_person_state').on('change', function() {
+      // alert('asfasd');
+      var stateId = $(this).val();
+      $.ajaxSetup({
+         headers:{
+            'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+         }
+      });
+      $.ajax({
+         type: "post",
+         dataType: "json",
+         url: '/getdistrict',
+         data: {'state_id':stateId},
+          success: function(response) {
+              var districts = response.districts;
+              $('#publication_contact_person_district').empty();
+              $.each(districts, function(key, value) {
+                  $('#publication_contact_person_district').append('<option value="' + value.name + '">' + value.name + '</option>');
+              });
+          },
+          error: function(xhr, status, error) {
+              console.error(error);
+          }
+      });
+   });
    var typingTimer;
    var doneTypingInterval = 1000;
    $('#pub_dis_user_name').keyup(function(){

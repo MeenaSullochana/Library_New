@@ -52,14 +52,15 @@ class UserNotification extends Notification implements ShouldQueue
       
       
         if($this->user->usertype ){
-            $subject = "Welcome ".$this->user->firstName;
+            $subject = "Welcome to Transparent Book Procurement Portal";
             // $message = "Congratulations! Your registration was successful. It's currently awaiting approval. You'll receive an email once it's approved.";
-            $message = "Congratulations! Your registration was successful.";
+            $message = "Welcome to the Transparent Book Procurement Portal by the Directorate of Public Libraries under the School Education Department, Government of Tamil Nadu.";
         }else{
-            $subject = "Welcome ".$this->user->name;
-            $message = "Congratulations! Your registration was successful.";
-           
-        }
+            $subject = "Welcome to Transparent Book Procurement Portal";
+            // $message = "Congratulations! Your registration was successful. It's currently awaiting approval. You'll receive an email once it's approved.";
+            $message = "Welcome to the Transparent Book Procurement Portal by the Directorate of Public Libraries under the School Education Department, Government of Tamil Nadu.";
+        } 
+        
        
  
   

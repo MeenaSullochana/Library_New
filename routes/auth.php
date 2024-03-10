@@ -49,6 +49,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('user.logout');
 Route::get('/forgotform',function(){ return view('Auth.forgotform');});
 Route::post('/forgotpassword', [ForgotPasswordController::class,'forgotpassword']);
 Route::get('/forgotform/{email}/{type}', [ForgotPasswordController::class, 'resetpassword']);
+Route::post('/getdistrict', [RegisterController::class, 'getDistricts']);
 Route::get('/reset-password',function(){
     $data = Session::get('obj');
     if($data !==null){
