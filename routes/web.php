@@ -17,3 +17,4 @@ Route::get('/', function () {return view('index');});
 Route::get('/faq',function(){return view('faq');});
 Route::get('/contact-us',function(){return view('contact-us');});
 Route::get('/about',function(){return view('about');});
+Route::get('/splash-screen',function(){return view('splash-screen');});
