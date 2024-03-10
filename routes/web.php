@@ -15,6 +15,7 @@ include(base_path('routes/order.php'));
 
 Route::get('/', function () {return view('index');});
 Route::get('/faq',function(){return view('faq');});
+Route::get('/guidelines',function(){return view('guidelines');});
 Route::get('/contact-us',function(){return view('contact-us');});
 Route::get('/about',function(){return view('about');});
 Route::get('/procurement-policy',function(){return view('procurement-policy');});
