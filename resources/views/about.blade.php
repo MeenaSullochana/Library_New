@@ -49,7 +49,7 @@
                             <p>Over 25 years of experience, we have crafted thousands of strategic discovery process
                                 that <br> enables us to peel back the layers which enable us to understand, connect.</p> -->
                             <div class="tpabout__inner-btn mt-4">
-                                <a href="about.html">About us</a>
+                                {{-- <a href="/about">About us</a> --}}
                             </div>
                         </div>
                     </div>
@@ -64,13 +64,14 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <div class="tpabout__inner-thumb-2 p-relative mb-30">
-                            <img src="assets/img/banner/about-inner-bg.png" alt="">
+                            <img class="w-100" src="/images/bg6.png" alt="">
                             <div class="tpabout__inner-thumb-shape d-none d-md-block">
                                 <div class="tpabout__inner-thumb-shape-one">
-                                    <img src="/images/bg6.png">
+                                    <!-- <img src="assets/img/shape/tree-leaf-6.png" alt=""> -->
+                                    <img src="assets/img/about/12.png" alt="">
                                 </div>
                                 <div class="tpabout__inner-thumb-shape-two">
-                                    <img src="assets/img/about/12.png">
+                                    <!-- <img src="assets/img/shape/tree-leaf-7.png" alt=""> -->
                                 </div>
                             </div>
                         </div>
@@ -84,20 +85,9 @@
                                 </div>
                                 <h4 class="tpabout__inner-title-2 fs-3 mb-25">WELCOME TO DIRECTORATE OF PUBLIC LIBRARIES
                                 </h4>
-                                <p>Public Libraries were opened in Tamil Nadu as per the “Tamil Nadu Public Libraries
-                                    Act,
-                                    1948”. <br>The Directorate of Public Libraries was formed in 1972 in order to
-                                    improve
-                                    the library services.<br> The following libraries are functioning in the State under
-                                    the
-                                    control of the Directorate of Public Libraries. Public Libraries were opened in
-                                    Tamil
-                                    Nadu as per the “Tamil Nadu Public Libraries Act, 1948”.<br>
-                                    The Directorate of Public Libraries was formed in 1972 in order to improve the
-                                    library
-                                    services. The following libraries are functioning in the State under the control of
-                                    the
-                                    Directorate of Public Libraries.
+                                <p style="text-align:justify">The Transparent Book Procurement Portal, created by the Directorate of Public Libraries, Government of Tamandu, revolutionizes the procurement process by connecting publishers, publisher cum distributors, and distributors with public libraries across Tamil Nadu. Designed to streamline submissions and enhance the selection of books, this digital platform emphasizes transparency and efficiency. It supports a wide range of books, incorporating subject expert reviews, librarian and  user review, and relies on reader forum recommendations for purchase decisions.
+                                </p>
+                                <p style="text-align:justify">This initiative ensures that libraries meet reader demands with quality and relevant content, fostering a reading culture and supporting the literary community. Through detailed submission requirements and real-time tracking, the portal reinforces the government's commitment to diversifying and enriching library collections, thus contributing significantly to the intellectual and cultural fabric of society.
                                 </p>
                                 <!--<div class="tpabout__inner-list">-->
                                 <!--    <ul>-->
@@ -114,7 +104,7 @@
         </section>
         <!-- about-area-end -->
 
-        <!-- about-area-start -->
+        {{-- <!-- about-area-start -->
         <section class="about-area pb-35" style="margin-top:40px">
             <div class="container">
                 <div class="row">
@@ -155,24 +145,65 @@
                 </div>
             </div>
         </section>
-        <!-- about-area-end -->
+        <!-- about-area-end --> --}}
 
         <!-- video-area-start -->
-        <section class="video-area pt-80 pb-50">
-            <div class="container">
+        <section class="video-area ">
+            <div class="container mt-45 mb-45">
                 <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div class="tpsection mb-35">
-                            <h4 class="tpsection__sub-title">~ Good Performance ~</h4>
-                            <h4 class="tpsection__title">Our Working Ability</h4>
-                            <p>The liber tempor cum soluta nobis eleifend option congue doming quod mazim.</p>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tpvideo__wrapper p-4">
+                            <div class="tpvideo__icon mb-5">
+                            @php
+                            $publishers = DB::table('publishers')->count();
+                            @endphp
+                                <i>
+                                    <img src="assets/img/shape/video-dots.svg" alt=""> {{$publishers}}+
+                                </i>
+                            </div>
+                            <div class="tpvideo__content">
+                                <h4 class="tpvideo__title pt-3">Publisher</h4>
+                            </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tpvideo__wrapper p-4">
+                            <div class="tpvideo__icon mb-5">
+                            @php
+                            $distributors = DB::table('distributors')->count();
+                            @endphp
+                                <i>
+                                    <img src="assets/img/shape/video-dots.svg" alt=""> {{$distributors}}+
+                                </i>
+                            </div>
+                            <div class="tpvideo__content">
+                                <h4 class="tpvideo__title pt-3">Distributor</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="tpvideo__wrapper p-4">
+                            <div class="tpvideo__icon ">
+                            @php
+                            $publisher_distributors = DB::table('publisher_distributors')->count();
+                            @endphp
+                                <i>
+                                    <img src="assets/img/shape/video-dots.svg" alt=""> {{$publisher_distributors}}+
+                                </i>
+                            </div>
+                            <div class="tpvideo__content">
+                                <h4 class="tpvideo__title pt-3">Publisher cum Distributor</h4>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
+            </div>
+            <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="tpvideo__bg p-relative mb-25">
-                            <img src="assets/img/banner/2.png" alt="">
+                            <img class="w-100" src="assets/img/banner/2.png" alt="">
                             <div class="tpvideo__video-btn">
                                 <a class="tpvideo__video-icon popup-video"
                                     href="https://www.youtube.com/watch?v=rLrV5Tel7zw">
@@ -190,60 +221,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="tpvideo__wrapper mb-30">
-                            <div class="tpvideo__icon mb-5">
-                                <i>
-                                    <img src="assets/img/shape/video-dots.svg" alt=""> 5465+
-                                </i>
-                            </div>
-                            <div class="tpvideo__content">
-                                <h4 class="tpvideo__title">Active Clients</h4>
-                                <p>Sed ut perspiciatis unde omnis <br> iste natus sit accusantium doloremque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="tpvideo__wrapper mb-30">
-                            <div class="tpvideo__icon mb-5">
-                                <i>
-                                    <img src="assets/img/shape/video-dots.svg" alt=""> 4968+
-                                </i>
-                            </div>
-                            <div class="tpvideo__content">
-                                <h4 class="tpvideo__title">Projects Done</h4>
-                                <p>Sed ut perspiciatis unde omnis <br> iste natus sit accusantium doloremque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="tpvideo__wrapper mb-30">
-                            <div class="tpvideo__icon mb-5">
-                                <i>
-                                    <img src="assets/img/shape/video-dots.svg" alt=""> 565+
-                                </i>
-                            </div>
-                            <div class="tpvideo__content">
-                                <h4 class="tpvideo__title">Team Advisors</h4>
-                                <p>Sed ut perspiciatis unde omnis <br> iste natus sit accusantium doloremque.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="tpvideo__wrapper mb-30">
-                            <div class="tpvideo__icon mb-5">
-                                <i>
-                                    <img src="assets/img/shape/video-dots.svg" alt=""> 495+
-                                </i>
-                            </div>
-                            <div class="tpvideo__content">
-                                <h4 class="tpvideo__title">Users Online</h4>
-                                <p>Sed ut perspiciatis unde omnis <br> iste natus sit accusantium doloremque.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
         </section>
         <!-- video-area-end -->
@@ -253,10 +231,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <div class="tpsection mb-35 pt-75">
-                            <h4 class="tpsection__sub-title">~ Why choose us? ~</h4>
-                            <h4 class="tpsection__title">What makes us different</h4>
-                            <p>The liber tempor cum soluta nobis eleifend option congue doming quod mazim.</p>
+                        <div class="tpsection mb-35 mt-100">
+                            <h4 class="tpsection__title">User Registration Portal</h4>
                         </div>
                     </div>
                 </div>
@@ -267,11 +243,11 @@
                                 <img src="assets/img/icon/choose-icon1.svg" alt="">
                             </div>
                             <div class="tpchoose__content">
-                                <h4 class="tpchoose__title">100% Fresh Food</h4>
-                                <p>Adjust global theme options and see design changes in real-time.</p>
-                                <a href="#"
-                                    class="tpchoose__details d-flex align-items-center justify-content-center">learn
-                                    more<i class="icon-chevrons-right"></i></a>
+                                <h4 class="tpchoose__title">Publisher</h4>
+                                <p>Authorized Publisher Register Click to go</p>
+                                <a href="/register"
+                                    class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
+                                    Now<i class="icon-chevrons-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -281,11 +257,11 @@
                                 <img src="assets/img/icon/choose-icon2.svg" alt="">
                             </div>
                             <div class="tpchoose__content">
-                                <h4 class="tpchoose__title">Premium Quality</h4>
-                                <p>Adjust global theme options and see design changes in real-time.</p>
-                                <a href="#"
-                                    class="tpchoose__details d-flex align-items-center justify-content-center">learn
-                                    more<i class="icon-chevrons-right"></i></a>
+                                <h4 class="tpchoose__title">Distributor</h4>
+                                <p>Authorized Distributor Register Click to go</p>
+                                <a href="/register"
+                                    class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
+                                    Now<i class="icon-chevrons-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -295,11 +271,11 @@
                                 <img src="assets/img/icon/choose-icon3.svg" alt="">
                             </div>
                             <div class="tpchoose__content">
-                                <h4 class="tpchoose__title">100% Natural</h4>
-                                <p>Adjust global theme options and see design changes in real-time.</p>
+                                <h4 class="tpchoose__title">Publisher cum Distributor</h4>
+                                <p>Authorized Publisher cum Distributor Register Click to go</p>
                                 <a href="#"
-                                    class="tpchoose__details d-flex align-items-center justify-content-center">learn
-                                    more<i class="icon-chevrons-right"></i></a>
+                                    class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
+                                    Now<i class="icon-chevrons-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -309,21 +285,12 @@
                                 <img src="assets/img/icon/choose-icon4.svg" alt="">
                             </div>
                             <div class="tpchoose__content">
-                                <h4 class="tpchoose__title">100% Organic Goods</h4>
-                                <p>Adjust global theme options and see design changes in real-time.</p>
-                                <a href="#"
-                                    class="tpchoose__details d-flex align-items-center justify-content-center">learn
-                                    more<i class="icon-chevrons-right"></i></a>
+                                <h4 class="tpchoose__title">Other user login</h4>
+                                <p>if Other user Click here register</p>
+                                <a href="/member/login/"
+                                    class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
+                                    Now<i class="icon-chevrons-right"></i></a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="tpproduct__all-item text-center pt-15">
-                            <span>Our nearly 1.4K committed staff members are ready to help.
-                                <a href="#">Help Center <i class="icon-chevrons-right"></i></a>
-                            </span>
                         </div>
                     </div>
                 </div>
@@ -331,71 +298,6 @@
         </section>
         <!-- choose-area-end -->
 
-        <!-- feature-area-start -->
-        <section class="feature-area mainfeature__bg pt-50 pb-40" data-background="assets/img/shape/footer-shape-1.svg">
-            <div class="container">
-                <div class="mainfeature__border pb-15">
-                    <div class="row row-cols-lg-5 row-cols-md-3 row-cols-2">
-                        <div class="col">
-                            <div class="mainfeature__item text-center mb-30">
-                                <div class="mainfeature__icon">
-                                    <img src="assets/img/icon/feature-icon-1.svg" alt="">
-                                </div>
-                                <div class="mainfeature__content">
-                                    <h4 class="mainfeature__title">Fast Delivery</h4>
-                                    <p>Across West & East India</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mainfeature__item text-center mb-30">
-                                <div class="mainfeature__icon">
-                                    <img src="assets/img/icon/feature-icon-2.svg" alt="">
-                                </div>
-                                <div class="mainfeature__content">
-                                    <h4 class="mainfeature__title">safe payment</h4>
-                                    <p>100% Secure Payment</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mainfeature__item text-center mb-30">
-                                <div class="mainfeature__icon">
-                                    <img src="assets/img/icon/feature-icon-3.svg" alt="">
-                                </div>
-                                <div class="mainfeature__content">
-                                    <h4 class="mainfeature__title">Online Discount</h4>
-                                    <p>Add Multi-buy Discount </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mainfeature__item text-center mb-30">
-                                <div class="mainfeature__icon">
-                                    <img src="assets/img/icon/feature-icon-4.svg" alt="">
-                                </div>
-                                <div class="mainfeature__content">
-                                    <h4 class="mainfeature__title">Help Center</h4>
-                                    <p>Dedicated 24/7 Support </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="mainfeature__item text-center mb-30">
-                                <div class="mainfeature__icon">
-                                    <img src="assets/img/icon/feature-icon-5.svg" alt="">
-                                </div>
-                                <div class="mainfeature__content">
-                                    <h4 class="mainfeature__title">Curated items</h4>
-                                    <p>From Handpicked Sellers</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- feature-area-end -->
 
     </main>
 
