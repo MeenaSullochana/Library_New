@@ -23,7 +23,7 @@
             @include("menu.menu")
         </header>
         <div class="container p-2">
-          
+
             <section class="about_register">
                <!-- <h2 class="text-center p-3"></h2> -->
                <h5>BOOK FAIR 2023</h5>
@@ -53,7 +53,7 @@
                         <form class="row g-3 mt-2" method="POST" enctype="multipart/form-data" id="form_publisher"
                            action="/create/publisher" autocomplete="on">
                            @csrf
-                           <input type="text" class="form-control" 
+                           <input type="text" class="form-control"
                            name="usertype" hidden value="publisher"
                            required />
                            <h4>Publication Details - <span class="mt-055"> பதிப்பு விவரம்</span></h4>
@@ -132,8 +132,8 @@
                                  class="mt-056">மாவட்டம் </span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="pub_district" class="form-select" name="pub_district" required>
-                              
-                            @foreach ($district as $val) 
+
+                            @foreach ($district as $val)
                                  <option value="{{$val->name}}">{{$val->name}}</option>
                                @endforeach
                               </select>
@@ -143,8 +143,8 @@
                                  class="mt-056">மாநிலம்</span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="pub_state" class="form-select" name="pub_state" required>
-                              
-                            @foreach ($state as $val) 
+
+                            @foreach ($state as $val)
                                  <option value="{{$val->name}}">{{$val->name}}</option>
                                @endforeach
                               </select>
@@ -159,7 +159,7 @@
                                  class="mt-056">நாடு</span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="pub_country" class="form-select" name="pub_country" required>
-                                @foreach ($country as $val) 
+                                @foreach ($country as $val)
                                     <option value="{{$val->name}}">{{$val->name}}</option>
                                   @endforeach
                               </select>
@@ -208,7 +208,7 @@
                                  class="mt-056">மாவட்டம் </span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="con_district" class="form-select" name="con_district" required>
-                                @foreach ($district as $val) 
+                                @foreach ($district as $val)
                                     <option value="{{$val->name}}">{{$val->name}}</option>
                                   @endforeach
                               </select>
@@ -218,7 +218,7 @@
                                  class="mt-056">மாநிலம்</span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="con_state" class="form-select" name="con_state" required>
-                                @foreach ($state as $val) 
+                                @foreach ($state as $val)
                                     <option value="{{$val->name}}">{{$val->name}}</option>
                                   @endforeach
                               </select>
@@ -234,7 +234,7 @@
                                  class="mt-056">நாடு</span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="con_country" class="form-select" name="con_country" required>
-                                @foreach ($country as $val) 
+                                @foreach ($country as $val)
                                     <option value="{{$val->name}}">{{$val->name}}</option>
                                   @endforeach
                               </select>
@@ -597,7 +597,7 @@
                                       class="custom-control-input">
                                   <label class="custom-control-label" for="customCheckbox3">Tamil Padhipu thurai - <span class="mt-056">தமிழ் பதிப்பு துறை</span></label>
                               </div>
-                              
+
                               <div class="col-md-12 tamil_pathipu_thurai_en mb-2">
                                   <input type="text" class="form-control" id="tamil_pathipu_thurai"
                                       name="tamil_pathipu_value" placeholder="Tamil Padhipu thurai">
@@ -616,7 +616,7 @@
                                           <div class="table-responsive">
                                               <table class="table table-bordered"
                                                   id="tbl_pub_member_no">
-                              
+
                                                   <tr>
                                                       <th>Enter member name*</th>
                                                       <th>Enter member id*</th> -->
@@ -639,7 +639,7 @@
                                           id="member_name_new_id"
                                           class="btn btn-success">+</button></td>
                               </tr>
-                              
+
                               </table>
                               </div>
                               </div>
@@ -920,7 +920,7 @@
                                  class="mt-056">மாநிலம்</span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="distn_state" class="form-select" name="distn_state" required>
-                                @foreach ($state as $val) 
+                                @foreach ($state as $val)
                                 <option value="{{$val->name}}">{{$val->name}}</option>
                               @endforeach
                               </select>
@@ -936,7 +936,7 @@
                                  class="mt-056">நாடு</span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="distn_country" class="form-select" name="distn_country" required>
-                                @foreach ($country as $val) 
+                                @foreach ($country as $val)
                                 <option value="{{$val->name}}">{{$val->name}}</option>
                               @endforeach
                               </select>
@@ -987,7 +987,7 @@
                                  class="mt-056">மாநிலம்</span><span
                                  class="text-danger maditory">*</span></label></label>
                               <select id="cont_per_state" class="form-select" name="cont_per_state" required>
-                                @foreach ($state as $val) 
+                                @foreach ($state as $val)
                                     <option value="{{$val->name}}">{{$val->name}}</option>
                                   @endforeach
                               </select>
@@ -1002,7 +1002,7 @@
                               <label for="inputState" class="form-label">Country - <span class="mt-056">
                               நாடு</span><span class="text-danger maditory">*</span></label></label>
                               <select id="cont_per_country" class="form-select" name="cont_per_country" required>
-                                @foreach ($country as $val) 
+                                @foreach ($country as $val)
                                 <option value="{{$val->name}}">{{$val->name}}</option>
                               @endforeach
                               </select>
@@ -1292,7 +1292,7 @@
                                  class="text-danger maditory">*</span></label>
                               <select id="publication_state" class="form-select" name="publication_state"
                                  required>
-                                 @foreach ($state as $val) 
+                                 @foreach ($state as $val)
                                  <option value="{{$val->name}}">{{$val->name}}</option>
                                @endforeach
                               </select>
@@ -1309,7 +1309,7 @@
                                  class="text-danger maditory">*</span></label>
                               <select id="publication_country" class="form-select" name="publication_country"
                                  required>
-                                 @foreach ($country as $val) 
+                                 @foreach ($country as $val)
                                  <option value="{{$val->name}}">{{$val->name}}</option>
                                @endforeach
                               </select>
@@ -1364,7 +1364,7 @@
                                  class="text-danger maditory">*</span></label>
                               <select id="publication_contact_state" class="form-select"
                                  name="publication_contact_person_state" required>
-                                 @foreach ($state as $val) 
+                                 @foreach ($state as $val)
                                  <option value="{{$val->name}}">{{$val->name}}</option>
                                @endforeach
                               </select>
@@ -1381,7 +1381,7 @@
                                  class="text-danger maditory">*</span></label>
                               <select id="publication_contact_person_country" class="form-select"
                                  name="publication_contact_person_country" required>
-                                 @foreach ($country as $val) 
+                                 @foreach ($country as $val)
                                  <option value="{{$val->name}}">{{$val->name}}</option>
                                @endforeach
                               </select>
@@ -1767,7 +1767,7 @@
                                  </label>
                               </div>
                            </div>
-                           
+
                            <div class="col-md-12">
                               <div class="row">
                                  <div class="col-md-12">
@@ -2004,5 +2004,8 @@ span.mt-055 {
 span.mt-056 {
     font-size: 11px;
     font-weight: 200;
+}
+a.nav-link.active i {
+    color: white !important;
 }
 </style>

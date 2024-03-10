@@ -11,7 +11,88 @@
          include "plugin/css.php";
       ?>
 </head>
+<style>
+    .multiline {
+  display: block;
+  display: -webkit-box;
+  margin: 0 auto;
+  width: 100%;
+  color: #cf6824;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.text-resize{
+  /* background-color: #dad4d2; */
+  resize: horizontal;
+}
+.cutm-min-slider-height {
+    asd
+}
+.tpproduct__thumb {
+    padding: 20px 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    max-width: 100% !important;
+    max-height: 150px !important;
+}
+.custm-slide-item {
+    max-height: 250px !important;
+    min-height: 250px !important;
+}
 
+strong.edate {
+    display: block;
+    color: #d94148;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+strong.etime {
+    display: block;
+    color: #aaaaaa;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+a.title_up {
+    color: #222222;
+    margin: 0 0 7px;
+    font-weight: 600;
+    line-height: 22px;
+}
+
+a.joinnow {
+    background: #fafafa;
+    border: 1px solid #e1e1e1;
+    line-height: 28px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #a0a0a0;
+    padding: 0 20px;
+    border-radius: 15px;
+}
+
+a.joinnow:hover {
+    background: #d94148;
+    border-color: #d94148;
+    color: #fff;
+}
+.icon-new{
+    width: 60px;
+    height: 60px;
+}
+.tpproduct__thumb img {
+    height: 136px !important;
+}
+.tpproduct__thumb img{
+    width: auto !important;
+}
+</style>
 <body>
 
 
@@ -49,7 +130,7 @@
         @endphp
 
         @if($categories->isNotEmpty())
-        <section tion class="category-area grey-bg pb-40">
+        <section tion class="category-area grey-bg pb-40 pt-45 ">
             <div class="container">
                 <div class="swiper-container category-active">
 
@@ -106,7 +187,7 @@
                             </div>
                             <h4 class="tpabout__inner-title-2 fs-3 mb-25">WELCOME TO DIRECTORATE OF PUBLIC LIBRARIES
                             </h4>
-                            <p style="text-align:justify">The Transparent Book Procurement Portal, created by the Directorate of Public Libraries, Government of Tamandu, revolutionizes the procurement process by connecting publishers, publisher cum distributors, and distributors with public libraries across Tamil Nadu. Designed to streamline submissions and enhance the selection of books, this digital platform emphasizes transparency and efficiency. It supports a wide range of books, incorporating subject expert reviews, librarian and  user review, and relies on reader forum recommendations for purchase decisions.
+                            <p style="text-align:justify">The Transparent Book Procurement Portal, created by the Directorate of Public Libraries, Government of Tamil Nadu, revolutionizes the procurement process by connecting publishers, publisher cum distributors, and distributors with public libraries across Tamil Nadu. Designed to streamline submissions and enhance the selection of books, this digital platform emphasizes transparency and efficiency. It supports a wide range of books, incorporating subject expert reviews, librarian and  user review, and relies on reader forum recommendations for purchase decisions.
                             </p>
                             <!--<div class="tpabout__inner-list">-->
                             <!--    <ul>-->
@@ -128,7 +209,7 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <div class="tpsection mb-35 pt-75 mt-100">
-                            <h4 class="tpsection__title">User Registration Portal</h4>
+                            <h4 class="tpsection__title">Registration </h4>
                         </div>
                     </div>
                 </div>
@@ -136,11 +217,11 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tpchoose__item text-center mb-30">
                             <div class="tpchoose__icon mb-20">
-                                <img src="assets/img/icon/choose-icon1.svg" alt="">
+                                <img class="icon-new" src="/images/icons/user.png" alt="">
                             </div>
                             <div class="tpchoose__content">
                                 <h4 class="tpchoose__title">Publisher</h4>
-                                <p>Authorized Publisher Register Click to go</p>
+                                <p></p>
                                 <a href="/register"
                                     class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
                                     Now<i class="icon-chevrons-right"></i></a>
@@ -150,11 +231,11 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tpchoose__item text-center mb-30">
                             <div class="tpchoose__icon mb-20">
-                                <img src="assets/img/icon/choose-icon2.svg" alt="">
+                                <img class="icon-new" src="/images/icons/user.png" alt="">
                             </div>
                             <div class="tpchoose__content">
                                 <h4 class="tpchoose__title">Distributor</h4>
-                                <p>Authorized Distributor Register Click to go</p>
+                                <p></p>
                                 <a href="/register"
                                     class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
                                     Now<i class="icon-chevrons-right"></i></a>
@@ -164,11 +245,11 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tpchoose__item text-center mb-30">
                             <div class="tpchoose__icon mb-20">
-                                <img src="assets/img/icon/choose-icon3.svg" alt="">
+                                <img class="icon-new" src="/images/icons/multi.png" alt="">
                             </div>
                             <div class="tpchoose__content">
                                 <h4 class="tpchoose__title">Publisher cum Distributor</h4>
-                                <p>Authorized Publisher cum Distributor Register Click to go</p>
+                                <p></p>
                                 <a href="#"
                                     class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
                                     Now<i class="icon-chevrons-right"></i></a>
@@ -178,11 +259,11 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="tpchoose__item text-center mb-30">
                             <div class="tpchoose__icon mb-20">
-                                <img src="assets/img/icon/choose-icon4.svg" alt="">
+                                <img class="icon-new" src="/images/icons/user.png" alt="">
                             </div>
                             <div class="tpchoose__content">
                                 <h4 class="tpchoose__title">Other user login</h4>
-                                <p>if Other user Click here register</p>
+                                <p></p>
                                 <a href="/member/login/"
                                     class="tpchoose__details d-flex align-items-center justify-content-center text-primary">Register
                                     Now<i class="icon-chevrons-right"></i></a>
@@ -207,7 +288,7 @@
                     <div class="col-lg-12 text-center">
                         <div class="tpsection mb-35">
                             <!--<h4 class="tpsection__sub-title">~ Procurement ~</h4>-->
-                            <h4 class="tpsection__title">Library Details</h4>
+                            <h4 class="tpsection__title">Libraries</h4>
                             <!--<p>The liber tempor cum soluta nobis eleifend option congue doming quod mazim.</p>-->
                         </div>
                     </div>
@@ -215,25 +296,125 @@
                 <div class="tpproduct__arrow p-relative">
                     <div class="swiper-container tpproduct-active tpslider-bottom p-relative">
                         <div class="swiper-wrapper">
-                            @foreach($homepagebooks as $val)
                             <div class="swiper-slide">
                                 <div class="tpproduct p-relative">
                                     <div class="tpproduct__thumb p-relative text-center">
-                                        <a href="#"><img src="{{ asset('admin/bookImage/' . $val->bookImage) }}"
+                                        <a href="#"><img src="/images/new/1.jpeg"
                                                 alt=""></a>
                                         <a class="tpproduct__thumb-img" href="#"><img
-                                                src="{{ asset('admin/bookImage/' . $val->bookImage) }}" alt=""></a>
+                                                src="/images/new/1.jpeg" alt=""></a>
 
                                     </div>
                                     <div class="tpproduct__content">
                                         <h4 class="tpproduct__title">
-                                            <a href="#">{{$val->booktitle}}</a>
+                                            {{-- <a href="#">Connemara Public Library</a> --}}
                                         </h4>
                                     </div>
 
                                 </div>
                             </div>
-                            @endforeach
+                            <div class="swiper-slide">
+                                <div class="tpproduct p-relative">
+                                    <div class="tpproduct__thumb p-relative text-center">
+                                        <a href="#"><img src="/images/new/2.jpeg"
+                                                alt=""></a>
+                                        <a class="tpproduct__thumb-img" href="#"><img
+                                                src="/images/new/2.jpeg" alt=""></a>
+
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <h4 class="tpproduct__title">
+                                            {{-- <a href="#">Connemara Public Library</a> --}}
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tpproduct p-relative">
+                                    <div class="tpproduct__thumb p-relative text-center">
+                                        <a href="#"><img src="/images/new/3.jpeg"
+                                                alt=""></a>
+                                        <a class="tpproduct__thumb-img" href="#"><img
+                                                src="/images/new/3.jpeg" alt=""></a>
+
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <h4 class="tpproduct__title">
+                                            {{-- <a href="#">Connemara Public Library</a> --}}
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tpproduct p-relative">
+                                    <div class="tpproduct__thumb p-relative text-center">
+                                        <a href="#"><img src="/images/new/4.jpeg"
+                                                alt=""></a>
+                                        <a class="tpproduct__thumb-img" href="#"><img
+                                                src="/images/new/4.jpeg" alt=""></a>
+
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <h4 class="tpproduct__title">
+                                            {{-- <a href="#">மாவட்ட கிளை நூலகம் திருவொற்றியூர்</a> --}}
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tpproduct p-relative">
+                                    <div class="tpproduct__thumb p-relative text-center">
+                                        <a href="#"><img src="/images/new/5.jpeg"
+                                                alt=""></a>
+                                        <a class="tpproduct__thumb-img" href="#"><img
+                                                src="/images/new/5.jpeg" alt=""></a>
+
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <h4 class="tpproduct__title">
+                                            {{-- <a href="#">Connemara Public Library</a> --}}
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tpproduct p-relative">
+                                    <div class="tpproduct__thumb p-relative text-center">
+                                        <a href="#"><img src="/images/new/6.jpeg"
+                                                alt=""></a>
+                                        <a class="tpproduct__thumb-img" href="#"><img
+                                                src="/images/new/6.jpeg" alt=""></a>
+
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <h4 class="tpproduct__title">
+                                            {{-- <a href="#">மாவட்ட மைய நூலகம்  புதுக்கோட்டை</a> --}}
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="tpproduct p-relative">
+                                    <div class="tpproduct__thumb p-relative text-center">
+                                        <a href="#"><img src="/images/new/7.jpeg"
+                                                alt=""></a>
+                                        <a class="tpproduct__thumb-img" href="#"><img
+                                                src="/images/new/7.jpeg" alt=""></a>
+
+                                    </div>
+                                    <div class="tpproduct__content">
+                                        <h4 class="tpproduct__title">
+                                            {{-- <a href="#">மாவட்ட மைய நூலகம் கரூர்</a> --}}
+                                        </h4>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tpproduct-btn">
@@ -304,7 +485,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
 
@@ -355,7 +536,7 @@
                                                                 <p class="small text-resize multiline">சென்னை இலக்கியத் திருவிழா - 2023 I தமிழ்க் கவிதைகளில் ஆண் மையப்பாரவை  எனும் தலைப்பில்</p>
                                                             </div>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
                                                  <div class="swiper-slide">
@@ -493,69 +674,4 @@
 </body>
 
 </html>
-<style>
-    .multiline {
-  display: block;
-  display: -webkit-box;
-  margin: 0 auto;
-  width: 100%;
-  color: #cf6824;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.text-resize{
-  /* background-color: #dad4d2; */
-  resize: horizontal;
-}
-.cutm-min-slider-height {
-    asd
-}
 
-.custm-slide-item {
-    max-height: 250px !important;
-    min-height: 250px !important;
-}
-
-strong.edate {
-    display: block;
-    color: #d94148;
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-strong.etime {
-    display: block;
-    color: #aaaaaa;
-    font-size: 16px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-a.title_up {
-    color: #222222;
-    margin: 0 0 7px;
-    font-weight: 600;
-    line-height: 22px;
-}
-
-a.joinnow {
-    background: #fafafa;
-    border: 1px solid #e1e1e1;
-    line-height: 28px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #a0a0a0;
-    padding: 0 20px;
-    border-radius: 15px;
-}
-
-a.joinnow:hover {
-    background: #d94148;
-    border-color: #d94148;
-    color: #fff;
-}
-</style>

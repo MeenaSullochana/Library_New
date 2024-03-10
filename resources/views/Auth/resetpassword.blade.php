@@ -403,4 +403,7 @@ div::-webkit-scrollbar {
     margin-right: 10px;
     margin-top: -25px;
 }
+a.nav-link.active i {
+    color: white !important;
+}
 </style>

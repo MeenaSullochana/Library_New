@@ -262,7 +262,7 @@
       <script>
         // password
         $(".toggle-password").click(function() {
-          
+
             $(this).toggleClass("fa-eye fa-eye-slash");
             input = $(this).parent().find("input");
             if (input.attr("type") == "password") {
@@ -377,5 +377,8 @@ i.fab.fa-instagram {
     cursor: pointer;
     margin-right: 10px;
     margin-top: -25px;
+}
+a.nav-link.active i {
+    color: white !important;
 }
 </style>

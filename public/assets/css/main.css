@@ -60,7 +60,7 @@
   --tp-common-white: #ffffff;
   --tp-common-black: #000;
   --tp-heading-primary: #2D2A6E;
-  --tp-heading-secondary: #96AE00;
+  --tp-heading-secondary: #ce0400;
   --tp-grey-1: #F2F2F6;
   --tp-grey-2: #F5F6F8;
   --tp-grey-3: #F5F2FF;
@@ -94,7 +94,7 @@
 }
 
 /*---------------------------------
-	typography css start 
+	typography css start
 ---------------------------------*/
 body {
   font-family: var(--tp-ff-body);
@@ -280,7 +280,7 @@ input::placeholder {
 }
 
 /*---------------------------------
-    common classes css start 
+    common classes css start
 ---------------------------------*/
 .w-img img {
   width: 100%;

@@ -36,9 +36,9 @@
                                         <!-- <li><a href="#">Section</a></li>
                                        <li><a href="#">Rental Details</a></li> -->
                                         {{-- <li><a href="/login">Membership Login</a></li> --}}
-                                        <li><a href="/register">Publisher Register</a></li>
-                                        <li><a href="/register">Distributor Register</a></li>
-                                        <li><a href="/register">Publisher Cum Distributor Register</a></li>
+                                        <li><a href="/login">Publisher Login</a></li>
+                                        <li><a href="/login">Distributor Login</a></li>
+                                        <li><a href="/login">Publisher Cum Distributor Login</a></li>
                                         <li><a href="/member/login">Reviewer Login</a></li>
                                         <li><a href="/member/login">Librarian Login</a></li>
                                         <li><a href="/member/login">User Login</a></li>
@@ -144,7 +144,7 @@
                                 </span>
                                 <div class="tpcart__cart-price">
                                     <span class="quantity">1 x</span>
-                                    <span class="new-price">$162.80</span>
+                                    <span class="new-price">162.80</span>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +163,7 @@
                                 </span>
                                 <div class="tpcart__cart-price">
                                     <span class="quantity">1 x</span>
-                                    <span class="new-price">$138.00</span>
+                                    <span class="new-price">138.00</span>
                                 </div>
                             </div>
                         </div>
@@ -210,10 +210,12 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12 col-md-12">
+            @php
+                                                $news_feeds = DB::table('news_feeds')->first();
+                                                @endphp
                 <div class="header__top-left text-white">
-                    <marquee behavior="" direction="">Register Now</marquee>
+                    <marquee behavior="" direction="">{{ $news_feeds->newsFeed}}</marquee>
                 </div>
-            </div>
         </div>
     </div>
 </div>

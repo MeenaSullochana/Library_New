@@ -26,7 +26,7 @@
                             <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
                         <a class="text-white fw-bold" href="/register"><i class="fa fa-registered"
                                 aria-hidden="true"></i>
-                            Register</a>
+                            New Registration</a>
                         @endif
 
                         <a href="/faq">FAQs</a>

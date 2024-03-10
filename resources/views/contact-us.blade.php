@@ -107,9 +107,9 @@
                                             Kotturpuram, Chennai - 600025
                                             </a>
                                     </li>
-                                    <!-- <li>
-                                        Opening Hours: <span> 09:00 AM - 18:00 PM</span>
-                                    </li> -->
+                                    <li>
+                                        <p>Email: lbrnioaclchn.dopl@tn.gov.in</p>
+                                    </li>
 
                                 </ul>
                             </div>
