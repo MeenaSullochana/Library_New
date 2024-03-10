@@ -1532,7 +1532,9 @@
                         <li><a href="mailverificationcontent">Mail Verification Page Content</a></li>
 
                             <li><a href="manage_general_setting">General Setting</a></li>
-                            <li><a href="banner_setting">Home Setting</a></li>
+                            <!-- <li><a href="banner_setting">Home Setting</a></li> -->
+                               <li><a href="usermanualguidelines">User Manual Guidelines</a></li>
+                            
                             <li><a href="slider_setting">Thirukkural</a></li>
 
                             

@@ -77,8 +77,14 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="mb-3">
-                                            <label for="slug"> Thirukkural   <span class="text-danger">*</span></label>
-                                            <textarea type="text" class="form-control" id="thirukkural" name="thirukkural" placeholder="Enter Thirukkural" rows="2" required></textarea>
+                                            <label for="slug"> Thirukkural First Line  <span class="text-danger">*</span></label>
+                                            <textarea type="text" class="form-control" id="thirukkuralFirstLine" name="thirukkuralFirstLine" placeholder="Enter Thirukkural" rows="2" required></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="mb-3">
+                                            <label for="slug"> Thirukkural Second Line  <span class="text-danger">*</span></label>
+                                            <textarea type="text" class="form-control" id="thirukkuralSecondLine" name="thirukkuralSecondLine" placeholder="Enter Thirukkural" rows="2" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
@@ -160,9 +166,10 @@ $(document).on('click','#submitbutton',function(e){
 
    
    var data = {
-      'thirukkural': $('#thirukkural').val(),
-      'address': $('#footer_address').val(),
-      'phoneNumber': $('#footer_phone').val(),
+      'thirukkuralFirstLine': $('#thirukkuralFirstLine').val(),
+      'thirukkuralSecondLine': $('#thirukkuralSecondLine').val(),
+      'shortDescription': $('#shotDescription').val(),
+      'longDescription': $('#longDescription').val(),
  
 
    
@@ -179,8 +186,10 @@ $(document).on('click','#submitbutton',function(e){
       dataType:"json",
       success: function(response) {
          if(response.success){
-             toastr.success(response.success,{timeout:25000});
-  
+             setTimeout(function() {
+                    window.location.href ="/admin/slider_setting"
+                     }, 3000);
+                toastr.success(response.success,{timeout:45000});
 
          }else{
              toastr.error(response.error,{timeout:25000});

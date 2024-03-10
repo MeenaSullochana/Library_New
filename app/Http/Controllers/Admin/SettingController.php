@@ -27,6 +27,12 @@ use App\Models\Homebanner;
 use App\Models\Fogotpasswordhidelins;
 use App\Models\Reviewerbatch;
 use App\Models\Mailurl;
+use App\Models\Thirukkural;
+use App\Models\Newsfeed;
+use App\Models\Manualguidelines;
+
+
+
 class SettingController extends Controller
 {
 
@@ -598,7 +604,143 @@ public function reviewerbatchadd(Request $req){
         ];
         return response()->json($data);
     }
-    
-    
+    public function thirukkuraladd(Request $req){
 
-}
+        $validator = Validator::make($req->all(),[
+            'thirukkuralFirstLine'=>'required|string',
+            'thirukkuralSecondLine'=>'required|string',
+            'shortDescription'=>'required',
+            'longDescription'=>'required|string',
+    
+        ]);
+        if($validator->fails()){
+            $data= [
+                'error' => $validator->errors()->first(),
+                     ];
+            return response()->json($data);  
+           
+        }
+     
+            $Thirukkural=New Thirukkural();
+            $Thirukkural->thirukkuralFirstLine=$req->thirukkuralFirstLine;
+            $Thirukkural->thirukkuralSecondLine=$req->thirukkuralSecondLine;
+            $Thirukkural->shortDescription=$req->shortDescription;
+            $Thirukkural->longDescription=$req->longDescription;
+            $Thirukkural->save();
+            $data= [
+                'success' => 'Thirukkuralr Create Successfully',
+                     ];
+            return response()->json($data);
+ }
+
+
+
+                    public function newsfeedadd(Request $req){
+
+                        $validator = Validator::make($req->all(),[
+                            'newsFeed'=>'required|string',
+                       
+                        ]);
+                        if($validator->fails()){
+                            $data= [
+                                'error' => $validator->errors()->first(),
+                                     ];
+                            return response()->json($data);  
+                           
+                        }
+                      
+                        $record = Newsfeed::first();
+                        if ($record == null) {
+                            $newsFeed = new Newsfeed();
+                            $newsFeed->newsFeed = $req->newsFeed;
+                         
+                            $newsFeed->save();
+                        
+                            $data = [
+                                'success' => 'NewsFeed Created Successfully',
+                            ];
+                        
+                            return response()->json($data);
+                        } else {
+                           
+                            $record->newsFeed = $req->newsFeed;
+                        
+                            $record->save();
+                        
+                            $data = [
+                                'success' => 'NewsFeed Created Successfully',
+                            ];
+                        
+                            return response()->json($data);
+                        }
+                                    }
+                    
+                                    public function thirukkuralstatus(Request $req){
+                                        $Thirukkural= Thirukkural::find($req->id);
+                                        $Thirukkural->status=$req->status;
+                                        $Thirukkural->update();
+                                        $data= [
+                                            'success' => 'Thirukkural Status Change Successfully',
+                                                 ];
+                                        return response()->json($data); 
+                                    }   
+                                    
+                                    public function thirukkuraldelete(Request $req){
+                                        $Thirukkural= Thirukkural::find($req->id);
+                                
+                                        $Thirukkural->delete();
+                                        $data= [
+                                            'success' => 'Thirukkural Status Change Successfully',
+                                                 ];
+                                        return response()->json($data); 
+                                    }   
+                                    
+
+                                    public function manualguidelines(Request $req){
+
+                                        $validator = Validator::make($req->all(),[
+                                            'userType'=>'required|string',
+                                            'descriptionConten'=>'required',
+
+                                            
+                                        ]);
+                                        if($validator->fails()){
+                                            $data= [
+                                                'error' => $validator->errors()->first(),
+                                                     ];
+                                            return response()->json($data);  
+                                           
+                                        }
+                                      
+                                        $record = Manualguidelines::where('userType','=',$req->userType)->first();
+                                        if ($record == null) {
+                                            $Manualguidelines = new Manualguidelines();
+                                            $Manualguidelines->usertype = $req->userType;
+                                            $Manualguidelines->content = json_encode($req->descriptionConten);
+
+
+                                            $Manualguidelines->save();
+                                         
+                                            $data = [
+                                                'success' => 'Manual guidelines Created Successfully',
+                                            ];
+                                        
+                                            return response()->json($data);
+                                        } else {
+                                           
+                                        
+                                            $record->content = json_encode($req->descriptionConten);
+
+                                            $record->save();
+                                        
+                                            $data = [
+                                                'success' => 'Manual guidelines Created Successfully',
+                                            ];
+                                        
+                                            return response()->json($data);
+                                        }
+                                                    }
+
+
+                                    
+                                }

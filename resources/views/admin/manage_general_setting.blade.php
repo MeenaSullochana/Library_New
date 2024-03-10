@@ -96,9 +96,9 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                     <a href="#v-pills-footer" data-bs-toggle="pill"
                                                         class="nav-link">Footer & Contact Page</a>
                                                     <a href="#v-pills-fbanner" data-bs-toggle="pill"
-                                                        class="nav-link">First Banner</a>
-                                                    <a href="#v-pills-sbanner" data-bs-toggle="pill"
-                                                        class="nav-link">Second Banner</a>
+                                                        class="nav-link">News Feed</a>
+                                                    <!-- <a href="#v-pills-sbanner" data-bs-toggle="pill"
+                                                        class="nav-link">Second Banner</a> -->
                                                 </div>
                                             </div>
                                             <div class="col-sm-8 mt-3">
@@ -660,30 +660,23 @@ https://cdn.jsdelivr.net/npm/chosen-js@1.8.7/chosen.min.css
                                                     </div>
                                                     <div id="v-pills-fbanner" class="tab-pane fade">
                                                      
-                         
+                                                    @php
+     $news_feeds = DB::table('news_feeds')->first();
+   
+    @endphp
 
-                                                            <input type="hidden" name="type" id="type" value="firstbanner">
+                                                    <div class="form-group mt-3">
+        <label for="copy_right">News feed<span class="text-danger">*</span></label>
+        <textarea name="newsFeed" id="newsFeed"
+            class="form-control" rows="5"
+            placeholder="Enter News feed" value="{{$news_feeds->newsFeed}}">{{$news_feeds->newsFeed}}</textarea>
+    </div>
 
-                                                            <!-- banner 2 -->
+    <div class="mt-3 d-flex justify-content-end">
+        <button type="button" id="submit3232" class="btn btn-primary">Submit</button>
+    </div>
 
-                           <div class="form-group">
-                                <label for="name">Set Image1 <span class="text-danger">*</span></label>
-                                <br>
-                                <img class="admin-img" id="bannerImage1" src="images\avatar\11.png" alt="No Image Found">
-                                <br>
-                                <span class="mt-1">Image Size Should Be 270 x 340.</span>
-                            </div>
-
-                            <div class="mb-3 file">
-                                <input class="form-control" type="file" id="formFile11" onchange="loadFile(event)">
-                            </div>
-                                                         
-
-                                                            <div class="form-group d-flex justify-contant-end">
-                                                                <button type="submit"
-                                                                    class="btn btn-primary " id="submitbutton">Submit</button>
-                                                            </div>
-                                                        </form>
+                        
                                                     </div>
 
                                                     <!-- logo start -->
@@ -894,7 +887,7 @@ $(document).on('click','#submit',function(e){
                         if (response.success) {
                             toastr.success(response.success, {timeout: 2000});
                             setTimeout(function () {
-                                window.location.href = "/admin/banner_setting";
+                                window.location.href = "/admin/manage_general_setting";
                             }, 3000);
                         } else {
                             toastr.error(response.error, {timeout: 2000});
@@ -905,42 +898,48 @@ $(document).on('click','#submit',function(e){
         });
     </script>
     
-<script>
-        $(document).ready(function() {
-            $("#submitbutton33").on("click", function (e) {
-                e.preventDefault();
-            
-                var websitelogo = $('#formFile22')[0].files;
-              
-                let fd = new FormData();
-                fd.append('type', type);
-                fd.append('websitefavicon',websitefavicon[0]);  
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
+    <script>
 
-                $.ajax({
-                    url: "/admin/websitefavicon",
-                    type: "POST",
-                    data: fd,
-                    processData: false,
-                    contentType: false,
-                    success: function (response) {
-                        if (response.success) {
-                            toastr.success(response.success, {timeout: 2000});
-                            setTimeout(function () {
-                                window.location.href = "/admin/banner_setting";
-                            }, 3000);
-                        } else {
-                            toastr.error(response.error, {timeout: 2000});
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+$(document).on('click','#submit3232',function(e){
+   e.preventDefault();
+   
+
+   
+   var data = {
+      'newsFeed': $('#newsFeed').val(),
+
+
+   
+};
+   $.ajaxSetup({
+      headers:{
+         'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+      }
+   });
+   $.ajax({
+      type:"post",
+      url:"/admin/newsfeedadd",
+      data:data,
+      dataType:"json",
+      success: function(response) {
+         if(response.success){
+             toastr.success(response.success,{timeout:25000});
+  
+
+         }else{
+             toastr.error(response.error,{timeout:25000});
+         }
+
+     }
+   })
+
+})
+
+</script>
+
+
+
+
 </body>
 
 </html>

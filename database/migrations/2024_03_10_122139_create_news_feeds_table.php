@@ -13,15 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('thirukkural', function (Blueprint $table) {
+        Schema::create('news_feeds', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->longtext('thirukkuralFirstLine');
-            $table->longtext('thirukkuralSecondLine');
-
-            
-            $table->longtext('shortDescription');
-            $table->longtext('longDescription');
-            $table->enum('status',['1','0'])->default('1');
+            $table->longtext('newsFeed');
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thirukkural');
+        Schema::dropIfExists('news_feeds');
     }
 };
