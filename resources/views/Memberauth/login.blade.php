@@ -10,7 +10,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
 
     <!-- FAVICONS ICON -->
     <link rel="shortcut icon" type="image/png" href= "{{ asset('admin/images/fevi.svg') }}">
@@ -59,7 +59,7 @@
                                                         role="tabpanel" aria-labelledby="nav-personal-tab">
                                                         <form class=" dz-form pb-2 pb-0" method="POST" action="{{route('member.login')}}">
                                                             @csrf
-                                                            <h3 class="form-title m-t0">Enter To Login</h3>
+                                                            <h3 class="form-title m-t0">Enter to login</h3>
                                                             <div class="dz-separator-outer m-b5">
                                                                 <div class="dz-separator bg-primary style-liner"></div>
                                                             </div>
@@ -103,21 +103,21 @@
                                                             <div class="row">
                                                                 <div class="col-xl-4 col-xxl-6 col-6">
                                                                 <button type="submit" class="btn btn-primary"
-                                                                    name="login">Sign Me In</button>
+                                                                    name="login">Sign In</button>
                                                                 </div>
                                                                 <div class="col-xl-4 col-xxl-6 col-6">
                                                                 <button
-                                                                    class="nav-link m-auto btn tp-btn-light btn-primary forget-tab "
+                                                                    class="nav-link m-auto btn tp-btn-light btn-primary forget-tab p-0"
                                                                     id="nav-forget-tab" data-bs-toggle="tab"
                                                                     data-bs-target="#nav-forget" type="button"
                                                                     role="tab" aria-controls="nav-forget"
                                                                     aria-selected="false">Forget Password ?</button>
                                                                 </div>
                                                             </div>
-                                                               
-                                                               
-                                                                
-                                                          
+
+
+
+
                                                             </div>
                                                         </form>
                                                     </div>
@@ -257,17 +257,17 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
 @endif
 
 <script>
-     
-       
+
+
      $(document).on('click','#submit',function(e){
-        e.preventDefault(); 
+        e.preventDefault();
         console.log("hi");
         var data={
-           'email':$('#emails').val(), 
+           'email':$('#emails').val(),
             'usertype':$("[name='usertype']:checked").val(),
-             
+
         }
-       
+
         console.log(data);
         $.ajaxSetup({
            headers:{
@@ -284,29 +284,29 @@ toastr.error("{{ Session::get('error') }}",{timeout:15000});
                     toastr.success(response.success,{timeout:25000});
                     setTimeout(function() {
                         window.location.href = "/member/login";
-                     }, 3000); 
+                     }, 3000);
                 }else{
                     toastr.error(response.error,{timeout:25000});
                 }
-           
-        
+
+
         }
       });
   })
-        
-  
+
+
 
     </script>
     <style>
     .logo-header {
         display: flex;
-        justify-content: center; 
-        margin-bottom: 20px; 
+        justify-content: center;
+        margin-bottom: 20px;
     }
 
     .logo img {
-        max-width: 100%; 
-        height: auto; 
+        max-width: 100%;
+        height: auto;
     }
 </style>
 </html>

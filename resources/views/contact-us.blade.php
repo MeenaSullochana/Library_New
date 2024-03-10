@@ -72,8 +72,10 @@
                             </div>
                             <div class="tplocation__content">
                                 <ul>
-                                    <li>
-                                        <a href="#">Address :Directorate of Public Libraries,
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                             <li>
+                                        <a href="#"><b>Offical Address </b>: Directorate of Public Libraries,
                                             737/1, Anna Salai, Chennai- 600 002, Tamil Nadu, India.
                                             </a>
                                     </li>
@@ -86,31 +88,36 @@
                                     <li>
                                         <a href="mailto:dplchn@tn.gov.in">Email : dplchn@tn.gov.in</a>
                                     </li>
+                                        </div>
+                                        <div class="col-md-6">
+                                             <li>
+                                        <a class="tplocation__button mt-15" href="https://maps.google.com/maps/dir//%E0%AE%A4%E0%AF%87%E0%AE%B5%E0%AE%A8%E0%AF%87%E0%AE%AF%E0%AE%AA%E0%AF%8D+%E0%AE%AA%E0%AE%BE%E0%AE%B5%E0%AE%BE%E0%AE%A3%E0%AE%B0%E0%AF%8D+%E0%AE%85%E0%AE%B0%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AE%AE%E0%AF%8D+Old+No:742,New+No:202,+Ground+Floor+Anna+Salai,+opp.+to+TVS,+Anna+Salai+Chennai,+Tamil+Nadu+600002/@13.0585401,80.2581977,20z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3a5267f821edb0bb:0xa50bd2ffb2776459">Get Directions</a>
+                                    </li>
+                                        </div>
+                                    </div>
+
+
+                                    <br>
                                     <li>
-                                        <h4>Technical Assistance  </h4>
+                                         <a href="#"><b>Technical Assistance:</b></a>
                                     </li>
                                     <li>
-                                        <a href="#">The Chief Librarian & Information Officer, 
+                                        <a href="#">The Chief Librarian & Information Officer,
                                             Anna Centenary Library,
-                                            Kotturpuram, Chennai - 600025                                            
+                                            Kotturpuram, Chennai - 600025
                                             </a>
                                     </li>
                                     <!-- <li>
                                         Opening Hours: <span> 09:00 AM - 18:00 PM</span>
                                     </li> -->
-                                    <li>
-                                        <a class="tplocation__button mt-15" href="#">Get Directions</a>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="tpcontactmap mb-30">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.29118718848!2d80.23738257454724!3d13.017119813879743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526772eb0d4451%3A0xcfc3c35cdd3a47d3!2sAnna%20Centenary%20Library!5e0!3m2!1sen!2sin!4v1709980128274!5m2!1sen!2sin"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485.830062604229!2d80.2581976795314!3d13.058540093026274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267f821edb0bb%3A0xa50bd2ffb2776459!2z4K6k4K-H4K614K6o4K-H4K6v4K6q4K-NIOCuquCuvuCuteCuvuCuo-CusOCvjSDgroXgrrDgrpngr43grpXgrq7gr40!5e0!3m2!1sen!2sin!4v1710068632058!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
