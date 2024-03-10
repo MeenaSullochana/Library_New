@@ -152,27 +152,25 @@
                                         
                               <h3>Steps to follow</h3>
                             <div class="scroll-view">
-                                        <ul style="text-intent:30px">
-                                                @php
-                                                        $id = auth('publisher')->user()->usertype;
-                                                        $usermanualguidelines = DB::table('usermanualguidelines')->where('usertype', '=', $id)->first();
-                                                        if ($usermanualguidelines !== null) {
-                                                            $data1 = json_decode($usermanualguidelines->content);
-                                                        } else {
-                                                            $data1 = [];
-                                                        }
-                                                    @endphp
-                                                    @if ($data1)
-                                                        @foreach($data1 as $val)
-                                                          
-                                                            <li>{{$val}}.</li>
-                                                        @endforeach
-                                                    @else
-                                                        <p>No data available.</p>
-                                                    @endif
-                                            
-                                                   
-                                        </ul>
+                            <ul style="list-style-type: none; padding-left: 30px;">
+    @php
+        $id = auth('publisher')->user()->usertype;
+        $usermanualguidelines = DB::table('usermanualguidelines')->where('usertype', '=', $id)->first();
+        if ($usermanualguidelines !== null) {
+            $data1 = json_decode($usermanualguidelines->content);
+        } else {
+            $data1 = [];
+        }
+    @endphp
+    @if ($data1)
+        @foreach($data1 as $val)
+            <li>{{ $val }}.</li>
+        @endforeach
+    @else
+        <p>No data available.</p>
+    @endif
+</ul>
+
                                     </div>
                                         
                                     </div>
