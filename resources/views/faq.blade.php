@@ -257,7 +257,7 @@
                                 </div>
                             </div>
                             <div class="tpfaq__item mb-45">
-                                <h4 class="tpfaq__title mb-20 text-danger fs-5">User Login Guidelines</h4>
+                                <h4 class="tpfaq__title mb-20 text-danger fs-5 pt-4">User Login Guidelines</h4>
                                 <div class="accordion" id="accordionPanelsStayOpenExample2">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="panelsStayOpen-headingFour">
@@ -358,7 +358,7 @@
                                 </div>
                             </div>
                             <div class="tpfaq__item mb-45">
-                                <h4 class="tpfaq__title mb-20 text-danger fs-5">User Email Verfication Guidelines</h4>
+                                <h4 class="tpfaq__title mb-20 text-danger fs-5 pt-4">User Email Verfication Guidelines</h4>
                                 <div class="accordion" id="accordionPanelsStayOpenExample2">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="panelsStayOpen-headingFour">
@@ -459,7 +459,7 @@
                                 </div>
                             </div>
                             <div class="tpfaq__item">
-                                <h4 class="tpfaq__title mb-20 text-danger fs-5">Forgot password guidelines</h4>
+                                <h4 class="tpfaq__title mb-20 text-danger fs-5 pt-4 ">Forgot password guidelines</h4>
                                 <div class="accordion" id="accordionPanelsStayOpenExample3">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="panelsStayOpen-headingSeven">

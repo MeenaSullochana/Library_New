@@ -84,62 +84,62 @@
                 <div class="tpfooter__top pb-15">
                     <div class="container">
                         <div class="row">
-                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                <div class="tpfooter__widget mb-50">
-                                    <!--<div class="tpfooter__widget footer-col-1 mb-50">-->
-                                    <h4 class="tpfooter__widget-title">About</h4>
-                                    <p style="padding-right: 20px !important;" class="p-3"> {{$homefooter->about}}.<br>
-                                        <!-- <a href="mailto:support@example.com">support@example.com</a> -->
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                <div class="tpfooter__widget footer-col-2 mb-50">
+                            <div class="col-xl-4 col-lg-5 col-md-7 col-sm-6">
+                               <div class="tpfooter__widget footer-col-1 mb-50">
                                     <h4 class="tpfooter__widget-title"> Address Details</h4>
                                     <p><i class="fa fa-map-marker text-white" aria-hidden="true"></i>
                                         {{$homefooter->address}}</p><br>
-                                    <p><i class="fa fa-phone-square text-white" aria-hidden="true"></i>
-                                        {{$homefooter->phoneNumber}} Fax: {{$homefooter->faxNumber}}</p><br>
+                                    <p><i class="fa fa-phone text-white" aria-hidden="true"></i> Phone : 
+                                        {{$homefooter->phoneNumber}} </p><br>
+                                        <p><i class="fa fa-phone-square text-white" aria-hidden="true"></i> Fax : {{$homefooter->faxNumber}}</p><br>
                                     <p><a href="mailto:support@example.com"> <i class="fa fa-envelope-open text-white"
-                                                aria-hidden="true"></i> {{$homefooter->email}}</a></p>
+                                                aria-hidden="true"></i> Email :  {{$homefooter->email}}</a></p>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                <div class="tpfooter__widget mb-50">
-                                    <!--<div class="tpfooter__widget footer-col-3 mb-50">-->
-                                    <h4 class="tpfooter__widget-title">Quick links</h4>
-                                    <div class="tpfooter__widget-links">
-                                        <ul>
-                                            <li><a href="#">About Us</a></li>
-                                            <li><a href="#">Contact</a></li>
-                                            <li><a href="#">Guidelines</a></li>
-                                            <!-- <li><a href="#">Rental Detail</a></li> -->
-                                            <li><a href="#">Staff</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="col-xl-2 col-lg-3 col-md-5 col-sm-6">
+                               <div class="tpfooter__widget footer-col-2 mb-50">
+                                  <h4 class="tpfooter__widget-title">Quick links</h4>
+                                  <div class="tpfooter__widget-links">
+                                    <ul>
+                                       <li><a href="/"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Home</a></li>
+                                       <li><a href="/about"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> About Us</a></li>
+                                       <li><a href="/procurement-policy"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Procurement Policy</a></li>
+                                       <li><a href="/faq"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Guidelines</a></li>
+                                       <li><a href="/contact-us"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Contact Us</a></li>
+                                    </ul>
+                                 </div>
+                              </div>
                             </div>
-                            <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                <div class="tpfooter__widget mb-50">
-                                    <!--<div class="tpfooter__widget footer-col-4 mb-50">-->
-                                    <h4 class="tpfooter__widget-title">Social Media</h4>
-                                    <div class="tpfooter__widget-newsletter">
-                                        <div class="tpfooter__widget-social mt-45">
-                                            <!-- <span class="tpfooter__widget-social-title mb-5">:</span> -->
-                                            <a href="{{$homefooter->facebook}}"><i class="fab fa-facebook-f"></i></a>
-                                            <a href="{{$homefooter->twitter}}"><i class="fab fa-twitter"></i></a>
-                                            <a href="{{$homefooter->youtube}}"><i class="fab fa-youtube"></i></a>
-                                        </div>
-
-                                    </div>
-                                    <!-- <div class="tpfooter__widget-time-info mt-35">
-                                        <span>Monday – Friday: <b>8:10 AM – 6:10 PM</b></span>
-                                        <span>Saturday: <b>10:10 AM – 06:10 PM</b></span>
-                                        <span>Sunday: <b>Close</b></span>
-                                    </div> -->
-                                </div>
+                            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-5">
+                               <div class="tpfooter__widget footer-col-3 mb-50">
+                                  <h4 class="tpfooter__widget-title">Login</h4>
+                                  <div class="tpfooter__widget-links">
+                                     <ul>
+                                        <li><a href="/admin/login"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Admin Login</a></li>
+                                        <li><a href="/member/login"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Reviewer Login</a></li>
+                                        <li><a href="/member/login"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Librarian Login</a></li>
+                                        <li><a href="/register"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Publisher Register</a></li>
+                                        <li><a href="/register"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Distributor Register</a></li>
+                                        <li><a href="/register"><i class="fa fa-angle-double-right text-white" aria-hidden="true"></i> Publisher Cum Distributor Register</a></li>
+                                     </ul>
+                                  </div>
+                               </div>
                             </div>
-                        </div>
+                            <div class="col-xl-4 col-lg-6 col-md-8 col-sm-7">
+                               <div class="tpfooter__widget footer-col-4 mb-50">
+                                  <h4 class="tpfooter__widget-title">About</h4>
+                                  <div class="tpfooter__widget-newsletter">
+                                     <p>{!! $homefooter->about !!}</p>
+                                     <div class="tpfooter__widget-social mt-45">
+                                        <span class="tpfooter__widget-social-title mb-5">Social Media</span>
+                                        <a href="{{$homefooter->facebook}}"><i class="fab fa-facebook-f"></i> Facebook</a>
+                                        <a href="{{$homefooter->twitter}}"><i class="fab fa-twitter"></i> Twitter</a>
+                                        <a href="{{$homefooter->youtube}}"><i class="fab fa-youtube"></i> Youtube</a>
+                                     </div>
+                                  </div>
+                               </div>
+                            </div>
+                         </div>
                     </div>
                 </div>
                 <div class="tpfooter___bottom pt-40 pb-40">
@@ -162,3 +162,20 @@
                 </div>
             </div>
         </footer>
+        <style>
+         i.fab.fa-facebook-f {
+            color: #1873eb;
+         }
+         i.fab.fa-twitter {
+            color: #0097e7;
+         }
+         i.fab.fa-youtube {
+            color: red;
+         }
+         i.fab.fa-pinterest-p {
+            color: #ef0000;
+         }
+         i.fab.fa-instagram {
+            color: #ff00a3;
+         }
+        </style>

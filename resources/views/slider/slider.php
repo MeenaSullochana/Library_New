@@ -13,7 +13,7 @@
                                         <p>ஒருவன் தன் உள்ளம் அறியப் பொய் இல்லாமல் நடப்பானானால் அத்தகையவன் உலகத்தாரின்
                                             உள்ளங்களில் எல்லாம் இருப்பவனாவான்...</p>
                                         <div class="tpslider__btn">
-                                            <a class="tp-btn" href="/read-more">Read More</a>
+                                            <a class="tp-btn" href="/thirukkural-view">Read More</a>
                                         </div>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                                     <p>ஒருவன் தன் நெஞ்சம் அறிவதாகிய ஒன்றைக்குறித்துப் பொய்ச் சொல்லக்கூடாது, பொய்
                                         சொன்னால் அதைக்குறித்துத் தன் நெஞ்சமே தன்னை வருத்தும்...</p>
                                     <div class="tpslider__btn">
-                                        <a class="tp-btn" href="/read-more">Read More</a>
+                                        <a class="tp-btn" href="/thirukkural-view">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +83,7 @@
                                     <p>(புறத்தில் உள்ள இருளை நீக்கும்) விளக்குகள் எல்லாம் விளக்குகள் அல்ல, சான்றோர்க்கு
                                         (அகத்து இருள் நீக்கும்) பொய்யாமையாகிய விளக்கே விளக்கு ஆகும்...</p>
                                     <div class="tpslider__btn">
-                                        <a class="tp-btn" href="/read-more">Read More</a>
+                                        <a class="tp-btn" href="/thirukkural-view">Read More</a>
                                     </div>
                                 </div>
                             </div>

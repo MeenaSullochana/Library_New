@@ -16,7 +16,10 @@
                                 </li>
 
                                 <li class=" has-megamenu">
-                                    <a href="#">About Us</a>
+                                    <a href="/about">About Us</a>
+                                </li>
+                                <li class="#">
+                                    <a href="/procurement-policy">Procurement Policy</a>
                                 </li>
                                 <li class="#">
                                     <a href="/faq">Guidelines</a>
@@ -28,15 +31,17 @@
                                     <a href="#">Library Catalogue</a>
                                  </li> -->
                                 <li class="has-dropdown">
-                                    <a href="#">Staff Login</a>
+                                    <a href="#">Login</a>
                                     <ul class="sub-menu">
                                         <!-- <li><a href="#">Section</a></li>
                                        <li><a href="#">Rental Details</a></li> -->
-                                        <li><a href="/login">Membership Login</a></li>
+                                        {{-- <li><a href="/login">Membership Login</a></li> --}}
                                         <li><a href="/admin/login">Admin Login</a></li>
                                         <li><a href="/member/login">Reviewer Login</a></li>
-                                        <li><a href="/public_register">Public Register</a></li>
-                                        <li><a href="/member/login">Public Login</a></li>
+                                        <li><a href="/member/login">Librarian Login</a></li>
+                                        <li><a href="/register">Publisher Register</a></li>
+                                        <li><a href="/register">Distributor Register</a></li>
+                                        <li><a href="/register">Publisher Cum Distributor Register</a></li>
                                     </ul>
                                 </li>
 
@@ -187,7 +192,7 @@
             <div class="tpcart__checkout">
                 <div class="tpcart__total-price d-flex justify-content-between align-items-center">
                     <span> Subtotal:</span>
-                    <span class="heilight-price"> $300.00</span>
+                    <span class="heilight-price"> 300.00</span>
                 </div>
                 <div class="tpcart__checkout-btn">
                     <a class="tpcart-btn mb-10" href="cart.html">View Cart</a>

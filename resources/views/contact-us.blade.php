@@ -73,20 +73,27 @@
                             <div class="tplocation__content">
                                 <ul>
                                     <li>
-                                        <a href="#">Add: Gandhi Mandapam Rd, Surya Nagar, Kotturpuram, Chennai, Tamil
-                                            Nadu 600085</a>
+                                        <a href="#">Address :Directorate of Public Libraries,
+                                            737/1, Anna Salai, Chennai- 600 002, Tamil Nadu, India.
+                                            </a>
                                     </li>
                                     <li>
-                                        <a href="tel:012345678">Phone: (+100) 123 456 7890</a>
+                                        <a href="tel:044-28524263">Telephone : 044-28524263</a>                                    </a>
                                     </li>
                                     <li>
-                                        <a href="mailto:orfarm@google.com">Email: </a>
+                                        <a href="tel:044-28412087">Fax : 044-28412087</a>                                        </a>
                                     </li>
                                     <li>
-                                        <a href="#">Website: </a>
+                                        <a href="mailto:dplchn@tn.gov.in">Email : dplchn@tn.gov.in</a>
                                     </li>
                                     <li>
-
+                                        <h4>Technical Assistance  </h4>
+                                    </li>
+                                    <li>
+                                        <a href="#">The Chief Librarian & Information Officer, 
+                                            Anna Centenary Library,
+                                            Kotturpuram, Chennai - 600025                                            
+                                            </a>
                                     </li>
                                     <!-- <li>
                                         Opening Hours: <span> 09:00 AM - 18:00 PM</span>
