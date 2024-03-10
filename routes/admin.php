@@ -748,6 +748,10 @@ Route::post('/dimension_statuschange',[LibraryTypeController::class,'dimension_s
 
 //bookpapertype
 
+Route::get('/slider_setting',function(){ return view('admin.slider_setting');});
+
+Route::get('/slider_setting_list',function(){ return view('admin.slider_setting_list');});
+
 
 Route::get('/bookpapertype_add',function(){ return view('admin.bookpapertype_add');});
 Route::post('/bookpapertypeadd',[LibraryTypeController::class,'bookpapertypeadd']);

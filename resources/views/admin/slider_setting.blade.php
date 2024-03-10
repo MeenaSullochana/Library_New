@@ -59,11 +59,11 @@
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
                             <h3 class="mb-0 bc-title">
-                                <b>Slider Content Create</b>
+                                <b>Slider Thirukkural Create</b>
                             </h3>
                             <div>
                                 <a class="btn btn-primary  btn-sm" href="/admin/slider_setting_list">
-                                    <i class="fas fa-arrow-left"></i>  List of Slider Content </a>
+                                    <i class="fas fa-arrow-left"></i>  List of Slider Thirukkural </a>
                                     
                             </div>
 
@@ -78,19 +78,19 @@
                                     <div class="col-md-8">
                                         <div class="mb-3">
                                             <label for="slug"> Thirukkural   <span class="text-danger">*</span></label>
-                                            <textarea type="text" class="form-control" id="" name="" placeholder="Enter Thirukkural" rows="2" required></textarea>
+                                            <textarea type="text" class="form-control" id="thirukkural" name="thirukkural" placeholder="Enter Thirukkural" rows="2" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="mb-3">
                                             <label for="slug"> Shot Description   <span class="text-danger">*</span></label>
-                                            <textarea type="text" class="form-control" id="" name="" placeholder="Enter Shot Description" rows="5" required></textarea>
+                                            <textarea type="text" class="form-control" id="shotDescription" name="shotDescription" placeholder="Enter Shot Description" rows="5" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="mb-3">
                                             <label for="slug"> Long Description   <span class="text-danger">*</span></label>
-                                            <textarea type="text" class="form-control" id="" name="" placeholder="Enter Long Description" rows="8" required></textarea>
+                                            <textarea type="text" class="form-control" id="longDescription" name="longDescription" placeholder="Enter Long Description" rows="8" required></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-8" id="adding">
@@ -152,7 +152,46 @@
         });
     });
 </script>
+<script>
 
+$(document).on('click','#submitbutton',function(e){
+   e.preventDefault();
+   
+
+   
+   var data = {
+      'thirukkural': $('#thirukkural').val(),
+      'address': $('#footer_address').val(),
+      'phoneNumber': $('#footer_phone').val(),
+ 
+
+   
+};
+   $.ajaxSetup({
+      headers:{
+         'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
+      }
+   });
+   $.ajax({
+      type:"post",
+      url:"/admin/thirukkuraladd",
+      data:data,
+      dataType:"json",
+      success: function(response) {
+         if(response.success){
+             toastr.success(response.success,{timeout:25000});
+  
+
+         }else{
+             toastr.error(response.error,{timeout:25000});
+         }
+
+     }
+   })
+
+})
+
+</script>
 </body>
 </html>
 <style>
