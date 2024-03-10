@@ -882,6 +882,7 @@
                                                     </div>
                                             </div>
                                         </div>
+
                                         <h4>Dimension</h4>
                                         <hr>
                                         <div class="row">
@@ -2689,3 +2690,4 @@ function numberOnly(id) {
     }
     /* image uplode end */
 </style>
+    

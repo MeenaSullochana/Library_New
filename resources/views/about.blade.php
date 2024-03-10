@@ -121,22 +121,22 @@
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="tpabout__item text-center mb-40">
                             <div class="tpabout__icon mb-15">
-                                <img src="assets/img/icon/about-svg1.svg" alt="">
+                                <img src="assets/img/icon/auditorium-hall.jpg" alt="">
                             </div>
                             <div class="tpabout__content">
-                                <h4 class="tpabout__title">Publisher</h4>
-                                <p>Choose from select produce to start. <br> Keep, add, or remove items.</p>
+                                <h4 class="tpabout__title">Auditorium</h4>
+                                <!-- <p>Choose from select produce to start. <br> Keep, add, or remove items.</p> -->
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="tpabout__item text-center mb-40">
                             <div class="tpabout__icon mb-15">
-                                <img src="assets/img/icon/about-svg2.svg" alt="">
+                                <img src="assets/img/icon/conference-hall.jpg" alt="">
                             </div>
                             <div class="tpabout__content">
-                                <h4 class="tpabout__title">Distributor</h4>
-                                <p>We provide 100+ products, provide <br> enough nutrition for your family.
+                                <h4 class="tpabout__title">Conference Hall</h4>
+                                <!-- <p>We provide 100+ products, provide <br> enough nutrition for your family. -->
                                 </p>
                             </div>
                         </div>
@@ -144,11 +144,11 @@
                     <div class="col-lg-4 col-md-4 col-sm-6">
                         <div class="tpabout__item text-center mb-40">
                             <div class="tpabout__icon mb-15">
-                                <img src="assets/img/icon/about-svg3.svg" alt="">
+                                <img src="assets/img/icon/book-release.jpg" alt="">
                             </div>
                             <div class="tpabout__content">
-                                <h4 class="tpabout__title">Publisher cum Distributor</h4>
-                                <p>Delivery to your door. Up to 100km <br> and it's completely free.</p>
+                                <h4 class="tpabout__title">Book Release Hall</h4>
+                                <!-- <p>Delivery to your door. Up to 100km <br> and it's completely free.</p> -->
                             </div>
                         </div>
                     </div>
@@ -172,7 +172,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="tpvideo__bg p-relative mb-25">
-                            <img src="assets/img/banner/video-bg-1.jpg" alt="">
+                            <img src="assets/img/banner/2.png" alt="">
                             <div class="tpvideo__video-btn">
                                 <a class="tpvideo__video-icon popup-video"
                                     href="https://www.youtube.com/watch?v=rLrV5Tel7zw">
