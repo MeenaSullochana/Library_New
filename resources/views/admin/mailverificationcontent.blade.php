@@ -90,7 +90,7 @@
                                                             <option value=""> Select User Type</option>
                                                                 <option value="publisher"> Publisher </option>
                                                                 <option value="distributor"> Distributor </option>
-                                                                <option value="publisher_and_distributor"> Publisher Cum Distributor </option>
+                                                                <option value="publisher_distributor"> Publisher Cum Distributor </option>
                                                             </select>
                                                         </div>
                                                     </div>

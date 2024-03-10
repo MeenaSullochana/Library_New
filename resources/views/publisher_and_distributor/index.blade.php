@@ -151,7 +151,7 @@
                                         
                               <h3>Steps to follow</h3>
                             <div class="scroll-view">
-                                        <ul style="text-intent:30px">
+                            <ul style="list-style-type: none; padding-left: 30px;">
                                                 @php
                                                         $id = auth('publisher_distributor')->user()->usertype;
                                                         $usermanualguidelines = DB::table('usermanualguidelines')->where('usertype', '=', $id)->first();

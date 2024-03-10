@@ -210,8 +210,11 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12 col-md-12">
+            @php
+                                                $news_feeds = DB::table('news_feeds')->first();
+                                                @endphp
                 <div class="header__top-left text-white">
-                    <marquee behavior="" direction="">Register Now</marquee>
+                    <marquee behavior="" direction="">{{ $news_feeds->newsFeed}}</marquee>
                 </div>
             </div>
         </div>
