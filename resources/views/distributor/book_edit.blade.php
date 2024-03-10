@@ -116,10 +116,10 @@ $bookdescription = $data->bookdescription1;
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Primary Language of the book</h4>
+                                <h4> Language of the Book</h4>
                             </div>
                             <div class="col-md-6 form-group">
-                            <label for="text">Primary Language of the book<span class="text-danger maditory">*</span></label></label>
+                            <label for="text"> Language of the Book<span class="text-danger maditory">*</span></label></label>
 
                             <div class="custom-control custom-radio">
                                 <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" @if($data->language == "Tamil") checked @endif required>
@@ -153,8 +153,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Book Title</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">Enter your title as it appears on the book cover. This field cannot
-                                    be changed after your book is published.</P>
+                                <P class="fs-4">Enter the book title as it appears on the title page. This cannot be changed after the book is submitted for procurement.</P>
                                 <div class="col-lg-12">
                                     <div class="basic-form">
                                         <div class="mb-3">
@@ -190,8 +189,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Book Author Details</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">Enter the primary author or contributor. Pen names are allowed.
-                                    Additional authors can be added in the Contributors field.</P>
+                                <P class="fs-4">Enter the author or contributor name as it appears on the title page, for example, "Willam Shaespaer" for William Shakespeare. Additional authors can be included.</P>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="basic-form">
@@ -368,11 +366,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Series</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">If your book is part of a series, please enter details so readers can easily find
-                                    the
-                                    titles on a single page.(Optional)</P>
-                                <p>Add your title to an existing series or create a new one. Linked formats for this
-                                    title will be automatically added to the series once setup is complete.</p>
+                                <P class="fs-4">If the book is part of a series, provide details to identify the specific series it belongs to (Optional).</P>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
@@ -449,11 +443,8 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Volume</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">If your book is part of a volume, please enter details so readers can easily find
-                                    the
-                                    titles on a single page.(Optional)</P>
-                                <p>Add your title to an existing volume or create a new one. Linked formats for this
-                                    title will be automatically added to the volume once setup is complete.</p>
+                                <P class="fs-4">If the book is part of a volume, provide details to identify the specific volume it belongs to (Optional).</P>
+                                
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
@@ -525,7 +516,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Edition Number</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">You can provide an edition number if this title is a new edition of an existing book.</p>
+                                <P class="fs-4">Provide the edition number for new editions of existing books (e.g., 1st Edition, 2nd Edition).</p>
                                 <div class="col-lg-12">
                                     <div class="basic-form">
                                         <div class="mb-3">
@@ -591,13 +582,13 @@ $bookdescription = $data->bookdescription1;
                                        
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Place of Origin<span
+                                                        for="validationCustomUsername">Place of publication<span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <input type="text" class="form-control" id="place"
-                                                            name="place" placeholder="Enter Place of Origin.." value="{{$data->place}}" required>
+                                                            name="place" placeholder="Enter Place of publication.." value="{{$data->place}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
