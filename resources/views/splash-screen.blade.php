@@ -1,136 +1,92 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('presentation/favicons/favicon-apple-touch-icon.png')}} ">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('presentation/favicons/favicon-favicon-32x32.png')}} ">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('presentation/favicons/favicon-favicon-16x16.png')}}">
+    <link rel="manifest" href="{{ asset('presentation/images/favicon/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ asset('presentation/images/favicon/safari-pinned-tab.svg')}}">
+    <link rel="shortcut icon" href="{{ asset('presentation/favicons/favicon-favicon.ico"')}}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="{{ asset('presentation/images/favicon/browserconfig.xml"') }}">
+    <meta name="theme-color" content="#ffffff">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Ubuntu:wght@400;500&amp;display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <script src="./js/animation.js"></script>
-
-    <title>Text Reveal</title>
-</head>
-
-<body>
-    <section>
-        <div class="cover"></div>
-        <div class="content">
-            <div class="text">
-                <h2>Hi !</h2>
+    <title>Digital Library - DPL</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('presentation/css/css-style.css') }}">
+  </head>
+  <body>
+    <div class="curtain-cover">
+      <div class="leftcurtain"><img src="{{ asset('presentation/images/images-frontcurtain.jpg') }}"></div>
+      <div class="rightcurtain"><img src="{{ asset('presentation/images/images-frontcurtain.jpg') }}"></div>
+      <a class="rope" href="#">
+        <img src="{{ asset('presentation/images/images-rope.png')}}">
+      </a>
+    </div>
+    <section class="home-section">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 posrel">
+            <div class="screen">
+              <img src="{{ asset('presentation/images/images-web.png')}}" class="img-fluid" alt="" title="">
             </div>
-            <div class="main_content">
-                <h1>Title text</h1>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+          </div>
+          <div class="col-md-6 posrel">
+            <div class="logo text-center">
+              <img src="{{ asset('presentation/images/images-logo.png')}}" class="img-fluid" alt="" title="">
+              <h1>&#2986;&#3018;&#2980;&#3009; &#2984;&#3010;&#2994;&#2965; &#2951;&#2991;&#2965;&#3021;&#2965;&#2965;&#2990;&#3021; </h1>
+              <h4>Directorate of Public Libraries</h4>
+              <h4>Digital Library</h4>
+              <h3>&#2980;&#3007;&#2993;&#2965;&#3021;&#2965;&#2986;&#3021;&#2986;&#2975;&#3009;&#2990;&#3021;  &#2984;&#3006;&#2995;&#3021;  ( 11-03-2024 )</h3>
+              <a href="/" class="btn btn-primary btn-lg">&#2997;&#2994;&#3016;&#2980;&#3021;&#2980;&#2995;&#2980;&#3021;&#2980;&#3016; &#2980;&#3018;&#2975;&#2969;&#3021;&#2965;&#2997;&#3009;&#2990;&#3021;</a>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-</body>
 
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+
+    <script src="{{ asset('presentation/js/1.11.3-jquery.min.js') }}"></script>
+    <script src="{{ asset('presentation/js/js-bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('presentation/js/1.4.1-jquery.easing.min.js') }}"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        $curtainopen = false;
+
+        $(".rope").click(function(){
+          $(this).blur();
+          $(".rope").hide();
+          if ($curtainopen == false){
+            $(this).stop().animate({top: '0px' }, {queue:false, duration:350, easing:'easeOutBounce'});
+            $(".leftcurtain").stop().animate({width:'60px'}, 2000 );
+            $(".rightcurtain").stop().animate({width:'60px'},2000 );
+            $curtainopen = true;
+          }else{
+            $(this).stop().animate({top: '-40px' }, {queue:false, duration:350, easing:'easeOutBounce'});
+            $(".leftcurtain").stop().animate({width:'50%'}, 2000 );
+            $(".rightcurtain").stop().animate({width:'51%'}, 2000 );
+            $curtainopen = false;
+          }
+          return false;
+        });
+
+      });
+    </script>
+
+  </body>
 </html>
-<style>
-    *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Montserrat;
-}
-.content{
-    background-color: #161516;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.text{
-    width: 150px;
-    height: 80px;
-    overflow: hidden;
-    text-align: center;
-    position: relative;
-    
-}
-.text h2{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: -100%;
-    color: white;
-    font-size: 2.5em;
-}
-section{
-    overflow: hidden;
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-}
-.cover{
-    position: absolute;
-    background-color: white;
-    height: 60%;
-    width: 100%;
-    top: -60%;
-    z-index: 2;
-}
-.main_content{
-    width: 60%;
-    color: white;
-    display: none;
-}
-.main_content h1,p{
-    padding: 10px;
-}
 
-</style>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-    anime.timeline({
-
-        })
-        .add({
-            targets: '.cover',
-            height: ['60%', '200%'],
-            top: ['-90%', '100%'],
-            easing: 'easeInOutCubic',
-            duration: '1600'
-        })
-        .add({
-            targets: '.text h2',
-            top: ['-150%', '50%'],
-            easing: 'easeOutQuad',
-            offset: '-=600',
-            duration: '700'
-        })
-        .add({
-            targets: '.text h2',
-            top: ['50%', '150%'],
-            easing: 'easeOutQuad',
-            offset: '+=1000',
-            duration: '700'
-        })
-        .add({
-            targets: '.cover',
-            height: ['60%', '200%'],
-            top: ['-90%', '100%'],
-            easing: 'easeInOutCubic',
-            duration: '1600',
-            offset: '-=400',
-            complete: (anim) => {
-                document.querySelector('.text').style.display = 'none';
-                document.querySelector('.main_content').style.display = 'block';
-            }
-        })
-        .add({
-            targets: '.main_content h1,p',
-            translateY: [50, 0],
-            opacity: [0,1],
-            easing: 'easeOutExpo',
-            delay: (el,i)=>i*150
-        })
-
-})
-
-</script>

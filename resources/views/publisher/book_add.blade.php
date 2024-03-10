@@ -619,8 +619,8 @@
                             </div>
                         </div>
                     </section>
-                  
-                 
+
+
                         <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -674,7 +674,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                         
+
                                     </div>
                                 </div>
                             </div>
@@ -689,7 +689,7 @@
                             <div class="col-md-10">
                                 <div class="col-lg-12">
                                      <div class="basic-form">
- 
+
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Book Category <span
@@ -706,8 +706,8 @@
                                                             @endforeach
                                                     </select>
                                                 </div>
-                                         
-                                          
+
+
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Subject <span
@@ -733,8 +733,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                         
-         
+
+
     </div>
 </div>
 </div>
@@ -988,7 +988,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                    
+
                                         </div>
                                         <h4>Paper</h4>
                                         <hr>
@@ -1175,8 +1175,8 @@
 
                                                 </div>
                                             </div> -->
-                                        
-                                         
+
+
                                             {{-- <div class="col-md-4">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
@@ -1258,7 +1258,7 @@
  <div class="col-md-6">
     <div class="mb-3">
         <label class="text-label form-label text-black"
-            for="validationCustomUsername">Discount(%) <span class="text-danger">*</span></label>
+            for="validationCustomUsername">Discount Offer(%) <span class="text-danger">*</span></label>
         <div class="input-group">
             <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
@@ -1314,7 +1314,7 @@
                             </div>
                         </div>
                     </section>
-                  
+
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -1779,7 +1779,7 @@
         return true;
     }
 </script> -->
-<!-- 
+<!--
 <script>
     // JavaScript code
     document.getElementById('discount').addEventListener('keyup', function() {
@@ -1800,10 +1800,10 @@
     function calculateDiscount() {
         var price = parseFloat(document.getElementById('price').value);
         var discount = parseFloat(document.getElementById('discount').value);
-        
+
         if (!isNaN(price) && !isNaN(discount)) {
             var discountedPrice = Math.round(price - (price * discount / 100)); // Round to the nearest integer
-            document.getElementById('discountedprice').value = discountedPrice;       
+            document.getElementById('discountedprice').value = discountedPrice;
                  document.getElementById('discountedprice1').value = discountedPrice;
 
 
@@ -1814,7 +1814,7 @@
 
         }
     }
-    
+
     document.getElementById('price').addEventListener('keyup', calculateDiscount);
     document.getElementById('discount').addEventListener('keyup', calculateDiscount);
 </script>
@@ -2690,4 +2690,3 @@ function numberOnly(id) {
     }
     /* image uplode end */
 </style>
-    
