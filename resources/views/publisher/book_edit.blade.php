@@ -116,10 +116,10 @@ $bookdescription = $data->bookdescription1;
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
-                                <h4>Primary Language of the book</h4>
+                                <h4>Language of the Book</h4>
                             </div>
                             <div class="col-md-6 form-group">
-                            <label for="text">Primary Language of the book<span class="text-danger maditory">*</span></label></label>
+                            <label for="text">Language of the book<span class="text-danger maditory">*</span></label></label>
 
                             <div class="custom-control custom-radio">
                                 <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" @if($data->language == "Tamil") checked @endif required>
@@ -153,8 +153,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Book Title</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">Enter your title as it appears on the book cover. This field cannot
-                                    be changed after your book is published.</P>
+                                <P class="fs-4">Enter the book title as it appears on the title page. This cannot be changed after the book is submitted for procurement.</P>
                                 <div class="col-lg-12">
                                     <div class="basic-form">
                                         <div class="mb-3">
@@ -190,8 +189,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Book Author Details</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">Enter the primary author or contributor. Pen names are allowed.
-                                    Additional authors can be added in the Contributors field.</P>
+                                <P class="fs-4">Enter the author or contributor name as it appears on the title page, for example, "Willam Shaespaer" for William Shakespeare. Additional authors can be included.</P>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="basic-form">
@@ -368,11 +366,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Series</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">If your book is part of a series, please enter details so readers can easily find
-                                    the
-                                    titles on a single page.(Optional)</P>
-                                <p>Add your title to an existing series or create a new one. Linked formats for this
-                                    title will be automatically added to the series once setup is complete.</p>
+                               <P class="fs-4">If the book is part of a series, provide details to identify the specific series it belongs to (Optional).</P>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
@@ -449,11 +443,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Volume</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">If your book is part of a volume, please enter details so readers can easily find
-                                    the
-                                    titles on a single page.(Optional)</P>
-                                <p>Add your title to an existing volume or create a new one. Linked formats for this
-                                    title will be automatically added to the volume once setup is complete.</p>
+                                <P class="fs-4">If the book is part of a volume, provide details to identify the specific volume it belongs to (Optional).</P>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
@@ -525,7 +515,7 @@ $bookdescription = $data->bookdescription1;
                                 <h4>Edition Number</h4>
                             </div>
                             <div class="col-md-10">
-                                <P class="fs-4">You can provide an edition number if this title is a new edition of an existing book.</p>
+                                <P class="fs-4">Provide the edition number for new editions of existing books (e.g., 1st Edition, 2nd Edition).</p>
                                 <div class="col-lg-12">
                                     <div class="basic-form">
                                         <div class="mb-3">
@@ -550,7 +540,7 @@ $bookdescription = $data->bookdescription1;
                             </div>
                         </div>
                     </section>
-                 
+
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -588,16 +578,16 @@ $bookdescription = $data->bookdescription1;
                                                 <input type="text" name="yearOfPublication" id="yearOfPublication" class="form-control" placeholder="Enter Year of Publication.." pattern="\d{4}" title="Please enter exactly 4 numbers" maxlength="4" value="{{$data->yearOfPublication}}" required>
                                             </div>
                                         </div>
-                                       
+
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Place of Origin<span
+                                                        for="validationCustomUsername">Place of publication<span
                                                             class="text-danger">*</span></label>
                                                     <div class="input-group">
                                                         <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
 
                                                         <input type="text" class="form-control" id="place"
-                                                            name="place" placeholder="Enter Place of Origin.." value="{{$data->place}}" required>
+                                                            name="place" placeholder="Enter Place of publication.." value="{{$data->place}}" required>
                                                         <div class="invalid-feedback">
                                                             Book Title cannot be edited agter your book has been
                                                             published.
@@ -605,7 +595,7 @@ $bookdescription = $data->bookdescription1;
                                                         </div>
                                                     </div>
                                                 </div>
-                                            
+
                                     </div>
                                 </div>
                             </div>
@@ -620,8 +610,8 @@ $bookdescription = $data->bookdescription1;
                             <div class="col-md-10">
                                 <div class="col-lg-12">
                                      <div class="basic-form">
- 
-                                    
+
+
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Book Category <span
@@ -640,8 +630,8 @@ $bookdescription = $data->bookdescription1;
                                                             @endforeach
                                                     </select>
                                                 </div>
-                                           
-                                          
+
+
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Subject <span
@@ -671,9 +661,9 @@ $bookdescription = $data->bookdescription1;
                                                         </div>
                                                     </div>
                                                 </div>
-                                          
-                                         
-         
+
+
+
     </div>
 </div>
 </div>
@@ -993,12 +983,12 @@ $bookdescription = $data->bookdescription1;
 
                                                 </div>
                                             </div>--}}
-                                          
+
 
 
                                         </div>
                                         <div class="row">
-                                         
+
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
@@ -1105,7 +1095,7 @@ $bookdescription = $data->bookdescription1;
                             </div>
                         </div>
                     </section>
-                  
+
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -1277,7 +1267,7 @@ $bookdescription = $data->bookdescription1;
                                             for="validationCustomUsername">Other (Optional and Upload 8 Other
                                             Images)<span class="text-danger"></span></label>
                                         <div id="otherImagesContainer"class="small-12 medium-2 large-2 columns">
-                                        
+
                                             <input class="bg-white p-1" type="file" id="other_img"
                                                 name="other_img[]" accept="image/*" multiple>
                                             @if (!empty($otherImages))
@@ -1362,7 +1352,7 @@ $bookdescription = $data->bookdescription1;
                                             <div class="avatar-preview">
                                                 <img src="{{ url('/Books/author_img/'.$data->author_img) }}" alt="" srcset="" id="author_image" class="mb-3">
                                             </div>
-                                        
+
                                         </div>
                                 </div>
                                 <br>
@@ -1581,7 +1571,7 @@ $bookdescription = $data->bookdescription1;
                                         <input type="file" id="sample_pdf" name="sample_pdf">
                                     </div>
                                 </div>
-                              
+
                             </div>
                         </div>
                     </div>
@@ -1602,9 +1592,9 @@ $bookdescription = $data->bookdescription1;
                         </div>
                         <div id="viewer" class="spreads w-100"></div>
                     @endisset
-                    
-                    
-                    
+
+
+
                 </div>
                 <style>
                     #title {
@@ -1963,10 +1953,10 @@ $bookdescription = $data->bookdescription1;
     function calculateDiscount() {
         var price = parseFloat(document.getElementById('price').value);
         var discount = parseFloat(document.getElementById('discount').value);
-        
+
         if (!isNaN(price) && !isNaN(discount)) {
             var discountedPrice = Math.round(price - (price * discount / 100)); // Round to the nearest integer
-            document.getElementById('discountedprice').value = discountedPrice;       
+            document.getElementById('discountedprice').value = discountedPrice;
                  document.getElementById('discountedprice1').value = discountedPrice;
 
 
@@ -1977,7 +1967,7 @@ $bookdescription = $data->bookdescription1;
 
         }
     }
-    
+
     document.getElementById('price').addEventListener('keyup', calculateDiscount);
     document.getElementById('discount').addEventListener('keyup', calculateDiscount);
 </script>
@@ -2171,7 +2161,7 @@ $(document).on('click', '.delete_image', function () {
         success: function (response) {
             if (response.success) {
                 console.log("Image Removed Successfully");
-              
+
             } else {
                 alert('Failed to remove image.');
             }
@@ -2212,7 +2202,7 @@ $('.highlights_delete').on('click', function() {
         var params = URLSearchParams && new URLSearchParams(document.location.search.substring(1));
         var url = params && params.get("url") && decodeURIComponent(params.get("url"));
         var currentSectionIndex = (params && params.get("loc")) ? params.get("loc") : undefined;
-    
+
         // Load the opf
         var book = ePub(url || '{{ url("/Books/sampleepub/".$data->sample_epub) }}');
         // var book = ePub(url || "https://s3.amazonaws.com/moby-dick/moby-dick.epub");
@@ -2221,55 +2211,55 @@ $('.highlights_delete').on('click', function() {
           height: 600,
           spread: "always"
         });
-    
+
         rendition.display(currentSectionIndex);
-    
+
         book.ready.then(() => {
-    
+
           var next = document.getElementById("next");
-    
+
           next.addEventListener("click", function(e){
             book.package.metadata.direction === "rtl" ? rendition.prev() : rendition.next();
             e.preventDefault();
           }, false);
-    
+
           var prev = document.getElementById("prev");
           prev.addEventListener("click", function(e){
             book.package.metadata.direction === "rtl" ? rendition.next() : rendition.prev();
             e.preventDefault();
           }, false);
-    
+
           var keyListener = function(e){
-    
+
             // Left Key
             if ((e.keyCode || e.which) == 37) {
               book.package.metadata.direction === "rtl" ? rendition.next() : rendition.prev();
             }
-    
+
             // Right Key
             if ((e.keyCode || e.which) == 39) {
               book.package.metadata.direction === "rtl" ? rendition.prev() : rendition.next();
             }
-    
+
           };
-    
+
           rendition.on("keyup", keyListener);
           document.addEventListener("keyup", keyListener, false);
-    
+
         })
-    
+
         var title = document.getElementById("title");
-    
+
         rendition.on("rendered", function(section){
           var current = book.navigation && book.navigation.get(section.href);
-    
+
           if (current) {
             var $select = document.getElementById("toc");
             var $selected = $select.querySelector("option[selected]");
             if ($selected) {
               $selected.removeAttribute("selected");
             }
-    
+
             var $options = $select.querySelectorAll("option");
             for (var i = 0; i < $options.length; ++i) {
               let selected = $options[i].getAttribute("ref") === current.href;
@@ -2278,67 +2268,67 @@ $('.highlights_delete').on('click', function() {
               }
             }
           }
-    
+
         });
-    
+
         rendition.on("relocated", function(location){
         //   console.log(location);
-    
+
           var next = book.package.metadata.direction === "rtl" ?  document.getElementById("prev") : document.getElementById("next");
           var prev = book.package.metadata.direction === "rtl" ?  document.getElementById("next") : document.getElementById("prev");
-    
+
           if (location.atEnd) {
             next.style.visibility = "hidden";
           } else {
             next.style.visibility = "visible";
           }
-    
+
           if (location.atStart) {
             prev.style.visibility = "hidden";
           } else {
             prev.style.visibility = "visible";
           }
-    
+
         });
-    
+
         rendition.on("layout", function(layout) {
           let viewer = document.getElementById("viewer");
-    
+
           if (layout.spread) {
             viewer.classList.remove('single');
           } else {
             viewer.classList.add('single');
           }
         });
-    
+
         window.addEventListener("unload", function () {
         //   console.log("unloading");
           this.book.destroy();
         });
-    
+
         book.loaded.navigation.then(function(toc){
                 var $select = document.getElementById("toc"),
                         docfrag = document.createDocumentFragment();
-    
+
                 toc.forEach(function(chapter) {
                     var option = document.createElement("option");
                     option.textContent = chapter.label;
                     option.setAttribute("ref", chapter.href);
-    
+
                     docfrag.appendChild(option);
                 });
-    
+
                 $select.appendChild(docfrag);
-    
+
                 $select.onchange = function(){
                         var index = $select.selectedIndex,
                                 url = $select.options[index].getAttribute("ref");
                         rendition.display(url);
                         return false;
                 };
-    
+
             });
-    
+
     </script>
     @endisset
     <script>
@@ -2779,7 +2769,7 @@ $('.highlights_delete').on('click', function() {
             $('.book_primary_lang, .book_primary_lang_forein').hide();
             $('#other1, #other2').prop('required', false);
         }
-    }); 
+    });
         function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();

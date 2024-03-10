@@ -377,4 +377,7 @@ div {
 div::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
+a.nav-link.active i {
+    color: white !important;
+}
 </style>

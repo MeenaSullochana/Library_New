@@ -85,7 +85,7 @@
                                 </div>
                                 <h4 class="tpabout__inner-title-2 fs-3 mb-25">WELCOME TO DIRECTORATE OF PUBLIC LIBRARIES
                                 </h4>
-                                <p style="text-align:justify">The Transparent Book Procurement Portal, created by the Directorate of Public Libraries, Government of Tamandu, revolutionizes the procurement process by connecting publishers, publisher cum distributors, and distributors with public libraries across Tamil Nadu. Designed to streamline submissions and enhance the selection of books, this digital platform emphasizes transparency and efficiency. It supports a wide range of books, incorporating subject expert reviews, librarian and  user review, and relies on reader forum recommendations for purchase decisions.
+                                <p style="text-align:justify">The Transparent Book Procurement Portal, created by the Directorate of Public Libraries, School Education Department, Government of Tamil Nadu, revolutionizes the procurement process by connecting publishers, publisher cum distributors, and distributors with public libraries across Tamil Nadu. Designed to streamline submissions and enhance the selection of books, this digital platform emphasizes transparency and efficiency. It supports a wide range of books, incorporating subject expert reviews, librarian and  user review, and relies on reader forum recommendations for purchase decisions.
                                 </p>
                                 <p style="text-align:justify">This initiative ensures that libraries meet reader demands with quality and relevant content, fostering a reading culture and supporting the literary community. Through detailed submission requirements and real-time tracking, the portal reinforces the government's commitment to diversifying and enriching library collections, thus contributing significantly to the intellectual and cultural fabric of society.
                                 </p>
@@ -196,7 +196,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
             <div class="container">
@@ -221,7 +221,7 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
         </section>
         <!-- video-area-end -->

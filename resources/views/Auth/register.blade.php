@@ -2407,4 +2407,7 @@ span.mt-056 {
         #reg_publisher_and_distributor_form.loading2 {
             opacity: 0.5;
         }
+        a.nav-link.active i {
+    color: white !important;
+}
     </style>

@@ -79,7 +79,7 @@
                                     <div class="c-con">
                                         <h4 class="heading mb-0">Congratulations <strong>User Name!!</strong><img
                                                 src="images/crm/party-popper.png" alt=""></h4>
-                                        
+
 
                                         <a href="/distributor/dist_profile_view" class="btn btn-primary btn-sm mt-4">View Profile</a>
                                     </div>
@@ -149,10 +149,10 @@
                         <div class="row">
                             <div class="card p-3">
                             <div class="col-md-12">
-                                        
+
                               <h3>Steps to follow</h3>
                             <div class="scroll-view">
-                                        <ul style="text-intent:30px">
+                                        <ul style="list-style-type: none; padding-left: 30px;">
                                                 @php
                                                         $id = auth('distributor')->user()->usertype;
                                                         $usermanualguidelines = DB::table('usermanualguidelines')->where('usertype', '=', $id)->first();
@@ -164,17 +164,17 @@
                                                     @endphp
                                                     @if ($data1)
                                                         @foreach($data1 as $val)
-                                                          
+
                                                             <li>{{$val}}.</li>
                                                         @endforeach
                                                     @else
                                                         <p>No data available.</p>
                                                     @endif
-                                            
-                                                   
+
+
                                         </ul>
                                     </div>
-                                        
+
                                     </div>
                             </div>
                         </div>
@@ -270,7 +270,7 @@
                             </div>
                         </div>
                     </div>
-                  
+
                     <div class="col-xl-12">
                         <div class="card bg-primary-light analytics-card">
                             <div class="card-body mt-4 pb-1">
@@ -673,10 +673,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 <style>
-    li{
-        list-style: decimal !important;
-        padding:10px;
-    }
     .scroll-view {
     height: 190px;
     overflow: scroll;

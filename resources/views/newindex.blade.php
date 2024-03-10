@@ -212,7 +212,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="bg-color bg-gradient p-1">
-                                <h3 class="text-center fw-bold">Register</h3>
+                                <h3 class="text-center fw-bold">New Registration</h3>
                                 <div class="static-tabs mt-5 mb-5">
                                     <img class="w-100" src="assets/img/logo/login-logo-welcom.jpeg" alt="img">
                                 </div>
@@ -401,5 +401,8 @@ i.fab.fa-instagram {
 .overflowTest {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+a.nav-link.active i {
+    color: white !important;
 }
 </style>

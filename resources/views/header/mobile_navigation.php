@@ -56,7 +56,7 @@
                     tabindex="0">
                     <div class="mobile-menu"></div>
                 </div>
-                
+
             </div>
         </div>
         <div class="tpsideinfo__account-link">
@@ -67,3 +67,8 @@
         </div>
     </div>
     <!-- sidebar-menu-area-end -->
+    <style>
+        i.icon-menu1 {
+    color: white;
+}
+    </style>

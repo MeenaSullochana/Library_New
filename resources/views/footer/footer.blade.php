@@ -1,5 +1,5 @@
         <!-- feature-area-start -->
-        <section style="background-image: url(assets/img/footer/footer-shape-1.svg);"
+        <section style="background-image: url(assets/img/footer/footer-shape-1.png);"
             class="feature-area mainfeature__bg grey-bg pt-50 pb-40"
             data-background="assets/img/footer/footer-shape-1.svg">
             <!-- <div class="container">
@@ -82,14 +82,14 @@
         <footer>
             <div class="tpfooter__area theme-bg-2">
                 <div class="tpfooter__top pb-15">
-                    <div class="container">
+                    <div class="container p-5">
                         <div class="row">
                             <div class="col-xl-4 col-lg-5 col-md-7 col-sm-6">
                                <div class="tpfooter__widget footer-col-1 mb-50">
                                     <h4 class="tpfooter__widget-title"> Address Details</h4>
-                                    <p><i class="fa fa-map-marker text-white" aria-hidden="true"></i>
+                                    <p class="p-2"><i class="fa fa-map-marker text-white" aria-hidden="true"></i>
                                         {{$homefooter->address}}</p><br>
-                                    <p><i class="fa fa-phone text-white" aria-hidden="true"></i> Phone : 
+                                    <p><i class="fa fa-phone text-white" aria-hidden="true"></i> Phone :
                                         {{$homefooter->phoneNumber}} </p><br>
                                         <p><i class="fa fa-phone-square text-white" aria-hidden="true"></i> Fax : {{$homefooter->faxNumber}}</p><br>
                                     <p><a href="mailto:support@example.com"> <i class="fa fa-envelope-open text-white"
@@ -127,9 +127,11 @@
                             </div>
                             <div class="col-xl-4 col-lg-6 col-md-8 col-sm-7">
                                <div class="tpfooter__widget footer-col-4 mb-50">
-                                  <h4 class="tpfooter__widget-title">About</h4>
+                                  <h4 class="tpfooter__widget-title">Directorate of Public libraries</h4>
                                   <div class="tpfooter__widget-newsletter">
-                                     <p>{!! $homefooter->about !!}</p>
+                                     {{-- <p>{!! $homefooter->about !!}</p> --}}
+                                     <p>Public Libraries were opened in Tamil Nadu as per the “Tamil Nadu Public Libraries Act, 1948”. The Directorate of Public Libraries was formed in 1972 in order to improve the library services.</p>
+                                     <a href="https://tamilnadupubliclibraries.org/" class="text-white">Read more...</a>
                                      <div class="tpfooter__widget-social mt-45">
                                         <span class="tpfooter__widget-social-title mb-5">Social Media</span>
                                         <a href="{{$homefooter->facebook}}"><i class="fab fa-facebook-f"></i> Facebook</a>
