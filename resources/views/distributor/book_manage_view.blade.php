@@ -485,6 +485,20 @@
                                                     <li class="fs-5 p-1">
                                                         <span class="a-list-item">
                                                             <span class="a-text-bold d-flex justify-content-between">
+                                                                <div class="text-title text-danger"><b>Size</b>
+                                                                    &rlm;
+                                                                    :
+                                                                    &lrm;
+                                                                </div>
+                                                                <div class="text-data text-right">
+                                                                    <span>{{ $data->size }}</span>
+                                                                </div>
+                                                            </span>
+                                                        </span>
+                                                    </li>
+                                                    <li class="fs-5 p-1">
+                                                        <span class="a-list-item">
+                                                            <span class="a-text-bold d-flex justify-content-between">
                                                                 <div class="text-title text-danger"><b>Length Breadth</b>
                                                                     &rlm;
                                                                     :

@@ -36,6 +36,7 @@ public function create(Request $request){
         'paper_finishing'                          =>['required'],
         'currency_type'                          =>['required'],
         'width'                          =>['required'],
+        'size'                          =>['required'],
         'gsm'                          =>['required'],
         'quality'                          =>['required'],
         'multicolor'                          =>['required'],
@@ -240,6 +241,7 @@ if ($request->hasFile('back_img')) {
        $book->length_breadth =      $request->length_breadth ;
        $book->currency_type =      $request->currency_type ;
        $book->width =       $request->width ;
+       $book->size =       $request->size ;
        $book->weight =       $request->weight ;
        $book->gsm =       $request->gsm ;
        $book->quality =       $request->quality ;
@@ -627,6 +629,7 @@ public function book_edit($id){
         'paper_finishing'                          =>['required'],
         'currency_type'                          =>['required'],
         'width'                          =>['required'],
+        'size'                          =>['required'],
         'gsm'                          =>['required'],
         'quality'                          =>['required'],
         'multicolor'                          =>['required'],
@@ -858,6 +861,7 @@ if(isset($request->other_img)){
        $book->length_breadth =      $request->length_breadth ;
        $book->currency_type =      $request->currency_type ;
        $book->width =       $request->width ;
+       $book->size =       $request->size ;
        $book->weight =       $request->weight ;
        $book->gsm =       $request->gsm ;
        $book->quality =       $request->quality ;

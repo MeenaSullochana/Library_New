@@ -105,6 +105,40 @@
 
                         </div>
                     </section>
+                    <section class="bg-light-new mt-4">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Primary Language of the Book</h4>
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label for="text">Primary Language of the Book<span class="text-danger maditory">*</span></label></label>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" required>
+                                <label class="custom-control-label" for="lang1">Tamil</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="lang2" name="language" class="custom-control-input" value="English" required>
+                                <label class="custom-control-label" for="lang2">English</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="book_primary_language_new" name="language" class="custom-control-input" value="Other_Indian" required>
+                                <label class="custom-control-label" for="book_primary_language_new">Other Indian Languages (please specify)</label>
+                            </div>
+                            <div class="col-md-12 book_primary_lang mb-2">
+                                <input type="text" class="form-control" id="other1" name="Other_Indian" placeholder="Enter Other Indian Languages (please specify)">
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="book_primary_language_new_forein" name="language" class="custom-control-input" value="Other_Foreign" required>
+                                <label class="custom-control-label" for="book_primary_language_new_forein">Other Foreign Languages (please specify)</label>
+                            </div>
+                            <div class="col-md-12 book_primary_lang_forein mb-2">
+                                <input type="text" class="form-control" id="other2" name="Other_Foreign" placeholder="Enter Other Foreign Languages (please specify)">
+                            </div>
+                        </div>
+
+                        </div>
+                    </section>
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -851,7 +885,29 @@
                                         <h4>Dimension</h4>
                                         <hr>
                                         <div class="row">
-                                            <div class="col-md-4">
+                                       <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername">Size <span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                                        <select class="default-select wide form-control" id="size"
+                                                        name="size" required>
+                                                        <option value="">Select One</option>
+                                                        @php
+                                                          $size = DB::table('book_sizes')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($size as $val)
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+
+                                                            @endforeach
+                                                    </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername"> Length x Breadth(in Centimeters) <span
@@ -897,7 +953,7 @@
                                                     </div>
                                                 </div> -->
                                             <!-- </div> -->
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Width(in Centimeters) <span
@@ -914,7 +970,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Weight(in grams) <span
@@ -931,19 +987,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            {{-- <div class="col-md-4">
-                                                <div class="mb-3">
-                                                    <label class="text-label form-label text-black"
-                                                        for="validationCustomUsername">Size <span
-                                                            class="text-danger">*</span></label>
-                                                    <div class="input-group">
-                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
-                                                        <input type="number" class="form-control" id="size" step="0.01"
-                                                            name="size" placeholder="Enter weight.." required>
-
-                                                    </div>
-                                                </div>
-                                            </div> --}}
+                    
                                         </div>
                                         <h4>Paper</h4>
                                         <hr>
@@ -1269,40 +1313,7 @@
                             </div>
                         </div>
                     </section>
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Primary Language of the Book</h4>
-                            </div>
-                            <div class="col-md-6 form-group">
-                            <label for="text">Primary Language of the Book<span class="text-danger maditory">*</span></label></label>
-
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" required>
-                                <label class="custom-control-label" for="lang1">Tamil</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="lang2" name="language" class="custom-control-input" value="English" required>
-                                <label class="custom-control-label" for="lang2">English</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="book_primary_language_new" name="language" class="custom-control-input" value="Other_Indian" required>
-                                <label class="custom-control-label" for="book_primary_language_new">Other Indian Languages (please specify)</label>
-                            </div>
-                            <div class="col-md-12 book_primary_lang mb-2">
-                                <input type="text" class="form-control" id="other1" name="Other_Indian" placeholder="Enter Other Indian Languages (please specify)">
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="book_primary_language_new_forein" name="language" class="custom-control-input" value="Other_Foreign" required>
-                                <label class="custom-control-label" for="book_primary_language_new_forein">Other Foreign Languages (please specify)</label>
-                            </div>
-                            <div class="col-md-12 book_primary_lang_forein mb-2">
-                                <input type="text" class="form-control" id="other2" name="Other_Foreign" placeholder="Enter Other Foreign Languages (please specify)">
-                            </div>
-                        </div>
-
-                        </div>
-                    </section>
+                  
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
