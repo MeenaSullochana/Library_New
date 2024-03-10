@@ -49,8 +49,8 @@ class RegisterController extends Controller
     public function showRegistrationForm(Request $request)
     {
         $user= $request->usertype;
-        $state = State::where('status','=',1)->get();
-       $district = District ::where('status','=',1)->get();
+        $state = State::all();
+       $district = District ::all();
        $country = Country ::where('status','=',1)->get();
         return view('Auth.register',compact('state','district','country','user'));
     }
@@ -1491,6 +1491,15 @@ public function publicregister(Request $req){
                            ];
             return response()->json($data); 
   }
+        }
+
+        public function getDistricts(Request $request)
+        {
+            $stateId = $request->state_id;
+            $state = State::where('name',$stateId)->first();
+            $districts = District::where('state_id', $state->id)->get();
+            
+            return response()->json(['districts' => $districts]);
         }
       
     }

@@ -51,10 +51,10 @@ class UserCreatedNotification extends Notification implements ShouldQueue
         $type = "new_user";
         if($this->user->usertype ){
             $subject = "Welcome ".$this->user->firstName;
-            $message = "You are verfication code!!!";
+            $message = "Your verfication code ";
         }else{
             $subject = "Welcome ".$this->user->name;
-            $message = "You are verfication code!!!";
+            $message = "You are verfication code ";
            
         }
        

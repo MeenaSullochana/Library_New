@@ -199,7 +199,6 @@
                                  class="text-danger maditory">*</span></label></label>
                               <select id="pub_district" class="wide form-control" name="pub_district" required>
                                  <option value="" selected>Select District</option>
-
                             @foreach ($district as $val)
                                   <option value="{{$val->name}}">{{$val->name}}</option>
                                @endforeach
@@ -988,10 +987,16 @@
                               <label class="form-check-label">I, hereby, do solemnly declare and affirm that the information provided in this application form is true, complete, and accurate to the best of my knowledge and belief. I understand that any false or misleading information may result in the rejection of my application or other appropriate legal actions.</label>
                            </div>
                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="check2" name="declaration-two"
+                                 value="yes" required>
+                              <label class="form-check-label">Acknowledge that i will submit five copies each book for review and relection purposes.
+Archiving purpose: To comply with the delivery of books (Public Libraries) Act, 1954, send one copy of all published books to Connemara Public Library. Additionally, send one copy to state libraries such as Anna Centenary Library,Chennai and Kalaignar Centenary Library in Madurai for archiving of Books.
+Review purpose:  send two copies for review of books in Chennai for review. Address to be sent: Anna Centenary Library, Chennai.</label>
+                           </div>
+                           <div class="form-check">
                               <input class="form-check-input" type="checkbox" id="check3" name="declaration-three"
                                  value="yes" required>
-                              <label class="form-check-label">Submission of Copies for Review and Selection Purposes, I acknowledge that for review and selection purposes, I will submit 5 copies of the books applied for procurement. To comply with the Delivery of Books (Public Libraries) Act, 1954, one copy will be sent to Connemara Public Library. Additionally, one copy each will be sent to state libraries such as Anna Centenary Library in Chennai and Kalaignar Centenary Library in Madurai for archiving. Furthermore, two copies will be sent to Anna Centenary Library in Chennai for procurement review.</label>
-                           </div</label>
+                              <label class="form-check-label">Acknowledge that I will send the purchased books to the central facility in Chennai, from where the delivery partner distributes the books to various libraries across Tamil Nadu.</label>
                            </div>
                            <div class="col-12">
                               <button type="submit" name="reg_publisher" class="btn btn-primary"
@@ -1480,9 +1485,16 @@
                               <label class="form-check-label">I, hereby, do solemnly declare and affirm that the information provided in this application form is true, complete, and accurate to the best of my knowledge and belief. I understand that any false or misleading information may result in the rejection of my application or other appropriate legal actions.</label>
                            </div>
                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="check2" name="declaration-two"
+                                 value="yes" required>
+                              <label class="form-check-label">Acknowledge that i will submit five copies each book for review and relection purposes.
+Archiving purpose: To comply with the delivery of books (Public Libraries) Act, 1954, send one copy of all published books to Connemara Public Library. Additionally, send one copy to state libraries such as Anna Centenary Library,Chennai and Kalaignar Centenary Library in Madurai for archiving of Books.
+Review purpose:  send two copies for review of books in Chennai for review. Address to be sent: Anna Centenary Library, Chennai.</label>
+                           </div>
+                           <div class="form-check">
                               <input class="form-check-input" type="checkbox" id="check3" name="declaration-three"
                                  value="yes" required>
-                              <label class="form-check-label">Purchased Books to Central Facility in Chennai, Acknowledge that I will send the purchased books to the central facility in Chennai, from where the delivery partner distributes the books to various libraries across Tamil Nadu.</label>
+                              <label class="form-check-label">Acknowledge that I will send the purchased books to the central facility in Chennai, from where the delivery partner distributes the books to various libraries across Tamil Nadu.</label>
                            </div>
                            <div class="col-12">
                               <button type="submit" name="book_distributor" class="btn btn-primary"

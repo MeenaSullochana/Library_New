@@ -46,7 +46,7 @@ class ForgotPasswordNotification extends Notification implements ShouldQueue
     {
         $type = "forgot";
         $subject = "Reset Password ";
-        $message = "You can reset password from bellow link";
+        $message = "You can reset your password by clicking link";
         $url = $this->url;
         $mail = $this->user;
 
