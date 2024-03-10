@@ -93,7 +93,9 @@
                                                 <th>S.no</th>
                                                 <th>Title</th>
                                                 <th>Book Price</th>
-                                                <th>Admin Price</th>
+                                                <th>Discount Offer(%)</th>
+                                                <th>Discounted Price</th>
+                                                <th>Calculated Price</th>
                                                 <th>Negotiation </th>
                                                 <th>Action</th>
                                             </tr>
@@ -120,7 +122,9 @@
                                                     </td>
                                                     <td data-label="Book Price"><a href="javascript:void(0)" class="text-primary">Rs
                                                             {{ $val->price }}</a></td>
-                                                    <td data-label="Admin Price">
+                                                <td data-label="Discount Offer(%)"><a href="javascript:void(0)" class="text-primary">{{$val->discount}}%</a></td>
+                                                <td data-label="Discounted Price"><a href="javascript:void(0)" class="text-primary">Rs {{$val->discountedprice}}</a></td>
+                                                    <td data-label="Calculated Price">
                                                         <span><a href="#" class="badge bg-info">Rs
                                                                 {{ $val->calculated_price }}</a> </span>
                                                     </td>
@@ -128,10 +132,11 @@
                                                         <div class="col-sm-12 m-b30">
                                                             <select class="col-sm-12 m-b30" name="user_approval"
                                                                 data-id="{{ $val->id }}">
-                                                                <option></option>
+                                                                <option>Select Anyone</option>
+                                                                <option style="color: green;">Accept</option>
+                                                                <option style="color: blue;">Not Accept</option>
                                                                 <option style="color: red;">Negotiation</option>
-                                                                <option style="color: green;">Approve</option>
-                                                                <option style="color: blue;">Reject</option>
+                                                              
                                                             </select>
                                                         </div>
                                                     </td>

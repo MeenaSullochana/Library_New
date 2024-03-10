@@ -73,7 +73,7 @@
                                         <th>Contact Number</th>
                                         <th>District </th>
                                         <th>Status </th>
-                                        <th>Update Status</th>
+                                        <!-- <th>Update Status</th> -->
                                         <th>Date</th>
                                         <th>Control</th>
                                     </tr>
@@ -87,7 +87,7 @@
                                         </td>
                                         <td>{{$val->mobileNumber}}</td>
                                         <td>{{$val->District}}</td>
-                                        <td class="sorting_1">
+                                        <!-- <td class="sorting_1">
                                             <div class="form-check form-switch" id="load">
                                                 <input class="form-check-input toggle-class" type="checkbox"
                                                     data-id="{{$val->id}}" name="featured_status" data-isprm="1"
@@ -96,10 +96,10 @@
                                                     {{ $val->status ? 'checked' : '' }}>
                                                 <label class="form-check-label" for="flexSwitchCheckDefault"></label>
                                             </div>
-                                        </td>
+                                        </td> -->
 
 
-                                        @if($val->approved_status=='pending')
+                                        <!-- @if($val->approved_status=='pending')
                                         <td>
                                             <div class="col-sm-12 m-b30">
                                                 <select class="col-sm-12 m-b30" name="user_approval" id="user_approval"
@@ -116,10 +116,17 @@
 
                                         @else
                                         <td> <span class="badge bg-danger text-white">Reject</span></td>
+                                        @endif -->
+                                        @if($val->status == 1)
+
+                                        <td> <span class="badge bg-success text-white">Active</span></td>
+
+                                        @else
+                                        <td> <span class="badge bg-danger text-white">Inactive</span></td>
                                         @endif
 
                                         <td><span
-                                                class="badge light badge-success">{{$val->created_at->format('Y-m-d')}}</span>
+                                                class="badge light badge-success">{{$val->created_at->format('d-m-Y')}}</span>
                                         <td>
                                             <a href="/admin/pub_profile/{{$val->id}}"><i class="fa fa-eye p-2"></i></a>
                                             <i class="fa fa-pencil p-2"></i>

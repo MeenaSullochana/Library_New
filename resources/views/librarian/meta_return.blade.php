@@ -90,7 +90,7 @@
                                                   @endphp
                                                   {{ $recordCount }}
                                                 </h2>
-                                                <span>Total Review Book</span>
+                                                <span>Total Review Books</span>
                                             </div>
                                             <p>Review Book</p>
                                         </div>
@@ -107,12 +107,12 @@
                                                   {{ $recordCount }}
 
                                                   </h2>
-                                                <span>Pending Review</span>
+                                                <span>Pending Review Books</span>
                                             </div>
-                                            <p>Pending Review</p>
+                                            <p>Pending</p>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-sm-4 col-6">
+                                    <div class="col-xl-3 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-warning count">
@@ -123,12 +123,12 @@
                                                   @endphp
                                                   {{ $recordCount }}
                                                 </h2>
-                                                <span>Completed Review</span>
+                                                <span>Completed Review Books</span>
                                             </div>
                                             <p>Completed</p>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-sm-4 col-6">
+                                    <div class="col-xl-3 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-danger count">
@@ -139,9 +139,9 @@
                                                   @endphp
                                                   {{ $recordCount }}
                                                 </h2>
-                                                <span>Reject Review</span>
+                                                <span>Rejected Review Books</span>
                                             </div>
-                                            <p>Reject Review</p>
+                                            <p>Rejected</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-2 col-sm-4 col-6">
@@ -157,7 +157,7 @@
                                                 </h2>
                                                 <span>Returned Book</span>
                                             </div>
-                                            <p>Return Book</p>
+                                            <p>Returned </p>
                                         </div>
                                     </div>
                                     <!-- <div class="col-xl-2 col-sm-4 col-6">
@@ -220,7 +220,7 @@
 
 
                            @if($val->book_status=='2')
-                          <td> <span class="badge bg-success text-white">Return To 
+                          <td> <span class="badge bg-success text-white">Returned To 
                                  @if($val->user_type == "publisher_distributor") 
                                  publisher cum distributor
                                 @else

@@ -433,22 +433,6 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                                 @endif
                                                             </div>
                                                         </span>
-<<<<<<< Updated upstream
-                                                    </span>
-                                                </li>
-                                                <li class="fs-5 p-1">
-                                                    <span class="a-list-item">
-                                                        <span
-                                                            class="a-text-bold text-danger d-flex justify-content-between">
-                                                            <div class="text-title text-danger"><b>Length Breadth</b>
-                                                                &rlm;
-                                                                :
-                                                                &lrm;
-                                                            </div>
-                                                            <div class="text-data text-right">
-                                                                <span>{{ $data->length_breadth }}</span>
-                                                            </div>
-=======
                                                     </li>
                                                     <li class="fs-5 p-1">
                                                         <span class="a-list-item">
@@ -476,7 +460,6 @@ https://cdn.jsdelivr.net/npm/owl-carousel@1.0.0/owl-carousel/owl.carousel.min.cs
                                                                     <span>{{ $data->length_breadth }}</span>
                                                                 </div>
                                                             </span>
->>>>>>> Stashed changes
                                                         </span>
                                                     </span>
                                                 </li>

@@ -79,7 +79,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row task">
-                                    <div class="col-xl-2 col-sm-4 col-6">
+                                    <div class="col-xl-3 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-primary count">
@@ -90,12 +90,12 @@
                                                   @endphp
                                                   {{ $recordCount }}
                                                 </h2>
-                                                <span>Total Review Book</span>
+                                                <span>Total Review Books</span>
                                             </div>
                                             <p>Review Book</p>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-sm-4 col-6">
+                                    <div class="col-xl-3 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-purple count">
@@ -107,12 +107,12 @@
                                                   {{ $recordCount }}
 
                                                 </h2>
-                                                <span>Pending Review</span>
+                                                <span>Pending Review Books</span>
                                             </div>
-                                            <p>Pending Review</p>
+                                            <p>Pending </p>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-sm-4 col-6">
+                                    <div class="col-xl-3 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-warning count">
@@ -123,12 +123,12 @@
                                                   @endphp
                                                   {{ $recordCount }}
                                                 </h2>
-                                                <span>Completed Review</span>
+                                                <span>Completed Review Books</span>
                                             </div>
                                             <p>Completed</p>
                                         </div>
                                     </div>
-                                    <div class="col-xl-2 col-sm-4 col-6">
+                                    <div class="col-xl-3 col-sm-4 col-6">
                                         <div class="task-summary">
                                             <div class="d-flex align-items-baseline">
                                                 <h2 class="text-danger count">
@@ -139,9 +139,9 @@
                                                   @endphp
                                                   {{ $recordCount }}
                                                 </h2>
-                                                <span>Reject Review</span>
+                                                <span>Rejected Review Books</span>
                                             </div>
-                                            <p>Reject Review</p>
+                                            <p>Rejected</p>
                                         </div>
                                     </div>
                                     <!-- <div class="col-xl-2 col-sm-4 col-6">
@@ -215,7 +215,7 @@
                                   </div>
                            </td>
    
-                           <td> <span class="badge bg-danger text-white">Book Update TO return</span></td>
+                           <td> <span class="badge bg-danger text-white">Book Update To Return</span></td>
                          
 
                                                 <td>
