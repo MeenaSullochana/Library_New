@@ -90,8 +90,10 @@
                                             <tr role="row">
                                                 <th>S.no</th>
                                                 <th>Books</th>
-                                                <th>book Price</th>
-                                                <th>Admin Price</th>
+                                                <th>Book Price</th>
+                                                <th>Discount Offer(%)</th>
+                                                <th>Discounted Price</th>
+                                                <th>Calculated Price</th>
                                                 <th>Accepted Price</th>
                                                 <th>negotiation </th>
                                                 <th>Action</th>
@@ -120,6 +122,8 @@
                                                     </div>
                                                 </td>
                                                 <td  data-label="Book Price"><a href="javascript:void(0)" class="text-primary">Rs {{$val->price}}</a></td>
+                                                <td data-label="Discount Offer(%)"><a href="javascript:void(0)" class="text-primary">{{$val->discount}}%</a></td>
+                                                <td data-label="Discounted Price"><a href="javascript:void(0)" class="text-primary">Rs {{$val->discountedprice}}</a></td>
                                                 <td  data-label="Admin Price">
                                                     <span><a href="#" class="badge bg-info">Rs {{$val->calculated_price}}</a> </span>
                                                 </td>
@@ -127,7 +131,7 @@
                                                     <span><a href="#" class="badge bg-info">Rs {{$val->final_price}}</a> </span>
                                                 </td>
                                                 <td data-label="Negotiation Price">
-                                                <button type="button" id="successButton" class="btn btn-success">Approve Book</button>
+                                                <button type="button" id="successButton" class="btn btn-success">Accepted Book</button>
 
                                                     </td>
 

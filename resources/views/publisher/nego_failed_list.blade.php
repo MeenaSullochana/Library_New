@@ -93,7 +93,9 @@
                                                 <th>S.no</th>
                                                 <th>Books</th>
                                                 <th>Book Price</th>
-                                                <th>Admin Price</th>
+                                                <th>Discount Offer(%)</th>
+                                                <th>Discounted Price</th>
+                                                <th>Calculated Price</th>
                                                 <th>Negotiation </th>
                                                 <th>Action</th>
                                             </tr>
@@ -121,11 +123,14 @@
                                                     </div>
                                                 </td>
                                                 <td data-label="Book Price"><a href="javascript:void(0)" class="text-primary">Rs {{$val->price}}</a></td>
-                                                <td data-label="Admin Price">
+                                                <td data-label="Discount Offer(%)"><a href="javascript:void(0)" class="text-primary">{{$val->discount}}%</a></td>
+                                                <td data-label="Discounted Price"><a href="javascript:void(0)" class="text-primary">Rs {{$val->discountedprice}}</a></td>
+                                              
+                                                <td data-label="Calculated Price">
                                                     <span><a href="#" class="badge bg-info">Rs {{$val->calculated_price}}</a> </span>
                                                 </td>
                                                 <td data-label="Negotiation">
-                                                <button type="button" id="successButton" class="btn btn-danger">Reject Book</button>
+                                                <button type="button" id="successButton" class="btn btn-danger">Not Accepted Book</button>
 
                                                     </td>
 
