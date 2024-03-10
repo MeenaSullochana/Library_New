@@ -22,7 +22,7 @@
                                     <a href="/procurement-policy">Procurement Policy</a>
                                 </li>
                                 <li class="#">
-                                    <a href="/faq">Guidelines</a>
+                                    <a href="/guidelines">Guidelines</a>
                                 </li>
                                 <li class="#">
                                     <a href="/contact-us">Contact Us</a>
@@ -36,12 +36,12 @@
                                         <!-- <li><a href="#">Section</a></li>
                                        <li><a href="#">Rental Details</a></li> -->
                                         {{-- <li><a href="/login">Membership Login</a></li> --}}
-                                        <li><a href="/admin/login">Admin Login</a></li>
-                                        <li><a href="/member/login">Reviewer Login</a></li>
-                                        <li><a href="/member/login">Librarian Login</a></li>
                                         <li><a href="/register">Publisher Register</a></li>
                                         <li><a href="/register">Distributor Register</a></li>
                                         <li><a href="/register">Publisher Cum Distributor Register</a></li>
+                                        <li><a href="/member/login">Reviewer Login</a></li>
+                                        <li><a href="/member/login">Librarian Login</a></li>
+                                        <li><a href="/member/login">User Login</a></li>
                                     </ul>
                                 </li>
 

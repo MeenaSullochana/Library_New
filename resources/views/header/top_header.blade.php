@@ -29,7 +29,7 @@
                             Register</a>
                         @endif
 
-                        <!-- <a href="#">FAQs</a> -->
+                        <a href="/faq">FAQs</a>
                     </div>
                     <div class="header__lang">
                         <!-- <span class="header__lang-select">English </span> -->
