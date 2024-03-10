@@ -113,7 +113,40 @@ $bookdescription = $data->bookdescription1;
 
                         </div>
                     </section>
-                   
+                    <section class="bg-light-new mt-4">
+                        <div class="row p-3">
+                            <div class="col-md-2">
+                                <h4>Primary Language of the book</h4>
+                            </div>
+                            <div class="col-md-6 form-group">
+                            <label for="text">Primary Language of the book<span class="text-danger maditory">*</span></label></label>
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" @if($data->language == "Tamil") checked @endif required>
+                                <label class="custom-control-label" for="lang1">Tamil</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="lang2" name="language" class="custom-control-input" value="English" @if($data->language == "English") checked @endif  required>
+                                <label class="custom-control-label" for="lang2">English</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="book_primary_language_new" name="language" class="custom-control-input" value="Other_Indian" @if($data->language == "Other_Indian") checked @endif required>
+                                <label class="custom-control-label" for="book_primary_language_new">Other Indian Languages (please specify)</label>
+                            </div>
+                            <div class="col-md-12 book_primary_lang mb-2">
+                                <input type="text" class="form-control" id="other1" name="Other_Indian" placeholder="Enter Other Indian Languages (please specify)" value="@if($data->Other_Indian != null) {{$data->Other_Indian}} @endif">
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="book_primary_language_new_forein" name="language" class="custom-control-input" value="Other_Foreign" @if($data->language == "Other_Foreign") checked @endif required>
+                                <label class="custom-control-label" for="book_primary_language_new_forein">Other Foreign Languages (please specify)</label>
+                            </div>
+                            <div class="col-md-12 book_primary_lang_forein mb-2">
+                                <input type="text" class="form-control" id="other2" name="Other_Foreign" placeholder="Enter Other Foreign Languages (please specify)" value="@if($data->Other_Foreign != null) {{$data->Other_Foreign}} @endif">
+                            </div>
+                        </div>
+
+                        </div>
+                    </section>
                     <section class="bg-light-new">
                         <div class="row p-3">
                             <div class="col-md-2">
@@ -683,7 +716,38 @@ $bookdescription = $data->bookdescription1;
                                         <h4>Dimension</h4>
                                         <hr>
                                         <div class="row">
-                                            <div class="col-md-4">
+                                        <div class="col-md-3">
+                                                <div class="mb-3">
+                                                    <label class="text-label form-label text-black"
+                                                        for="validationCustomUsername"> Size <span
+                                                            class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <!-- <span class="input-group-text"> <i class="fa fa-user"></i> </span> -->
+                                                        <select class="default-select wide form-control" id="size"
+                                                        name="size" required>
+
+                                                        @php
+                                                          $categori = DB::table('book_sizes')->where('status','=','1')->get();
+                                                          @endphp
+                                                          @foreach($categori as $val)
+                                                            @if($data->size == $val->name)
+                                                            <option value="{{$val->name}}" selected>{{$val->name}}</option>
+                                                            @else
+                                                            <option value="{{$val->name}}">{{$val->name}}</option>
+                                                            @endif
+                                                            @endforeach
+                                                    </select>
+                                                        <!-- <input type="number" class="form-control" id="height_width"
+                                                            name="height" placeholder="Enter Height.." required> -->
+                                                        <div class="invalid-feedback">
+                                                            Book Title cannot be edited agter your book has been
+                                                            published.
+                                                            Click here to learn more.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername"> Length x Breadth(in Centimeters) <span
@@ -715,7 +779,7 @@ $bookdescription = $data->bookdescription1;
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Width(in Centimeters) <span
@@ -732,7 +796,7 @@ $bookdescription = $data->bookdescription1;
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <div class="mb-3">
                                                     <label class="text-label form-label text-black"
                                                         for="validationCustomUsername">Weight(in Grams) <span
@@ -1041,40 +1105,7 @@ $bookdescription = $data->bookdescription1;
                             </div>
                         </div>
                     </section>
-                    <section class="bg-light-new mt-4">
-                        <div class="row p-3">
-                            <div class="col-md-2">
-                                <h4>Primary Language of the book</h4>
-                            </div>
-                            <div class="col-md-6 form-group">
-                            <label for="text">Primary Language of the book<span class="text-danger maditory">*</span></label></label>
-
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="lang1" name="language" class="custom-control-input" value="Tamil" @if($data->language == "Tamil") checked @endif required>
-                                <label class="custom-control-label" for="lang1">Tamil</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="lang2" name="language" class="custom-control-input" value="English" @if($data->language == "English") checked @endif  required>
-                                <label class="custom-control-label" for="lang2">English</label>
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="book_primary_language_new" name="language" class="custom-control-input" value="Other_Indian" @if($data->language == "Other_Indian") checked @endif required>
-                                <label class="custom-control-label" for="book_primary_language_new">Other Indian Languages (please specify)</label>
-                            </div>
-                            <div class="col-md-12 book_primary_lang mb-2">
-                                <input type="text" class="form-control" id="other1" name="Other_Indian" placeholder="Enter Other Indian Languages (please specify)" value="@if($data->Other_Indian != null) {{$data->Other_Indian}} @endif">
-                            </div>
-                            <div class="custom-control custom-radio">
-                                <input type="radio" id="book_primary_language_new_forein" name="language" class="custom-control-input" value="Other_Foreign" @if($data->language == "Other_Foreign") checked @endif required>
-                                <label class="custom-control-label" for="book_primary_language_new_forein">Other Foreign Languages (please specify)</label>
-                            </div>
-                            <div class="col-md-12 book_primary_lang_forein mb-2">
-                                <input type="text" class="form-control" id="other2" name="Other_Foreign" placeholder="Enter Other Foreign Languages (please specify)" value="@if($data->Other_Foreign != null) {{$data->Other_Foreign}} @endif">
-                            </div>
-                        </div>
-
-                        </div>
-                    </section>
+                  
                     <section class="bg-light-new mt-4">
                         <div class="row p-3">
                             <div class="col-md-2">
